@@ -2,7 +2,7 @@ import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
 import type { NavbarConfig, SidebarConfig } from './nav'
 
-export interface DefaultThemePluginsOptions {
+export interface StarThemePluginsOptions {
   /**
    * Enable @vuepress/plugin-active-header-links or not
    */
@@ -46,11 +46,11 @@ export interface DefaultThemePluginsOptions {
   prismjs?: boolean
 }
 
-export type DefaultThemeLocaleOptions = DefaultThemeData
+export type StarThemeLocaleOptions = StarThemeData
 
-export type DefaultThemeData = ThemeData<DefaultThemeLocaleData>
+export type StarThemeData = ThemeData<StarThemeLocaleData>
 
-export interface DefaultThemeLocaleData extends LocaleData {
+export interface StarThemeLocaleData extends LocaleData {
   /**
    * Home path of current locale
    *

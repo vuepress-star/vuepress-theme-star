@@ -49,10 +49,10 @@ import {
 } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
-import type { DefaultThemeHomePageFrontmatter } from '../../shared'
+import type { StarThemeHomePageFrontmatter } from '../../shared'
 import NavLink from './NavLink.vue'
 
-const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
+const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
 
 // hero image and title

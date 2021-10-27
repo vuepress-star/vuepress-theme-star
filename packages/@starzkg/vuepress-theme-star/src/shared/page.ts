@@ -1,18 +1,17 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
 import type { NavLink, SidebarConfig } from './nav'
 
-export interface DefaultThemePageData extends GitPluginPageData {
+export interface StarThemePageData extends GitPluginPageData {
   filePathRelative: string
 }
 
-export interface DefaultThemePageFrontmatter {
+export interface StarThemePageFrontmatter {
   home?: boolean
   navbar?: boolean
   pageClass?: string
 }
 
-export interface DefaultThemeHomePageFrontmatter
-  extends DefaultThemePageFrontmatter {
+export interface StarThemeHomePageFrontmatter extends StarThemePageFrontmatter {
   home: true
   heroImage?: string
   heroAlt?: string
@@ -31,8 +30,8 @@ export interface DefaultThemeHomePageFrontmatter
   footerHtml?: boolean
 }
 
-export interface DefaultThemeNormalPageFrontmatter
-  extends DefaultThemePageFrontmatter {
+export interface StarThemeNormalPageFrontmatter
+  extends StarThemePageFrontmatter {
   home?: false
   editLink?: boolean
   editLinkPattern?: string

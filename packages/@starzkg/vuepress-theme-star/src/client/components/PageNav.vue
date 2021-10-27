@@ -20,9 +20,9 @@ import { isPlainObject, isString } from '@vuepress/shared'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import type {
-  DefaultThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
   ResolvedSidebarItem,
+  StarThemeNormalPageFrontmatter,
 } from '../../shared'
 import { useNavLink, useSidebarItems } from '../composables'
 import NavLink from './NavLink.vue'
@@ -81,7 +81,7 @@ const resolveFromSidebarItems = (
   return null
 }
 
-const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 const sidebarItems = useSidebarItems()
 const route = useRoute()
 

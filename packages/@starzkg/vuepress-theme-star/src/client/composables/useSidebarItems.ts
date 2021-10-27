@@ -10,12 +10,12 @@ import { computed, inject, provide } from 'vue'
 import type { ComputedRef, InjectionKey } from 'vue'
 import { useRoute } from 'vue-router'
 import type {
-  DefaultThemeData,
-  DefaultThemeNormalPageFrontmatter,
+  ResolvedSidebarItem,
   SidebarConfigArray,
   SidebarConfigObject,
   SidebarItem,
-  ResolvedSidebarItem,
+  StarThemeData,
+  StarThemeNormalPageFrontmatter,
 } from '../../shared'
 import { useNavLink, useThemeLocaleData } from '.'
 
@@ -41,7 +41,7 @@ export const useSidebarItems = (): SidebarItemsRef => {
  */
 export const setupSidebarItems = (): void => {
   const themeLocale = useThemeLocaleData()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
   const sidebarItems = computed(() =>
     resolveSidebarItems(frontmatter.value, themeLocale.value)
   )
@@ -54,8 +54,8 @@ export const setupSidebarItems = (): void => {
  * It should only be resolved and provided once
  */
 export const resolveSidebarItems = (
-  frontmatter: DefaultThemeNormalPageFrontmatter,
-  themeLocale: DefaultThemeData
+  frontmatter: StarThemeNormalPageFrontmatter,
+  themeLocale: StarThemeData
 ): ResolvedSidebarItem[] => {
   // get sidebar config from frontmatter > themeConfig
   const sidebarConfig = frontmatter.sidebar ?? themeLocale.sidebar ?? 'auto'

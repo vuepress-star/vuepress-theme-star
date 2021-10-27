@@ -1,23 +1,23 @@
 {
-  "name": "@vuepress/theme-default",
-  "version": "2.0.0-beta.26",
-  "description": "Default theme of VuePress",
+  "name": "@starzkg/vuepress-theme-star",
+  "version": "1.0.0",
+  "description": "A theme of VuePress",
   "keywords": [
     "vuepress-theme",
     "vuepress",
     "theme",
     "default"
   ],
-  "homepage": "https://github.com/vuepress",
+  "homepage": "https://shentuzhigang.cn",
   "bugs": {
-    "url": "https://github.com/vuepress/vuepress-next/issues"
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress/vuepress-next.git"
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git"
   },
   "license": "MIT",
-  "author": "Evan You",
+  "author": "Starzkg",
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [

@@ -1,5 +1,5 @@
 import type { ContainerPluginOptions } from '@vuepress/plugin-container'
-import type { DefaultThemePluginsOptions, DefaultThemeData } from '../../shared'
+import type { StarThemeData, StarThemePluginsOptions } from '../../shared'
 
 /**
  * Resolve options for @vuepress/plugin-container
@@ -7,8 +7,8 @@ import type { DefaultThemePluginsOptions, DefaultThemeData } from '../../shared'
  * For custom containers default title
  */
 export const resolveContainerPluginOptions = (
-  themePlugins: DefaultThemePluginsOptions,
-  localeOptions: DefaultThemeData,
+  themePlugins: StarThemePluginsOptions,
+  localeOptions: StarThemeData,
   type: 'tip' | 'warning' | 'danger'
 ): ContainerPluginOptions | boolean => {
   if (themePlugins?.container?.[type] === false) {
@@ -37,7 +37,7 @@ export const resolveContainerPluginOptions = (
  * For details container
  */
 export const resolveContainerPluginOptionsForDetails = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: StarThemePluginsOptions
 ): ContainerPluginOptions | boolean => {
   if (themePlugins?.container?.details === false) {
     return false
@@ -59,7 +59,7 @@ export const resolveContainerPluginOptionsForDetails = (
  * For code-group container
  */
 export const resolveContainerPluginOptionsForCodeGroup = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: StarThemePluginsOptions
 ): ContainerPluginOptions | boolean => {
   if (themePlugins?.container?.codeGroup === false) {
     return false
@@ -78,7 +78,7 @@ export const resolveContainerPluginOptionsForCodeGroup = (
  * For code-group-item block
  */
 export const resolveContainerPluginOptionsForCodeGroupItem = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: StarThemePluginsOptions
 ): ContainerPluginOptions | boolean => {
   if (themePlugins?.container?.codeGroupItem === false) {
     return false

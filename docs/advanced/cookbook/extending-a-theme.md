@@ -156,9 +156,9 @@ module.exports = {
 ```ts
 import { path } from '@vuepress/utils'
 import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
+import type { StarThemeOptions } from 'vuepress'
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig<StarThemeOptions>({
   theme: path.resolve(__dirname, './theme'),
 })
 ```

@@ -35,9 +35,9 @@ import {
 import { computed } from 'vue'
 import type { ComputedRef } from 'vue'
 import type {
-  DefaultThemePageData,
-  DefaultThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
+  StarThemeNormalPageFrontmatter,
+  StarThemePageData,
 } from '../../shared'
 import { useThemeLocaleData } from '../composables'
 import { resolveEditLink } from '../utils'
@@ -45,8 +45,8 @@ import NavLink from './NavLink.vue'
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   const themeLocale = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const page = usePageData<StarThemePageData>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showEditLink =
@@ -86,8 +86,8 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
 const useLastUpdated = (): ComputedRef<null | string> => {
   const siteLocale = useSiteLocaleData()
   const themeLocale = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const page = usePageData<StarThemePageData>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showLastUpdated =
@@ -104,11 +104,11 @@ const useLastUpdated = (): ComputedRef<null | string> => {
 }
 
 const useContributors = (): ComputedRef<
-  null | Required<DefaultThemePageData['git']>['contributors']
+  null | Required<StarThemePageData['git']>['contributors']
 > => {
   const themeLocale = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const page = usePageData<StarThemePageData>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showContributors =

@@ -1,38 +1,33 @@
 import type { Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import type {
-  DefaultThemeLocaleOptions,
-  DefaultThemePluginsOptions,
-} from '../shared'
+import type { StarThemeLocaleOptions, StarThemePluginsOptions } from '../shared'
 import {
   assignDefaultLocaleOptions,
   resolveActiveHeaderLinksPluginOptions,
   resolveContainerPluginOptions,
-  resolveContainerPluginOptionsForDetails,
   resolveContainerPluginOptionsForCodeGroup,
   resolveContainerPluginOptionsForCodeGroupItem,
+  resolveContainerPluginOptionsForDetails,
   resolveGitPluginOptions,
   resolveMediumZoomPluginOptions,
 } from './utils'
 
-export interface DefaultThemeOptions
-  extends ThemeConfig,
-    DefaultThemeLocaleOptions {
+export interface StarThemeOptions extends ThemeConfig, StarThemeLocaleOptions {
   /**
    * To avoid confusion with the root `plugins` option,
    * we use `themePlugins`
    */
-  themePlugins?: DefaultThemePluginsOptions
+  themePlugins?: StarThemePluginsOptions
 }
 
-export const defaultTheme: Theme<DefaultThemeOptions> = ({
+export const theme: Theme<StarThemeOptions> = ({
   themePlugins = {},
   ...localeOptions
 }) => {
   assignDefaultLocaleOptions(localeOptions)
 
   return {
-    name: '@vuepress/theme-default',
+    name: '@starzkg/vuepress-theme-star',
 
     layouts: path.resolve(__dirname, '../client/layouts'),
 

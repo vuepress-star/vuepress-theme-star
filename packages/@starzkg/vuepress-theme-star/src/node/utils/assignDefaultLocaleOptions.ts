@@ -1,9 +1,6 @@
-import type {
-  DefaultThemeLocaleOptions,
-  DefaultThemeLocaleData,
-} from '../../shared'
+import type { StarThemeLocaleData, StarThemeLocaleOptions } from '../../shared'
 
-const defaultLocaleOptions: DefaultThemeLocaleOptions = {
+const defaultLocaleOptions: StarThemeLocaleOptions = {
   // navbar
   navbar: [],
   logo: null,
@@ -39,7 +36,7 @@ const defaultLocaleOptions: DefaultThemeLocaleOptions = {
   toggleSidebar: 'toggle sidebar',
 }
 
-const defaultLocaleData: DefaultThemeLocaleData = {
+const defaultLocaleData: StarThemeLocaleData = {
   // navbar
   selectLanguageName: 'English',
 }
@@ -48,7 +45,7 @@ const defaultLocaleData: DefaultThemeLocaleData = {
  * Assign default options to `themeConfig`
  */
 export const assignDefaultLocaleOptions = (
-  localeOptions: DefaultThemeLocaleOptions
+  localeOptions: StarThemeLocaleOptions
 ): void => {
   if (!localeOptions.locales) {
     localeOptions.locales = {}

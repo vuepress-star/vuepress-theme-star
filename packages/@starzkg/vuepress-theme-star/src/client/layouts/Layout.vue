@@ -56,7 +56,7 @@
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref, Transition } from 'vue'
 import { useRouter } from 'vue-router'
-import type { DefaultThemePageFrontmatter } from '../../shared'
+import type { StarThemePageFrontmatter } from '../../shared'
 import Home from '../components/Home.vue'
 import Navbar from '../components/Navbar.vue'
 import Page from '../components/Page.vue'
@@ -68,7 +68,7 @@ import {
 } from '../composables'
 
 const page = usePageData()
-const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
+const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
 
 // navbar

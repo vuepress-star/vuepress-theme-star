@@ -34,9 +34,9 @@ module.exports = {
 ```ts
 import type { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from '@vuepress/cli'
-import type { DefaultThemeOptions } from '@vuepress/theme-default'
+import type { StarThemeOptions } from '@vuepress/theme-default'
 
-export default defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
+export default defineUserConfig<StarThemeOptions, WebpackBundlerOptions>({
   // when using vuepress package, you can omit this field
   // because webpack is the default bundler
   bundler: '@vuepress/bundler-webpack',

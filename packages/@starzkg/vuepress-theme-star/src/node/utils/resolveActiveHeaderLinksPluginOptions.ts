@@ -1,11 +1,11 @@
 import type { ActiveHeaderLinksPluginOptions } from '@vuepress/plugin-active-header-links'
-import type { DefaultThemePluginsOptions } from '../../shared'
+import type { StarThemePluginsOptions } from '../../shared'
 
 /**
  * Resolve options for @vuepress/plugin-active-header-links
  */
 export const resolveActiveHeaderLinksPluginOptions = (
-  themePlugins: DefaultThemePluginsOptions
+  themePlugins: StarThemePluginsOptions
 ): ActiveHeaderLinksPluginOptions | boolean => {
   if (themePlugins?.activeHeaderLinks === false) {
     return false

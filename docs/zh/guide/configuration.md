@@ -36,9 +36,9 @@ module.exports = {
 
 ```ts
 import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
+import type { StarThemeOptions } from 'vuepress'
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig<StarThemeOptions>({
   lang: 'en-US',
   title: 'Hello VuePress',
   description: 'Just playing around',
