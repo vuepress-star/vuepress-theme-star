@@ -6,6 +6,6 @@ const packages = fs.readdirSync(path.resolve(__dirname, 'packages/@starzkg'))
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'scope-enum': [2, 'always', [...packages]],
+    'scope-enum': [2, 'always', ['docs', ...packages]],
   },
 }
