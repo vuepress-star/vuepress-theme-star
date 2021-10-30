@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/shentuzhigang/shentuzhigang/compare/v2.0.0-beta.26...v1.0.0-beta.2) (2021-10-30)
+
+
+### Bug Fixes
+
+* **docs:** add some plugin ([fc3ea2e](https://github.com/shentuzhigang/shentuzhigang/commit/fc3ea2e3b3cf7c597cf4c4c77903ce81b034c9bd))
+* **docs:** edit repo ([06cf52f](https://github.com/shentuzhigang/shentuzhigang/commit/06cf52f261a7bfe6460b962c7350f8fb936208fe))
+* **docs:** edit target_branch ([c450c82](https://github.com/shentuzhigang/shentuzhigang/commit/c450c82973e70d9aed91148a77a1f4f85ec79083))
+* **docs:** fix base and theme ([7528af0](https://github.com/shentuzhigang/shentuzhigang/commit/7528af058cfd6943e57dbaefeebd630644db0317))
+* **docs:** fix baseUrl ([0cfe87e](https://github.com/shentuzhigang/shentuzhigang/commit/0cfe87e2f3c47ec20287119f4c17ae07865fe4a3))
+* fix jest ([81dafe6](https://github.com/shentuzhigang/shentuzhigang/commit/81dafe66ab9db06dbcc358378c227be2e5b8e863))
+* **shared:** treat ftp links as external (close [#456](https://github.com/shentuzhigang/shentuzhigang/issues/456)) ([9894b56](https://github.com/shentuzhigang/shentuzhigang/commit/9894b5691950545fc90976e7fcc9aee9190ca7f8))
+* **theme-default:** avoid ssr-mismatch of dark mode logo (close [#453](https://github.com/shentuzhigang/shentuzhigang/issues/453)) ([aaf1152](https://github.com/shentuzhigang/shentuzhigang/commit/aaf1152495f6f28285f94f9a48c35b1002f522e9))
+* **theme-default:** hero actions spacing on small devices (close [#381](https://github.com/shentuzhigang/shentuzhigang/issues/381)) ([#442](https://github.com/shentuzhigang/shentuzhigang/issues/442)) ([288927a](https://github.com/shentuzhigang/shentuzhigang/commit/288927a9186cd2d50b0523c8970271d259279d04))
+
+
+### Features
+
+* **shared:** add isLinkFtp util ([b8f35c9](https://github.com/shentuzhigang/shentuzhigang/commit/b8f35c970f32f723179d229a7e297d5cd6fb2efb))
+* **theme-default:** support editLinkPattern frontmatter (close [#450](https://github.com/shentuzhigang/shentuzhigang/issues/450)) ([edecf2d](https://github.com/shentuzhigang/shentuzhigang/commit/edecf2d2b0735200b2b354afabc851ebf43e3225))
+* **vuepress-theme-star:** add github corner ([728448c](https://github.com/shentuzhigang/shentuzhigang/commit/728448c2d08733e99feaa191a14f71af091340a2))
+
+
+
+
+
 
 ============VuePress============
 
