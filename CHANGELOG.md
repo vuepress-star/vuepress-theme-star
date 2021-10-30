@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-10-30)
+
+
+### Features
+
+* update vuepress ([9d0ed22](https://github.com/shentuzhigang/vuepress-theme-star/commit/9d0ed224fdc71e064b61f29cd65aee7bcb92be12))
+
+
+
+
+
 # [1.0.0-beta.3](https://github.com/shentuzhigang/vuepress-theme-star/compare/v2.0.0-beta.16...v1.0.0-beta.3) (2021-10-30)
 
 
