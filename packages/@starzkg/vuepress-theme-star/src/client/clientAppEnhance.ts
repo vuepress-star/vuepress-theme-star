@@ -1,5 +1,6 @@
 import { defineClientAppEnhance } from '@vuepress/client'
 import { h } from 'vue'
+import GithubCorner from './components/GithubCorner.vue'
 import Badge from './components/global/Badge.vue'
 import CodeGroup from './components/global/CodeGroup'
 import CodeGroupItem from './components/global/CodeGroupItem.vue'
@@ -12,6 +13,8 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component('Badge', Badge)
   app.component('CodeGroup', CodeGroup)
   app.component('CodeGroupItem', CodeGroupItem)
+
+  app.component('GithubCorner', GithubCorner)
 
   // unregister the built-in `<OutboundLink>` to avoid warning
   delete app._context.components.OutboundLink
