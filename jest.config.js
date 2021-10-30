@@ -2,7 +2,7 @@ const { readdirSync } = require('fs')
 const { resolve } = require('path')
 const { compilerOptions } = require('./tsconfig.base.json')
 
-const packagesDir = 'packages/@vuepress'
+const packagesDir = 'packages/@starzkg'
 const packages = readdirSync(resolve(__dirname, packagesDir), {
   withFileTypes: true,
 })
@@ -10,10 +10,12 @@ const packages = readdirSync(resolve(__dirname, packagesDir), {
   .map(({ name }) => name)
 
 const commonPackages = packages.filter(
-  (item) => !item.startsWith('plugin-') && !item.startsWith('theme-')
+  (item) =>
+    !item.startsWith('vuepress-plugin-') && !item.startsWith('vuepress-theme-')
 )
 const pluginAndThemePackages = packages.filter(
-  (item) => item.startsWith('plugin-') || item.startsWith('theme-')
+  (item) =>
+    item.startsWith('vuepress-plugin-') || item.startsWith('vuepress-theme-')
 )
 
 module.exports = {
@@ -32,29 +34,24 @@ module.exports = {
     '__VUEPRESS_SSR__': false,
   },
   moduleNameMapper: {
-    [`^@vuepress/(${commonPackages.join(
+    [`^@starzkg/(${commonPackages.join(
       '|'
     )})$`]: `<rootDir>/${packagesDir}/$1/src`,
-    [`^@vuepress/(${pluginAndThemePackages.join(
+    [`^@starzkg/(${pluginAndThemePackages.join(
       '|'
     )})$`]: `<rootDir>/${packagesDir}/$1/src/node`,
-    '^@internal/(.*)$': `<rootDir>/packages/@vuepress/client/__tests__/__fixtures__/$1`,
+    '^@internal/(.*)$': `<rootDir>/packages/@starzkg/client/__tests__/__fixtures__/$1`,
     '.+\\.(css|styl|less|sass|scss)$':
-      '<rootDir>/packages/@vuepress/client/__tests__/__fixtures__/styleMock',
+      '<rootDir>/packages/@starzkg/client/__tests__/__fixtures__/styleMock',
   },
   testMatch: ['<rootDir>/packages/**/__tests__/**/*.spec.ts'],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/__fixtures__/',
-    '@vuepress/client',
-  ],
+  testPathIgnorePatterns: ['/node_modules/', '/__fixtures__/'],
   snapshotSerializers: [require.resolve('jest-serializer-vue')],
 
   // coverage config
   collectCoverageFrom: [
     '<rootDir>/packages/**/src/**/*.ts',
-    '!<rootDir>/packages/@vuepress/client/**/*',
-    '!<rootDir>/packages/@vuepress/*/src/client/**/*',
+    '!<rootDir>/packages/@starzkg/*/src/client/**/*',
     '!**/*.d.ts',
   ],
   coverageDirectory: 'coverage',
