@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.3](https://github.com/shentuzhigang/vuepress-theme-star/compare/v2.0.0-beta.16...v1.0.0-beta.3) (2021-10-30)
+
+
+### Features
+
+* **vuepress-theme-star:** add github corner ([728448c](https://github.com/shentuzhigang/vuepress-theme-star/commit/728448c2d08733e99feaa191a14f71af091340a2))
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/shentuzhigang/vuepress-theme-star/compare/v2.0.0-beta.26...v1.0.0-beta.2) (2021-10-30)
 
 

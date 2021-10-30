@@ -3,6 +3,114 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.3](https://github.com/shentuzhigang/vuepress-theme-star/compare/v2.0.0-beta.16...v1.0.0-beta.3) (2021-10-30)
+
+
+### Bug Fixes
+
+* **bundler-vite:** fallback html requests to index.html (close [#265](https://github.com/shentuzhigang/vuepress-theme-star/issues/265)) ([665cda3](https://github.com/shentuzhigang/vuepress-theme-star/commit/665cda3b84f53a62177083af8af6d034b7e1c147))
+* **bundler-vite:** resolve client entry url correctly (close [#190](https://github.com/shentuzhigang/vuepress-theme-star/issues/190)) ([36babba](https://github.com/shentuzhigang/vuepress-theme-star/commit/36babba394eccc070838c6d0861e91924d305e26))
+* **bundler-webpack:** sync types of webpack-dev-server 4 (close [#208](https://github.com/shentuzhigang/vuepress-theme-star/issues/208)) ([207014b](https://github.com/shentuzhigang/vuepress-theme-star/commit/207014b087d29f43bd01604954e33277b6b19150))
+* **client:** avoid duplicate slash after base in withBase util (close [#246](https://github.com/shentuzhigang/vuepress-theme-star/issues/246)) ([af9ceff](https://github.com/shentuzhigang/vuepress-theme-star/commit/af9ceff912466ce538da756dd90d56f697f9ea2d))
+* **client:** fix aria-hidden attribute of OutboundLink (close [#427](https://github.com/shentuzhigang/vuepress-theme-star/issues/427)) ([#432](https://github.com/shentuzhigang/vuepress-theme-star/issues/432)) ([0575ba9](https://github.com/shentuzhigang/vuepress-theme-star/commit/0575ba9326cbb41a97fa3956e0e28d60af7c9c13))
+* **client:** fix wrong attrs selector when loading head tags (close [#426](https://github.com/shentuzhigang/vuepress-theme-star/issues/426)) ([5654685](https://github.com/shentuzhigang/vuepress-theme-star/commit/5654685c9674e705b099bc5e1b75ba491205ef83))
+* **core:** invoke extendsPageOptions hook in createPage ([76292aa](https://github.com/shentuzhigang/vuepress-theme-star/commit/76292aac7000e2bf924c563ff7452624008102cd))
+* **core:** use absolute path when creating pages (close [#421](https://github.com/shentuzhigang/vuepress-theme-star/issues/421)) ([0a2f7dc](https://github.com/shentuzhigang/vuepress-theme-star/commit/0a2f7dc0b17903723e1358cf4d66b20b709241db))
+* **docs:** add some plugin ([fc3ea2e](https://github.com/shentuzhigang/vuepress-theme-star/commit/fc3ea2e3b3cf7c597cf4c4c77903ce81b034c9bd))
+* **docs:** edit repo ([06cf52f](https://github.com/shentuzhigang/vuepress-theme-star/commit/06cf52f261a7bfe6460b962c7350f8fb936208fe))
+* **docs:** edit target_branch ([c450c82](https://github.com/shentuzhigang/vuepress-theme-star/commit/c450c82973e70d9aed91148a77a1f4f85ec79083))
+* **docs:** fix base and theme ([7528af0](https://github.com/shentuzhigang/vuepress-theme-star/commit/7528af058cfd6943e57dbaefeebd630644db0317))
+* **docs:** fix baseUrl ([0cfe87e](https://github.com/shentuzhigang/vuepress-theme-star/commit/0cfe87e2f3c47ec20287119f4c17ae07865fe4a3))
+* fix jest ([81dafe6](https://github.com/shentuzhigang/vuepress-theme-star/commit/81dafe66ab9db06dbcc358378c227be2e5b8e863))
+* **markdown:** encode file path when coverting links (close [#306](https://github.com/shentuzhigang/vuepress-theme-star/issues/306)) ([920c9ac](https://github.com/shentuzhigang/vuepress-theme-star/commit/920c9ac9864ad6877606e0839ae0f35695fe5e0c))
+* **markdown:** filter permalink symbol in toc (close [#251](https://github.com/shentuzhigang/vuepress-theme-star/issues/251)) ([5a35806](https://github.com/shentuzhigang/vuepress-theme-star/commit/5a3580656336349c29abb033a3d732646e111bfd))
+* **markdown:** resolve assets links in html img tags (close [#254](https://github.com/shentuzhigang/vuepress-theme-star/issues/254)) ([7cbb163](https://github.com/shentuzhigang/vuepress-theme-star/commit/7cbb163bf19cbe8e8d682ef9707c3f738486e089))
+* **plugin-active-header-links:** update active header link selector ([#259](https://github.com/shentuzhigang/vuepress-theme-star/issues/259)) ([adaeed5](https://github.com/shentuzhigang/vuepress-theme-star/commit/adaeed5b71b2746b8d30e0eac7be55a736eefb11))
+* **plugin-git:** add HEAD into git shortlog arguments (close [#205](https://github.com/shentuzhigang/vuepress-theme-star/issues/205)) ([#398](https://github.com/shentuzhigang/vuepress-theme-star/issues/398)) ([9be4de1](https://github.com/shentuzhigang/vuepress-theme-star/commit/9be4de1c02fa0e2574fdac3872bf7afc3611e4ae))
+* **plugin-pwa:** compat with workbox-build 6.2.2 (close [#361](https://github.com/shentuzhigang/vuepress-theme-star/issues/361)) ([f28e4cb](https://github.com/shentuzhigang/vuepress-theme-star/commit/f28e4cbc6a1b760440b4bdd1598eded5b47dfec5))
+* **plugin-search:** disable default form action on Enter key ([#189](https://github.com/shentuzhigang/vuepress-theme-star/issues/189)) ([81b5b24](https://github.com/shentuzhigang/vuepress-theme-star/commit/81b5b24379c44ddcf83b38b086f6f2905453f58b))
+* **plugin-toc:** exclude h1 header in toc ([5e96641](https://github.com/shentuzhigang/vuepress-theme-star/commit/5e96641b8d2dd947372222e0af2ea47729afbada))
+* **shared:** treat ftp links as external (close [#456](https://github.com/shentuzhigang/vuepress-theme-star/issues/456)) ([9894b56](https://github.com/shentuzhigang/vuepress-theme-star/commit/9894b5691950545fc90976e7fcc9aee9190ca7f8))
+* **theme-default:** avoid long inline code breaking the layout ([#180](https://github.com/shentuzhigang/vuepress-theme-star/issues/180)) ([ada2e2a](https://github.com/shentuzhigang/vuepress-theme-star/commit/ada2e2a884749d9654c3550c4bb92611ea29906c))
+* **theme-default:** avoid recursive ref update in code-group ([ca8404a](https://github.com/shentuzhigang/vuepress-theme-star/commit/ca8404a12b8ab83ac9904431fac189f61f7e5100))
+* **theme-default:** avoid ssr-mismatch of dark mode logo (close [#453](https://github.com/shentuzhigang/vuepress-theme-star/issues/453)) ([aaf1152](https://github.com/shentuzhigang/vuepress-theme-star/commit/aaf1152495f6f28285f94f9a48c35b1002f522e9))
+* **theme-default:** break long links on overflow (close [#266](https://github.com/shentuzhigang/vuepress-theme-star/issues/266)) ([#273](https://github.com/shentuzhigang/vuepress-theme-star/issues/273)) ([eb970c3](https://github.com/shentuzhigang/vuepress-theme-star/commit/eb970c3aa4c4d650cd964b0c1f60d423a7d55125))
+* **theme-default:** exclude h1 header in sidebar ([280626d](https://github.com/shentuzhigang/vuepress-theme-star/commit/280626dd33f5006d6611f6e121eb5edfad8a258e))
+* **theme-default:** fix error of sidebar resolving (close [#185](https://github.com/shentuzhigang/vuepress-theme-star/issues/185)) ([6a96af0](https://github.com/shentuzhigang/vuepress-theme-star/commit/6a96af0b480b04a3c2564739e87a0ae786756581))
+* **theme-default:** fix nav glitch at exactly 719px screen width ([#238](https://github.com/shentuzhigang/vuepress-theme-star/issues/238)) ([3154fbb](https://github.com/shentuzhigang/vuepress-theme-star/commit/3154fbbc5c3b11e5f2a2310a0895538491fbec8f))
+* **theme-default:** hero actions spacing on small devices (close [#381](https://github.com/shentuzhigang/vuepress-theme-star/issues/381)) ([#442](https://github.com/shentuzhigang/vuepress-theme-star/issues/442)) ([288927a](https://github.com/shentuzhigang/vuepress-theme-star/commit/288927a9186cd2d50b0523c8970271d259279d04))
+* **theme-default:** improve the style for non-square logo ([#386](https://github.com/shentuzhigang/vuepress-theme-star/issues/386)) ([ff7c57f](https://github.com/shentuzhigang/vuepress-theme-star/commit/ff7c57f9b99736d67c01d232b6208fdc2f0d0321))
+* **theme-default:** respect root-level custom container config (close [#175](https://github.com/shentuzhigang/vuepress-theme-star/issues/175)) ([f2ad5f0](https://github.com/shentuzhigang/vuepress-theme-star/commit/f2ad5f0e988b075cfa37726d67feb8fa54f6176b))
+* **theme-default:** show outline of toggle-dark-button ([bc94de0](https://github.com/shentuzhigang/vuepress-theme-star/commit/bc94de0cb3a9454ac0a3e72f3df07326568057d2))
+* **theme-default:** use constant color for inserted token (close [#296](https://github.com/shentuzhigang/vuepress-theme-star/issues/296)) ([4596028](https://github.com/shentuzhigang/vuepress-theme-star/commit/459602898cee7c3ecd5d3c05c83a7db97729a14f))
+* **theme-default:** use default cursor on non-link sidebar items ([ca22d4f](https://github.com/shentuzhigang/vuepress-theme-star/commit/ca22d4fe7ade66571f34dc80343f4ec57483b44a))
+
+
+### Code Refactoring
+
+* add prefix to client constants (close [#392](https://github.com/shentuzhigang/vuepress-theme-star/issues/392)) ([c6447c4](https://github.com/shentuzhigang/vuepress-theme-star/commit/c6447c4ba1a98cb5c5ea6991c1fcdd573668c9c1))
+* **client:** move built-in meta tags to default html template (close [#358](https://github.com/shentuzhigang/vuepress-theme-star/issues/358)) ([e5c0fec](https://github.com/shentuzhigang/vuepress-theme-star/commit/e5c0feccb92b6aea4351110c20656dd66a6e0847))
+* **core:** drop support for plugin nesting ([f7da97f](https://github.com/shentuzhigang/vuepress-theme-star/commit/f7da97f7f0ff24984cc6a2d0926b5fdf3af274c5))
+* **core:** resolve page title from markdown env ([09d08a4](https://github.com/shentuzhigang/vuepress-theme-star/commit/09d08a4b89af16fcb833774e902b4d5404181689))
+
+
+### Features
+
+* **bundler-vite:** avoid global constants being replaced by vite (close [#244](https://github.com/shentuzhigang/vuepress-theme-star/issues/244)) ([#245](https://github.com/shentuzhigang/vuepress-theme-star/issues/245)) ([0c86968](https://github.com/shentuzhigang/vuepress-theme-star/commit/0c869684c4e179347eebc38d916a0dfd2115b321))
+* **bundler-webpack:** bump webpack-dev-server to 4.0.0 ([6e3fc32](https://github.com/shentuzhigang/vuepress-theme-star/commit/6e3fc324b1bc79c6a743ebe68046dcb10255bc21))
+* **bundler-webpack:** bump webpack-dev-server to 4.0.0-rc.0 ([816da00](https://github.com/shentuzhigang/vuepress-theme-star/commit/816da009ea1597e170b754c54253c0797208db1b))
+* **bundler-webpack:** support vue-loader options ([5a51912](https://github.com/shentuzhigang/vuepress-theme-star/commit/5a51912d974ba4a83a9586b40cb7cb7982c6c81b))
+* **cli:** watch dependencies of user config file ([b220524](https://github.com/shentuzhigang/vuepress-theme-star/commit/b220524f1534a1ada3b896854dba181e8ea36221))
+* **core:** store page data in page object (close [#319](https://github.com/shentuzhigang/vuepress-theme-star/issues/319)) ([c7d3710](https://github.com/shentuzhigang/vuepress-theme-star/commit/c7d3710f451e2d40ed09a1b2ae516adca0a7ab99))
+* **core:** support multi-level theme inheritance ([5df8662](https://github.com/shentuzhigang/vuepress-theme-star/commit/5df86621cfcd7b138e473d40dc622e6ff8e0795f))
+* **core:** support paths without html extension (close [#292](https://github.com/shentuzhigang/vuepress-theme-star/issues/292)) ([#324](https://github.com/shentuzhigang/vuepress-theme-star/issues/324)) ([1d41365](https://github.com/shentuzhigang/vuepress-theme-star/commit/1d41365f56425384c0c8b919008c344b03ab9431))
+* **markdown:** add extract-title plugin ([e0a1556](https://github.com/shentuzhigang/vuepress-theme-star/commit/e0a1556a1469cd71469f5c81e2d058a5e9b9d801))
+* **markdown:** bump markdown-it-anchor to 8.0.4 ([41338f7](https://github.com/shentuzhigang/vuepress-theme-star/commit/41338f7d656bf9e692c3ff22e05e4b3c1a9cbd6f))
+* **markdown:** support `code.lineNumbers` to be set to number (close [#231](https://github.com/shentuzhigang/vuepress-theme-star/issues/231)) ([#276](https://github.com/shentuzhigang/vuepress-theme-star/issues/276)) ([a7fbdec](https://github.com/shentuzhigang/vuepress-theme-star/commit/a7fbdec893e01937b392ba40ed9dc8888415f9ed))
+* **plugin-pwa:** bump mitt to 3.0.0 ([8e2eb33](https://github.com/shentuzhigang/vuepress-theme-star/commit/8e2eb3358baa91c410adffb01f218404c4a4f393))
+* **shared:** add isLinkFtp util ([b8f35c9](https://github.com/shentuzhigang/vuepress-theme-star/commit/b8f35c970f32f723179d229a7e297d5cd6fb2efb))
+* **theme-default:** add `logoDark` locale option (close [#283](https://github.com/shentuzhigang/vuepress-theme-star/issues/283)) ([991c07a](https://github.com/shentuzhigang/vuepress-theme-star/commit/991c07a26d745b5c13ab320b04d8ee79ac5a6ebc))
+* **theme-default:** add `toggleDarkMode` locale option ([#275](https://github.com/shentuzhigang/vuepress-theme-star/issues/275)) ([a685a1b](https://github.com/shentuzhigang/vuepress-theme-star/commit/a685a1b9e47ef91da40c27194e927daa63343520))
+* **theme-default:** add css variables for transition ([#325](https://github.com/shentuzhigang/vuepress-theme-star/issues/325)) ([2b09004](https://github.com/shentuzhigang/vuepress-theme-star/commit/2b09004cfb65ca15e593c680d8e80f2a28ecd741))
+* **theme-default:** add missing transitions ([066c6e4](https://github.com/shentuzhigang/vuepress-theme-star/commit/066c6e413986f4246b1812ae88c828254404e5c5))
+* **theme-default:** enhance color transitions ([#287](https://github.com/shentuzhigang/vuepress-theme-star/issues/287)) ([9b96871](https://github.com/shentuzhigang/vuepress-theme-star/commit/9b968719bee5742cb6e3feb8d7dfbd00d13d0785))
+* **theme-default:** enhance color transitions ([#321](https://github.com/shentuzhigang/vuepress-theme-star/issues/321)) ([aeaa3ba](https://github.com/shentuzhigang/vuepress-theme-star/commit/aeaa3ba8362af7e4013d419af1db246c657646ff))
+* **theme-default:** improve a11y and animation of sidebar button ([#365](https://github.com/shentuzhigang/vuepress-theme-star/issues/365)) ([c99861e](https://github.com/shentuzhigang/vuepress-theme-star/commit/c99861e4c65dfcce8b29c9ce7943944e3d6ca3c1))
+* **theme-default:** improve a11y of CodeGroup ([#163](https://github.com/shentuzhigang/vuepress-theme-star/issues/163)) ([2b76463](https://github.com/shentuzhigang/vuepress-theme-star/commit/2b7646399116114a967a5df64266c6879babb10f))
+* **theme-default:** refine sidebar config ([ea7c4bb](https://github.com/shentuzhigang/vuepress-theme-star/commit/ea7c4bbac269f2f9ade4d58cb77dad27055d9bc0))
+* **theme-default:** set dark mode color-scheme ([#289](https://github.com/shentuzhigang/vuepress-theme-star/issues/289)) ([0b3abd3](https://github.com/shentuzhigang/vuepress-theme-star/commit/0b3abd37f1201176d057d8bdd870dcbc1ea25079))
+* **theme-default:** store dark mode state in local storage (close [#335](https://github.com/shentuzhigang/vuepress-theme-star/issues/335)) ([9582b3b](https://github.com/shentuzhigang/vuepress-theme-star/commit/9582b3b72c42b28f74484b55d88bc1fb2d8f56df))
+* **theme-default:** support activeMatch in navbar config ([ab0c6d1](https://github.com/shentuzhigang/vuepress-theme-star/commit/ab0c6d1544e62b505547c45afe6347fdb735c011))
+* **theme-default:** support disabling dark mode ([6517ce1](https://github.com/shentuzhigang/vuepress-theme-star/commit/6517ce1c66219fc45f0cb645f3db30e275e592bf))
+* **theme-default:** support editLinkPattern frontmatter (close [#450](https://github.com/shentuzhigang/vuepress-theme-star/issues/450)) ([edecf2d](https://github.com/shentuzhigang/vuepress-theme-star/commit/edecf2d2b0735200b2b354afabc851ebf43e3225))
+* **theme-default:** support navbar and sidebar slot for Layout.vue ([a42e431](https://github.com/shentuzhigang/vuepress-theme-star/commit/a42e431a898240c67471a198fbde33c8805c2850))
+* **theme-default:** support page slot for Layout.vue ([a8de0a9](https://github.com/shentuzhigang/vuepress-theme-star/commit/a8de0a990711a2732f2f85b086e733fbd8a74110))
+* **vuepress-theme-star:** add github corner ([728448c](https://github.com/shentuzhigang/vuepress-theme-star/commit/728448c2d08733e99feaa191a14f71af091340a2))
+
+
+### Performance Improvements
+
+* **bundler-vite:** make server build lighter ([a6ddea5](https://github.com/shentuzhigang/vuepress-theme-star/commit/a6ddea5fd1a1979f5d3a7cc460e1602cb5254f08))
+
+
+### BREAKING CHANGES
+
+* **core:** now `PageOptions` does not accept relative file path
+* client constants should add `VUEPRESS` prefix now
+* **client:** the previous built-in meta tags should be manually added to custom html template
+* **core:** now `extendsPageData` hook is processed before `onInitialized` hook
+* **markdown:** `markdown.anchor` has changed, see changelog of markdown-it-anchor 8.0.0
+* **theme-default:** `isGroup` field of sidebar config is removed
+* **core:** extendsPageOptions now accept page options as the first argument
+* **core:** a plugin cannot use other plugins anymore
+* **core:** markdown emoji syntax is not supported in frontmatter title
+* **core:** `app.themeApi` is removed
+* **theme-default:** default title of danger container is changed to "DANGER"
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/shentuzhigang/shentuzhigang/compare/v2.0.0-beta.26...v1.0.0-beta.2) (2021-10-30)
 
 
