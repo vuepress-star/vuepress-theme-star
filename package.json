@@ -16,6 +16,7 @@
     "docs:serve": "anywhere -h localhost -d docs/.vuepress/dist",
     "lint": "eslint --ext .js,.ts,.vue .",
     "prepare": "husky install",
+    "rebuild": "yarn clean && yarn copy && yarn build",
     "release": "yarn lint && yarn clean && yarn copy && yarn build && yarn test && lerna publish prerelease --dist-tag next",
     "test": "jest --runInBand",
     "test:coverage": "yarn copy && yarn build && yarn test --coverage"
