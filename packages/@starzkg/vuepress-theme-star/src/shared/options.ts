@@ -14,6 +14,11 @@ export interface StarThemePluginsOptions {
   backToTop?: boolean
 
   /**
+   * Enable @starzkg/vuepress-plugin-github-corner or not
+   */
+  githubCorner?: boolean
+
+  /**
    * Enable @vuepress/plugin-container or not
    */
   container?: {

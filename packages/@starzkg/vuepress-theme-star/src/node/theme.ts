@@ -47,6 +47,7 @@ export const theme: Theme<StarThemeOptions> = ({
         resolveActiveHeaderLinksPluginOptions(themePlugins),
       ],
       ['@vuepress/back-to-top', themePlugins.backToTop !== false],
+      ['@starzkg/github-corner', themePlugins.githubCorner !== false],
       [
         '@vuepress/container',
         resolveContainerPluginOptions(themePlugins, localeOptions, 'tip'),
