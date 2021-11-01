@@ -8,7 +8,7 @@ Reference of default theme config, which can be set via [themeConfig](../config.
 
 ### locales
 
-- Type: `{ [path: string]: Partial<StarThemeLocaleData> }`
+- Type: `{ [path: string]: Partial<DefaultThemeLocaleData> }`
 
 - Default: `{}`
 

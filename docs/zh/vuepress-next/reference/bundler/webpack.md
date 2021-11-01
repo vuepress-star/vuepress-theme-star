@@ -33,9 +33,9 @@ module.exports = {
 ```ts
 import type { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from '@vuepress/cli'
-import type { StarThemeOptions } from '@vuepress/theme-default'
+import type { DefaultThemeOptions } from '@vuepress/theme-default'
 
-export default defineUserConfig<StarThemeOptions, WebpackBundlerOptions>({
+export default defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
   // 在使用 vuepress 包的时候，你可以忽略这个字段，因为 Webpack 是默认打包工具
   bundler: '@vuepress/bundler-webpack',
   // Webpack 打包工具的配置项

@@ -1,8 +1,8 @@
-# 继承一个主题
+# Extending a Theme
 
-有时你可能希望对一个主题进行一些小改动，但是又不想 Fork 并修改整个项目。
+Sometimes you might want make some minor changes to a theme, but you may not want to fork and modify the entire project.
 
-借助于 [主题 API](../../reference/theme-api.md) ，你可以继承一个主题并添加你自己的改动：
+With the help of [Theme API](../../reference/theme-api.md), you can extend a theme and make your own modifications:
 
 <CodeGroup>
   <CodeGroupItem title="JS" active>
@@ -11,11 +11,11 @@
 const { path } = require('@vuepress/utils')
 
 module.exports = {
-  // 你的主题
+  // your theme
   name: 'vuepress-theme-foo',
-  // 要继承的父主题
+  // parent theme to extend
   extends: 'vuepress-theme-bar',
-  // 覆盖父主题的布局
+  // override layouts of parent theme
   layouts: {
     Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
   },
@@ -31,11 +31,11 @@ import type { ThemeObject } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 
 const fooTheme: ThemeObject = {
-  // 你的主题
+  // your theme
   name: 'vuepress-theme-foo',
-  // 要继承的父主题
+  // parent theme to extend
   extends: 'vuepress-theme-bar',
-  // 覆盖父主题的布局
+  // override layouts of parent theme
   layouts: {
     Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
   },
@@ -47,11 +47,11 @@ export default fooTheme
   </CodeGroupItem>
 </CodeGroup>
 
-在这个例子中，你的 `vuepress-theme-foo` 将会继承 `vuepress-theme-bar` 的全部配置、插件和布局，并且你可以按照需要来覆盖对应的布局。
+In this case, your `vuepress-theme-foo` will inherit all configuration, plugins and layouts from `vuepress-theme-bar`, and you can override corresponding layouts as needed.
 
-## 继承默认主题
+## Extend Default Theme
 
-首先，创建主题目录和主题入口 `.vuepress/theme/index.js` ：
+First, create the theme directory and the theme entry `.vuepress/theme/index.js`:
 
 <CodeGroup>
   <CodeGroupItem title="JS" active>
@@ -90,9 +90,9 @@ export default localTheme
   </CodeGroupItem>
 </CodeGroup>
 
-你的本地主题将会继承默认主题，并且覆盖 `Layout` 布局。
+You local theme will extends default theme, and override the `Layout` layout.
 
-接下来，创建 `.vuepress/theme/layouts/Layout.vue` ，并使用由默认主题的 `Layout` 提供的插槽：
+Next, create `.vuepress/theme/layouts/Layout.vue`, and make use of the slots that provided by the `Layout` of default theme:
 
 ```vue
 <template>
@@ -120,11 +120,11 @@ export default {
 </style>
 ```
 
-你将会在除了首页外的所有页面添加一个自定义的页脚：
+You will add a custom footer to every normal pages in default theme (excluding homepage):
 
 ![extending-a-theme](/images/cookbook/extending-a-theme-01.png)
 
-下面列出了默认主题的 `Layout` 所提供的所有插槽：
+Here are all the slots that provided by the `Layout` of default theme:
 
 - `navbar`
 - `navbar-before`
@@ -136,7 +136,7 @@ export default {
 - `page-top`
 - `page-bottom`
 
-最后，记得在 `.vuepress/config.js` 中使用你的本地主题：
+Finally, remember to use your local theme in `.vuepress/config.js`:
 
 <CodeGroup>
   <CodeGroupItem title="JS" active>
@@ -156,9 +156,9 @@ module.exports = {
 ```ts
 import { path } from '@vuepress/utils'
 import { defineUserConfig } from 'vuepress'
-import type { StarThemeOptions } from 'vuepress'
+import type { DefaultThemeOptions } from 'vuepress'
 
-export default defineUserConfig<StarThemeOptions>({
+export default defineUserConfig<DefaultThemeOptions>({
   theme: path.resolve(__dirname, './theme'),
 })
 ```
@@ -166,11 +166,11 @@ export default defineUserConfig<StarThemeOptions>({
   </CodeGroupItem>
 </CodeGroup>
 
-## 使你的主题可以被继承
+## Make Your Theme Extendable
 
-作为一个主题作者，为了允许用户在使用你的主题时进行更多的自定义，你可能希望你的主题可以被用户继承。
+As a theme author, you might want to make your theme extendable, allowing users to use your theme with their own customization.
 
-你可以像默认主题的做法一样，在你的布局中添加插槽。这种方式需要你来决定主题的哪些部分是可以被扩展的，它更适合用于一些常见的自定义需求，比如页眉或页脚：
+You can provide slots in your layouts, just like how default theme does. This approach requires you to determine which parts of your theme could be extended. It is more suitable for those common customizations like page footer or header:
 
 ```vue
 <template>
@@ -182,22 +182,22 @@ export default defineUserConfig<StarThemeOptions>({
 </template>
 ```
 
-如果你觉得这种方式还不够灵活，你可以尝试一些更激进的做法，使你主题的每个组件都可以被替换。
+If you think it is not flexible enough, you can try some more aggressive approaches to make each components of you theme replaceable.
 
-比如，为你主题的每个组件都设置 `alias` 别名：
+For example, set `alias` for each components of you theme:
 
 ```js
 module.exports = {
   name: 'vuepress-theme-foo',
   alias: {
-    // 为可替换的组件设置别名
+    // set alias for replaceable components
     '@theme/Navbar.vue': path.resolve(__dirname, 'components/Navbar.vue'),
     '@theme/Sidebar.vue': path.resolve(__dirname, 'components/Sidebar.vue'),
   },
 }
 ```
 
-然后，在你的主题中通过别名来使用这些组件：
+Next, use those components via aliases in your theme:
 
 ```vue
 <template>
@@ -221,14 +221,14 @@ export default {
 </script>
 ```
 
-这样，用户在继承你的主题时，就可以通过覆盖 `alias` 来替换特定的组件了：
+Then, users can replace specific components by overriding the `alias` when extending your theme:
 
 ```js
 module.exports = {
   name: 'vuepress-theme-foobar',
   extends: 'vuepress-theme-foo'
   alias: {
-    // 替换 Navbar 组件
+    // replace the Navbar component
     '@theme/Navbar.vue': path.resolve(__dirname, 'components/CustomNavbar.vue'),
   },
 }

@@ -8,7 +8,7 @@
 
 ### locales
 
-- 类型： `{ [path: string]: Partial<StarThemeLocaleData> }`
+- 类型： `{ [path: string]: Partial<DefaultThemeLocaleData> }`
 
 - 默认值： `{}`
 
