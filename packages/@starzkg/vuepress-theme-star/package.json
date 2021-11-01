@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-theme-star",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "description": "A theme of VuePress",
   "keywords": [
     "vuepress-theme",
@@ -29,7 +29,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-plugin-github-corner": "1.0.0",
+    "@starzkg/vuepress-plugin-github-corner": "1.0.0-beta.5",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.27",
