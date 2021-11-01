@@ -1,13 +1,15 @@
+import type { StarThemeOptions } from '@starzkg/vuepress-theme-star'
 import { defineUserConfig } from '@vuepress/cli'
-import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
 
 const isProd = process.env.NODE_ENV === 'production'
 
-export default defineUserConfig<DefaultThemeOptions>({
+// @ts-ignore
+// @ts-ignore
+export default defineUserConfig<StarThemeOptions>({
   base: '/vuepress-theme-star/',
-
+  theme: '@starzkg/star',
   head: [
     [
       'link',
@@ -136,6 +138,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
 
     themePlugins: {
+      githubCorner: true,
       // only enable git plugin in production mode
       git: isProd,
     },
