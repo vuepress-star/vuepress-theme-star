@@ -3,6 +3,7 @@
     "composite": true,
     "declaration": true,
     "declarationMap": false,
+    "esModuleInterop": true,
     "lib": ["DOM", "ES2020"],
     "module": "CommonJS",
     "moduleResolution": "node",

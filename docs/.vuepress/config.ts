@@ -6,9 +6,9 @@ import { navbar, sidebar } from './configs'
 const isProd = process.env.NODE_ENV === 'production'
 
 // @ts-ignore
-// @ts-ignore
 export default defineUserConfig<StarThemeOptions>({
   base: '/vuepress-theme-star/',
+  title: 'vuepress-theme-star',
   theme: '@starzkg/star',
   head: [
     [
@@ -56,13 +56,13 @@ export default defineUserConfig<StarThemeOptions>({
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VuePress',
-      description: 'Vue-powered Static Site Generator',
+      title: 'vuepress-theme-star',
+      description: 'A vuepress theme for building personal site',
     },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'VuePress',
-      description: 'Vue 驱动的静态网站生成器',
+      title: 'vuepress-theme-star',
+      description: '为了构建功能完备的个人网站',
     },
   },
 
@@ -141,6 +141,9 @@ export default defineUserConfig<StarThemeOptions>({
       githubCorner: true,
       // only enable git plugin in production mode
       git: isProd,
+      mdEnhance: {
+        enableAll: true,
+      },
     },
   },
 

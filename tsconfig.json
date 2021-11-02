@@ -2,6 +2,9 @@
   "extends": "./tsconfig.base.json",
   "references": [
     {
+      "path": "./packages/@starzkg/vuepress-plugin-markdown-enhance/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-plugin-github-corner/tsconfig.build.json"
     },
     { "path": "./packages/@starzkg/vuepress-theme-star/tsconfig.build.json" }

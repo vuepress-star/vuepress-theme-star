@@ -1,3 +1,4 @@
+import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
 import type { NavbarConfig, SidebarConfig } from './nav'
@@ -49,6 +50,15 @@ export interface StarThemePluginsOptions {
    * Enable @vuepress/plugin-prismjs or not
    */
   prismjs?: boolean
+
+  /**
+   * Markdown 增强插件配置
+   * @see http://vuepress-theme-hope.github.io/md-enhance/zh/config/
+   *
+   * Markdown enhance plugin options
+   * @see http://vuepress-theme-hope.github.io/md-enhance/config/
+   */
+  mdEnhance?: MarkdownEnhanceOptions | false
 }
 
 export type StarThemeLocaleOptions = StarThemeData
