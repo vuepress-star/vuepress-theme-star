@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.5...v1.0.0-beta.7) (2021-11-02)
+
+
+### Bug Fixes
+
+* md-enhance ([f2bfd98](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2bfd98eb0a3ce02a150ab96e6d68eb09ecdff97))
+
+
+
+
+
 # [2.0.0-alpha.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package @starzkg/vuepress-shared
