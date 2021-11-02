@@ -1,8 +1,8 @@
-@use "@mr-hope/vuepress-shared/styles/reset";
+@use "@starzkg/vuepress-shared/styles/reset";
 @use "@hope/config";
 
 .presentation {
-  .md-enhance-presentation {
+  .markdown-enhance-presentation {
     min-width: 100vw;
     min-height: 100vh;
   }

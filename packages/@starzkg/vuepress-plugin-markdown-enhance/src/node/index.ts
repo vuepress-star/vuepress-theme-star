@@ -54,15 +54,15 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
   usePlugins(app, markdownOptions)
 
   return {
-    name: 'vuepress-plugin-md-enhance',
+    name: 'vuepress-plugin-markdown-enhance',
 
     alias: {
       '@Mermaid': mermaidEnable
-        ? path.resolve(__dirname, '../client/components/Mermaid.js')
-        : '@mr-hope/vuepress-shared/client/noopModule.js',
+        ? path.resolve(__dirname, '../client/components/MermaidChart.js')
+        : '@starzkg/vuepress-shared/lib/client/noopModule.js',
       '@Presentation': presentationEnable
-        ? path.resolve(__dirname, '../client/components/Presentation.js')
-        : '@mr-hope/vuepress-shared/client/noopModule.js',
+        ? path.resolve(__dirname, '../client/components/PresentationViewer.js')
+        : '@starzkg/vuepress-shared/lib/client/noopModule.js',
     },
 
     define: (): Record<string, unknown> => ({
@@ -97,10 +97,16 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
 
     ...(demoEnable
       ? {
-          clientAppSetupFiles: path.resolve(__dirname, '../client/appSetup.js'),
+          clientAppSetupFiles: path.resolve(
+            __dirname,
+            '../client/clientAppSetup.js'
+          ),
         }
       : {}),
-    clientAppEnhanceFiles: path.resolve(__dirname, '../client/appEnhance.js'),
+    clientAppEnhanceFiles: path.resolve(
+      __dirname,
+      '../client/clientAppEnhance.js'
+    ),
 
     extendsMarkdown: (markdownIt): void => {
       if (markdownOptions.sup || markdownOptions.enableAll) markdownIt.use(sup)

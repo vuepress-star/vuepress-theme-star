@@ -1,9 +1,7 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "rootDir": "./src",
-    "allowSyntheticDefaultImports": true
+    "types": ["@vuepress/client/types", "@types/jest"]
   },
-  "include": ["src/**/*"]
+  "include": ["./src/**/*.ts", "./src/**/*.vue", "./__tests__"]
 }

@@ -7,6 +7,7 @@
     {
       "path": "./packages/@starzkg/vuepress-plugin-github-corner/tsconfig.build.json"
     },
+    { "path": "./packages/@starzkg/vuepress-shared/tsconfig.build.json" },
     { "path": "./packages/@starzkg/vuepress-theme-star/tsconfig.build.json" }
   ],
   "files": []

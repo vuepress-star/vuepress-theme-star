@@ -157,7 +157,7 @@ export default defineComponent({
         {
           ref: presentationContainer,
           class: {
-            'md-enhance-presentation': true,
+            'markdown-enhance-presentation': true,
             'loading': loading.value,
           },
         },

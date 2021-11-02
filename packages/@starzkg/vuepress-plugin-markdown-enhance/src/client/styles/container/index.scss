@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "@hope/config";
 @use "@hope/helper";
-@use "@mr-hope/vuepress-shared/styles/svg";
+@use "@starzkg/vuepress-shared/styles/svg";
 @use "icons";
 
 $darkBgColor: helper.get-color(config.$bgColor, $isDark: true);
