@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.6](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-02)
+
+
+### Features
+
+* add markdown-enhance ([09d3f0b](https://github.com/shentuzhigang/vuepress-theme-star/commit/09d3f0b480c6a50f04ce869ae7ccd51b9b5a2b21))
+
+
+
+
+
 # [1.0.0-beta.5](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.3...v1.0.0-beta.5) (2021-11-01)
 
 

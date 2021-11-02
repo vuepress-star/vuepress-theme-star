@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-markdown-enhance",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -63,5 +63,9 @@
     "vue": "^3.2.20",
     "vue-router": "^4.0.12",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.7"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "710bf72b6be014c937195dd2ad8bb0eab92fd53e"
 }

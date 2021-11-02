@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-github-corner",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "VuePress plugin - github corner",
   "keywords": [
     "vuepress-plugin",
@@ -37,5 +37,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "710bf72b6be014c937195dd2ad8bb0eab92fd53e"
 }
