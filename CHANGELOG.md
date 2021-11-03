@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-11-03)
+
+
+### Bug Fixes
+
+* fix dayjs ([45276d0](https://github.com/shentuzhigang/vuepress-theme-star/commit/45276d086d3829ce8e75b3f556aca5ed7c9847fe))
+
+
+
+# [1.0.0-beta.6](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-02)
+
+
+
+
+
 # [1.0.0-beta.9](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2021-11-03)
 
 
