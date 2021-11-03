@@ -149,7 +149,7 @@ export default defineComponent({
         {
           ref: mermaidElement,
           class: {
-            'md-enhance-mermaid': true,
+            'markdown-enhance-mermaid': true,
             'loading': !svgCode.value,
           },
         },

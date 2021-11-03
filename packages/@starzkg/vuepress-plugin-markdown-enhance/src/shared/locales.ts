@@ -1,4 +1,4 @@
-import type { ResolvedLocaleConfig } from '@mr-hope/vuepress-shared'
+import type { ResolvedLocaleConfig } from '@starzkg/vuepress-shared/lib/shared'
 
 export interface MarkdownEnhanceI18nConfig {
   /**

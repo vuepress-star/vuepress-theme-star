@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-markdown-enhance",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.8",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -23,7 +23,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
-    "directory": "packages/md-enhance"
+    "directory": "packages/markdown-enhance"
   },
   "license": "MIT",
   "author": {
@@ -34,21 +34,19 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "clean": "rimraf ./client ./node",
-    "demo:build": "vuepress build __tests__/demo",
-    "demo:clean-serve": "vuepress dev __tests__/demo --clean-cache",
-    "demo:serve": "vuepress dev __tests__/demo",
-    "demo:vite-build": "vuepress-vite build __tests__/demo",
-    "demo:vite-clean-serve": "vuepress-vite dev __tests__/demo --clean-cache",
-    "demo:vite-serve": "vuepress-vite dev __tests__/demo",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:rollup\"",
-    "dev:copy": "cpx src/client/styles/** client/styles -w",
-    "dev:rollup": "rollup -c -w"
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/{LICENSE,*.{css,svg,vue,scss,ttf,woff,eot}}\" lib",
+    "docs:build": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:dev": "vuepress dev docs",
+    "docs:vite-build": "vuepress-vite build docs",
+    "docs:vite-clean-dev": "vuepress-vite dev docs --clean-cache",
+    "docs:vite-dev": "vuepress-vite dev docs"
   },
   "dependencies": {
     "@babel/core": "*",
-    "@mr-hope/vuepress-shared": "2.0.0-alpha.7",
+    "@starzkg/vuepress-shared": "1.0.0-beta.8",
     "@types/katex": "^0.11.1",
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.7",
@@ -56,12 +54,16 @@
     "@vuepress/plugin-container": "2.0.0-beta.27",
     "@vuepress/shared": "2.0.0-beta.27",
     "@vuepress/utils": "2.0.0-beta.27",
-    "katex": "^0.15.0",
+    "katex": "^0.15.1",
     "markdown-it": "^12.2.0",
     "mermaid": "^8.13.3",
     "reveal.js": "^4.1.3",
     "vue": "^3.2.20",
     "vue-router": "^4.0.12",
     "vuepress-plugin-sass-palette": "2.0.0-alpha.7"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "710bf72b6be014c937195dd2ad8bb0eab92fd53e"
 }

@@ -123,7 +123,7 @@ export default defineComponent({
 
         Promise.all(promises).then(([, revealJS, ...plugins]) => {
           // @ts-ignore
-          const reveal = new revealJS.Default(
+          const reveal = revealJS.default(
             presentationElement.value as HTMLElement,
             {
               plugins: plugins.map(
@@ -157,7 +157,7 @@ export default defineComponent({
         {
           ref: presentationContainer,
           class: {
-            'md-enhance-presentation': true,
+            'markdown-enhance-presentation': true,
             'loading': loading.value,
           },
         },

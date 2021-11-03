@@ -1,4 +1,4 @@
-import { IconBase } from '@mr-hope/vuepress-shared/client'
+import { IconBase } from '@starzkg/vuepress-shared/lib/esm/client'
 import { h } from 'vue'
 import type { FunctionalComponent } from 'vue'
 

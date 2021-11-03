@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.8](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-11-03)
+
+
+### Bug Fixes
+
+* update config ([465ce85](https://github.com/shentuzhigang/vuepress-theme-star/commit/465ce854089d3d19fe23209142541ccf612096ef))
+
+
+
+
+
+# [1.0.0-beta.7](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.7) (2021-11-02)
+
+
+### Bug Fixes
+
+* md-enhance ([f2bfd98](https://github.com/shentuzhigang/vuepress-theme-star/commit/f2bfd98eb0a3ce02a150ab96e6d68eb09ecdff97))
+
+
+### Features
+
+* add markdown-enhance ([09d3f0b](https://github.com/shentuzhigang/vuepress-theme-star/commit/09d3f0b480c6a50f04ce869ae7ccd51b9b5a2b21))
+
+
+
+
+
 # [1.0.0-beta.6](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-02)
 
 

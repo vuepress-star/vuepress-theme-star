@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-11-03)
+
+
+### Bug Fixes
+
+* md-enhance compilation problem ([a82f156](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a82f156cae35c0f2394f2242559ee5fd5b8e2191))
+* presentationViewer ([1fa775a](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1fa775aae0df1304cf2a75bcd928e428d4496de3))
+
+
+
+
+
+# [1.0.0-beta.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.5...v1.0.0-beta.7) (2021-11-02)
+
+
+### Bug Fixes
+
+* md-enhance ([f2bfd98](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f2bfd98eb0a3ce02a150ab96e6d68eb09ecdff97))
+
+
+### Features
+
+* add markdown-enhance ([09d3f0b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/09d3f0b480c6a50f04ce869ae7ccd51b9b5a2b21))
+
+
+
+
+
 # [1.0.0-beta.6](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-02)
 
 

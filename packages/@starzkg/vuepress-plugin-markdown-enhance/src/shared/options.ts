@@ -6,7 +6,7 @@ import type { PresentationOptions } from './presentation'
 import type { TaskListOptions } from './tasklist'
 
 /**
- * md-enhance plugin configuration
+ * markdown-enhance plugin configuration
  */
 export type MarkdownEnhanceOptions = Partial<{
   /**

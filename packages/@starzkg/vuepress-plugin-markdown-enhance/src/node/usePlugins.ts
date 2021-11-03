@@ -1,4 +1,4 @@
-import { getLocales } from '@mr-hope/vuepress-shared'
+import { getLocales } from '@starzkg/vuepress-shared/lib/node'
 import type { App } from '@vuepress/core'
 import type { ContainerPluginOptions } from '@vuepress/plugin-container'
 import type { LocaleConfig } from '@vuepress/shared'
@@ -12,7 +12,7 @@ export const usePlugins = (
 ): void => {
   const locales = getLocales(app, i18n, markdownOptions.locales)
 
-  const getContainterLocale = (
+  const getContainerLocale = (
     key: MarkdownContainerName
   ): LocaleConfig<{
     defaultInfo: string
@@ -35,13 +35,13 @@ export const usePlugins = (
     containers.forEach((type) =>
       app.use('@vuepress/container', {
         type,
-        locales: getContainterLocale(type),
+        locales: getContainerLocale(type),
       } as ContainerPluginOptions)
     )
 
     app.use('@vuepress/container', {
       type: 'details',
-      render: getDetailsRender(getContainterLocale('details')),
+      render: getDetailsRender(getContainerLocale('details')),
     } as ContainerPluginOptions)
   }
 
