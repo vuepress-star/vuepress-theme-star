@@ -36,7 +36,7 @@
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib",
+    "copy": "cpx \"src/**/{LICENSE,*.{css,svg,vue,scss,ttf,woff,eot}}\" lib",
     "docs:build": "vuepress build docs",
     "docs:clean-dev": "vuepress dev docs --clean-cache",
     "docs:dev": "vuepress dev docs",
