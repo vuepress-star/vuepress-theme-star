@@ -123,7 +123,7 @@ export default defineComponent({
 
         Promise.all(promises).then(([, revealJS, ...plugins]) => {
           // @ts-ignore
-          const reveal = new revealJS.Default(
+          const reveal = revealJS.default(
             presentationElement.value as HTMLElement,
             {
               plugins: plugins.map(
