@@ -1,12 +1,13 @@
 import type { StarThemeOptions } from '@starzkg/vuepress-theme-star'
 import { defineUserConfig } from '@vuepress/cli'
 import { path } from '@vuepress/utils'
+import { ViteBundlerOptions } from 'vuepress-vite'
 import { navbar, sidebar } from './configs'
 
 const isProd = process.env.NODE_ENV === 'production'
-
+console.log()
 // @ts-ignore
-export default defineUserConfig<StarThemeOptions>({
+export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
   base: '/vuepress-theme-star/',
   title: 'vuepress-theme-star',
   theme: '@starzkg/star',
@@ -139,10 +140,23 @@ export default defineUserConfig<StarThemeOptions>({
 
     themePlugins: {
       githubCorner: true,
+      backToTop: false,
       // only enable git plugin in production mode
       git: isProd,
       mdEnhance: {
         enableAll: true,
+        presentation: {
+          plugins: [
+            'highlight',
+            'math',
+            'search',
+            'notes',
+            'zoom',
+            'anything',
+            'audio',
+            'chalkboard',
+          ],
+        },
       },
     },
   },

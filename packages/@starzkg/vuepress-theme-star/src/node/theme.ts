@@ -47,7 +47,6 @@ export const theme: Theme<StarThemeOptions> = ({
         resolveActiveHeaderLinksPluginOptions(themePlugins),
       ],
       ['@vuepress/back-to-top', themePlugins.backToTop !== false],
-      ['@starzkg/github-corner', themePlugins.githubCorner !== false],
       [
         '@vuepress/container',
         resolveContainerPluginOptions(themePlugins, localeOptions, 'tip'),
@@ -78,6 +77,25 @@ export const theme: Theme<StarThemeOptions> = ({
       ['@vuepress/palette', { preset: 'sass' }],
       ['@vuepress/prismjs', themePlugins.prismjs !== false],
       ['@vuepress/theme-data', { themeData: localeOptions }],
+      ['@starzkg/github-corner', themePlugins.githubCorner !== false],
+      [
+        '@starzkg/markdown-enhance',
+        themePlugins.mdEnhance || {
+          enableAll: true,
+          presentation: {
+            plugins: [
+              'highlight',
+              'math',
+              'search',
+              'notes',
+              'zoom',
+              'anything',
+              'audio',
+              'chalkboard',
+            ],
+          },
+        },
+      ],
     ],
   }
 }
