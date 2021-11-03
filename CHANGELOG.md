@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.8](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-11-03)
+
+
+### Bug Fixes
+
+* md-enhance compilation problem ([a82f156](https://github.com/shentuzhigang/vuepress-theme-star/commit/a82f156cae35c0f2394f2242559ee5fd5b8e2191))
+* presentationViewer ([1fa775a](https://github.com/shentuzhigang/vuepress-theme-star/commit/1fa775aae0df1304cf2a75bcd928e428d4496de3))
+* update config ([465ce85](https://github.com/shentuzhigang/vuepress-theme-star/commit/465ce854089d3d19fe23209142541ccf612096ef))
+
+
+
+
+
 # [1.0.0-beta.7](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.7) (2021-11-02)
 
 
