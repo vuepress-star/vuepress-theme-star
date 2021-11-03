@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.9](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2021-11-03)
+
+
+### Bug Fixes
+
+* fix defect fonts file ([b9ecfd9](https://github.com/shentuzhigang/vuepress-theme-star/commit/b9ecfd9db67a00b241233255b48f5b3ede3d6791))
+* update dependencies ([c4168ff](https://github.com/shentuzhigang/vuepress-theme-star/commit/c4168ff6400a6602181c791e0da039a508ea28b9))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-11-03)
 
 
