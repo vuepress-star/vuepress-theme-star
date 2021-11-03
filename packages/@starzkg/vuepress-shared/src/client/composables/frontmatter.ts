@@ -2,13 +2,9 @@ import { usePageFrontmatter } from '@vuepress/client'
 import { useThemeData } from '@vuepress/plugin-theme-data/lib/client'
 import { computed } from 'vue'
 import type { ComputedRef } from 'vue'
-import { getAuthor, getCategory, getDate, getTag } from '../../shared'
-import type {
-  BasePageFrontMatter,
-  BaseThemeConfig,
-  DateInfo,
-  DateOptions,
-} from '../../shared'
+import { getAuthor, getCategory, getTag } from '../../shared'
+import type { BasePageFrontMatter, BaseThemeConfig } from '../../shared'
+import { DateInfo, DateOptions, getDate } from '../utils'
 
 export type AuthorRef = ComputedRef<string[]>
 
