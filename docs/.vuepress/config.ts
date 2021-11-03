@@ -5,7 +5,7 @@ import { ViteBundlerOptions } from 'vuepress-vite'
 import { navbar, sidebar } from './configs'
 
 const isProd = process.env.NODE_ENV === 'production'
-console.log()
+
 // @ts-ignore
 export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
   base: '/vuepress-theme-star/',
