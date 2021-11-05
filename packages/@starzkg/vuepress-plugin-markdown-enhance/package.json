@@ -33,6 +33,9 @@
   },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
