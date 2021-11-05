@@ -131,7 +131,7 @@ pre[class*='language-'] {
     overflow: auto;
 
     code {
-      color: #fff;
+      color: var(--code-color);
       padding: 0;
       background-color: transparent;
       border-radius: 0;
