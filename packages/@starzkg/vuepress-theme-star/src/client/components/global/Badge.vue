@@ -4,6 +4,7 @@
     :class="type"
     :style="{
       verticalAlign: vertical,
+      backgroundColor: color,
     }"
   >
     <slot>{{ text }}</slot>
@@ -18,6 +19,11 @@ defineProps({
     default: 'tip',
   },
   text: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  color: {
     type: String,
     required: false,
     default: '',
