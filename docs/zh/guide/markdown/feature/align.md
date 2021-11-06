@@ -3,7 +3,9 @@ title: 自定义对齐
 icon: align
 ---
 
-By injecting configuration into vuepress-plugin-container, you can use
+# 自定义对齐
+
+通过引入 `vuepress-plugin-container` 插件, 你可以使用
 
 ```md
 ::: center
@@ -15,11 +17,11 @@ Right paragraph
 :::
 ```
 
-To customize your paragraph alignment.
+进行段落对齐的自定义
 
 <!-- more -->
 
-## Config
+## 配置
 
 ```js {7}
 module.exports = {
@@ -35,7 +37,7 @@ module.exports = {
 };
 ```
 
-## Demo
+## 示例
 
 :::: danger
 vuepress-theme-hope v2 is still in W.I.P, the API may have
@@ -67,7 +69,7 @@ If you meet a bug during usage, you can
 ::::
 ```
 
-## Other custom containers
+## 其他自定义容器
 
 ::: info
 Information container

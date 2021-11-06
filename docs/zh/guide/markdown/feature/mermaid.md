@@ -3,6 +3,8 @@ title: Mermaid
 icon: diagram
 ---
 
+# Mermaid
+
 Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
 
 <!-- more -->

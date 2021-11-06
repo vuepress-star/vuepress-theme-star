@@ -1,7 +1,9 @@
 ---
-title: Markup
+title: 标记
 icon: write
 ---
+
+# 标记
 
 Make Markdown files in your VuePress site support markup.
 

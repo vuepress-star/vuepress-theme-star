@@ -1,5 +1,5 @@
 ---
-title: Presentation
+title: 幻灯片
 icon: slides
 ---
 

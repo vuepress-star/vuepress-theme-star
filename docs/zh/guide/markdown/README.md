@@ -2,16 +2,16 @@
 title: MarkDown 增强
 icon: markdown
 ---
-
-# 内置增强
+# MarkDown 增强
+## 内置增强
 VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定行高亮等都是开箱即用的。
 
 详细语法详见 内置 [Markdown 扩展](https://v2.vuepress.vuejs.org/zh/guide/markdown.html#header-anchors)。
 
-# 插件增强
+## 插件增强
 
 通过安装 `vuepress-plugin-markdown-enhance` VuePress插件，你可以使用更多的语法格式在你的MarkDown文件中
-## 一键启用
+### 一键启用
 你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [markdown-enhance](https://vuepress-theme-hope.github.io/markdown-enhance) 插件的所有功能。
 
 ::: tip
@@ -42,6 +42,6 @@ module.exports = {
 :::
 
 
-## 启用特定的功能
+### 启用特定的功能
 
 特定语法的配置项可以配置中找到。

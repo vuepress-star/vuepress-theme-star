@@ -1,7 +1,9 @@
 ---
-title: Task list
+title: 任务列表
 icon: check
 ---
+
+# 任务列表
 
 Let the Markdown file in your VuePress site support task list.
 

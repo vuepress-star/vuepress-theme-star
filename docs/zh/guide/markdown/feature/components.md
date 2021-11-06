@@ -2,13 +2,16 @@
 title: 组件
 ---
 
+# 组件
+
 ## Badge
 在MarkDown中使用徽章
 
 ### 属性
-text <Badge text="必填" />
+text <Badge text="必填" type="danger" />
 
 - 类型：`string`
+- 默认值：""
   
   徽章文字内容
 
@@ -28,12 +31,13 @@ color <Badge text="可选" />
   徽章颜色，CSS合法的颜色值
 
 vertical 
-- 类型：`"top" | "middle"`
-- 默认值：`"top"`
+- 类型：`"top" | "middle" | "bottom" | undefined `
+- 默认值：`"undefined"`
 
   徽章垂直方向的位置
   -  顶部<Badge text="top" vertical="top" />
   -  居中<Badge text="middle" vertical="middle" />
+  -  底部<Badge text="bottom" vertical="bottom" />
 
 ### 使用
 在MarkDown中为标题或链接添加一些状态
@@ -45,8 +49,30 @@ vertical
 - <Badge text="type" type="warning" />
 - <Badge text="color" color="grey" />
 
-## CodeGroup，CodeGroupItem
+## CodeGroup
+
 在MarkDown中可用的代码块分组
+
+### 详情
+  
+  [CodeGroupItem](components.md#codegroupitem) 组件的Wrapper
+
+## CodeGroupItem
+在MarkDown中可用的代码块分组项
+
+### 属性
+title <Badge text="必填" type="danger" />
+- 类型： `string`
+
+active
+- 类型： `boolean`
+- 默认值： `false`
+
+### 详情
+
+  该组件必须放置在 [CodeGroup](#codegroup) 组件的内部。
+
+  可以通过 `active` Prop 来设置初始激活的元素。如果不设置，默认激活第一个元素。
 
 ### 使用
 请使用 `<CodeGroup />` 包裹 `<CodeGroupItem />`。 

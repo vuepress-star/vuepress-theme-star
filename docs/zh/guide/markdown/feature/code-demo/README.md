@@ -1,5 +1,5 @@
 ---
-title: Code Demo
+title: 代码演示
 icon: discover
 ---
 

@@ -1,11 +1,13 @@
 ---
-title: Footnote
+title: 脚注
 icon: footnote
 category: markdown
 tags:
   - feature
   - markdown
 ---
+
+# 脚注
 
 Let the Markdown file in your VuePress site support footnotes.
 
