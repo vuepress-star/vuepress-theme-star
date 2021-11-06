@@ -1,4 +1,4 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
+import type { SidebarConfig } from '@starzkg/vuepress-theme-star'
 
 export const en: SidebarConfig = {
   '/guide/': [

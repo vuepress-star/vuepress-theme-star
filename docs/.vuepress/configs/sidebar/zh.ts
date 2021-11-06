@@ -1,4 +1,4 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
+import type { SidebarConfig } from '@starzkg/vuepress-theme-star'
 
 export const zh: SidebarConfig = {
   '/zh/guide/': [
@@ -23,7 +23,14 @@ export const zh: SidebarConfig = {
       link: '/zh/guide/markdown/',
       children: [
         '/zh/guide/markdown/configuration.md',
-        '/zh/guide/markdown/feature/',
+        {
+          text: '特性',
+          link: '/zh/guide/markdown/feature/',
+          children: [
+            '/zh/guide/markdown/feature/components.md',
+            '/zh/guide/markdown/feature/align.md',
+          ],
+        },
       ],
     },
   ],
