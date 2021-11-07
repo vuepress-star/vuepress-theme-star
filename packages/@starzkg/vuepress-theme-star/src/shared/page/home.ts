@@ -1,0 +1,20 @@
+import { StarThemePageFrontmatter } from './page'
+
+export interface StarThemeHomePageFrontmatter extends StarThemePageFrontmatter {
+  home: true
+  heroImage?: string
+  heroAlt?: string
+  heroText?: string | null
+  tagline?: string | null
+  actions?: {
+    text: string
+    link: string
+    type?: 'primary' | 'secondary'
+  }[]
+  features?: {
+    title: string
+    details: string
+  }[]
+  footer?: string
+  footerHtml?: boolean
+}

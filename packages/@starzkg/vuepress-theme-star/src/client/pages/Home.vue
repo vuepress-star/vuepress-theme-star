@@ -50,7 +50,7 @@ import {
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared'
-import NavLink from './NavLink.vue'
+import NavLink from '../components/NavLink.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()

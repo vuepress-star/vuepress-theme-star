@@ -30,24 +30,7 @@
     </slot>
 
     <slot name="page">
-      <Home v-if="frontmatter.home" />
-
-      <Transition
-        v-else
-        name="fade-slide-y"
-        mode="out-in"
-        @before-enter="onBeforeEnter"
-        @before-leave="onBeforeLeave"
-      >
-        <Page :key="page.path">
-          <template #top>
-            <slot name="page-top" />
-          </template>
-          <template #bottom>
-            <slot name="page-bottom" />
-          </template>
-        </Page>
-      </Transition>
+      <Component :is="frontmatter.home ? Home : Page" />
     </slot>
   </div>
 </template>
@@ -57,15 +40,11 @@ import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref, Transition } from 'vue'
 import { useRouter } from 'vue-router'
 import type { StarThemePageFrontmatter } from '../../shared'
-import Home from '../components/Home.vue'
 import Navbar from '../components/Navbar.vue'
-import Page from '../components/Page.vue'
 import Sidebar from '../components/Sidebar.vue'
-import {
-  useScrollPromise,
-  useSidebarItems,
-  useThemeLocaleData,
-} from '../composables'
+import { useSidebarItems, useThemeLocaleData } from '../composables'
+import Home from '../pages/Home.vue'
+import Page from '../pages/Page.vue'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
@@ -120,9 +99,4 @@ onMounted(() => {
 onUnmounted(() => {
   unregisterRouterHook()
 })
-
-// handle scrollBehavior with transition
-const scrollPromise = useScrollPromise()
-const onBeforeEnter = scrollPromise.resolve
-const onBeforeLeave = scrollPromise.pending
 </script>
