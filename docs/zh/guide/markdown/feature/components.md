@@ -39,6 +39,15 @@ vertical
   -  居中<Badge text="middle" vertical="middle" />
   -  底部<Badge text="bottom" vertical="bottom" />
 
+is-dot
+- 类型：Boolean
+- 默认值：true
+
+  不显示 `text`  内容，显示一个小圆点 
+
+小红点 <Badge  type="danger" is-dot/>
+
+
 ### 使用
 在MarkDown中为标题或链接添加一些状态
 ```markdown

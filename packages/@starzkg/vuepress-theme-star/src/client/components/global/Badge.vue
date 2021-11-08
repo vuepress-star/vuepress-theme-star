@@ -1,13 +1,13 @@
 <template>
   <span
     class="badge"
-    :class="type"
+    :class="[type, isDot ? 'is-dot' : '']"
     :style="{
       verticalAlign: vertical,
       backgroundColor: color,
     }"
   >
-    <slot>{{ text }}</slot>
+    <slot v-if="!isDot">{{ text }}</slot>
   </span>
 </template>
 
@@ -32,6 +32,11 @@ defineProps({
     type: String,
     required: false,
     default: undefined,
+  },
+  isDot: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
 })
 </script>
