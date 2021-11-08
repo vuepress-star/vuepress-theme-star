@@ -25,6 +25,16 @@ export const elementPlusPlugin: Plugin<GithubCornerPluginOptions> = (
     } else if (app.options.bundler.endsWith('webpack')) {
       // eslint-disable-next-line import/no-extraneous-dependencies
       app.options.bundlerConfig.chainWebpack = (config, isServer, isBuild) => {
+        config.resolve.extensions.add('.mjs')
+
+        // https://github.com/webpack/webpack/issues/11467#issuecomment-691873586
+        config.module
+          .rule('esm')
+          .test(/\.m?jsx?$/)
+          .resolve.set('fullySpecified', false)
+          .end()
+          .type('javascript/auto')
+
         config
           .plugin('element-plus')
           .use(WebpackComponents({ resolvers: [ElementPlusResolver()] }))
