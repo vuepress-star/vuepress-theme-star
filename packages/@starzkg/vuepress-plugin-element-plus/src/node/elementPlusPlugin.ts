@@ -25,9 +25,9 @@ export const elementPlusPlugin: Plugin<GithubCornerPluginOptions> = (
     } else if (app.options.bundler.endsWith('webpack')) {
       // eslint-disable-next-line import/no-extraneous-dependencies
       app.options.bundlerConfig.chainWebpack = (config, isServer, isBuild) => {
-        config.plugin.use(
-          WebpackComponents({ resolvers: [ElementPlusResolver()] })
-        )
+        config
+          .plugin('element-plus')
+          .use(WebpackComponents({ resolvers: [ElementPlusResolver()] }))
       }
     }
   }
