@@ -29,6 +29,8 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "dependencies": {
+    "@element-plus/icons": "^0.0.11",
+    "@starzkg/vuepress-plugin-element-plus": "1.0.0",
     "@starzkg/vuepress-plugin-github-corner": "1.0.0-beta.7",
     "@starzkg/vuepress-plugin-markdown-enhance": "1.0.0-beta.10",
     "@vuepress/client": "2.0.0-beta.27",

@@ -59,6 +59,12 @@ export interface StarThemePluginsOptions {
    * @see http://vuepress-theme-hope.github.io/markdown-enhance/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false
+
+  /**
+   * Enable Element Plus
+   * @see https://element-plus.gitee.io
+   */
+  elementPlus?: boolean
 }
 
 export type StarThemeLocaleOptions = StarThemeData
