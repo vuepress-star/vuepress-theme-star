@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.11](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-11-08)
+
+
+### Bug Fixes
+
+* code color ([0a79714](https://github.com/shentuzhigang/vuepress-theme-star/commit/0a79714718b5fa83be2f878bb0fb421dfaf9f897))
+* remove vuepress-theme-star ([65b2182](https://github.com/shentuzhigang/vuepress-theme-star/commit/65b21828052f80ece11a0ef8febdf5bc047637ad))
+* **vuepress-theme-star:** fix code group nav tab text color ([f7b25c4](https://github.com/shentuzhigang/vuepress-theme-star/commit/f7b25c495f390e3cf44d7b6f7bfd9fc5a5200dcd))
+
+
+### Features
+
+* **theme-star:** add element plus ([865e257](https://github.com/shentuzhigang/vuepress-theme-star/commit/865e2578eca2b7637b65dd8dda6dae0e1cf8e640))
+* **vuepress-theme-star:** add Badge color props ([9f38979](https://github.com/shentuzhigang/vuepress-theme-star/commit/9f389790a65d98f05b1ef41dc8beded6d1c96441))
+* **vuepress-theme-star:** badge is dot ([86b0adb](https://github.com/shentuzhigang/vuepress-theme-star/commit/86b0adb890f9b725d8ab750ad6a578bbf2503850))
+
+
+
+
+
 # [1.0.0-beta.10](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-11-03)
 
 
