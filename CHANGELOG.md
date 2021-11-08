@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.12](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2021-11-08)
+
+
+### Bug Fixes
+
+* **plugin-element-plus:** fix build *.mjs ([6a91952](https://github.com/shentuzhigang/vuepress-theme-star/commit/6a91952b727a680730c87524aaec4b2f647b99e6))
+* **plugin-element-plus:** fix build when webpack ([020ca04](https://github.com/shentuzhigang/vuepress-theme-star/commit/020ca040ac139928d54304bd68aa202059795238))
+
+
+
+
+
 # [1.0.0-beta.11](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-11-08)
 
 
