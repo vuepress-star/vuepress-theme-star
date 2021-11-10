@@ -3,6 +3,7 @@ import { path } from '@vuepress/utils'
 import { usePalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { MarkdownEnhanceOptions } from '../shared'
 import {
+  codeDemoDefaultSetting,
   footnote,
   katex,
   mark,
@@ -12,7 +13,6 @@ import {
   sup,
   tasklist,
 } from './markdown-it'
-import { codeDemoDefaultSetting } from './markdown-it/code-demo'
 import { usePlugins } from './usePlugins'
 
 export {
@@ -54,7 +54,7 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
   usePlugins(app, markdownOptions)
 
   return {
-    name: 'vuepress-plugin-markdown-enhance',
+    name: '@starzkg/vuepress-plugin-markdown-enhance',
 
     alias: {
       '@Mermaid': mermaidEnable
