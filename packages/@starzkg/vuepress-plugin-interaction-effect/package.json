@@ -1,12 +1,14 @@
 {
-  "name": "@starzkg/vuepress-plugin-github-corner",
-  "version": "1.0.0-beta.11",
-  "description": "VuePress plugin - github corner",
+  "name": "@starzkg/vuepress-plugin-interaction-effect",
+  "version": "1.0.0",
+  "description": "VuePress plugin - interaction effect",
   "keywords": [
     "vuepress-plugin",
     "vuepress",
     "plugin",
-    "github"
+    "interaction-effect",
+    "mouse",
+    "keyboard"
   ],
   "homepage": "https://github.com/vuepress",
   "bugs": {
@@ -32,11 +34,9 @@
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/utils": "2.0.0-beta.27",
-    "ts-debounce": "^3.0.0",
     "vue": "^3.2.20"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "710bf72b6be014c937195dd2ad8bb0eab92fd53e"
+  }
 }

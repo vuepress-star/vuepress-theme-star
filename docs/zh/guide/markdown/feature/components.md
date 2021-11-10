@@ -132,7 +132,7 @@ npm i -D vuepress-theme-hope
 </CodeGroup>
 
 ## Element Plus
-内置 Element Plus 组件库和图表库
+内置 Element Plus 组件库和图标库
 
 <el-row>
   <el-button>Default</el-button>
