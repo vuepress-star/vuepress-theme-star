@@ -46,7 +46,6 @@ export const theme: Theme<StarThemeOptions> = ({
         '@vuepress/active-header-links',
         resolveActiveHeaderLinksPluginOptions(themePlugins),
       ],
-      ['@vuepress/back-to-top', themePlugins.backToTop !== false],
       [
         '@vuepress/container',
         resolveContainerPluginOptions(themePlugins, localeOptions, 'tip'),
@@ -78,7 +77,7 @@ export const theme: Theme<StarThemeOptions> = ({
       ['@vuepress/prismjs', themePlugins.prismjs !== false],
       ['@vuepress/theme-data', { themeData: localeOptions }],
       ['@starzkg/element-plus', themePlugins.elementPlus !== false],
-      ['@starzkg/github-corner', themePlugins.githubCorner !== false],
+      ['@starzkg/components-star'],
       [
         '@starzkg/markdown-enhance',
         themePlugins.mdEnhance || {

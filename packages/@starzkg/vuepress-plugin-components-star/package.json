@@ -1,0 +1,42 @@
+{
+  "name": "@starzkg/vuepress-plugin-components-star",
+  "version": "1.0.0-beta.11",
+  "description": "VuePress plugin - Star Components",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "plugin",
+    "github"
+  ],
+  "homepage": "https://github.com/vuepress",
+  "bugs": {
+    "url": "https://github.com/vuepress/vuepress-next/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress/vuepress-next.git"
+  },
+  "license": "MIT",
+  "author": "Starzkg",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.27",
+    "@vuepress/core": "2.0.0-beta.27",
+    "@vuepress/utils": "2.0.0-beta.27",
+    "ts-debounce": "^3.0.0",
+    "vue": "^3.2.20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "710bf72b6be014c937195dd2ad8bb0eab92fd53e"
+}
