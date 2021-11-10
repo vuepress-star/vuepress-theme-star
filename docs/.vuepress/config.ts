@@ -140,7 +140,7 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
 
     themePlugins: {
       githubCorner: true,
-      backToTop: false,
+      backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
       mdEnhance: {

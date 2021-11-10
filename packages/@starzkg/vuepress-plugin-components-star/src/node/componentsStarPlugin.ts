@@ -26,5 +26,9 @@ export const componentsStarPlugin: Plugin<ComponentsStarPluginOptions> = (
       __dirname,
       '../client/clientAppEnhance.js'
     ),
+    clientAppRootComponentFiles: path.resolve(
+      __dirname,
+      '../client/components/BackToTop.js'
+    ),
   }
 }
