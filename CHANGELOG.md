@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.13](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2021-11-10)
+
+
+### Bug Fixes
+
+* fix ([40ad430](https://github.com/shentuzhigang/vuepress-theme-star/commit/40ad4302598edfb9d2373a82329b17a1bbe02b96))
+
+
+### Features
+
+* components star ([8cadebc](https://github.com/shentuzhigang/vuepress-theme-star/commit/8cadebc0bdb54be6cb14d9da91b097d3cebc2d6d))
+* **interaction-effect:** add cursor effect ([8f8dda1](https://github.com/shentuzhigang/vuepress-theme-star/commit/8f8dda188c41cbf5a54518d4773e767f7f878caa))
+
+
+
+
+
 # [1.0.0-beta.12](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2021-11-08)
 
 
