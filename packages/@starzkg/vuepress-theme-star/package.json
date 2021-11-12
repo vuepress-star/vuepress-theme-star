@@ -21,12 +21,13 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "templates"
   ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
+    "copy": "cpx \"src/**/*.{d.ts,html,vue,scss}\" lib"
   },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",

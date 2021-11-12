@@ -5,7 +5,7 @@ export interface StarThemePageData extends GitPluginPageData {
 }
 
 export interface StarThemePageFrontmatter {
-  home?: boolean
-  navbar?: boolean
+  page?: string
   pageClass?: string
+  navbar?: boolean
 }

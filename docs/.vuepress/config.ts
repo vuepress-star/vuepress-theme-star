@@ -11,6 +11,12 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
   base: '/vuepress-theme-star/',
   title: 'vuepress-theme-star',
   theme: '@starzkg/star',
+  templateDev: require.resolve(
+    '@starzkg/vuepress-theme-star/templates/index.dev.html'
+  ),
+  templateSSR: require.resolve(
+    '@starzkg/vuepress-theme-star/templates/index.ssr.html'
+  ),
   head: [
     [
       'link',
