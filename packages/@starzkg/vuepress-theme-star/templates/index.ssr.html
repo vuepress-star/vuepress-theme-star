@@ -19,25 +19,41 @@
       .loading-fade-out{transition:all .8s ease-in-out;opacity:0}
       .loading-container .tip{font-weight:700;width:100%;text-align:center;position:absolute;top:calc(50% + 57px);color:#000}
     </style>
+    <script lang="javascript">
+      document.onreadystatechange = function(){
+        if(document.readyState==='interactive'||document.readyState==='complete'){
+          // 加载完成之后关闭Loading
+          setTimeout(function() {
+            let loadingContainer = document.querySelector(".loading-container");
+            let loadingClass = loadingContainer.getAttribute("class");
+            loadingContainer.setAttribute(
+              "class",
+              loadingClass.concat(" loading-fade-out")
+            );
+            loadingContainer.addEventListener("transitionend", function() {
+              loadingContainer.style.display = "none";
+            });
+          }, 500);
+        }
+      }
+    </script>
   </head>
   <body>
-    <div id="app">
-      <!--vuepress-ssr-app-->
-      <div class="loading-container">
-        <div class="loading">
-          <div class="configure-border-1">
-            <div class="configure-core">
-            </div>
-          </div>
-          <div class="configure-border-2">
-            <div class="configure-core">
-              <img src="./logo.png" class="loading-header" width="100%"/>
-            </div>
+    <div class="loading-container">
+      <div class="loading">
+        <div class="configure-border-1">
+          <div class="configure-core">
           </div>
         </div>
-        <div class="tip">努力加载中 ……</div>
+        <div class="configure-border-2">
+          <div class="configure-core">
+            <img src="/images/logo.png" class="loading-header" width="100%"/>
+          </div>
+        </div>
       </div>
+      <div class="tip">努力加载中 ……</div>
     </div>
+    <div id="app"><!--vuepress-ssr-app--></div>
     <!--vuepress-ssr-scripts-->
   </body>
 </html>
