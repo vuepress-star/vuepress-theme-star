@@ -71,6 +71,15 @@ export type MarkdownEnhanceOptions = Partial<{
   footnote: boolean
 
   /**
+   * 是否启用流程图
+   *
+   * Whether to enable flowchart format support
+   *
+   * @default false
+   */
+
+  flowchart: boolean
+  /**
    * 是否启用标注支持
    *
    * Whether to enable mark format support

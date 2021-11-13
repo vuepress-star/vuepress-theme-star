@@ -1,3 +1,4 @@
+import FlowChart from '@FlowChart'
 import Mermaid from '@Mermaid'
 import Presentation from '@Presentation'
 import { defineClientAppEnhance } from '@vuepress/client'
@@ -16,6 +17,7 @@ export default defineClientAppEnhance(({ app }) => {
 
   if (MARKDOWN_ENHANCE_FOOTNOTE) import('./styles/footnote.scss')
 
+  app.component('FlowChart', FlowChart)
   if (MARKDOWN_ENHANCE_MERMAID) app.component('MermaidChart', Mermaid)
 
   if (MARKDOWN_ENHANCE_PRESENTATION) {

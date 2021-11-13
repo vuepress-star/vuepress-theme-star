@@ -4,6 +4,7 @@ import { usePalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { MarkdownEnhanceOptions } from '../shared'
 import {
   codeDemoDefaultSetting,
+  flowchart,
   footnote,
   katex,
   mark,
@@ -32,6 +33,8 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
   const alignEnable =
     markdownOptions.enableAll || markdownOptions.align || false
   const demoEnable = markdownOptions.enableAll || markdownOptions.demo || false
+  const flowchartEnable =
+    markdownOptions.enableAll || markdownOptions.flowchart || false
   const footnoteEnable =
     markdownOptions.enableAll || markdownOptions.footnote || false
   const tasklistEnable =
@@ -57,6 +60,9 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
     name: '@starzkg/vuepress-plugin-markdown-enhance',
 
     alias: {
+      '@FlowChart': flowchartEnable
+        ? path.resolve(__dirname, '../client/components/FlowChart.vue')
+        : '@starzkg/vuepress-shared/lib/client/noopModule.js',
       '@Mermaid': mermaidEnable
         ? path.resolve(__dirname, '../client/components/MermaidChart.js')
         : '@starzkg/vuepress-shared/lib/client/noopModule.js',
@@ -69,6 +75,7 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
       MARKDOWN_DELAY: markdownOptions.delay || 500,
       MARKDOWN_ENHANCE_ALIGN: alignEnable,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
+      MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
       MARKDOWN_ENHANCE_MERMAID: mermaidEnable,
       MARKDOWN_ENHANCE_PRESENTATION: presentationEnable,
       MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
@@ -111,6 +118,8 @@ const markdownEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, app) => {
     extendsMarkdown: (markdownIt): void => {
       if (markdownOptions.sup || markdownOptions.enableAll) markdownIt.use(sup)
       if (markdownOptions.sub || markdownOptions.enableAll) markdownIt.use(sub)
+      if (markdownOptions.flowchart || markdownOptions.enableAll)
+        markdownIt.use(flowchart)
       if (footnoteEnable) markdownIt.use(footnote)
       if (markdownOptions.mark || markdownOptions.enableAll)
         markdownIt.use(mark)
