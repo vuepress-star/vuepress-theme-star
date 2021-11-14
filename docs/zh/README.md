@@ -1,5 +1,5 @@
 ---
-page: Home
+page: DocumentHome
 title: 首页
 navbar: false
 heroImage: /images/hero.png

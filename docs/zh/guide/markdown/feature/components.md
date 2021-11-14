@@ -148,7 +148,9 @@ npm i -D vuepress-theme-hope
 
 ## Element Plus
 内置 Element Plus 组件库和图标库
-
+::: tip
+ 为了避免组件名称冲突，图标组件与Element相比需要加`icon-`前缀
+:::
 <el-row>
   <el-button>Default</el-button>
   <el-button type="primary">Primary</el-button>
@@ -178,10 +180,10 @@ npm i -D vuepress-theme-hope
 </el-row>
 
 <el-row style="margin-top: 10px">
-  <el-button icon="search" circle></el-button>
-  <el-button type="primary" icon="edit" circle></el-button>
-  <el-button type="success" icon="check" circle></el-button>
-  <el-button type="info" icon="message" circle></el-button>
-  <el-button type="warning" icon="star" circle></el-button>
-  <el-button type="danger" icon="delete" circle></el-button>
+  <el-button icon="icon-search" circle></el-button>
+  <el-button type="primary" icon="icon-edit" circle></el-button>
+  <el-button type="success" icon="icon-check" circle></el-button>
+  <el-button type="info" icon="icon-message" circle></el-button>
+  <el-button type="warning" icon="icon-star" circle></el-button>
+  <el-button type="danger" icon="icon-delete" circle></el-button>
 </el-row>
