@@ -53,8 +53,7 @@ export default defineComponent({
       }, 100)
     },
   },
-
-  onMounted(): void {
+  mounted(): void {
     const delay = (): Promise<void> =>
       new Promise((resolve) => setTimeout(resolve, 500))
 
@@ -78,7 +77,7 @@ export default defineComponent({
     })
   },
 
-  onBeforeUnmount(): void {
+  beforeUnmount(): void {
     window.removeEventListener('resize', this.resize)
   },
 
