@@ -7,7 +7,7 @@
   >
     <main class="page">
       <slot name="top" />
-
+      <PageInfo />
       <div class="theme-star-content">
         <Content />
       </div>

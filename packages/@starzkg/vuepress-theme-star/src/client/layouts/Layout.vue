@@ -31,13 +31,7 @@
 
     <slot name="page">
       <Component
-        :is="
-          pages[
-            frontmatter.page === undefined
-              ? 'page'
-              : frontmatter.page.toLocaleLowerCase()
-          ]
-        "
+        :is="frontmatter.page === undefined ? 'Page' : frontmatter.page"
       />
     </slot>
   </div>
@@ -51,10 +45,6 @@ import type { StarThemePageFrontmatter } from '../../shared'
 import Navbar from '../components/Navbar.vue'
 import Sidebar from '../components/Sidebar.vue'
 import { useSidebarItems, useThemeLocaleData } from '../composables'
-import Blog from '../pages/Blog.vue'
-import BlogHome from '../pages/BlogHome.vue'
-import Home from '../pages/Home.vue'
-import Page from '../pages/Page.vue'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
@@ -109,12 +99,4 @@ onMounted(() => {
 onUnmounted(() => {
   unregisterRouterHook()
 })
-
-// pages
-const pages = {
-  page: Page,
-  home: Home,
-  blog: Blog,
-  blogHome: BlogHome,
-}
 </script>

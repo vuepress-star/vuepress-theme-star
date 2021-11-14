@@ -5,6 +5,12 @@
       "path": "./packages/@starzkg/vuepress-plugin-components-star/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-plugin-reading-time/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-page-info/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-plugin-markdown-enhance/tsconfig.build.json"
     },
     {
