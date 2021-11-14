@@ -1,6 +1,9 @@
 <template>
   <div class="home" :aria-labelledby="heroText ? 'main-title' : undefined">
-    <div class="wrapper">
+    <div
+      class="wrapper"
+      :style="{ top: frontmatter.navbar === false ? '0' : '' }"
+    >
       <canvas id="vuepress-canvas-hack" style=""></canvas>
 
       <header class="hero">
@@ -33,7 +36,7 @@
       </div>
     </div>
 
-    <main>
+    <main :style="{ minHeight: frontmatter.navbar === false ? '100vh' : '' }">
       <div class="theme-star-content custom">
         <Content />
       </div>

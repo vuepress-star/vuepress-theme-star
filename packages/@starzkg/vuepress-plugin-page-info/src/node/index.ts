@@ -27,7 +27,7 @@ const PageInfoPlugin: Plugin<CommentOptions> = (options, app) => {
       '@Waline':
         commentOptions.type === 'waline'
           ? path.resolve(__dirname, '../client/components/Waline.js')
-          : '@starzkg/vuepress-shared/lib/esm/client/noopModule.js',
+          : '@starzkg/vuepress-shared/lib/esm/client/NoopModule.js',
     },
 
     define: () => ({
