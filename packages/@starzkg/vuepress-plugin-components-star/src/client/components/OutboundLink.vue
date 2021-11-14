@@ -9,7 +9,7 @@
  * Override the built-in `<OutboundLink>` for a11y
  */
 import { OutboundLink as RawOutboundLink } from '@vuepress/client'
-import { useThemeLocaleData } from '../../composables'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 
 const themeLocale = useThemeLocaleData()
 </script>

@@ -1,5 +1,5 @@
 ---
-home: true
+page: Home
 title: 首页
 heroImage: /images/hero.png
 actions:
