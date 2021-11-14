@@ -2,7 +2,10 @@
   <div class="home" :aria-labelledby="heroText ? 'main-title' : undefined">
     <div
       class="wrapper"
-      :style="{ top: frontmatter.navbar === false ? '0' : '' }"
+      :style="{
+        top: frontmatter.navbar === false ? '0' : '',
+        height: frontmatter.navbar === false ? '100%' : '',
+      }"
     >
       <canvas id="vuepress-canvas-hack" style=""></canvas>
 
@@ -27,16 +30,16 @@
           />
         </p>
       </header>
+    </div>
 
+    <main :style="{ minHeight: frontmatter.navbar === false ? '100vh' : '' }">
       <div v-if="features.length" class="features">
         <div v-for="feature in features" :key="feature.title" class="feature">
           <h2>{{ feature.title }}</h2>
           <p>{{ feature.details }}</p>
         </div>
       </div>
-    </div>
 
-    <main :style="{ minHeight: frontmatter.navbar === false ? '100vh' : '' }">
       <div class="theme-star-content custom">
         <Content />
       </div>

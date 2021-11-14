@@ -11,6 +11,8 @@
     height: calc(100vh - var(--navbar-height));
     bottom: 0;
     background-color: #222222;
+    display: flex;
+    align-items: center;
 
     #vuepress-canvas-hack {
       position: fixed;
@@ -86,11 +88,22 @@
         }
       }
     }
+  }
+
+  main {
+    margin-top: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    min-height: calc(100vh - var(--navbar-height));
+    max-width: var(--homepage-width);
+    background: var(--bg-color);
+    position: relative;
+    z-index: 2;
 
     .features {
-      max-width: var(--homepage-width);
-      margin: 0 auto;
-      border-top: 1px solid var(--c-border);
       transition: border-color var(--t-color);
       padding: 1.2rem 0;
       margin-top: 2.5rem;
@@ -119,20 +132,7 @@
         color: var(--c-text-lighter);
       }
     }
-  }
 
-  main {
-    margin-top: 100vh;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    min-height: calc(100vh - var(--navbar-height));
-    max-width: var(--homepage-width);
-    background: var(--bg-color);
-    position: relative;
-    z-index: 2;
     .footer {
       padding: 2.5rem;
       border-top: 1px solid var(--c-border);
