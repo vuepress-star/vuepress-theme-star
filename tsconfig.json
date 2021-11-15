@@ -8,6 +8,9 @@
       "path": "./packages/@starzkg/vuepress-plugin-reading-time/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-plugin-comment/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-plugin-page-info/tsconfig.build.json"
     },
     {

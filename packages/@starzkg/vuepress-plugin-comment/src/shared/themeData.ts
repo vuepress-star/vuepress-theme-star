@@ -1,7 +1,7 @@
 import { ThemeData } from '@vuepress/plugin-theme-data'
-import { PageInfoOptions } from './options'
+import { CommentOptions } from './options'
 export interface CommentPluginThemeData extends ThemeData {
   plugins?: {
-    comment?: PageInfoOptions | false
+    comment?: CommentOptions | false
   }
 }

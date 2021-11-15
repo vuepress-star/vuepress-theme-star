@@ -1,8 +1,9 @@
 import { defineClientAppEnhance } from '@vuepress/client'
-import PageInfo from './components/PageInfo'
+import Comment from './components/Comment'
 
 import './styles/index.scss'
 
 export default defineClientAppEnhance(({ app }) => {
-  app.component('PageInfo', PageInfo)
+  // eslint-disable-next-line vue/multi-word-component-names
+  app.component('Comment', Comment)
 })

@@ -218,7 +218,7 @@ export interface DisableCommentOptions extends BaseCommentOptions {
  *
  * Comment options
  */
-export type PageInfoOptions =
+export type CommentOptions =
   | WalineOptions
   // | VssueOptions
   | DisableCommentOptions

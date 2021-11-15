@@ -7,8 +7,8 @@ import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, defineComponent, h, resolveComponent } from 'vue'
 import type { VNode } from 'vue'
 import type {
+  CommentOptions,
   CommentPluginFrontmatter,
-  PageInfoOptions,
   PageInfoType,
 } from '../../shared'
 import { commentOptions, pageInfoI18n } from '../define'
@@ -38,7 +38,7 @@ export default defineComponent({
   setup() {
     const page = usePageData()
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>()
-    const themePluginConfig = useThemePluginConfig<PageInfoOptions>('comment')
+    const themePluginConfig = useThemePluginConfig<CommentOptions>('comment')
     const iconPrefix = useIconPrefix()
 
     const config = computed<PageInfoType[] | false>(() => {
