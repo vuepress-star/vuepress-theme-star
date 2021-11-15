@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-markdown-enhance",
-  "version": "1.0.0-beta.14",
+  "version": "1.0.0-beta.15",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@babel/core": "*",
-    "@starzkg/vuepress-shared": "1.0.0-beta.14",
+    "@starzkg/vuepress-shared": "1.0.0-beta.15",
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.11.1",
     "@types/lodash.debounce": "^4.0.6",
