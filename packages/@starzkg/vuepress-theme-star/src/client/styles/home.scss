@@ -109,11 +109,12 @@
     main {
       margin-right: auto;
       margin-left: auto;
-      min-height: calc(100vh - var(--navbar-height));
+      min-height: calc(100vh - var(--navbar-height) - 2rem);
       margin-top: calc(100vh - var(--navbar-height));
       max-width: var(--homepage-width);
       padding-left: 2rem;
       padding-right: 2rem;
+      padding-top: 2rem;
       background: var(--bg-color);
       z-index: 2;
 

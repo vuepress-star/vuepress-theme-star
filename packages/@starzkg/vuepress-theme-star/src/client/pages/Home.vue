@@ -1,6 +1,6 @@
 <template>
   <div
-    class="document home"
+    class="home"
     :style="{
       height: frontmatter.navbar === false ? '100vh' : '',
       paddingTop: frontmatter.navbar === false ? '0' : '',
