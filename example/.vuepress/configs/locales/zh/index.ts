@@ -1,12 +1,14 @@
+import navbar from './navbar'
+import sidebar from './sidebar'
 export default {
   // navbar
-  // navbar: navbar.zh,
+  navbar: navbar,
   selectLanguageName: '简体中文',
   selectLanguageText: '选择语言',
   selectLanguageAriaLabel: '选择语言',
 
   // sidebar
-  // sidebar: sidebar.zh,
+  sidebar: sidebar,
 
   // page meta
   editLinkText: '在 GitHub 上编辑此页',

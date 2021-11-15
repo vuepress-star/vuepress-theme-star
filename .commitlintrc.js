@@ -10,6 +10,6 @@ for (let i = 0; i < packages.length; i++) {
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'scope-enum': [2, 'always', ['docs', ...packages]],
+    'scope-enum': [2, 'always', ['docs', 'example', ...packages]],
   },
 }
