@@ -1,55 +1,72 @@
 <template>
-  <div class="home" :aria-labelledby="heroText ? 'main-title' : undefined">
+  <div
+    class="document home"
+    :style="{
+      height: frontmatter.navbar === false ? '100vh' : '',
+      paddingTop: frontmatter.navbar === false ? '0' : '',
+    }"
+    :aria-labelledby="heroText ? 'main-title' : undefined"
+  >
     <div
       class="wrapper"
       :style="{
-        top: frontmatter.navbar === false ? '0' : '',
-        height: frontmatter.navbar === false ? '100%' : '',
+        height: frontmatter.navbar === false ? '100vh' : '',
       }"
     >
       <canvas id="vuepress-canvas-hack" style=""></canvas>
-
-      <header class="hero">
-        <img v-if="heroImage" :src="heroImage" :alt="heroAlt" />
-
-        <h1 v-if="heroText" id="main-title">
-          {{ heroText }}
-        </h1>
-
-        <p v-if="tagline" class="description">
-          {{ tagline }}
-        </p>
-
-        <p v-if="actions.length" class="actions">
-          <NavLink
-            v-for="action in actions"
-            :key="action.text"
-            class="action-button"
-            :class="[action.type]"
-            :item="action"
-          />
-        </p>
-      </header>
     </div>
 
-    <main :style="{ minHeight: frontmatter.navbar === false ? '100vh' : '' }">
-      <div v-if="features.length" class="features">
-        <div v-for="feature in features" :key="feature.title" class="feature">
-          <h2>{{ feature.title }}</h2>
-          <p>{{ feature.details }}</p>
+    <div
+      class="content"
+      :style="{ height: frontmatter.navbar === false ? '100vh' : '' }"
+    >
+      <header>
+        <div class="hero">
+          <img v-if="heroImage" :src="heroImage" :alt="heroAlt" />
+
+          <h1 v-if="heroText" id="main-title">
+            {{ heroText }}
+          </h1>
+
+          <p v-if="tagline" class="description">
+            {{ tagline }}
+          </p>
+
+          <p v-if="actions.length" class="actions">
+            <NavLink
+              v-for="action in actions"
+              :key="action.text"
+              class="action-button"
+              :class="[action.type]"
+              :item="action"
+            />
+          </p>
         </div>
-      </div>
+      </header>
+      <main
+        :style="{
+          minHeight: frontmatter.navbar === false ? '100vh' : '',
+          marginTop: frontmatter.navbar === false ? '100vh' : '',
+        }"
+      >
+        <div v-if="features.length" class="features">
+          <div v-for="feature in features" :key="feature.title" class="feature">
+            <h2>{{ feature.title }}</h2>
+            <p>{{ feature.details }}</p>
+          </div>
+        </div>
 
-      <div class="theme-star-content custom">
-        <Content />
-      </div>
+        <div class="theme-star-content custom">
+          <Content />
+        </div>
 
-      <template v-if="footer">
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <div v-if="footerHtml" class="footer" v-html="footer" />
-        <div v-else class="footer" v-text="footer" />
-      </template>
-    </main>
+        <template v-if="footer">
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div v-if="footerHtml" class="footer" v-html="footer" />
+          <div v-else class="footer" v-text="footer" />
+        </template>
+      </main>
+    </div>
   </div>
 </template>
 

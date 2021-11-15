@@ -18,6 +18,7 @@
 
       <GithubCorner />
 
+      <Comment />
       <slot name="bottom" />
     </main>
   </Transition>
