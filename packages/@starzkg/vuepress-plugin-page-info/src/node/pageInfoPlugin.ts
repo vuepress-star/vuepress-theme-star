@@ -4,7 +4,7 @@ import type { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { usePalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { PageInfoOptions } from '../shared'
-import { pageInfoI18n, walineI18n } from './i18n'
+import { pageInfoI18n } from './i18n'
 
 export * from '../shared'
 
@@ -36,7 +36,6 @@ export const pageInfoPlugin: Plugin<PageInfoOptions> = (options, app) => {
         ...commentOptions,
       },
       PAGE_INFO_I18N: getLocales(app, pageInfoI18n, options.pageInfoLocale),
-      WALINE_I18N: getLocales(app, walineI18n, options.walineLocale),
     }),
 
     clientAppEnhanceFiles: path.resolve(

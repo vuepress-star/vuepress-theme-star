@@ -160,6 +160,10 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
           ],
         },
       },
+      comment: {
+        type: 'waline',
+        serverURL: 'https://vercel-shentuzhigang.vercel.app',
+      },
     },
   },
 

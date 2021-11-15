@@ -18,7 +18,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, app) => {
   usePalettePlugin(app, { id: 'hope' })
 
   const config: PluginObject = {
-    name: 'vuepress-plugin-comment2',
+    name: '@starzkg/vuepress-plugin-page-view',
 
     alias: {
       '@Waline':

@@ -79,7 +79,7 @@ export const theme: Theme<StarThemeOptions> = ({
       ['@starzkg/element-plus', themePlugins.elementPlus !== false],
       ['@starzkg/components-star'],
       ['@starzkg/page-info'],
-      ['@starzkg/comment'],
+      ['@starzkg/comment', themePlugins?.comment || true],
       ['@starzkg/interaction-effect'],
       [
         '@starzkg/markdown-enhance',

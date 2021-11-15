@@ -3,7 +3,7 @@ import type { Plugin, PluginObject } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { usePalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { CommentOptions } from '../shared'
-import { pageInfoI18n, walineI18n } from './i18n'
+import { walineI18n } from './i18n'
 
 export * from '../shared'
 
@@ -33,7 +33,6 @@ const CommentPlugin: Plugin<CommentOptions> = (options, app) => {
         hint: !themeConfig.pure,
         ...commentOptions,
       },
-      PAGE_INFO_I18N: getLocales(app, pageInfoI18n, options.pageInfoLocale),
       WALINE_I18N: getLocales(app, walineI18n, options.walineLocale),
     }),
 

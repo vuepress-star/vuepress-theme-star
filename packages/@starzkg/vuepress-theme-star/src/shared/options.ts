@@ -1,3 +1,4 @@
+import { CommentOptions } from '@starzkg/vuepress-plugin-comment'
 import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
@@ -59,6 +60,11 @@ export interface StarThemePluginsOptions {
    * @see http://vuepress-theme-hope.github.io/markdown-enhance/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false
+
+  /**
+   * 评论插件配置
+   */
+  comment?: CommentOptions | false
 
   /**
    * Enable Element Plus
