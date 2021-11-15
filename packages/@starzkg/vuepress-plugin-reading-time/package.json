@@ -7,26 +7,25 @@
     "reading time",
     "word count"
   ],
-  "homepage": "https://vuepress-theme-hope.github.io/reading-time/",
+  "homepage": "https://vuepress-theme-star.github.io/reading-time/",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/vuepress-theme-star/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-star.git",
     "directory": "packages/reading-time"
   },
   "license": "MIT",
   "author": {
-    "name": "Mr.Hope",
-    "email": "zhangbowang1998@gmail.com",
-    "url": "https://mrhope.site"
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
   },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "client",
-    "node"
+    "lib"
   ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",

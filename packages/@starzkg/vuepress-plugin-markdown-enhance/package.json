@@ -18,11 +18,11 @@
   ],
   "homepage": "https://vuepress-md-enhance.mrhope.site/",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/Mister-Hope/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+https://github.com/Mister-Hope/vuepress-theme-star.git",
     "directory": "packages/markdown-enhance"
   },
   "license": "MIT",

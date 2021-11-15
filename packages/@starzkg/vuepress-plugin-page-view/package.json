@@ -10,20 +10,20 @@
     "vssue",
     "page-info"
   ],
-  "homepage": "https://vuepress-theme-hope.github.io/comment/",
+  "homepage": "https://vuepress-theme-star.github.io/comment/",
   "bugs": {
-    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/vuepress-theme-star/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "url": "git+https://github.com/vuepress-theme-star/vuepress-theme-star.git",
     "directory": "packages/comment"
   },
   "license": "MIT",
   "author": {
-    "name": "Mr.Hope",
-    "email": "zhangbowang1998@gmail.com",
-    "url": "https://mrhope.site"
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
   },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",

@@ -1,26 +1,26 @@
 {
   "name": "@starzkg/vuepress-shared",
   "version": "1.0.0-beta.14",
-  "description": "Shared files for vuepress-theme-hope",
+  "description": "Shared files for vuepress-theme-star",
   "keywords": [
-    "vuepress-theme-hope",
+    "vuepress-theme-star",
     "vuepress",
     "starzkg"
   ],
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/v2/packages/shared#readme",
+  "homepage": "https://github.com/vuepress-theme-star/vuepress-theme-star/tree/v2/packages/shared#readme",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
+    "url": "https://github.com/vuepress-theme-star/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-hope.git",
+    "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-star.git",
     "directory": "packages/shared"
   },
   "license": "MIT",
   "author": {
-    "name": "Mr.Hope",
-    "email": "zhangbowang1998@gmail.com",
-    "url": "https://mrhope.site"
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
   },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
