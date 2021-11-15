@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-11-15)
+
+
+### Bug Fixes
+
+* fix ([f944cee](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f944ceece7dad6fb332c0bd2d605d10b358b05e4))
+
+
+### Features
+
+* test comment ([c9ba861](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c9ba861504c109dfacf99e788a73ed59d342350b))
+* upload code ([7e9188c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7e9188c95d056aa2e2c5d649026759642450bbab))
+
+
+
+
+
 # [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 **Note:** Version bump only for package vuepress-plugin-comment2

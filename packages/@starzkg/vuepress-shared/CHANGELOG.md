@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.14](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-11-15)
+
+
+### Bug Fixes
+
+* unplugin-vue-components/resolvers ([f5d4b71](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f5d4b713019352a57ab27c84c4840e3fb119d9c6))
+
+
+### Features
+
+* test comment ([c9ba861](https://github.com/Mister-Hope/vuepress-theme-hope/commit/c9ba861504c109dfacf99e788a73ed59d342350b))
+
+
+
+
+
 # [1.0.0-beta.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-11-03)
 
 

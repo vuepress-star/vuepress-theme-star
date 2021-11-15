@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.14](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-11-15)
+
+
+### Bug Fixes
+
+* fix ([f944cee](https://github.com/shentuzhigang/vuepress-theme-star/commit/f944ceece7dad6fb332c0bd2d605d10b358b05e4))
+* fix document home ([4660853](https://github.com/shentuzhigang/vuepress-theme-star/commit/4660853a9d7c25e50de58bafc640e3ea47ffbc0b))
+* home full screen ([2e27858](https://github.com/shentuzhigang/vuepress-theme-star/commit/2e278588a0de1b99bf13c58abb678b6a81e5a296))
+
+
+### Features
+
+* 提取全局组件 ([76313e3](https://github.com/shentuzhigang/vuepress-theme-star/commit/76313e3d4e331cf41d944581bc9890a57062b2e4))
+* document home and fix component name repeat ([def2b2a](https://github.com/shentuzhigang/vuepress-theme-star/commit/def2b2a069aa27191d2f8ef05ba6cdb06cfc4bd1))
+* more pages ([c45bb87](https://github.com/shentuzhigang/vuepress-theme-star/commit/c45bb87060dd27e4ca5a4e6c0a6a75de3dc533d6))
+* remove template ([5e78214](https://github.com/shentuzhigang/vuepress-theme-star/commit/5e782140b2a9f6b9f6f209fb84c3456cbc0255d8))
+* test comment ([c9ba861](https://github.com/shentuzhigang/vuepress-theme-star/commit/c9ba861504c109dfacf99e788a73ed59d342350b))
+* update index.html ([02cfcff](https://github.com/shentuzhigang/vuepress-theme-star/commit/02cfcfffe93c88289c38dbce1533f7082829878a))
+* upload code ([7e9188c](https://github.com/shentuzhigang/vuepress-theme-star/commit/7e9188c95d056aa2e2c5d649026759642450bbab))
+
+
+
+
+
 # [1.0.0-beta.13](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2021-11-10)
 
 

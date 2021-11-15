@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.14](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-11-15)
+
+
+### Bug Fixes
+
+* **plugin-markdown-enhance:** fix flowchart ([1c4e16c](https://github.com/Mister-Hope/vuepress-theme-hope/commit/1c4e16c17c15a29bdbd70354c64193e6e36f58e0))
+* unplugin-vue-components/resolvers ([f5d4b71](https://github.com/Mister-Hope/vuepress-theme-hope/commit/f5d4b713019352a57ab27c84c4840e3fb119d9c6))
+
+
+### Features
+
+* **plugin-markdown-enhance:** add flowchart ([e2d9bf3](https://github.com/Mister-Hope/vuepress-theme-hope/commit/e2d9bf3d192c0dcd3cef90f9e8355c5d54e87850))
+
+
+
+
+
 # [1.0.0-beta.11](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-11-08)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance
