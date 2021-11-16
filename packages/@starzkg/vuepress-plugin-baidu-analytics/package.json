@@ -1,0 +1,43 @@
+{
+  "name": "@starzkg/vuepress-plugin-baidu-analytics",
+  "version": "1.0.0",
+  "description": "VuePress plugin - baidu-analytics",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "plugin",
+    "baidu",
+    "analytics"
+  ],
+  "homepage": "https://github.com/roiding",
+  "bugs": {
+    "url": "https://github.com/roiding/plugin-baidu-analytics/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roiding/plugin-baidu-analytics.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.27",
+    "@vuepress/core": "2.0.0-beta.27",
+    "@vuepress/utils": "2.0.0-beta.27"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

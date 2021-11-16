@@ -202,6 +202,12 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
       },
     ],
     [
+      '@starzkg/baidu-analytics',
+      {
+        id: process.env.DOCS_BA_ID,
+      },
+    ],
+    [
       '@vuepress/plugin-register-components',
       {
         componentsDir: path.resolve(__dirname, './components'),
