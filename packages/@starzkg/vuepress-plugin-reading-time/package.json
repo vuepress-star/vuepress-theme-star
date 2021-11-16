@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-reading-time",
-  "version": "1.0.0-beta.15",
+  "version": "1.0.0-beta.16",
   "description": "Reading time plugin for VuePress",
   "keywords": [
     "vuepress-plugin",
@@ -33,7 +33,7 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-shared": "1.0.0-beta.15",
+    "@starzkg/vuepress-shared": "1.0.0-beta.16",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27"
   },

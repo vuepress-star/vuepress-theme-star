@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-theme-star",
-  "version": "1.0.0-beta.15",
+  "version": "1.0.0-beta.16",
   "description": "A theme of VuePress",
   "keywords": [
     "vuepress-theme",
@@ -30,12 +30,12 @@
   },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
-    "@starzkg/vuepress-plugin-comment": "1.0.0-beta.15",
-    "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.14",
-    "@starzkg/vuepress-plugin-element-plus": "1.0.0-beta.14",
-    "@starzkg/vuepress-plugin-interaction-effect": "1.0.0-beta.13",
-    "@starzkg/vuepress-plugin-markdown-enhance": "1.0.0-beta.15",
-    "@starzkg/vuepress-plugin-page-info": "1.0.0-beta.15",
+    "@starzkg/vuepress-plugin-comment": "1.0.0-beta.16",
+    "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.16",
+    "@starzkg/vuepress-plugin-element-plus": "1.0.0-beta.16",
+    "@starzkg/vuepress-plugin-interaction-effect": "1.0.0-beta.16",
+    "@starzkg/vuepress-plugin-markdown-enhance": "1.0.0-beta.16",
+    "@starzkg/vuepress-plugin-page-info": "1.0.0-beta.16",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.27",

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.16](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-11-16)
+
+
+### Bug Fixes
+
+* fix home height ([58efc6b](https://github.com/shentuzhigang/vuepress-theme-star/commit/58efc6b2f4ba25ba8f02490950a3a53b7fae4ab7))
+* **theme-star:** fix home ([9ecfe0d](https://github.com/shentuzhigang/vuepress-theme-star/commit/9ecfe0d4ab36cd45586de983a479e7b0cae3bba6))
+
+
+### Features
+
+* scrollbar css ([499e05b](https://github.com/shentuzhigang/vuepress-theme-star/commit/499e05bb9f99bcf3cc7402c0d1886afb3496f156))
+
+
+
+
+
 # [1.0.0-beta.15](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2021-11-15)
 
 **Note:** Version bump only for package @starzkg/vuepress-theme-star
