@@ -45,8 +45,9 @@
       </header>
       <main
         :style="{
-          minHeight: frontmatter.navbar === false ? '100vh' : '',
-          marginTop: frontmatter.navbar === false ? '100vh' : '',
+          minHeight:
+            frontmatter.navbar === false ? 'calc(100vh - 2rem)' : undefined,
+          marginTop: frontmatter.navbar === false ? '100vh' : undefined,
         }"
       >
         <div v-if="features.length" class="features">
