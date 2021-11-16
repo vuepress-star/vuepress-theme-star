@@ -32,7 +32,10 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
         href: `/images/icons/favicon-32x32.png`,
       },
     ],
-    ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
+    [
+      'link',
+      { rel: 'manifest', href: '/vuepress-theme-star/manifest.webmanifest' },
+    ],
     ['meta', { name: 'application-name', content: 'VuePress' }],
     ['meta', { name: 'apple-mobile-web-app-title', content: 'VuePress' }],
     [
