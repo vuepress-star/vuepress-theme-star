@@ -53,6 +53,7 @@
 
         h1 {
           font-size: 3rem;
+          white-space: nowrap;
         }
 
         h1,
@@ -158,7 +159,7 @@
 }
 
 @media (max-width: $MQMobile) {
-  .home {
+  .document.home .content main {
     .features {
       flex-direction: column;
     }
@@ -171,39 +172,39 @@
 }
 
 @media (max-width: $MQMobileNarrow) {
-  .home {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .document.home .content {
+    header {
+      .hero {
+        img {
+          max-height: 210px;
+          margin: 2rem auto 1.2rem;
+        }
 
-    .hero {
-      img {
-        max-height: 210px;
-        margin: 2rem auto 1.2rem;
-      }
+        h1 {
+          font-size: 2rem;
+        }
 
-      h1 {
-        font-size: 2rem;
-      }
+        h1,
+        .description,
+        .actions {
+          margin: 1.2rem auto;
+        }
 
-      h1,
-      .description,
-      .actions {
-        margin: 1.2rem auto;
-      }
+        .description {
+          font-size: 1.2rem;
+        }
 
-      .description {
-        font-size: 1.2rem;
-      }
-
-      .action-button {
-        font-size: 1rem;
-        padding: 0.6rem 1.2rem;
+        .action-button {
+          font-size: 1rem;
+          padding: 0.6rem 1.2rem;
+        }
       }
     }
-
-    .feature {
-      h2 {
-        font-size: 1.25rem;
+    main {
+      .feature {
+        h2 {
+          font-size: 1.25rem;
+        }
       }
     }
   }
