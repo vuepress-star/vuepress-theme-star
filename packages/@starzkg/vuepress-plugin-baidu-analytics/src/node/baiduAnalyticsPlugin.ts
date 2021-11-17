@@ -3,10 +3,11 @@ import { logger, path } from '@vuepress/utils'
 
 export interface BaiduAnalyticsPluginOptions {
   id: string
+  spa: boolean
 }
 
 export const baiduAnalyticsPlugin: Plugin<BaiduAnalyticsPluginOptions> = (
-  { id },
+  { id, spa },
   app
 ) => {
   const plugin: PluginObject = {
@@ -32,6 +33,7 @@ export const baiduAnalyticsPlugin: Plugin<BaiduAnalyticsPluginOptions> = (
 
     define: {
       __BAIDU_ID__: id,
+      __BAIDU_SPA__: spa !== false,
     },
   }
 }
