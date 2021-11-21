@@ -1,4 +1,4 @@
-import { useLocaleConfig } from '@starzkg/vuepress-shared/lib/esm/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { usePageFrontmatter, useSiteData } from '@vuepress/client'
 import { computed, defineComponent, h, onMounted, ref, watch } from 'vue'
 import type { VNode } from 'vue'

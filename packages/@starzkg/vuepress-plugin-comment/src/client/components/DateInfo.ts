@@ -1,7 +1,4 @@
-import {
-  useDate,
-  useLocaleConfig,
-} from '@starzkg/vuepress-shared/lib/esm/client'
+import { useDate, useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { usePageData } from '@vuepress/client'
 import type { GitData } from '@vuepress/plugin-git'
 import { computed, defineComponent, h } from 'vue'

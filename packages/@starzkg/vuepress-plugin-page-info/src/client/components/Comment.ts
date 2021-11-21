@@ -1,5 +1,5 @@
 // TODO: Support it when vssue support vuepress2
-// import { usePageTitle } from "@starzkg/vuepress-shared/lib/esm/client";
+// import { usePageTitle } from "@starzkg/vuepress-shared/es/client";
 import { usePageFrontmatter } from '@vuepress/client'
 import Waline from '@Waline'
 import { computed, defineComponent, h } from 'vue'

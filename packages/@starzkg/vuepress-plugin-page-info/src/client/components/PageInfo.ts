@@ -2,7 +2,7 @@ import {
   useIconPrefix,
   useLocaleConfig,
   useThemePluginConfig,
-} from '@starzkg/vuepress-shared/lib/esm/client'
+} from '@starzkg/vuepress-shared/es/client'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, defineComponent, h, resolveComponent } from 'vue'
 import type { VNode } from 'vue'

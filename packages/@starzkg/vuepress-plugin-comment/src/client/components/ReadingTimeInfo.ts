@@ -1,5 +1,5 @@
 import type { ReadingTime } from '@starzkg/vuepress-plugin-reading-time'
-import { useLocaleConfig } from '@starzkg/vuepress-shared/lib/esm/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { usePageData } from '@vuepress/client'
 import { computed, defineComponent, h } from 'vue'
 import type { VNode } from 'vue'

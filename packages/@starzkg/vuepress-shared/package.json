@@ -23,15 +23,17 @@
     "url": "https://shentuzhigang.cn"
   },
   "main": "lib/node/index.js",
+  "module": "es/client/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
+    "es",
     "lib",
     "styles"
   ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
-    "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
+    "clean": "rimraf lib es *.tsbuildinfo",
+    "copy": "cpx \"src/node/**/*.{css,svg,vue,scss}\" lib && cpx \"src/client/**/*.{css,svg,vue,scss}\" es"
   },
   "dependencies": {
     "@types/webpack-dev-server": "^4.3.1",

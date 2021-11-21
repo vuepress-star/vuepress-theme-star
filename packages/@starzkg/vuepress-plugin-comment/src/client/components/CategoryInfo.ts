@@ -2,7 +2,7 @@ import {
   useBlogConfig,
   useCategory,
   useLocaleConfig,
-} from '@starzkg/vuepress-shared/lib/esm/client'
+} from '@starzkg/vuepress-shared/es/client'
 import { computed, defineComponent, h, toRef } from 'vue'
 import type { PropType, VNode } from 'vue'
 import { useRoute, useRouter } from 'vue-router'

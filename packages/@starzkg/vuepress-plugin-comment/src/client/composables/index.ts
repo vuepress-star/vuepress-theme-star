@@ -1,4 +1,4 @@
-import { useThemePluginConfig } from '@starzkg/vuepress-shared/lib/esm/client'
+import { useThemePluginConfig } from '@starzkg/vuepress-shared/es/client'
 import type { CommentPluginFrontmatter, WalineOptions } from '../../shared'
 import { enableWaline, walineOption } from '../define'
 

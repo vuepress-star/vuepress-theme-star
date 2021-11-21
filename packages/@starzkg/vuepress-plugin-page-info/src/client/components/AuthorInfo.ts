@@ -1,8 +1,5 @@
 // TODO: Support author links
-import {
-  useAuthor,
-  useLocaleConfig,
-} from '@starzkg/vuepress-shared/lib/esm/client'
+import { useAuthor, useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
 import { commentOptions, pageInfoI18n } from '../define'

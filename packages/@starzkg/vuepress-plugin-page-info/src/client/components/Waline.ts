@@ -1,7 +1,7 @@
 import {
   useLocaleConfig,
   useThemePluginConfig,
-} from '@starzkg/vuepress-shared/lib/esm/client'
+} from '@starzkg/vuepress-shared/es/client'
 import { usePageFrontmatter, usePageLang } from '@vuepress/client'
 import type { WalineInstance } from '@waline/client'
 import {

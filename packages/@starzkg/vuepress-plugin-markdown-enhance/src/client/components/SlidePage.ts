@@ -1,4 +1,4 @@
-import { clickOutside } from '@starzkg/vuepress-shared/lib/esm/client'
+import { clickOutside } from '@starzkg/vuepress-shared/es/client'
 import { Content } from '@vuepress/client'
 import { defineComponent, h, onBeforeUnmount, ref, withDirectives } from 'vue'
 import type { VNode } from 'vue'
