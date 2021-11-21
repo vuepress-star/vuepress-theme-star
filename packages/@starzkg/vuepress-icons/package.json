@@ -1,0 +1,51 @@
+{
+  "name": "@starzkg/vuepress-icons",
+  "version": "0.0.11",
+  "description": "Icon library for Vuepress",
+  "keywords": [
+    "icon",
+    "svg",
+    "vuepress"
+  ],
+  "homepage": "https://element-plus.org/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-star/vuepress-theme-star/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/element-plus/element-plus-icons.git",
+    "directory": "packages/@starzkg/vuepress-icons"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
+  },
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "unpkg": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "es",
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "build": "yarn gen && tsc -b tsconfig.build.json",
+    "clean": "rimraf lib es *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.vue\" es && cpx \"src/**/*.vue\" lib",
+    "gen": "node ./scripts/generate.js && yarn prettier",
+    "prettier": "prettier ./src -w"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "svgo": "^2.3.1",
+    "vue": "^3.1.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
