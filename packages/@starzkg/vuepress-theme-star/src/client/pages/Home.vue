@@ -146,8 +146,8 @@ onMounted(() => {
   for (let i = 0; i < 500; i++) {
     yPositions[i] = 0
   }
-  const width = (renderCanvas.width = window.innerWidth)
-  const height = (renderCanvas.height = window.innerHeight)
+  let width = (renderCanvas.width = window.innerWidth)
+  let height = (renderCanvas.height = window.innerHeight)
   const ctx = renderCanvas.getContext('2d')
   if (ctx != null) {
     setInterval(() => {
@@ -169,5 +169,9 @@ onMounted(() => {
       })
     }, 30)
   }
+  window.addEventListener('resize', () => {
+    width = renderCanvas.width = window.innerWidth
+    height = renderCanvas.height = window.innerHeight
+  })
 })
 </script>
