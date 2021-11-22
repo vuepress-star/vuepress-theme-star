@@ -1,5 +1,5 @@
-import { CommentOptions } from '@starzkg/vuepress-plugin-comment'
 import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
+import type { PageEnhanceOptions } from '@starzkg/vuepress-plugin-page-enhance'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
 import type { NavbarConfig, SidebarConfig } from './nav'
@@ -14,11 +14,6 @@ export interface StarThemePluginsOptions {
    * Enable @vuepress/plugin-back-to-top or not
    */
   backToTop?: boolean
-
-  /**
-   * Enable @starzkg/vuepress-plugin-github-corner or not
-   */
-  githubCorner?: boolean
 
   /**
    * Enable @vuepress/plugin-container or not
@@ -62,9 +57,10 @@ export interface StarThemePluginsOptions {
   mdEnhance?: MarkdownEnhanceOptions | false
 
   /**
-   * 评论插件配置
+   * Page enhance plugin options
+   * 页面增强插件配置
    */
-  comment?: CommentOptions | false
+  pageEnhance?: PageEnhanceOptions | false
 
   /**
    * Enable Element Plus

@@ -78,8 +78,7 @@ export const theme: Theme<StarThemeOptions> = ({
       ['@vuepress/theme-data', { themeData: localeOptions }],
       ['@starzkg/element-plus', themePlugins.elementPlus !== false],
       ['@starzkg/components-star'],
-      ['@starzkg/page-info'],
-      ['@starzkg/comment', themePlugins?.comment || true],
+      ['@starzkg/page-enhance', themePlugins?.pageEnhance || true],
       ['@starzkg/interaction-effect'],
       [
         '@starzkg/markdown-enhance',

@@ -144,7 +144,6 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
     },
 
     themePlugins: {
-      githubCorner: true,
       backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
@@ -163,7 +162,7 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
           ],
         },
       },
-      comment: {
+      pageEnhance: {
         type: 'waline',
         serverURL: 'https://vercel-shentuzhigang.vercel.app',
       },

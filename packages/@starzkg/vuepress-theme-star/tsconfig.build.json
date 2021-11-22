@@ -2,8 +2,7 @@
   "extends": "../../../tsconfig.base.json",
   "references": [
     { "path": "../vuepress-plugin-components-star/tsconfig.build.json" },
-    { "path": "../vuepress-plugin-comment/tsconfig.build.json" },
-    { "path": "../vuepress-plugin-page-info/tsconfig.build.json" },
+    { "path": "../vuepress-plugin-page-enhance/tsconfig.build.json" },
     { "path": "../vuepress-plugin-element-plus/tsconfig.build.json" },
     { "path": "../vuepress-plugin-markdown-enhance/tsconfig.build.json" },
     { "path": "../vuepress-plugin-interaction-effect/tsconfig.build.json" },
