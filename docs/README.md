@@ -1,5 +1,5 @@
 ---
-page: Home
+page: DocumentHome
 title: Home
 heroImage: /images/hero.png
 actions:

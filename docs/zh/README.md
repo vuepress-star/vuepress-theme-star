@@ -1,7 +1,6 @@
 ---
 page: DocumentHome
 title: 首页
-navbar: false
 heroImage: /images/hero.png
 actions:
   - text: 快速上手

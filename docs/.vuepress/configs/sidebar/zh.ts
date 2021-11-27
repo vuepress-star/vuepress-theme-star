@@ -59,6 +59,9 @@ export const zh: SidebarConfig = {
       children: [
         '/zh/guide/page/home.md',
         '/zh/guide/page/normal.md',
+        '/zh/guide/page/document.md',
+        '/zh/guide/page/spreadsheet.md',
+        '/zh/guide/page/presentation.md',
         '/zh/guide/page/blog.md',
         '/zh/guide/page/wiki.md',
       ],
