@@ -9,6 +9,16 @@ actions:
   - text: Introduction
     link: /guide/
     type: secondary
+links:
+  - text: Baidu
+    icon: Baidu
+    url: https://baidu.com
+  - text: Google
+    icon: Google
+    url: https://google.com
+  - text: Bing
+    icon: Bing
+    url: https://bing.com
 features:
   - title: Simplicity First
     details: Minimal setup with markdown-centered project structure helps you focus on writing.

@@ -11,6 +11,11 @@ export interface StarThemeHomePageFrontmatter extends StarThemePageFrontmatter {
     link: string
     type?: 'primary' | 'secondary'
   }[]
+  links?: {
+    text: string
+    icon: string
+    url: string
+  }[]
   features?: {
     title: string
     details: string

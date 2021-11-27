@@ -41,6 +41,9 @@
               :item="action"
             />
           </p>
+          <p class="links">
+            <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
+          </p>
         </div>
       </header>
       <main
@@ -72,6 +75,7 @@
 </template>
 
 <script setup lang="ts">
+import { Search as Google } from '@starzkg/vuepress-icons'
 import {
   usePageFrontmatter,
   useSiteLocaleData,
@@ -81,7 +85,6 @@ import { isArray } from '@vuepress/shared'
 import { computed, onMounted } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared'
 import NavLink from '../components/NavLink.vue'
-
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
 
@@ -124,6 +127,20 @@ const actions = computed(() => {
     link,
     type,
   }))
+})
+
+// links list
+const links = computed(() => {
+  if (!isArray(frontmatter.value.links)) {
+    return []
+  }
+  return frontmatter.value.links.map(({ text, icon, url }) => {
+    return {
+      text,
+      icon: (icon.startsWith('icon-') ? '' : 'icon-') + icon,
+      url,
+    }
+  })
 })
 
 // feature list

@@ -29,6 +29,7 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
+    "@starzkg/vuepress-icons": "0.0.11",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-palette": "2.0.0-beta.27",

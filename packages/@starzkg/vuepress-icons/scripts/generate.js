@@ -48,8 +48,9 @@ const config = {
       fn(ast) {
         const { type, name } = ast
         if (type === 'element' && name === 'path') {
-          ast.attributes.stroke = 'currentColor'
-          ast.attributes.fill = 'none'
+          // ast.attributes.stroke = 'currentColor'
+          // ast.attributes.fill = 'none'
+          ast.attributes.fill = 'currentColor'
         }
       },
     },
