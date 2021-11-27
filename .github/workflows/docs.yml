@@ -52,11 +52,11 @@ jobs:
 
       - name: Combine output
         run: |
-          yarn cpx "example/.vuepress/dist" dist
-          yarn cpx "docs/.vuepress/dist" dist/docs
+          yarn cpx "example/.vuepress/dist/**" dist
+          yarn cpx "docs/.vuepress/dist/**" dist/docs
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2.2.0
+        uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
           repo: shentuzhigang/vuepress-theme-star
           target_branch: gh-pages
