@@ -11,5 +11,5 @@ export default {
   /**
    * Chinese locale config
    */
-  'zh': zh,
+  '/zh/': zh,
 }

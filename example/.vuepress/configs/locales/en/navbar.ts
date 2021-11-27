@@ -1,22 +1,22 @@
 export default [
   {
-    text: '主页',
+    text: 'Home',
     link: '/',
   },
   {
-    text: '博客',
+    text: 'Blog',
     link: '/blog/',
   },
   {
-    text: '文档',
+    text: 'Document',
     link: '/document/',
   },
   {
-    text: '表格',
+    text: 'SpreadSheet',
     link: '/spreadsheet/',
   },
   {
-    text: '演示',
+    text: 'Presentation',
     link: '/presentation/',
   },
 ]
