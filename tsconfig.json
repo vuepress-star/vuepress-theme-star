@@ -11,6 +11,12 @@
       "path": "./packages/@starzkg/vuepress-plugin-components-star/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-plugin-copy-code/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-copy-to-clipboard/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-plugin-page-enhance/tsconfig.build.json"
     },
     {

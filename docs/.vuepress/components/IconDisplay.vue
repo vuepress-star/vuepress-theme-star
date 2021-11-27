@@ -1,7 +1,7 @@
 <template>
   <div class="icon-display-container">
     <div v-for="(icon, name) in Icons" :key="icon" class="icon-item">
-      <span class="demo-svg-icon">
+      <span class="demo-svg-icon" @click="copyIcon(name)">
         <Component :is="icon" class="icon" />
         <span class="text" v-text="name" />
       </span>
@@ -11,10 +11,14 @@
 
 <script setup lang="ts">
 import * as Icons from '@starzkg/vuepress-icons/es'
+import { useCopyToClipboard } from '@starzkg/vuepress-plugin-copy-to-clipboard/lib/client'
 import { computed } from 'vue'
 const icons = computed(() => {
   return Icons
 })
+const copyIcon = (icon: string) => {
+  useCopyToClipboard(`<${icon} />`)
+}
 </script>
 
 <style lang="scss" scoped>

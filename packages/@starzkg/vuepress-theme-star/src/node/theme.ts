@@ -79,6 +79,12 @@ export const theme: Theme<StarThemeOptions> = ({
       ['@starzkg/element-plus', themePlugins.elementPlus !== false],
       ['@starzkg/components-star'],
       ['@starzkg/page-enhance', themePlugins?.pageEnhance || true],
+      [
+        '@starzkg/copy-code',
+        {
+          selector: '.theme-star-content div[class*="language-"] pre',
+        },
+      ],
       ['@starzkg/interaction-effect'],
       [
         '@starzkg/markdown-enhance',
