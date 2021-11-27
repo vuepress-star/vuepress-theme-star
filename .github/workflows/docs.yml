@@ -44,8 +44,16 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
+      - name: Build example site
+        run: yarn example:release
+
       - name: Build documentation site
         run: yarn docs:release
+
+      - name: Combine output
+        run: |
+          yarn cpx "example/.vuepress/dist" dist
+          yarn cpx "docs/.vuepress/dist" dist/docs
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
