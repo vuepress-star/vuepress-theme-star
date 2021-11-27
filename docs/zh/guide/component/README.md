@@ -1,7 +1,7 @@
 ---
 title: 组件
+icon: component
 ---
-
 # 组件
 
 ## Badge
@@ -12,7 +12,7 @@ text <Badge text="必填" type="danger" />
 
 - 类型：`string`
 - 默认值：""
-  
+
   徽章文字内容
 
 type
@@ -30,7 +30,7 @@ color <Badge text="可选" />
 
   徽章颜色，CSS合法的颜色值
 
-vertical 
+vertical
 - 类型：`"top" | "middle" | "bottom" | undefined `
 - 默认值：`"undefined"`
 
@@ -43,7 +43,7 @@ is-dot
 - 类型：Boolean
 - 默认值：true
 
-  不显示 `text`  内容，显示一个小圆点 
+  不显示 `text`  内容，显示一个小圆点
 
 小红点 <Badge  type="danger" is-dot/>
 
@@ -63,8 +63,8 @@ is-dot
 在MarkDown中可用的代码块分组
 
 ### 详情
-  
-  [CodeGroupItem](components.md#codegroupitem) 组件的Wrapper
+
+[CodeGroupItem](components.md#codegroupitem) 组件的Wrapper
 
 ## CodeGroupItem
 在MarkDown中可用的代码块分组项
@@ -79,14 +79,14 @@ active
 
 ### 详情
 
-  该组件必须放置在 [CodeGroup](#codegroup) 组件的内部。
+该组件必须放置在 [CodeGroup](#codegroup) 组件的内部。
 
-  可以通过 `active` Prop 来设置初始激活的元素。如果不设置，默认激活第一个元素。
+可以通过 `active` Prop 来设置初始激活的元素。如果不设置，默认激活第一个元素。
 
 ### 使用
-请使用 `<CodeGroup />` 包裹 `<CodeGroupItem />`。 
+请使用 `<CodeGroup />` 包裹 `<CodeGroupItem />`。
 
-对于每个 `<CodeGroupItem />`，你需要设置 `title` 属性作为选项卡的标题，并仅在选项卡内放置一个代码块。你还可以在其中一个 `<CodeGroupItem />` 上设置 active 属性使其默认激活。 
+对于每个 `<CodeGroupItem />`，你需要设置 `title` 属性作为选项卡的标题，并仅在选项卡内放置一个代码块。你还可以在其中一个 `<CodeGroupItem />` 上设置 active 属性使其默认激活。
 
 ::: tip
 
@@ -122,7 +122,7 @@ npm i -D vuepress-theme-hope
 yarn add -D vuepress-theme-hope
 ```
   </CodeGroupItem>
-  
+
   <CodeGroupItem title="npm" active>
 
 ```bash
@@ -149,16 +149,16 @@ npm i -D vuepress-theme-hope
 ## Element Plus
 内置 Element Plus 组件库和图标库
 ::: tip
- 为了避免组件名称冲突，图标组件与Element相比需要加`icon-`前缀
+为了避免组件名称冲突，图标组件与Element相比需要加`icon-`前缀
 :::
 <el-row>
-  <el-button>Default</el-button>
-  <el-button type="primary">Primary</el-button>
-  <el-button type="success">Success</el-button>
-  <el-button type="info">Info</el-button>
-  <el-button type="warning">Warning</el-button>
-  <el-button type="danger">Danger</el-button>
-  <el-button>中文</el-button>
+<el-button>Default</el-button>
+<el-button type="primary">Primary</el-button>
+<el-button type="success">Success</el-button>
+<el-button type="info">Info</el-button>
+<el-button type="warning">Warning</el-button>
+<el-button type="danger">Danger</el-button>
+<el-button>中文</el-button>
 </el-row>
 
 <el-row style="margin-top: 10px">

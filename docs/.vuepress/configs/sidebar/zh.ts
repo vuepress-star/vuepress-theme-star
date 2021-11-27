@@ -26,7 +26,6 @@ export const zh: SidebarConfig = {
           text: '特性',
           link: '/zh/guide/markdown/feature/',
           children: [
-            '/zh/guide/markdown/feature/components.md',
             '/zh/guide/markdown/feature/align.md',
             '/zh/guide/markdown/feature/sup-sub.md',
             '/zh/guide/markdown/feature/footnote.md',
@@ -40,6 +39,18 @@ export const zh: SidebarConfig = {
             '/zh/guide/markdown/feature/external.md',
           ],
         },
+      ],
+    },
+    {
+      text: '组件',
+      link: '/zh/guide/component/',
+      children: [
+        '/zh/guide/component/badge.md',
+        '/zh/guide/component/code-group.md',
+        '/zh/guide/component/out-bound-link.md',
+        '/zh/guide/component/icon.md',
+        '/zh/guide/component/external-link.md',
+        '/zh/guide/component/element-plus.md',
       ],
     },
     {
