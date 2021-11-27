@@ -7,7 +7,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 // @ts-ignore
 export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
-  base: '/vuepress-theme-star/example/',
+  base: '/vuepress-theme-star/',
   title: 'vuepress-theme-star',
   theme: '@starzkg/star',
   head: [

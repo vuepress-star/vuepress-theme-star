@@ -44,11 +44,14 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
+      - name: Build
+        run: yarn copy && yarn build
+
       - name: Build example site
-        run: yarn example:release
+        run: yarn example:build
 
       - name: Build documentation site
-        run: yarn docs:release
+        run: yarn docs:build
 
       - name: Combine output
         run: |
