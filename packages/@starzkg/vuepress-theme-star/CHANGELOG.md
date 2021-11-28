@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+
+
+### Bug Fixes
+
+* **theme-star:** fix mobile ([471de66](https://github.com/shentuzhigang/vuepress-theme-star/commit/471de668ab2768e8adafcc9f4ac8071263b812ed))
+* **theme-star:** windows resize ([acdf7cd](https://github.com/shentuzhigang/vuepress-theme-star/commit/acdf7cd31a109ffefd5336240b4e25cc485172f2))
+
+
+### Features
+
+* copy code ([eb6dce9](https://github.com/shentuzhigang/vuepress-theme-star/commit/eb6dce920b09feac2cf72fad885d6ca208820105))
+* copyright ([8051d61](https://github.com/shentuzhigang/vuepress-theme-star/commit/8051d61432c304855ad50d3349071fcd8e8cfd1c))
+* links ([ba5f197](https://github.com/shentuzhigang/vuepress-theme-star/commit/ba5f19767d41b3449ee88447b43a6390c3b9eb67))
+* reset document home layout ([c9d1707](https://github.com/shentuzhigang/vuepress-theme-star/commit/c9d17075d04a2b7e19910c53e811c83365beea18))
+
+
+
+
+
 # [1.0.0-beta.16](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-11-16)
 
 

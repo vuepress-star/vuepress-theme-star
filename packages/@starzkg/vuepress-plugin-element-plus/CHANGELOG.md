@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+
+
+### Features
+
+* links ([ba5f197](https://github.com/shentuzhigang/vuepress-theme-star/commit/ba5f19767d41b3449ee88447b43a6390c3b9eb67))
+
+
+
+
+
 # [1.0.0-beta.16](https://github.com/vuepress/vuepress-next/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-11-16)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-element-plus

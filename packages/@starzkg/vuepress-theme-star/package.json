@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-theme-star",
-  "version": "1.0.0-beta.16",
+  "version": "1.0.0-beta.17",
   "description": "A theme of VuePress",
   "keywords": [
     "vuepress-theme",
@@ -34,14 +34,14 @@
     "copy": "cpx \"src/**/*.{d.ts,html,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-icons": "0.0.11",
-    "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.16",
-    "@starzkg/vuepress-plugin-copy-code": "2.0.0-alpha.7",
-    "@starzkg/vuepress-plugin-copyright": "1.0.2",
-    "@starzkg/vuepress-plugin-element-plus": "1.0.0-beta.16",
-    "@starzkg/vuepress-plugin-interaction-effect": "1.0.0-beta.16",
-    "@starzkg/vuepress-plugin-markdown-enhance": "1.0.0-beta.16",
-    "@starzkg/vuepress-plugin-page-enhance": "1.0.0-beta.16",
+    "@starzkg/vuepress-icons": "1.0.0-beta.17",
+    "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.17",
+    "@starzkg/vuepress-plugin-copy-code": "1.0.0-beta.17",
+    "@starzkg/vuepress-plugin-copyright": "1.0.0-beta.17",
+    "@starzkg/vuepress-plugin-element-plus": "1.0.0-beta.17",
+    "@starzkg/vuepress-plugin-interaction-effect": "1.0.0-beta.17",
+    "@starzkg/vuepress-plugin-markdown-enhance": "1.0.0-beta.17",
+    "@starzkg/vuepress-plugin-page-enhance": "1.0.0-beta.17",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.27",

@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-copyright",
-  "version": "1.0.2",
+  "version": "1.0.0-beta.17",
   "description": "A VuePress plugin which handles copy behaviors.",
   "keywords": [
     "vuepress",
@@ -35,7 +35,7 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-shared": "1.0.0-beta.16",
+    "@starzkg/vuepress-shared": "1.0.0-beta.17",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/utils": "2.0.0-beta.27",

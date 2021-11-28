@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+
+
+### Bug Fixes
+
+* dist dir ([c2fba8f](https://github.com/shentuzhigang/vuepress-theme-star/commit/c2fba8f492035b71ac7693d8a0f23952704d5e4c))
+* eslint ([24741c0](https://github.com/shentuzhigang/vuepress-theme-star/commit/24741c0e8672049b9c6bd6453b13863f7997b45d))
+* **example:** update ([eb5be11](https://github.com/shentuzhigang/vuepress-theme-star/commit/eb5be119c0332e04d0aaedf672671221addea5be))
+* external link default icon ([cb6161c](https://github.com/shentuzhigang/vuepress-theme-star/commit/cb6161c361e3a33b9345376819c149e55b5d6ad6))
+* fix ([d488c7e](https://github.com/shentuzhigang/vuepress-theme-star/commit/d488c7eec24cbfb6d086417c91464299273df377))
+* fix ([474a7a1](https://github.com/shentuzhigang/vuepress-theme-star/commit/474a7a115ac373be94f860f03aaec45668896d49))
+* github page ([fb5294c](https://github.com/shentuzhigang/vuepress-theme-star/commit/fb5294cd6e460719f8a8f1864ed269b6b5d1425e))
+* rename ([761ba90](https://github.com/shentuzhigang/vuepress-theme-star/commit/761ba90b1df87673a15f81e8f3e749a62906ff64))
+* **theme-star:** fix mobile ([471de66](https://github.com/shentuzhigang/vuepress-theme-star/commit/471de668ab2768e8adafcc9f4ac8071263b812ed))
+* **theme-star:** windows resize ([acdf7cd](https://github.com/shentuzhigang/vuepress-theme-star/commit/acdf7cd31a109ffefd5336240b4e25cc485172f2))
+
+
+### Features
+
+* copy code ([eb6dce9](https://github.com/shentuzhigang/vuepress-theme-star/commit/eb6dce920b09feac2cf72fad885d6ca208820105))
+* copyright ([8051d61](https://github.com/shentuzhigang/vuepress-theme-star/commit/8051d61432c304855ad50d3349071fcd8e8cfd1c))
+* **icons:** icons ([e49df90](https://github.com/shentuzhigang/vuepress-theme-star/commit/e49df90f377740998482314d624c77004ecac115))
+* **icons:** update ([2f7d85a](https://github.com/shentuzhigang/vuepress-theme-star/commit/2f7d85a3e27596392dfc442718c295dfcda9f55e))
+* links ([ba5f197](https://github.com/shentuzhigang/vuepress-theme-star/commit/ba5f19767d41b3449ee88447b43a6390c3b9eb67))
+* **plugin-baidu-analytics:** spa ([5752bc0](https://github.com/shentuzhigang/vuepress-theme-star/commit/5752bc032603d32c4eeac50b42add22d54316186))
+* remove reading-time ([0059305](https://github.com/shentuzhigang/vuepress-theme-star/commit/0059305104bd3505ded3c396125aec4ee016b97e))
+* reset document home layout ([c9d1707](https://github.com/shentuzhigang/vuepress-theme-star/commit/c9d17075d04a2b7e19910c53e811c83365beea18))
+
+
+
+
+
 # [1.0.0-beta.16](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-11-16)
 
 
