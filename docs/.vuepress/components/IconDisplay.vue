@@ -50,11 +50,11 @@ const copyIcon = (icon: string): void => {
         margin-top: 10px;
         font-size: 14px;
       }
-      @media (max-width 768px) {
+      @media (max-width: 768px) {
         width: 25%;
       }
 
-      @media (max-width 412px) {
+      @media (max-width: 412px) {
         width: 33.333%;
       }
 
