@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.18](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
+
+
+### Bug Fixes
+
+* fix ([e64d956](https://github.com/shentuzhigang/vuepress-theme-star/commit/e64d956ab47b1d6cc8cc9147cb32ff8de3cc4bec))
+* fix ExternalLink Icon ([46ebfb3](https://github.com/shentuzhigang/vuepress-theme-star/commit/46ebfb35badfd06c6ae31d91469f86f250bd50fc))
+* fix name ([383ff80](https://github.com/shentuzhigang/vuepress-theme-star/commit/383ff80419ccc54364d46eb10be0dba870dc3b79))
+
+
+### Features
+
+* update ([9545934](https://github.com/shentuzhigang/vuepress-theme-star/commit/954593405e55b8a702993af6da59c6e2d6d2dd09))
+
+
+
+
+
 # [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
 
 
