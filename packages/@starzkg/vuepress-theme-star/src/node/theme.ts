@@ -85,6 +85,7 @@ export const theme: Theme<StarThemeOptions> = ({
           selector: '.theme-star-content div[class*="language-"] pre',
         },
       ],
+      ['@starzkg/copyright', themePlugins?.copyright !== false],
       ['@starzkg/interaction-effect'],
       [
         '@starzkg/markdown-enhance',

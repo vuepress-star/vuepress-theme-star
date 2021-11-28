@@ -1,3 +1,4 @@
+import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
 import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
 import type { PageEnhanceOptions } from '@starzkg/vuepress-plugin-page-enhance'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
@@ -61,6 +62,13 @@ export interface StarThemePluginsOptions {
    * 页面增强插件配置
    */
   pageEnhance?: PageEnhanceOptions | false
+
+  /**
+   * Copyright
+   *
+   * 版权信息
+   */
+  copyright?: CopyrightOptions | false
 
   /**
    * Enable Element Plus
