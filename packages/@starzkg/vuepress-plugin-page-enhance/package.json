@@ -10,14 +10,14 @@
     "vssue",
     "page-info"
   ],
-  "homepage": "https://vuepress-theme-star.github.io/comment/",
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
   "bugs": {
-    "url": "https://github.com/vuepress-theme-star/vuepress-theme-star/issues"
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress-theme-star/vuepress-theme-star.git",
-    "directory": "packages/comment"
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-plugin-page-enhance"
   },
   "license": "MIT",
   "author": {

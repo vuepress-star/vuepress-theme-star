@@ -9,13 +9,14 @@
     "copy",
     "markdown"
   ],
-  "homepage": "https://vuepress.github.io/plugins/copyright/",
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
   "bugs": {
-    "url": "https://github.com/vuepress/vuepress-plugin-copyright/issues"
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vuepress/vuepress-plugin-copyright.git"
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-plugin-copyright"
   },
   "license": "MIT",
   "author": {

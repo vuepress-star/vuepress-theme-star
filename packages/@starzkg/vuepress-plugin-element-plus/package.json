@@ -8,16 +8,21 @@
     "plugin",
     "element-plus"
   ],
-  "homepage": "https://github.com/vuepress",
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
   "bugs": {
-    "url": "https://github.com/vuepress/vuepress-next/issues"
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress/vuepress-next.git"
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-plugin-element-plus"
   },
   "license": "MIT",
-  "author": "Starzkg",
+  "author": {
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [

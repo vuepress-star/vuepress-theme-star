@@ -7,14 +7,14 @@
     "vuepress",
     "starzkg"
   ],
-  "homepage": "https://github.com/vuepress-theme-star/vuepress-theme-star/tree/v2/packages/shared#readme",
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
   "bugs": {
-    "url": "https://github.com/vuepress-theme-star/vuepress-theme-star/issues"
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Mister-Hope/vuepress-theme-star.git",
-    "directory": "packages/shared"
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-shared"
   },
   "license": "MIT",
   "author": {

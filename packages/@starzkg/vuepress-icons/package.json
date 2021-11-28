@@ -7,13 +7,13 @@
     "svg",
     "vuepress"
   ],
-  "homepage": "https://element-plus.org/",
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
   "bugs": {
-    "url": "https://github.com/vuepress-theme-star/vuepress-theme-star/issues"
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/element-plus/element-plus-icons.git",
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
     "directory": "packages/@starzkg/vuepress-icons"
   },
   "license": "MIT",

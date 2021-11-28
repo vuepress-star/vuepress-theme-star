@@ -16,19 +16,19 @@
     "presentation",
     "reveal.js"
   ],
-  "homepage": "https://vuepress-md-enhance.mrhope.site/",
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
   "bugs": {
-    "url": "https://github.com/Mister-Hope/vuepress-theme-star/issues"
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mister-Hope/vuepress-theme-star.git",
-    "directory": "packages/markdown-enhance"
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-plugin-markdown-enhance"
   },
   "license": "MIT",
   "author": {
     "name": "Starzkg",
-    "email": "shentuzhigang@qq.com",
+    "email": "shentuzhigang@shentuzhigang.cn",
     "url": "https://shentuzhigang.cn"
   },
   "main": "lib/node/index.js",
