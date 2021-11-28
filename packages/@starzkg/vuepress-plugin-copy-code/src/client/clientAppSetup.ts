@@ -25,7 +25,6 @@ export default defineClientAppSetup(() => {
   const locale = useLocaleConfig(i18n)
 
   const insertCopyButton = (codeBlockElement: HTMLElement): void => {
-    console.log(codeBlockElement)
     if (!codeBlockElement.hasAttribute('copy-code-registerd')) {
       const copyElement = document.createElement('button')
       copyElement.className = 'copy-code-button'
@@ -54,7 +53,6 @@ export default defineClientAppSetup(() => {
 
     setTimeout(() => {
       if (typeof selector === 'string') {
-        console.log(document.querySelectorAll<HTMLElement>(selector))
         document
           .querySelectorAll<HTMLElement>(selector)
           .forEach(insertCopyButton)
