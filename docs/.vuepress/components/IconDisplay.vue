@@ -16,7 +16,7 @@ import { computed } from 'vue'
 const icons = computed(() => {
   return Icons
 })
-const copyIcon = (icon: string) => {
+const copyIcon = (icon: string): void => {
   useCopyToClipboard(`<${icon} />`)
 }
 </script>
