@@ -19,6 +19,8 @@ links:
   - text: Bing
     icon: Bing
     url: https://bing.com
+  - text: 外链
+    url: https://vuepress.github.io
 features:
 - title: Simplicity First
   details: Minimal setup with markdown-centered project structure helps you focus on writing.

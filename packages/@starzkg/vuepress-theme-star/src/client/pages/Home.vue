@@ -137,7 +137,10 @@ const links = computed(() => {
   return frontmatter.value.links.map(({ text, icon, url }) => {
     return {
       text,
-      icon: (icon.startsWith('icon-') ? '' : 'icon-') + icon,
+      icon:
+        icon === undefined
+          ? icon
+          : (icon.startsWith('icon-') ? '' : 'icon-') + icon,
       url,
     }
   })
