@@ -1,1 +1,1 @@
-export * from './useCopyToClipBoard'
+export * from './useCopyToClipboard'
