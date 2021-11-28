@@ -166,6 +166,21 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
         type: 'waline',
         serverURL: 'https://vercel-shentuzhigang.vercel.app',
       },
+      copyright: {
+        noCopy: false,
+        noSelect: false,
+        disabled: false,
+        minLength: 1000,
+        authorName: 'Starzkg',
+        locales: {
+          'en-US': {
+            author: 'Starzkg',
+          },
+          'zh-CN': {
+            author: 'Starzkg',
+          },
+        },
+      },
     },
   },
 

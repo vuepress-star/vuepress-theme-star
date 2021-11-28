@@ -66,6 +66,23 @@ export const zh: SidebarConfig = {
         '/zh/guide/page/wiki.md',
       ],
     },
+    {
+      text: '功能',
+      link: '/zh/guide/feature/',
+      children: [
+        '/zh/guide/feature/page-enhance.md',
+        '/zh/guide/feature/copy-code.md',
+        '/zh/guide/feature/photo-swipe.md',
+        '/zh/guide/feature/copyright.md',
+        '/zh/guide/feature/git.md',
+        '/zh/guide/feature/encrypt.md',
+        '/zh/guide/feature/pwa.md',
+        '/zh/guide/feature/feed.md',
+        '/zh/guide/feature/seo.md',
+        '/zh/guide/feature/sitemap.md',
+        '/zh/guide/feature/typescript.md',
+      ],
+    },
   ],
   '/zh/advanced/': [
     {

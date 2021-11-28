@@ -1,3 +1,8 @@
+---
+copyright:
+  noSelect: false
+---
+
 # 图标
 ## SVG 图标合集
 ::: tip
