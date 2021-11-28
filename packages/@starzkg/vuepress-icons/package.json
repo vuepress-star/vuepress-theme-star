@@ -35,7 +35,7 @@
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib es *.tsbuildinfo",
-    "copy": "yarn gen && cpx \"src/**/*.vue\" es && cpx \"src/**/*.vue\" lib",
+    "copy": "cpx \"src/**/*.vue\" es && cpx \"src/**/*.vue\" lib",
     "gen": "node ./scripts/generate.js && yarn prettier",
     "prettier": "prettier ./src -w"
   },
