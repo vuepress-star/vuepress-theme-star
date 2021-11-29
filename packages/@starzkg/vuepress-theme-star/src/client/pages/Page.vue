@@ -6,6 +6,7 @@
     @before-leave="onBeforeLeave"
   >
     <main class="page">
+      <BreadCrumb />
       <slot name="top" />
       <PageInfo />
       <div class="theme-star-content">

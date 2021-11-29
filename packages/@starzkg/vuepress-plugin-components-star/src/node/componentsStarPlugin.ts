@@ -1,5 +1,6 @@
 import type { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
+import { i18n } from './i18n'
 
 export type ComponentsStarPluginOptions = Record<never, never>
 
@@ -21,6 +22,10 @@ export const componentsStarPlugin: Plugin<ComponentsStarPluginOptions> = (
 
   return {
     name: '@starzkg/vuepress-plugin-components-star',
+
+    define: (): Record<string, unknown> => ({
+      COMPONENT_I18N: i18n,
+    }),
 
     clientAppEnhanceFiles: path.resolve(
       __dirname,

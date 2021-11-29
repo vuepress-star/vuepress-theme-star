@@ -1,0 +1,96 @@
+@use "@mr-hope/vuepress-shared/styles/wrapper";
+@use "@hope/config";
+
+// Fix top boarder of heading1
+#{config.$contentClass}:not(.custom) {
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  #{config.$contentClass}:not(.custom) &:first-child {
+    margin-top: calc(0.5rem - var(--navbar-height)) !important;
+    padding-top: var(--navbar-height) !important;
+
+    @media (max-width: config.$mobile) {
+      margin-top: calc(0.5rem - var(--navbar-mobile-height)) !important;
+      padding-top: var(--navbar-mobile-height) !important;
+    }
+  }
+}
+
+.breadcrumb {
+  @include wrapper.wrapper;
+  position: relative;
+  margin-top: calc(var(--navbar-height) + 0.5rem);
+  margin-bottom: calc(0.5rem - var(--navbar-height));
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  font-size: 15px;
+  z-index: 2;
+
+  @media (max-width: config.$pad) {
+    margin-top: calc(var(--navbar-mobile-height) + 0.5rem);
+    margin-bottom: calc(0.5rem - var(--navbar-mobile-height));
+    font-size: 14px;
+  }
+
+  @media (max-width: config.$mobileS) {
+    font-size: 12.8px;
+  }
+
+  &.disable {
+    padding-bottom: 1.3em;
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 0px;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    &:last-child a {
+      padding-right: 0;
+    }
+
+    &.is-active a {
+      color: var(--light-grey);
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  li + li::before {
+    color: var(--light-grey);
+    content: '/';
+  }
+
+  a {
+    display: inline-block;
+    padding: 0 0.5em;
+    line-height: 2;
+
+    &:before {
+      position: relative;
+      bottom: 0.125rem;
+      margin-right: 0.25em;
+    }
+
+    &:hover {
+      color: var(--accent-color-light);
+    }
+  }
+}

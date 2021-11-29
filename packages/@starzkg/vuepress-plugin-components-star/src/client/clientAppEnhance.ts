@@ -1,11 +1,14 @@
 import * as Icons from '@starzkg/vuepress-icons'
 import { defineClientAppEnhance } from '@vuepress/client'
 import Badge from './components/Badge.vue'
+import BreadCrumb from './components/BreadCrumb'
 import CodeGroup from './components/CodeGroup'
 import CodeGroupItem from './components/CodeGroupItem.vue'
 import ExternalLink from './components/ExternalLink.vue'
 import GithubCorner from './components/GithubCorner.vue'
 import OutboundLink from './components/OutboundLink.vue'
+import Pagination from './components/Pagination.vue'
+import ScreenFull from './components/ScreenFull'
 import './styles/index.scss'
 
 export default defineClientAppEnhance(({ app }) => {
@@ -19,6 +22,9 @@ export default defineClientAppEnhance(({ app }) => {
   // override the built-in `<OutboundLink>`
   app.component('OutboundLink', OutboundLink)
   app.component('ExternalLink', ExternalLink)
+  app.component('BreadCrumb', BreadCrumb)
+  app.component('Pagination', Pagination)
+  app.component('ScreenFull', ScreenFull)
   // icon
   for (const icon in Icons) {
     // eslint-disable-next-line import/namespace
