@@ -19,4 +19,8 @@ export default [
     text: 'Presentation',
     link: '/presentation/',
   },
+  {
+    text: 'Docs',
+    link: '/docs/',
+  },
 ]

@@ -19,4 +19,8 @@ export default [
     text: '演示',
     link: '/zh/presentation/',
   },
+  {
+    text: 'Docs',
+    link: '/docs/',
+  },
 ]

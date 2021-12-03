@@ -158,5 +158,6 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
           }
         : false,
     ],
+    ['@starzkg/element-plus'],
   ],
 })
