@@ -1,8 +1,9 @@
-import type { ComponentI18nConfig } from '../types'
+import type { ComponentI18nConfig } from '../shared'
 
 export const i18n: Record<string, ComponentI18nConfig> = {
   '/zh/': {
     backToTop: '返回顶部',
+    openInNewWindow: '在 GitHub 上编辑此页',
     pagination: {
       prev: '上一页',
       next: '下一页',
@@ -13,6 +14,7 @@ export const i18n: Record<string, ComponentI18nConfig> = {
   },
   '/en/': {
     backToTop: 'Back to top',
+    openInNewWindow: 'Open in new window text',
     pagination: {
       prev: 'Prev',
       next: 'Next',
@@ -23,6 +25,7 @@ export const i18n: Record<string, ComponentI18nConfig> = {
   },
   '/de/': {
     backToTop: 'Zurück nach oben.',
+    openInNewWindow: '',
     pagination: {
       prev: 'Vorheriges',
       next: 'Nächstes',
@@ -33,6 +36,7 @@ export const i18n: Record<string, ComponentI18nConfig> = {
   },
   '/vi/': {
     backToTop: 'Trở lại đầu trang',
+    openInNewWindow: '',
     pagination: {
       prev: 'Bài kế',
       next: 'Bài trước',
@@ -43,6 +47,7 @@ export const i18n: Record<string, ComponentI18nConfig> = {
   },
   '/uk/': {
     backToTop: 'Повернутися до початку',
+    openInNewWindow: '',
     pagination: {
       prev: 'Попередня',
       next: 'Далі',
@@ -53,6 +58,7 @@ export const i18n: Record<string, ComponentI18nConfig> = {
   },
   '/ru/': {
     backToTop: 'Вернуться к началу',
+    openInNewWindow: '',
     pagination: {
       prev: 'Предыдущая',
       next: 'Далее',

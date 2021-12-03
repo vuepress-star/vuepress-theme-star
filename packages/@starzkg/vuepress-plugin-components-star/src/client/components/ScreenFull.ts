@@ -1,5 +1,5 @@
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
-import * as screenfull from 'screenfull'
+import screenfull from 'screenfull'
 import { defineComponent, h, onMounted, ref } from 'vue'
 import type { VNode } from 'vue'
 import { CancelFullScreenIcon, EnterFullScreenIcon } from './icons'
@@ -14,7 +14,7 @@ export default defineComponent({
 
     onMounted(() => {
       canFullscreen.value =
-        screenfull.default.isEnabled && themeLocale.value.fullscreen !== false
+        screenfull.isEnabled && themeLocale.value.fullscreen !== false
     })
 
     return (): VNode | null =>
@@ -25,9 +25,9 @@ export default defineComponent({
               class: 'full-screen',
               ariaPressed: isFullscreen.value,
               onClick: () => {
-                if (screenfull.default.isEnabled)
-                  screenfull.default.toggle().then(() => {
-                    isFullscreen.value = screenfull.default.isFullscreen
+                if (screenfull.isEnabled)
+                  screenfull.toggle().then(() => {
+                    isFullscreen.value = screenfull.isFullscreen
                   })
               },
             },
