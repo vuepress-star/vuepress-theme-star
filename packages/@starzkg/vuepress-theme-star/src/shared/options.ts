@@ -69,12 +69,6 @@ export interface StarThemePluginsOptions {
    * 版权信息
    */
   copyright?: CopyrightOptions | false
-
-  /**
-   * Enable Element Plus
-   * @see https://element-plus.gitee.io
-   */
-  elementPlus?: boolean
 }
 
 export type StarThemeLocaleOptions = StarThemeData

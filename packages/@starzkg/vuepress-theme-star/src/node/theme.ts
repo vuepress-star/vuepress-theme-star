@@ -76,7 +76,6 @@ export const theme: Theme<StarThemeOptions> = ({
       ['@vuepress/palette', { preset: 'sass' }],
       ['@vuepress/prismjs', themePlugins.prismjs !== false],
       ['@vuepress/theme-data', { themeData: localeOptions }],
-      ['@starzkg/element-plus', themePlugins.elementPlus !== false],
       ['@starzkg/components-star'],
       ['@starzkg/page-enhance', themePlugins?.pageEnhance || true],
       [
