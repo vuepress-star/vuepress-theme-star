@@ -33,6 +33,8 @@
 
       <ToggleDarkModeButton v-if="enableDarkMode" />
 
+      <ScreenFull />
+
       <NavbarSearch />
     </div>
   </header>
