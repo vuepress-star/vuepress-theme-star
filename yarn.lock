@@ -3270,6 +3270,17 @@
     "@vuepress/utils" "2.0.0-beta.27"
     vue "^3.2.20"
 
+"@vuepress/plugin-toc@2.0.0-beta.27":
+  version "2.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-toc/-/plugin-toc-2.0.0-beta.27.tgz#c94fdf176beb188017da6172b361edf0ddef8e36"
+  integrity sha512-aDRHs+UPAmzxdlI3Kb2rkSyVBxflkafu8O3KNePqvTk1HfwaajIS+7n7QVevQh8c71b6yEdy+8yaAXcZygh++w==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.27"
+    "@vuepress/core" "2.0.0-beta.27"
+    "@vuepress/utils" "2.0.0-beta.27"
+    vue "^3.2.20"
+    vue-router "^4.0.12"
+
 "@vuepress/shared@2.0.0-beta.27":
   version "2.0.0-beta.27"
   resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.27.tgz#d40ebb57c885328e80c421578155811de7bfee9d"

@@ -4,6 +4,77 @@
 .page {
   padding-bottom: 2rem;
   display: block;
+
+  aside {
+    position: sticky;
+    top: 5.6rem;
+    width: 100%;
+    margin: 0 auto;
+    max-width: calc(var(--content-width) + 0.5rem);
+    z-index: 99;
+    transition: transform 0.25s ease-in-out 0.12s,
+      opacity 0.25s ease-in-out 0.12s;
+    transform: translateY(0px);
+    opacity: 1;
+
+    .anchor {
+      position: absolute;
+      left: calc(100% + 0.5rem);
+      min-width: 10rem;
+      max-width: 15rem;
+      max-height: 80vh;
+      overflow-y: auto;
+
+      > .vuepress-toc-list {
+        &::before {
+          content: ' ';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 2px;
+          background: var(--border-color);
+          z-index: -1;
+        }
+
+        > .vuepress-toc-item {
+          > .active::before {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            left: -19px;
+            bottom: 0;
+            width: 2px;
+            z-index: 2;
+            background: var(--accent-color);
+          }
+        }
+      }
+
+      ul {
+        list-style-type: none;
+
+        li {
+          position: relative;
+
+          a {
+            display: block;
+            color: var(--c-text-light);
+
+            &.active {
+              color: var(--c-text-accent);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    aside {
+      display: none;
+    }
+  }
 }
 
 .page-meta {

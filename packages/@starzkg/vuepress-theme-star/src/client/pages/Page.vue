@@ -6,21 +6,30 @@
     @before-leave="onBeforeLeave"
   >
     <main class="page">
-      <BreadCrumb />
-      <slot name="top" />
-      <PageInfo />
-      <div class="theme-star-content">
+      <header>
+        <BreadCrumb />
+        <slot name="top" />
+        <PageInfo />
+      </header>
+
+      <aside>
+        <Toc class="anchor" />
+      </aside>
+
+      <main class="theme-star-content">
         <Content />
-      </div>
+      </main>
 
-      <PageMeta />
+      <footer>
+        <PageMeta />
 
-      <PageNav />
+        <PageNav />
 
-      <GithubCorner />
+        <GithubCorner />
 
-      <Comment />
-      <slot name="bottom" />
+        <Comment />
+        <slot name="bottom" />
+      </footer>
     </main>
   </Transition>
 </template>
