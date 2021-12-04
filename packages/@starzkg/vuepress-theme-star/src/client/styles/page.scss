@@ -5,6 +5,12 @@
   padding-bottom: 2rem;
   display: block;
 
+  header {
+    hr {
+      max-width: var(--content-width);
+    }
+  }
+
   aside {
     position: sticky;
     top: 5.6rem;

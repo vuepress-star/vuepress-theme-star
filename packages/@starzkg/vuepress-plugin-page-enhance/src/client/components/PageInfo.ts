@@ -1,9 +1,8 @@
 import {
-  useIconPrefix,
   useLocaleConfig,
   useThemePluginConfig,
 } from '@starzkg/vuepress-shared/es/client'
-import { usePageData, usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from '@vuepress/client'
 import { computed, defineComponent, h, resolveComponent } from 'vue'
 import type { VNode } from 'vue'
 import type {
@@ -36,12 +35,10 @@ export default defineComponent({
   },
 
   setup() {
-    const page = usePageData()
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>()
     const themePluginConfig = useThemePluginConfig<PageEnhanceOptions>(
       'comment'
     )
-    const iconPrefix = useIconPrefix()
 
     const config = computed<PageInfoType[] | false>(() => {
       const themeConfig = themePluginConfig.value.pageInfo
@@ -66,28 +63,14 @@ export default defineComponent({
     const isOriginal = computed(() => frontmatter.value.original)
     const i18n = useLocaleConfig(pageInfoI18n)
 
-    return (): VNode =>
-      h('div', { class: 'page-title' }, [
-        h('h1', [
-          frontmatter.value.icon
-            ? h('i', {
-                class: [
-                  'iconfont',
-                  `${iconPrefix.value}${frontmatter.value.icon}`,
-                ],
-              })
-            : null,
-          page.value.title,
-        ]),
-        config.value
-          ? h('div', { class: 'page-info' }, [
-              isOriginal.value
-                ? h('span', { class: 'origin' }, i18n.value.origin)
-                : null,
-              config.value.map((item) => h(resolveComponent(`${item}-info`))),
-            ])
-          : null,
-        h('hr'),
-      ])
+    return (): VNode | null =>
+      config.value
+        ? h('div', { class: 'page-info' }, [
+            isOriginal.value
+              ? h('span', { class: 'origin' }, i18n.value.origin)
+              : null,
+            config.value.map((item) => h(resolveComponent(`${item}-info`))),
+          ])
+        : null
   },
 })
