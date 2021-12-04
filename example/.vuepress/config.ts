@@ -75,7 +75,7 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
   themeConfig: {
     logo: '/images/hero.png',
 
-    repo: 'vuepress/vuepress-next',
+    repo: 'shentuzhigang/vuepress-theme-star',
 
     docsDir: 'docs',
 
@@ -83,7 +83,6 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
     locales: locales,
 
     themePlugins: {
-      githubCorner: true,
       backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
@@ -102,7 +101,7 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
           ],
         },
       },
-      comment: {
+      pageEnhance: {
         type: 'waline',
         serverURL: 'https://vercel-shentuzhigang.vercel.app',
       },

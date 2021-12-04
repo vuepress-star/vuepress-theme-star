@@ -11,6 +11,7 @@ export const zh: SidebarConfig = {
         '/zh/guide/page.md',
         '/zh/guide/assets.md',
         '/zh/guide/i18n.md',
+        '/zh/guide/accessibility.md',
         '/zh/guide/deployment.md',
         '/zh/guide/theme.md',
         '/zh/guide/plugin.md',
@@ -51,6 +52,17 @@ export const zh: SidebarConfig = {
         '/zh/guide/component/icon.md',
         '/zh/guide/component/external-link.md',
         '/zh/guide/component/element-plus.md',
+      ],
+    },
+    {
+      text: '布局',
+      link: '/zh/guide/layout/',
+      children: [
+        '/zh/guide/layout/navbar.md',
+        '/zh/guide/layout/sidebar.md',
+        '/zh/guide/layout/home.md',
+        '/zh/guide/layout/page.md',
+        '/zh/guide/layout/custom.md',
       ],
     },
     {

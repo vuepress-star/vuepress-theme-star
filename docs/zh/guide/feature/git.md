@@ -1,5 +1,5 @@
 ---
-title: 最后更新时间
+title: Git信息
 icon: time
 category: feature
 tags:

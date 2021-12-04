@@ -7,7 +7,7 @@ tags:
   - page enhance
 ---
 
-通过内置 [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/zh/)，`vuepress-theme-hope` 实现了文章信息展示。
+通过内置 [`@starzkg/vuepress-plugin-page-enhance`](https://vuepress-theme-star.github.io/page-enhance/zh/)，`vuepress-theme-star` 实现了文章信息展示。
 
 <!-- more -->
 
@@ -17,23 +17,23 @@ tags:
 
 [^applypartically]: **支持页面配置** <Badge text="支持页面配置" />
 
-    **支持页面配置** 指主题允许页面的配置覆盖全局的配置。这意味着你可以在全局启用的情况下，在特定页面将其禁用，或在全局禁用的情况下在特定页面启用。
+**支持页面配置** 指主题允许页面的配置覆盖全局的配置。这意味着你可以在全局启用的情况下，在特定页面将其禁用，或在全局禁用的情况下在特定页面启用。
 
-    ::: details 例子
+::: details 例子
 
-    以路径导航为例:
+以路径导航为例:
 
-    该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 front matter 中设置 `breadcrumb: false` 来局部禁用它。
+该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 front matter 中设置 `breadcrumb: false` 来局部禁用它。
 
-    当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 front matter 中设置 `breadcrumb: true` 来局部启用它。
+当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 front matter 中设置 `breadcrumb: true` 来局部启用它。
 
-    :::
+:::
 
 如果你需要保持全局禁用，请设置 `themeConfig.pageInfo` 为 `false`。这样你可以在特定页面的 front matter 中设置 `pageInfo` 来局部启用它。
 
 ## 参数 <Badge text="支持页面配置" />
 
-`pageInfo` 默认接受一个字符串数组，可以填入各条目名称，填入的顺序即是各条目显示的顺序。
+`pageEnhance` 默认接受一个字符串数组，可以填入各条目名称，填入的顺序即是各条目显示的顺序。
 
 条目可选的值和对应内容如下:
 
@@ -92,9 +92,9 @@ time: 2020-01-01
 visitor: false
 ---
 ```
-## 评论
+### 评论
 
-通过内置**** [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/zh/)，`vuepress-theme-hope` 实现了评论功能。
+通过内置**** [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-star.github.io/comment/zh/)，`vuepress-theme-star` 实现了评论功能。
 
 <!-- more -->
 
@@ -118,7 +118,7 @@ module.exports = {
 
 ::: info
 
-受篇幅限制，完整的评论插件配置，详见 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-hope.github.io/comment)。
+受篇幅限制，完整的评论插件配置，详见 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-star.github.io/comment)。
 
 :::
 
@@ -152,7 +152,7 @@ module.exports = {
 
 ```js
 // .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+const { config } = require("vuepress-theme-star");
 
 module.exports = config({
   themeConfig: {
@@ -164,7 +164,7 @@ module.exports = config({
 });
 ```
 
-Waline 评论的其他配置将在 [配置](http://vuepress-theme-hope.github.io/comment/zh/config/waline/) 中列出。
+Waline 评论的其他配置将在 [配置](http://vuepress-theme-star.github.io/comment/zh/config/waline/) 中列出。
 
 ::: tip
 
@@ -178,7 +178,7 @@ Waline 评论的其他配置将在 [配置](http://vuepress-theme-hope.github.io
 
 Vssue 支持通过 GitHub, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为你的静态页面提供评论功能，你可以选择其中之一来使用。
 
-前往 [支持的代码托管平台 - 创建 OAuth App](http://vuepress-theme-hope.github.io/comment/zh/guide/supported-platforms/) 查看详细指引。
+前往 [支持的代码托管平台 - 创建 OAuth App](http://vuepress-theme-star.github.io/comment/zh/guide/supported-platforms/) 查看详细指引。
 
 完成这一步之后，你将会配置好一个 OAuth App，并得到对应的 `client id` 和 `client secret`，它们将会用于 Vssue 的使用。
 
@@ -236,7 +236,7 @@ module.exports = {
 
 ```js
 // .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+const { config } = require("vuepress-theme-star");
 
 module.exports = config({
   themeConfig: {
@@ -251,7 +251,7 @@ module.exports = config({
 
 将对应的 `APP ID` 和 `APP Key` 填入， Valine 即配置完成。
 
-Valine 评论的其他配置将在 [配置](http://vuepress-theme-hope.github.io/comment/zh/config/valine/) 中列出。
+Valine 评论的其他配置将在 [配置](http://vuepress-theme-star.github.io/comment/zh/config/valine/) 中列出。
 
 ::: tip
 

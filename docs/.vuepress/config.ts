@@ -81,7 +81,7 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
   themeConfig: {
     logo: '/images/hero.png',
 
-    repo: 'vuepress/vuepress-next',
+    repo: 'shentuzhigang/vuepress-theme-star',
 
     docsDir: 'docs',
 
