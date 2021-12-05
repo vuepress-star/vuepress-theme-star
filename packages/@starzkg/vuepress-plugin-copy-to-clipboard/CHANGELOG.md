@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.20](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-12-05)
+
+
+### Bug Fixes
+
+* fix vite optimizeDeps ([c90dc3d](https://github.com/shentuzhigang/vuepress-theme-star/commit/c90dc3dce56a44e0ab266ec17ad0199cf19b46d2))
+
+
+
+
+
 # [1.0.0-beta.18](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
 
 
