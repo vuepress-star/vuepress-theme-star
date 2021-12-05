@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.19](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-12-05)
+
+
+### Features
+
+* breadcrumb ([55a5561](https://github.com/shentuzhigang/vuepress-theme-star/commit/55a5561866ec09fb4694d2ed46af4bfa49453bf9))
+
+
+
+
+
 # [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance

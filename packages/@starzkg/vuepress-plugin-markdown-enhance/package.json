@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-markdown-enhance",
-  "version": "1.0.0-beta.17",
+  "version": "1.0.0-beta.19",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress-plugin",

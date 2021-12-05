@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.19](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-12-05)
+
+
+### Features
+
+* page header ([c98421f](https://github.com/shentuzhigang/vuepress-theme-star/commit/c98421fcbc109e18a4de33643e9b750140e247fd))
+
+
+
+
+
 # [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-page-enhance
