@@ -37,6 +37,7 @@
     "@starzkg/vuepress-icons": "1.0.0-beta.17",
     "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.19",
     "@starzkg/vuepress-plugin-copy-code": "1.0.0-beta.18",
+    "@starzkg/vuepress-plugin-copy-to-clipboard": "1.0.0-beta.18",
     "@starzkg/vuepress-plugin-copyright": "1.0.0-beta.17",
     "@starzkg/vuepress-plugin-interaction-effect": "1.0.0-beta.17",
     "@starzkg/vuepress-plugin-markdown-enhance": "1.0.0-beta.19",

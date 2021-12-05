@@ -6,6 +6,7 @@
     { "path": "../vuepress-plugin-page-enhance/tsconfig.build.json" },
     { "path": "../vuepress-plugin-copy-code/tsconfig.build.json" },
     { "path": "../vuepress-plugin-copyright/tsconfig.build.json" },
+    { "path": "../vuepress-plugin-copy-to-clipboard/tsconfig.build.json" },
     { "path": "../vuepress-plugin-element-plus/tsconfig.build.json" },
     { "path": "../vuepress-plugin-markdown-enhance/tsconfig.build.json" },
     { "path": "../vuepress-plugin-interaction-effect/tsconfig.build.json" },

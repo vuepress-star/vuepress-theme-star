@@ -15,6 +15,7 @@ export const componentsStarPlugin: Plugin<ComponentsStarPluginOptions> = (
       {
         optimizeDeps: {
           exclude: ['ts-debounce'],
+          include: ['screenfull'],
         },
       }
     )

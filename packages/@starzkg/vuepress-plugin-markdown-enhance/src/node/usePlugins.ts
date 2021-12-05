@@ -10,6 +10,18 @@ export const usePlugins = (
   app: App,
   markdownOptions: MarkdownEnhanceOptions
 ): void => {
+  if (app.env.isDev && app.options.bundler.endsWith('vite')) {
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    app.options.bundlerConfig.viteOptions = require('vite').mergeConfig(
+      app.options.bundlerConfig.viteOptions,
+      {
+        optimizeDeps: {
+          include: ['lodash.debounce'],
+        },
+      }
+    )
+  }
+
   const locales = getLocales(app, i18n, markdownOptions.locales)
 
   const getContainerLocale = (

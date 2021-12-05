@@ -86,6 +86,7 @@ export const theme: Theme<StarThemeOptions> = ({
         },
       ],
       ['@starzkg/copyright', themePlugins?.copyright !== false],
+      ['@starzkg/copy-to-clipboard'],
       ['@starzkg/interaction-effect'],
       [
         '@starzkg/markdown-enhance',
