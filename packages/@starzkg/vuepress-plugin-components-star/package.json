@@ -36,6 +36,7 @@
   "dependencies": {
     "@starzkg/vuepress-icons": "1.0.0-beta.17",
     "@starzkg/vuepress-shared": "1.0.0-beta.17",
+    "@starzkg/vuepress-social-icons": "1.0.0-beta.17",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-palette": "2.0.0-beta.27",

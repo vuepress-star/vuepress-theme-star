@@ -10,17 +10,33 @@ actions:
     link: /guide/
     type: secondary
 links:
-  - text: Baidu
-    icon: Baidu
-    url: https://baidu.com
-  - text: Google
-    icon: Google
-    url: https://google.com
-  - text: Bing
-    icon: Bing
-    url: https://bing.com
-  - text: Link
-    url: https://vuepress.github.io
+  - text: GitHub
+    icon: github
+    url: #
+  - text: Gitlab
+    icon: gitlab
+    url: #
+  - text: Gmail
+    icon: gmail
+    url: #
+  - text: Youtube
+    icon: youtube
+    url: #
+  - text: Steam
+    icon: steam
+    url: #
+  - text: Twitter
+    icon: twitter
+    url: #
+  - text: Instagram
+    icon: instagram
+    url: #
+  - text: Facebook
+    icon: facebook
+    url: #
+  - text: Flipboard
+    icon: flipboard
+    url: #
 features:
   - title: Simplicity First
     details: Minimal setup with markdown-centered project structure helps you focus on writing.

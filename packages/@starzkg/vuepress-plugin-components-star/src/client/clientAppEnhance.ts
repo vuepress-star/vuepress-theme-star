@@ -1,4 +1,5 @@
 import * as Icons from '@starzkg/vuepress-icons'
+import * as SocialIcons from '@starzkg/vuepress-social-icons'
 import { defineClientAppEnhance } from '@vuepress/client'
 import Badge from './components/Badge.vue'
 import BreadCrumb from './components/BreadCrumb'
@@ -29,5 +30,10 @@ export default defineClientAppEnhance(({ app }) => {
   for (const icon in Icons) {
     // eslint-disable-next-line import/namespace
     app.component('Icon' + icon, Icons[icon])
+  }
+  // social icon
+  for (const icon in SocialIcons) {
+    // eslint-disable-next-line import/namespace
+    app.component('IconSocial' + icon, SocialIcons[icon])
   }
 })

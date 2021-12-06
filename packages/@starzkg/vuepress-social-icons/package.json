@@ -1,0 +1,51 @@
+{
+  "name": "@starzkg/vuepress-social-icons",
+  "version": "1.0.0-beta.17",
+  "description": "Icon library for Vuepress",
+  "keywords": [
+    "icon",
+    "svg",
+    "vuepress"
+  ],
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
+  "bugs": {
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-social-icons"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
+  },
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "unpkg": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "es",
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib es *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.vue\" es && cpx \"src/**/*.vue\" lib",
+    "gen": "node ./scripts/generate.js && yarn prettier",
+    "prettier": "prettier ./src -w"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "svgo": "^2.3.1",
+    "vue": "^3.1.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

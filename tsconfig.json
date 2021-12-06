@@ -5,6 +5,9 @@
       "path": "./packages/@starzkg/vuepress-icons/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-social-icons/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-plugin-baidu-analytics/tsconfig.build.json"
     },
     {

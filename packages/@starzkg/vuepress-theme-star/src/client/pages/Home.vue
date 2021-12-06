@@ -140,7 +140,7 @@ const links = computed(() => {
       icon:
         icon === undefined
           ? icon
-          : (icon.startsWith('icon-') ? '' : 'icon-') + icon,
+          : (icon.startsWith('icon-social-') ? '' : 'icon-social-') + icon,
       url,
     }
   })

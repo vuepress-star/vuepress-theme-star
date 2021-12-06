@@ -10,17 +10,48 @@ actions:
     link: /zh/guide/
     type: secondary
 links:
-  - text: 百度
-    icon: Baidu
-    url: https://baidu.com
-  - text: 谷歌
-    icon: Google
-    url: https://google.com
-  - text: 必应
-    icon: Bing
-    url: https://bing.com
-  - text: 外链
-    url: https://vuepress.github.io
+  - text: QQ
+    icon: qq
+    url: #
+  - text: QZone
+    icon: qzone
+    url: #
+  - text: Wechat
+    icon: wechat
+    url: #
+  - text: WechatFriend
+    icon: wechat-friend
+    url: #
+  - text: CSDN
+    icon: csdn
+    url: #
+  - text: 博客园
+    icon: cnblogs
+    url: #
+  - text: 简书
+    icon: jianshu
+    url: #
+  - text: 掘金
+    icon: juejin
+    url: #
+  - text: Gitee
+    icon: gitee
+    url: #
+  - text: Email
+    icon: email
+    url: #
+  - text: Zhihu
+    icon: zhihu
+    url: #
+  - text: Weibo
+    icon: weibo
+    url: #
+  - text: OSChina
+    icon: oschina
+    url: #
+  - text: 天涯
+    icon: tianya
+    url: #
 features:
   - title: 简洁至上
     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

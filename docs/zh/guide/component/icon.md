@@ -12,3 +12,6 @@ copyright:
 点击图标可复制组件代码
 :::
 <IconDisplay />
+
+## 第三方社交媒体Logo
+<SocialIconDisplay />
