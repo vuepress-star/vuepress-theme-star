@@ -20,7 +20,11 @@
       class="content"
       :style="{ height: frontmatter.navbar === false ? '100vh' : '' }"
     >
-      <header>
+      <header
+        :style="{
+          height: frontmatter.navbar === false ? '100vh' : undefined,
+        }"
+      >
         <div class="hero">
           <img v-if="heroImage" :src="heroImage" :alt="heroAlt" />
 
@@ -50,7 +54,6 @@
         :style="{
           minHeight:
             frontmatter.navbar === false ? 'calc(100vh - 2rem)' : undefined,
-          marginTop: frontmatter.navbar === false ? '100vh' : undefined,
         }"
       >
         <div v-if="features.length" class="features">

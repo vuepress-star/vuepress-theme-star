@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="theme-default-content custom">
+    <div class="theme-star-content custom">
       <Content />
     </div>
 
