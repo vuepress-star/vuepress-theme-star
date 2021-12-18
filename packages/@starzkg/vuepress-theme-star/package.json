@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-theme-star",
-  "version": "1.0.0-beta.20",
+  "version": "1.0.0-beta.21",
   "description": "A theme of VuePress",
   "keywords": [
     "vuepress-theme",
@@ -34,8 +34,8 @@
     "copy": "cpx \"src/**/*.{d.ts,html,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-icons": "1.0.0-beta.17",
-    "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.20",
+    "@starzkg/vuepress-icons": "1.0.0-beta.21",
+    "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.21",
     "@starzkg/vuepress-plugin-copy-code": "1.0.0-beta.20",
     "@starzkg/vuepress-plugin-copy-to-clipboard": "1.0.0-beta.20",
     "@starzkg/vuepress-plugin-copyright": "1.0.0-beta.17",
