@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-components-star",
-  "version": "1.0.0-beta.21",
+  "version": "1.0.0-beta.22",
   "description": "VuePress plugin - Star Components",
   "keywords": [
     "vuepress-plugin",
@@ -34,9 +34,9 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-icons": "1.0.0-beta.21",
-    "@starzkg/vuepress-shared": "1.0.0-beta.17",
-    "@starzkg/vuepress-social-icons": "1.0.0-beta.21",
+    "@starzkg/vuepress-icons": "1.0.0-beta.22",
+    "@starzkg/vuepress-shared": "1.0.0-beta.22",
+    "@starzkg/vuepress-social-icons": "1.0.0-beta.22",
     "@vuepress/client": "2.0.0-beta.29",
     "@vuepress/core": "2.0.0-beta.29",
     "@vuepress/plugin-external-link-icon": "2.0.0-beta.29",
