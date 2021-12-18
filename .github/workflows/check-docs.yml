@@ -1,4 +1,4 @@
-name: check-vite
+name: check-docs
 
 on:
   push:
