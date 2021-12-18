@@ -21,10 +21,8 @@ export type CategoryRef = ComputedRef<string[]>
 
 export const useCategory = (): CategoryRef =>
   computed(() => {
-    const {
-      categories,
-      category = categories,
-    } = usePageFrontmatter<BasePageFrontMatter>().value
+    const { categories, category = categories } =
+      usePageFrontmatter<BasePageFrontMatter>().value
 
     return getCategory(category)
   })
@@ -42,10 +40,8 @@ export type DateRef = ComputedRef<DateInfo | null>
 
 export const useDate = (options?: DateOptions, fallback?: Date): DateRef =>
   computed(() => {
-    const {
-      time,
-      date = time,
-    } = usePageFrontmatter<BasePageFrontMatter>().value
+    const { time, date = time } =
+      usePageFrontmatter<BasePageFrontMatter>().value
 
     return getDate(date ?? fallback, options)
   })

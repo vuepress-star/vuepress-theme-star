@@ -56,8 +56,10 @@ export default defineComponent({
     init() {
       if (this.renderCanvas !== null && this.computerCanvas !== null) {
         this.setStyle(this.renderCanvas.style)
-        this.renderCanvas.width = this.computerCanvas.width = this.clientSize.width
-        this.renderCanvas.height = this.computerCanvas.height = this.clientSize.height
+        this.renderCanvas.width = this.computerCanvas.width =
+          this.clientSize.width
+        this.renderCanvas.height = this.computerCanvas.height =
+          this.clientSize.height
         this.makeHighRes(this.renderCanvas, this.renderContext)
         this.makeHighRes(this.computerCanvas, this.computerContext)
       }
@@ -122,8 +124,10 @@ export default defineComponent({
           this.clientSize.width = window.innerWidth
           this.clientSize.height = window.innerHeight
           if (this.renderCanvas !== null && this.computerCanvas !== null) {
-            this.renderCanvas.width = this.computerCanvas.width = this.clientSize.width
-            this.renderCanvas.height = this.computerCanvas.height = this.clientSize.height
+            this.renderCanvas.width = this.computerCanvas.width =
+              this.clientSize.width
+            this.renderCanvas.height = this.computerCanvas.height =
+              this.clientSize.height
           }
 
           this.makeHighRes(this.renderCanvas, this.renderContext)

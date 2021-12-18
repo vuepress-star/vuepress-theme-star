@@ -54,9 +54,10 @@ const zhLocale: Locale = {
   weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
   weekdaysShort: '周日_周一_周二_周三_周四_周五_周六'.split('_'),
   weekdaysMin: '日_一_二_三_四_五_六'.split('_'),
-  months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-    '_'
-  ),
+  months:
+    '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
+      '_'
+    ),
   monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
   ordinal: (number, period) => {
     switch (period) {
@@ -117,9 +118,10 @@ const enLocale: Partial<Locale> = {
   weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
     '_'
   ),
-  months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-    '_'
-  ),
+  months:
+    'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+      '_'
+    ),
 }
 
 Dayjs.locale('zh', zhLocale)

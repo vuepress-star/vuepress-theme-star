@@ -48,9 +48,8 @@ export const initDemo = (): void => {
           default: {
             const code = getNormalCode(codeType, config)
 
-            return (code.useBabel
-              ? loadScript(state, code.babel)
-              : Promise.resolve()
+            return (
+              code.useBabel ? loadScript(state, code.babel) : Promise.resolve()
             ).then(() =>
               initDom({ code, codeType, container, innerHTML: true })
             )

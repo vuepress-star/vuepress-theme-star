@@ -39,4 +39,5 @@ export interface MarkdownEnhanceI18nConfig {
 
 export type MarkdownContainerName = keyof MarkdownEnhanceI18nConfig
 
-export type MarkdownEnhanceLocaleConfig = ResolvedLocaleConfig<MarkdownEnhanceI18nConfig>
+export type MarkdownEnhanceLocaleConfig =
+  ResolvedLocaleConfig<MarkdownEnhanceI18nConfig>

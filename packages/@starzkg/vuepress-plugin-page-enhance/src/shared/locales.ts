@@ -59,7 +59,8 @@ export interface PageEnhanceLocaleData extends LocaleData {
   words: string
 }
 
-export type PageEnhanceLocaleConfig = ResolvedLocaleConfig<PageEnhanceLocaleData>
+export type PageEnhanceLocaleConfig =
+  ResolvedLocaleConfig<PageEnhanceLocaleData>
 
 export interface ReadingTimeLocaleData extends LocaleData {
   /**
@@ -82,7 +83,8 @@ export interface ReadingTimeLocaleData extends LocaleData {
   time: string
 }
 
-export type ReadingTimeLocaleConfig = ResolvedLocaleConfig<ReadingTimeLocaleData>
+export type ReadingTimeLocaleConfig =
+  ResolvedLocaleConfig<ReadingTimeLocaleData>
 
 /**
  * 页面信息类型

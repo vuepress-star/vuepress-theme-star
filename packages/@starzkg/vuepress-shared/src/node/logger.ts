@@ -20,37 +20,32 @@ export class Logger {
   }
 
   load(text = ''): Ora {
-    return (!text && this.currentInstance
-      ? this.currentInstance
-      : this.create(text)
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
     ).start()
   }
 
   info(text = ''): Ora {
-    return (!text && this.currentInstance
-      ? this.currentInstance
-      : this.create(text)
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
     ).info()
   }
 
   success(text = ''): Ora {
-    return (!text && this.currentInstance
-      ? this.currentInstance
-      : this.create(text)
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
     ).succeed()
   }
 
   warn(text = ''): Ora {
-    return (!text && this.currentInstance
-      ? this.currentInstance
-      : this.create(text)
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
     ).warn()
   }
 
   error(text = ''): Ora {
-    return (!text && this.currentInstance
-      ? this.currentInstance
-      : this.create(text)
+    return (
+      !text && this.currentInstance ? this.currentInstance : this.create(text)
     ).fail()
   }
 }

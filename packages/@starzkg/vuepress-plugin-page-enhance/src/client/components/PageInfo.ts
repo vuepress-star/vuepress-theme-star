@@ -36,9 +36,8 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>()
-    const themePluginConfig = useThemePluginConfig<PageEnhanceOptions>(
-      'comment'
-    )
+    const themePluginConfig =
+      useThemePluginConfig<PageEnhanceOptions>('comment')
 
     const config = computed<PageInfoType[] | false>(() => {
       const themeConfig = themePluginConfig.value.pageInfo

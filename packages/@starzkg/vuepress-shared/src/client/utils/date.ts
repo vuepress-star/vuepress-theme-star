@@ -96,7 +96,8 @@ export const getDate = (
       }
     }
 
-    const timeRegPattern = /(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?/u
+    const timeRegPattern =
+      /(?:(\d+)[/-](\d+)[/-](\d+))?\s*(?:(\d+):(\d+)(?::(\d+))?)?/u
     const result = timeRegPattern.exec((date as string).trim())
 
     if (result) {
