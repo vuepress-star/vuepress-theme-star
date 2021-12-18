@@ -1,17 +1,17 @@
 @import '_variables';
 
-.blog-home {
+.profile-page {
   padding-top: var(--navbar-height);
   margin: 0 auto;
   max-width: 1290px;
 
-  .blog-home-header {
+  .profile-page-header {
     padding-top: 16px;
     margin: auto;
     height: 100px;
   }
 
-  .blog-home-body {
+  .profile-page-body {
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -22,7 +22,7 @@
     min-width: 0;
     width: 100%;
 
-    .blog-aside-wrapper {
+    .profile-aside-wrapper {
       position: sticky;
       box-sizing: border-box;
       top: 4.6rem;
@@ -38,15 +38,15 @@
       }
     }
 
-    .blog-main-wrapper {
+    .profile-main-wrapper {
       padding: 0 15px;
-      max-width: var(--homepage-width);
+      max-width: var(--pagepage-width);
       width: 100%;
       overflow: hidden;
     }
   }
 
-  .blog-home-footer {
+  .profile-page-footer {
     padding: 2.5rem;
     border-top: 1px solid var(--c-border);
     text-align: center;
@@ -56,9 +56,9 @@
 }
 
 @media (max-width: 719px) {
-  .blog-home {
-    .blog-home-body {
-      .blog-aside-wrapper {
+  .profile-page {
+    .profile-page-body {
+      .profile-aside-wrapper {
         display: none;
       }
     }
@@ -66,7 +66,7 @@
 }
 
 @media (min-width: 719px) {
-  .blog-home {
+  .profile-page {
     padding: var(--navbar-height) 1rem 0;
   }
 }

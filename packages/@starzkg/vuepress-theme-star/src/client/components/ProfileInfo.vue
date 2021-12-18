@@ -1,7 +1,7 @@
 <template>
-  <div class="blog-info" vocab="https://schema.org/" typeof="Person">
+  <div class="profile-info" vocab="https://schema.org/" typeof="Person">
     <div
-      class="blogger"
+      class="author"
       :class="{ hasIntro: intro !== undefined }"
       :data-balloon-pos="intro !== undefined ? 'down' : ''"
       role="navigation"
@@ -13,7 +13,7 @@
         alt="Blogger Avatar"
         :image="avatar"
       />
-      <div v-if="blogger" class="name" property="name" v-text="blogger" />
+      <div v-if="author" class="name" property="name" v-text="author" />
       <meta
         v-if="hasIntro"
         property="url"
@@ -54,9 +54,9 @@ import {
 } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed, defineComponent, onMounted, ref } from 'vue'
-import PanThumb from '../../../components/PanThumb.vue'
-interface BlogInfoFrontmatter {
-  blogger?: string
+import PanThumb from './PanThumb.vue'
+interface ProfileInfoFrontmatter {
+  author?: string
   avatar?: string
   intro?: string
   links?: {
@@ -67,12 +67,10 @@ interface BlogInfoFrontmatter {
 }
 
 const siteData = useSiteData()
-const pagesData = usePagesData()
-const frontmatter = usePageFrontmatter<BlogInfoFrontmatter>()
+const frontmatter = usePageFrontmatter<ProfileInfoFrontmatter>()
 
-usePagesData()
-const blogger = computed(() => {
-  return frontmatter.value.blogger
+const author = computed(() => {
+  return frontmatter.value.author
 })
 
 const avatar = computed(() => {
@@ -105,32 +103,17 @@ const links = computed(() => {
   })
 })
 
-const articleNumber = ref<number>(0)
-
-onMounted(async () => {
-  const pages = pagesData.value
-  for (const key in pages) {
-    const page = await pages[key]()
-    const { frontmatter, title } = page
-    if (
-      title !== undefined &&
-      title !== '' &&
-      (frontmatter.page === undefined ||
-        (frontmatter.page as string).toLowerCase().indexOf('home') === -1)
-    ) {
-      articleNumber.value++
-    }
-  }
-})
+declare const __ARTICLE_NUMBER__: number
+const articleNumber = __ARTICLE_NUMBER__
 </script>
 
 <style scoped lang="scss">
-.blog-info {
+.profile-info {
   &.page {
     background: var(--bgcolor);
   }
 
-  .blogger {
+  .author {
     padding: 8px 0;
     text-align: center;
 

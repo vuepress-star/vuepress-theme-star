@@ -3,6 +3,7 @@ import { path } from '@vuepress/utils'
 import type { StarThemeLocaleOptions, StarThemePluginsOptions } from '../shared'
 import {
   assignDefaultLocaleOptions,
+  countArticleNumber,
   resolveActiveHeaderLinksPluginOptions,
   resolveContainerPluginOptions,
   resolveContainerPluginOptionsForCodeGroup,
@@ -38,8 +39,16 @@ export const theme: Theme<StarThemeOptions> = ({
 
     clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetup.js'),
 
+    define: (app) => {
+      return {
+        __ARTICLE_NUMBER__: countArticleNumber(app.pages),
+      }
+    },
     // use the relative file path to generate edit link
-    extendsPageData: ({ filePathRelative }) => ({ filePathRelative }),
+    extendsPageData: ({ filePathRelative, content }) => ({
+      filePathRelative,
+      content,
+    }),
 
     plugins: [
       [

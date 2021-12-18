@@ -1,42 +1,34 @@
 <template>
-  <main class="home" :aria-labelledby="heroText ? 'main-title' : undefined">
-    <header class="hero">
-      <img v-if="heroImage" :src="heroImage" :alt="heroAlt" />
+  <main
+    class="profile-page"
+    :aria-labelledby="title ? 'main-title' : undefined"
+  >
+    <header class="profile-page-header"></header>
 
-      <h1 v-if="heroText" id="main-title">
-        {{ heroText }}
-      </h1>
+    <section class="profile-page-body">
+      <aside class="profile-aside-wrapper">
+        <ProfileInfo />
+        <div class="profile-info-list"></div>
+      </aside>
 
-      <p v-if="tagline" class="description">
-        {{ tagline }}
-      </p>
-
-      <p v-if="actions.length" class="actions">
-        <NavLink
-          v-for="action in actions"
-          :key="action.text"
-          class="action-button"
-          :class="[action.type]"
-          :item="action"
-        />
-      </p>
-    </header>
-
-    <div v-if="features.length" class="features">
-      <div v-for="feature in features" :key="feature.title" class="feature">
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
-      </div>
-    </div>
-
-    <div class="theme-star-content custom">
-      <Content />
-    </div>
+      <main class="profile-main-wrapper">
+        <div v-if="features.length" class="features">
+          <div v-for="feature in features" :key="feature.title" class="feature">
+            <h2>{{ feature.title }}</h2>
+            <p>{{ feature.details }}</p>
+          </div>
+        </div>
+        <div class="theme-star-content custom">
+          <Content />
+        </div>
+        <div class="article-list"></div>
+      </main>
+    </section>
 
     <template v-if="footer">
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-if="footerHtml" class="footer" v-html="footer" />
-      <div v-else class="footer" v-text="footer" />
+      <footer v-if="footerHtml" class="profile-page-footer" v-html="footer" />
+      <footer v-else class="profile-page-footer" v-text="footer" />
     </template>
   </main>
 </template>
@@ -50,7 +42,7 @@ import {
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared'
-import NavLink from '../components/NavLink.vue'
+import ProfileInfo from '../components/ProfileInfo.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
