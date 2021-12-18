@@ -13,9 +13,10 @@
 
 下列 Hooks 会在初始化 App 时处理：
 
+- [extendsMarkdownOptions](#extendsmarkdownoptions)
 - [extendsMarkdown](#extendsmarkdown)
 - [extendsPageOptions](#extendspageoptions)
-- [extendsPageData](#extendspagedata)
+- [extendsPage](#extendspage)
 - [onInitialized](#oninitialized)
 
 下列 Hooks 会在准备文件时处理：
@@ -117,6 +118,36 @@ module.exports = {
 }
 ```
 
+### extendsMarkdownOptions
+
+- 类型： `(options: MarkdownOptions, app: App) => void | Promise<void>`
+
+- 详情：
+
+  Markdown 配置项扩展。
+
+  该 Hook 接收一个函数，在参数中会收到 Markdown 配置项。
+
+  该 Hook 可以用于修改 Markdown 配置项。
+
+- 示例：
+
+修改默认提取的子标题层级：
+
+```js
+module.exports = {
+  extendsMarkdownOptions: (markdownOptions, app) => {
+    if (markdownOptions.extractHeaders === false) return
+    markdownOptions.extractHeaders = markdownOptions.extractHeaders ?? {}
+    if (markdownOptions.extractHeaders.level) return
+    markdownOptions.extractHeaders.level = [2, 3, 4, 5, 6]
+  },
+}
+```
+
+- 参考：
+  - [配置 > markdown](./config.md#markdown)
+
 ### extendsMarkdown
 
 - 类型： `(md: Markdown, app: App) => void | Promise<void>`
@@ -127,7 +158,7 @@ module.exports = {
 
   该 Hook 接收一个函数，在参数中会收到一个由 [markdown-it](https://github.com/markdown-it/markdown-it) 提供的 `Markdown` 实例。
 
-  它可以用来添加额外的 markdown-it 插件、应用额外的自定义功能。
+  该 Hook 可以用来添加额外的 markdown-it 插件、应用额外的自定义功能。
 
 - 示例：
 
@@ -142,13 +173,15 @@ module.exports = {
 
 ### extendsPageOptions
 
-- 类型： `(options: PageOptions, app: App) => PageOptions | Promise<PageOptions>`
+- 类型： `(options: PageOptions, app: App) => void | Promise<void>`
 
 - 详情：
 
   页面配置项扩展。
 
-  该 Hook 接收一个函数，在参数中会收到 `cretePage` 传入的原始选项。返回的对象会被合并到页面选项中，用以创建页面。
+  该 Hook 接收一个函数，在参数中会收到 `createPage` 传入的配置项。
+
+  该 Hook 可以用于修改页面配置项。
 
 - 示例：
 
@@ -156,15 +189,11 @@ module.exports = {
 
 ```js
 module.exports = {
-  extendsPageOptions: ({ filePath }, app) => {
-    if (filePath?.startsWith(app.dir.source('_posts/'))) {
-      return {
-        frontmatter: {
-          permalinkPattern: '/:year/:month/:day/:slug.html',
-        },
-      }
+  extendsPageOptions: (pageOptions, app) => {
+    if (pageOptions.filePath?.startsWith(app.dir.source('_posts/'))) {
+      pageOptions.frontmatter = pageOptions.frontmatter ?? {}
+      pageOptions.frontmatter.permalinkPattern = '/:year/:month/:day/:slug.html'
     }
-    return {}
   },
 }
 ```
@@ -172,28 +201,32 @@ module.exports = {
 - 参考：
   - [Node API > Page > createPage](./node-api.md#createPage)
 
-### extendsPageData
+### extendsPage
 
-- 类型： `(page: Omit<Page, 'data'>, app: App) => Record<string, any> | Promise<Record<string, any>>`
+- 类型： `(page: Page, app: App) => void | Promise<void>`
 
 - 详情：
 
-  页面数据扩展。
+  页面扩展。
 
-  该 Hook 接收一个函数，在参数中会收到一个 `Page` 实例 （不包含 `data` 属性）。返回的对象会被合并到页面数据中，可以在客户端代码中使用。
+  该 Hook 接收一个函数，在参数中会收到一个 `Page` 实例。
+
+  该 Hook 可以用来在 Page 对象上添加额外的属性，或修改现有的属性等。
+
+  值得一提的是，针对 `page.data` 和 `page.routeMeta` 的改动可以在客户端代码中使用。
 
 - 示例：
 
 ```js
 module.exports = {
-  extendsPageData: (page) => {
-    const meta = 'foobar'
-    return { meta }
+  extendsPage: (page) => {
+    page.foo = 'foo'
+    page.data.bar = 'bar'
   },
 }
 ```
 
-  在客户端组件中：
+在客户端组件中：
 
 ```js
 import { usePageData } from '@vuepress/client'
@@ -201,7 +234,7 @@ import { usePageData } from '@vuepress/client'
 export default {
   setup() {
     const page = usePageData()
-    console.log(page.value.meta) // foobar
+    console.log(page.value.bar) // bar
   },
 }
 ```
@@ -209,6 +242,7 @@ export default {
 - 参考：
   - [客户端 API > usePageData](./client-api.md#usepagedata)
   - [Node API > Page 属性 > data](./node-api.md#data)
+  - [Node API > Page 属性 > routeMeta](./node-api.md#routemeta)
 
 ## 客户端文件 Hooks
 
@@ -230,7 +264,10 @@ export default {
 const { path } = require('@vuepress/utils')
 
 module.exports = {
-  clientAppEnhanceFiles: path.resolve(__dirname, './path/to/clientAppEnhance.js'),
+  clientAppEnhanceFiles: path.resolve(
+    __dirname,
+    './path/to/clientAppEnhance.js'
+  ),
 }
 ```
 
@@ -256,7 +293,10 @@ module.exports = {
 const { path } = require('@vuepress/utils')
 
 module.exports = {
-  clientAppRootComponentFiles: path.resolve(__dirname, './path/to/RootComponent.vue'),
+  clientAppRootComponentFiles: path.resolve(
+    __dirname,
+    './path/to/RootComponent.vue'
+  ),
 }
 ```
 

@@ -26,15 +26,17 @@ sidebar: auto
 
 - `@vuepress/utils`: 仅可以在 Node 端使用的工具函数模块。
 
-- `vuepress`: 是 `@vuepress/cli` + `@vuepress/bundler-webpack` + `@vuepress/theme-default` 的封装。如果用户想使用 默认主题 + Webpack ，仅安装这个 Package 就可以了。
+- `vuepress`: 是 `vuepress-vite` 的封装。
 
 - `vuepress-vite`: 是 `@vuepress/cli` + `@vuepress/bundler-vite` + `@vuepress/theme-default` 的封装。如果用户想使用 默认主题 + Vite ，仅安装这个 Package 就可以了。
+
+- `vuepress-webpack`: 是 `@vuepress/cli` + `@vuepress/bundler-webpack` + `@vuepress/theme-default` 的封装。如果用户想使用 默认主题 + Webpack ，仅安装这个 Package 就可以了。
 
 ## 开发配置
 
 开发要求：
 
-- [Node.js](http://nodejs.org) **version 12+**
+- [Node.js](http://nodejs.org) **version 14+**
 - [Yarn v1 classic](https://classic.yarnpkg.com/zh-Hans/docs/install)
 
 克隆代码仓库，并安装依赖：

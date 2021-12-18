@@ -48,7 +48,6 @@ export const zh: SidebarConfig = {
       children: [
         '/zh/guide/component/badge.md',
         '/zh/guide/component/code-group.md',
-        '/zh/guide/component/out-bound-link.md',
         '/zh/guide/component/icon.md',
         '/zh/guide/component/external-link.md',
         '/zh/guide/component/element-plus.md',

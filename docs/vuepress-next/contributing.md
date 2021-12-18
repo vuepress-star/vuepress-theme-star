@@ -26,15 +26,17 @@ This repository employs a [monorepo](https://en.wikipedia.org/wiki/Monorepo) set
 
 - `@vuepress/utils`: Utilities that should only be used in node side.
 
-- `vuepress`: A wrapper of `@vuepress/cli` + `@vuepress/bundler-webpack` + `@vuepress/theme-default`. If users want to use default theme with webpack, they can simply install this package.
+- `vuepress`: A wrapper of `vuepress-vite`.
 
 - `vuepress-vite`: A wrapper of `@vuepress/cli` + `@vuepress/bundler-vite` + `@vuepress/theme-default`. If users want to use default theme with vite, they can simply install this package.
+
+- `vuepress-webpack`: A wrapper of `@vuepress/cli` + `@vuepress/bundler-webpack` + `@vuepress/theme-default`. If users want to use default theme with webpack, they can simply install this package.
 
 ## Development Setup
 
 Pre-requirement:
 
-- [Node.js](http://nodejs.org) **version 12+**
+- [Node.js](http://nodejs.org) **version 14+**
 - [Yarn v1 classic](https://classic.yarnpkg.com/en/docs/install)
 
 Clone the repo, and install dependencies:

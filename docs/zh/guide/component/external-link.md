@@ -1,3 +1,7 @@
+---
+title: 外部链接
+---
+
 # 外部链接
 
 ## ExternalLinkIcon
@@ -14,7 +18,7 @@
   该组件主要是为了开发主题时使用。在绝大多数情况下你不会用到它。
 - 示例
   <ExternalLinkIcon/>
-## ExternalLinkIcon
+## ExternalLink
 
 - 示例
   <ExternalLink url="//baidu.com" text="链接"/>

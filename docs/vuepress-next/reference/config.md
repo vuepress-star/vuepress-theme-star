@@ -168,6 +168,7 @@ module.exports = {
 ```
 
 - Also see:
+  - [themeConfig](#themeconfig)
   - [Guide > Theme](../guide/theme.md)
 
 ### themeConfig
@@ -178,9 +179,23 @@ module.exports = {
 
 - Details:
 
-  Provide config options to the used theme. The options will vary depending on the theme you are using.
+  Provide config to the used theme. The options will vary depending on the theme you are using.
+
+- Example:
+
+```js
+module.exports = {
+  // use default theme
+  theme: '@vuepress/theme-default',
+  // configure default theme
+  themeConfig: {
+    logo: '/logo.png',
+  },
+}
+```
 
 - Also see:
+  - [theme](#theme)
   - [Default Theme > Config](./default-theme/config.md)
 
 ## Bundler Config
@@ -561,18 +576,6 @@ You should not configure it unless you understand what it is for.
 - Details:
 
   Additional attributes for external links.
-
-#### markdown.links.externalIcon
-
-- Type: `boolean`
-
-- Default: `true`
-
-- Details:
-
-  Whether to append an <OutboundLink /> icon to external links.
-
-  You can override this global option via [externalIcon](./frontmatter.md#externalicon) frontmatter in your pages.
 
 ### markdown.toc
 

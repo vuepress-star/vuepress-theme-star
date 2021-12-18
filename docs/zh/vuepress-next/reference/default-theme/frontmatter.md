@@ -6,6 +6,17 @@
 
 本章节中的 Frontmatter 会在所有类型的页面中生效。
 
+### externalLinkIcon
+
+- 类型： `boolean`
+
+- 详情：
+
+  由[@vuepress/plugin-external-link-icon](../plugin/external-link-icon.md#externallinkicon) 提供。
+
+- 参考：
+  - [默认主题 > 配置 > themePlugins.externalLinkIcon](#themeplugins-externallinkicon)
+
 ### navbar
 
 - 类型： `boolean`
@@ -89,6 +100,20 @@ pageClass: custom-page-class
 
 - 参考：
   - [指南 > 静态资源 > Public 文件](../../guide/assets.md#public-文件)
+
+### heroImageDark
+
+- 类型： `string`
+
+- 详情：
+
+  在夜间模式中使用的首页图片的 URL 。
+
+  如果你想在夜间模式中使用不同的首页图片，就可以使用该配置项。
+
+- 参考：
+  - [默认主题 > Frontmatter > heroImage](#heroimage)
+  - [默认主题 > 配置 > darkMode](./config.md#darkmode)
 
 ### heroAlt
 
