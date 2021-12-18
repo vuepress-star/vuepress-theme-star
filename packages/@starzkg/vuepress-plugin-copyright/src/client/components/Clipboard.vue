@@ -8,6 +8,7 @@
       <a :href="location">{{ decodeURIComponent(location) }}</a>
     </p>
     &#10;
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="html" />
   </div>
 </template>
