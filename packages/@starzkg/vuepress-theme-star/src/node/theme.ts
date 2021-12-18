@@ -1,6 +1,10 @@
-import type { Theme, ThemeConfig } from '@vuepress/core'
+import type { Page, Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import type { StarThemeLocaleOptions, StarThemePluginsOptions } from '../shared'
+import type {
+  StarThemeLocaleOptions,
+  StarThemePageData,
+  StarThemePluginsOptions,
+} from '../shared'
 import {
   assignDefaultLocaleOptions,
   countArticleNumber,
@@ -21,10 +25,24 @@ export interface StarThemeOptions extends ThemeConfig, StarThemeLocaleOptions {
   themePlugins?: StarThemePluginsOptions
 }
 
-export const theme: Theme<StarThemeOptions> = ({
-  themePlugins = {},
-  ...localeOptions
-}) => {
+export const theme: Theme<StarThemeOptions> = (
+  { themePlugins = {}, ...localeOptions },
+  app
+) => {
+  if (app.options.bundler.endsWith('vite')) {
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    app.options.bundlerConfig.viteOptions = require('vite').mergeConfig(
+      app.options.bundlerConfig.viteOptions,
+      {
+        css: {
+          preprocessorOptions: {
+            scss: { charset: false },
+          },
+        },
+      }
+    )
+  }
+
   assignDefaultLocaleOptions(localeOptions)
 
   return {
@@ -44,11 +62,15 @@ export const theme: Theme<StarThemeOptions> = ({
         __ARTICLE_NUMBER__: countArticleNumber(app.pages),
       }
     },
-    // use the relative file path to generate edit link
-    extendsPageData: ({ filePathRelative, content }) => ({
-      filePathRelative,
-      content,
-    }),
+
+    extendsPage: (page: Page<StarThemePageData>) => {
+      // save relative file path into page data to generate edit link
+      page.data.filePathRelative = page.filePathRelative
+      // save title into route meta to generate navbar and sidebar
+      page.routeMeta.title = page.title
+
+      page.data.content = page.content
+    },
 
     plugins: [
       [

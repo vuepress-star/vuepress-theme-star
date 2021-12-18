@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import OutboundLink from './OutboundLink.vue'
+import ExternalLinkIcon from './ExternalLinkIcon.vue'
 
 export default defineComponent({
   name: 'ExternalLink',
@@ -31,7 +31,7 @@ defineProps({
   icon: {
     type: [String, Object],
     required: false,
-    default: OutboundLink,
+    default: ExternalLinkIcon,
   },
   url: {
     type: String,

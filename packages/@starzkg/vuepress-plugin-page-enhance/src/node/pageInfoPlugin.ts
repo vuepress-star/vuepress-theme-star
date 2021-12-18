@@ -1,9 +1,9 @@
 import { addViteOptimizeDeps, getLocales } from '@starzkg/vuepress-shared'
-import type { Plugin } from '@vuepress/core'
+import type { Page, Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { usePalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { PageEnhanceOptions } from '../shared'
-import { ReadingTime } from '../shared'
+import { PageEnhancePageData } from '../shared'
 import { i18n, pageInfoI18n, walineI18n } from './i18n'
 import { readingTime } from './reading-time'
 
@@ -38,14 +38,14 @@ export const pageInfoPlugin: Plugin<PageEnhanceOptions> = (options, app) => {
       READING_TIME_I18N: getLocales(app, i18n, options.locales),
     }),
 
-    extendsPageData: (page): { readingTime: ReadingTime } => ({
-      readingTime: readingTime(
+    extendsPage: (page: Page<PageEnhancePageData>) => {
+      page.data.readingTime = readingTime(
         page.content,
         options.wordPerminute ||
           (app.options.themeConfig.wordPerminute as number) ||
           300
-      ),
-    }),
+      )
+    },
     clientAppEnhanceFiles: path.resolve(
       __dirname,
       '../client/clientAppEnhance.js'

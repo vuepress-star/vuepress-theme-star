@@ -6,8 +6,8 @@ import BreadCrumb from './components/BreadCrumb'
 import CodeGroup from './components/CodeGroup'
 import CodeGroupItem from './components/CodeGroupItem.vue'
 import ExternalLink from './components/ExternalLink.vue'
+import ExternalLinkIcon from './components/ExternalLinkIcon.vue'
 import GithubCorner from './components/GithubCorner.vue'
-import OutboundLink from './components/OutboundLink.vue'
 import Pagination from './components/Pagination.vue'
 import ScreenFull from './components/ScreenFull'
 import './styles/index.scss'
@@ -18,10 +18,9 @@ export default defineClientAppEnhance(({ app }) => {
   app.component('CodeGroupItem', CodeGroupItem)
   // wrap the `<GithubCorner />` component with plugin options
   app.component('GithubCorner', GithubCorner)
-  // unregister the built-in `<OutboundLink>` to avoid warning
-  delete app._context.components.OutboundLink
-  // override the built-in `<OutboundLink>`
-  app.component('OutboundLink', OutboundLink)
+  // override the `<ExternalLinkIcon>` provided by @vuepress/plugin-external-link-icon
+  delete app._context.components.ExternalLinkIcon
+  app.component('ExternalLinkIcon', ExternalLinkIcon)
   app.component('ExternalLink', ExternalLink)
   app.component('BreadCrumb', BreadCrumb)
   app.component('Pagination', Pagination)

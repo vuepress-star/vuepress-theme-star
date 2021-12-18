@@ -2,7 +2,7 @@ import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { usePageData } from '@vuepress/client'
 import { computed, defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
-import type { ReadingTime } from '../../shared'
+import type { PageEnhancePageData } from '../../shared'
 import { commentOptions, pageInfoI18n, readingTimeI18n } from '../define'
 import { TimerIcon } from './icons'
 
@@ -10,7 +10,7 @@ export default defineComponent({
   name: 'ReadingTimeInfo',
 
   setup() {
-    const page = usePageData<{ readingTime: ReadingTime }>()
+    const page = usePageData<PageEnhancePageData>()
     const pageInfoLocale = useLocaleConfig(pageInfoI18n)
     const readingTimeLocale = useLocaleConfig(readingTimeI18n)
 

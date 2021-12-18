@@ -1,7 +1,8 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
 
 export interface StarThemePageData extends GitPluginPageData {
-  filePathRelative: string
+  filePathRelative: string | null
+  content: string
 }
 
 export interface StarThemePageFrontmatter {

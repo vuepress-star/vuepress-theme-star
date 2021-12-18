@@ -27,6 +27,10 @@ export interface StarThemePluginsOptions {
     codeGroup?: boolean
     codeGroupItem?: boolean
   }
+  /**
+   * Enable @vuepress/plugin-external-link-icon or not
+   */
+  externalLinkIcon?: boolean
 
   /**
    * Enable @vuepress/plugin-git or not
@@ -281,7 +285,7 @@ export interface StarThemeLocaleData extends LocaleData {
   backToHome?: string
 
   /**
-   * A11y text for `<OutboundLink>`
+   * A11y text for external link icon
    */
   openInNewWindow?: string
 

@@ -26,8 +26,9 @@
         }"
       >
         <div class="hero">
-          <img v-if="heroImage" :src="heroImage" :alt="heroAlt" />
-
+          <ClientOnly>
+            <img v-if="heroImage" :src="withBase(heroImage)" :alt="heroAlt" />
+          </ClientOnly>
           <h1 v-if="heroText" id="main-title">
             {{ heroText }}
           </h1>
@@ -78,7 +79,6 @@
 </template>
 
 <script setup lang="ts">
-import { Search as Google } from '@starzkg/vuepress-icons'
 import {
   usePageFrontmatter,
   useSiteLocaleData,
@@ -88,16 +88,17 @@ import { isArray } from '@vuepress/shared'
 import { computed, onMounted } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared'
 import NavLink from '../components/NavLink.vue'
+import { useDarkMode } from '../composables'
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
+const isDarkMode = useDarkMode()
 
 // hero image and title
 const heroImage = computed(() => {
-  if (!frontmatter.value.heroImage) {
-    return null
+  if (isDarkMode.value && frontmatter.value.heroImageDark !== undefined) {
+    return frontmatter.value.heroImageDark
   }
-
-  return withBase(frontmatter.value.heroImage)
+  return frontmatter.value.heroImage
 })
 const heroText = computed(() => {
   if (frontmatter.value.heroText === null) {

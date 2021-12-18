@@ -11772,6 +11772,16 @@ vuepress-vite@2.0.0-beta.29, vuepress-vite@^2.0.0-beta.29:
     "@vuepress/core" "2.0.0-beta.29"
     "@vuepress/theme-default" "2.0.0-beta.29"
 
+vuepress-webpack@^2.0.0-beta.29:
+  version "2.0.0-beta.29"
+  resolved "https://registry.yarnpkg.com/vuepress-webpack/-/vuepress-webpack-2.0.0-beta.29.tgz#b322da197a6cfca9dfe0cba87dd5a43b034fb18a"
+  integrity sha512-l8fDkA6pjI46Nuy0drMHanoiwDAFPlXUTe6lISttIfSKDeGJ1p5UlXo9IFiI/S/ODGNapGe3X/ANix7ca3cIIw==
+  dependencies:
+    "@vuepress/bundler-webpack" "2.0.0-beta.29"
+    "@vuepress/cli" "2.0.0-beta.29"
+    "@vuepress/core" "2.0.0-beta.29"
+    "@vuepress/theme-default" "2.0.0-beta.29"
+
 vuepress@^2.0.0-beta.29:
   version "2.0.0-beta.29"
   resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-2.0.0-beta.29.tgz#47a2c4d0d6eebb304b89032725942220d14dd9a4"
