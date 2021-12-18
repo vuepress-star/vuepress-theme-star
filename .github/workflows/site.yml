@@ -15,7 +15,7 @@ jobs:
     env:
       DOCS_GA_ID: G-CTB8FQ7VMW
       DOCS_BA_ID: 2bec8aabb0629582fd66244ae851f3a1
-      NODE_VERSION: '14'
+      NODE_VERSION: '16'
 
     steps:
       - uses: actions/checkout@v2

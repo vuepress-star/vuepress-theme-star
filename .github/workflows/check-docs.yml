@@ -17,7 +17,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node: ['14']
+        node: ['14', '16']
+        bundler: ['@vuepress/vite', '@vuepress/webpack']
 
     runs-on: ${{ matrix.os }}
 
@@ -49,7 +50,7 @@ jobs:
       - name: Copy and build
         run: yarn copy && yarn build
 
-      - name: Build docs with vite
+      - name: Build docs with ${{ matrix.bundler }}
         run: yarn docs:build
         env:
-          DOCS_BUNDLER: '@vuepress/vite'
+          DOCS_BUNDLER: ${{ matrix.bundler }}
