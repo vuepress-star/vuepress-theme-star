@@ -34,7 +34,7 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@element-plus/icons": "^0.0.11",
+    "@element-plus/icons-vue": "^0.2.4",
     "@vuepress/client": "2.0.0-beta.29",
     "@vuepress/core": "2.0.0-beta.29",
     "@vuepress/utils": "2.0.0-beta.28",
