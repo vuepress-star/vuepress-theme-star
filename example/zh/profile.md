@@ -1,6 +1,6 @@
 ---
-page: BlogHome
-blogger: Starzkg
+page: profile
+author: Starzkg
 avatar: https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif
 intro: 你已经是一个成熟的程序猿了，要学会自己DEBUG了
 

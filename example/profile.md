@@ -1,6 +1,6 @@
 ---
-page: blogHome
-title: 博客首页
+page: profile
+title: Profile
 heroImage: /images/hero.png
 actions:
   - text: 快速上手

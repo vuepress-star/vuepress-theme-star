@@ -4,16 +4,12 @@ export default [
     link: '/',
   },
   {
-    text: 'Blog',
-    link: '/blog/',
+    text: 'Profile',
+    link: '/profile.html',
   },
   {
     text: 'Document',
     link: '/document/',
-  },
-  {
-    text: 'SpreadSheet',
-    link: '/spreadsheet/',
   },
   {
     text: 'Presentation',
