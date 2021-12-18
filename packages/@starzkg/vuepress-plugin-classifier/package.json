@@ -40,9 +40,9 @@
     "prettier": "prettier ./src -w"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.27",
-    "@vuepress/core": "2.0.0-beta.27",
-    "vue": "^3.2.20"
+    "@vuepress/client": "2.0.0-beta.29",
+    "@vuepress/core": "2.0.0-beta.29",
+    "vue": "^3.2.26"
   },
   "publishConfig": {
     "access": "public"

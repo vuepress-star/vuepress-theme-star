@@ -35,11 +35,11 @@
   },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
-    "@vuepress/client": "2.0.0-beta.27",
-    "@vuepress/core": "2.0.0-beta.27",
-    "@vuepress/utils": "2.0.0-beta.27",
+    "@vuepress/client": "2.0.0-beta.29",
+    "@vuepress/core": "2.0.0-beta.29",
+    "@vuepress/utils": "2.0.0-beta.28",
     "css-loader": "^6.5.1",
-    "element-plus": "^1.2.0-beta.4",
+    "element-plus": "^1.2.0-beta.6",
     "style-loader": "^3.3.1"
   },
   "publishConfig": {
