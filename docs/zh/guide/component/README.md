@@ -131,11 +131,11 @@ npm i -D vuepress-theme-hope
   </CodeGroupItem>
 </CodeGroup>
 
-## OutBoundLink
+## ExternalLinkIcon
 - 使用
 
 ```html
-<OutboundLink/>
+<ExternalLinkIcon/>
 ```
 - 详情
 
@@ -143,7 +143,7 @@ npm i -D vuepress-theme-hope
 
   该组件主要是为了开发主题时使用。在绝大多数情况下你不会用到它。
 - 示例
-  <OutboundLink/>
+  <ExternalLinkIcon/>
 
 
 ## Element Plus
