@@ -15,7 +15,8 @@ At the same time, VuePress itself adds some Markdown syntaxes. You can [view the
 
 ## Enable all
 
-You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [markdown-enhance](https://vuepress-theme-hope.github.io/markdown-enhance) plugin.
+You can set `themeconfig.mdEnhance.enableAll` to enable all features of
+the [markdown-enhance](https://vuepress-theme-star.github.io/markdown-enhance) plugin.
 
 ```js {3-5}
 module.exports = {

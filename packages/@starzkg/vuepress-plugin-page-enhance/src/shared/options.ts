@@ -33,8 +33,8 @@ interface BaseCommentOptions {
    *
    * Page Info display configuration
    *
-   * @see https://vuepress-theme-hope.github.io/comment/zh/config/#pageinfo (zh)
-   * @see https://vuepress-theme-hope.github.io/comment/config/#pageinfo (en)
+   * @see https://vuepress-theme-star.github.io/comment/zh/config/#pageinfo (zh)
+   * @see https://vuepress-theme-star.github.io/comment/config/#pageinfo (en)
    *
    * @default ['Author', 'PageView', 'Date', 'Category', 'Tag', 'ReadTime']
    */

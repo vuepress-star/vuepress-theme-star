@@ -1,59 +1,38 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
 </p>
-<h1 align="center">vuepress-plugin-copy-code2</h1>
-<h4 align="center">VuePress copy code plugin📋 / VuePress 代码复制插件📋</h4>
+<h1 align="center">vuepress-plugin-copyright</h1>
+<h4 align="center">VuePress Copyright Plugin 📋 / VuePress 版权信息插件 📋</h4>
 
-[![Version](https://img.shields.io/npm/v/vuepress-plugin-copy-code2.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-copy-code2.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-copy-code2?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-copy-code2)
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-copyright?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
 
 <!-- markdownlint-restore -->
 
-VuePress copy code plugin📋 / VuePress 代码复制插件 📋
+VuePress Copyright Plugin 📋 / VuePress 版权信息插件 📋
 
-## [Official Docs](https://vuepress-theme-hope.github.io/copy-code/) | [官方文档](https://vuepress-theme-hope.github.io/copy-code/zh/)
+## [Official Docs](https://vuepress-theme-star.github.io/copyright/) | [官方文档](https://vuepress-theme-star.github.io/copyright/zh/)
 
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-copy-code2
+npm i -D vuepress-plugin-copyright
 ```
 
 Or
 
 ```bash
-yarn add -D vuepress-plugin-copy-code2
+yarn add -D vuepress-plugin-copyright
 ```
-
-## Migrate from V1
-
-Renamed from `@mr-hope/vuepress-copy-code` to `vuepress-plugin-copy-code2`. ⚠
-
-- [x] option `delay`, which means the delay registing copy buttons when page loaded or navigated ![new](https://img.shields.io/badge/-new-brightgreen)
-- [x] option `locale` for i18n config ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [ ] Option `pure` (default `false`) for handling fancy styles. ![new](https://img.shields.io/badge/-new-brightgreen)
-
----
 
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-copy-code2
+npm i -D vuepress-plugin-copyright
 ```
 
 或
 
 ```bash
-yarn add -D vuepress-plugin-copy-code2
+yarn add -D vuepress-plugin-copyright
 ```
-
-## 从 V1 迁移
-
-名称从 `@mr-hope/vuepress-copy-code` 改为 `vuepress-plugin-copy-code2`. ⚠
-
-- [x] 选项 `delay`，控制页面加载和切换后注册复制按钮的延迟 ![新增](https://img.shields.io/badge/-新增-brightgreen)
-
-- [x] 选项 `locale` 用于国际化配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
-
-- [ ] 选项 `pure` (默认 `false`) 控制华丽的样式 ![新增](https://img.shields.io/badge/-新增-brightgreen)

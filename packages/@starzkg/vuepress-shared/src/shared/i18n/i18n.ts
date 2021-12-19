@@ -13,7 +13,7 @@ export const showLangError = (lang: string, plugin = ''): void => {
 ${
   lang === 'root'
     ? ''
-    : `You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v2/packages/${
+    : `You can contribute to https://github.com/vuepress-theme-star/vuepress-theme-star/blob/v2/packages/${
         plugin || '<YOUR PLUGIN>'
       }/src/node/i18n.ts in this repository.
 `

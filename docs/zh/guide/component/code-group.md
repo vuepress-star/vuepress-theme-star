@@ -42,12 +42,12 @@ active
 <CodeGroup>
 <CodeGroupItem title="yarn">
 ```bash
-  yarn add -D vuepress-theme-hope
+  yarn add -D vuepress-theme-star
 ```
 </CodeGroupItem>
 <CodeGroupItem title="npm" active>
 ```bash
-npm i -D vuepress-theme-hope
+npm i -D vuepress-theme-star
 ```
 </CodeGroupItem>
 </CodeGroup>
@@ -59,14 +59,14 @@ npm i -D vuepress-theme-hope
   <CodeGroupItem title="yarn">
 
 ```bash
-yarn add -D vuepress-theme-hope
+yarn add -D vuepress-theme-star
 ```
   </CodeGroupItem>
 
   <CodeGroupItem title="npm" active>
 
 ```bash
-npm i -D vuepress-theme-hope
+npm i -D vuepress-theme-star
 ```
   </CodeGroupItem>
 </CodeGroup>

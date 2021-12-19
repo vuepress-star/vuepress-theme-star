@@ -35,6 +35,6 @@ VuePress 诞生的初衷是为了支持 Vue.js 及其子项目的文档需求，
 
 
 ## 参考主题
-- [vuepress-theme-hope](https://vuepress-theme-hope.github.io/)
+- [vuepress-theme-star](https://vuepress-theme-star.github.io/)
 
 ## 参考项目

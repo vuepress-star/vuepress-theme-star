@@ -51,7 +51,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 <!-- 相对路径 -->
 [首页](../README.md)  
 [配置参考](../reference/config.md)  
-[快速上手](getting-started.md)  
+[快速上手](./getting-started.md)  
 <!-- 绝对路径 -->
 [指南](/zh/guide/README.md)  
 [配置参考 > markdown.links](/zh/reference/config.md#links)  
@@ -68,7 +68,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
   <RouterLink to="/zh/guide/getting-started.html">快速上手</RouterLink>
   <RouterLink to="/zh/guide/">指南</RouterLink>
   <RouterLink to="/zh/reference/config.html#links">配置参考 &gt; markdown.links</RouterLink>
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 </template>
 ```
 
@@ -85,7 +85,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 - 内部链接会被转换为 `<RouterLink>` 以便进行 SPA 导航。
 - 指向 `.md` 文件的内部链接会被转换为目标页面的 [路由路径](./page.md#路由)，并且支持绝对路径和相对路径。
-- 外部链接会被添加 `target="_blank" rel="noopener noreferrer"` 属性和一个 <ExternalLinkIcon /> 标记。
+- 外部链接会被添加 `target="_blank" rel="noopener noreferrer"` 属性。
 
 **建议**
 
@@ -99,8 +99,6 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 链接扩展是由我们的内置插件支持的。
 
 配置参考： [markdown.links](../reference/config.md#markdown-links)
-
-参考: [內置组件 > ExternalLinkIcon](../reference/components.md#outboundlink)
 :::
 
 ### Emoji :tada:

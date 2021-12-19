@@ -12,7 +12,8 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 通过安装 `vuepress-plugin-markdown-enhance` VuePress插件，你可以使用更多的语法格式在你的MarkDown文件中
 ### 一键启用
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [markdown-enhance](https://vuepress-theme-hope.github.io/markdown-enhance) 插件的所有功能。
+你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [markdown-enhance](https://vuepress-theme-star.github.io/markdown-enhance)
+插件的所有功能。
 
 ::: tip
 

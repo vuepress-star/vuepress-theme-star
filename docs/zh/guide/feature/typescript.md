@@ -7,7 +7,8 @@ tags:
   - typescript
 ---
 
-`vuepress-theme-hope` 的大部分文件都是使用 TypeScript 编写，所以 vuepress-theme-hope 也可以为你的 VuePress 项目带来了原生的 TypeScript 支持，你只需设置 `themeConfig.typescript` 为 `true` 即可开启 `typescript` 支持。
+`vuepress-theme-star` 的大部分文件都是使用 TypeScript 编写，所以 vuepress-theme-star 也可以为你的 VuePress 项目带来了原生的 TypeScript
+支持，你只需设置 `themeConfig.typescript` 为 `true` 即可开启 `typescript` 支持。
 
 开启 TypeScript 支持意味着你可以使用 `enhanceAppFiles.ts`，同时在你的 vue 组件 和 Markdown 文件中使用 TypeScript。
 
@@ -57,7 +58,8 @@ npm i -D typescript
 }
 ```
 
-如果你已经有了 `tsconfig.json`, 那么只需要在 `compilerOptions.types` 中添加 vuepress-theme-hope 的类型定义文件包 `"@mr-hope/vuepress-theme-types"` 即可。
+如果你已经有了 `tsconfig.json`, 那么只需要在 `compilerOptions.types` 中添加 vuepress-theme-star
+的类型定义文件包 `"@mr-hope/vuepress-theme-types"` 即可。
 
 你还应该在你的项目中创建一个 ts 文件并添加至 `tsconfig.json` 的 `include` 中，你可以直接创建一个空的 enhanceApp.ts 并将其引入。
 

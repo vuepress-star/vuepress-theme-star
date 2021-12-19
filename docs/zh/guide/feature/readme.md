@@ -6,7 +6,7 @@ tags:
   - intro
 ---
 
-`vuepress-theme-hope` 引入了很多非常棒的功能。绝大部分功能都抽离成了单独组件，这意味着如果你喜欢它们，你可以在其他 VuePress 主题或默认主题中使用它们。
+`vuepress-theme-star` 引入了很多非常棒的功能。绝大部分功能都抽离成了单独组件，这意味着如果你喜欢它们，你可以在其他 VuePress 主题或默认主题中使用它们。
 
 ## 目录
 
@@ -62,15 +62,26 @@ tags:
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: 使网站的图片支持缩放与滑动浏览
 
-[add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
-[comment]: https://vuepress-theme-hope.github.io/comment/zh/
-[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#使用
-[copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
-[feed]: https://vuepress-theme-hope.github.io/feed/zh/
-[git]: https://vuepress-theme-hope.github.io/git/zh/
-[md-enhance]: https://vuepress-theme-hope.github.io/md-enhance/zh/
-[photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/zh/
-[pwa]: https://vuepress-theme-hope.github.io/pwa/zh/
-[reading-time]: https://vuepress-theme-hope.github.io/reading-time/zh/
-[seo]: https://vuepress-theme-hope.github.io/seo/zh/
-[sitemap]: https://vuepress-theme-hope.github.io/sitemap/zh/
+[add-this]: https://vuepress-theme-star.github.io/add-this/zh/
+
+[comment]: https://vuepress-theme-star.github.io/comment/zh/
+
+[component]: https://github.com/vuepress-theme-star/vuepress-theme-star/blob/v1/packages/components/readme.md#使用
+
+[copy-code]: https://vuepress-theme-star.github.io/copy-code/zh/
+
+[feed]: https://vuepress-theme-star.github.io/feed/zh/
+
+[git]: https://vuepress-theme-star.github.io/git/zh/
+
+[md-enhance]: https://vuepress-theme-star.github.io/md-enhance/zh/
+
+[photo-swipe]: https://vuepress-theme-star.github.io/photo-swipe/zh/
+
+[pwa]: https://vuepress-theme-star.github.io/pwa/zh/
+
+[reading-time]: https://vuepress-theme-star.github.io/reading-time/zh/
+
+[seo]: https://vuepress-theme-star.github.io/seo/zh/
+
+[sitemap]: https://vuepress-theme-star.github.io/sitemap/zh/

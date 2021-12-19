@@ -54,10 +54,10 @@ export interface StarThemePluginsOptions {
 
   /**
    * Markdown 增强插件配置
-   * @see http://vuepress-theme-hope.github.io/markdown-enhance/zh/config/
+   * @see http://vuepress-theme-star.github.io/markdown-enhance/zh/config/
    *
    * Markdown enhance plugin options
-   * @see http://vuepress-theme-hope.github.io/markdown-enhance/config/
+   * @see http://vuepress-theme-star.github.io/markdown-enhance/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false
 

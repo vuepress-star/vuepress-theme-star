@@ -37,23 +37,21 @@ module.exports = {
 
 ## Demo
 
-:::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+:::: danger vuepress-theme-star v2 is still in W.I.P, the API may have
 
-::: center
-Significant changes.
+::: center Significant changes.
 :::
 
 If you meet a bug during usage, you can
 
 ::: right
-[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[Mention an issue](https://github.com/vuepress-theme-star/vuepress-theme-star/issues).
 :::
 ::::
 
 ```md
 :::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+vuepress-theme-star v2 is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
@@ -62,7 +60,7 @@ Significant changes.
 If you meet a bug during usage, you can
 
 ::: right
-[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[Mention an issue](https://github.com/vuepress-theme-star/vuepress-theme-star/issues).
 :::
 ::::
 ```

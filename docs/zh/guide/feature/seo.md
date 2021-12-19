@@ -7,7 +7,7 @@ tags:
   - seo
 ---
 
-`vuepress-theme-hope` 通过内置 [`@mr-hope/vuepress-plugin-seo`](https://vuepress-theme-hope.github.io/seo/zh/) 为提供 SEO 增强功能。
+`vuepress-theme-star` 通过内置 [`@mr-hope/vuepress-plugin-seo`](https://vuepress-theme-star.github.io/seo/zh/) 为提供 SEO 增强功能。
 
 为了使插件能够更好的工作，可能需要查看一下 [页面信息配置](../../config/page.md#页面信息配置) 并合理的配置它们。
 
@@ -115,6 +115,7 @@ interface PageSeoInfo {
 
 ::: tip
 
-你可以使用 [Google 富媒体结构测试工具](https://search.google.com/test/rich-results?url=https%3A%2F%2Fvuepress-theme-hope.github.io%2Fzh%2Fguide%2Ffeature%2Fseo%2F&user_agent=1) 测试本站点。
+你可以使用 [Google 富媒体结构测试工具](https://search.google.com/test/rich-results?url=https%3A%2F%2Fvuepress-theme-star.github.io%2Fzh%2Fguide%2Ffeature%2Fseo%2F&user_agent=1)
+测试本站点。
 
 :::
