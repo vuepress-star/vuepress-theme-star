@@ -17,7 +17,7 @@
 [![license](https://badgen.net/github/license/shentuzhigang/vuepress-theme-star)](https://github.com/shentuzhigang/vuepress-theme-star/blob/main/LICENSE)
 [![discord](https://badgen.net/discord/online-members/ptFjefy6H5?icon=discord&label=discord)](https://discord.gg/ptFjefy6H5)
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-theme-star.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-star.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-star?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-star)
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-theme-star.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-theme-star.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-theme-star?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-theme-star)
 [![coverage](https://coveralls.io/repos/github/shentuzhigang/vuepress-theme-star/badge.svg?branch=main)](https://coveralls.io/github/shentuzhigang/vuepress-theme-star?branch=main)
 [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/15720/branches/318414/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9792&pid=15720&bid=318414)
 [![codecov](https://codecov.io/gh/shentuzhigang/vuepress-theme-star/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/shentuzhigang/vuepress-theme-star)
