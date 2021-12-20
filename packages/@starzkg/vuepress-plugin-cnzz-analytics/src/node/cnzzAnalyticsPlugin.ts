@@ -21,8 +21,8 @@ export const cnzzAnalyticsPlugin: Plugin<CnzzAnalyticsPluginOptions> = (
   }
 
   if (!webId) {
-    logger.warn(`[${plugin.name}] 'webId' is required`)
-    return plugin
+    logger.warn(`[${plugin.name}] 'webId' is undefined, use id`)
+    webId = id
   }
 
   if (app.env.isDev) {
