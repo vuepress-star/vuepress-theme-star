@@ -15,6 +15,8 @@ jobs:
     env:
       DOCS_GA_ID: G-CTB8FQ7VMW
       DOCS_BA_ID: 2bec8aabb0629582fd66244ae851f3a1
+      DOCS_CNZZ_ID: 1280714941
+      DOCS_CNZZ_WEB_ID: 1280714941
       NODE_VERSION: '16'
 
     steps:

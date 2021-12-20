@@ -225,6 +225,13 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
       },
     ],
     [
+      '@starzkg/cnzz-analytics',
+      {
+        id: process.env.DOCS_CNZZ_ID,
+        webId: process.env.DOCS_CNZZ_WEB_ID,
+      },
+    ],
+    [
       '@vuepress/plugin-register-components',
       {
         componentsDir: path.resolve(__dirname, './components'),
