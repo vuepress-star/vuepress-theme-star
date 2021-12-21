@@ -3,6 +3,18 @@ import { path } from '@vuepress/utils'
 export type ElementPlusPluginOptions = Record<never, never>
 
 export const elementPlusPlugin: Plugin<ElementPlusPluginOptions> = (_, app) => {
+  if (app.env.isDev && app.options.bundler.endsWith('vite')) {
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    app.options.bundlerConfig.viteOptions = require('vite').mergeConfig(
+      app.options.bundlerConfig.viteOptions,
+      {
+        optimizeDeps: {
+          include: ['lodash'],
+        },
+      }
+    )
+  }
+
   if (app.options.bundler.endsWith('webpack')) {
     // eslint-disable-next-line import/no-extraneous-dependencies
     app.options.bundlerConfig.chainWebpack = (config, isServer, isBuild) => {
