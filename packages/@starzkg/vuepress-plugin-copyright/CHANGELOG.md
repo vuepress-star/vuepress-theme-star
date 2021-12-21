@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
+
+
+### Bug Fixes
+
+* ignore warning ([0f93ce5](https://github.com/shentuzhigang/vuepress-theme-star/commit/0f93ce5186a51b6db13bcf91057b99ddabbd9105))
+
+
+
+
+
 # [1.0.0-beta.22](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-copyright

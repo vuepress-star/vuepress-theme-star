@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
+
+
+### Bug Fixes
+
+* fix build oom ([a1c9933](https://github.com/shentuzhigang/vuepress-theme-star/commit/a1c99338277c9da0899dc3298860e45924f63128))
+* ignore warning ([0f93ce5](https://github.com/shentuzhigang/vuepress-theme-star/commit/0f93ce5186a51b6db13bcf91057b99ddabbd9105))
+* **plugin-cnzz-analytics:** fix ([7809e6b](https://github.com/shentuzhigang/vuepress-theme-star/commit/7809e6b2290074c9fabc2c0cd70b5da0dc4858d9))
+* **plugin-element-plus:** fix ([b0686e3](https://github.com/shentuzhigang/vuepress-theme-star/commit/b0686e352214cb558b5ed133172e9fe0da54d6d9))
+* **theme-star:** arrows displaying in page nav ([fc2a74b](https://github.com/shentuzhigang/vuepress-theme-star/commit/fc2a74b4b0e0c43ecbdaedea860b1416dbe52f6a))
+
+
+### Features
+
+* cnzz analytics ([75d23c1](https://github.com/shentuzhigang/vuepress-theme-star/commit/75d23c1cc391f697e455a4966ba00456d417f09b))
+* page title display none ([b6365e5](https://github.com/shentuzhigang/vuepress-theme-star/commit/b6365e524b6090f58f7aee18c788dce75a3cd3a1))
+
+
+
+
+
 # [1.0.0-beta.22](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
 
 
