@@ -1,16 +1,3 @@
-<template>
-  <span
-    class="badge"
-    :class="[type, isDot ? 'is-dot' : '']"
-    :style="{
-      verticalAlign: vertical,
-      backgroundColor: color,
-    }"
-  >
-    <slot v-if="!isDot">{{ text }}</slot>
-  </span>
-</template>
-
 <script setup lang="ts">
 defineProps({
   type: {
@@ -40,3 +27,16 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <span
+    class="badge"
+    :class="[type, isDot ? 'is-dot' : '']"
+    :style="{
+      verticalAlign: vertical,
+      backgroundColor: color,
+    }"
+  >
+    <slot v-if="!isDot">{{ text }}</slot>
+  </span>
+</template>

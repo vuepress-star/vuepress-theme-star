@@ -21,6 +21,12 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         'vue/multi-word-component-names': 'off',
+        'vue/component-tags-order': [
+          'error',
+          {
+            order: ['script', 'template', 'style'],
+          },
+        ],
       },
     },
     {

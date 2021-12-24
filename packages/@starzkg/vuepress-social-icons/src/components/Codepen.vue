@@ -1,3 +1,9 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'Codepen',
+})
+</script>
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
     <path fill="#030502" d="M0 512a512 512 0 1 0 1024 0A512 512 0 1 0 0 512Z" />
@@ -7,9 +13,3 @@
     />
   </svg>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'Codepen',
-})
-</script>

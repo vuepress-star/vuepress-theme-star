@@ -1,3 +1,10 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'SetUp',
+})
+</script>
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
     <path
@@ -18,9 +25,3 @@
     />
   </svg>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'SetUp',
-})
-</script>

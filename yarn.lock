@@ -2471,7 +2471,14 @@
   dependencies:
     "@types/node" "*"
 
-"@types/connect-history-api-fallback@*":
+"@types/bonjour@^3.5.9":
+  version "3.5.10"
+  resolved "https://registry.yarnpkg.com/@types/bonjour/-/bonjour-3.5.10.tgz#0f6aadfe00ea414edc86f5d106357cda9701e275"
+  integrity sha512-p7ienRMiS41Nu2/igbJxxLDWrSZ0WxM8UQgCeO9KhoVF7cOVFkrKsiDr1EsJIla8vV3oEEjGcz11jc5yimhzZw==
+  dependencies:
+    "@types/node" "*"
+
+"@types/connect-history-api-fallback@*", "@types/connect-history-api-fallback@^1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@types/connect-history-api-fallback/-/connect-history-api-fallback-1.3.5.tgz#d1f7a8a09d0ed5a57aee5ae9c18ab9b803205dae"
   integrity sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==
@@ -2735,7 +2742,7 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
-"@types/serve-index@*":
+"@types/serve-index@*", "@types/serve-index@^1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@types/serve-index/-/serve-index-1.9.1.tgz#1b5e85370a192c01ec6cec4735cf2917337a6278"
   integrity sha512-d/Hs3nWDxNL2xAczmOVZNj92YZCS6RGxfBPjKzuu/XirCgXdpKEb88dYNbrYGint6IVWLNP+yonwVAuRC0T2Dg==
@@ -2748,6 +2755,13 @@
   integrity sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==
   dependencies:
     "@types/mime" "^1"
+    "@types/node" "*"
+
+"@types/sockjs@^0.3.33":
+  version "0.3.33"
+  resolved "https://registry.yarnpkg.com/@types/sockjs/-/sockjs-0.3.33.tgz#570d3a0b99ac995360e3136fd6045113b1bd236f"
+  integrity sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==
+  dependencies:
     "@types/node" "*"
 
 "@types/stack-utils@^2.0.0":
@@ -2783,6 +2797,13 @@
   version "1.16.3"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.16.3.tgz#b776327a73e561b71e7881d0cd6d34a1424db86a"
   integrity sha512-9gtOPPkfyNoEqCQgx4qJKkuNm/x0R2hKR7fdl7zvTJyHnIisuE/LfvXOsYWL0o3qq6uiBnKZNNNzi3l0y/X+xw==
+
+"@types/ws@^8.2.2":
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.2.2.tgz#7c5be4decb19500ae6b3d563043cd407bf366c21"
+  integrity sha512-NOn5eIcgWLOo6qW8AcuLZ7G8PycXu0xTxxkS6Q18VWFxgPUSOwV0pBj2a/4viNZVu25i7RIB7GttdkAIUUXOOg==
+  dependencies:
+    "@types/node" "*"
 
 "@types/yargs-parser@*":
   version "20.2.1"
@@ -2966,10 +2987,10 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.26.tgz#7acd1621783571b9a82eca1f041b4a0a983481d9"
   integrity sha512-vPV6Cq+NIWbH5pZu+V+2QHE9y1qfuTq49uNWw4f7FDEeZaDU2H2cx5jcUZOAKW7qTrUS4k6qZPbMy1x4N96nbA==
 
-"@vuepress/bundler-vite@2.0.0-beta.29":
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/@vuepress/bundler-vite/-/bundler-vite-2.0.0-beta.29.tgz#620ab9f7ecf86c5fffce15029280577eb91547bf"
-  integrity sha512-b+SMxqG17XMeqrpnI3+js8Z2zByCSlROs20mX6jAkB1bvKz83NTzpStEmaL5D6tBWIxv+I7013AmxO8HJMFk9Q==
+"@vuepress/bundler-vite@2.0.0-beta.30":
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@vuepress/bundler-vite/-/bundler-vite-2.0.0-beta.30.tgz#96451fcf30823b8f85ce5e111040783107cd3423"
+  integrity sha512-USNOe/cyCcZpeT/MvOUBPuwkTiaRqQx/pmGth0xBzydjhBqswTM/iwR9qKxNH0hwnGtuge2TvNnvJ9Q2we4pOQ==
   dependencies:
     "@vitejs/plugin-vue" "^1.10.2"
     "@vue/compiler-sfc" "^3.2.24"
@@ -2987,10 +3008,10 @@
     vue "^3.2.24"
     vue-router "^4.0.12"
 
-"@vuepress/bundler-webpack@2.0.0-beta.29":
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/@vuepress/bundler-webpack/-/bundler-webpack-2.0.0-beta.29.tgz#9c87386ae8b78cfd6e8a330ce1283db03b6fc90c"
-  integrity sha512-zgRRV1r7Ihb5OiSOjUdWIRGauJuPGF+rox59jZo6Ga5LZ2mL+uC69yZNBzaWwsbQWbNhePlnnMijgy/AYGgm7Q==
+"@vuepress/bundler-webpack@2.0.0-beta.30":
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@vuepress/bundler-webpack/-/bundler-webpack-2.0.0-beta.30.tgz#8833c7c8c3d808b635d2d4177e9988a44665c9fa"
+  integrity sha512-ooKwJQBMVnID591h/aOtdQl+FeRMqmenk92jeq4TtXzgtlUDBB4/QtvUh84AzzcyOtjVA36O2pNZazjbl+cq2A==
   dependencies:
     "@types/express" "^4.17.13"
     "@types/webpack-env" "^1.16.3"
@@ -3018,7 +3039,7 @@
     vue-router "^4.0.12"
     webpack "^5.65.0"
     webpack-chain "^6.5.1"
-    webpack-dev-server "4.6.0"
+    webpack-dev-server "4.7.0"
     webpack-merge "^5.8.0"
 
 "@vuepress/cli@2.0.0-beta.29":
@@ -3088,10 +3109,10 @@
     vue "^3.2.24"
     vue-router "^4.0.12"
 
-"@vuepress/plugin-back-to-top@2.0.0-beta.29":
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.29.tgz#35a06a313e1e80ee6f0fbf968ce3761ff158868c"
-  integrity sha512-LQvyzbUkdxSSp7xhBRp+E6grp9nR/fMaVLOcjFmMIgZHyGRZisQq52UQmXnCUIkWdGwhtmytnrWSDBCx612XiQ==
+"@vuepress/plugin-back-to-top@2.0.0-beta.30":
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.30.tgz#8b9e973edbcbb9e97d4cb2af45bac3a77bd9182a"
+  integrity sha512-0msFOSO9fyyLAoJd8Z55dnCuxMlTN2cRv3uiV+q2ts78YjK0kn3IqrzKmW28ca9zTPUyfBC/D6ErhvclsmCzBA==
   dependencies:
     "@vuepress/core" "2.0.0-beta.29"
     "@vuepress/utils" "2.0.0-beta.28"
@@ -3253,15 +3274,15 @@
   dependencies:
     "@vue/shared" "^3.2.24"
 
-"@vuepress/theme-default@2.0.0-beta.29":
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.29.tgz#98aef730ed71ec44d3517a9cf81dcc480c36eb09"
-  integrity sha512-N3AGMmxvNalG1c7t00LBXHs2v52RjuGeWwf+UEY3I5srcra5BvrdIrKS9X2uW1AEctyE//kt4OFXj1sJBZSS6w==
+"@vuepress/theme-default@2.0.0-beta.30":
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.30.tgz#d8658863152e3affb277c9b62f6843b0e54343a4"
+  integrity sha512-KJgjCLtXZTUutwJY5EObvwK5I7SvqLQmd4VlyMh7LSE/sRRJYJbVHDocIfSXWFSoqa4TJoSlDDjNbf6NwAnT4A==
   dependencies:
     "@vuepress/client" "2.0.0-beta.29"
     "@vuepress/core" "2.0.0-beta.29"
     "@vuepress/plugin-active-header-links" "2.0.0-beta.29"
-    "@vuepress/plugin-back-to-top" "2.0.0-beta.29"
+    "@vuepress/plugin-back-to-top" "2.0.0-beta.30"
     "@vuepress/plugin-container" "2.0.0-beta.29"
     "@vuepress/plugin-external-link-icon" "2.0.0-beta.29"
     "@vuepress/plugin-git" "2.0.0-beta.29"
@@ -11583,32 +11604,32 @@ vuepress-plugin-sass-palette@2.0.0-alpha.7:
     sass "^1.41.1"
     sass-loader "^12.1.0"
 
-vuepress-vite@2.0.0-beta.29, vuepress-vite@^2.0.0-beta.29:
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/vuepress-vite/-/vuepress-vite-2.0.0-beta.29.tgz#c2208a698bf239c807711fddf6fea2b85d780d4e"
-  integrity sha512-f8BPs7GXTfDERytpGeBNN5N75RhOnUbEWPcmFxQzUobj7dE2u33E7ZWJjkj6VUOAUYTEt3j4tslxGC9mOP2+7A==
+vuepress-vite@2.0.0-beta.30, vuepress-vite@^2.0.0-beta.30:
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/vuepress-vite/-/vuepress-vite-2.0.0-beta.30.tgz#3c0ab12e6bac11dde122c8f4f5e0c7bbd15b61b9"
+  integrity sha512-Qkc+VWTldOxK0pFamxRLZhqybSvPQbmjY6ofQ0b9i15lvgrnLDdOhaTyAJrI481o0Z4fUXrx0LpQ/6Q08Qwfpw==
   dependencies:
-    "@vuepress/bundler-vite" "2.0.0-beta.29"
+    "@vuepress/bundler-vite" "2.0.0-beta.30"
     "@vuepress/cli" "2.0.0-beta.29"
     "@vuepress/core" "2.0.0-beta.29"
-    "@vuepress/theme-default" "2.0.0-beta.29"
+    "@vuepress/theme-default" "2.0.0-beta.30"
 
-vuepress-webpack@^2.0.0-beta.29:
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/vuepress-webpack/-/vuepress-webpack-2.0.0-beta.29.tgz#b322da197a6cfca9dfe0cba87dd5a43b034fb18a"
-  integrity sha512-l8fDkA6pjI46Nuy0drMHanoiwDAFPlXUTe6lISttIfSKDeGJ1p5UlXo9IFiI/S/ODGNapGe3X/ANix7ca3cIIw==
+vuepress-webpack@^2.0.0-beta.30:
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/vuepress-webpack/-/vuepress-webpack-2.0.0-beta.30.tgz#76ae35abe6b471e776439d58965eb703096a54b0"
+  integrity sha512-s8cfcN8kN3hay25QmQYhG9zGYE0NcqafowhJ++u48Z+XoJVDeJxqFLovBPUDfFXlq//Gmw6c0lSbIxPpkQJAyw==
   dependencies:
-    "@vuepress/bundler-webpack" "2.0.0-beta.29"
+    "@vuepress/bundler-webpack" "2.0.0-beta.30"
     "@vuepress/cli" "2.0.0-beta.29"
     "@vuepress/core" "2.0.0-beta.29"
-    "@vuepress/theme-default" "2.0.0-beta.29"
+    "@vuepress/theme-default" "2.0.0-beta.30"
 
-vuepress@^2.0.0-beta.29:
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-2.0.0-beta.29.tgz#47a2c4d0d6eebb304b89032725942220d14dd9a4"
-  integrity sha512-WJSa3+FpaubpxBlB0D9UGEztTvVbtSZN5NJTzm8VnhfCEOx//buH0gRADc2Jmkj5NIC7OiVYGzlfwLBKhJVbTQ==
+vuepress@^2.0.0-beta.30:
+  version "2.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-2.0.0-beta.30.tgz#767d54cf25683c73c521174fd7272d57dca29c2a"
+  integrity sha512-tdFIvkXuWVLlQla2b6zdHQiksH98u4TgVg1H/ouPwFtqIIYo18gv3eMh3PfjENFft5NYVi3GMl+3P3vM1zyZmA==
   dependencies:
-    vuepress-vite "2.0.0-beta.29"
+    vuepress-vite "2.0.0-beta.30"
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
@@ -11676,7 +11697,7 @@ webpack-chain@^6.5.1:
     deepmerge "^1.5.2"
     javascript-stringify "^2.0.1"
 
-webpack-dev-middleware@^5.2.1:
+webpack-dev-middleware@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-5.3.0.tgz#8fc02dba6e72e1d373eca361623d84610f27be7c"
   integrity sha512-MouJz+rXAm9B1OTOYaJnn6rtD/lWZPy2ufQCH3BPs8Rloh/Du6Jze4p7AeLYHkVi0giJnYLaSGDC7S+GM9arhg==
@@ -11687,11 +11708,16 @@ webpack-dev-middleware@^5.2.1:
     range-parser "^1.2.1"
     schema-utils "^4.0.0"
 
-webpack-dev-server@4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.6.0.tgz#e8648601c440172d9b6f248d28db98bed335315a"
-  integrity sha512-oojcBIKvx3Ya7qs1/AVWHDgmP1Xml8rGsEBnSobxU/UJSX1xP1GPM3MwsAnDzvqcVmVki8tV7lbcsjEjk0PtYg==
+webpack-dev-server@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.7.0.tgz#658aae4902dc920e90dbb8ad8b4eaf6491ac33af"
+  integrity sha512-ldR+a54iygMxUawTzMlWD/JblePhNRVGHxTHQz9EAvsbH7HZbX53OxV6Y092x+tgN5umv885i2X4wfdo/ynEQA==
   dependencies:
+    "@types/bonjour" "^3.5.9"
+    "@types/connect-history-api-fallback" "^1.3.5"
+    "@types/serve-index" "^1.9.1"
+    "@types/sockjs" "^0.3.33"
+    "@types/ws" "^8.2.2"
     ansi-html-community "^0.0.8"
     bonjour "^3.5.0"
     chokidar "^3.5.2"
@@ -11715,7 +11741,7 @@ webpack-dev-server@4.6.0:
     spdy "^4.0.2"
     strip-ansi "^7.0.0"
     url "^0.11.0"
-    webpack-dev-middleware "^5.2.1"
+    webpack-dev-middleware "^5.3.0"
     ws "^8.1.0"
 
 webpack-merge@^5.8.0:

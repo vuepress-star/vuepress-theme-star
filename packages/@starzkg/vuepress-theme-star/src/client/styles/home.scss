@@ -39,6 +39,7 @@
       top: 0;
       height: calc(100vh - var(--navbar-height));
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
 
@@ -101,19 +102,20 @@
             color: var(--c-brand);
             background-color: var(--c-bg);
             border-color: var(--c-brand);
+
             &:hover {
               color: var(--c-bg);
               background-color: var(--c-brand-light);
             }
           }
         }
+      }
 
-        .links {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin: 8px auto;
-        }
+      .links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 8px auto;
       }
     }
     main {

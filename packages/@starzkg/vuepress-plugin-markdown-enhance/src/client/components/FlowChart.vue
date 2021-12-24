@@ -1,9 +1,3 @@
-<template>
-  <div :class="{ loading }" class="md-flowchart">
-    <LoadingIcon v-if="loading" class="md-flowchart-loading-icon" />
-  </div>
-</template>
-
 <script lang="ts">
 import * as Flowchart from 'flowchart.js'
 import debounce from 'lodash.debounce'
@@ -88,3 +82,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div :class="{ loading }" class="md-flowchart">
+    <LoadingIcon v-if="loading" class="md-flowchart-loading-icon" />
+  </div>
+</template>

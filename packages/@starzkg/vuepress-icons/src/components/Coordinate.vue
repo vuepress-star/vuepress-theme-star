@@ -1,3 +1,10 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'Coordinate',
+})
+</script>
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
     <path d="M480 512h64v320h-64z" fill="currentColor" />
@@ -7,9 +14,3 @@
     />
   </svg>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'Coordinate',
-})
-</script>

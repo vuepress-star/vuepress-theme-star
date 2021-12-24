@@ -1,67 +1,3 @@
-<template>
-  <div class="pagination-wrapper">
-    <div v-if="enable" class="pagination-list">
-      <div class="btn-group">
-        <div
-          v-if="currentPage > 1"
-          class="prev"
-          role="navigation"
-          unselectable="on"
-          @click="navigate(currentPage - 1)"
-        >
-          {{ i18n.prev }}
-        </div>
-        <div v-if="displayLeftEllipsis" role="navigation" @click="navigate(1)">
-          1
-        </div>
-        <div v-if="displayLeftEllipsis" class="ellipsis">...</div>
-        <div
-          v-for="num in indexs"
-          :key="num"
-          :class="{ active: currentPage === num }"
-          role="navigation"
-          @click="navigate(num)"
-        >
-          {{ num }}
-        </div>
-        <div v-if="displayRightEllipsis" class="ellipsis">...</div>
-        <div
-          v-if="displayRightEllipsis"
-          role="navigation"
-          @click="navigate(totalPages)"
-        >
-          {{ totalPages }}
-        </div>
-        <div
-          v-if="currentPage < totalPages"
-          class="next"
-          role="navigation"
-          @click="navigate(currentPage + 1)"
-        >
-          {{ i18n.next }}
-        </div>
-      </div>
-      <div class="navigate-wrapper">
-        <label for="navigation-text">{{ i18n.navigate }}:&nbsp;</label>
-        <input
-          id="navigation-text"
-          v-model="input"
-          type="text"
-          @keypress.enter="jumpPage(input)"
-        />
-        <button
-          class="navigate"
-          role="navigation"
-          :title="i18n.button"
-          @click="jumpPage(input)"
-        >
-          {{ i18n.button }}
-        </button>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { computed, defineComponent, onMounted, ref } from 'vue'
@@ -176,3 +112,67 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div class="pagination-wrapper">
+    <div v-if="enable" class="pagination-list">
+      <div class="btn-group">
+        <div
+          v-if="currentPage > 1"
+          class="prev"
+          role="navigation"
+          unselectable="on"
+          @click="navigate(currentPage - 1)"
+        >
+          {{ i18n.prev }}
+        </div>
+        <div v-if="displayLeftEllipsis" role="navigation" @click="navigate(1)">
+          1
+        </div>
+        <div v-if="displayLeftEllipsis" class="ellipsis">...</div>
+        <div
+          v-for="num in indexs"
+          :key="num"
+          :class="{ active: currentPage === num }"
+          role="navigation"
+          @click="navigate(num)"
+        >
+          {{ num }}
+        </div>
+        <div v-if="displayRightEllipsis" class="ellipsis">...</div>
+        <div
+          v-if="displayRightEllipsis"
+          role="navigation"
+          @click="navigate(totalPages)"
+        >
+          {{ totalPages }}
+        </div>
+        <div
+          v-if="currentPage < totalPages"
+          class="next"
+          role="navigation"
+          @click="navigate(currentPage + 1)"
+        >
+          {{ i18n.next }}
+        </div>
+      </div>
+      <div class="navigate-wrapper">
+        <label for="navigation-text">{{ i18n.navigate }}:&nbsp;</label>
+        <input
+          id="navigation-text"
+          v-model="input"
+          type="text"
+          @keypress.enter="jumpPage(input)"
+        />
+        <button
+          class="navigate"
+          role="navigation"
+          :title="i18n.button"
+          @click="jumpPage(input)"
+        >
+          {{ i18n.button }}
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

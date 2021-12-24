@@ -1,3 +1,11 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'GithubCorner',
+})
+</script>
+
 <template>
   <a
     href="https://github.com/PanJiaChen/vue-element-admin"
@@ -27,11 +35,3 @@
     </svg>
   </a>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'GithubCorner',
-})
-</script>

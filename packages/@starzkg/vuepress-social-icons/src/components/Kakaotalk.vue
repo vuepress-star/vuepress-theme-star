@@ -1,3 +1,9 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'Kakaotalk',
+})
+</script>
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
     <path
@@ -7,9 +13,3 @@
     <path fill="#F9E81E" d="M420.264 480.171h39.974l-20.001-43.792z" />
   </svg>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'Kakaotalk',
-})
-</script>

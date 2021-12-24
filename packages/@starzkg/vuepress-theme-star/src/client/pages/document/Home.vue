@@ -1,115 +1,24 @@
+<script setup lang="ts">
+import Content from '../../components/Content.vue'
+import Features from '../../components/Features.vue'
+import Footer from '../../components/Footer.vue'
+import Hero from '../../components/Hero.vue'
+</script>
+
 <template>
-  <main
-    class="document-home"
-    :aria-labelledby="heroText ? 'main-title' : undefined"
-  >
-    <header class="hero">
-      <ClientOnly>
-        <img v-if="heroImage" :src="withBase(heroImage)" :alt="heroAlt" />
-      </ClientOnly>
-
-      <h1 v-if="heroText" id="main-title">
-        {{ heroText }}
-      </h1>
-
-      <p v-if="tagline" class="description">
-        {{ tagline }}
-      </p>
-
-      <p v-if="actions.length" class="actions">
-        <NavLink
-          v-for="action in actions"
-          :key="action.text"
-          class="action-button"
-          :class="[action.type]"
-          :item="action"
-        />
-      </p>
+  <main class="document-home">
+    <header>
+      <Hero />
     </header>
 
-    <div v-if="features.length" class="features">
-      <div v-for="feature in features" :key="feature.title" class="feature">
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
-      </div>
-    </div>
+    <Features />
 
-    <div class="theme-star-content custom">
+    <main>
       <Content />
-    </div>
+    </main>
 
-    <template v-if="footer">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-if="footerHtml" class="footer" v-html="footer" />
-      <div v-else class="footer" v-text="footer" />
-    </template>
+    <footer>
+      <Footer />
+    </footer>
   </main>
 </template>
-
-<script setup lang="ts">
-import {
-  usePageFrontmatter,
-  useSiteLocaleData,
-  withBase,
-} from '@vuepress/client'
-import { isArray } from '@vuepress/shared'
-import { computed } from 'vue'
-import type { StarThemeHomePageFrontmatter } from '../../../shared'
-import NavLink from '../../components/NavLink.vue'
-import { useDarkMode } from '../../composables'
-const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
-const siteLocale = useSiteLocaleData()
-const isDarkMode = useDarkMode()
-
-// hero image and title
-const heroImage = computed(() => {
-  if (isDarkMode.value && frontmatter.value.heroImageDark !== undefined) {
-    return frontmatter.value.heroImageDark
-  }
-  return frontmatter.value.heroImage
-})
-const heroText = computed(() => {
-  if (frontmatter.value.heroText === null) {
-    return null
-  }
-  return frontmatter.value.heroText || siteLocale.value.title || 'Hello'
-})
-const heroAlt = computed(
-  () => frontmatter.value.heroAlt || heroText.value || 'hero'
-)
-const tagline = computed(() => {
-  if (frontmatter.value.tagline === null) {
-    return null
-  }
-  return (
-    frontmatter.value.tagline ||
-    siteLocale.value.description ||
-    'Welcome to your VuePress site'
-  )
-})
-
-// action buttons
-const actions = computed(() => {
-  if (!isArray(frontmatter.value.actions)) {
-    return []
-  }
-
-  return frontmatter.value.actions.map(({ text, link, type = 'primary' }) => ({
-    text,
-    link,
-    type,
-  }))
-})
-
-// feature list
-const features = computed(() => {
-  if (isArray(frontmatter.value.features)) {
-    return frontmatter.value.features
-  }
-  return []
-})
-
-// footer
-const footer = computed(() => frontmatter.value.footer)
-const footerHtml = computed(() => frontmatter.value.footerHtml)
-</script>

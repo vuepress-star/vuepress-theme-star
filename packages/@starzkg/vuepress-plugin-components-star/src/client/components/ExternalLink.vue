@@ -1,17 +1,3 @@
-<template>
-  <a
-    class="external-link"
-    :href="url"
-    rel="noopener noreferrer"
-    target="_blank"
-    :aria-label="text || url"
-    data-balloon-pos="up"
-  >
-    <span class="link-text sr-only" v-text="text || url" />
-    <Component :is="icon" class="link-icon" />
-  </a>
-</template>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import ExternalLinkIcon from './ExternalLinkIcon.vue'
@@ -40,5 +26,19 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <a
+    class="external-link"
+    :href="url"
+    rel="noopener noreferrer"
+    target="_blank"
+    :aria-label="text || url"
+    data-balloon-pos="up"
+  >
+    <span class="link-text sr-only" v-text="text || url" />
+    <Component :is="icon" class="link-icon" />
+  </a>
+</template>
 
 <style scoped></style>

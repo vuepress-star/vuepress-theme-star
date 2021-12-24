@@ -1,38 +1,3 @@
-<template>
-  <main
-    class="profile-page"
-    :aria-labelledby="title ? 'main-title' : undefined"
-  >
-    <header class="profile-page-header"></header>
-
-    <section class="profile-page-body">
-      <aside class="profile-aside-wrapper">
-        <ProfileInfo />
-        <div class="profile-info-list"></div>
-      </aside>
-
-      <main class="profile-main-wrapper">
-        <div v-if="features.length" class="features">
-          <div v-for="feature in features" :key="feature.title" class="feature">
-            <h2>{{ feature.title }}</h2>
-            <p>{{ feature.details }}</p>
-          </div>
-        </div>
-        <div class="theme-star-content custom">
-          <Content />
-        </div>
-        <div class="article-list"></div>
-      </main>
-    </section>
-
-    <template v-if="footer">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <footer v-if="footerHtml" class="profile-page-footer" v-html="footer" />
-      <footer v-else class="profile-page-footer" v-text="footer" />
-    </template>
-  </main>
-</template>
-
 <script setup lang="ts">
 import {
   usePageFrontmatter,
@@ -100,3 +65,38 @@ const features = computed(() => {
 const footer = computed(() => frontmatter.value.footer)
 const footerHtml = computed(() => frontmatter.value.footerHtml)
 </script>
+
+<template>
+  <main
+    class="profile-page"
+    :aria-labelledby="title ? 'main-title' : undefined"
+  >
+    <header class="profile-page-header"></header>
+
+    <section class="profile-page-body">
+      <aside class="profile-aside-wrapper">
+        <ProfileInfo />
+        <div class="profile-info-list"></div>
+      </aside>
+
+      <main class="profile-main-wrapper">
+        <div v-if="features.length" class="features">
+          <div v-for="feature in features" :key="feature.title" class="feature">
+            <h2>{{ feature.title }}</h2>
+            <p>{{ feature.details }}</p>
+          </div>
+        </div>
+        <div class="theme-star-content custom">
+          <Content />
+        </div>
+        <div class="article-list"></div>
+      </main>
+    </section>
+
+    <template v-if="footer">
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <footer v-if="footerHtml" class="profile-page-footer" v-html="footer" />
+      <footer v-else class="profile-page-footer" v-text="footer" />
+    </template>
+  </main>
+</template>

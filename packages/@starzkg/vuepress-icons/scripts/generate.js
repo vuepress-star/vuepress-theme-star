@@ -104,15 +104,15 @@ function capitalizeInitial(s) {
 function transformToVue3(content, componentName) {
   // this is a rather arbitrary
   return `
-<template>
-  ${content}
-</template>
 <script lang="ts">
   import { defineComponent } from 'vue'
   export default defineComponent({
-    name: "${componentName}",
+    name: '${componentName}',
   })
 </script>
+<template>
+  ${content}
+</template>
   `
 }
 

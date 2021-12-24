@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { usePageData, usePageFrontmatter } from '@vuepress/client'
+import type { StarThemeHomePageFrontmatter } from '../../shared'
+
+const pageData = usePageData<{ content: string }>()
+const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
+const code = encodeURIComponent(pageData.value.content)
+console.log(pageData.value.content)
+</script>
+
 <template>
   <div
     class="presentation-page"
@@ -17,15 +27,5 @@
     />
   </div>
 </template>
-
-<script setup lang="ts">
-import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import type { StarThemeHomePageFrontmatter } from '../../shared'
-
-const pageData = usePageData<{ content: string }>()
-const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
-const code = encodeURIComponent(pageData.value.content)
-console.log(pageData.value.content)
-</script>
 
 <style scoped></style>

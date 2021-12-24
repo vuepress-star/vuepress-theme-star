@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import Content from '../components/Content.vue'
+import PageMeta from '../components/PageMeta.vue'
+import PageNav from '../components/PageNav.vue'
+import { useScrollPromise } from '../composables'
+// handle scrollBehavior with transition
+const scrollPromise = useScrollPromise()
+const onBeforeEnter = scrollPromise.resolve
+const onBeforeLeave = scrollPromise.pending
+</script>
+
 <template>
   <Transition
     name="fade-slide-y"
@@ -19,7 +30,7 @@
         <Toc class="anchor" />
       </aside>
 
-      <main class="page-content theme-star-content">
+      <main class="page-content">
         <Content />
       </main>
 
@@ -37,14 +48,3 @@
     </main>
   </Transition>
 </template>
-
-<script setup lang="ts">
-import PageMeta from '../components/PageMeta.vue'
-import PageNav from '../components/PageNav.vue'
-import { useScrollPromise } from '../composables'
-
-// handle scrollBehavior with transition
-const scrollPromise = useScrollPromise()
-const onBeforeEnter = scrollPromise.resolve
-const onBeforeLeave = scrollPromise.pending
-</script>

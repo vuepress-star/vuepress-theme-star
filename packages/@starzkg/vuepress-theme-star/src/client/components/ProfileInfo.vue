@@ -1,49 +1,3 @@
-<template>
-  <div class="profile-info" vocab="https://schema.org/" typeof="Person">
-    <div
-      class="author"
-      :class="{ hasIntro: intro !== undefined }"
-      :data-balloon-pos="intro !== undefined ? 'down' : ''"
-      role="navigation"
-    >
-      <PanThumb
-        class="avatar"
-        :class="{ round: true }"
-        property="image"
-        alt="Blogger Avatar"
-        :image="avatar"
-      />
-      <div v-if="author" class="name" property="name" v-text="author" />
-      <meta
-        v-if="hasIntro"
-        property="url"
-        :content="$withBase(blogConfig.intro)"
-      />
-    </div>
-    <div class="num-wrapper">
-      <div @click="navigate('/article/')">
-        <div class="num">{{ articleNumber }}</div>
-        <div>文章</div>
-      </div>
-      <div @click="navigate('/category/')">
-        <div class="num">33</div>
-        <div>分类</div>
-      </div>
-      <div @click="navigate('/tag/')">
-        <div class="num">53</div>
-        <div>标签</div>
-      </div>
-      <div @click="navigate('/timeline/')">
-        <div class="num">716</div>
-        <div>--</div>
-      </div>
-    </div>
-    <p class="links">
-      <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
-    </p>
-  </div>
-</template>
-
 <script setup lang="ts">
 import {
   usePageFrontmatter,
@@ -106,6 +60,52 @@ const links = computed(() => {
 declare const __ARTICLE_NUMBER__: number
 const articleNumber = __ARTICLE_NUMBER__
 </script>
+
+<template>
+  <div class="profile-info" vocab="https://schema.org/" typeof="Person">
+    <div
+      class="author"
+      :class="{ hasIntro: intro !== undefined }"
+      :data-balloon-pos="intro !== undefined ? 'down' : ''"
+      role="navigation"
+    >
+      <PanThumb
+        class="avatar"
+        :class="{ round: true }"
+        property="image"
+        alt="Blogger Avatar"
+        :image="avatar"
+      />
+      <div v-if="author" class="name" property="name" v-text="author" />
+      <meta
+        v-if="hasIntro"
+        property="url"
+        :content="$withBase(blogConfig.intro)"
+      />
+    </div>
+    <div class="num-wrapper">
+      <div @click="navigate('/article/')">
+        <div class="num">{{ articleNumber }}</div>
+        <div>文章</div>
+      </div>
+      <div @click="navigate('/category/')">
+        <div class="num">33</div>
+        <div>分类</div>
+      </div>
+      <div @click="navigate('/tag/')">
+        <div class="num">53</div>
+        <div>标签</div>
+      </div>
+      <div @click="navigate('/timeline/')">
+        <div class="num">716</div>
+        <div>--</div>
+      </div>
+    </div>
+    <p class="links">
+      <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
+    </p>
+  </div>
+</template>
 
 <style scoped lang="scss">
 .profile-info {

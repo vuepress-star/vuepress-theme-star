@@ -1,42 +1,3 @@
-<template>
-  <div
-    class="theme-container"
-    :class="containerClass"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
-    <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
-        <template #before>
-          <slot name="navbar-before" />
-        </template>
-        <template #after>
-          <slot name="navbar-after" />
-        </template>
-      </Navbar>
-    </slot>
-
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
-
-    <slot name="sidebar">
-      <Sidebar>
-        <template #top>
-          <slot name="sidebar-top" />
-        </template>
-        <template #bottom>
-          <slot name="sidebar-bottom" />
-        </template>
-      </Sidebar>
-    </slot>
-
-    <slot name="page">
-      <Component
-        :is="frontmatter.page === undefined ? 'Page' : frontmatter.page"
-      />
-    </slot>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
@@ -100,3 +61,42 @@ onUnmounted(() => {
   unregisterRouterHook()
 })
 </script>
+
+<template>
+  <div
+    class="theme-container"
+    :class="containerClass"
+    @touchstart="onTouchStart"
+    @touchend="onTouchEnd"
+  >
+    <slot name="navbar">
+      <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
+        <template #before>
+          <slot name="navbar-before" />
+        </template>
+        <template #after>
+          <slot name="navbar-after" />
+        </template>
+      </Navbar>
+    </slot>
+
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
+
+    <slot name="sidebar">
+      <Sidebar>
+        <template #top>
+          <slot name="sidebar-top" />
+        </template>
+        <template #bottom>
+          <slot name="sidebar-bottom" />
+        </template>
+      </Sidebar>
+    </slot>
+
+    <slot name="page">
+      <Component
+        :is="frontmatter.page === undefined ? 'Page' : frontmatter.page"
+      />
+    </slot>
+  </div>
+</template>
