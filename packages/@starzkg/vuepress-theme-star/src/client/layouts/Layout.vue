@@ -3,6 +3,7 @@ import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { StarThemePageFrontmatter } from '../../shared'
+import Background from '../components/Background.vue'
 import Navbar from '../components/Navbar.vue'
 import Sidebar from '../components/Sidebar.vue'
 import { useSidebarItems, useThemeLocaleData } from '../composables'
@@ -69,6 +70,10 @@ onUnmounted(() => {
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
+    <slot name="background">
+      <Background />
+    </slot>
+
     <slot name="navbar">
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
         <template #before>
