@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
+
+
+### Features
+
+* add description width ([1896025](https://github.com/shentuzhigang/vuepress-theme-star/commit/189602594c59e20b1c4d81a26c864e99b98a4bcd))
+* home arrow ([51bc462](https://github.com/shentuzhigang/vuepress-theme-star/commit/51bc462dba0210b3669348ac8c6aa3e3b723729f))
+* layout ([49ceb27](https://github.com/shentuzhigang/vuepress-theme-star/commit/49ceb2779e307a1650d548f14fa2adad80a32837))
+* layout background ([cd2de71](https://github.com/shentuzhigang/vuepress-theme-star/commit/cd2de712e864d23e31d37ec6e4ba345884a9566f))
+* photo swipe ([c140c3e](https://github.com/shentuzhigang/vuepress-theme-star/commit/c140c3e129575de62bfcad2ef02af2200ab8ecf8))
+* presentation theme frontmatter ([de5e43d](https://github.com/shentuzhigang/vuepress-theme-star/commit/de5e43df7187723dc004065d04f1c82fde753f1a))
+* profile ([6f51b95](https://github.com/shentuzhigang/vuepress-theme-star/commit/6f51b95b8d9aaed8705353e6d264149ec2f56590))
+* sitemap ([586754a](https://github.com/shentuzhigang/vuepress-theme-star/commit/586754a84f3a5ae3e151451cc21e92d0b3c5d60d))
+* update ([44a4408](https://github.com/shentuzhigang/vuepress-theme-star/commit/44a44081fd632e8ed57711f8adbad4c27b3d4233))
+* update vuepress ([528e6aa](https://github.com/shentuzhigang/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
+
+
+
+
+
 # [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 

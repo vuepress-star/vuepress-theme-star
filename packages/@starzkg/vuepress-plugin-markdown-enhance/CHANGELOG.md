@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
+
+
+### Bug Fixes
+
+* slide theme auto ([3ec7d42](https://github.com/shentuzhigang/vuepress-theme-star/commit/3ec7d42bd259bc11a6a7a77c589515cd1b04e392))
+
+
+### Features
+
+* update ([44a4408](https://github.com/shentuzhigang/vuepress-theme-star/commit/44a44081fd632e8ed57711f8adbad4c27b3d4233))
+* update vuepress ([528e6aa](https://github.com/shentuzhigang/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
+
+
+
+
+
 # [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance
