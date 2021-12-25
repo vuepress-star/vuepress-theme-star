@@ -2,7 +2,7 @@ import type { StarThemeOptions } from '@starzkg/vuepress-theme-star'
 import { defineUserConfig } from '@vuepress/cli'
 import { path } from '@vuepress/utils'
 import { ViteBundlerOptions } from 'vuepress-vite'
-import locales from './configs/locales'
+import locales from './locales'
 const isProd = process.env.NODE_ENV === 'production'
 
 // @ts-ignore
@@ -104,6 +104,9 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
       pageEnhance: {
         type: 'waline',
         serverURL: 'https://vercel-shentuzhigang.vercel.app',
+      },
+      sitemap: {
+        hostname: 'https://shentuzhigang.cn/vuepress-theme-star',
       },
     },
   },

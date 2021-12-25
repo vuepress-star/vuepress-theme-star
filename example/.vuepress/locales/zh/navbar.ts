@@ -16,6 +16,10 @@ export default [
     link: '/zh/presentation/',
   },
   {
+    text: 'Todo',
+    link: '/todo.html',
+  },
+  {
     text: 'Docs',
     link: 'https://shentuzhigang.cn/vuepress-theme-star/docs/zh/',
   },
