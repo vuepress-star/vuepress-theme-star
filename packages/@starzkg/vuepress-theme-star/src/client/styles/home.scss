@@ -102,6 +102,23 @@
         margin: 8px auto;
       }
     }
+
+    .arrow {
+      position: sticky;
+      bottom: 50px;
+      height: 100px;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+
+      svg {
+        width: 64px;
+        animation: arrow-float 2s linear infinite;
+        color: var(--c-brand);
+        transform: scale(1.5, 1);
+      }
+    }
+
     main {
       margin-right: auto;
       margin-left: auto;
@@ -195,6 +212,7 @@
         }
       }
     }
+
     main {
       .feature {
         h2 {
@@ -202,5 +220,23 @@
         }
       }
     }
+  }
+}
+
+@keyframes arrow-float {
+  0% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: 10px;
+  }
+  50% {
+    margin-top: 0;
+  }
+  75% {
+    margin-top: -10px;
+  }
+  100% {
+    margin-top: 0;
   }
 }

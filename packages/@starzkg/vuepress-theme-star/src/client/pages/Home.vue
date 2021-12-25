@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
+import { ref } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared'
 import Content from '../components/Content.vue'
 import Features from '../components/Features.vue'
@@ -8,6 +9,12 @@ import Hero from '../components/Hero.vue'
 import Links from '../components/Links.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
+const content = ref<HTMLElement>()
+const gotoContent = (): void => {
+  if (typeof content.value !== 'undefined') {
+    content.value.scrollTo({ top: window.outerHeight, behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
@@ -18,7 +25,7 @@ const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
       paddingTop: frontmatter.navbar === false ? '0' : '',
     }"
   >
-    <div class="content">
+    <div ref="content" class="content">
       <header
         :style="{
           height: frontmatter.navbar === false ? '100vh' : undefined,
@@ -27,6 +34,9 @@ const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
         <Hero />
         <Links />
       </header>
+      <div class="arrow">
+        <IconArrowDownBold @click="gotoContent" />
+      </div>
       <main
         :style="{
           minHeight:
