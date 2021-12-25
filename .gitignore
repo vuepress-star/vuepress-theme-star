@@ -1,9 +1,9 @@
 .idea/
 
 # VuePress files
-docs/.vuepress/.temp/
-docs/.vuepress/.cache/
-docs/.vuepress/dist/
+**/.vuepress/.temp/
+**/.vuepress/.cache/
+**/.vuepress/dist/
 
 # Dist files
 lib/
