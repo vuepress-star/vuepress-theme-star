@@ -110,6 +110,7 @@ export const theme: Theme<StarThemeOptions> = (
       ['@vuepress/theme-data', { themeData: localeOptions }],
       ['@starzkg/components-star'],
       ['@starzkg/page-enhance', themePlugins?.pageEnhance || true],
+      ['@starzkg/photo-swipe'],
       [
         '@starzkg/copy-code',
         {

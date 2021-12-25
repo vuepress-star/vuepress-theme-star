@@ -37,8 +37,15 @@
     {
       "path": "./packages/@starzkg/vuepress-plugin-interaction-effect/tsconfig.build.json"
     },
-    { "path": "./packages/@starzkg/vuepress-shared/tsconfig.build.json" },
-    { "path": "./packages/@starzkg/vuepress-theme-star/tsconfig.build.json" }
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-photo-swipe/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-shared/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-theme-star/tsconfig.build.json"
+    }
   ],
   "exclude": ["docs", "example"],
   "files": [],

@@ -1,0 +1,52 @@
+{
+  "name": "@starzkg/vuepress-plugin-photo-swipe",
+  "version": "1.0.0-beta.22",
+  "description": "Photo Swipe plugin for vuepress",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "photo-swipe",
+    "preview",
+    "zoom",
+    "picture"
+  ],
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
+  "bugs": {
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-plugin-photo-swipe"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
+  },
+  "dependencies": {
+    "@starzkg/vuepress-shared": "1.0.0-beta.23",
+    "@types/photoswipe": "^4.1.2",
+    "@vuepress/client": "2.0.0-beta.29",
+    "@vuepress/core": "2.0.0-beta.29",
+    "@vuepress/utils": "2.0.0-beta.28",
+    "photoswipe": "^4.1.3",
+    "vue": "^3.2.26",
+    "vue-router": "^4.0.12",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

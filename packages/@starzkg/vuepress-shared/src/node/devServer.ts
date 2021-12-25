@@ -1,8 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'http'
-import type {
-  WebpackBundlerOptions,
-  WebpackDevServer,
-} from '@vuepress/bundler-webpack'
+import type { WebpackDevServer } from '@vuepress/bundler-webpack'
 import type { App } from '@vuepress/core'
 import type { HandleFunction } from 'connect'
 import type { Plugin } from 'vite'
@@ -48,21 +45,17 @@ export const useCustomDevServer = (
 
   // for webpack
   if (app.env.isDev && app.options.bundler.endsWith('webpack')) {
-    const beforeDevServer = (app.options.bundlerConfig as WebpackBundlerOptions)
-      .beforeDevServer
-
-    app.options.bundlerConfig.beforeDevServer = (
-      server: WebpackDevServer
-    ): void => {
-      server.app.get(
-        `${app.options.base.replace(/\/$/, '')}${path}`,
-        (request, response) => {
-          getResponse(request)
-            .then((data) => response.status(200).send(data))
-            .catch(() => response.status(500).send(errMsg))
-        }
-      )
-      beforeDevServer?.(server)
-    }
+    app.options.bundlerConfig.devServerSetupMiddlewares.push(
+      (middlewares, server: WebpackDevServer): void => {
+        server.app?.get(
+          `${app.options.base.replace(/\/$/, '')}${path}`,
+          (request, response) => {
+            getResponse(request)
+              .then((data) => response.status(200).send(data))
+              .catch(() => response.status(500).send(errMsg))
+          }
+        )
+      }
+    )
   }
 }
