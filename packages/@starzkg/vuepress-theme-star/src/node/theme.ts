@@ -111,6 +111,7 @@ export const theme: Theme<StarThemeOptions> = (
       ['@starzkg/components-star'],
       ['@starzkg/page-enhance', themePlugins?.pageEnhance || true],
       ['@starzkg/photo-swipe'],
+      ['@starzkg/sitemap', themePlugins?.sitemap],
       [
         '@starzkg/copy-code',
         {
