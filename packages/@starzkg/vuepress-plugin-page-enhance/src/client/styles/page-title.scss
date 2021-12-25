@@ -1,12 +1,11 @@
-@use "@hope/config";
-@use "@starzkg/vuepress-shared/styles/wrapper";
+@use '@hope/config';
+@use '@starzkg/vuepress-shared/styles/wrapper';
 
 .page {
   .page-title {
     @include wrapper.wrapper;
     padding-bottom: 0.2rem;
     position: relative;
-    padding-top: 4.6rem !important;
     z-index: 1;
     display: flex;
     justify-content: flex-start;

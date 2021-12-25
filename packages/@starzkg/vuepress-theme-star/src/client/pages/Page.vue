@@ -20,17 +20,20 @@ const onBeforeLeave = scrollPromise.pending
       <slot name="top" />
 
       <header class="page-header">
+        <GithubCorner />
         <BreadCrumb />
-        <PageTitle />
-        <PageInfo />
-        <hr />
       </header>
 
+      <div class="suspended-panel" />
+
       <aside class="page-aside">
-        <Toc class="anchor" />
+        <Toc class="sidebar-block anchor" />
       </aside>
 
       <main class="page-content">
+        <PageTitle />
+        <PageInfo />
+        <hr />
         <Content />
       </main>
 
@@ -38,8 +41,6 @@ const onBeforeLeave = scrollPromise.pending
         <PageMeta />
 
         <PageNav />
-
-        <GithubCorner />
 
         <Comment />
       </footer>
