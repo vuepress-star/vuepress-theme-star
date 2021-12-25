@@ -1,0 +1,51 @@
+{
+  "name": "@starzkg/vuepress-plugin-pwa",
+  "version": "2.0.0-alpha.7",
+  "description": "Powerful PWA plugin for vuepress",
+  "keywords": [
+    "vuepress-plugin",
+    "pwa",
+    "web app",
+    "workbox",
+    "service worker"
+  ],
+  "homepage": "https://shentuzhigang.cn/vuepress-theme-star",
+  "bugs": {
+    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-plugin-pwa"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
+  },
+  "dependencies": {
+    "@starzkg/vuepress-shared": "1.0.0-beta.23",
+    "@vuepress/client": "2.0.0-beta.29",
+    "@vuepress/core": "2.0.0-beta.29",
+    "@vuepress/utils": "2.0.0-beta.28",
+    "mitt": "^3.0.0",
+    "register-service-worker": "^1.7.2",
+    "vue": "^3.2.26",
+    "vuepress-plugin-sass-palette": "2.0.0-alpha.7",
+    "workbox-build": "^6.4.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
