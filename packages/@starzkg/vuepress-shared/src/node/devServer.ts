@@ -45,17 +45,18 @@ export const useCustomDevServer = (
 
   // for webpack
   if (app.env.isDev && app.options.bundler.endsWith('webpack')) {
-    app.options.bundlerConfig.devServerSetupMiddlewares.push(
-      (middlewares, server: WebpackDevServer): void => {
-        server.app?.get(
-          `${app.options.base.replace(/\/$/, '')}${path}`,
-          (request, response) => {
-            getResponse(request)
-              .then((data) => response.status(200).send(data))
-              .catch(() => response.status(500).send(errMsg))
-          }
-        )
-      }
-    )
+    app.options.bundlerConfig.devServerSetupMiddlewares = (
+      middlewares,
+      server: WebpackDevServer
+    ): void => {
+      server.app?.get(
+        `${app.options.base.replace(/\/$/, '')}${path}`,
+        (request, response) => {
+          getResponse(request)
+            .then((data) => response.status(200).send(data))
+            .catch(() => response.status(500).send(errMsg))
+        }
+      )
+    }
   }
 }
