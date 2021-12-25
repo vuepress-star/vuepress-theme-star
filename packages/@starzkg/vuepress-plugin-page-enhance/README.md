@@ -7,7 +7,7 @@
 
 [![Author: Starzkg](https://img.shields.io/badge/Author-Starzkg-blue.svg?style=for-the-badge)](https://shentuzhigang.cn)
 
-<!-- pagelint-restore -->
+<!-- markdownlint-restore -->
 
 [![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-page-enhance.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-page-enhance.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-page-enhance?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-page-enhance)
 

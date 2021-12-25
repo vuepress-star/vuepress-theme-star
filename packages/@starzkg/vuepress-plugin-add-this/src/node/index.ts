@@ -9,7 +9,7 @@ const addThisPlugin: Plugin<AddThisPluginOptions> = (options) => {
     console.error('[AddThis]: Please provide a pubid to let plugin work')
 
     return {
-      name: 'add-this',
+      name: '@starzkg/vuepress-plugin-add-this',
     }
   }
 

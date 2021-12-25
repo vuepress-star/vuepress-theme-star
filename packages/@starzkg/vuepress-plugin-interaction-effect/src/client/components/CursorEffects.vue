@@ -1,7 +1,3 @@
-<template>
-  <canvas id="vuepress-canvas-cursor"></canvas>
-</template>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Boom } from '../utils/mouse'
@@ -179,3 +175,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <canvas id="vuepress-canvas-cursor"></canvas>
+</template>

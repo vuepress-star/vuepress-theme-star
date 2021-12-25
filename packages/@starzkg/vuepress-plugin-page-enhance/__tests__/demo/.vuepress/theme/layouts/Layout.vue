@@ -1,51 +1,3 @@
-<template>
-  <div
-    class="theme-container"
-    :class="containerClass"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
-      <template #before>
-        <slot name="navbar-before" />
-      </template>
-      <template #after>
-        <slot name="navbar-after" />
-      </template>
-    </Navbar>
-
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
-
-    <Sidebar>
-      <template #top>
-        <slot name="sidebar-top" />
-      </template>
-      <template #bottom>
-        <slot name="sidebar-bottom" />
-      </template>
-    </Sidebar>
-
-    <Home v-if="frontmatter.home" />
-
-    <Transition
-      v-else
-      name="fade-slide-y"
-      mode="out-in"
-      @before-enter="onBeforeEnter"
-      @before-leave="onBeforeLeave"
-    >
-      <Page :key="page.path">
-        <template #top>
-          <slot name="page-top" />
-        </template>
-        <template #bottom>
-          <slot name="page-bottom" />
-        </template>
-      </Page>
-    </Transition>
-  </div>
-</template>
-
 <script lang="ts">
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -158,3 +110,51 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div
+    class="theme-container"
+    :class="containerClass"
+    @touchstart="onTouchStart"
+    @touchend="onTouchEnd"
+  >
+    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
+      <template #before>
+        <slot name="navbar-before" />
+      </template>
+      <template #after>
+        <slot name="navbar-after" />
+      </template>
+    </Navbar>
+
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
+
+    <Sidebar>
+      <template #top>
+        <slot name="sidebar-top" />
+      </template>
+      <template #bottom>
+        <slot name="sidebar-bottom" />
+      </template>
+    </Sidebar>
+
+    <Home v-if="frontmatter.home" />
+
+    <Transition
+      v-else
+      name="fade-slide-y"
+      mode="out-in"
+      @before-enter="onBeforeEnter"
+      @before-leave="onBeforeLeave"
+    >
+      <Page :key="page.path">
+        <template #top>
+          <slot name="page-top" />
+        </template>
+        <template #bottom>
+          <slot name="page-bottom" />
+        </template>
+      </Page>
+    </Transition>
+  </div>
+</template>

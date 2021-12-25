@@ -1,18 +1,3 @@
-<template>
-  <div>
-    <p>
-      {{ text.beforeAuthor }}
-      {{ authorName || text.author }}
-      {{ text.afterAuthor }}
-      <br />
-      <a :href="location">{{ decodeURIComponent(location) }}</a>
-    </p>
-    &#10;
-    <!-- eslint-disable-next-line vue/no-v-html -->
-    <div v-html="html" />
-  </div>
-</template>
-
 <script>
 import { i18n, options } from '../clientAppEnhance'
 export default {
@@ -43,3 +28,18 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div>
+    <p>
+      {{ text.beforeAuthor }}
+      {{ authorName || text.author }}
+      {{ text.afterAuthor }}
+      <br />
+      <a :href="location">{{ decodeURIComponent(location) }}</a>
+    </p>
+    &#10;
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <div v-html="html" />
+  </div>
+</template>

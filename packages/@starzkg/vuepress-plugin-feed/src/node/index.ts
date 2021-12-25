@@ -27,7 +27,7 @@ const feedPlugin: Plugin<FeedOptions> = (options, app) => {
   const feedLinks = getFeedLinks(feedOptions, output, app)
 
   return {
-    name: 'feed2',
+    name: '@starzkg/vuepress-plugin-feed',
 
     onPrepared(): void {
       injectLinkstoHead(feedOptions, app)

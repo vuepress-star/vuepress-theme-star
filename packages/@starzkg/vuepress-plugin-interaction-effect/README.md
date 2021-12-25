@@ -5,9 +5,11 @@
 <h1 align="center">vuepress-plugin-interaction-effect</h1>
 <h4 align="center">VuePress Interaction Effect Plugin 📋 / VuePress 交互效果 插件 📋</h4>
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-interaction-effect?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![Author: Starzkg](https://img.shields.io/badge/Author-Starzkg-blue.svg?style=for-the-badge)](https://shentuzhigang.cn)
 
 <!-- markdownlint-restore -->
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-interaction-effect?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
 
 VuePress Interaction Effect Plugin 📋 / VuePress 交互效果 插件 📋
 

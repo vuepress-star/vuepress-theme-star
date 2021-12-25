@@ -15,7 +15,7 @@ const lightGalleryPlugin: Plugin<LightGalleryOptions> = (options, app) => {
   usePalettePlugin(app, { id: 'hope' })
 
   return {
-    name: 'vuepress-plugin-lightgallery',
+    name: '@starzkg/vuepress-plugin-lightgallery',
 
     define: (): Record<string, unknown> => ({
       IMAGE_SELECTOR:

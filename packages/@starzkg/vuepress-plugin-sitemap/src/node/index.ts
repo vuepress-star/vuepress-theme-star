@@ -6,10 +6,12 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
   const { themeConfig } = app.options
   const hostname = options.hostname || (themeConfig.hostname as string)
 
+  const plugin = { name: '@starzkg/vuepress-plugin-sitemap' }
+
   if (!hostname) {
     logger.error("Required 'hostname' option is missing!")
 
-    return { name: '@starzkg/vuepress-plugin-sitemap' }
+    return plugin
   }
 
   const sitemapOptions =
@@ -18,7 +20,7 @@ const sitemapPlugin: Plugin<SitemapOptions> = (options, app) => {
       : { ...((themeConfig.sitemap as SitemapOptions) || {}), hostname }
 
   return {
-    name: 'sitemap2',
+    ...plugin,
 
     async onGenerated(): Promise<void> {
       await generateSiteMap(sitemapOptions, app)
