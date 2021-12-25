@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import type { StarThemeHomePageFrontmatter } from '../../shared'
 
 const pageData = usePageData<{ content: string }>()
-const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
+const frontmatter = usePageFrontmatter<{ navbar: boolean; theme: string }>()
 const code = encodeURIComponent(pageData.value.content)
-console.log(pageData.value.content)
 </script>
 
 <template>
@@ -22,8 +20,8 @@ console.log(pageData.value.content)
       :style="{
         height: frontmatter.navbar === false ? '100vh' : '',
       }"
-      :data-code="code"
-      theme="auto"
+      :data-code="code || ''"
+      :theme="frontmatter.theme || 'auto'"
     />
   </div>
 </template>
