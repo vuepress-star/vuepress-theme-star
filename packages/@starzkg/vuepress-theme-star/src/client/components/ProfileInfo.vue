@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import {
-  usePageFrontmatter,
-  usePagesData,
-  useSiteData,
-  useSiteLocaleData,
-  withBase,
-} from '@vuepress/client'
-import { isArray } from '@vuepress/shared'
-import { computed, defineComponent, onMounted, ref } from 'vue'
+import { usePageFrontmatter, useSiteData, withBase } from '@vuepress/client'
+import { computed } from 'vue'
+import Links from './Links.vue'
 import PanThumb from './PanThumb.vue'
+
 interface ProfileInfoFrontmatter {
   author?: string
   avatar?: string
@@ -38,23 +33,6 @@ const avatar = computed(() => {
 
 const intro = computed(() => {
   return frontmatter.value.intro
-})
-
-// links list
-const links = computed(() => {
-  if (!isArray(frontmatter.value.links)) {
-    return []
-  }
-  return frontmatter.value.links.map(({ text, icon, url }) => {
-    return {
-      text,
-      icon:
-        icon === undefined
-          ? icon
-          : (icon.startsWith('icon-social-') ? '' : 'icon-social-') + icon,
-      url,
-    }
-  })
 })
 
 declare const __ARTICLE_NUMBER__: number
@@ -101,9 +79,7 @@ const articleNumber = __ARTICLE_NUMBER__
         <div>--</div>
       </div>
     </div>
-    <p class="links">
-      <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
-    </p>
+    <Links />
   </div>
 </template>
 
