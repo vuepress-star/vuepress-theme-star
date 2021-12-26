@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-star.shentuzhigang.cn/images/hero.png" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-copy-code</h1>
 <h4 align="center">VuePress copy code plugin 📋 / VuePress 代码复制插件 📋</h4>

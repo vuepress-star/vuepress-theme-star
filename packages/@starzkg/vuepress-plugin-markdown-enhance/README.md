@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-markdown-enhance</h1>
 <h4 align="center">Markdown Enhancement Plugin 📄 / Markdown 增强插件 📄</h4>

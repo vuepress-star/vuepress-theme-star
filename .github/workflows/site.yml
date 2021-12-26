@@ -63,7 +63,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
-          repo: vuepress-star/vuepress-theme-star
+          repo: vuepress-star/vuepress-star
           target_branch: gh-pages
           build_dir: dist
         env:

@@ -7,7 +7,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 // @ts-ignore
 export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
-  base: '/vuepress-theme-star/',
+  base: '/',
   title: 'vuepress-theme-star',
   theme: '@starzkg/star',
   head: [
@@ -106,7 +106,7 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
         serverURL: 'https://vercel-shentuzhigang.vercel.app',
       },
       sitemap: {
-        hostname: 'https://shentuzhigang.cn/vuepress-theme-star',
+        hostname: 'https://vuepress-star.shentuzhigang.cn',
       },
     },
   },

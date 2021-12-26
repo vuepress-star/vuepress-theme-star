@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-star.shentuzhigang.cn/images/hero.png" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-element-plus</h1>
 <h4 align="center">VuePress Element Plus Plugin 📋 / VuePress Element Plus 插件 📋</h4>

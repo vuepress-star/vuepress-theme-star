@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-star.shentuzhigang.cn/images/hero.png" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-theme-star</h1>
 <h4 align="center">A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题✨</h4>

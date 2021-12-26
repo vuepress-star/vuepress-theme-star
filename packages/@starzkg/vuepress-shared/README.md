@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-star.shentuzhigang.cn/images/hero.png" style="text-align: center;"/>
 </p>
 <h1 align="center">@starzkg/vuepress-shared</h1>
 <h4 align="center">Shared Utils for vuepress-theme-star and its plugins / vuepress-theme-star 及其插件的共享库</h4>

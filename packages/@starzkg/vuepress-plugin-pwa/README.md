@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-star.shentuzhigang.cn/images/hero.png" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-pwa</h1>
 <h4 align="center">VuePress PWA plugin 📦 / VuePress PWA 插件 📦</h4>

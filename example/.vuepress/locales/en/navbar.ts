@@ -21,6 +21,6 @@ export default [
   },
   {
     text: 'Docs',
-    link: 'https://shentuzhigang.cn/vuepress-theme-star/docs/',
+    link: 'https://vuepress-star.shentuzhigang.cn/docs/',
   },
 ]
