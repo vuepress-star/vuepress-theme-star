@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.29">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png"><link rel="manifest" href="/vuepress-theme-star/manifest.webmanifest"><meta name="application-name" content="VuePress"><meta name="apple-mobile-web-app-title" content="VuePress"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png"><link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#3eaf7c"><meta name="msapplication-TileColor" content="#3eaf7c"><meta name="theme-color" content="#3eaf7c"><title>vuepress-theme-star</title><meta name="description" content="A vuepress theme for building personal site">
+    <link rel="preload" href="/vuepress-theme-star/docs/assets/js/runtime~app.b296e72a.js" as="script"><link rel="preload" href="/vuepress-theme-star/docs/assets/css/styles.d0c29961.css" as="style"><link rel="preload" href="/vuepress-theme-star/docs/assets/js/7538.315d1017.js" as="script"><link rel="preload" href="/vuepress-theme-star/docs/assets/js/app.71e307d1.js" as="script">
+    <link rel="stylesheet" href="/vuepress-theme-star/docs/assets/css/styles.d0c29961.css">
+    <style>
+      body{padding:0;margin:0}
+      .loading-container{width:100%;height:100%;background-color:#fff;position:absolute;z-index:30}
+      .loading-container .loading{width:115px;height:115px;margin:0 auto;top:calc(50% - 115px);position:relative}
+      .configure-border-1{width:115px;height:115px;padding:3px;position:absolute;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,0.9);animation:configure-clockwise 5s ease-in-out 0s infinite alternate}
+      .configure-border-2{width:115px;height:115px;padding:3px;left:-115px;display:flex;justify-content:center;align-items:center;transform:rotate(45deg);animation:configure-xclockwise 5s ease-in-out 0s infinite alternate}
+      .configure-core{width:100%;height:100%;}
+      @keyframes configure-clockwise{0%{transform:rotate(0)}25%{transform:rotate(90deg)}50%{transform:rotate(180deg)}75%{transform:rotate(270deg)}100%{transform:rotate(360deg)}}
+      @keyframes configure-xclockwise{0%{transform:rotate(45deg)}25%{transform:rotate(-45deg)}50%{transform:rotate(-135deg)}75%{transform:rotate(-225deg)}100%{transform:rotate(-315deg)}}
+      .loading-fade-out{transition:all .8s ease-in-out;opacity:0}
+      .loading-container .tip{font-weight:700;width:100%;text-align:center;position:absolute;top:calc(50% + 57px);color:#000}
+    </style>
+    <script lang="javascript">
+      document.onreadystatechange = function(){
+        if(document.readyState==='interactive'||document.readyState==='complete'){
+          // 加载完成之后关闭Loading
+          setTimeout(function() {
+            let loadingContainer = document.querySelector(".loading-container");
+            let loadingClass = loadingContainer.getAttribute("class");
+            loadingContainer.setAttribute(
+              "class",
+              loadingClass.concat(" loading-fade-out")
+            );
+            loadingContainer.addEventListener("transitionend", function() {
+              loadingContainer.style.display = "none";
+            });
+          }, 500);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="loading-container">
+      <div class="loading">
+        <div class="configure-border-1">
+          <div class="configure-core" style="background-color:#fff">
+          </div>
+        </div>
+        <div class="configure-border-2">
+          <div class="configure-core">
+            <img src="/vuepress-theme-star/images/logo.png" class="loading-header" width="100%"/>
+          </div>
+        </div>
+      </div>
+      <div class="tip">努力加载中 ……</div>
+    </div>
+    <div id="app"><!--[--><div class="theme-container"><div class="theme-star-content"><h1>404</h1><blockquote>Looks like we&#39;ve got some broken links.</blockquote><a href="/vuepress-theme-star/docs/" class="">Take me home</a></div></div><!----><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close"></button><button class="pswp__button pswp__button--share" title="Teilen"></button><button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button><button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Prev (Arrow Left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (Arrow Right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><!--]--></div>
+    <script src="/vuepress-theme-star/docs/assets/js/runtime~app.b296e72a.js" defer></script><script src="/vuepress-theme-star/docs/assets/js/7538.315d1017.js" defer></script><script src="/vuepress-theme-star/docs/assets/js/app.71e307d1.js" defer></script>
+  </body>
+</html>
