@@ -4,8 +4,8 @@ import type { PropType } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { ResolvedSidebarItem } from '../../shared'
 import { isActiveSidebarItem } from '../utils'
+import AutoLink from './AutoLink.vue'
 import DropdownTransition from './DropdownTransition.vue'
-import NavLink from './NavLink.vue'
 
 const props = defineProps({
   item: {
@@ -49,21 +49,26 @@ if (item.value.collapsible) {
 </script>
 
 <template>
-  <NavLink v-if="item.link" :class="itemClass" :item="item" />
-  <p v-else :class="itemClass" @click="onClick">
-    {{ item.text }}
-    <span
-      v-if="item.collapsible"
-      class="arrow"
-      :class="isOpen ? 'down' : 'right'"
-    />
-  </p>
+  <li>
+    <AutoLink v-if="item.link" :class="itemClass" :item="item" />
+    <p v-else :class="itemClass" @click="onClick">
+      {{ item.text }}
+      <span
+        v-if="item.collapsible"
+        class="arrow"
+        :class="isOpen ? 'down' : 'right'"
+      />
+    </p>
 
-  <DropdownTransition v-if="item.children?.length">
-    <ul v-show="isOpen" class="sidebar-item-children">
-      <li v-for="child in item.children" :key="child.text">
-        <SidebarItem :item="child" :depth="depth + 1" />
-      </li>
-    </ul>
-  </DropdownTransition>
+    <DropdownTransition v-if="item.children?.length">
+      <ul v-show="isOpen" class="sidebar-item-children">
+        <SidebarItem
+          v-for="child in item.children"
+          :key="`${depth}${child.text}${child.link}`"
+          :item="child"
+          :depth="depth + 1"
+        />
+      </ul>
+    </DropdownTransition>
+  </li>
 </template>

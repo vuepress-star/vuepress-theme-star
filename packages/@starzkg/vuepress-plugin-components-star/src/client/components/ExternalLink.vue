@@ -41,4 +41,27 @@ defineProps({
   </a>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.external-link {
+  width: 26px;
+  height: 26px;
+  margin: 4px;
+  transform: scale(1, 1);
+  transition: transform 0.18s ease-out 0.18s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+  }
+
+  &::after {
+    --balloon-font-size: 8px;
+    padding: 0.3em 0.6em;
+  }
+
+  .link-icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

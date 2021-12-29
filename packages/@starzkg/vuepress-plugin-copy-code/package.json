@@ -36,8 +36,8 @@
   "dependencies": {
     "@starzkg/vuepress-plugin-copy-to-clipboard": "1.0.0-beta.22",
     "@starzkg/vuepress-shared": "1.0.0-beta.24",
-    "@vuepress/client": "2.0.0-beta.28",
-    "@vuepress/utils": "2.0.0-beta.28",
+    "@vuepress/client": "2.0.0-beta.32",
+    "@vuepress/utils": "2.0.0-beta.32",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.26",
     "vue-router": "^4.0.12",

@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@starzkg/vuepress-shared": "1.0.0-beta.24",
-    "@vuepress/client": "2.0.0-beta.29",
-    "@vuepress/core": "2.0.0-beta.29",
-    "@vuepress/utils": "2.0.0-beta.28",
+    "@vuepress/client": "2.0.0-beta.32",
+    "@vuepress/core": "2.0.0-beta.32",
+    "@vuepress/utils": "2.0.0-beta.32",
     "sitemap": "^7.0.0"
   },
   "publishConfig": {

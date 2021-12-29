@@ -1,3 +1,14 @@
+/**
+ * dropdown
+ */
+.dropdown-enter-from,
+.dropdown-leave-to {
+  height: 0 !important;
+}
+
+/**
+ * fade-slide-y
+ */
 .fade-slide-y-enter-active {
   transition: all 0.3s ease;
 }
