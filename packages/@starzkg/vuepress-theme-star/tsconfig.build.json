@@ -5,6 +5,9 @@
       "path": "../vuepress-icons/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-plugin-archive/tsconfig.build.json"
+    },
+    {
       "path": "../vuepress-plugin-components-star/tsconfig.build.json"
     },
     {

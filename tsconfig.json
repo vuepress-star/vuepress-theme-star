@@ -3,6 +3,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "module": "ES2020",
+    "paths": {
+      "@internal/archive": [
+        "./packages/@starzkg/vuepress-plugin-archive/src/client/archive"
+      ]
+    },
     "types": ["webpack-env", "vite/client", "@types/jest"]
   },
   "files": [],

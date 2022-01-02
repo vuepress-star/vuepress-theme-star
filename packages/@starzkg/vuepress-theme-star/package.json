@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@starzkg/vuepress-icons": "1.0.0-beta.24",
+    "@starzkg/vuepress-plugin-archive": "1.0.0-beta.24",
     "@starzkg/vuepress-plugin-components-star": "1.0.0-beta.24",
     "@starzkg/vuepress-plugin-copy-code": "1.0.0-beta.24",
     "@starzkg/vuepress-plugin-copy-to-clipboard": "1.0.0-beta.22",

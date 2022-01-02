@@ -8,6 +8,9 @@
       "path": "./packages/@starzkg/vuepress-plugin-add-this/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-plugin-archive/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-social-icons/tsconfig.build.json"
     },
     {
