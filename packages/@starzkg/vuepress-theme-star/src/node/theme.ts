@@ -108,7 +108,7 @@ export const theme: Theme<StarThemeOptions> = (
       ['@vuepress/prismjs', themePlugins.prismjs !== false],
       ['@vuepress/toc'],
       ['@vuepress/theme-data', { themeData: localeOptions }],
-      ['@starzkg/archive', true],
+      ['@starzkg/archive'],
       ['@starzkg/components-star'],
       ['@starzkg/page-enhance', themePlugins?.pageEnhance || true],
       ['@starzkg/photo-swipe'],

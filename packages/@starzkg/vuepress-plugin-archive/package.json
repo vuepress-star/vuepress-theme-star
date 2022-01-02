@@ -5,8 +5,7 @@
   "keywords": [
     "vuepress-plugin",
     "vuepress",
-    "add-this",
-    "share"
+    "archive"
   ],
   "homepage": "https://vuepress-star.shentuzhigang.cn",
   "bugs": {
@@ -23,7 +22,6 @@
     "email": "shentuzhigang@shentuzhigang.cn",
     "url": "https://shentuzhigang.cn"
   },
-  "sideEffects": false,
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [

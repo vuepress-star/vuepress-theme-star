@@ -22,7 +22,6 @@
     "email": "shentuzhigang@shentuzhigang.cn",
     "url": "https://shentuzhigang.cn"
   },
-  "sideEffects": false,
   "main": "lib/index.js",
   "unpkg": "lib/index.js",
   "module": "es/index.js",

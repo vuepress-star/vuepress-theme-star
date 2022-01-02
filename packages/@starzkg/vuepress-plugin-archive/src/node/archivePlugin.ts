@@ -9,10 +9,6 @@ export interface ArchivePluginOptions {
 
 export const archivePlugin: Plugin<ArchivePluginOptions> = (options) => {
   return {
-    define: {
-      __EXCLUDES__: options.excludes || [],
-      __NO_TITLE__: options.defaultTitle || '',
-    },
     onInitialized: async (app) => {
       // 如果主页不存在
       const timeline = await createPage(app, {
@@ -35,7 +31,6 @@ export const archivePlugin: Plugin<ArchivePluginOptions> = (options) => {
         options.defaultTitle || 'No Title'
       ),
     name: '@starzkg/vuepress-plugin-archive',
-    multiple: false,
     clientAppEnhanceFiles: path.resolve(
       __dirname,
       '../client/clientAppEnhance.js'

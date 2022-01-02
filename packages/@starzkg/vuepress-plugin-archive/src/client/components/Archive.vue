@@ -3,7 +3,9 @@ import { useArchive } from '../composables'
 import ArchiveItem from './ArchiveItem.vue'
 
 const archives = useArchive().value
-const years = [...new Set(archives.map((archive) => archive.year))]
+const years = [
+  ...new Set(archives.map((archive) => archive.year).sort((a, b) => b - a)),
+]
 const getMonths = (item): number[] => {
   return [
     ...new Set(
@@ -11,7 +13,7 @@ const getMonths = (item): number[] => {
         .filter((archive) => archive.year === item)
         .map((archive) => archive.month)
     ),
-  ]
+  ].sort((a, b) => b - a)
 }
 </script>
 

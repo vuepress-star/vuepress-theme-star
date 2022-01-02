@@ -23,9 +23,12 @@ const router = useRouter()
 const { month, year, pages } = toRefs(props)
 
 const currentPages = computed(() => {
-  return (pages?.value as Archive[]).filter(
-    (archive) => archive.year === year?.value && archive.month === month?.value
-  )
+  return (pages?.value as Archive[])
+    .filter(
+      (archive) =>
+        archive.year === year?.value && archive.month === month?.value
+    )
+    .sort((a, b) => b.archiveTime - a.archiveTime)
 })
 
 const goPage = (path): void => {
