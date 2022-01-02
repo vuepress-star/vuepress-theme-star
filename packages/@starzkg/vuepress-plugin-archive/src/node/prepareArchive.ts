@@ -45,13 +45,13 @@ export const prepareArchive = async (
           archiveTime: date.getTime(),
           year: date.getFullYear(),
           month: date.getMonth() + 1,
-          day: date.getDay() + 1,
+          day: date.getDate() + 1,
           time:
             date.getFullYear() +
             '-' +
             (date.getMonth() + 1) +
             '-' +
-            (date.getDay() + 1),
+            (date.getDate() + 1),
         }
       }
     )
