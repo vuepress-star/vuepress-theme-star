@@ -1,9 +1,10 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "module": "ES2020",
     "rootDir": "./src",
-    "outDir": "./es"
+    "outDir": "./es",
+    "types": ["@vuepress/client/types", "@types/jest"]
   },
   "include": ["./src/client", "./src/shared"]
 }

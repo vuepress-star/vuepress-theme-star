@@ -4,7 +4,7 @@
     "packages/@starzkg/*"
   ],
   "scripts": {
-    "build": "tsc --build",
+    "build": "tsc -b tsconfig.build.json",
     "clean": "lerna run clean --stream",
     "copy": "lerna run copy --stream",
     "copy-watch": "lerna run copy --parallel -- --watch",

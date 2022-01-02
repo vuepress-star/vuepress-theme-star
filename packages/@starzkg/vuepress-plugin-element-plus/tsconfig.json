@@ -1,7 +1,0 @@
-{
-  "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "types": ["@element-plus/icons/types"]
-  },
-  "include": ["./src/**/*.ts", "./__tests__"]
-}

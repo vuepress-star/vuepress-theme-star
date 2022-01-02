@@ -1,0 +1,57 @@
+{
+  "extends": "./tsconfig.base.json",
+  "references": [
+    {
+      "path": "./packages/@starzkg/vuepress-icons/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-add-this/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-social-icons/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-baidu-analytics/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-cnzz-analytics/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-components-star/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-copy-code/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-copy-to-clipboard/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-copyright/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-page-enhance/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-markdown-enhance/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-element-plus/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-interaction-effect/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-photo-swipe/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-plugin-sitemap/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-shared/tsconfig.build.json"
+    },
+    {
+      "path": "./packages/@starzkg/vuepress-theme-star/tsconfig.build.json"
+    }
+  ],
+  "files": []
+}

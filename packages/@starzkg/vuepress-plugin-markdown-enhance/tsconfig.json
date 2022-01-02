@@ -1,7 +1,0 @@
-{
-  "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "types": ["@vuepress/client/types", "@types/jest"]
-  },
-  "include": ["./src/**/*.ts", "./src/**/*.vue", "./__tests__"]
-}
