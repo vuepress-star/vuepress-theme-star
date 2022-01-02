@@ -75,8 +75,8 @@ const articleNumber = __ARTICLE_NUMBER__
         <div>标签</div>
       </div>
       <div @click="navigate('/timeline/')">
-        <div class="num">716</div>
-        <div>--</div>
+        <div class="num">{{ $archive.length }}</div>
+        <div>归档</div>
       </div>
     </div>
     <Links />
