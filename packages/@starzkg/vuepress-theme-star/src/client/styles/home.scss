@@ -106,7 +106,7 @@
     .arrow {
       position: sticky;
       bottom: 50px;
-      height: 100px;
+      height: 5rem;
       width: 100%;
       text-align: center;
       cursor: pointer;
@@ -228,13 +228,13 @@
     margin-top: 0;
   }
   25% {
-    margin-top: 10px;
+    margin-top: 1rem;
   }
   50% {
     margin-top: 0;
   }
   75% {
-    margin-top: -10px;
+    margin-top: -1rem;
   }
   100% {
     margin-top: 0;
