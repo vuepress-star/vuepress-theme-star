@@ -1,5 +1,5 @@
-@use "@starzkg/vuepress-shared/styles/reset";
-@use "@hope/config";
+@use '@starzkg/vuepress-shared/styles/reset';
+@use '@hope/config';
 
 .copy-code-button {
   @include reset.button;
@@ -20,7 +20,7 @@
     position: absolute;
     right: -14px;
     bottom: -14px;
-    z-index: 100;
+    z-index: 10;
 
     @media (max-width: config.$mobileS) {
       right: -2px;
