@@ -1,6 +1,5 @@
 .timeline-box {
-  margin: 0 auto;
-  width: var(--archive-box-width, 80%);
+  padding: 0 2rem;
 }
 
 .timeline-box,
@@ -99,6 +98,7 @@
 
 .timeline-create-time {
   height: 1.5rem;
+  padding-left: 0.5rem;
   width: 10rem;
 }
 

@@ -38,7 +38,7 @@ export const prepareArchive = async (
         }
 
         return {
-          title: page.title,
+          title: page.title || noTitle,
           path: page.path,
           createdTime: createdTime,
           updatedTime: updatedTime,

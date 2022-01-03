@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useArchive } from '../composables'
+import { useArchive } from '@starzkg/vuepress-plugin-archive/lib/client'
 import ArchiveItem from './ArchiveItem.vue'
 
 const archives = useArchive().value

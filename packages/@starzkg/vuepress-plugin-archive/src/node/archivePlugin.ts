@@ -1,4 +1,4 @@
-import { createPage, Plugin } from '@vuepress/core'
+import { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { prepareArchive } from './prepareArchive'
 
@@ -9,21 +9,6 @@ export interface ArchivePluginOptions {
 
 export const archivePlugin: Plugin<ArchivePluginOptions> = (options) => {
   return {
-    onInitialized: async (app) => {
-      // 如果主页不存在
-      const timeline = await createPage(app, {
-        path: '/archive',
-        // 设置 frontmatter
-        frontmatter: {
-          layout: 'Archive',
-          slug: 'plugin-archive',
-        },
-        // 设置 markdown 内容
-        content: '',
-      })
-      // 把它添加到 `app.pages`
-      app.pages.push(timeline)
-    },
     onPrepared: async (app) =>
       prepareArchive(
         app,
