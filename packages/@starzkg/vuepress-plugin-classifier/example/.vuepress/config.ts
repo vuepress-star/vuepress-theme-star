@@ -42,5 +42,5 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
-  plugins: ['@starzkg/archive'],
+  plugins: ['@starzkg/classifier'],
 })

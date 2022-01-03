@@ -1,7 +1,7 @@
 {
-  "name": "VuePress",
-  "short_name": "VuePress",
-  "description": "Vue-powered Static Site Generator",
+  "name": "VuePress Star",
+  "short_name": "VuePress Star",
+  "description": "A vuepress theme for building personal site",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#fff",
