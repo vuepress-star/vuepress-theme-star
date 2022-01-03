@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-photo-swipe",
-  "version": "1.0.0-beta.24",
+  "version": "1.0.0-beta.25",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
@@ -36,7 +36,7 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-shared": "1.0.0-beta.24",
+    "@starzkg/vuepress-shared": "1.0.0-beta.25",
     "@types/photoswipe": "^4.1.2",
     "@vuepress/client": "2.0.0-beta.32",
     "@vuepress/core": "2.0.0-beta.32",

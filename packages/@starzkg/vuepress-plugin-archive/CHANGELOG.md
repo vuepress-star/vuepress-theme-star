@@ -8,16 +8,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
+* archive time exception ([0e50b35](https://github.com/shentuzhigang/vuepress-theme-star/commit/0e50b35dfa5505f05c02701a80d80540aab89c45))
 * feat archive ([d2b3cba](https://github.com/shentuzhigang/vuepress-theme-star/commit/d2b3cbaf722c8a54c7b61dd072743aa67934463b))
-
-
-
-
-
-# [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
 
 
 ### Features
 
-* add-this ([162c544](https://github.com/shentuzhigang/vuepress-theme-star/commit/162c5446c820987c11b334e0e0069f429c6f7140))
-* update ([44a4408](https://github.com/shentuzhigang/vuepress-theme-star/commit/44a44081fd632e8ed57711f8adbad4c27b3d4233))
+* archive ([745646e](https://github.com/shentuzhigang/vuepress-theme-star/commit/745646ee221dcc8866a58942165a3d79891657c1))
+* profile archive ([698a004](https://github.com/shentuzhigang/vuepress-theme-star/commit/698a004d5c5068dcf0f1930004b7b1f54ebc3d79))

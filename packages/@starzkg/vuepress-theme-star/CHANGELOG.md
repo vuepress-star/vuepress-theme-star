@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+
+
+### Bug Fixes
+
+* feat archive ([d2b3cba](https://github.com/shentuzhigang/vuepress-theme-star/commit/d2b3cbaf722c8a54c7b61dd072743aa67934463b))
+* fix ([3c2f3c2](https://github.com/shentuzhigang/vuepress-theme-star/commit/3c2f3c2d3f0ec9d7b517f4c5accf58dcc3e05e7d))
+* fix ([c8bb8cb](https://github.com/shentuzhigang/vuepress-theme-star/commit/c8bb8cb17cb196d4f2f5a58da3f11fd3185fd5df))
+* home content bounce ([0239c14](https://github.com/shentuzhigang/vuepress-theme-star/commit/0239c1459bfa292dec003b2af0ca4877b1e79895))
+
+
+### Features
+
+* archive ([745646e](https://github.com/shentuzhigang/vuepress-theme-star/commit/745646ee221dcc8866a58942165a3d79891657c1))
+* fix ([98fb188](https://github.com/shentuzhigang/vuepress-theme-star/commit/98fb188f68beab80c872ee016f5881bb5eec0ef4))
+* fix home arrow ([07b0ba2](https://github.com/shentuzhigang/vuepress-theme-star/commit/07b0ba2fd2e705b8f8b75ee9f121bc7e28216330))
+* navbar background transparent ([004bbe6](https://github.com/shentuzhigang/vuepress-theme-star/commit/004bbe686d6c9df388809cbcac640cab9020f55b))
+* profile archive ([698a004](https://github.com/shentuzhigang/vuepress-theme-star/commit/698a004d5c5068dcf0f1930004b7b1f54ebc3d79))
+* profile info archive ([bf54c82](https://github.com/shentuzhigang/vuepress-theme-star/commit/bf54c82436a21eb3f70ed1896ca56cb909953698))
+
+
+
+
+
 # [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
 
 

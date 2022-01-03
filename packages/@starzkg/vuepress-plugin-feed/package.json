@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-feed",
-  "version": "1.0.0-beta.24",
+  "version": "1.0.0-beta.25",
   "description": "Feed plugin",
   "keywords": [
     "vuepress-plugin",
@@ -33,7 +33,7 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-shared": "1.0.0-beta.24",
+    "@starzkg/vuepress-shared": "1.0.0-beta.25",
     "@vuepress/client": "2.0.0-beta.32",
     "@vuepress/core": "2.0.0-beta.32",
     "@vuepress/utils": "2.0.0-beta.32",

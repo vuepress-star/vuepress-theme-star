@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+
+
+### Bug Fixes
+
+* copy code button in top of navbar ([ed16dd6](https://github.com/shentuzhigang/vuepress-theme-star/commit/ed16dd6c7a174620205c0b974ce8ece8d8fd40a2))
+
+
+
+
+
 # [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-copy-code
