@@ -35,10 +35,10 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-shared": "1.0.0-beta.25",
-    "@vuepress/client": "2.0.0-beta.32",
-    "@vuepress/core": "2.0.0-beta.32",
-    "@vuepress/utils": "2.0.0-beta.32",
-    "vue": "^3.2.26"
+    "@starzkg/vuepress-shared": "workspace:*",
+    "@vuepress/client": "2.0.0-beta.43",
+    "@vuepress/core": "2.0.0-beta.43",
+    "@vuepress/utils": "2.0.0-beta.43",
+    "vue": "^3.2.33"
   }
 }

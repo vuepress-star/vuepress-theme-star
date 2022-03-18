@@ -1,8 +1,8 @@
 import { encodeCDATA, encodeXML } from '@starzkg/vuepress-shared'
-import * as convert from 'xml-js'
+import { js2xml } from 'xml-js'
 import type { FeedAuthor, FeedCategory } from '../../shared'
 import type { Feed } from '../feed'
-import { generator } from '../utils'
+import { FEED_GENERATOR } from '../utils'
 import type {
   AtomAuthor,
   AtomCategory,
@@ -49,6 +49,7 @@ export const renderAtom = (feed: Feed): string => {
     feed: {
       _attributes: {
         xmlns: 'http://www.w3.org/2005/Atom',
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         ...(channel.language ? { 'xml:lang': channel.language } : {}),
       },
       id: channel.link,
@@ -63,7 +64,7 @@ export const renderAtom = (feed: Feed): string => {
       updated: channel.lastUpdated
         ? channel.lastUpdated.toISOString()
         : new Date().toISOString(),
-      generator: generator,
+      generator: FEED_GENERATOR,
       link: [{ _attributes: { rel: 'self', href: encodeXML(links.atom) } }],
     },
   }
@@ -105,11 +106,17 @@ export const renderAtom = (feed: Feed): string => {
     }
 
     // entry: recommended elements
-    if (item.description)
-      entry.summary = {
-        _attributes: { type: 'html' },
-        _cdata: encodeCDATA(item.description),
-      }
+    if (item.description) {
+      entry.summary = item.description.startsWith('html:')
+        ? {
+            _attributes: { type: 'html' },
+            _cdata: encodeCDATA(item.description.substring(5)),
+          }
+        : {
+            _attributes: { type: 'html' },
+            _text: item.description,
+          }
+    }
 
     if (item.content)
       entry.content = {
@@ -145,7 +152,7 @@ export const renderAtom = (feed: Feed): string => {
     return entry
   })
 
-  return convert.js2xml(content, {
+  return js2xml(content, {
     compact: true,
     ignoreComment: true,
     spaces: 2,

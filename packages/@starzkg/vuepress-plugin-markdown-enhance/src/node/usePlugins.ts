@@ -1,6 +1,7 @@
-import { getLocales } from '@starzkg/vuepress-shared/lib/node'
+import { getLocales } from '@starzkg/vuepress-shared'
 import type { App } from '@vuepress/core'
 import type { ContainerPluginOptions } from '@vuepress/plugin-container'
+import containerPlugin from '@vuepress/plugin-container'
 import type { LocaleConfig } from '@vuepress/shared'
 import type { MarkdownContainerName, MarkdownEnhanceOptions } from '../shared'
 import { i18n } from './i18n'
@@ -10,19 +11,12 @@ export const usePlugins = (
   app: App,
   markdownOptions: MarkdownEnhanceOptions
 ): void => {
-  if (app.env.isDev && app.options.bundler.endsWith('vite')) {
-    // eslint-disable-next-line import/no-extraneous-dependencies
-    app.options.bundlerConfig.viteOptions = require('vite').mergeConfig(
-      app.options.bundlerConfig.viteOptions,
-      {
-        optimizeDeps: {
-          include: ['lodash.debounce'],
-        },
-      }
-    )
-  }
-
-  const locales = getLocales(app, i18n, markdownOptions.locales)
+  const locales = getLocales({
+    app,
+    name: 'markdown-enhance',
+    default: i18n,
+    config: markdownOptions.locales,
+  })
 
   const getContainerLocale = (
     key: MarkdownContainerName
@@ -45,26 +39,32 @@ export const usePlugins = (
     ]
 
     containers.forEach((type) =>
-      app.use('@vuepress/container', {
-        type,
-        locales: getContainerLocale(type),
-      } as ContainerPluginOptions)
+      app.use(
+        containerPlugin({
+          type,
+          locales: getContainerLocale(type),
+        } as ContainerPluginOptions)
+      )
     )
 
-    app.use('@vuepress/container', {
-      type: 'details',
-      render: getDetailsRender(getContainerLocale('details')),
-    } as ContainerPluginOptions)
+    app.use(
+      containerPlugin({
+        type: 'details',
+        render: getDetailsRender(getContainerLocale('details')),
+      } as ContainerPluginOptions)
+    )
   }
 
   if (markdownOptions.align || markdownOptions.enableAll)
     ['left', 'center', 'right', 'justify'].forEach((type) =>
-      app.use('@vuepress/container', { type } as ContainerPluginOptions)
+      app.use(containerPlugin({ type } as ContainerPluginOptions))
     )
 
   if (markdownOptions.demo || markdownOptions.enableAll)
-    app.use('@vuepress/container', {
-      type: 'demo',
-      render: codeDemoRender,
-    })
+    app.use(
+      containerPlugin({
+        type: 'demo',
+        render: codeDemoRender,
+      })
+    )
 }

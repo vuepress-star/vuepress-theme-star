@@ -1,8 +1,22 @@
 import { Logger } from '@starzkg/vuepress-shared'
+import { removeLeadingSlash } from '@vuepress/shared'
 
-export const logger = new Logger('Feed')
+export const logger = new Logger('vuepress-plugin-feed2')
 
-export const resolveHTML = (html: string): string =>
+export const compareDate = (
+  dateA: Date | string | undefined,
+  dateB: Date | string | undefined
+): number => {
+  if (!dateA || !(dateA instanceof Date)) return 1
+  if (!dateB || !(dateB instanceof Date)) return -1
+
+  return dateB.getTime() - dateA.getTime()
+}
+
+export const resolveHTML = (
+  html: string,
+  customElements: string[] = []
+): string =>
   html
     // remove html class
     .replace(/ class=".*?"/gu, '')
@@ -11,9 +25,9 @@ export const resolveHTML = (html: string): string =>
     // remove anchor
     .replace(/<a href="#.*?">.*?<\/a>/gu, '')
     // remove html comment
-    .replace(/(<!--.*?-->)|(<!--[\S\s]+?-->)|(<!--[\S\s]*?$)/gu, '')
-    // remove OutboundLink
-    .replace(/<OutboundLink ?\/>/gu, '')
+    .replace(/(<!--.*?--!?>)|(<!--[\S\s]+?--!?>)|(<!--[\S\s]*?$)/gu, '')
+    // remove ExternalLinkIcon
+    .replace(/<ExternalLinkIcon ?\/>/gu, '')
     // resolve RouterLink
     .replace(
       /<RouterLink to="(.*?)">(.*?)<\/RouterLink>/gu,
@@ -23,20 +37,17 @@ export const resolveHTML = (html: string): string =>
     .replace(/<(?:a|div|span)[^>]*?\/>/gu, '')
     // remove other related tags
     .replace(
-      /<(Badge|FlowChart|Presentation).*?(?:>.*?<\/\1>|\/>)/gu,
+      new RegExp(
+        `<(${customElements.join('|')})[^>]*?(?:>*?<\\/\\1>|\\/>)`,
+        'gu'
+      ),
       '<i>Content not supported</i>'
     )
     // remove tex
     .replace(/<math[\s\S]*?\/math>/gu, '<i>Content not supported</i>')
 
 export const resolveUrl = (hostname: string, base = '', path = ''): string =>
-  `${hostname}${
-    // make sure base starts and ends with '/'
-    base.replace(/^\/?/u, '/').replace(/\/?$/u, '/')
-  }${
-    // make sure path does not start with '/'
-    path.replace(/^\//u, '')
-  }`
+  `${hostname}${base}${removeLeadingSlash(path)}`
 
 export const getImageMineType = (ext = ''): string =>
   `image/${
@@ -53,4 +64,4 @@ export const getImageMineType = (ext = ''): string =>
       : ''
   }`
 
-export const generator = 'vuepress-plugin-feed2'
+export const FEED_GENERATOR = 'vuepress-plugin-feed2'

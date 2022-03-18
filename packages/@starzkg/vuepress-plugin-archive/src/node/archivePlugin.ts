@@ -7,18 +7,21 @@ export interface ArchivePluginOptions {
   defaultTitle: string
 }
 
-export const archivePlugin: Plugin<ArchivePluginOptions> = (options) => {
-  return {
-    onPrepared: async (app) =>
-      prepareArchive(
-        app,
-        options.excludes || ['/404.html', '/archive/'],
-        options.defaultTitle || 'No Title'
+export const archivePlugin =
+  (options?: ArchivePluginOptions): Plugin =>
+  (app) => {
+    const archiveOptions = options || ({} as ArchivePluginOptions)
+    return {
+      onPrepared: async (app) =>
+        prepareArchive(
+          app,
+          archiveOptions.excludes || ['/404.html', '/archive/'],
+          archiveOptions.defaultTitle || 'No Title'
+        ),
+      name: '@starzkg/vuepress-plugin-archive',
+      clientAppEnhanceFiles: path.resolve(
+        __dirname,
+        '../client/clientAppEnhance.js'
       ),
-    name: '@starzkg/vuepress-plugin-archive',
-    clientAppEnhanceFiles: path.resolve(
-      __dirname,
-      '../client/clientAppEnhance.js'
-    ),
+    }
   }
-}

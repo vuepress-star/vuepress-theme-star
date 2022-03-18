@@ -1,111 +1,142 @@
-import { deepAssign, getRootLang } from '@starzkg/vuepress-shared'
-import type { App } from '@vuepress/core'
+import { deepAssign } from '@starzkg/vuepress-shared'
+import type { App, Page } from '@vuepress/core'
+import type { GitData } from '@vuepress/plugin-git'
+import { removeEndingSlash, removeLeadingSlash } from '@vuepress/shared'
 import type {
+  BaseFeedOptions,
   FeedChannelOption,
   FeedLinks,
   FeedOptions,
-  FeedOutput,
 } from '../shared'
-import { logger, resolveUrl } from './utils'
+import { compareDate, resolveUrl } from './utils'
 
-export interface ResolvedFeedOutputConfig {
-  enable: boolean
-  path: string
-}
+export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string }
 
-export interface ResolvedFeedOutput {
-  atom: ResolvedFeedOutputConfig
-  json: ResolvedFeedOutputConfig
-  rss: ResolvedFeedOutputConfig
-}
+export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>
 
-export const checkOptions = (
-  options: Partial<FeedOptions>,
-  app: App
-): FeedOptions | false => {
-  const { themeConfig } = app.options
-  const hostname =
-    options.hostname || (themeConfig.hostname as string | undefined)
-
+export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
   // make sure hostname do not end with `/`
-  if (hostname) options.hostname = hostname.replace(/\/?$/u, '')
-  else {
-    logger.error("Option 'hostname' is required!")
-    return false
+  if (options.hostname) {
+    options.hostname = removeEndingSlash(options.hostname)
+
+    return true
   }
 
-  options.rootLang = getRootLang(app)
-
-  return options as FeedOptions
+  return false
 }
 
-export const getOutput = (output?: FeedOutput): ResolvedFeedOutput => {
-  const defaultOption: ResolvedFeedOutput = {
-    atom: {
-      enable: true,
-      path: 'atom.xml',
-    },
-    json: {
-      enable: true,
-      path: 'feed.json',
-    },
-    rss: {
-      enable: true,
-      path: 'rss.xml',
-    },
-  }
+export const checkOutput = (options: Partial<FeedOptions>): boolean =>
+  // some locales request output
+  (options.locales &&
+    Object.entries(options.locales).some(
+      ([, { atom, json, rss }]) => atom || json || rss
+    )) ||
+  // root option requsts output
+  Boolean(options.atom || options.json || options.rss)
 
-  return deepAssign(defaultOption, output || {})
-}
+export const getFeedOptions = (
+  app: App,
+  options: FeedOptions
+): ResolvedFeedOptionsMap =>
+  Object.fromEntries(
+    Object.keys({
+      // root locale must exists
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      '/': {},
+      ...app.siteData.locales,
+    }).map((localePath) => [
+      localePath,
+      {
+        // default values
+        filter: ({ frontmatter, filePathRelative }: Page): boolean =>
+          !(
+            frontmatter.home ||
+            !filePathRelative ||
+            frontmatter.article === false ||
+            frontmatter.feed === false
+          ),
+        sorter: (
+          pageA: Page<{ git?: GitData }, Record<string, never>>,
+          pageB: Page<{ git?: GitData }, Record<string, never>>
+        ): number =>
+          compareDate(
+            pageA.data.git?.createdTime
+              ? new Date(pageA.data.git?.createdTime)
+              : pageA.frontmatter.date,
+            pageB.data.git?.createdTime
+              ? new Date(pageB.data.git?.createdTime)
+              : pageB.frontmatter.date
+          ),
+        ...options,
+        ...options.locales?.[localePath],
+
+        // make sure hostname is not been overided
+        hostname: options.hostname,
+      } as ResolvedFeedOptions,
+    ])
+  )
 
 export const getFeedChannelOption = (
+  app: App,
   options: FeedOptions,
-  app: App
+  localePath = ''
 ): FeedChannelOption => {
-  const { rootLang, hostname, icon, image } = options
-  const { base, themeConfig } = app.options
-  const { title, description } = app.siteData
-  const author =
-    options.channel?.author?.name || (themeConfig.author as string | undefined)
-
-  const copyright: string =
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    (themeConfig?.footer?.copyright as string | undefined) ||
-    (author ? `Copyright by ${author}` : '')
+  const { hostname, icon, image } = options
+  const { base } = app.options
+  const author = options.channel?.author?.name
 
   const defaultChannelOpion: FeedChannelOption = {
-    title,
-    link: resolveUrl(hostname, base),
-    description,
-    language: rootLang,
-    copyright,
+    title:
+      app.siteData.locales[localePath]?.title ||
+      app.siteData.title ||
+      app.siteData.locales['/']?.title ||
+      '',
+    link: resolveUrl(hostname, base, localePath),
+    description:
+      app.siteData.locales[localePath]?.description ||
+      app.siteData.description ||
+      app.siteData.locales['/']?.description ||
+      '',
+    language: app.siteData.locales[localePath]?.lang || app.siteData.lang,
+    copyright: author ? `Copyright by ${author}` : '',
     pubDate: new Date(),
     lastUpdated: new Date(),
     ...(icon ? { icon } : {}),
     ...(image ? { image } : {}),
-    ...(author
-      ? {
-          author: {
-            name: author,
-          },
-        }
-      : {}),
+    ...(author ? { author: { name: author } } : {}),
   }
 
   return deepAssign(defaultChannelOpion, options.channel || {})
 }
 
-export const getFeedLinks = (
-  options: FeedOptions,
-  output: ResolvedFeedOutput,
-  app: App
-): FeedLinks => {
+export const getFilename = (
+  options: ResolvedFeedOptions,
+  prefix = '/'
+): {
+  atomOutputFilename: string
+  jsonOutputFilename: string
+  rssOutputFilename: string
+} => ({
+  atomOutputFilename: `${removeLeadingSlash(prefix)}${
+    options.atomOutputFilename || 'atom.xml'
+  }`,
+  jsonOutputFilename: `${removeLeadingSlash(prefix)}${
+    options.jsonOutputFilename || 'feed.json'
+  }`,
+  rssOutputFilename: `${removeLeadingSlash(prefix)}${
+    options.rssOutputFilename || 'rss.xml'
+  }`,
+})
+
+export const getFeedLinks = (app: App, options: FeedOptions): FeedLinks => {
   const { base } = app.options
   const { hostname } = options
+  const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+    getFilename(options)
 
   return {
-    atom: resolveUrl(hostname, base, output.atom.path),
-    json: resolveUrl(hostname, base, output.json.path),
-    rss: resolveUrl(hostname, base, output.rss.path),
+    atom: resolveUrl(hostname, base, atomOutputFilename),
+    json: resolveUrl(hostname, base, jsonOutputFilename),
+    rss: resolveUrl(hostname, base, rssOutputFilename),
   }
 }

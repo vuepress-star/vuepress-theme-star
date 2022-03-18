@@ -1,6 +1,6 @@
-import { clickOutside } from '@starzkg/vuepress-shared/es/client'
 import { Content } from '@vuepress/client'
-import { defineComponent, h, onBeforeUnmount, ref, withDirectives } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { defineComponent, h, ref } from 'vue'
 import type { VNode } from 'vue'
 import { useRouter } from 'vue-router'
 import { BackIcon, HomeIcon } from './icons'
@@ -10,9 +10,10 @@ import './styles/layout.scss'
 export default defineComponent({
   name: 'SlidePage',
 
-  setup: function () {
+  setup() {
     const router = useRouter()
     const showMenu = ref(false)
+    const menu = ref<HTMLElement | null>(null)
 
     const toggle = (): void => {
       showMenu.value = !showMenu.value
@@ -32,37 +33,28 @@ export default defineComponent({
       router.push('/')
     }
 
-    onBeforeUnmount(() => {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      document.querySelector('html')!.classList.remove('reveal-full-page')
-      document.body.classList.remove('reveal-viewport')
-      document.body.style.removeProperty('--slide-width')
-      document.body.style.removeProperty('--slide-height')
-    })
+    onClickOutside(menu, closeMenu)
 
     return (): VNode =>
       h('div', { class: 'presentation' }, [
         h(Content),
-        withDirectives(
-          h('div', { class: { menu: true, active: showMenu.value } }, [
-            h(
-              'button',
-              { class: 'menu-button', onClick: () => toggle() },
-              h('span', { class: 'icon' })
-            ),
-            h(
-              'button',
-              { class: 'back-button', onClick: () => back() },
-              h(BackIcon)
-            ),
-            h(
-              'button',
-              { class: 'home-button', onClick: () => home() },
-              h(HomeIcon)
-            ),
-          ]),
-          [[clickOutside, closeMenu]]
-        ),
+        h('div', { ref: menu, class: ['menu', { active: showMenu.value }] }, [
+          h(
+            'button',
+            { class: 'menu-button', onClick: () => toggle() },
+            h('span', { class: 'icon' })
+          ),
+          h(
+            'button',
+            { class: 'back-button', onClick: () => back() },
+            h(BackIcon)
+          ),
+          h(
+            'button',
+            { class: 'home-button', onClick: () => home() },
+            h(HomeIcon)
+          ),
+        ]),
       ])
   },
 })

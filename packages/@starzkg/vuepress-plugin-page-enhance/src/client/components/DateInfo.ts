@@ -1,4 +1,4 @@
-import { useDate, useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
+import { getDate, useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { usePageData } from '@vuepress/client'
 import type { GitData } from '@vuepress/plugin-git'
 import { computed, defineComponent, h } from 'vue'
@@ -17,10 +17,9 @@ export default defineComponent({
     const date = computed(() => {
       const { createdTime } = page.value.git || {}
 
-      return useDate(
-        { type: 'date' },
-        createdTime ? new Date(createdTime) : undefined
-      ).value
+      return getDate(createdTime ? new Date(createdTime) : undefined, {
+        type: 'date',
+      })
     })
 
     const pageInfoLocale = useLocaleConfig(pageInfoI18n)
@@ -40,7 +39,7 @@ export default defineComponent({
             },
             [
               h(CalendarIcon),
-              h('span', date.value?.display),
+              h('span', date.value.display),
               h('meta', {
                 property: 'datePublished',
                 // ISO Format Date string

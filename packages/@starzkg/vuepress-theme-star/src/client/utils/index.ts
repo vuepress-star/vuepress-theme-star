@@ -1,3 +1,5 @@
 export * from './isActiveSidebarItem'
 export * from './resolveEditLink'
 export * from './resolveRepoType'
+export * from './getScrollTop'
+export * from './scrollToTop'

@@ -1,16 +1,20 @@
-import type { StarThemeOptions } from '@starzkg/vuepress-theme-star'
-import { defineUserConfig } from '@vuepress/cli'
+import { addViteOptimizeDepsInclude } from '@starzkg/vuepress-shared'
+import starTheme from '@starzkg/vuepress-theme-star'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { path } from '@vuepress/utils'
-import { ViteBundlerOptions } from 'vuepress-vite'
+import { defineUserConfig } from 'vuepress'
+import { viteBundler } from 'vuepress-vite'
+import { webpackBundler } from 'vuepress-webpack'
 import { navbar, sidebar } from './configs'
 
 const isProd = process.env.NODE_ENV === 'production'
 
-// @ts-ignore
-export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
+export default defineUserConfig({
   base: '/docs/',
   title: 'vuepress-theme-star',
-  theme: '@starzkg/star',
   head: [
     [
       'link',
@@ -69,11 +73,28 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
 
   bundler:
     // specify bundler via environment variable
-    process.env.DOCS_BUNDLER ??
-    // use vite in dev, use webpack in prod
-    (isProd ? '@vuepress/webpack' : '@vuepress/vite'),
+    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
 
-  themeConfig: {
+  extendsBundlerOptions: (config: unknown, app): void => {
+    if (app.env.isDev)
+      addViteOptimizeDepsInclude({ app, config }, [
+        '@starzkg/vuepress-shared/lib/client',
+        'dayjs',
+        'dayjs/plugin/localizedFormat',
+        'dayjs/plugin/objectSupport',
+        'dayjs/plugin/timezone',
+        'dayjs/plugin/utc',
+      ])
+
+    addViteOptimizeDepsInclude({ app, config }, [
+      'axios',
+      'three',
+      'three/examples/jsm/controls/OrbitControls',
+      'three/examples/jsm/loaders/STLLoader',
+    ])
+  },
+
+  theme: starTheme({
     logo: '/images/hero.png',
 
     repo: 'shentuzhigang/vuepress-theme-star',
@@ -142,6 +163,8 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
       backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
+      // use shiki plugin in production mode instead
+      prismjs: !isProd,
       mdEnhance: {
         enableAll: true,
         presentation: {
@@ -177,7 +200,7 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
         },
       },
     },
-  },
+  }),
 
   markdown: {
     importCode: {
@@ -188,59 +211,157 @@ export default defineUserConfig<StarThemeOptions, ViteBundlerOptions>({
         ),
     },
   },
-
   plugins: [
-    ['@vuepress/plugin-debug'],
-    [
-      '@vuepress/plugin-docsearch',
-      {
-        apiKey: '3a539aab83105f01761a137c61004d85',
-        indexName: 'vuepress',
-        searchParameters: {
-          facetFilters: ['tags:v2'],
-        },
-        locales: {
-          '/zh/': {
-            placeholder: '搜索文档',
+    docsearchPlugin({
+      appId: '34YFD9IUQ2',
+      apiKey: '9a9058b8655746634e01071411c366b8',
+      indexName: 'vuepress',
+      searchParameters: {
+        facetFilters: ['tags:v2'],
+      },
+      locales: {
+        '/zh/': {
+          placeholder: '搜索文档',
+          translations: {
+            button: {
+              buttonText: '搜索文档',
+              buttonAriaLabel: '搜索文档',
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: '清除查询条件',
+                resetButtonAriaLabel: '清除查询条件',
+                cancelButtonText: '取消',
+                cancelButtonAriaLabel: '取消',
+              },
+              startScreen: {
+                recentSearchesTitle: '搜索历史',
+                noRecentSearchesText: '没有搜索历史',
+                saveRecentSearchButtonTitle: '保存至搜索历史',
+                removeRecentSearchButtonTitle: '从搜索历史中移除',
+                favoriteSearchesTitle: '收藏',
+                removeFavoriteSearchButtonTitle: '从收藏中移除',
+              },
+              errorScreen: {
+                titleText: '无法获取结果',
+                helpText: '你可能需要检查你的网络连接',
+              },
+              footer: {
+                selectText: '选择',
+                navigateText: '切换',
+                closeText: '关闭',
+                searchByText: '搜索提供者',
+              },
+              noResultsScreen: {
+                noResultsText: '无法找到相关结果',
+                suggestedQueryText: '你可以尝试查询',
+                reportMissingResultsText: '你认为该查询应该有结果？',
+                reportMissingResultsLinkText: '点击反馈',
+              },
+            },
           },
         },
       },
-    ],
-    [
-      '@vuepress/plugin-google-analytics',
-      {
-        // we have multiple deployments, which would use different id
-        id: process.env.DOCS_GA_ID,
-      },
-    ],
-    [
-      '@starzkg/baidu-analytics',
-      {
-        id: process.env.DOCS_BA_ID,
-      },
-    ],
-    [
-      '@starzkg/cnzz-analytics',
-      {
-        id: process.env.DOCS_CNZZ_ID,
-        webId: process.env.DOCS_CNZZ_WEB_ID,
-      },
-    ],
-    [
-      '@vuepress/plugin-register-components',
-      {
-        componentsDir: path.resolve(__dirname, './components'),
-      },
-    ],
+    }),
+    googleAnalyticsPlugin({
+      // we have multiple deployments, which would use different id
+      id: process.env.DOCS_GA_ID ?? '',
+    }),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, './components'),
+    }),
     // only enable shiki plugin in production mode
-    [
-      '@vuepress/plugin-shiki',
-      isProd
-        ? {
-            theme: 'dark-plus',
-          }
-        : false,
-    ],
-    ['@starzkg/element-plus'],
+    isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
   ],
+  // plugins: [
+  //   [
+  //     '@vuepress/plugin-docsearch',
+  //     {
+  //       apiKey: '3a539aab83105f01761a137c61004d85',
+  //       indexName: 'vuepress',
+  //       searchParameters: {
+  //         facetFilters: ['tags:v2'],
+  //       },
+  //       locales: {
+  //         '/zh/': {
+  //           placeholder: '搜索文档',
+  //           translations: {
+  //             button: {
+  //               buttonText: '搜索文档',
+  //               buttonAriaLabel: '搜索文档',
+  //             },
+  //             modal: {
+  //               searchBox: {
+  //                 resetButtonTitle: '清除查询条件',
+  //                 resetButtonAriaLabel: '清除查询条件',
+  //                 cancelButtonText: '取消',
+  //                 cancelButtonAriaLabel: '取消',
+  //               },
+  //               startScreen: {
+  //                 recentSearchesTitle: '搜索历史',
+  //                 noRecentSearchesText: '没有搜索历史',
+  //                 saveRecentSearchButtonTitle: '保存至搜索历史',
+  //                 removeRecentSearchButtonTitle: '从搜索历史中移除',
+  //                 favoriteSearchesTitle: '收藏',
+  //                 removeFavoriteSearchButtonTitle: '从收藏中移除',
+  //               },
+  //               errorScreen: {
+  //                 titleText: '无法获取结果',
+  //                 helpText: '你可能需要检查你的网络连接',
+  //               },
+  //               footer: {
+  //                 selectText: '选择',
+  //                 navigateText: '切换',
+  //                 closeText: '关闭',
+  //                 searchByText: '搜索提供者',
+  //               },
+  //               noResultsScreen: {
+  //                 noResultsText: '无法找到相关结果',
+  //                 suggestedQueryText: '你可以尝试查询',
+  //                 openIssueText: '你认为该查询应该有结果？',
+  //                 openIssueLinkText: '点击反馈',
+  //               },
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //   ],
+  //   [
+  //     '@vuepress/plugin-google-analytics',
+  //     {
+  //       // we have multiple deployments, which would use different id
+  //       id: process.env.DOCS_GA_ID,
+  //     },
+  //   ],
+  //   [
+  //     '@starzkg/baidu-analytics',
+  //     {
+  //       id: process.env.DOCS_BA_ID,
+  //     },
+  //   ],
+  //   [
+  //     '@starzkg/cnzz-analytics',
+  //     {
+  //       id: process.env.DOCS_CNZZ_ID,
+  //       webId: process.env.DOCS_CNZZ_WEB_ID,
+  //     },
+  //   ],
+  //   [
+  //     '@vuepress/plugin-register-components',
+  //     {
+  //       componentsDir: path.resolve(__dirname, './components'),
+  //     },
+  //   ],
+  //   // only enable shiki plugin in production mode
+  //   [
+  //     '@vuepress/plugin-shiki',
+  //     isProd
+  //       ? {
+  //           theme: 'dark-plus',
+  //         }
+  //       : false,
+  //   ],
+  //   ['@starzkg/element-plus'],
+  // ],
 })

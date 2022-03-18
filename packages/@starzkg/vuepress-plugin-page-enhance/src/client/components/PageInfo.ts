@@ -1,15 +1,8 @@
-import {
-  useLocaleConfig,
-  useThemePluginConfig,
-} from '@starzkg/vuepress-shared/es/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed, defineComponent, h, resolveComponent } from 'vue'
 import type { VNode } from 'vue'
-import type {
-  CommentPluginFrontmatter,
-  PageEnhanceOptions,
-  PageInfoType,
-} from '../../shared'
+import type { CommentPluginFrontmatter, PageInfoType } from '../../shared'
 import { commentOptions, pageInfoI18n } from '../define'
 import AuthorInfo from './AuthorInfo'
 import CategoryInfo from './CategoryInfo'
@@ -36,11 +29,8 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>()
-    const themePluginConfig =
-      useThemePluginConfig<PageEnhanceOptions>('comment')
 
     const config = computed<PageInfoType[] | false>(() => {
-      const themeConfig = themePluginConfig.value.pageInfo
       const pluginConfig = commentOptions.pageInfo
       const pageConfig = frontmatter.value.pageInfo
 
@@ -52,10 +42,6 @@ export default defineComponent({
         ? false
         : Array.isArray(pluginConfig)
         ? pluginConfig
-        : themeConfig === false
-        ? false
-        : Array.isArray(themeConfig)
-        ? themeConfig
         : ['Author', 'PageView', 'Date', 'Category', 'Tag', 'ReadingTime']
     })
 

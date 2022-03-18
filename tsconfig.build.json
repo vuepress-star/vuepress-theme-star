@@ -20,9 +20,6 @@
       "path": "./packages/@starzkg/vuepress-plugin-cnzz-analytics/tsconfig.build.json"
     },
     {
-      "path": "./packages/@starzkg/vuepress-plugin-components-star/tsconfig.build.json"
-    },
-    {
       "path": "./packages/@starzkg/vuepress-plugin-copy-code/tsconfig.build.json"
     },
     {

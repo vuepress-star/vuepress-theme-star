@@ -6,34 +6,33 @@ export interface BaiduAnalyticsPluginOptions {
   spa: boolean
 }
 
-export const baiduAnalyticsPlugin: Plugin<BaiduAnalyticsPluginOptions> = (
-  { id, spa },
-  app
-) => {
-  const plugin: PluginObject = {
-    name: '@starzkg/vuepress-plugin-baidu-analytics',
+export const baiduAnalyticsPlugin =
+  ({ id, spa }: BaiduAnalyticsPluginOptions): Plugin =>
+  (app) => {
+    const plugin: PluginObject = {
+      name: '@starzkg/vuepress-plugin-baidu-analytics',
+    }
+
+    if (!id) {
+      logger.warn(`[${plugin.name}] 'id' is required`)
+      return plugin
+    }
+
+    if (app.env.isDev) {
+      return plugin
+    }
+
+    return {
+      ...plugin,
+
+      clientAppEnhanceFiles: path.resolve(
+        __dirname,
+        '../client/clientAppEnhance.js'
+      ),
+
+      define: {
+        __BAIDU_ID__: id,
+        __BAIDU_SPA__: spa,
+      },
+    }
   }
-
-  if (!id) {
-    logger.warn(`[${plugin.name}] 'id' is required`)
-    return plugin
-  }
-
-  if (app.env.isDev) {
-    return plugin
-  }
-
-  return {
-    ...plugin,
-
-    clientAppEnhanceFiles: path.resolve(
-      __dirname,
-      '../client/clientAppEnhance.js'
-    ),
-
-    define: {
-      __BAIDU_ID__: id,
-      __BAIDU_SPA__: spa !== false,
-    },
-  }
-}

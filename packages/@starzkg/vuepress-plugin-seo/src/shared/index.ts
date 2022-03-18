@@ -1,4 +1,4 @@
-import type { BasePageFrontMatter } from '@mr-hope/vuepress-shared'
+import type { BasePageFrontMatter } from '@starzkg/vuepress-shared'
 import type { App, HeadConfig, Page, PageFrontmatter } from '@vuepress/core'
 import type { GitData } from '@vuepress/plugin-git'
 import type { SeoContent } from './seo'

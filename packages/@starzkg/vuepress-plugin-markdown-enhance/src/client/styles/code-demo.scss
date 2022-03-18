@@ -1,6 +1,6 @@
-@use "@hope/config";
-@use "@starzkg/vuepress-shared/styles/arrow";
-@use "@starzkg/vuepress-shared/styles/reset";
+@use '@sass-palette/star-config';
+@use '@starzkg/vuepress-shared/styles/arrow';
+@use '@starzkg/vuepress-shared/styles/reset';
 
 .code-demo-wrapper {
   margin-top: 10px;
@@ -25,7 +25,7 @@
   }
 
   .code-demo-app {
-    @media (max-width: config.$pad) {
+    @media (max-width: star-config.$pad) {
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -41,7 +41,7 @@
       margin: 0.75rem;
     }
 
-    #{config.$contentClass} & > div[class*='language-'] {
+    #{star-config.$content-class} & > div[class*='language-'] {
       &:first-child pre {
         margin-top: 0 !important;
       }
@@ -54,7 +54,7 @@
         border-radius: 0;
       }
 
-      @media (max-width: config.$mobileS) {
+      @media (max-width: star-config.$mobile) {
         margin: 0.8rem 0;
 
         &.line-numbers-mode::after {

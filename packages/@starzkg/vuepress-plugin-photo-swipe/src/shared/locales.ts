@@ -1,4 +1,4 @@
-import type { ResolvedLocaleConfig } from '@starzkg/vuepress-shared'
+import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared'
 import type PhotoSwipeDefaultUI from 'photoswipe/dist/photoswipe-ui-default'
 
 export interface PhowoSwipeI18nConfig {
@@ -52,4 +52,4 @@ export interface PhowoSwipeI18nConfig {
   buttons: PhotoSwipeDefaultUI.ShareButtonData[]
 }
 
-export type PhowoSwipeLocaleConfig = ResolvedLocaleConfig<PhowoSwipeI18nConfig>
+export type PhowoSwipeLocaleConfig = ConvertLocaleConfig<PhowoSwipeI18nConfig>

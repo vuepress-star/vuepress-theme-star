@@ -1,6 +1,6 @@
-@use "sass:color";
-@use "sass:list";
-@use "@hope/config";
+@use 'sass:color';
+@use 'sass:list';
+@use '@sass-palette/star-config';
 
 .tags-wrapper {
   list-style: none;
@@ -23,7 +23,7 @@
     overflow: hidden;
     transition: all 0.2s;
 
-    #{config.$darkSelector} & {
+    #{star-config.$dark-selector} & {
       background: #222;
     }
 
@@ -34,8 +34,8 @@
     }
   }
 
-  @each $color in config.$colors {
-    $index: list.index(config.$colors, $color) - 1;
+  @each $color in star-config.$colors {
+    $index: list.index(star-config.$colors, $color) - 1;
 
     .tag#{$index} {
       & {
@@ -48,7 +48,7 @@
         }
       }
 
-      #{config.$darkSelector} & {
+      #{star-config.$dark-selector} & {
         color: color.scale($color, $lightness: -10%);
         border-color: color.scale($color, $lightness: - 10%);
 

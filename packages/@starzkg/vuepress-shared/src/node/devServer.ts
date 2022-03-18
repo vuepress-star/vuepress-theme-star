@@ -1,22 +1,40 @@
 import type { IncomingMessage, ServerResponse } from 'http'
-import type { WebpackDevServer } from '@vuepress/bundler-webpack'
+import type { ViteBundlerOptions } from '@vuepress/bundler-vite'
+import type {
+  WebpackBundlerOptions,
+  WebpackDevServer,
+} from '@vuepress/bundler-webpack'
 import type { App } from '@vuepress/core'
+import { removeEndingSlash, removeLeadingSlash } from '@vuepress/shared'
 import type { HandleFunction } from 'connect'
 import type { Plugin } from 'vite'
-import { mergeConfig } from './vite'
+import { mergeViteConfig } from './vite'
 
+/**
+ * Handle specific path when runing VuePress DevServe
+ *
+ * @param config VuePress Bundler config
+ * @param app VuePress Node App
+ * @param path Path to be responsed
+ * @param getResponse respond function
+ * @param errMsg error msg
+ */
 export const useCustomDevServer = (
+  config: unknown,
   app: App,
   path: string,
-  getResponse: (request?: IncomingMessage) => Promise<unknown>,
+  getResponse: (request?: IncomingMessage) => Promise<string | Buffer>,
   errMsg = 'The server encounted an error'
 ): void => {
+  const { base, bundler } = app.options
+
   // for vite
-  if (app.env.isDev && app.options.bundler.endsWith('vite')) {
+  if (app.env.isDev && bundler.name.endsWith('vite')) {
+    const viteBundlerConfig = config as ViteBundlerOptions
     const handler: HandleFunction = (
       request: IncomingMessage,
       response: ServerResponse
-    ) =>
+    ) => {
       getResponse(request)
         .then((data) => {
           response.statusCode = 200
@@ -26,37 +44,43 @@ export const useCustomDevServer = (
           response.statusCode = 500
           response.end(errMsg)
         })
+    }
 
     const viteMockRequestPlugin: Plugin = {
-      name: `${path}-mock`,
+      name: `virtual:devserver-mock/${path}`,
       configureServer: ({ middlewares }) => {
-        middlewares.use(
-          `${app.options.base.replace(/\/$/, '')}${path}`,
-          handler
-        )
+        middlewares.use(`${removeLeadingSlash(base)}${path}`, handler)
       },
     }
 
-    app.options.bundlerConfig.viteOptions = mergeConfig(
-      app.options.bundlerConfig.viteOptions as Record<string, unknown>,
+    viteBundlerConfig.viteOptions = mergeViteConfig(
+      viteBundlerConfig.viteOptions as Record<string, unknown>,
       { plugins: [viteMockRequestPlugin] }
     )
   }
 
   // for webpack
-  if (app.env.isDev && app.options.bundler.endsWith('webpack')) {
-    app.options.bundlerConfig.devServerSetupMiddlewares = (
-      middlewares,
+  if (app.env.isDev && bundler.name.endsWith('webpack')) {
+    const webpackBundlerConfig = config as WebpackBundlerOptions
+
+    const { devServerSetupMiddlewares } = webpackBundlerConfig
+
+    webpackBundlerConfig.devServerSetupMiddlewares = (
+      middlewares: WebpackDevServer.Middleware[],
       server: WebpackDevServer
-    ): void => {
+    ): WebpackDevServer.Middleware[] => {
       server.app?.get(
-        `${app.options.base.replace(/\/$/, '')}${path}`,
+        `${removeEndingSlash(base)}${path}`,
         (request, response) => {
           getResponse(request)
             .then((data) => response.status(200).send(data))
             .catch(() => response.status(500).send(errMsg))
         }
       )
+
+      return devServerSetupMiddlewares
+        ? devServerSetupMiddlewares(middlewares, server)
+        : middlewares
     }
   }
 }

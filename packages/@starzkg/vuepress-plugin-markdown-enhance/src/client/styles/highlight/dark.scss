@@ -1,6 +1,6 @@
-@use "@hope/config";
+@use '@sass-palette/star-config';
 
-#{config.$darkSelector} .reveal[data-theme='auto'],
+#{star-config.$dark-selector} .reveal[data-theme='auto'],
 .reveal[data-theme='black'],
 .reveal[data-theme='league'],
 .reveal[data-theme='night'],

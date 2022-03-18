@@ -1,6 +1,6 @@
-@use "@hope/config";
-@use "highlight";
-@use "theme";
+@use '@sass-palette/star-config';
+@use 'highlight';
+@use 'theme';
 
 @import 'reveal.js/dist/reveal.css';
 
@@ -10,7 +10,7 @@
   min-height: 400px;
   transition: all 1s;
 
-  @media (max-width: config.$mobileS) {
+  @media (max-width: star-config.$mobile) {
     width: calc(100% + 3rem);
     min-height: 300px;
     margin: 0 -1.5rem;

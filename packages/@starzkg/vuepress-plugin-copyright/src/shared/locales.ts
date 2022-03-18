@@ -1,4 +1,4 @@
-import type { ResolvedLocaleConfig } from '@starzkg/vuepress-shared'
+import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared'
 
 export interface CopyrightI18nConfig {
   /**
@@ -11,4 +11,4 @@ export interface CopyrightI18nConfig {
   afterAuthor?: string
 }
 
-export type CopyrightLocaleConfig = ResolvedLocaleConfig<CopyrightI18nConfig>
+export type CopyrightLocaleConfig = ConvertLocaleConfig<CopyrightI18nConfig>

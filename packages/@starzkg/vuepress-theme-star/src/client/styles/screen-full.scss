@@ -1,0 +1,25 @@
+@use '@starzkg/vuepress-shared/styles/reset';
+
+button.full-screen,
+.cancel-full-screen {
+  @include reset.button;
+  margin: auto auto auto 1px;
+  display: flex;
+  padding: 4px;
+  color: #aaa;
+
+  & svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentcolor;
+  }
+}
+
+.enter-fullscreen-icon:hover,
+.cancel-fullscreen-icon {
+  color: var(--accent-color);
+}
+
+.cancel-fullscreen-icon:hover {
+  color: #aaa;
+}

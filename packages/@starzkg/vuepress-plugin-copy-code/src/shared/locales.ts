@@ -1,4 +1,4 @@
-import type { ResolvedLocaleConfig } from '@starzkg/vuepress-shared'
+import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared'
 
 export interface CopyCodeI18nConfig {
   /**
@@ -16,4 +16,4 @@ export interface CopyCodeI18nConfig {
   hint: string
 }
 
-export type CopyCodeLocaleConfig = ResolvedLocaleConfig<CopyCodeI18nConfig>
+export type CopyCodeLocaleConfig = ConvertLocaleConfig<CopyCodeI18nConfig>

@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "composite": true,
     "declaration": true,
     "declarationMap": false,
     "esModuleInterop": true,
     "lib": ["DOM", "ES2020"],
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "newLine": "lf",
     "noEmitOnError": true,
     "noImplicitAny": false,

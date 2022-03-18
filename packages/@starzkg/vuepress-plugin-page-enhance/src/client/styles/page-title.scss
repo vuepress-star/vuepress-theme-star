@@ -1,4 +1,4 @@
-@use '@hope/config';
+@use '@sass-palette/star-config';
 @use '@starzkg/vuepress-shared/styles/wrapper';
 
 .page {
@@ -28,11 +28,11 @@
       display: inline-block;
     }
 
-    + #{config.$contentClass}:not(.custom) {
+    + #{star-config.$content-class}:not(.custom) {
       padding-top: 0;
     }
 
-    + #{config.$contentClass}:not(.custom) > h1:first-child {
+    + #{star-config.$content-class}:not(.custom) > h1:first-child {
       display: none;
     }
   }

@@ -35,12 +35,7 @@ export const generateSeo = (
     : 'article'
 
   const author =
-    pageAuthor === false
-      ? ''
-      : (pageAuthor as string) ||
-        options.author ||
-        (app.options.themeConfig.author as string | undefined) ||
-        ''
+    pageAuthor === false ? '' : (pageAuthor as string) || options.author || ''
   const { updatedTime } = git
 
   const modifiedTime = updatedTime ? new Date(updatedTime).toISOString() : ''
@@ -101,6 +96,6 @@ export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
       flag: 'w',
     })
 
-    logger.success()
+    logger.succeed()
   }
 }

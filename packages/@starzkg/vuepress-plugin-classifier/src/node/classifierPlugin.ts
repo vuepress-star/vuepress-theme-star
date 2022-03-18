@@ -6,9 +6,8 @@ export interface ClassifierPluginOptions {
   datetime: string
 }
 
-export const classifierPlugin: Plugin<ClassifierPluginOptions> = (
-  options,
-  _
-) => {
-  return {}
-}
+export const classifierPlugin =
+  (options: ClassifierPluginOptions): Plugin =>
+  (_) => {
+    return {}
+  }

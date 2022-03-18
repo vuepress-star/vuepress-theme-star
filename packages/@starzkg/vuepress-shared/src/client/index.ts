@@ -1,4 +1,24 @@
+import {
+  compareDate,
+  getAuthor,
+  getCategory,
+  getDate,
+  getTag,
+  isAbsoluteUrl,
+  isUrl,
+  timeTransformer,
+} from '../shared'
+
 export * from './components'
 export * from './composables'
 export * from './utils'
-export * from '../shared'
+export {
+  compareDate,
+  getAuthor,
+  getCategory,
+  getDate,
+  getTag,
+  isAbsoluteUrl,
+  isUrl,
+  timeTransformer,
+}

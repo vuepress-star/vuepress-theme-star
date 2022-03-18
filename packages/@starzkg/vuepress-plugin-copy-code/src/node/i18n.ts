@@ -1,6 +1,6 @@
 import type { CopyCodeLocaleConfig } from '../shared'
 
-/** Muti language config for copy code */
+/** Multi-language config for copy code */
 export const i18n: CopyCodeLocaleConfig = {
   '/zh/': {
     copy: '复制成功 🎉',

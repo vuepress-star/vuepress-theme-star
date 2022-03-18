@@ -1,15 +1,22 @@
-import { capitalize } from './capitalize'
+import type { Author, AuthorInfo } from '../types'
 
-export const getAuthorInfo = (
-  author: string[] | string | false | undefined,
+export const getAuthor = (
+  author: Author | false | undefined,
   canDisable = false
-): string[] => {
+): AuthorInfo[] => {
   if (author) {
-    if (Array.isArray(author)) return author
-    if (typeof author === 'string') return [author]
+    if (Array.isArray(author)) {
+      return author.map((item) =>
+        typeof item === 'string' ? { name: item } : item
+      )
+    }
+
+    if (typeof author === 'string') return [{ name: author }]
+
+    if (typeof author === 'object' && author.name) return [author]
 
     console.error(
-      `Expect 'author' to be \`string[] | string ${
+      `Expect 'author' to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
         canDisable ? '' : '| false'
       } | undefined\`, but got`,
       author
@@ -25,8 +32,8 @@ export const getCategory = (
   category: string[] | string | undefined
 ): string[] => {
   if (category) {
-    if (Array.isArray(category)) return category.map(capitalize)
-    if (typeof category === 'string') return [capitalize(category)]
+    if (Array.isArray(category)) return category
+    if (typeof category === 'string') return [category]
 
     console.error(
       `Expect 'category' to be \`string[] | string | undefined\`, but got`,

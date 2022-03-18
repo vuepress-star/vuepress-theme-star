@@ -1,6 +1,3 @@
 export * from './assignDefaultLocaleOptions'
 export * from './countArticleNumber'
-export * from './resolveActiveHeaderLinksPluginOptions'
 export * from './resolveContainerPluginOptions'
-export * from './resolveGitPluginOptions'
-export * from './resolveMediumZoomPluginOptions'

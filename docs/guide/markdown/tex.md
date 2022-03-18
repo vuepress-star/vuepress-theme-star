@@ -192,7 +192,7 @@ To adjust the size of these delimiters, we recommend using `\big`, `\Big`, `\big
 
 $\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
 $\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr]$
-$\Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\}$
+$\Biggl \{\biggl \{\Bigl \{\bigl \{ \{x\}\bigr \}\Bigr \}\biggr \}\Biggr\}$
 $\Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
 \rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle$
 $\Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x

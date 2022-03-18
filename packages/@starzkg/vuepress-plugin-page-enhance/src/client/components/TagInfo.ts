@@ -1,11 +1,7 @@
-import {
-  useBlogConfig,
-  useLocaleConfig,
-  useTag,
-} from '@starzkg/vuepress-shared/es/client'
-import { computed, defineComponent, h, toRef } from 'vue'
+import { getTag, useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
+import { defineComponent, h, ref, toRef } from 'vue'
 import type { PropType, VNode } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+// import { useRoute, useRouter } from 'vue-router'
 import { commentOptions, pageInfoI18n } from '../define'
 import { TagIcon } from './icons'
 
@@ -17,19 +13,20 @@ export default defineComponent({
   },
 
   setup(props) {
-    const route = useRoute()
-    const router = useRouter()
+    // const route = useRoute()
+    // const router = useRouter()
 
     const pageInfoLocale = useLocaleConfig(pageInfoI18n)
 
-    const items = props.tags.length ? toRef(props, 'tags') : useTag()
+    const items = props.tags.length
+      ? toRef(props, 'tags')
+      : ref(getTag(props.tags))
 
-    const clickable = computed(() => useBlogConfig().value !== false)
+    // const clickable = computed(() => useBlogConfig().value !== false)
 
     const navigate = (tagName: string): void => {
-      const path = `/tag/${encodeURI(tagName)}/`
-
-      if (clickable.value && route.path !== path) router.push(path)
+      // const path = `/tag/${encodeURI(tagName)}/`
+      // if (clickable.value && route.path !== path) router.push(path)
     }
 
     return (): VNode | null =>
@@ -52,13 +49,13 @@ export default defineComponent({
                       class: {
                         tag: true,
                         [`tag${index % 9}`]: true,
-                        clickable: clickable.value,
+                        // clickable: clickable.value,
                       },
                       onClick: () => navigate(tag),
                     },
                     h(
                       'span',
-                      { role: clickable.value ? 'navigation' : '' },
+                      // { role: clickable.value ? 'navigation' : '' },
                       tag
                     )
                   )

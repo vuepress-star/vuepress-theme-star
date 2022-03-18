@@ -1,4 +1,4 @@
-import type { ResolvedLocaleConfig } from '@starzkg/vuepress-shared/lib/shared'
+import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared/lib/shared'
 
 export interface MarkdownEnhanceI18nConfig {
   /**
@@ -40,4 +40,4 @@ export interface MarkdownEnhanceI18nConfig {
 export type MarkdownContainerName = keyof MarkdownEnhanceI18nConfig
 
 export type MarkdownEnhanceLocaleConfig =
-  ResolvedLocaleConfig<MarkdownEnhanceI18nConfig>
+  ConvertLocaleConfig<MarkdownEnhanceI18nConfig>

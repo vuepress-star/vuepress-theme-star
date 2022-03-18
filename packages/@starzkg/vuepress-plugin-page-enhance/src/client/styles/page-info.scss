@@ -1,5 +1,5 @@
-@use "@hope/config";
-@use "@starzkg/vuepress-shared/styles/wrapper";
+@use '@sass-palette/star-config';
+@use '@starzkg/vuepress-shared/styles/wrapper';
 
 .page {
   .page-info {
@@ -23,11 +23,11 @@
       margin-right: 0.5em;
       line-height: 2;
 
-      @media (min-width: config.$wide) {
+      @media (min-width: star-config.$pc) {
         font-size: 1.1em;
       }
 
-      @media (max-width: config.$mobileS) {
+      @media (max-width: star-config.$mobile) {
         font-size: 0.875em;
       }
 

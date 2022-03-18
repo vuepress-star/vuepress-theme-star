@@ -1,6 +1,6 @@
 import type { StarThemeLocaleData, StarThemeLocaleOptions } from '../../shared'
 
-export const STAR_LOCALE_OPTIONS: StarThemeLocaleOptions = {
+export const DEFAULT_LOCALE_OPTIONS: StarThemeLocaleOptions = {
   // navbar
   navbar: [],
   logo: null,
@@ -36,13 +36,13 @@ export const STAR_LOCALE_OPTIONS: StarThemeLocaleOptions = {
   toggleSidebar: 'toggle sidebar',
 }
 
-export const STAR_LOCALE_DATA: StarThemeLocaleData = {
+export const DEFAULT_LOCALE_DATA: StarThemeLocaleData = {
   // navbar
   selectLanguageName: 'English',
 }
 
 /**
- * Assign default options to `themeConfig`
+ * Assign default options
  */
 export const assignDefaultLocaleOptions = (
   localeOptions: StarThemeLocaleOptions
@@ -56,12 +56,12 @@ export const assignDefaultLocaleOptions = (
   }
 
   Object.assign(localeOptions, {
-    ...STAR_LOCALE_OPTIONS,
+    ...DEFAULT_LOCALE_OPTIONS,
     ...localeOptions,
   })
 
   Object.assign(localeOptions.locales['/'], {
-    ...STAR_LOCALE_DATA,
+    ...DEFAULT_LOCALE_DATA,
     ...localeOptions.locales['/'],
   })
 }

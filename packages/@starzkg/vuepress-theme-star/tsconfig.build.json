@@ -2,13 +2,13 @@
   "extends": "../../../tsconfig.base.json",
   "references": [
     {
+      "path": "../vuepress-shared/tsconfig.build.json"
+    },
+    {
       "path": "../vuepress-icons/tsconfig.build.json"
     },
     {
       "path": "../vuepress-plugin-archive/tsconfig.build.json"
-    },
-    {
-      "path": "../vuepress-plugin-components-star/tsconfig.build.json"
     },
     {
       "path": "../vuepress-plugin-page-enhance/tsconfig.build.json"

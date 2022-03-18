@@ -1,6 +1,6 @@
-import type { ResolvedLocaleConfig } from '@starzkg/vuepress-shared'
+import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared'
 import type { WalineLocale } from '@waline/client'
 
 export type WalineI18nConfig = Partial<WalineLocale>
 
-export type WalineLocaleConfig = ResolvedLocaleConfig<WalineI18nConfig>
+export type WalineLocaleConfig = ConvertLocaleConfig<WalineI18nConfig>

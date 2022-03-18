@@ -57,12 +57,12 @@ export interface AtomEntry {
    */
   id: string
   /**
-   * 	Contains a human readable title for the entry.
+   *  Contains a human readable title for the entry.
    */
 
   title: AtomText
   /**
-   * 	Indicates the last time the entry was modified in a significant way.
+   *  Indicates the last time the entry was modified in a significant way.
    */
 
   updated: string
@@ -79,9 +79,9 @@ export interface AtomEntry {
    */
   link: AtomLink
   /**
-   * 	Conveys a short summary, abstract, or excerpt of the entry.
+   *  Conveys a short summary, abstract, or excerpt of the entry.
    */
-  summary?: AtomCDATA
+  summary?: AtomText | AtomCDATA
   /**
    * Specifies a category that the entry belongs to.
    *
@@ -96,7 +96,7 @@ export interface AtomEntry {
    */
   contributor?: AtomAuthor[]
   /**
-   * 	Contains the time of the initial creation or first availability of the entry.
+   *  Contains the time of the initial creation or first availability of the entry.
    */
   published?: string
   /**
@@ -118,7 +118,7 @@ export interface AtomContent {
       lang?: string
     }
     /**
-     * 	Identifies the feed using a universally unique and permanent URI.
+     *  Identifies the feed using a universally unique and permanent URI.
      */
     id: string
     /**
@@ -137,11 +137,11 @@ export interface AtomContent {
      */
     author?: AtomAuthor
     /**
-     * 	Identifies a related Web page. The type of relation is defined by the rel attribute. A feed is limited to one alternate per type and hreflang. A feed should contain a link back to the feed itself.
+     *  Identifies a related Web page. The type of relation is defined by the rel attribute. A feed is limited to one alternate per type and hreflang. A feed should contain a link back to the feed itself.
      */
     link: AtomLink[]
     /**
-     * 	Specifies a category that the feed belongs to. A feed may have multiple category elements.
+     *  Specifies a category that the feed belongs to. A feed may have multiple category elements.
      */
     category?: {
       _attributes: {
@@ -153,7 +153,7 @@ export interface AtomContent {
      */
     contributor?: AtomAuthor[]
     /**
-     * 	Identifies the software used to generate the feed
+     *  Identifies the software used to generate the feed
      */
     generator: string
     /**

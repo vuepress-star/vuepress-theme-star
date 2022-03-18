@@ -1,46 +1,111 @@
 import type { App, HeadConfig } from '@vuepress/core'
-import type { FeedOptions } from '../shared'
-import { getOutput } from './options'
+import { getFilename } from './options'
+import type { ResolvedFeedOptionsMap } from './options'
 import { resolveUrl } from './utils'
 
-export const injectLinkstoHead = (options: FeedOptions, app: App): void => {
-  const output = getOutput(options.output)
+export const injectLinkstoHead = (
+  app: App,
+  options: ResolvedFeedOptionsMap
+): void => {
   const { base } = app.options
   const { siteData } = app
+  const localePaths = Object.keys(options)
 
-  const getHeadItem = (
-    name: string,
-    fileName: string,
-    type: string
-  ): HeadConfig => {
-    return [
-      'link',
-      {
-        rel: 'alternate',
-        type,
-        href: resolveUrl(options.hostname, base, fileName),
-        title: `${siteData.title || ''} ${name} Feed`,
-      },
-    ]
+  // there is only one language, so we append it to siteData
+  if (localePaths.length === 1) {
+    const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+      getFilename(options['/'])
+
+    const getHeadItem = (
+      name: string,
+      fileName: string,
+      type: string
+    ): HeadConfig => {
+      return [
+        'link',
+        {
+          rel: 'alternate',
+          type,
+          href: resolveUrl(options['/'].hostname, base, fileName),
+          title: `${
+            siteData.title || siteData.locales['/']?.title || ''
+          } ${name} Feed`,
+        },
+      ]
+    }
+
+    // ensure head exists
+    if (!siteData.head) siteData.head = []
+
+    // add atom link
+    if (options.atom)
+      siteData.head.push(
+        getHeadItem('Atom', atomOutputFilename, 'application/atom+xml')
+      )
+
+    // add json link
+    if (options.json)
+      siteData.head.push(
+        getHeadItem('JSON', jsonOutputFilename, 'application/json')
+      )
+
+    // add rss link
+    if (options.rss)
+      siteData.head.push(
+        getHeadItem('RSS', rssOutputFilename, 'application/rss+xml')
+      )
   }
+  // there are mutiple languages, so we should append to page
+  else
+    app.pages.forEach((page) => {
+      const { pathLocale } = page
+      const localeOptions = options[pathLocale]
 
-  if (!siteData.head) siteData.head = []
+      if (localePaths.includes(pathLocale)) {
+        const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+          getFilename(localeOptions, pathLocale)
 
-  // add atom link
-  if (output.atom.enable)
-    siteData.head.push(
-      getHeadItem('Atom', output.atom.path, 'application/atom+xml')
-    )
+        const getHeadItem = (
+          name: string,
+          fileName: string,
+          type: string
+        ): HeadConfig => {
+          return [
+            'link',
+            {
+              rel: 'alternate',
+              type,
+              href: resolveUrl(localeOptions.hostname, base, fileName),
+              title: `${
+                siteData.locales[pathLocale]?.title ||
+                siteData.title ||
+                siteData.locales['/']?.title ||
+                ''
+              } ${name} Feed`,
+            },
+          ]
+        }
 
-  // add json link
-  if (output.json.enable)
-    siteData.head.push(
-      getHeadItem('JSON', output.json.path, 'application/json')
-    )
+        // ensure head exists
+        if (!page.frontmatter.head) page.frontmatter.head = []
 
-  // add rss link
-  if (output.rss.enable)
-    siteData.head.push(
-      getHeadItem('RSS', output.rss.path, 'application/rss+xml')
-    )
+        // add atom link
+        if (localeOptions.atom)
+          page.frontmatter.head.push(
+            getHeadItem('Atom', atomOutputFilename, 'application/atom+xml')
+          )
+
+        // add json link
+        if (localeOptions.json)
+          page.frontmatter.head.push(
+            getHeadItem('JSON', jsonOutputFilename, 'application/json')
+          )
+
+        // add rss link
+        if (localeOptions.rss)
+          page.frontmatter.head.push(
+            getHeadItem('RSS', rssOutputFilename, 'application/rss+xml')
+          )
+      }
+    })
 }

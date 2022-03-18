@@ -4,7 +4,7 @@ import {
   isAbsoluteUrl,
   isUrl,
 } from '@starzkg/vuepress-shared'
-import type { BaseThemeConfig } from '@starzkg/vuepress-shared'
+import type { AuthorInfo } from '@starzkg/vuepress-shared'
 import type { App, Page, PageFrontmatter } from '@vuepress/core'
 import type { GitData } from '@vuepress/plugin-git'
 import type {
@@ -13,6 +13,7 @@ import type {
   FeedContributor,
   FeedEnclosure,
   FeedFrontmatterOption,
+  FeedGetter,
   FeedItemOption,
   FeedOptions,
   FeedPluginFrontmatter,
@@ -21,62 +22,84 @@ import type { Feed } from './feed'
 import { getImageMineType, resolveHTML, resolveUrl } from './utils'
 
 export class FeedPage {
-  private feedOption: FeedFrontmatterOption
+  private pageFeedOptions: FeedFrontmatterOption
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>
   private base: string
-  private themeConfig: BaseThemeConfig
+  private getter: FeedGetter
 
   constructor(
-    private page: Page & { git?: GitData },
-    private feed: Feed,
+    private app: App,
     private options: FeedOptions,
-    private app: App
+    private page: Page<{ git?: GitData }, FeedPluginFrontmatter>,
+    private feed: Feed
   ) {
-    this.frontmatter =
-      page.frontmatter as PageFrontmatter<FeedPluginFrontmatter>
-    this.feedOption = this.frontmatter.feed || {}
     this.base = this.app.options.base
-    this.themeConfig = this.app.options.themeConfig as BaseThemeConfig
+    this.frontmatter = page.frontmatter
+    this.getter = options.getter || {}
+    this.pageFeedOptions = this.frontmatter.feed || {}
   }
 
   get title(): string {
-    return this.feedOption.title || this.page.title
+    if (typeof this.getter.title === 'function')
+      return this.getter.title(this.page)
+
+    return this.pageFeedOptions.title || this.page.title
   }
 
   /** real url */
   get link(): string {
+    if (typeof this.getter.link === 'function')
+      return this.getter.link(this.page)
+
     return resolveUrl(this.options.hostname, this.base, this.page.path)
   }
 
   get description(): string | undefined {
-    if (this.feedOption.description) return this.feedOption.description
+    if (typeof this.getter.description === 'function')
+      return this.getter.description(this.page)
+
+    if (this.pageFeedOptions.description)
+      return this.pageFeedOptions.description
 
     if (this.frontmatter.description) return this.frontmatter.description
 
     if (this.page.excerpt)
-      return resolveHTML(this.app.markdown.render(this.page.excerpt))
+      return `html:${resolveHTML(
+        this.app.markdown.render(this.page.excerpt),
+        this.options.customElements
+      )}`
 
     return undefined
   }
 
   get author(): FeedAuthor[] {
-    if (Array.isArray(this.feedOption.author)) return this.feedOption.author
+    if (typeof this.getter.author === 'function')
+      return this.getter.author(this.page)
 
-    if (typeof this.feedOption.author === 'object')
-      return [this.feedOption.author]
+    if (Array.isArray(this.pageFeedOptions.author))
+      return this.pageFeedOptions.author
+
+    if (typeof this.pageFeedOptions.author === 'object')
+      return [this.pageFeedOptions.author]
 
     return this.frontmatter.author === false
       ? []
-      : getAuthor(this.frontmatter, this.themeConfig).map((item) => ({
-          name: item,
-        }))
+      : this.frontmatter.author
+      ? getAuthor(this.frontmatter.author)
+      : this.options.channel?.author
+      ? getAuthor(this.options.channel?.author as AuthorInfo)
+      : []
   }
 
   get category(): FeedCategory[] | undefined {
-    if (Array.isArray(this.feedOption.category)) return this.feedOption.category
+    if (typeof this.getter.category === 'function')
+      return this.getter.category(this.page)
 
-    if (typeof this.feedOption.category === 'object')
-      return [this.feedOption.category]
+    if (Array.isArray(this.pageFeedOptions.category))
+      return this.pageFeedOptions.category
+
+    if (typeof this.pageFeedOptions.category === 'object')
+      return [this.pageFeedOptions.category]
 
     const { categories, category = categories } = this.frontmatter
 
@@ -84,6 +107,9 @@ export class FeedPage {
   }
 
   get enclosure(): FeedEnclosure | undefined {
+    if (typeof this.getter.enclosure === 'function')
+      return this.getter.enclosure(this.page)
+
     if (this.image)
       return {
         url: this.image,
@@ -94,13 +120,16 @@ export class FeedPage {
   }
 
   get guid(): string {
-    return this.feedOption.guid || this.link
+    return this.pageFeedOptions.guid || this.link
   }
 
   get pubDate(): Date | undefined {
+    if (typeof this.getter.publishDate === 'function')
+      return this.getter.publishDate(this.page)
+
     const { time, date = time } = this.page.frontmatter
 
-    const { createdTime } = this.page.git || {}
+    const { createdTime } = this.page.data.git || {}
 
     return date && date instanceof Date
       ? date
@@ -110,18 +139,27 @@ export class FeedPage {
   }
 
   get lastUpdated(): Date {
-    const { updatedTime } = this.page.git || {}
+    if (typeof this.getter.lastUpdateDate === 'function')
+      return this.getter.lastUpdateDate(this.page)
+
+    const { updatedTime } = this.page.data.git || {}
 
     return updatedTime ? new Date(updatedTime) : new Date()
   }
 
   get content(): string {
-    if (this.feedOption.content) return this.feedOption.content
+    if (typeof this.getter.content === 'function')
+      return this.getter.content(this.page)
 
-    return resolveHTML(this.page.contentRendered)
+    if (this.pageFeedOptions.content) return this.pageFeedOptions.content
+
+    return resolveHTML(this.page.contentRendered, this.options.customElements)
   }
 
   get image(): string | undefined {
+    if (typeof this.getter.image === 'function')
+      return this.getter.image(this.page)
+
     const { banner, cover } = this.frontmatter
 
     if (banner) {
@@ -155,17 +193,23 @@ export class FeedPage {
   }
 
   get contributor(): FeedContributor[] {
-    if (Array.isArray(this.feedOption.contributor))
-      return this.feedOption.contributor
+    if (typeof this.getter.contributor === 'function')
+      return this.getter.contributor(this.page)
 
-    if (typeof this.feedOption.contributor === 'object')
-      return [this.feedOption.contributor]
+    if (Array.isArray(this.pageFeedOptions.contributor))
+      return this.pageFeedOptions.contributor
+
+    if (typeof this.pageFeedOptions.contributor === 'object')
+      return [this.pageFeedOptions.contributor]
 
     return this.author
   }
 
   get copyright(): string | undefined {
-    if (this.frontmatter.copyrightText) return this.frontmatter.copyrightText
+    if (typeof this.getter.copyright === 'function')
+      return this.getter.copyright(this.page)
+
+    if (this.frontmatter.copyright) return this.frontmatter.copyright
     const firstAuthor = this.author[0]
 
     if (firstAuthor && firstAuthor.name)
@@ -174,7 +218,7 @@ export class FeedPage {
     return undefined
   }
 
-  getFeedItem(): FeedItemOption | false {
+  getFeedItem(): FeedItemOption | null {
     const {
       author,
       category,
@@ -192,7 +236,7 @@ export class FeedPage {
     } = this
 
     // we need at least title or description
-    if (!title && !description) return false
+    if (!title && !description) return null
 
     // add category to feed
     if (category) category.forEach((item) => this.feed.addCategory(item.name))

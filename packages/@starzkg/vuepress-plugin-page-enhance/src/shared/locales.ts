@@ -1,4 +1,4 @@
-import { ResolvedLocaleConfig } from '@starzkg/vuepress-shared'
+import { ConvertLocaleConfig } from '@starzkg/vuepress-shared'
 import type { LocaleData } from '@vuepress/shared'
 
 export interface PageEnhanceLocaleData extends LocaleData {
@@ -59,8 +59,7 @@ export interface PageEnhanceLocaleData extends LocaleData {
   words: string
 }
 
-export type PageEnhanceLocaleConfig =
-  ResolvedLocaleConfig<PageEnhanceLocaleData>
+export type PageEnhanceLocaleConfig = ConvertLocaleConfig<PageEnhanceLocaleData>
 
 export interface ReadingTimeLocaleData extends LocaleData {
   /**
@@ -83,8 +82,7 @@ export interface ReadingTimeLocaleData extends LocaleData {
   time: string
 }
 
-export type ReadingTimeLocaleConfig =
-  ResolvedLocaleConfig<ReadingTimeLocaleData>
+export type ReadingTimeLocaleConfig = ConvertLocaleConfig<ReadingTimeLocaleData>
 
 /**
  * 页面信息类型

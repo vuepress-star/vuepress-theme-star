@@ -1,8 +1,8 @@
-@use "sass:meta";
+@use 'sass:meta';
 
-@use "@hope/palette";
+@use '@sass-palette/star-palette';
 
-@use "category";
-@use "tag";
-@use "page-title";
-@use "page-info";
+@use 'category';
+@use 'tag';
+@use 'page-title';
+@use 'page-info';

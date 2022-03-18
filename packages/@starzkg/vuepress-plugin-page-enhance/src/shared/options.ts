@@ -213,7 +213,7 @@ export interface WalineOptions
 
 export interface DisableCommentOptions extends BaseCommentOptions {
   type: 'disable'
-  comment: never
+  comment?: never
 }
 
 /**

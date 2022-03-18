@@ -1,8 +1,13 @@
-import { encodeCDATA, encodeXML, isUrl } from '@starzkg/vuepress-shared'
+import {
+  encodeCDATA,
+  encodeXML,
+  isUrl,
+  stripTags,
+} from '@starzkg/vuepress-shared'
 import * as convert from 'xml-js'
 import type { FeedCategory, FeedEnclosure, FeedItemOption } from '../../shared'
 import type { Feed } from '../feed'
-import { generator } from '../utils'
+import { FEED_GENERATOR } from '../utils'
 import type {
   RSSCategory,
   RSSContent,
@@ -63,12 +68,14 @@ export const renderRSS = (feed: Feed): string => {
     rss: {
       _attributes: {
         'version': '2.0',
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         'xmlns:atom': 'http://www.w3.org/2005/Atom',
       },
       channel: {
         /**
          * @see http://validator.w3.org/feed/docs/warning/MissingAtomSelfLink.html
          */
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         'atom:link': {
           _attributes: {
             href: links.rss,
@@ -90,7 +97,7 @@ export const renderRSS = (feed: Feed): string => {
             ? channel.lastUpdated.toUTCString()
             : new Date().toUTCString(),
         },
-        'generator': { _text: generator },
+        'generator': { _text: FEED_GENERATOR },
         'docs': {
           _text: 'https://validator.w3.org/feed/docs/rss2.html',
         },
@@ -112,7 +119,8 @@ export const renderRSS = (feed: Feed): string => {
 
   /**
    * Channel Categories
-   * https://validator.w3.org/feed/docs/rss2.html#comments
+   *
+   * @see https://validator.w3.org/feed/docs/rss2.html#comments
    */
   content.rss.channel.category = Array.from(feed.categories).map(
     (category) => ({ _text: category })
@@ -120,7 +128,8 @@ export const renderRSS = (feed: Feed): string => {
 
   /**
    * Channel Categories
-   * https://validator.w3.org/feed/docs/rss2.html#hrelementsOfLtitemgt
+   *
+   * @see https://validator.w3.org/feed/docs/rss2.html#hrelementsOfLtitemgt
    */
   content.rss.channel.item = feed.items.map((entry) => {
     const item: RSSItem = {
@@ -134,7 +143,11 @@ export const renderRSS = (feed: Feed): string => {
     }
 
     if (entry.description)
-      item.description = { _text: encodeXML(entry.description) }
+      item.description = {
+        _text: entry.description.startsWith('html:')
+          ? stripTags(entry.description.substring(5))
+          : entry.description,
+      }
 
     /**
      * Item Author

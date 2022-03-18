@@ -35,14 +35,15 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@starzkg/vuepress-shared": "1.0.0-beta.25",
-    "@vuepress/client": "2.0.0-beta.32",
-    "@vuepress/core": "2.0.0-beta.32",
-    "@vuepress/utils": "2.0.0-beta.32",
+    "@starzkg/vuepress-shared": "workspace:*",
+    "@vuepress/client": "2.0.0-beta.43",
+    "@vuepress/core": "2.0.0-beta.43",
+    "@vuepress/utils": "2.0.0-beta.43",
+    "@vueuse/core": "^8.4.2",
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
-    "vue": "^3.2.26",
-    "vuepress-plugin-sass-palette": "2.0.0-alpha.7",
+    "vue": "^3.2.33",
+    "vuepress-plugin-sass-palette": "2.0.0-beta.55",
     "workbox-build": "^6.4.2"
   },
   "publishConfig": {

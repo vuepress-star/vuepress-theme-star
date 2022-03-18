@@ -1,6 +1,6 @@
-@use "@hope/config";
+@use '@sass-palette/star-config';
 
-@mixin wrapper($pad: config.$pad, $mobileS: config.$mobileS) {
+@mixin wrapper($pad: star-config.$pad, $mobileS: star-config.$mobile) {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 2rem 2.5rem;

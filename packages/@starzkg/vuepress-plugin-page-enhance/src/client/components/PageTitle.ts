@@ -1,6 +1,5 @@
-import { useIconPrefix } from '@starzkg/vuepress-shared/es/client'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { defineComponent, h, resolveComponent } from 'vue'
+import { defineComponent, h, ref, resolveComponent } from 'vue'
 import type { VNode } from 'vue'
 import type { CommentPluginFrontmatter } from '../../shared'
 
@@ -10,7 +9,8 @@ export default defineComponent({
   setup() {
     const page = usePageData()
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>()
-    const iconPrefix = useIconPrefix()
+    // const iconPrefix = useIconPrefix()
+    const iconPrefix = ref('icon')
 
     return (): VNode =>
       h('div', { class: 'page-title' }, [

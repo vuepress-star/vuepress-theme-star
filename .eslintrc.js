@@ -6,6 +6,8 @@ module.exports = {
     __VUEPRESS_DEV__: 'readonly',
     __VUEPRESS_SSR__: 'readonly',
     __VUE_HMR_RUNTIME__: 'readonly',
+    __VUE_OPTIONS_API__: 'readonly',
+    __VUE_PROD_DEVTOOLS__: 'readonly',
   },
   overrides: [
     {
@@ -54,7 +56,14 @@ module.exports = {
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         'vue/one-component-per-file': 'off',
-        'import/no-extraneous-dependencies': 'off',
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: true,
+            optionalDependencies: false,
+            peerDependencies: false,
+          },
+        ],
       },
     },
     {

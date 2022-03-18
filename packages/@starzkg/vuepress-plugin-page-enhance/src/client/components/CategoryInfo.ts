@@ -1,11 +1,10 @@
 import {
-  useBlogConfig,
-  useCategory,
+  getCategory,
   useLocaleConfig,
 } from '@starzkg/vuepress-shared/es/client'
-import { computed, defineComponent, h, toRef } from 'vue'
+import { defineComponent, h, ref, toRef } from 'vue'
 import type { PropType, VNode } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+// import { useRoute, useRouter } from 'vue-router'
 import { commentOptions, pageInfoI18n } from '../define'
 import { CategoryIcon } from './icons'
 
@@ -20,19 +19,17 @@ export default defineComponent({
   },
 
   setup(props) {
-    const route = useRoute()
-    const router = useRouter()
+    // const route = useRoute()
+    // const router = useRouter()
 
     const items = props.categories.length
       ? toRef(props, 'categories')
-      : useCategory()
+      : ref(getCategory(props.categories))
     const pageInfoLocale = useLocaleConfig(pageInfoI18n)
-    const clickable = computed(() => useBlogConfig().value !== false)
 
     const navigate = (categoryName: string): void => {
-      const path = `/category/${encodeURI(categoryName)}/`
-
-      if (clickable.value && route.path !== path) router.push(path)
+      // const path = `/category/${encodeURI(categoryName)}/`
+      // if (clickable.value && route.path !== path) router.push(path)
     }
 
     return (): VNode | null =>
@@ -57,13 +54,13 @@ export default defineComponent({
                     {
                       class: {
                         category: true,
-                        clickable: clickable.value,
+                        // clickable: clickable.value,
                       },
                       onClick: () => navigate(category),
                     },
                     h(
                       'span',
-                      { role: clickable.value ? 'navigation' : '' },
+                      //  { role: clickable.value ? 'navigation' : '' },
                       category
                     )
                   )

@@ -1,7 +1,4 @@
-import {
-  useLocaleConfig,
-  useThemePluginConfig,
-} from '@starzkg/vuepress-shared/es/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { usePageFrontmatter, usePageLang } from '@vuepress/client'
 import type { WalineInstance } from '@waline/client'
 import {
@@ -15,7 +12,7 @@ import {
 } from 'vue'
 import type { VNode } from 'vue'
 import { useRoute } from 'vue-router'
-import type { CommentPluginFrontmatter, WalineOptions } from '../../shared'
+import type { CommentPluginFrontmatter } from '../../shared'
 import { resolveEnablePageViews } from '../composables'
 import { enableWaline, walineI18n, walineOption } from '../define'
 
@@ -28,7 +25,6 @@ export default defineComponent({
     const route = useRoute()
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>()
     const lang = usePageLang()
-    const themePluginConfig = useThemePluginConfig<WalineOptions>('comment')
     const walineLocale = useLocaleConfig(walineI18n)
 
     let id: number
@@ -36,7 +32,6 @@ export default defineComponent({
 
     const enableComment = computed(() => {
       if (!enableWaline) return false
-      const themeConfig = themePluginConfig.value.comment
       const pluginConfig = walineOption.comment !== false
       const pageConfig = frontmatter.value.comment
 
@@ -46,9 +41,7 @@ export default defineComponent({
         // Enable in plugin and not disable in theme
         (Boolean(pluginConfig) && pageConfig !== false) ||
         // not disabled in anywhere
-        (themeConfig !== false &&
-          pluginConfig !== false &&
-          pageConfig !== false)
+        (pluginConfig !== false && pageConfig !== false)
       )
     })
 

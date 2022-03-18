@@ -1,89 +1,137 @@
+import { dirname } from 'path'
 import type { App, Page } from '@vuepress/core'
+import type { GitData } from '@vuepress/plugin-git'
 import { chalk, fs } from '@vuepress/utils'
-import type { FeedInitOptions, FeedOptions } from '../shared'
+import type { FeedPluginFrontmatter } from '../shared'
 import { Feed } from './feed'
-import { getOutput } from './options'
+import { getFeedChannelOption, getFeedLinks, getFilename } from './options'
+import type { ResolvedFeedOptionsMap } from './options'
 import { FeedPage } from './page'
-import { logger } from './utils'
+import { compareDate, logger } from './utils'
 
 export class FeedGenerator {
   /** feed 生成器 */
-  feed: Feed
+  feedMap: Record<string, Feed>
 
-  constructor(
-    private pages: Page[],
-    private options: FeedOptions,
-    feedOption: FeedInitOptions,
-    private app: App
-  ) {
-    this.feed = new Feed(feedOption)
+  constructor(private app: App, private options: ResolvedFeedOptionsMap) {
+    this.feedMap = Object.fromEntries(
+      Object.entries(options).map(([localePath, localeOptions]) => {
+        return [
+          localePath,
+          new Feed({
+            channel: getFeedChannelOption(app, localeOptions, localePath),
+            links: getFeedLinks(app, localeOptions),
+          }),
+        ]
+      })
+    )
   }
 
-  addPages(): void {
+  addPages(localePath: string): void {
+    const feed = this.feedMap[localePath]
+    const localeOption = this.options[localePath]
+    const {
+      filter = ({ frontmatter, filePathRelative }: Page): boolean =>
+        !(
+          frontmatter.home ||
+          !filePathRelative ||
+          frontmatter.article === false ||
+          frontmatter.feed === false
+        ),
+      sorter = (
+        pageA: Page<{ git?: GitData }, Record<string, never>>,
+        pageB: Page<{ git?: GitData }, Record<string, never>>
+      ): number =>
+        compareDate(
+          pageA.data.git?.createdTime
+            ? new Date(pageA.data.git?.createdTime)
+            : pageA.frontmatter.date,
+          pageB.data.git?.createdTime
+            ? new Date(pageB.data.git?.createdTime)
+            : pageB.frontmatter.date
+        ),
+    } = localeOption
+    const pages = this.app.pages
+      .filter((page) => page.pathLocale === localePath)
+      .filter(filter)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      .sort(sorter)
+      .slice(0, localeOption.count || 100)
+
     let count = 0
-    const pages = this.pages.slice(0, this.options.count)
 
     for (const page of pages) {
       const item = new FeedPage(
-        page,
-        this.feed,
-        this.options,
-        this.app
+        this.app,
+        localeOption,
+        page as Page<{ git?: GitData }, FeedPluginFrontmatter>,
+        feed
       ).getFeedItem()
 
       if (item) {
-        this.feed.addItem(item)
+        feed.addItem(item)
         count += 1
       }
     }
 
-    logger.success(`added ${chalk.cyan(`${count} page(s)`)} as feed item(s)`)
+    logger.succeed(
+      `added ${chalk.cyan(
+        `${count} page(s)`
+      )} as feed item(s) in route ${chalk.cyan(localePath)}`
+    )
   }
 
   async generateFeed(): Promise<void> {
     const { dest } = this.app.dir
-    const output = getOutput(this.options.output)
 
-    this.addPages()
+    await Promise.all(
+      Object.entries(this.options).map(async ([localePath, localeOptions]) => {
+        // current locale has valid output
+        if (localeOptions.atom || localeOptions.json || localeOptions.rss) {
+          const feed = this.feedMap[localePath]
+          const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+            getFilename(localeOptions, localePath)
 
-    logger.load('Generating Feed')
+          this.addPages(localePath)
 
-    // generate atom files
-    if (output.atom.enable) {
-      const filePath = dest(output.atom.path)
+          // generate atom files
+          if (localeOptions.atom) {
+            await fs.ensureDir(dirname(dest(atomOutputFilename)))
+            await fs.outputFile(dest(atomOutputFilename), feed.atom())
 
-      await fs.outputFile(filePath, this.feed.atom())
+            logger.succeed(
+              `Atom feed file generated and saved to ${chalk.cyan(
+                atomOutputFilename
+              )}`
+            )
+          }
 
-      logger.update(
-        `Atom feed file generated and saved to ${chalk.cyan(output.atom.path)}`
-      )
-      logger.success()
-      logger.load('Generating Feed')
-    }
+          // generate json files
+          if (localeOptions.json) {
+            await fs.ensureDir(dirname(dest(jsonOutputFilename)))
+            await fs.outputFile(dest(jsonOutputFilename), feed.json())
 
-    // generate json files
-    if (output.json.enable) {
-      const filePath = dest(output.json.path)
+            logger.succeed(
+              `JSON feed file generated and saved to ${chalk.cyan(
+                jsonOutputFilename
+              )}`
+            )
+          }
 
-      await fs.outputFile(filePath, this.feed.json())
+          // generate rss files
+          if (localeOptions.rss) {
+            await fs.ensureDir(dirname(dest(rssOutputFilename)))
+            await fs.outputFile(dest(rssOutputFilename), feed.rss())
 
-      logger.update(
-        `JSON feed file generated and saved to ${chalk.cyan(output.json.path)}`
-      )
-      logger.success()
-      logger.load('Generating Feed')
-    }
-
-    // generate rss files
-    if (output.rss.enable) {
-      const filePath = dest(output.rss.path)
-
-      await fs.outputFile(filePath, this.feed.rss())
-
-      logger.update(
-        `RSS feed file generated and saved to ${chalk.cyan(output.rss.path)}`
-      )
-      logger.success()
-    }
+            logger.succeed(
+              `RSS feed file generated and saved to ${chalk.cyan(
+                rssOutputFilename
+              )}`
+            )
+          }
+        }
+      })
+    )
   }
 }

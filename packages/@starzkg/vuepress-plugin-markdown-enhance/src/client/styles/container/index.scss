@@ -1,11 +1,11 @@
-@use "sass:color";
-@use "@hope/config";
-@use "@hope/helper";
-@use "@starzkg/vuepress-shared/styles/svg";
-@use "icons";
+@use 'sass:color';
+@use '@sass-palette/star-config';
+@use '@sass-palette/helper';
+@use '@starzkg/vuepress-shared/styles/svg';
+@use 'icons';
 
-$darkBgColor: helper.get-color(config.$bgColor, $isDark: true);
-$darkTextColor: helper.get-color(config.$textColor, $isDark: true);
+$darkBgColor: #fff;
+$darkTextColor: #000;
 
 .custom-container {
   position: relative;
@@ -47,7 +47,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
       color: var(--accent-color);
     }
 
-    #{config.$darkSelector} & {
+    #{star-config.$dark-selector} & {
       background: color.scale($darkBgColor, $lightness: 10%);
       color: color.scale($darkTextColor, $lightness: 10%);
 
@@ -68,7 +68,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$infoIcon);
 
-      #{config.$darkSelector} & {
+      #{star-config.$dark-selector} & {
         @include svg.background-svg(icons.$infoDarkIcon);
       }
     }
@@ -85,7 +85,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$tipIcon);
 
-      #{config.$darkSelector} & {
+      #{star-config.$dark-selector} & {
         @include svg.background-svg(icons.$tipDarkIcon);
       }
     }
@@ -102,7 +102,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$warningIcon);
 
-      #{config.$darkSelector} & {
+      #{star-config.$dark-selector} & {
         @include svg.background-svg(icons.$warningDarkIcon);
       }
     }
@@ -119,7 +119,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     &::before {
       @include svg.background-svg(icons.$dangerIcon);
 
-      #{config.$darkSelector} & {
+      #{star-config.$dark-selector} & {
         @include svg.background-svg(icons.$dangerDarkIcon);
       }
     }
@@ -159,7 +159,7 @@ $darkTextColor: helper.get-color(config.$textColor, $isDark: true);
     margin-bottom: 0.5em;
   }
 
-  #{config.$darkSelector} & {
+  #{star-config.$dark-selector} & {
     background: color.scale($darkBgColor, $lightness: 10%);
     color: color.scale($darkTextColor, $lightness: 10%);
 

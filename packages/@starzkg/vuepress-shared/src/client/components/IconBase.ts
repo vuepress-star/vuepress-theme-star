@@ -1,6 +1,9 @@
 import { defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
 
+/**
+ * Icon Base Component
+ */
 export const IconBase = defineComponent({
   name: 'IconBase',
 
@@ -21,14 +24,12 @@ export const IconBase = defineComponent({
       h(
         'svg',
         {
-          xmlns: 'http://www.w3.org/2000/svg',
-          class: ['icon', `${props.name}-icon`],
-          viewBox: '0 0 1024 1024',
-          ariaLabelledby: props.name,
+          'xmlns': 'http://www.w3.org/2000/svg',
+          'class': ['icon', `${props.name}-icon`],
+          'viewBox': '0 0 1024 1024',
+          'fill': props.color,
+          'aria-label': `${props.name} icon`,
         },
-        [
-          h('title', { id: props.name, lang: 'en' }, `${props.name} icon`),
-          h('g', { fill: props.color }, slots.default?.()),
-        ]
+        slots.default?.()
       ),
 })

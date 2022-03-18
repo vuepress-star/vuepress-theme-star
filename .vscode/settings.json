@@ -17,6 +17,7 @@
     "vue"
   ],
   "cSpell.words": [
+    "bumpp",
     "composables",
     "devtool",
     "docsearch",
@@ -32,6 +33,7 @@
     "shiki",
     "slugify",
     "unmount",
+    "vuejs",
     "vuepress",
     "vueuse",
     "zoomable"
