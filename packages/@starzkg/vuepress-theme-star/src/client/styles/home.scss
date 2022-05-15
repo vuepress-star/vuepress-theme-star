@@ -1,6 +1,6 @@
 @import '_variables';
 
-.home {
+.home-container {
   display: block;
   position: relative;
   overflow: hidden;
@@ -123,10 +123,8 @@
       margin-left: auto;
       min-height: calc(100vh - 2rem);
       max-width: var(--homepage-width);
-      padding-left: 2rem;
-      padding-right: 2rem;
-      padding-top: 2rem;
-      background: var(--bg-color);
+      padding: 2rem 2rem 0;
+      background: var(--c-bg);
       z-index: 2;
 
       .features {
@@ -138,23 +136,23 @@
         align-content: stretch;
         justify-content: space-between;
         position: relative;
-      }
 
-      .feature {
-        flex-grow: 1;
-        flex-basis: 30%;
-        max-width: 30%;
+        .feature {
+          flex-grow: 1;
+          flex-basis: 30%;
+          max-width: 30%;
 
-        h2 {
-          font-size: 1.4rem;
-          font-weight: 500;
-          border-bottom: none;
-          padding-bottom: 0;
-          color: var(--c-text-light);
-        }
+          h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-bottom: none;
+            padding-bottom: 0;
+            color: var(--c-text-light);
+          }
 
-        p {
-          color: var(--c-text-lighter);
+          p {
+            color: var(--c-text-lighter);
+          }
         }
       }
 
@@ -183,7 +181,7 @@
 }
 
 @media (max-width: $MQMobileNarrow) {
-  .home .content {
+  .home-container .content {
     header {
       .hero {
         img {

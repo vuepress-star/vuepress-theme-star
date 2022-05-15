@@ -1,30 +1,6 @@
 @use '@starzkg/vuepress-shared/styles/wrapper';
 @use '@sass-palette/star-config';
 
-// Fix top boarder of heading1
-#{star-config.$content-class}:not(.custom) {
-  > *:first-child {
-    margin-top: 0;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  #{star-config.$content-class}:not(.custom) &:first-child {
-    margin-top: calc(0.5rem - var(--navbar-height)) !important;
-    padding-top: var(--navbar-height) !important;
-
-    @media (max-width: star-config.$mobile) {
-      margin-top: calc(0.5rem - var(--navbar-mobile-height)) !important;
-      padding-top: var(--navbar-mobile-height) !important;
-    }
-  }
-}
-
 .breadcrumb {
   @include wrapper.wrapper;
   margin-top: calc(var(--navbar-height) + 0.5rem);

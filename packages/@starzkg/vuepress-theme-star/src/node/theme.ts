@@ -68,6 +68,11 @@ export const theme = ({
 
     clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetup.js'),
 
+    clientAppRootComponentFiles: path.resolve(
+      __dirname,
+      '../client/components/BackToTop.js'
+    ),
+
     define: (app) => {
       return {
         __ARTICLE_NUMBER__: countArticleNumber(app.pages),
