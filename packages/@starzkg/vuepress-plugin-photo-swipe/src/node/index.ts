@@ -30,9 +30,6 @@ export const photoSwipePlugin =
         }),
       }),
 
-      clientAppRootComponentFiles: path.resolve(
-        __dirname,
-        '../client/components/PhotoSwipe.vue'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }

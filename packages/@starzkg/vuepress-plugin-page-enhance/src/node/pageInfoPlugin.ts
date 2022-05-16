@@ -50,10 +50,7 @@ export const pageInfoPlugin =
           options.wordPerminute || 300
         )
       },
-      clientAppEnhanceFiles: path.resolve(
-        __dirname,
-        '../client/clientAppEnhance.js'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
 
     // if (pageEnhanceOptions.type === "vssue")

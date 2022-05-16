@@ -29,9 +29,6 @@ export const copyrightPlugin =
           } as CopyrightOptions),
         COPYRIGHT_I18N: i18n,
       }),
-      clientAppEnhanceFiles: path.resolve(
-        __dirname,
-        '../client/clientAppEnhance.js'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }

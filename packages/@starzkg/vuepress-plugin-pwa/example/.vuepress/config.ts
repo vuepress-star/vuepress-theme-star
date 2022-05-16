@@ -1,7 +1,6 @@
-import type { UserConfig } from '@vuepress/cli'
-import type { DefaultThemeOptions } from '@vuepress/theme-default'
+import { defineUserConfig } from '@vuepress/cli'
 
-const config: UserConfig<DefaultThemeOptions> = {
+export default defineUserConfig({
   base: process.env.VuePress_BASE || '/',
 
   locales: {
@@ -27,6 +26,4 @@ const config: UserConfig<DefaultThemeOptions> = {
   },
 
   plugins: [['@starzkg/pwa']],
-}
-
-export default config
+})

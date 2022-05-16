@@ -30,8 +30,8 @@ export const markdownEnhancePlugin =
 
     const alignEnable =
       markdownOptions.enableAll || markdownOptions.align || false
-    const demoEnable =
-      markdownOptions.enableAll || markdownOptions.demo || false
+    // const demoEnable =
+    //   markdownOptions.enableAll || markdownOptions.demo || false
     const flowchartEnable =
       markdownOptions.enableAll || markdownOptions.flowchart || false
     const footnoteEnable =
@@ -106,18 +106,7 @@ export const markdownEnhancePlugin =
         REVEAL_PLUGIN_ZOOM: revealPlugins.includes('zoom'),
       }),
 
-      ...(demoEnable
-        ? {
-            clientAppSetupFiles: path.resolve(
-              __dirname,
-              '../client/clientAppSetup.js'
-            ),
-          }
-        : {}),
-      clientAppEnhanceFiles: path.resolve(
-        __dirname,
-        '../client/clientAppEnhance.js'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
       extendsMarkdown: (markdownIt): void => {
         if (markdownOptions.sup || markdownOptions.enableAll)

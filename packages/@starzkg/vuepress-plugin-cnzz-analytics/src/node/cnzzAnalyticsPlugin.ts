@@ -31,15 +31,12 @@ export const cnzzAnalyticsPlugin =
     return {
       ...plugin,
 
-      clientAppEnhanceFiles: path.resolve(
-        __dirname,
-        '../client/clientAppEnhance.js'
-      ),
-
       define: {
         __CNZZ_ID__: id,
         __CNZZ_WEB_ID__: webId,
         __CNZZ_SPA__: spa,
       },
+
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }

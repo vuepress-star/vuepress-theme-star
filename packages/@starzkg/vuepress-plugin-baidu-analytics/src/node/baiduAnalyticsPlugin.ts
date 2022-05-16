@@ -25,14 +25,11 @@ export const baiduAnalyticsPlugin =
     return {
       ...plugin,
 
-      clientAppEnhanceFiles: path.resolve(
-        __dirname,
-        '../client/clientAppEnhance.js'
-      ),
-
       define: {
         __BAIDU_ID__: id,
         __BAIDU_SPA__: spa,
       },
+
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }

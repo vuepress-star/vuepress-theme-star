@@ -19,9 +19,6 @@ export const archivePlugin =
           archiveOptions.defaultTitle || 'No Title'
         ),
       name: '@starzkg/vuepress-plugin-archive',
-      clientAppEnhanceFiles: path.resolve(
-        __dirname,
-        '../client/clientAppEnhance.js'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }

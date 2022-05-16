@@ -6,7 +6,7 @@ import { path } from '@vuepress/utils'
 export type ElementPlusPluginOptions = Record<never, never>
 
 export const elementPlusPlugin =
-  (_: ElementPlusPluginOptions): Plugin =>
+  (_: ElementPlusPluginOptions = {}): Plugin =>
   (app) => {
     return {
       name: '@starzkg/vuepress-plugin-element-plus',
@@ -42,9 +42,6 @@ export const elementPlusPlugin =
         }
       },
 
-      clientAppEnhanceFiles: path.resolve(
-        __dirname,
-        '../client/clientAppEnhance.js'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }

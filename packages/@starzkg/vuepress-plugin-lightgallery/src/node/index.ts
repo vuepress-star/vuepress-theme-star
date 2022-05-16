@@ -31,10 +31,7 @@ const lightGalleryPlugin =
         LIGHT_GALLERY_ZOOM: plugins.includes('zoom'),
       }),
 
-      clientAppRootComponentFiles: path.resolve(
-        __dirname,
-        '../client/components/LightGallery.js'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }
 

@@ -60,35 +60,6 @@ export const pwaPlugin =
         await generateServiceWorker(app, options)
       },
 
-      clientAppRootComponentFiles: [
-        ...(options.update === 'hint'
-          ? [
-              options.hintComponent ||
-                path.resolve(
-                  __dirname,
-                  '../client/global-components/SWHintPopup.js'
-                ),
-            ]
-          : []),
-        ...(options.update !== 'disable' && options.update !== 'force'
-          ? [
-              options.updateComponent ||
-                path.resolve(
-                  __dirname,
-                  '../client/global-components/SWUpdatePopup.js'
-                ),
-            ]
-          : []),
-        ...(options.showInstall !== false
-          ? [
-              path.resolve(
-                __dirname,
-                '../client/global-components/PWAInstall.js'
-              ),
-            ]
-          : []),
-      ],
-
-      clientAppSetupFiles: path.resolve(__dirname, '../client/appSetup.js'),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     }
   }

@@ -13,10 +13,6 @@
 @use 'pagination';
 @use 'screen-full';
 @use 'custom-container';
-@use 'profile-page';
-@use 'document-home';
-@use 'document-page';
-@use 'presentation-page';
 @use 'navbar-dropdown';
 @use 'github-corner';
 @use 'home';
@@ -29,3 +25,10 @@
 @use 'transitions';
 
 @use '@vuepress/plugin-palette/style';
+
+@import '../containers/code-group/styles/index.scss';
+
+@import '../pages/document/styles/index.scss';
+@import '../pages/presentation/styles/index.scss';
+@import '../pages/profile/styles/index.scss';
+@import '../pages/wiki/styles/index.scss';

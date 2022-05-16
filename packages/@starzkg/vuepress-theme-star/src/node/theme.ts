@@ -61,18 +61,6 @@ export const theme = ({
         ])
     ),
 
-    clientAppEnhanceFiles: [
-      path.resolve(__dirname, '../client/clientAppEnhance.js'),
-      path.resolve(__dirname, '../client/container/clientAppEnhance.js'),
-    ],
-
-    clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetup.js'),
-
-    clientAppRootComponentFiles: path.resolve(
-      __dirname,
-      '../client/components/BackToTop.js'
-    ),
-
     define: (app) => {
       return {
         __ARTICLE_NUMBER__: countArticleNumber(app.pages),
@@ -87,6 +75,8 @@ export const theme = ({
 
       page.data.content = page.content
     },
+
+    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
     plugins: [
       // @vuepress/plugin-active-header-link

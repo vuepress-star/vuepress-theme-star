@@ -1,5 +1,5 @@
 <script>
-import { i18n, options } from '../clientAppEnhance'
+import { i18n, options } from '../config'
 export default {
   props: {
     html: {

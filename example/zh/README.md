@@ -64,14 +64,15 @@ features:
   - title: 插件
     details: 灵活的插件API，使得插件可以为你的站点提供许多即插即用的功能。
   - title: 打包工具
-    details: 既支持 Webpack 也支持 Vite。选一个你喜欢的来使用吧！
+    details: 默认的打包工具是 Vite ，也同样支持 Webpack 。选一个你喜欢的来使用吧！
 footer: MIT Licensed | Copyright © 2021-present Starzkg
 ---
 
 ### 像数 1, 2, 3 一样容易
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
+:::: code-group
+
+::: code-group-item YARN
 
 ```bash
 # 在你的项目中安装
@@ -87,9 +88,9 @@ yarn vuepress dev
 yarn vuepress build
 ```
 
-  </CodeGroupItem>
+:::
 
-  <CodeGroupItem title="NPM">
+::: code-group-item NPM
 
 ```bash
 # 在你的项目中安装
@@ -105,5 +106,6 @@ npx vuepress dev
 npx vuepress build
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
+
+:::: 
