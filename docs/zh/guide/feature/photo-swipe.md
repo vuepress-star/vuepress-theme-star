@@ -34,6 +34,6 @@ tags:
 
 ## 演示
 
-![Logo1](/docs/logo.png)
-![Logo2](/docs/logo.png)
-![Logo3](/docs/logo.png)
+![Logo1](/logo.png)
+![Logo2](/logo.png)
+![Logo3](/logo.png)
