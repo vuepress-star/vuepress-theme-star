@@ -6,7 +6,7 @@ import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-ef
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
 import { pageInfoPlugin } from '@starzkg/vuepress-plugin-page-enhance'
 import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
-import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
+// import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
 import type { Page, Theme } from '@vuepress/core'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { containerPlugin } from '@vuepress/plugin-container'
@@ -180,7 +180,7 @@ export const theme = ({
 
       photoSwipePlugin(),
 
-      themePlugins.sitemap !== false ? sitemapPlugin() : [],
+      // themePlugins.sitemap !== false ? sitemapPlugin() : [],
 
       copyCodePlugin({
         selector: '.theme-star-content div[class*="language-"] pre',

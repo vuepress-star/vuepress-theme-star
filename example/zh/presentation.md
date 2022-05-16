@@ -159,7 +159,7 @@ You can use all kinds of markup in slides.
 
 ## Layout
 
-![Logo](/logo.svg)
+![Logo](/images/logo.png)
 
 <!-- .element: class="r-stretch" -->
 

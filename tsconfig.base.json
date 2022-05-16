@@ -1,4 +1,5 @@
 {
+  "extends": "tsconfig-vuepress/base.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "composite": true,

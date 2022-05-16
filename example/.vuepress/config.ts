@@ -76,7 +76,9 @@ export default defineUserConfig({
 
   bundler:
     // specify bundler via environment variable
-    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
+    process.env.DOCS_BUNDLER === 'webpack' || isProd
+      ? webpackBundler()
+      : viteBundler(),
 
   theme: starTheme({
     logo: '/images/hero.png',
