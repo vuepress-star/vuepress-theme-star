@@ -61,7 +61,7 @@ export const resolveSidebarItems = (
   const sidebarDepth = frontmatter.sidebarDepth ?? themeLocale.sidebarDepth ?? 2
 
   // resolve sidebar items according to the config
-  if (frontmatter.home || sidebarConfig === false) {
+  if (sidebarConfig === false) {
     return []
   }
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { usePageFrontmatter, useSiteData, withBase } from '@vuepress/client'
+import { usePageFrontmatter, withBase } from '@vuepress/client'
 import { computed } from 'vue'
+import { useSiteData } from '../composables'
 import Links from './Links.vue'
 import PanThumb from './PanThumb.vue'
 
@@ -35,8 +36,17 @@ const intro = computed(() => {
   return frontmatter.value.intro
 })
 
-declare const __ARTICLE_NUMBER__: number
-const articleNumber = __ARTICLE_NUMBER__
+const pageNum = computed(() => {
+  return siteData.value.classifications?.type?.Page?.length
+})
+
+const categoryNum = computed(() => {
+  return Object.keys(siteData.value.classifications?.category).length
+})
+
+const tagNum = computed(() => {
+  return Object.keys(siteData.value.classifications?.tag).length
+})
 </script>
 
 <template>
@@ -63,15 +73,15 @@ const articleNumber = __ARTICLE_NUMBER__
     </div>
     <div class="num-wrapper">
       <div @click="navigate('/article/')">
-        <div class="num">{{ articleNumber }}</div>
+        <div class="num">{{ pageNum }}</div>
         <div>文章</div>
       </div>
       <div @click="navigate('/category/')">
-        <div class="num">33</div>
+        <div class="num">{{ categoryNum }}</div>
         <div>分类</div>
       </div>
       <div @click="navigate('/tag/')">
-        <div class="num">53</div>
+        <div class="num">{{ tagNum }}</div>
         <div>标签</div>
       </div>
       <div @click="navigate('/timeline/')">

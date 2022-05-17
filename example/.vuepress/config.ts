@@ -16,6 +16,7 @@ const isProd = process.env.NODE_ENV === 'production'
 export default defineUserConfig({
   base: '/',
   title: 'vuepress-theme-star',
+  debug: !isProd,
   templateDev: path.resolve(__dirname, './templates/index.dev.html'),
   templateBuild: path.resolve(__dirname, './templates/index.build.html'),
   head: [

@@ -17,15 +17,16 @@ import { palettePlugin } from '@vuepress/plugin-palette'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 import { tocPlugin } from '@vuepress/plugin-toc'
-import { fs, path } from '@vuepress/utils'
+import { path } from '@vuepress/utils'
 import type {
   StarThemeLocaleOptions,
   StarThemePageData,
   StarThemePluginsOptions,
 } from '../shared'
+import { resolveAlias } from './alias'
+import { resolveDefine } from './define'
 import {
   assignDefaultLocaleOptions,
-  countArticleNumber,
   resolveContainerPluginOptions,
 } from './utils'
 
@@ -51,21 +52,9 @@ export const theme = ({
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
 
     // use alias to make all components replaceable
-    alias: Object.fromEntries(
-      fs
-        .readdirSync(path.resolve(__dirname, '../client/components'))
-        .filter((file) => file.endsWith('.vue'))
-        .map((file) => [
-          `@theme/${file}`,
-          path.resolve(__dirname, '../client/components', file),
-        ])
-    ),
+    alias: resolveAlias(),
 
-    define: (app) => {
-      return {
-        __ARTICLE_NUMBER__: countArticleNumber(app.pages),
-      }
-    },
+    define: resolveDefine,
 
     extendsPage: (page: Page<Partial<StarThemePageData>>) => {
       // save relative file path into page data to generate edit link
