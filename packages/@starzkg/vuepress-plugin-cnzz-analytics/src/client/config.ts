@@ -6,6 +6,8 @@ declare const __CNZZ_WEB_ID__: string
 declare const __CNZZ_SPA__: boolean
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const _czc: any
+// eslint-disable-next-line @typescript-eslint/naming-convention
+declare const __VUEPRESS_SSR__: boolean
 
 export default defineClientConfig({
   enhance: ({ router }) => {

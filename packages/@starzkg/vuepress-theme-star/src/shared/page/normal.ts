@@ -3,12 +3,12 @@ import { StarThemePageFrontmatter } from './page'
 
 export interface StarThemeNormalPageFrontmatter
   extends StarThemePageFrontmatter {
-  home?: false
+  navbar?: boolean
+  sidebar?: 'auto' | false | SidebarConfig
   editLink?: boolean
   editLinkPattern?: string
   lastUpdated?: boolean
   contributors?: boolean
-  sidebar?: 'auto' | false | SidebarConfig
   sidebarDepth?: number
   prev?: string | NavLink
   next?: string | NavLink
