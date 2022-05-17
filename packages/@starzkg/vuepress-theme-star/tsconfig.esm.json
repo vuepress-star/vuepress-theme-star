@@ -4,7 +4,10 @@
     "module": "ES2020",
     "rootDir": "./src",
     "outDir": "./lib",
-    "types": ["@vuepress/client/types"]
+    "types": ["@vuepress/client/types", "webpack-env", "vite/client"],
+    "paths": {
+      "@internal/siteData": ["./src/client/siteData.d.ts"]
+    }
   },
   "include": ["./src/client", "./src/shared"]
 }

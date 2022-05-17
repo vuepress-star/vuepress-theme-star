@@ -1,14 +1,20 @@
-import { useSiteData as _useSiteData } from '@vuepress/client'
-import { computed, ComputedRef } from 'vue'
-import { StarSiteData } from '../../shared'
+import { siteData as siteDataRaw } from '@internal/siteData'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
+import type { StarSiteData } from '../../shared'
 
-declare type StarSiteDataRef = ComputedRef<StarSiteData>
+declare const __VUE_HMR_RUNTIME__: Record<string, any>
 
-declare const __SITE_DATA__: StarSiteData
+export type SiteDataRef<T extends StarSiteData = StarSiteData> = Ref<T>
 
-export const useSiteData = (): StarSiteDataRef => {
-  return computed(() => {
-    Object.assign(__SITE_DATA__, _useSiteData().value)
-    return __SITE_DATA__
-  })
+export const siteData: SiteDataRef = ref(siteDataRaw)
+
+export const useSiteData = <
+  T extends StarSiteData = StarSiteData
+>(): SiteDataRef<T> => siteData as SiteDataRef<T>
+
+if (import.meta.webpackHot || import.meta.hot) {
+  __VUE_HMR_RUNTIME__.updateSiteData = (data: StarSiteData) => {
+    siteData.value = data
+  }
 }

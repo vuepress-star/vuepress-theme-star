@@ -23,7 +23,7 @@ import type {
   StarThemePluginsOptions,
 } from '../shared'
 import { resolveAlias } from './alias'
-import { resolveDefine } from './define'
+import { prepareSiteData } from './prepareSiteData'
 import {
   assignDefaultLocaleOptions,
   resolveContainerPluginOptions,
@@ -53,7 +53,7 @@ export const theme = ({
     // use alias to make all components replaceable
     alias: resolveAlias(),
 
-    define: resolveDefine,
+    onPrepared: (app) => prepareSiteData(app),
 
     extendsPage: (page: Page<Partial<StarThemePageData>>) => {
       // save relative file path into page data to generate edit link

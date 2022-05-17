@@ -37,15 +37,15 @@ const intro = computed(() => {
 })
 
 const pageNum = computed(() => {
-  return siteData.value.classifications?.type?.Page?.length
+  return siteData.value.classifications?.type?.Page?.length || 0
 })
 
 const categoryNum = computed(() => {
-  return Object.keys(siteData.value.classifications?.category).length
+  return Object.keys(siteData.value.classifications?.category).length || 0
 })
 
 const tagNum = computed(() => {
-  return Object.keys(siteData.value.classifications?.tag).length
+  return Object.keys(siteData.value.classifications?.tag).length || 0
 })
 </script>
 
@@ -65,11 +65,7 @@ const tagNum = computed(() => {
         :image="avatar"
       />
       <div v-if="author" class="name" property="name" v-text="author" />
-      <meta
-        v-if="hasIntro"
-        property="url"
-        :content="$withBase(blogConfig.intro)"
-      />
+      <meta v-if="intro" property="url" :content="intro" />
     </div>
     <div class="num-wrapper">
       <div @click="navigate('/article/')">

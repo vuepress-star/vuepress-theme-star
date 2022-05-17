@@ -1,7 +1,7 @@
 import { defineUserConfig } from '@vuepress/cli'
 
 export default defineUserConfig({
-  base: process.env.VuePress_BASE || '/',
+  base: '/',
 
   locales: {
     '/': {

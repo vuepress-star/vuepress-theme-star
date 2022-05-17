@@ -54,7 +54,9 @@ export default defineComponent({
             isOriginal.value
               ? h('span', { class: 'origin' }, i18n.value.origin)
               : null,
-            config.value.map((item) => h(resolveComponent(`${item}-info`))),
+            config.value.map((item) =>
+              h(resolveComponent(`${item}-info`), frontmatter.value)
+            ),
           ])
         : null
   },

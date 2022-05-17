@@ -13,7 +13,7 @@ const page = computed(() => frontmatter.value.page ?? 'Page')
 const pageClass = computed(() => [
   (page.value.toLocaleLowerCase() === 'page'
     ? 'normal'
-    : page.value.toLocaleLowerCase()) + 'page',
+    : page.value.toLocaleLowerCase()) + '-page',
   frontmatter.value.pageClass,
 ])
 </script>

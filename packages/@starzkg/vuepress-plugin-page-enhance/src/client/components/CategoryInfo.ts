@@ -4,7 +4,7 @@ import {
 } from '@starzkg/vuepress-shared/es/client'
 import { defineComponent, h, ref, toRef } from 'vue'
 import type { PropType, VNode } from 'vue'
-// import { useRoute, useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { commentOptions, pageInfoI18n } from '../define'
 import { CategoryIcon } from './icons'
 
@@ -19,8 +19,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    // const route = useRoute()
-    // const router = useRouter()
+    const route = useRoute()
+    const router = useRouter()
 
     const items = props.categories.length
       ? toRef(props, 'categories')
@@ -28,8 +28,8 @@ export default defineComponent({
     const pageInfoLocale = useLocaleConfig(pageInfoI18n)
 
     const navigate = (categoryName: string): void => {
-      // const path = `/category/${encodeURI(categoryName)}/`
-      // if (clickable.value && route.path !== path) router.push(path)
+      const path = `/category/${encodeURI(categoryName)}/`
+      if (route.path !== path) router.push(path)
     }
 
     return (): VNode | null =>
@@ -58,11 +58,7 @@ export default defineComponent({
                       },
                       onClick: () => navigate(category),
                     },
-                    h(
-                      'span',
-                      //  { role: clickable.value ? 'navigation' : '' },
-                      category
-                    )
+                    h('span', { role: 'navigation' }, category)
                   )
                 ),
                 h('meta', {
