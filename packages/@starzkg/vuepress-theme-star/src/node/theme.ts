@@ -1,6 +1,5 @@
 import { archivePlugin } from '@starzkg/vuepress-plugin-archive'
 import { copyCodePlugin } from '@starzkg/vuepress-plugin-copy-code'
-import { copyToClipboardPlugin } from '@starzkg/vuepress-plugin-copy-to-clipboard'
 import { copyrightPlugin } from '@starzkg/vuepress-plugin-copyright'
 import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
@@ -166,8 +165,6 @@ export const theme = ({
       }),
 
       themePlugins.copyright !== false ? copyrightPlugin() : [],
-
-      copyToClipboardPlugin(),
 
       interactionEffectPlugin(),
 

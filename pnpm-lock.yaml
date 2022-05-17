@@ -77,7 +77,6 @@ importers:
   docs/.vuepress:
     specifiers:
       '@starzkg/vuepress-icons': workspace:*
-      '@starzkg/vuepress-plugin-copy-to-clipboard': workspace:*
       '@starzkg/vuepress-plugin-element-plus': workspace:*
       '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
@@ -97,7 +96,6 @@ importers:
       vuepress-webpack: ^2.0.0-beta.45
     dependencies:
       '@starzkg/vuepress-icons': link:../../packages/@starzkg/vuepress-icons
-      '@starzkg/vuepress-plugin-copy-to-clipboard': link:../../packages/@starzkg/vuepress-plugin-copy-to-clipboard
       '@starzkg/vuepress-plugin-element-plus': link:../../packages/@starzkg/vuepress-plugin-element-plus
       '@starzkg/vuepress-shared': link:../../packages/@starzkg/vuepress-shared
       '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
@@ -204,18 +202,6 @@ importers:
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
 
-  packages/@starzkg/vuepress-plugin-classifier:
-    specifiers:
-      '@vuepress/cli': 2.0.0-beta.45
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/core': 2.0.0-beta.45
-      vue: ^3.2.33
-    dependencies:
-      '@vuepress/cli': 2.0.0-beta.45
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/core': 2.0.0-beta.45
-      vue: 3.2.33
-
   packages/@starzkg/vuepress-plugin-cnzz-analytics:
     specifiers:
       '@vuepress/client': 2.0.0-beta.45
@@ -228,7 +214,6 @@ importers:
 
   packages/@starzkg/vuepress-plugin-copy-code:
     specifiers:
-      '@starzkg/vuepress-plugin-copy-to-clipboard': workspace:*
       '@starzkg/vuepress-shared': workspace:*
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/core': 2.0.0-beta.45
@@ -238,7 +223,6 @@ importers:
       vue-router: ^4.0.15
       vuepress-plugin-sass-palette: 2.0.0-beta.55
     dependencies:
-      '@starzkg/vuepress-plugin-copy-to-clipboard': link:../vuepress-plugin-copy-to-clipboard
       '@starzkg/vuepress-shared': link:../vuepress-shared
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/core': 2.0.0-beta.45
@@ -247,16 +231,6 @@ importers:
       vue: 3.2.33
       vue-router: 4.0.15_vue@3.2.33
       vuepress-plugin-sass-palette: 2.0.0-beta.55
-
-  packages/@starzkg/vuepress-plugin-copy-to-clipboard:
-    specifiers:
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/core': 2.0.0-beta.45
-      copy-to-clipboard: ^3.3.1
-    dependencies:
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/core': 2.0.0-beta.45
-      copy-to-clipboard: 3.3.1
 
   packages/@starzkg/vuepress-plugin-copyright:
     specifiers:
@@ -533,6 +507,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
       chalk: ^4.1.2
+      copy-to-clipboard: ^3.3.1
       dayjs: ^1.11.2
       execa: ^5.1.1
       ora: ^5.4.1
@@ -548,6 +523,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
       chalk: 4.1.2
+      copy-to-clipboard: 3.3.1
       dayjs: 1.11.2
       execa: 5.1.1
       ora: 5.4.1
@@ -577,7 +553,6 @@ importers:
       '@starzkg/vuepress-icons': workspace:*
       '@starzkg/vuepress-plugin-archive': workspace:*
       '@starzkg/vuepress-plugin-copy-code': workspace:*
-      '@starzkg/vuepress-plugin-copy-to-clipboard': workspace:*
       '@starzkg/vuepress-plugin-copyright': workspace:*
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-markdown-enhance': workspace:*
@@ -614,7 +589,6 @@ importers:
       '@starzkg/vuepress-icons': link:../vuepress-icons
       '@starzkg/vuepress-plugin-archive': link:../vuepress-plugin-archive
       '@starzkg/vuepress-plugin-copy-code': link:../vuepress-plugin-copy-code
-      '@starzkg/vuepress-plugin-copy-to-clipboard': link:../vuepress-plugin-copy-to-clipboard
       '@starzkg/vuepress-plugin-copyright': link:../vuepress-plugin-copyright
       '@starzkg/vuepress-plugin-interaction-effect': link:../vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-markdown-enhance': link:../vuepress-plugin-markdown-enhance

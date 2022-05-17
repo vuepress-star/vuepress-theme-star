@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCopyToClipboard } from '@starzkg/vuepress-plugin-copy-to-clipboard/lib/client'
+import { useCopyToClipboard } from '@starzkg/vuepress-shared/es/client'
 import * as Icons from '@starzkg/vuepress-social-icons/es'
 import { computed } from 'vue'
 

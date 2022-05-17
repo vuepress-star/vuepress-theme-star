@@ -1,5 +1,7 @@
-import { useCopyToClipboard } from '@starzkg/vuepress-plugin-copy-to-clipboard/lib/client'
-import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
+import {
+  useCopyToClipboard,
+  useLocaleConfig,
+} from '@starzkg/vuepress-shared/es/client'
 import { defineClientConfig } from '@vuepress/client'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'

@@ -23,9 +23,6 @@
       "path": "./packages/@starzkg/vuepress-plugin-copy-code/tsconfig.build.json"
     },
     {
-      "path": "./packages/@starzkg/vuepress-plugin-copy-to-clipboard/tsconfig.build.json"
-    },
-    {
       "path": "./packages/@starzkg/vuepress-plugin-copyright/tsconfig.build.json"
     },
     {

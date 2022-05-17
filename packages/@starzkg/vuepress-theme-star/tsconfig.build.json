@@ -20,9 +20,6 @@
       "path": "../vuepress-plugin-copyright/tsconfig.build.json"
     },
     {
-      "path": "../vuepress-plugin-copy-to-clipboard/tsconfig.build.json"
-    },
-    {
       "path": "../vuepress-plugin-element-plus/tsconfig.build.json"
     },
     {

@@ -7,6 +7,8 @@ interface Options {
   onCopy?: (clipboardData: object) => void
 }
 
+declare const __VUEPRESS_DEV__: boolean
+
 export const useCopyToClipboard = (text: string, options?: Options): void => {
   copy(text, {
     debug: __VUEPRESS_DEV__,

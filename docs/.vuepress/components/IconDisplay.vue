@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as Icons from '@starzkg/vuepress-icons/es'
-import { useCopyToClipboard } from '@starzkg/vuepress-plugin-copy-to-clipboard/lib/client'
+import { useCopyToClipboard } from '@starzkg/vuepress-shared/es/client'
 import { computed } from 'vue'
 
 const icons = computed(() => {

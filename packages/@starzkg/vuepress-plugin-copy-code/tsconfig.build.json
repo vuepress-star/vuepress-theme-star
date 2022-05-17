@@ -2,7 +2,6 @@
   "extends": "../../../tsconfig.base.json",
   "references": [
     { "path": "../vuepress-shared/tsconfig.build.json" },
-    { "path": "../vuepress-plugin-copy-to-clipboard/tsconfig.build.json" },
     { "path": "./tsconfig.esm.json" },
     { "path": "./tsconfig.cjs.json" }
   ],

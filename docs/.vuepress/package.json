@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@starzkg/vuepress-icons": "workspace:*",
-    "@starzkg/vuepress-plugin-copy-to-clipboard": "workspace:*",
     "@starzkg/vuepress-plugin-element-plus": "workspace:*",
     "@starzkg/vuepress-shared": "workspace:*",
     "@starzkg/vuepress-social-icons": "workspace:*",
