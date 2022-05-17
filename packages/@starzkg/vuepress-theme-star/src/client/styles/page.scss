@@ -3,7 +3,6 @@
 
 .page-container {
   display: block;
-
   margin: 0 auto;
 
   .header-mask {
@@ -16,7 +15,7 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    width: var(--page-width);
+    max-width: var(--page-width);
 
     .left {
       margin-right: 5px;

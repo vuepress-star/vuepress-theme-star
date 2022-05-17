@@ -1,8 +1,9 @@
 import { debounce } from 'ts-debounce'
 import { computed, defineComponent, h, onMounted, ref, Transition } from 'vue'
+import { BackToTop } from '../icons'
 import { getScrollTop, scrollToTop } from '../utils'
 
-export const BackToTop = defineComponent({
+export default defineComponent({
   name: 'BackToTop',
 
   setup() {
@@ -18,7 +19,16 @@ export const BackToTop = defineComponent({
       window.addEventListener('scroll', () => onScroll())
     })
 
-    const backToTopEl = h('div', { class: 'back-to-top', onClick: scrollToTop })
+    const backToTopEl = h(
+      'button',
+      {
+        'class': 'back-to-top',
+        'aria-label': '回到顶部',
+        'data-balloon-pos': 'left',
+        'onClick': scrollToTop,
+      },
+      h(BackToTop)
+    )
 
     return () =>
       h(
@@ -32,5 +42,3 @@ export const BackToTop = defineComponent({
       )
   },
 })
-
-export default BackToTop

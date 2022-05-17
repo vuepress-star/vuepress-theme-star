@@ -3,12 +3,18 @@ page: Home
 title: 首页
 heroImage: /images/hero.png
 actions:
-  - text: 快速上手
+  - text: 快速上手 💡
     link: /zh/guide/getting-started.html
     type: primary
-  - text: 项目简介
-    link: /zh/guide/
+  - text: 配置 🛠
+    link: /zh/config/
     type: secondary
+  - text: 案例 🧩
+    link: /zh/example/
+    type: secondary
+  - text: 项目简介 🚀
+    link: /zh/guide/
+    type: primary
 links:
   - text: QQ
     icon: qq

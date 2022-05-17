@@ -2,7 +2,7 @@ import * as Icons from '@starzkg/vuepress-icons'
 import * as SocialIcons from '@starzkg/vuepress-social-icons'
 import { defineClientConfig } from '@vuepress/client'
 import { h } from 'vue'
-import { BackToTop } from './components'
+import { Suspension } from './components'
 import Badge from './components/Badge.vue'
 import BreadCrumb from './components/BreadCrumb'
 import ExternalLink from './components/ExternalLink.vue'
@@ -79,5 +79,5 @@ export default defineClientConfig({
     setupSidebarItems()
   },
 
-  rootComponents: [BackToTop],
+  rootComponents: [Suspension],
 })

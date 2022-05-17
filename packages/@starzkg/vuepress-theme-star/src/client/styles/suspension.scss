@@ -1,0 +1,30 @@
+@import '_mixins';
+@import '_variables';
+
+.suspension {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 9999;
+
+  .suspension-item {
+    margin: 1rem 0 0;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1;
+    color: #909090;
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(50, 50, 50, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
