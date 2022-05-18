@@ -40,7 +40,6 @@
     "@starzkg/vuepress-plugin-copyright": "workspace:*",
     "@starzkg/vuepress-plugin-interaction-effect": "workspace:*",
     "@starzkg/vuepress-plugin-markdown-enhance": "workspace:*",
-    "@starzkg/vuepress-plugin-page-enhance": "workspace:*",
     "@starzkg/vuepress-plugin-photo-swipe": "workspace:*",
     "@starzkg/vuepress-plugin-sitemap": "workspace:*",
     "@starzkg/vuepress-shared": "workspace:*",

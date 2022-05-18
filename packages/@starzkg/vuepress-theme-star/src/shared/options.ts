@@ -1,6 +1,5 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
 import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
-import type { PageEnhanceOptions } from '@starzkg/vuepress-plugin-page-enhance'
 import { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap/lib/shared'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
@@ -61,12 +60,6 @@ export interface StarThemePluginsOptions {
    * @see http://vuepress-theme-star.github.io/markdown-enhance/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false
-
-  /**
-   * Page enhance plugin options
-   * 页面增强插件配置
-   */
-  pageEnhance?: PageEnhanceOptions | false
 
   /**
    * Copyright

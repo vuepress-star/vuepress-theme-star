@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import type { StarThemePageFrontmatter } from '../../shared'
 import Content from '../components/Content.vue'
 import Navbar from '../components/Navbar.vue'
+import PageInfo from '../components/PageInfo'
 import PageMeta from '../components/PageMeta.vue'
 import PageNav from '../components/PageNav.vue'
 import ProfileInfo from '../components/ProfileInfo.vue'
@@ -108,10 +109,7 @@ onUnmounted(() => {
 
     <div class="header-mask">
       <BreadCrumb />
-      <div class="header-content">
-        <PageTitle />
-        <PageInfo />
-      </div>
+      <PageInfo />
     </div>
 
     <div class="sidebar-mask" @click="toggleSidebar(false)" />

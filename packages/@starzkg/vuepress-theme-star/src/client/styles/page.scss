@@ -48,20 +48,6 @@
     }
   }
 
-  .header-content {
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-
-    .icon {
-      width: 16px;
-    }
-  }
-
   .sidebar {
     font-size: 16px;
     width: var(--sidebar-width);

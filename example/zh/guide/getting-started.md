@@ -1,4 +1,7 @@
 ---
+title: 快速上手
+icon: home
+date: 2022-05-18
 categories:
   - 教程
 tags: 

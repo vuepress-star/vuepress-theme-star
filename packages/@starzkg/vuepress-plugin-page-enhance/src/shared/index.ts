@@ -1,6 +1,0 @@
-export * from './frontmatter'
-export * from './options'
-export * from './locales'
-export * from './page'
-export * from './waline'
-export * from './extends'

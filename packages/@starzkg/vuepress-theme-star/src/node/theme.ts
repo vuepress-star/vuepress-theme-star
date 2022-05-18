@@ -3,10 +3,9 @@ import { copyCodePlugin } from '@starzkg/vuepress-plugin-copy-code'
 import { copyrightPlugin } from '@starzkg/vuepress-plugin-copyright'
 import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
-import { pageInfoPlugin } from '@starzkg/vuepress-plugin-page-enhance'
 import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
 // import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
-import type { Page, Theme } from '@vuepress/core'
+import type { Theme } from '@vuepress/core'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { containerPlugin } from '@vuepress/plugin-container'
 import { gitPlugin } from '@vuepress/plugin-git'
@@ -17,12 +16,9 @@ import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 import { tocPlugin } from '@vuepress/plugin-toc'
 import { path } from '@vuepress/utils'
-import type {
-  StarThemeLocaleOptions,
-  StarThemePageData,
-  StarThemePluginsOptions,
-} from '../shared'
+import type { StarThemeLocaleOptions, StarThemePluginsOptions } from '../shared'
 import { resolveAlias } from './alias'
+import { preparePageData } from './preparePageData'
 import { prepareSiteData } from './prepareSiteData'
 import {
   assignDefaultLocaleOptions,
@@ -41,6 +37,7 @@ export const theme = ({
   themePlugins = {},
   ...localeOptions
 }: StarThemeOptions = {}): Theme => {
+  // assign default locale options
   assignDefaultLocaleOptions(localeOptions)
 
   return {
@@ -50,20 +47,18 @@ export const theme = ({
 
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
 
-    // use alias to make all components replaceable
-    alias: resolveAlias(),
-
-    onPrepared: (app) => prepareSiteData(app),
-
-    extendsPage: (page: Page<Partial<StarThemePageData>>) => {
-      // save relative file path into page data to generate edit link
-      page.data.filePathRelative = page.filePathRelative
-      // save title into route meta to generate navbar and sidebar
-      page.routeMeta.title = page.title
-
-      page.data.content = page.content
+    onPrepared: async (app) => {
+      // extend site data
+      await prepareSiteData(app)
     },
 
+    // use alias to make all components replaceable
+    alias: resolveAlias,
+
+    //  extend per page data
+    extendsPage: preparePageData,
+
+    // client config file
     clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
     plugins: [
@@ -153,8 +148,6 @@ export const theme = ({
       tocPlugin(),
 
       archivePlugin(),
-
-      themePlugins.pageEnhance !== false ? pageInfoPlugin() : [],
 
       photoSwipePlugin(),
 

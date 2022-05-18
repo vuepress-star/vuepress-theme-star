@@ -11,9 +11,6 @@
       "path": "../vuepress-plugin-archive/tsconfig.build.json"
     },
     {
-      "path": "../vuepress-plugin-page-enhance/tsconfig.build.json"
-    },
-    {
       "path": "../vuepress-plugin-copy-code/tsconfig.build.json"
     },
     {
