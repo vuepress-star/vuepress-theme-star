@@ -150,8 +150,6 @@ onUnmounted(() => {
               <PageMeta />
 
               <PageNav />
-
-              <Comment />
             </footer>
           </div>
         </Transition>
