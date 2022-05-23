@@ -110,10 +110,6 @@ export default defineUserConfig({
           ],
         },
       },
-      pageEnhance: {
-        type: 'waline',
-        serverURL: 'https://vercel-shentuzhigang.vercel.app',
-      },
       sitemap: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
       },
