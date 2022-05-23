@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "@starzkg/vuepress-icons": "workspace:*",
-    "@starzkg/vuepress-plugin-archive": "workspace:*",
     "@starzkg/vuepress-plugin-copy-code": "workspace:*",
     "@starzkg/vuepress-plugin-copyright": "workspace:*",
     "@starzkg/vuepress-plugin-interaction-effect": "workspace:*",

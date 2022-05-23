@@ -1,19 +1,10 @@
 <script setup lang="ts">
-import { useArchive } from '@starzkg/vuepress-plugin-archive/lib/client'
 import ArchiveItem from './ArchiveItem.vue'
 
-const archives = useArchive().value
-const years = [
-  ...new Set(archives.map((archive) => archive.year).sort((a, b) => b - a)),
-]
+const archives = []
+const years = []
 const getMonths = (item): number[] => {
-  return [
-    ...new Set(
-      archives
-        .filter((archive) => archive.year === item)
-        .map((archive) => archive.month)
-    ),
-  ].sort((a, b) => b - a)
+  return [2022]
 }
 </script>
 

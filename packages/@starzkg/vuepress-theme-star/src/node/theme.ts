@@ -1,4 +1,3 @@
-import { archivePlugin } from '@starzkg/vuepress-plugin-archive'
 import { copyCodePlugin } from '@starzkg/vuepress-plugin-copy-code'
 import { copyrightPlugin } from '@starzkg/vuepress-plugin-copyright'
 import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
@@ -146,8 +145,6 @@ export const theme = ({
       themeDataPlugin({ themeData: localeOptions }),
 
       tocPlugin(),
-
-      archivePlugin(),
 
       photoSwipePlugin(),
 
