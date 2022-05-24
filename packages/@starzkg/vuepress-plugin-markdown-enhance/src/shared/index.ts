@@ -1,5 +1,3 @@
-export * from './code-demo'
+export * from './favor'
 export * from './locales'
 export * from './options'
-export * from './presentation'
-export * from './tasklist'

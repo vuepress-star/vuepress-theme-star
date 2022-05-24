@@ -13,23 +13,35 @@
 └─ package.json
 ```
 
-VuePress 站点必要的配置文件是 `.vuepress/config.js`，它应该导出一个 JavaScript 对象。如果你使用 TypeScript ，你可以将其替换为 `.vuepress/config.ts` ，以便让 VuePress 配置得到更好的类型提示。
+VuePress 站点的基本配置文件是 `.vuepress/config.js` ，但也同样支持 TypeScript 配置文件。你可以使用 `.vuepress/config.ts` 来得到更好的类型提示。
+
+具体而言，我们对于配置文件的路径有着约定（按照优先顺序）：
+
+- 当前工作目录 `cwd` 下：
+  - `vuepress.config.ts`
+  - `vuepress.config.js`
+  - `vuepress.config.cjs`
+- 源文件目录 `sourceDir` 下：
+  - `.vuepress/config.ts`
+  - `.vuepress/config.js`
+  - `.vuepress/config.cjs`
+
+你也可以通过 [命令行接口](./cli.md) 的 `--config` 选项来指定配置文件：
+
+```sh
+vuepress dev docs --config my-config.js
+```
+
+一个基础的配置文件是这样的：
 
 <CodeGroup>
   <CodeGroupItem title="JS" active>
 
 ```js
 module.exports = {
-  // 站点配置
   lang: 'zh-CN',
   title: '你好， VuePress ！',
   description: '这是我的第一个 VuePress 站点',
-
-  // 主题和它的配置
-  theme: '@vuepress/theme-default',
-  themeConfig: {
-    logo: 'https://vuejs.org/images/logo.png',
-  },
 }
 ```
 
@@ -39,45 +51,60 @@ module.exports = {
 
 ```ts
 import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
 
-export default defineUserConfig<DefaultThemeOptions>({
-  // 站点配置
-  lang: 'en-US',
-  title: 'Hello VuePress',
-  description: 'Just playing around',
-
-  // 主题和它的配置
-  theme: '@vuepress/theme-default',
-  themeConfig: {
-    logo: 'https://vuejs.org/images/logo.png',
-  },
+export default defineUserConfig({
+  lang: 'zh-CN',
+  title: '你好， VuePress ！',
+  description: '这是我的第一个 VuePress 站点',
 })
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-::: tip 前往 [配置参考](../reference/config.md) 查看所有 VuePress 配置。
+::: tip
+前往 [配置参考](../reference/config.md) 查看所有 VuePress 配置。
 :::
 
-## 配置作用域
+## 客户端配置文件
 
-你可能已经注意到了，在 VuePress 配置中有一项 `themeConfig` 配置项。
+在大多数情况下，配置文件已经足够帮助你配置好你的 VuePress 站点。不过，有些时候用户们可能希望直接添加一些客户端代码。 VuePress 通过客户端配置文件来支持这种需求：
 
-在 `themeConfig` 外部的配置项属于 **站点配置** ，而在 `themeConfig` 内部的配置项则属于 **主题配置**。
+```
+├─ docs
+│  ├─ .vuepress
+│  │  ├─ client.js   <--- 客户端配置文件
+│  │  └─ config.js   <--- 配置文件
+│  └─ README.md
+├─ .gitignore
+└─ package.json
+```
 
-### 站点配置
+同样的，我们也有关于客户端配置文件的路径约定（按照优先顺序）：
 
-站点配置的意思是，无论你使用什么主题，这些配置项都可以生效。
+- 当前工作目录 `cwd` 下：
+  - `vuepress.client.ts`
+  - `vuepress.client.js`
+  - `vuepress.client.mjs`
+- 源文件目录 `sourceDir` 下：
+  - `.vuepress/client.ts`
+  - `.vuepress/client.js`
+  - `.vuepress/client.mjs`
 
-我们知道，每一个站点都应该有它的 `lang`, `title` 和 `description` 等属性，因此 VuePress 内置支持了这些属性的配置。
+需要注意的是，客户端配置文件需要使用 ESM 格式：
 
-### 主题配置
+```ts
+import { defineClientConfig } from '@vuepress/client'
 
-主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
+export default defineClientConfig({
+  enhance({ app, router, siteData }) {},
+  setup() {},
+  rootComponents: [],
+})
+```
 
-如果你没有设置 VuePress 配置的 `theme` 配置项，则代表使用的是默认主题。
+::: tip
+和配置文件不同，客户端配置文件不能通过命令行接口的选项来指定。
 
-::: tip 前往 [默认主题 > 配置](../reference/default-theme/config.md) 查看默认主题的配置。
+可以前往 [深入 > Cookbook > 客户端配置的使用方法](../advanced/cookbook/usage-of-client-config.md) 来了解更多信息。
 :::

@@ -16,8 +16,6 @@ import {
   useScrollPromise,
 } from './composables'
 import './styles/index.scss'
-import CodeGroup from './containers/code-group/components/CodeGroup'
-import CodeGroupItem from './containers/code-group/components/CodeGroupItem.vue'
 import DocumentHome from './pages/document/components/Home.vue'
 import Document from './pages/document/components/Page.vue'
 import Home from './pages/Home.vue'
@@ -33,9 +31,6 @@ export default defineClientConfig({
     app.component('DocumentHome', DocumentHome)
     app.component('Presentation', Presentation)
     app.component('Profile', Profile)
-
-    app.component('CodeGroup', CodeGroup)
-    app.component('CodeGroupItem', CodeGroupItem)
 
     // icon
     for (const icon in Icons) {

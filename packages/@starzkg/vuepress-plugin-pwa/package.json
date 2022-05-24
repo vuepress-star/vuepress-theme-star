@@ -43,7 +43,7 @@
     "@vueuse/core": "^8.4.2",
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
-    "vue": "^3.2.33",
+    "vue": "^3.2.35",
     "vuepress-plugin-sass-palette": "2.0.0-beta.55",
     "workbox-build": "^6.4.2"
   },

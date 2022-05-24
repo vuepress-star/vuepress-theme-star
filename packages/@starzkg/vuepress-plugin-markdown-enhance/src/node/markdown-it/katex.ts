@@ -1,4 +1,4 @@
-import Katex from 'katex'
+import Katex, { KatexOptions } from 'katex'
 import type MarkdownIt from 'markdown-it'
 import type StateBlock from 'markdown-it/lib/rules_block/state_block'
 import type StateInline from 'markdown-it/lib/rules_inline/state_inline'
@@ -169,7 +169,7 @@ const blockTex = (
 }
 
 // set KaTeX as the renderer for markdown-it-simplemath
-const katexInline = (tex: string, options: Katex.KatexOptions): string => {
+const katexInline = (tex: string, options: KatexOptions): string => {
   options.displayMode = false
 
   try {
@@ -183,7 +183,7 @@ const katexInline = (tex: string, options: Katex.KatexOptions): string => {
   }
 }
 
-const katexBlock = (tex: string, options: Katex.KatexOptions): string => {
+const katexBlock = (tex: string, options: KatexOptions): string => {
   options.displayMode = true
 
   try {
@@ -199,9 +199,9 @@ const katexBlock = (tex: string, options: Katex.KatexOptions): string => {
 
 export const katex = (
   md: MarkdownIt,
-  options: Katex.KatexOptions = { throwOnError: false }
+  options: KatexOptions = { throwOnError: false }
 ): void => {
-  const katexOptions: Katex.KatexOptions = { ...options, output: 'html' }
+  const katexOptions: KatexOptions = { ...options, output: 'html' }
 
   md.inline.ruler.after('escape', 'inlineTex', inlineTex)
   // It’s a workaround here because types issue

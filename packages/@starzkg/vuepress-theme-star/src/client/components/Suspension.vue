@@ -17,8 +17,8 @@ export default defineComponent({
 <template>
   <div class="suspension">
     <TransitionGroup name="fade">
-      <BackToTop class="suspension-item" />
-      <ScreenFull class="suspension-item" />
+      <BackToTop key="back-to-top" class="suspension-item" />
+      <ScreenFull key="screen-full" class="suspension-item" />
     </TransitionGroup>
   </div>
 </template>

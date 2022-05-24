@@ -6,7 +6,6 @@ import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
 // import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
 import type { Theme } from '@vuepress/core'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
-import { containerPlugin } from '@vuepress/plugin-container'
 import { gitPlugin } from '@vuepress/plugin-git'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
@@ -19,11 +18,7 @@ import type { StarThemeLocaleOptions, StarThemePluginsOptions } from '../shared'
 import { resolveAlias } from './alias'
 import { preparePageData } from './preparePageData'
 import { prepareSiteData } from './prepareSiteData'
-import {
-  assignDefaultLocaleOptions,
-  resolveContainerPluginOptions,
-} from './utils'
-
+import { assignDefaultLocaleOptions } from './utils'
 export interface StarThemeOptions extends StarThemeLocaleOptions {
   /**
    * To avoid confusion with the root `plugins` option,
@@ -64,51 +59,10 @@ export const theme = ({
       // @vuepress/plugin-active-header-link
       themePlugins.activeHeaderLinks !== false
         ? activeHeaderLinksPlugin({
-            headerLinkSelector: 'a.sidebar-item',
+            headerLinkSelector: 'a.sidebar-item,a.vuepress-toc-link',
             headerAnchorSelector: '.header-anchor',
             // should greater than page transition duration
             delay: 300,
-          })
-        : [],
-
-      // @vuepress/plugin-container
-      themePlugins.container?.tip !== false
-        ? containerPlugin(resolveContainerPluginOptions(localeOptions, 'tip'))
-        : [],
-      themePlugins.container?.warning !== false
-        ? containerPlugin(
-            resolveContainerPluginOptions(localeOptions, 'warning')
-          )
-        : [],
-      themePlugins.container?.danger !== false
-        ? containerPlugin(
-            resolveContainerPluginOptions(localeOptions, 'danger')
-          )
-        : [],
-      themePlugins.container?.details !== false
-        ? containerPlugin({
-            type: 'details',
-            before: (info) =>
-              `<details class="custom-container details">${
-                info ? `<summary>${info}</summary>` : ''
-              }\n`,
-            after: () => '</details>\n',
-          })
-        : [],
-
-      themePlugins.container?.codeGroup !== false
-        ? containerPlugin({
-            type: 'code-group',
-            before: () => `<CodeGroup>\n`,
-            after: () => '</CodeGroup>\n',
-          })
-        : [],
-
-      themePlugins.container?.codeGroupItem !== false
-        ? containerPlugin({
-            type: 'code-group-item',
-            before: (info) => `<CodeGroupItem title="${info}">\n`,
-            after: () => '</CodeGroupItem>\n',
           })
         : [],
 
@@ -158,23 +112,7 @@ export const theme = ({
 
       interactionEffectPlugin(),
 
-      markdownEnhancePlugin(
-        themePlugins.mdEnhance || {
-          enableAll: true,
-          presentation: {
-            plugins: [
-              'highlight',
-              'math',
-              'search',
-              'notes',
-              'zoom',
-              'anything',
-              'audio',
-              'chalkboard',
-            ],
-          },
-        }
-      ),
+      markdownEnhancePlugin(themePlugins.mdEnhance),
     ],
   }
 }

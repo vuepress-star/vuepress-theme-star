@@ -27,6 +27,7 @@ export const zh: SidebarConfig = {
           text: '特性',
           link: '/zh/guide/markdown/feature/',
           children: [
+            '/zh/guide/markdown/feature/container.md',
             '/zh/guide/markdown/feature/align.md',
             '/zh/guide/markdown/feature/sup-sub.md',
             '/zh/guide/markdown/feature/footnote.md',

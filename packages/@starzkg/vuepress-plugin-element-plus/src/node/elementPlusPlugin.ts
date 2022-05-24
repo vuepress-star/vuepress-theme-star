@@ -1,4 +1,3 @@
-import type { ViteBundlerOptions } from '@vuepress/bundler-vite'
 import type { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
 import type { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
@@ -12,19 +11,6 @@ export const elementPlusPlugin =
       name: '@starzkg/vuepress-plugin-element-plus',
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        if (app.env.isDev && app.options.bundler.name.endsWith('vite')) {
-          const viteBundlerConfig = config as ViteBundlerOptions
-          // eslint-disable-next-line import/no-extraneous-dependencies
-          viteBundlerConfig.viteOptions = require('vite').mergeConfig(
-            viteBundlerConfig.viteOptions,
-            {
-              optimizeDeps: {
-                include: ['lodash'],
-              },
-            }
-          )
-        }
-
         if (app.options.bundler.name.endsWith('webpack')) {
           const webpackBundlerConfig = config as WebpackBundlerOptions
           // eslint-disable-next-line import/no-extraneous-dependencies

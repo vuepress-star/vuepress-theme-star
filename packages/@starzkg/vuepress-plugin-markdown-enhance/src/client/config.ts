@@ -4,6 +4,7 @@ import Presentation from '@Presentation'
 import { defineClientConfig } from '@vuepress/client'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { CodeGroup, CodeGroupItem } from './components/code-group'
 import { initDemo } from './demo'
 import './styles/index.scss'
 import './styles/code-demo.scss'
@@ -16,6 +17,9 @@ declare const MARKDOWN_ENHANCE_TASKLIST: boolean
 declare const MARKDOWN_ENHANCE_TEX: boolean
 export default defineClientConfig({
   enhance: ({ app }) => {
+    app.component('CodeGroup', CodeGroup)
+    app.component('CodeGroupItem', CodeGroupItem)
+
     if (MARKDOWN_ENHANCE_ALIGN) import('./styles/align.scss')
 
     if (MARKDOWN_ENHANCE_FOOTNOTE) import('./styles/footnote.scss')

@@ -6,5 +6,5 @@
     "outDir": "./lib",
     "types": ["@vuepress/client/types", "@types/jest"]
   },
-  "include": ["./src/client", "./src/**/*.vue", "./src/shared"]
+  "include": ["./src/client", "./src/shared"]
 }

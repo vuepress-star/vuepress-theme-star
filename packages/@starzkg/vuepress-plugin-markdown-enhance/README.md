@@ -15,6 +15,25 @@ Markdown Enhancement Plugin 📄 / Markdown 增强插件 📄
 
 ## [Official Docs](https://vuepress-theme-star.github.io/markdown-enhance/) | [官方文档](https://vuepress-theme-star.github.io/markdown-enhance/zh/)
 
+## Features
+- [x] [subscript](https://github.com/markdown-it/markdown-it-sub)
+- [x] [superscript](https://github.com/markdown-it/markdown-it-sup)
+- [x] [footnote](https://github.com/markdown-it/markdown-it-footnote)
+- [x] [definition list](https://github.com/markdown-it/markdown-it-deflist)
+- [x] [abbreviation](https://github.com/markdown-it/markdown-it-abbr)
+- [x] [emoji](https://github.com/markdown-it/markdown-it-emoji)
+- [x] [custom container](https://github.com/markdown-it/markdown-it-container)
+- [x] [insert](https://github.com/markdown-it/markdown-it-ins)
+- [x] [mark](https://github.com/markdown-it/markdown-it-mark)
+- [x] [anchor](https://github.com/valeriangalliat/markdown-it-anchor)
+- [ ] code demo
+- [ ] flowChart
+- [ ] katex
+- [ ] mermaid
+- [ ] presentation
+- [ ] task list
+- ... and [others](https://www.npmjs.org/browse/keyword/markdown-it-plugin)
+
 ## Install
 
 ```bash

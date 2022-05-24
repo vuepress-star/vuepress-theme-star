@@ -191,6 +191,10 @@ heroku login
 
 这里是你项目的配置，请参考 [heroku-buildpack-static](https://github.com/heroku/heroku-buildpack-static) 来获取更多信息。
 
+## Layer0
+
+请查看 [Layer0 Documentation > Framework Guides > VuePress](https://docs.layer0.co/guides/vuepress) 。
+
 ## Netlify
 
 1. 前往 [Netlify](https://netlify.com) ，从 GitHub 创建一个新项目，并进行如下配置：
@@ -206,7 +210,13 @@ heroku login
 
 ## Vercel
 
-请查看 [Creating and Deploying a VuePress App with Vercel](https://vercel.com/guides/deploying-vuepress-to-vercel).
+1. 前往 [Vercel](https://vercel.com) ，从 GitHub 创建一个新项目，并进行如下配置：
+
+    - **FRAMEWORK PRESET:** `Other`
+    - **BUILD COMMAND:** `yarn docs:build` 
+    - **OUTPUT DIRECTORY:** `docs/.vuepress/dist`
+
+2. 点击 deploy 按钮。
 
 <!-- 下列平台是中文文档特有的，放在最下方 -->
 

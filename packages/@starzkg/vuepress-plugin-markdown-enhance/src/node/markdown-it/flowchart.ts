@@ -1,6 +1,6 @@
-import hash = require('hash-sum')
-import MarkdownIt = require('markdown-it')
-import Token = require('markdown-it/lib/token')
+import hash from 'hash-sum'
+import MarkdownIt from 'markdown-it'
+import type Token from 'markdown-it/lib/token'
 
 const flowchartRender = (tokens: Token[], idx: number): string => {
   const token = tokens[idx]

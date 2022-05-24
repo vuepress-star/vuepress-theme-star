@@ -1,6 +1,6 @@
 import { hash } from '@vuepress/utils'
 import type MarkdownIt from 'markdown-it'
-import Token from 'markdown-it/lib/token'
+import type Token from 'markdown-it/lib/token'
 
 const mermaidRender = (tokens: Token[], index: number): string => {
   const token = tokens[index]

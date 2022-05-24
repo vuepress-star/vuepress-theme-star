@@ -2,11 +2,11 @@
 
 ## 依赖环境
 
-- [Node.js v12+](https://nodejs.org/)
+- [Node.js v14+](https://nodejs.org/)
 - [Yarn v1 classic](https://classic.yarnpkg.com/zh-Hans/) （可选）
 
 ::: tip
-- 使用 [pnpm](https://pnpm.io/zh/) 时，你需要在 [`.npmrc`](https://pnpm.io/zh/npmrc#shamefully-hoist) 文件中设置 `shamefully-hoist=true` 。
+- 使用 [pnpm](https://pnpm.io/zh/) 时，你可能需要安装 `vue` 和 `@vuepress/client` 作为 peer-dependencies ，即 `pnpm add -D vue @vuepress/client@next` 。
 - 使用 [yarn 2](https://yarnpkg.com/) 时，你需要在 [`.yarnrc.yml`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) 文件中设置 `nodeLinker: 'node-modules'` 。
 :::
 
@@ -142,4 +142,4 @@ npm run docs:dev
 
   VuePress 会在 [http://localhost:8080](http://localhost:8080) 启动一个热重载的开发服务器。当你修改你的 Markdown 文件时，浏览器中的内容也会自动更新。
 
-现在，你应该已经有了一个使用 `vuepress-theme-star` 主题简单可用的 VuePress 文档网站。接下来，了解一下 VuePress [配置](https://v2.vuepress.vuejs.org/zh/guide/configuration.md) 相关的内容。
+现在，你应该已经有了一个简单可用的 VuePress 文档网站。接下来，了解一下 VuePress [配置](./configuration.md) 相关的内容。

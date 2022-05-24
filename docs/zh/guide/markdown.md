@@ -89,11 +89,10 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 **建议**
 
-对于内部链接，尽可能使用相对路径而不是绝对路径。
+对于指向内部 Markdown 文件的链接，尽可能使用相对路径而不是绝对路径。
 
 - 相对路径是指向目标文件的有效链接，在你的编辑器或者代码仓库中浏览源文件时也可以正确跳转。
 - 相对路径在不同 locales 下都是一致的，这样在翻译你的内容时就不需要修改 locale 路径了。
-- 在使用绝对路径时，如果你站点的 [base](../reference/config.md#base) 不是 `"/"`，你需要手动添加 `base` 或者使用 [base helper](./assets.md#base-helper) 。
 
 ::: tip
 链接扩展是由我们的内置插件支持的。
@@ -158,30 +157,30 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 ````md
 ```ts{1,6-8}
-import type { UserConfig } from '@vuepress/cli'
+import { defaultTheme, defineUserConfig } from 'vuepress'
 
-export const config: UserConfig = {
+export default defineUserConfig({
   title: '你好， VuePress',
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: 'https://vuejs.org/images/logo.png',
-  },
-}
+  }),
+})
 ```
 ````
 
 **输出**
 
 ```ts{1,6-8}
-import type { UserConfig } from '@vuepress/cli'
+import { defaultTheme, defineUserConfig } from 'vuepress'
 
-export const config: UserConfig = {
+export default defineUserConfig({
   title: '你好， VuePress',
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: 'https://vuejs.org/images/logo.png',
-  },
-}
+  }),
+})
 ```
 
 行数范围标记的例子：
@@ -297,7 +296,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 v-pre 扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.code.vPre](../reference/config.md#markdown-vpre)
+配置参考： [markdown.code.vPre.block](../reference/config.md#markdown-code-vpre-block)
 :::
 
 ### 导入代码块
@@ -416,13 +415,14 @@ module.exports = {
 
 ## 注意事项
 
-### 已废弃的 HTML 标签
+### 非标准的 HTML 标签
 
-已废弃的 HTML 标签默认不允许在 VuePress 的 Markdown 中使用，比如 [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) 和 [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) 等。
+非标准的 HTML 标签不会被 Vue 模板编译器识别成原生 HTML 标签。相反，Vue 会尝试将这些标签解析为 Vue 组件，而显然这些组件通常是不存在的。 例如：
 
-这些标签不会被 Vue 模板编译器识别成原生 HTML 标签。相反，Vue 会尝试将这些标签解析为 Vue 组件，而显然这些组件通常是不存在的。
+- 已废弃的 HTML 标签，比如 [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) 和 [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) 等。
+- [MathML 标签](https://developer.mozilla.org/zh-CN/docs/Web/MathML)，它们可能会被一些 markdown-it 的 LaTeX 插件用到。
 
-你应该尽量避免使用已废弃的 HTML 标签。不过，如果你无论如何都要使用这些标签的话，可以尝试下面两种方法之一：
+如果你无论如何都要使用这些标签的话，可以尝试下面两种方法之一：
 
 - 添加一个 [v-pre](https://v3.cn.vuejs.org/api/directives.html#v-pre) 指令来跳过这个元素和它的子元素的编译过程。注意所有的模板语法也都会失效。
 - 设置 [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) 来告诉 Vue 模板编译器不要尝试作为组件来解析它们。

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { usePageFrontmatter, withBase } from '@vuepress/client'
 import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useSiteData } from '../composables'
 import Links from './Links.vue'
 import PanThumb from './PanThumb.vue'
@@ -15,6 +16,9 @@ interface ProfileInfoFrontmatter {
     url: string
   }[]
 }
+
+const route = useRoute()
+const router = useRouter()
 
 const siteData = useSiteData()
 const frontmatter = usePageFrontmatter<ProfileInfoFrontmatter>()
@@ -36,6 +40,10 @@ const intro = computed(() => {
   return frontmatter.value.intro
 })
 
+const navigate = (path: string): void => {
+  if (route.path !== path) router.push(path)
+}
+
 const pageNum = computed(() => {
   return siteData.value.classifications?.type?.Page?.length || 0
 })
@@ -45,6 +53,10 @@ const categoryNum = computed(() => {
 })
 
 const tagNum = computed(() => {
+  return Object.keys(siteData.value.classifications?.tag).length || 0
+})
+
+const archiveNum = computed(() => {
   return Object.keys(siteData.value.classifications?.tag).length || 0
 })
 </script>
@@ -81,7 +93,7 @@ const tagNum = computed(() => {
         <div>标签</div>
       </div>
       <div @click="navigate('/timeline/')">
-        <div class="num">{{ $archive.length }}</div>
+        <div class="num">{{ archiveNum }}</div>
         <div>归档</div>
       </div>
     </div>

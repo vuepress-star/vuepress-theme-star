@@ -59,21 +59,21 @@ export interface StarThemePluginsOptions {
    * Markdown enhance plugin options
    * @see http://vuepress-theme-star.github.io/markdown-enhance/config/
    */
-  mdEnhance?: MarkdownEnhanceOptions | false
+  mdEnhance?: MarkdownEnhanceOptions | boolean
 
   /**
    * Copyright
    *
    * 版权信息
    */
-  copyright?: CopyrightOptions | false
+  copyright?: CopyrightOptions | boolean
 
   /**
    * Sitemap
    *
    * 网站地图
    */
-  sitemap?: SitemapOptions | false
+  sitemap?: SitemapOptions | boolean
 }
 
 export type StarThemeLocaleOptions = StarThemeData

@@ -1,14 +1,21 @@
 import type { LocaleConfig } from '@vuepress/core'
 import type { KatexOptions } from 'katex'
+import type { MarkdownEnhanceLocaleConfig } from '../locales'
 import type { CodeDemoOptions } from './code-demo'
-import type { MarkdownEnhanceI18nConfig } from './locales'
+import type { EmojiPluginOptions } from './emoji'
+import type { ForInlinePluginOptions } from './for-inline'
 import type { PresentationOptions } from './presentation'
 import type { TaskListOptions } from './tasklist'
 
+export * from './for-inline'
+export * from './emoji'
+export * from './code-demo'
+export * from './presentation'
+export * from './tasklist'
 /**
  * markdown-enhance plugin configuration
  */
-export type MarkdownEnhanceOptions = Partial<{
+export interface MarkdownEnhanceOptions {
   /**
    * 是否启用自定义容器
    *
@@ -32,7 +39,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  customContainer: boolean
+  container?: boolean
 
   /**
    * 是否启用自定义对齐支持
@@ -41,7 +48,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  align: boolean
+  align?: boolean
 
   /**
    * 是否启用上角标格式支持
@@ -50,7 +57,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  sup: boolean
+  sup?: boolean
 
   /**
    * 是否启用下角标格式支持
@@ -59,7 +66,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  sub: boolean
+  sub?: boolean
 
   /**
    * 是否启用脚注格式支持
@@ -68,17 +75,62 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  footnote: boolean
+  footnote?: boolean
 
   /**
-   * 是否启用流程图
+   * 是否启用Abbreviation支持
    *
-   * Whether to enable flowchart format support
+   * Whether to enable abbreviation format support
    *
    * @default false
    */
+  abbr?: boolean
 
-  flowchart: boolean
+  /**
+   * 是否禁止汉字字符之间的换行
+   *
+   * Whether to enable suppress linebreaks between east asian characters
+   *
+   * @default false
+   */
+  cjkBreaks?: boolean
+
+  /**
+   * 是否启用定义列表支持
+   *
+   * Whether to enable def list format support
+   *
+   * @default false
+   */
+  deflist?: boolean
+
+  /**
+   * 是否启用emoji支持
+   *
+   * Whether to enable emoji support
+   *
+   * @default false
+   */
+  emoji?: boolean | EmojiPluginOptions
+
+  /**
+   * 是否启用内联标记迭代器支持
+   *
+   * Whether to enable inline tokens iterator support
+   *
+   * @default false
+   */
+  forInline?: false | ForInlinePluginOptions
+
+  /**
+   * 是否启用ins支持
+   *
+   * Whether to enable ins format support
+   *
+   * @default false
+   */
+  ins?: boolean
+
   /**
    * 是否启用标注支持
    *
@@ -86,7 +138,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  mark: boolean
+  mark?: boolean
 
   /**
    * 是否启用任务里表支持
@@ -95,7 +147,16 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  tasklist: TaskListOptions | boolean
+  tasklist?: TaskListOptions | boolean
+
+  /**
+   * 是否启用流程图
+   *
+   * Whether to enable flowchart format support
+   *
+   * @default false
+   */
+  flowchart?: boolean
 
   /**
    * 是否启用 TeX 语法支持
@@ -104,7 +165,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  tex: KatexOptions | boolean
+  tex?: KatexOptions | boolean
 
   /**
    * 是否启用 Mermaid 流程图支持
@@ -113,7 +174,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  mermaid: boolean
+  mermaid?: boolean
 
   /**
    * 是否启用代码示例功能
@@ -122,7 +183,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  demo: Partial<CodeDemoOptions> | boolean
+  demo?: Partial<CodeDemoOptions> | boolean
 
   /**
    * 是否启用幻灯片支持
@@ -131,16 +192,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  presentation: PresentationOptions | boolean
-
-  /**
-   * 是否启用全部增强
-   *
-   * Whether to enable all features.
-   *
-   * @default false
-   */
-  enableAll: boolean
+  presentation?: PresentationOptions | boolean
 
   /**
    * 操作页面 DOM 的延时，单位 ms
@@ -160,5 +212,5 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * I18n config
    */
-  locales?: LocaleConfig<MarkdownEnhanceI18nConfig>
-}>
+  locales?: LocaleConfig<MarkdownEnhanceLocaleConfig>
+}

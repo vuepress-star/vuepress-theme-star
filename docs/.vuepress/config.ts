@@ -16,6 +16,7 @@ const isProd = process.env.NODE_ENV === 'production'
 export default defineUserConfig({
   base: '/docs/',
   title: 'vuepress-theme-star',
+  debug: !isProd,
   head: [
     [
       'link',
@@ -91,6 +92,7 @@ export default defineUserConfig({
 
     addViteOptimizeDepsInclude({ app, config }, [
       'axios',
+      'three',
       'three',
       'three/examples/jsm/controls/OrbitControls',
       'three/examples/jsm/loaders/STLLoader',
@@ -168,25 +170,7 @@ export default defineUserConfig({
       git: isProd,
       // use shiki plugin in production mode instead
       prismjs: !isProd,
-      mdEnhance: {
-        enableAll: true,
-        presentation: {
-          plugins: [
-            'highlight',
-            'math',
-            'search',
-            'notes',
-            'zoom',
-            'anything',
-            'audio',
-            'chalkboard',
-          ],
-        },
-      },
-      pageEnhance: {
-        type: 'waline',
-        serverURL: 'https://vercel-shentuzhigang.vercel.app',
-      },
+      mdEnhance: true,
       copyright: {
         noCopy: false,
         noSelect: false,
@@ -206,6 +190,7 @@ export default defineUserConfig({
   }),
 
   markdown: {
+    typographer: true,
     importCode: {
       handleImportPath: (str) =>
         str.replace(
