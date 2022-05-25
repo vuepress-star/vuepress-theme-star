@@ -95,21 +95,7 @@ export default defineUserConfig({
       backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
-      mdEnhance: {
-        enableAll: true,
-        presentation: {
-          plugins: [
-            'highlight',
-            'math',
-            'search',
-            'notes',
-            'zoom',
-            'anything',
-            'audio',
-            'chalkboard',
-          ],
-        },
-      },
+      mdEnhance: true,
       sitemap: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
       },
