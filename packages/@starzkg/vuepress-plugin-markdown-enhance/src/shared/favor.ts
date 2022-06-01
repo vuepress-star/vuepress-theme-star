@@ -2,7 +2,7 @@ import { MarkdownEnhanceOptions } from './options'
 
 export type MarkdownFavor = 'default' | 'gfm' | 'vscode' | 'vuepress'
 
-export const DEFAULT_MARKDOWN_ENHANCE_OPTIONS: MarkdownEnhanceOptions = {
+export const DEFAULT_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
   container: true,
 
   align: true,
@@ -40,7 +40,12 @@ export const DEFAULT_MARKDOWN_ENHANCE_OPTIONS: MarkdownEnhanceOptions = {
   presentation: true,
 }
 
-export const GITHUB_FAVOR_MARKDOWN_OPTIONS: MarkdownEnhanceOptions = {
+/**
+ * GitHub Flavored Markdown Spec
+ *
+ * @see https://github.github.com/gfm/
+ */
+export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
   container: true,
 
   align: true,
