@@ -1,4 +1,4 @@
-@import 'mixins';
+@import '_mixins';
 @import '_variables';
 
 .page-container {
@@ -40,8 +40,13 @@
       opacity: 1;
     }
 
-    @media (max-width: 1470px) {
-      .left,
+    @media (max-width: $lg) {
+      .left {
+        display: none;
+      }
+    }
+
+    @media (max-width: $md) {
       .right {
         display: none;
       }

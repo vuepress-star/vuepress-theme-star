@@ -1,6 +1,6 @@
 @use '@sass-palette/star-config';
 @use '@starzkg/vuepress-shared/styles/wrapper';
-@import 'mixins';
+@import '_mixins';
 @import '_variables';
 
 .page-container .page-info {
