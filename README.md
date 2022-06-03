@@ -17,9 +17,9 @@
 [![license](https://badgen.net/github/license/vuepress-star/vuepress-theme-star)](https://github.com/vuepress-star/vuepress-theme-star/blob/main/LICENSE)
 [![discord](https://badgen.net/discord/online-members/ptFjefy6H5?icon=discord&label=discord)](https://discord.gg/ptFjefy6H5)
 
-A vuepress theme with tons of features ✨
+A Vuepress Theme With Tons of Features ✨
 
-## Status: Beta
+## 状态: Beta
 
 For users from VuePress v1, please check out the [migration guide](https://v2.vuepress.vuejs.org/guide/migration.html).
 
@@ -28,24 +28,24 @@ the [roadmap](https://github.com/vuepress-star/vuepress-theme-star/discussions/6
 
 ![Alt](https://repobeats.axiom.co/api/embed/2827b1222a806940ade242aea985f0008bf8a7de.svg "Repobeats analytics image")
 
-## Example
+## 示例
 
 https://vuepress-star.github.io/
 
-## Documentation
+## 文档
 
 https://v2.vuepress.vuejs.org
 
 https://vuepress-star.github.io/docs/
 
-## Contact
+## 联系
 
 We recommend you to contact using issues and discussions.
 
-## Contribution
+## 贡献
 
 See [Contributing Guide](https://github.com/vuepress-star/vuepress-theme-star/blob/main/docs/contributing.md).
 
-## License
+## 许可
 
 [MIT](https://github.com/vuepress-star/vuepress-theme-star/blob/main/LICENSE)
