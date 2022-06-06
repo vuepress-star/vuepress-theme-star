@@ -1,6 +1,6 @@
 import type { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import { CopyrightOptions } from '../shared'
+import type { CopyrightOptions } from '../shared'
 import { i18n } from './i18n'
 
 export type CopyrightPluginOptions = CopyrightOptions

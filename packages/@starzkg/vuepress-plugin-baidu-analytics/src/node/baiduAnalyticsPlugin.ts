@@ -1,8 +1,17 @@
 import type { Plugin, PluginObject } from '@vuepress/core'
 import { logger, path } from '@vuepress/utils'
 
+/**
+ * Options for @starzkg/vuepress-plugin-baidu-analytics
+ */
 export interface BaiduAnalyticsPluginOptions {
+  /**
+   * The Measurement ID of Baidu Analytics.
+   */
   id: string
+  /**
+   * Open SPA
+   */
   spa: boolean
 }
 

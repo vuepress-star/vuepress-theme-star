@@ -1,4 +1,4 @@
-import * as PhotoSwipe from 'photoswipe'
+import type * as PhotoSwipe from 'photoswipe'
 import type { PhowoSwipeLocaleConfig } from '../shared'
 
 declare const IMAGE_SELECTOR: string

@@ -1,5 +1,5 @@
-import { NavLink, SidebarConfig } from '../nav'
-import { StarThemePageFrontmatter } from './page'
+import type { NavLink, SidebarConfig } from '../nav'
+import type { StarThemePageFrontmatter } from './page'
 
 export interface StarThemeNormalPageFrontmatter
   extends StarThemePageFrontmatter {

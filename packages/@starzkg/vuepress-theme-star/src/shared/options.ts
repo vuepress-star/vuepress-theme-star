@@ -1,6 +1,6 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
 import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
-import { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap/lib/shared'
+import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap/lib/shared'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
 import type { NavbarConfig, SidebarConfig } from './nav'

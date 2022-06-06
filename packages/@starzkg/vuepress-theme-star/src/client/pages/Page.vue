@@ -143,7 +143,9 @@ onUnmounted(() => {
             </header>
             <slot name="page-top" />
             <main class="page-content">
+              <slot name="page-content-top" />
               <Content />
+              <slot name="page-content-bottom" />
             </main>
             <slot name="page-bottom" />
             <footer class="page-footer">

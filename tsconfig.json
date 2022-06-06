@@ -5,6 +5,9 @@
     "jsx": "preserve",
     "module": "ES2020",
     "paths": {
+      "@theme/*": [
+        "./packages/@starzkg/vuepress-theme-star/src/client/components/*"
+      ],
       "@internal/siteData": [
         "./packages/@starzkg/vuepress-theme-star/src/client/siteData"
       ],

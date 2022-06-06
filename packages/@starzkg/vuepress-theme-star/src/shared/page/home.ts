@@ -1,4 +1,4 @@
-import { StarThemePageFrontmatter } from './page'
+import type { StarThemePageFrontmatter } from './page'
 
 export interface StarThemeHomePageFrontmatter extends StarThemePageFrontmatter {
   heroImage?: string

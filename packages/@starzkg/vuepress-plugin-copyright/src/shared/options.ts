@@ -1,5 +1,5 @@
-import { LocaleConfig } from '@vuepress/core'
-import { CopyrightI18nConfig } from './locales'
+import type { LocaleConfig } from '@vuepress/core'
+import type { CopyrightI18nConfig } from './locales'
 
 export interface CopyrightOptions {
   clipboardComponent?: string

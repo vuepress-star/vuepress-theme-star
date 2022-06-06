@@ -1,4 +1,4 @@
-import { App } from '@vuepress/core'
+import type { App } from '@vuepress/core'
 import { fs, path } from '@vuepress/utils'
 
 /**

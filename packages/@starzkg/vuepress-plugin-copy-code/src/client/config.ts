@@ -7,7 +7,7 @@ import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import './styles/index.scss'
 import 'balloon-css/balloon.css'
-import { CopyCodeLocaleConfig, CopyCodeOptions } from '../shared'
+import type { CopyCodeLocaleConfig, CopyCodeOptions } from '../shared'
 
 declare const CODE_COPY_OPTIONS: Required<CopyCodeOptions>
 declare const CODE_COPY_I18N: CopyCodeLocaleConfig

@@ -1,7 +1,19 @@
 <script setup lang="ts">
-import { Archive } from '@starzkg/vuepress-plugin-archive/lib/client'
 import { computed, toRefs } from 'vue'
 import { useRouter } from 'vue-router'
+
+export interface Archive {
+  title: string
+  path: string
+  createdTime: number
+  updatedTime: number
+  archiveTime: number
+  year: number
+  month: number
+  day: number
+  time: string
+}
+
 const props = defineProps({
   month: {
     type: Number,

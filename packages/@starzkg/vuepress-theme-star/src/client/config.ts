@@ -24,7 +24,7 @@ import Presentation from './pages/presentation/components/Presentation.vue'
 import Profile from './pages/profile/components/Profile.vue'
 
 export default defineClientConfig({
-  enhance({ app, router }) {
+  enhance: ({ app, router }) => {
     app.component('Page', Page)
     app.component('Home', Home)
     app.component('Document', Document)

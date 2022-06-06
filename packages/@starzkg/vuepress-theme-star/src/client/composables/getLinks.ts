@@ -1,4 +1,4 @@
-import { RouteLocation } from 'vue-router'
+import type { RouteLocation } from 'vue-router'
 
 export const getLinks = (route: RouteLocation): string[] => {
   const routePaths = route.path.split('/')

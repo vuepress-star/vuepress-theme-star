@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { GitData } from '@vuepress/plugin-git'
+import type { GitData } from '@vuepress/plugin-git'
 import { computed, ComputedRef } from 'vue'
-import { StarThemeNormalPageFrontmatter, StarThemePageData } from '../../shared'
+import type {
+  StarThemeNormalPageFrontmatter,
+  StarThemePageData,
+} from '../../shared'
 import { useThemeLocaleData } from '../composables'
 import { Author } from '../icons'
 

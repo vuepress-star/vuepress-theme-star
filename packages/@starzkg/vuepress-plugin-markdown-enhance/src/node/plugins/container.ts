@@ -1,4 +1,4 @@
-import { App } from '@vuepress/core'
+import type { App } from '@vuepress/core'
 import containerPlugin, {
   ContainerPluginOptions,
   MarkdownItContainerRenderFunction,
@@ -9,7 +9,7 @@ import {
   resolveLocalePath,
 } from '@vuepress/shared'
 import type Token from 'markdown-it/lib/token'
-import { MarkdownEnhanceOptions } from '../../shared'
+import type { MarkdownEnhanceOptions } from '../../shared'
 
 export const useContainerPlugin = (
   app: App,

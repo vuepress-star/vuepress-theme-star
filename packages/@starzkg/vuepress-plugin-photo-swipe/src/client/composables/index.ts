@@ -1,4 +1,4 @@
-import * as PhotoSwipe from 'photoswipe'
+import type * as PhotoSwipe from 'photoswipe'
 
 export interface PhotoSwipeImageInfo extends PhotoSwipe.Item {
   title: string

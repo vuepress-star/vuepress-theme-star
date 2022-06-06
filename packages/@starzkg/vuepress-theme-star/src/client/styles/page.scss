@@ -5,6 +5,11 @@
   display: block;
   margin: 0 auto;
 
+  .theme-default-content {
+    @include content_wrapper;
+    padding-top: 0;
+  }
+
   .header-mask {
     height: 40vh;
     max-width: calc(var(--content-width) + 5rem);

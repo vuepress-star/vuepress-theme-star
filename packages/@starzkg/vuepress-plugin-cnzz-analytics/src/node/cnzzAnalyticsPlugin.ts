@@ -1,9 +1,18 @@
 import type { Plugin, PluginObject } from '@vuepress/core'
 import { logger, path } from '@vuepress/utils'
 
+/**
+ * Options for @starzkg/vuepress-plugin-cnzz-analytics
+ */
 export interface CnzzAnalyticsPluginOptions {
+  /**
+   * The Measurement ID of CNZZ Analytics.
+   */
   id: string
   webId: string
+  /**
+   * Open SPA
+   */
   spa: boolean
 }
 

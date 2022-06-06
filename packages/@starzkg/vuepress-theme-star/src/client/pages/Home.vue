@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed, ref } from 'vue'
-import { StarThemePageFrontmatter } from '../../shared'
+import type { StarThemePageFrontmatter } from '../../shared'
 import Content from '../components/Content.vue'
 import Features from '../components/Features.vue'
 import Footer from '../components/Footer.vue'

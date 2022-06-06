@@ -33,10 +33,10 @@
   },
   "dependencies": {
     "@starzkg/vuepress-shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.45",
-    "@vuepress/core": "2.0.0-beta.45",
-    "@vuepress/plugin-git": "2.0.0-beta.45",
-    "@vuepress/utils": "2.0.0-beta.45",
+    "@vuepress/client": "2.0.0-beta.46",
+    "@vuepress/core": "2.0.0-beta.46",
+    "@vuepress/plugin-git": "2.0.0-beta.46",
+    "@vuepress/utils": "2.0.0-beta.46",
     "sitemap": "^7.0.0"
   },
   "publishConfig": {

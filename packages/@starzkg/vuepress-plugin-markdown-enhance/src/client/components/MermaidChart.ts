@@ -1,4 +1,4 @@
-import MermaidAPI from 'mermaid/mermaidAPI'
+import type MermaidAPI from 'mermaid/mermaidAPI'
 import {
   defineComponent,
   h,

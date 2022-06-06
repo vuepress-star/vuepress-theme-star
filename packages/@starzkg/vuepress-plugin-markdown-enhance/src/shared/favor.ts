@@ -1,4 +1,4 @@
-import { MarkdownEnhanceOptions } from './options'
+import type { MarkdownEnhanceOptions } from './options'
 
 export type MarkdownFavor = 'default' | 'gfm' | 'vscode' | 'vuepress'
 

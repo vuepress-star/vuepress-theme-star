@@ -2,8 +2,7 @@
 import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { computed, defineComponent, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { ComponentLocaleConfig } from '../../shared'
-declare const COMPONENT_I18N: ComponentLocaleConfig
+
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Pagination',
@@ -21,8 +20,6 @@ export default defineComponent({
   setup(props, { emit }) {
     const route = useRoute()
     const router = useRouter()
-
-    const componentLocale = useLocaleConfig(COMPONENT_I18N)
 
     const input = ref('')
     const totalPages = computed(() => Math.ceil(props.total / props.perPage))
@@ -65,7 +62,13 @@ export default defineComponent({
       return arr
     })
 
-    const i18n = computed(() => componentLocale.value.pagination)
+    const i18n = computed(() => ({
+      prev: '上一页',
+      next: '下一页',
+      navigate: '跳转到',
+      action: '前往',
+      errorText: '请输入 1 到 $page 之前的页码！',
+    }))
 
     /** Navigate to certain page */
     const navigate = (page: number): void => {

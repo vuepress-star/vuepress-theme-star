@@ -1,7 +1,9 @@
-import type { App } from '@vuepress/core'
-import { Page } from '@vuepress/core'
-import type { StarSiteData } from '../shared'
-import { Classification, ClassificationData } from '../shared'
+import type { App, Page } from '@vuepress/core'
+import type {
+  Classification,
+  ClassificationData,
+  StarSiteData,
+} from '../shared'
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {

@@ -1,4 +1,4 @@
-import { StarThemeLocaleOptions } from '../../shared'
+import type { StarThemeLocaleOptions } from '../../shared'
 
 export const en: StarThemeLocaleOptions = {
   // navbar
