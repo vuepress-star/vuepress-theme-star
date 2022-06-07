@@ -1,48 +1,52 @@
 ---
-title: MarkDown 增强
+title: MarkDown
 icon: markdown
 ---
-# MarkDown 增强
-## 内置增强
-VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定行高亮等都是开箱即用的。
+# Markdown
 
-详细语法详见 内置 [Markdown 扩展](https://v2.vuepress.vuejs.org/zh/guide/markdown.html#header-anchors)。
+在阅读本章节之前，请确保你已经对 Markdown 有所了解。如果你还不了解 Markdown ，请先学习一些 [Markdown 教程](https://commonmark.org/help/)。
 
-## 插件增强
+## 基础语法
 
-通过安装 `vuepress-plugin-markdown-enhance` VuePress插件，你可以使用更多的语法格式在你的MarkDown文件中
-### 一键启用
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [markdown-enhance](https://vuepress-theme-star.github.io/markdown-enhance)
-插件的所有功能。
+- [GFM](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [Vuepress](https://vuepress.github.io/zh/guide/markdown.html)
+- [Vuepress Theme Star](./basic-syntax.md)
 
-::: tip
+## 高级语法
 
-请不用担心你的网站大小，如果你不启用相关功能，最终代码不会包含这些功能相关的代码。
-:::
+- [自定义容器](feature/container.md)
+- [选项卡](feature/tabs.md)
+- [代码组](feature/code-tabs.md)
+- [脚注](feature/footnote.md)
+- [任务列表](feature/tasklist.md)
+- [图片增强](image.md)
+- [自定义对齐](feature/align.md)
+- [上下角标](feature/sup-sub.md)
+- [标记](feature/mark.md)
+- [图表](feature/chart.md)
+- [Echarts](feature/echarts.md)
+- [流程图](feature/flowchart.md)
+- [Mermaid 图表](feature/mermaid.md)
+- [Tex 支持](feature/tex.md)
+- [文件导入](feature/include.md)
+- [代码演示](feature/demo.md)
+- [幻灯片](feature/presentation.md)
+- [样式化](feature/stylize.md)
+- [开箱即用的组件](feature/components.md)
+- [自定义主题](interface/code-theme.md)
 
-```js {3-5}
-module.exports = {
-  themeConfig: {
-    mdEnhance: {
-      enableAll: true,
-    },
-  },
-};
-```
+## 注意事项
 
-::: danger
+### 非标准的 HTML 标签
 
-请仅将此选项用于体验或测试。随着时间的增长，`vuepress-plugin-markdown-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。 
+非标准的 HTML 标签不会被 Vue 模板编译器识别成原生 HTML 标签。相反，Vue 会尝试将这些标签解析为 Vue 组件，而显然这些组件通常是不存在的。 例如：
 
-启用不需要的功能将增加开发和构建时间。 (markdown-it 必须检查额外的语法) 
+- 已废弃的 HTML 标签，比如 [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) 和 [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) 等。
+- [MathML 标签](https://developer.mozilla.org/zh-CN/docs/Web/MathML)，它们可能会被一些 markdown-it 的 LaTeX 插件用到。
 
-同样，幻灯片演示功能将在输出中添加 700KB 大小的代码 (主要是 reveal.js)。 
+如果你无论如何都要使用这些标签的话，可以尝试下面两种方法之一：
 
-因此，请仅启用需要的功能。
-
-:::
-
-
-### 启用特定的功能
-
-特定语法的配置项可以配置中找到。
+- 添加一个 [v-pre](https://v3.cn.vuejs.org/api/directives.html#v-pre) 指令来跳过这个元素和它的子元素的编译过程。注意所有的模板语法也都会失效。
+- 设置 [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) 来告诉 Vue 模板编译器不要尝试作为组件来解析它们。
+  - 对于 `@bundler-webpack` ，设置 [vue.compilerOptions](../reference/bundler/webpack.md#vue)
+  - 对于 `@bundler-vite` ，设置 [vuePluginOptions.template.compilerOptions](../reference/bundler/vite.md#vuepluginoptions)

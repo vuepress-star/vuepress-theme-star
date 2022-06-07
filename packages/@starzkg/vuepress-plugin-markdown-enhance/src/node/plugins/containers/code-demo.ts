@@ -1,6 +1,7 @@
+import type { ContainerPluginOptions } from '@vuepress/plugin-container'
 import { hash } from '@vuepress/utils'
 import type Token from 'markdown-it/lib/token'
-import type { CodeDemoOptions } from '../../shared'
+import type { MarkdownEnhanceOptions } from '../../../shared'
 
 export const codeDemoRender = (tokens: Token[], index: number): string => {
   const { nesting, info } = tokens[index]
@@ -42,15 +43,11 @@ export const codeDemoRender = (tokens: Token[], index: number): string => {
 `
 }
 
-export const codeDemoDefaultSetting: CodeDemoOptions = {
-  useBabel: false,
-  jsLib: [],
-  cssLib: [],
-  codepenLayout: 'left',
-  codepenEditors: '101',
-  babel: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js',
-  vue: 'https://cdn.jsdelivr.net/npm/vue@next/dist/vue.global.prod.js',
-  react: 'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js',
-  reactDOM:
-    'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js',
+export const resolveCodeDemoContainerOptions = (
+  localeOptions: MarkdownEnhanceOptions
+): ContainerPluginOptions => {
+  return {
+    type: 'demo',
+    render: codeDemoRender,
+  }
 }

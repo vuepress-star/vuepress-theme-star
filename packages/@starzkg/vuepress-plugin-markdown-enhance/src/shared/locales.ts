@@ -1,13 +1,6 @@
-import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared/lib/shared'
+import type { LocaleData } from '@vuepress/shared'
 
-export interface MarkdownEnhanceLocaleData {
-  /**
-   * Default Title text for info block
-   *
-   * 信息块的默认标题
-   */
-  info: string
-
+export interface MarkdownEnhancePluginLocaleData extends LocaleData {
   /**
    * Default Title text for note block
    *
@@ -21,6 +14,13 @@ export interface MarkdownEnhanceLocaleData {
    * 提示块的默认标题
    */
   tip: string
+
+  /**
+   * Default Title text for info block
+   *
+   * 信息块的默认标题
+   */
+  info: string
 
   /**
    * Default Title text for warning block
@@ -43,8 +43,3 @@ export interface MarkdownEnhanceLocaleData {
    */
   details: string
 }
-
-export type MarkdownContainerName = keyof MarkdownEnhanceLocaleData
-
-export type MarkdownEnhanceLocaleConfig =
-  ConvertLocaleConfig<MarkdownEnhanceLocaleData>

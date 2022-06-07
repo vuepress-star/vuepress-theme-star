@@ -8,7 +8,6 @@ import type {
 import {
   abbr,
   cjkBreaks,
-  codeDemoDefaultSetting,
   deflist,
   emoji,
   flowchart,
@@ -29,9 +28,15 @@ import { assignDefaultMarkdownEnhanceOptions } from './utils'
 export const markdownEnhancePlugin =
   (options: MarkdownEnhanceOptions | MarkdownFavor | boolean = true): Plugin =>
   (app) => {
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`)
+    if (app.env.isDebug) {
+      logger.info(`Options: ${JSON.stringify(options)}`)
+    }
 
     const markdownOptions = assignDefaultMarkdownEnhanceOptions(options)
+
+    if (app.env.isDebug) {
+      logger.info(`merged Options: ${JSON.stringify(markdownOptions)}`)
+    }
 
     const alignEnable = markdownOptions.align || false
     const flowchartEnable = markdownOptions.flowchart || false
@@ -77,7 +82,6 @@ export const markdownEnhancePlugin =
         MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
         MARKDOWN_ENHANCE_TEX: texEnable,
         CODE_DEMO_OPTIONS: {
-          ...codeDemoDefaultSetting,
           ...(typeof markdownOptions.demo === 'object'
             ? markdownOptions.demo
             : {}),
@@ -99,6 +103,10 @@ export const markdownEnhancePlugin =
       }),
 
       clientConfigFile: path.resolve(__dirname, '../client/config.js'),
+
+      extendsMarkdownOptions: (markdownOptions): void => {
+        Object.assign(markdownOptions, options)
+      },
 
       extendsMarkdown: (markdownIt): void => {
         if (markdownOptions.sup) markdownIt.use(sup)

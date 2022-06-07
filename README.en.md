@@ -17,7 +17,7 @@
 [![license](https://badgen.net/github/license/vuepress-star/vuepress-theme-star)](https://github.com/vuepress-star/vuepress-theme-star/blob/main/LICENSE)
 [![discord](https://badgen.net/discord/online-members/ptFjefy6H5?icon=discord&label=discord)](https://discord.gg/ptFjefy6H5)
 
-A Vuepress Theme With Tons of Features ✨
+A Vuepress Theme For Building Personal Site ✨
 
 ## Status: Beta
 
@@ -34,9 +34,9 @@ https://vuepress-star.github.io/
 
 ## Documentation
 
-https://v2.vuepress.vuejs.org
+Vuepress: https://v2.vuepress.vuejs.org
 
-https://vuepress-star.github.io/docs/
+Vuepress Theme Star: https://vuepress-star.github.io/docs/
 
 ## Contact
 

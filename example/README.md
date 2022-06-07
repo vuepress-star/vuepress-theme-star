@@ -52,28 +52,12 @@ features:
     details: Both Webpack and Vite are supported. Choose the one you like!
 footer: MIT Licensed | Copyright © 2021-present Starzkg
 ---
+  
 ### As Easy as 1, 2, 3
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
+:::: code-group
 
-```bash
-# install in your project
-yarn add -D @starzkg/vuepress-theme-star
-
-# create a markdown file
-echo '# Hello VuePress Theme Star' > README.md
-
-# start writing
-yarn vuepress dev
-
-# build to static files
-yarn vuepress build
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
+::: code-group-item title="NPM" active
 
 ```bash
 # install in your project
@@ -88,6 +72,41 @@ npx vuepress dev
 # build to static files
 npx vuepress build
 ```
+:::
 
-  </CodeGroupItem>
-</CodeGroup>
+::: code-group-item title="YARN"
+
+```bash
+# install in your project
+yarn add -D @starzkg/vuepress-theme-star
+
+# create a markdown file
+echo '# Hello VuePress Theme Star' > README.md
+
+# start writing
+yarn vuepress dev
+
+# build to static files
+yarn vuepress build
+```
+:::
+
+::: code-group-item title="PNPM"
+
+```bash
+# install in your project
+pnpm add - D @starzkg/vuepress-theme-star
+
+# create a markdown file
+echo '# Hello VuePress Theme Star' > README.md
+
+# start writing
+pnpm vuepress dev
+
+# build to static files
+pnpm vuepress build
+```
+
+:::
+
+:::: 

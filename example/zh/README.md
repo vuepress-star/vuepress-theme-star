@@ -78,7 +78,25 @@ footer: MIT Licensed | Copyright © 2021-present Starzkg
 
 :::: code-group
 
-::: code-group-item YARN
+::: code-group-item title="NPM" active
+
+```bash
+# 在你的项目中安装
+npm install -D @starzkg/vuepress-theme-star
+
+# 新建一个 markdown 文件
+echo '# Hello VuePress Theme Star' > README.md
+
+# 开始写作
+npx vuepress dev
+
+# 构建静态文件
+npx vuepress build
+```
+
+:::
+
+::: code-group-item title="YARN"
 
 ```bash
 # 在你的项目中安装
@@ -96,20 +114,20 @@ yarn vuepress build
 
 :::
 
-::: code-group-item NPM
+::: code-group-item title="PNPM"
 
 ```bash
 # 在你的项目中安装
-npm install -D @starzkg/vuepress-theme-star
+pnpm add - D @starzkg/vuepress-theme-star
 
 # 新建一个 markdown 文件
 echo '# Hello VuePress Theme Star' > README.md
 
 # 开始写作
-npx vuepress dev
+pnpm vuepress dev
 
 # 构建静态文件
-npx vuepress build
+pnpm vuepress build
 ```
 
 :::

@@ -1,11 +1,19 @@
 import type { MarkdownEnhanceOptions } from './options'
 
+/**
+ * markdown favor
+ */
 export type MarkdownFavor = 'default' | 'gfm' | 'vscode' | 'vuepress'
 
+/**
+ * default markdown spec
+ */
 export const DEFAULT_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
   container: true,
 
   align: true,
+
+  vPre: true,
 
   sup: true,
 
@@ -18,8 +26,6 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
   cjkBreaks: true,
 
   deflist: true,
-
-  emoji: true,
 
   forInline: false,
 
@@ -35,7 +41,17 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
 
   mermaid: true,
 
-  demo: true,
+  demo: {
+    useBabel: false,
+    jsLib: [],
+    cssLib: [],
+    codepenLayout: 'left',
+    codepenEditors: '101',
+    babel: 'https://unpkg.com/@babel/standalone/babel.min.js',
+    vue: 'https://unpkg.com/vue/dist/vue.global.prod.js',
+    react: 'https://unpkg.com/react/umd/react.production.min.js',
+    reactDOM: 'https://unpkg.com/react-dom/umd/react-dom.production.min.js',
+  },
 
   presentation: true,
 }
@@ -50,6 +66,8 @@ export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
 
   align: true,
 
+  vPre: true,
+
   sup: true,
 
   sub: true,
@@ -61,8 +79,6 @@ export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
   cjkBreaks: true,
 
   deflist: true,
-
-  emoji: true,
 
   forInline: false,
 

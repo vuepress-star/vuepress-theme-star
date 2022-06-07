@@ -1,66 +1,83 @@
 import type { App } from '@vuepress/core'
-import type { ContainerPluginOptions } from '@vuepress/plugin-container'
 import type { MarkdownEnhanceOptions } from '../../shared'
-import { codeDemoRender } from '../markdown-it'
-import { resolveContainerPluginOptions, useContainerPlugin } from './container'
+import {
+  resolveAlignContainerOptions,
+  resolveCodeDemoContainerOptions,
+  resolveComponentContainerOptions,
+  resolveContainerPluginOptions,
+  resolveDetailsContainerOptions,
+  resolveVPreContainerOptions,
+  useContainerPlugin,
+} from './containers'
 
 export const usePlugins = (
   app: App,
   markdownOptions: MarkdownEnhanceOptions
 ): void => {
+  // container
   if (markdownOptions.container) {
+    // default
     useContainerPlugin(
       app,
-      resolveContainerPluginOptions(markdownOptions, 'info')
+      resolveContainerPluginOptions(markdownOptions, 'default')
     )
+    // tip
     useContainerPlugin(
       app,
       resolveContainerPluginOptions(markdownOptions, 'tip')
     )
+    // note
     useContainerPlugin(
       app,
       resolveContainerPluginOptions(markdownOptions, 'note')
     )
+    // primary
+    useContainerPlugin(
+      app,
+      resolveContainerPluginOptions(markdownOptions, 'primary')
+    )
+    // info
+    useContainerPlugin(
+      app,
+      resolveContainerPluginOptions(markdownOptions, 'info')
+    )
+    // warning
     useContainerPlugin(
       app,
       resolveContainerPluginOptions(markdownOptions, 'warning')
     )
+    // danger
     useContainerPlugin(
       app,
       resolveContainerPluginOptions(markdownOptions, 'danger')
     )
-
-    useContainerPlugin(app, {
-      type: 'details',
-      before: (info) =>
-        `<details class="custom-container details">${
-          info ? `<summary>${info}</summary>` : ''
-        }\n`,
-      after: () => '</details>\n',
-    })
-
-    useContainerPlugin(app, {
-      type: 'code-group',
-      before: () => `<CodeGroup>\n`,
-      after: () => '</CodeGroup>\n',
-    })
-    useContainerPlugin(app, {
-      type: 'code-group-item',
-      before: (info) => `<CodeGroupItem title="${info}">\n`,
-      after: () => '</CodeGroupItem>\n',
-    })
+    // details
+    useContainerPlugin(app, resolveDetailsContainerOptions(markdownOptions))
   }
 
+  // v-pre
+  if (markdownOptions.vPre) {
+    useContainerPlugin(app, resolveVPreContainerOptions())
+  }
+
+  // align
   if (markdownOptions.align) {
-    ;['left', 'center', 'right', 'justify'].forEach((type) =>
-      useContainerPlugin(app, { type } as ContainerPluginOptions)
-    )
+    // left
+    useContainerPlugin(app, resolveAlignContainerOptions('left'))
+    // center
+    useContainerPlugin(app, resolveAlignContainerOptions('center'))
+    // right
+    useContainerPlugin(app, resolveAlignContainerOptions('right'))
+    // justify
+    useContainerPlugin(app, resolveAlignContainerOptions('justify'))
   }
 
+  // demo
   if (markdownOptions.demo) {
-    useContainerPlugin(app, {
-      type: 'demo',
-      render: codeDemoRender,
-    })
+    useContainerPlugin(app, resolveCodeDemoContainerOptions(markdownOptions))
   }
+
+  // component
+  useContainerPlugin(app, resolveComponentContainerOptions('code-group'))
+  useContainerPlugin(app, resolveComponentContainerOptions('code-group-item'))
 }

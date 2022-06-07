@@ -1,4 +1,3 @@
-export * from './code-demo'
 export * from './footnote'
 export * from './katex'
 export * from './mark'

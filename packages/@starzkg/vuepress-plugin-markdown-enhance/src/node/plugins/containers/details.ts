@@ -1,5 +1,4 @@
-import type { App } from '@vuepress/core'
-import containerPlugin, {
+import type {
   ContainerPluginOptions,
   MarkdownItContainerRenderFunction,
 } from '@vuepress/plugin-container'
@@ -9,41 +8,9 @@ import {
   resolveLocalePath,
 } from '@vuepress/shared'
 import type Token from 'markdown-it/lib/token'
-import type { MarkdownEnhanceOptions } from '../../shared'
+import type { MarkdownEnhanceOptions } from '../../../shared'
 
-export const useContainerPlugin = (
-  app: App,
-  options: ContainerPluginOptions
-): void => {
-  app.use(containerPlugin(options))
-}
-
-/**
- * Resolve options for @vuepress/plugin-container
- *
- * For custom containers default title
- */
-export const resolveContainerPluginOptions = (
-  localeOptions: MarkdownEnhanceOptions,
-  type: 'info' | 'note' | 'tip' | 'warning' | 'danger'
-): ContainerPluginOptions => {
-  const locales = Object.entries(localeOptions.locales || {}).reduce(
-    (result, [key, value]) => {
-      result[key] = {
-        defaultInfo: value?.[type] ?? localeOptions[type],
-      }
-      return result
-    },
-    {}
-  )
-
-  return {
-    type,
-    locales,
-  }
-}
-
-export const getDetailsRender =
+export const detailsRender =
   (
     locales: LocaleConfig<{
       defaultInfo: string
@@ -52,9 +19,8 @@ export const getDetailsRender =
   (tokens: Token[], index, _options, env): string => {
     const token = tokens[index]
 
+    // `before` tag
     if (token.nesting === 1) {
-      // `before` tag
-
       // resolve info (title)
       let info = token.info
         .trim()
@@ -64,8 +30,8 @@ export const getDetailsRender =
         )
         .trim()
 
+      // get locale
       if (!info && locales) {
-        // locale
         const { filePathRelative } = env
         const relativePath = ensureLeadingSlash(filePathRelative ?? '')
 
@@ -75,10 +41,23 @@ export const getDetailsRender =
         info = localeData.defaultInfo || 'Details'
       }
 
-      return `<details class="custom-block details"><summary>${
+      return `<details class="custom-container details"><summary>${
         info || 'Details'
       }</summary>\n`
     }
 
-    return '</details>\n'
+    return '\n</details>\n'
   }
+
+export const resolveDetailsContainerOptions = (
+  localeOptions: MarkdownEnhanceOptions
+): ContainerPluginOptions => {
+  return {
+    type: 'details',
+    before: (info) =>
+      `<details class="custom-container details">\n${
+        info ? `<summary>${info}</summary>` : ''
+      }\n`,
+    after: () => '\n</details>\n',
+  }
+}

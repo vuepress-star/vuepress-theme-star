@@ -17,7 +17,7 @@ tags:
 
 :::: code-group
 
-::: code-group-item TS
+::: code-group-item title=TS
 
 ```ts {8-11}
 // .vuepress/config.ts
@@ -37,7 +37,7 @@ export default defineUserConfig({
 ```
 :::
 
-::: code-group-item JS
+::: code-group-item title=JS
 
 ```js {7-10}
 // .vuepress/config.js

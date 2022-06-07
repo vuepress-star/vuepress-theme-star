@@ -41,7 +41,8 @@ module.exports = {
 
 :::: danger vuepress-theme-star v2 is still in W.I.P, the API may have
 
-::: center Significant changes.
+::: center 
+Significant changes.
 :::
 
 If you meet a bug during usage, you can

@@ -27,8 +27,26 @@ footer: MIT Licensed | Copyright © 2021-present Starzkg
 
 ### As Easy as 1, 2, 3
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
+:::: code-group
+
+::: code-group-item title="NPM" active
+
+```bash
+# install in your project
+npm install -D @starzkg/vuepress-theme-star
+
+# create a markdown file
+echo '# Hello VuePress Theme Star' > README.md
+
+# start writing
+npx vuepress dev
+
+# build to static files
+npx vuepress build
+```
+:::
+
+::: code-group-item title="YARN"
 
 ```bash
 # install in your project
@@ -43,24 +61,24 @@ yarn vuepress dev
 # build to static files
 yarn vuepress build
 ```
+:::
 
-  </CodeGroupItem>
+::: code-group-item title="PNPM"
 
-  <CodeGroupItem title="NPM">
-  
 ```bash
 # install in your project
-npm install -D @starzkg/vuepress-theme-star
+pnpm add - D @starzkg/vuepress-theme-star
 
 # create a markdown file
 echo '# Hello VuePress Theme Star' > README.md
 
 # start writing
-npx vuepress dev
+pnpm vuepress dev
 
 # build to static files
-npx vuepress build
+pnpm vuepress build
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
+
+:::: 

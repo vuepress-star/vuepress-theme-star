@@ -1,8 +1,8 @@
 import type { LocaleConfig } from '@vuepress/core'
+import type { MarkdownOptions } from '@vuepress/markdown'
 import type { KatexOptions } from 'katex'
-import type { MarkdownEnhanceLocaleConfig } from '../locales'
+import type { MarkdownEnhancePluginLocaleData } from '../locales'
 import type { CodeDemoOptions } from './code-demo'
-import type { EmojiPluginOptions } from './emoji'
 import type { ForInlinePluginOptions } from './for-inline'
 import type { PresentationOptions } from './presentation'
 import type { TaskListOptions } from './tasklist'
@@ -15,7 +15,7 @@ export * from './tasklist'
 /**
  * markdown-enhance plugin configuration
  */
-export interface MarkdownEnhanceOptions {
+export interface MarkdownEnhanceOptions extends MarkdownOptions {
   /**
    * 是否启用自定义容器
    *
@@ -49,6 +49,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   align?: boolean
+
+  /**
+   * Whether to enable v-pre wrapper.
+   *
+   * 是否启用 v-pre 容器。
+   *
+   * @default false
+   */
+  vPre?: boolean
 
   /**
    * 是否启用上角标格式支持
@@ -103,15 +112,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   deflist?: boolean
-
-  /**
-   * 是否启用emoji支持
-   *
-   * Whether to enable emoji support
-   *
-   * @default false
-   */
-  emoji?: boolean | EmojiPluginOptions
 
   /**
    * 是否启用内联标记迭代器支持
@@ -210,7 +210,7 @@ export interface MarkdownEnhanceOptions {
   /**
    * 国际化配置选项
    *
-   * I18n config
+   * locales config
    */
-  locales?: LocaleConfig<MarkdownEnhanceLocaleConfig>
+  locales?: LocaleConfig<MarkdownEnhancePluginLocaleData>
 }
