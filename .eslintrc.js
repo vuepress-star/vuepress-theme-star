@@ -23,23 +23,6 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         'vue/multi-word-component-names': 'off',
-        'vue/component-tags-order': [
-          'error',
-          {
-            order: ['script', 'template', 'style'],
-          },
-        ],
-      },
-    },
-    {
-      files: ['*.vue'],
-      globals: {
-        defineEmits: 'readonly',
-        defineProps: 'readonly',
-      },
-      rules: {
-        // disable for setup script
-        '@typescript-eslint/no-unused-vars': 'off',
       },
     },
     {

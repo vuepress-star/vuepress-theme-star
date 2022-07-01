@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  usePageData,
-  usePageFrontmatter,
-  useSiteLocaleData,
-} from '@vuepress/client'
+import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed } from 'vue'
 import type { ComputedRef } from 'vue'
 import type {

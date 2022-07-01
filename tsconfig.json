@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "jsx": "preserve",
     "module": "ES2020",
     "paths": {
@@ -10,9 +10,6 @@
       ],
       "@internal/siteData": [
         "./packages/@starzkg/vuepress-theme-star/src/client/siteData"
-      ],
-      "@internal/archive": [
-        "./packages/@starzkg/vuepress-plugin-archive/src/client/archive"
       ]
     },
     "types": ["webpack-env", "vite/client", "@types/jest"]

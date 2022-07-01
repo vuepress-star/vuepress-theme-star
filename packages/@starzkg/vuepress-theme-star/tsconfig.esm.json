@@ -1,6 +1,7 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "module": "ES2020",
     "rootDir": "./src",
     "outDir": "./lib",

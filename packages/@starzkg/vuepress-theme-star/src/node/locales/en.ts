@@ -1,10 +1,13 @@
 import type { StarThemeLocaleOptions } from '../../shared'
 
 export const en: StarThemeLocaleOptions = {
+  // color mode
+  colorMode: 'auto',
+  colorModeSwitch: true,
+
   // navbar
   navbar: [],
   logo: null,
-  darkMode: true,
   repo: null,
   selectLanguageText: 'Languages',
   selectLanguageAriaLabel: 'Select language',

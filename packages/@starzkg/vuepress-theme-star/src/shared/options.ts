@@ -82,6 +82,20 @@ export type StarThemeData = ThemeData<StarThemeLocaleData>
 
 export interface StarThemeLocaleData extends LocaleData {
   /**
+   * Default color mode
+   *
+   * @default 'auto'
+   */
+  colorMode?: 'auto' | 'dark' | 'light'
+
+  /**
+   * Enable color mode switching and display a button in navbar or not
+   *
+   * @default true
+   */
+  colorModeSwitch?: boolean
+
+  /**
    * Home path of current locale
    *
    * Used as the link of back-to-home and navbar logo
@@ -108,13 +122,6 @@ export interface StarThemeLocaleData extends LocaleData {
    * Logo to display in navbar in dark mode
    */
   logoDark?: null | string
-
-  /**
-   * Navbar dark mode button config
-   *
-   * Enable dark mode switching and display a button in navbar or not
-   */
-  darkMode?: boolean
 
   /**
    * Navbar repository config
@@ -299,4 +306,14 @@ export interface StarThemeLocaleData extends LocaleData {
    * A11y text for sidebar toggle button
    */
   toggleSidebar?: string
+
+  /**
+   *
+   */
+  iconPrefix?: string
+
+  /**
+   * fullscreen
+   */
+  fullscreen?: boolean
 }
