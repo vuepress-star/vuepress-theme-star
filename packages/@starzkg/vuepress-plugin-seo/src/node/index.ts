@@ -12,14 +12,21 @@ export const seoPlugin =
     const { base } = app.options
 
     return {
-      name: 'seo2',
+      name: '@starzkg/vuepress-plugin-seo',
 
       extendsPage(page): void {
         const head = page.frontmatter.head || []
         const pageSeoInfo: PageSeoInfo = {
           page: page as ExtendPage,
           app,
-          permalink: resolvePagePermalink(page),
+          permalink: resolvePagePermalink({
+            app,
+            frontmatter: page.data.frontmatter,
+            slug: page.slug,
+            date: page.date,
+            pathInferred: page.pathInferred,
+            pathLocale: page.pathLocale,
+          }),
         }
         const metaContext: SeoContent = {
           ...generateSeo(options, base, pageSeoInfo),
