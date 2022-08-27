@@ -14,11 +14,14 @@ import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 import { tocPlugin } from '@vuepress/plugin-toc'
 import { path } from '@vuepress/utils'
-import type { StarThemeLocaleOptions, StarThemePluginsOptions } from '../shared'
-import { resolveAlias } from './alias'
-import { preparePageData } from './preparePageData'
-import { prepareSiteData } from './prepareSiteData'
-import { assignDefaultLocaleOptions } from './utils'
+import type {
+  StarThemeLocaleOptions,
+  StarThemePluginsOptions,
+} from '../shared/index.js'
+import { resolveAlias } from './alias.js'
+import { preparePageData } from './preparePageData.js'
+import { prepareSiteData } from './prepareSiteData.js'
+import { assignDefaultLocaleOptions } from './utils/index.js'
 export interface StarThemeOptions extends StarThemeLocaleOptions {
   /**
    * To avoid confusion with the root `plugins` option,

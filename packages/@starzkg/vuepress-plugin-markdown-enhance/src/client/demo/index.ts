@@ -1,7 +1,7 @@
-import type { CodeDemoOptions } from '../../shared'
-import { getCode, getNormalCode, getReactCode, getVueCode } from './code'
-import { initDom, select } from './dom'
-import { loadScript } from './utils'
+import type { CodeDemoOptions } from '../../shared/index.js'
+import { getCode, getNormalCode, getReactCode, getVueCode } from './code.js'
+import { initDom, select } from './dom.js'
+import { loadScript } from './utils.js'
 
 declare const MARKDOWN_DELAY: number
 

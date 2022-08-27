@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSidebarItems } from '../composables'
+import { useSidebarItems } from '../composables/index.js'
 import SidebarItem from './SidebarItem.vue'
 
 const route = useRoute()

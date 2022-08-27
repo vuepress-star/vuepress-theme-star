@@ -7,8 +7,8 @@ import type {
   FeedChannelOption,
   FeedLinks,
   FeedOptions,
-} from '../shared'
-import { compareDate, resolveUrl } from './utils'
+} from '../shared/index.js'
+import { compareDate, resolveUrl } from './utils.js'
 
 export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string }
 

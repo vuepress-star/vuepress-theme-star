@@ -1,1 +1,1 @@
-export { Boom } from './boom'
+export { Boom } from './boom.js'

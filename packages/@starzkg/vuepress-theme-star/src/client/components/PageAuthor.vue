@@ -5,8 +5,8 @@ import { computed, ComputedRef } from 'vue'
 import type {
   StarThemeNormalPageFrontmatter,
   StarThemePageData,
-} from '../../shared'
-import { useThemeLocaleData } from '../composables'
+} from '../../shared/index.js'
+import { useThemeLocaleData } from '../composables/index.js'
 import { Author } from '../icons'
 
 interface AuthorPageFrontmatter {

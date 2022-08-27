@@ -1,8 +1,8 @@
 import Katex, { KatexOptions } from 'katex'
 import type MarkdownIt from 'markdown-it'
-import type StateBlock from 'markdown-it/lib/rules_block/state_block'
-import type StateInline from 'markdown-it/lib/rules_inline/state_inline'
-import { escapeHtml } from './utils'
+import type StateBlock from 'markdown-it/lib/rules_block/state_block.js'
+import type StateInline from 'markdown-it/lib/rules_inline/state_inline.js'
+import { escapeHtml } from './utils.js'
 
 /*
  * Test if potential opening or closing delimieter
@@ -173,7 +173,7 @@ const katexInline = (tex: string, options: KatexOptions): string => {
   options.displayMode = false
 
   try {
-    return Katex.renderToString(tex, options)
+    return Katex.default.renderToString(tex, options)
   } catch (error) {
     if (options.throwOnError) console.warn(error)
 
@@ -187,7 +187,10 @@ const katexBlock = (tex: string, options: KatexOptions): string => {
   options.displayMode = true
 
   try {
-    return `<p class='katex-block'>${Katex.renderToString(tex, options)}</p>`
+    return `<p class='katex-block'>${Katex.default.renderToString(
+      tex,
+      options
+    )}</p>`
   } catch (error) {
     if (options.throwOnError) console.warn(error)
 

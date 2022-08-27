@@ -1,7 +1,7 @@
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { defineComponent, h, resolveComponent } from 'vue'
 import type { VNode } from 'vue'
-import { useIconPrefix } from '../composables'
+import { useIconPrefix } from '../composables/index.js'
 
 interface PageTitleFrontmatter {
   title: string

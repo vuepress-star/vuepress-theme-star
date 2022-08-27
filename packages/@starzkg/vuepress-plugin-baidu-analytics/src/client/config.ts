@@ -1,5 +1,5 @@
 import { defineClientConfig } from '@vuepress/client'
-import { useBaiduAnalytics } from './composables'
+import { useBaiduAnalytics } from './composables/index.js'
 
 declare const __BAIDU_ID__: string
 declare const __BAIDU_SPA__: boolean

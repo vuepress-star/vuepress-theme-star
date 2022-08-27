@@ -1,8 +1,8 @@
 import screenfull from 'screenfull'
 import { defineComponent, h, onMounted, ref } from 'vue'
 import type { VNode } from 'vue'
-import { useThemeLocaleData } from '../composables'
-import { ScreenFullClose, ScreenFullOpen } from '../icons'
+import { useThemeLocaleData } from '../composables/index.js'
+import { ScreenFullClose, ScreenFullOpen } from '../icons/index.js'
 
 export default defineComponent({
   name: 'ScreenFull',

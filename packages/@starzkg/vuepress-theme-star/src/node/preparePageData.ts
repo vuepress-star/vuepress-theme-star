@@ -1,5 +1,5 @@
 import type { Page } from '@vuepress/core'
-import type { StarThemePageData } from '../shared'
+import type { StarThemePageData } from '../shared/index.js'
 
 export const getWords = (data: string): RegExpMatchArray =>
   data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) || []

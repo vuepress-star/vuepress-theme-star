@@ -1,11 +1,11 @@
-import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/client'
 import { withBase } from '@vuepress/client'
 import { useEventListener } from '@vueuse/core'
 import { defineComponent, h, onMounted, ref } from 'vue'
 import type { VNode } from 'vue'
-import type { ManifestOption } from '../../shared'
-import { locales } from '../define'
-import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from './icons'
+import type { ManifestOption } from '../../shared/index.js'
+import { locales } from '../define.js'
+import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from './icons.js'
 
 interface InstallPromptEvent extends Event {
   readonly platforms: string

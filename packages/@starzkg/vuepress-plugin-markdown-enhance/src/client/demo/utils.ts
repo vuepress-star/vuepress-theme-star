@@ -1,5 +1,5 @@
-import type { CodeDemoOptions } from '../../shared'
-import type { Code } from './typings'
+import type { CodeDemoOptions } from '../../shared/index.js'
+import type { Code } from './typings.js'
 
 declare const CODE_DEMO_OPTIONS: CodeDemoOptions
 

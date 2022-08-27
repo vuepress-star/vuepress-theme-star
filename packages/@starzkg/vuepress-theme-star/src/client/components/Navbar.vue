@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { useThemeLocaleData } from '../composables'
+import { useThemeLocaleData } from '../composables/index.js'
 import NavbarBrand from './NavbarBrand.vue'
 import NavbarItems from './NavbarItems.vue'
 import ToggleColorModeButton from './ToggleColorModeButton.vue'

@@ -1,5 +1,5 @@
 import type { App } from '@vuepress/core'
-import type { MarkdownEnhanceOptions } from '../../shared'
+import type { MarkdownEnhanceOptions } from '../../shared/index.js'
 import {
   resolveAlignContainerOptions,
   resolveCodeDemoContainerOptions,
@@ -8,7 +8,7 @@ import {
   resolveDetailsContainerOptions,
   resolveVPreContainerOptions,
   useContainerPlugin,
-} from './containers'
+} from './containers/index.js'
 
 export const usePlugins = (
   app: App,

@@ -2,7 +2,7 @@
 import { usePageFrontmatter, withBase } from '@vuepress/client'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useSiteData } from '../composables'
+import { useSiteData } from '../composables/index.js'
 import Links from './Links.vue'
 import PanThumb from './PanThumb.vue'
 

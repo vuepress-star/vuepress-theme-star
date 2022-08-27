@@ -1,4 +1,4 @@
-import type { CopyrightLocaleConfig } from '../shared'
+import type { CopyrightLocaleConfig } from '../shared/index.js'
 
 /** Multi-language config for copy code */
 export const i18n: CopyrightLocaleConfig = {

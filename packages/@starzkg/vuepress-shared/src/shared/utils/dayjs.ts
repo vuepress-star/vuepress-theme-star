@@ -1,8 +1,8 @@
 import Dayjs from 'dayjs'
-import localizedFormat from 'dayjs/plugin/localizedFormat'
-import objectSupport from 'dayjs/plugin/objectSupport'
-import timezone from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
+import localizedFormat from 'dayjs/plugin/localizedFormat.js'
+import objectSupport from 'dayjs/plugin/objectSupport.js'
+import timezone from 'dayjs/plugin/timezone.js'
+import utc from 'dayjs/plugin/utc.js'
 
 Dayjs.extend(localizedFormat)
 Dayjs.extend(objectSupport)

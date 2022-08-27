@@ -1,9 +1,9 @@
 import type { App, LocaleConfig } from '@vuepress/core'
-import type { ConvertLocaleConfig } from '../../shared'
-import { Logger } from '../logger'
-import { deepAssign } from '../utils'
-import { lang2PathConfig, path2langConfig, supportedLangs } from './config'
-import type { HopeLang } from './types'
+import type { ConvertLocaleConfig } from '../../shared/index.js'
+import { Logger } from '../logger.js'
+import { deepAssign } from '../utils/index.js'
+import { lang2PathConfig, path2langConfig, supportedLangs } from './config.js'
+import type { HopeLang } from './types.js'
 
 const reportStatus: Record<string, boolean> = {}
 

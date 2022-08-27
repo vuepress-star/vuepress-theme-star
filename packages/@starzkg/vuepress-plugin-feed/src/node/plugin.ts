@@ -1,9 +1,9 @@
 import type { PluginFunction } from '@vuepress/core'
-import type { FeedOptions } from '../shared'
-import { FeedGenerator } from './generator'
-import { injectLinkstoHead } from './injectHead'
-import { checkOutput, ensureHostName, getFeedOptions } from './options'
-import { logger } from './utils'
+import type { FeedOptions } from '../shared/index.js'
+import { FeedGenerator } from './generator.js'
+import { injectLinkstoHead } from './injectHead.js'
+import { checkOutput, ensureHostName, getFeedOptions } from './options.js'
+import { logger } from './utils.js'
 
 export const feedPlugin =
   (options: FeedOptions): PluginFunction =>

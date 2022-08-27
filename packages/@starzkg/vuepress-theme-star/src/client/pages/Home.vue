@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed, ref } from 'vue'
-import type { StarThemePageFrontmatter } from '../../shared'
+import type { StarThemePageFrontmatter } from '../../shared/index.js'
 import Content from '../components/Content.vue'
 import Features from '../components/Features.vue'
 import Footer from '../components/Footer.vue'
 import Hero from '../components/Hero.vue'
 import Links from '../components/Links.vue'
 import Navbar from '../components/Navbar.vue'
-import { useThemeLocaleData } from '../composables'
+import { useThemeLocaleData } from '../composables/index.js'
 
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()

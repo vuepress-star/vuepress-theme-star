@@ -3,7 +3,7 @@ import { onClickOutside } from '@vueuse/core'
 import { defineComponent, h, ref } from 'vue'
 import type { VNode } from 'vue'
 import { useRouter } from 'vue-router'
-import { BackIcon, HomeIcon } from './icons'
+import { BackIcon, HomeIcon } from './icons.js'
 
 import './styles/layout.scss'
 

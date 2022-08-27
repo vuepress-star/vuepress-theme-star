@@ -2,7 +2,7 @@
 import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { defineComponent, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { getImages } from '../composables'
+import { getImages } from '../composables/index.js'
 import { delay, i18n, imageSelector, options } from '../define'
 
 import 'photoswipe/dist/photoswipe.css'

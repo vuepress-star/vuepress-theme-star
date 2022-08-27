@@ -1,7 +1,7 @@
-import { theme } from './theme'
+import { theme } from './theme.js'
 
-export * from '../shared'
-export * from './theme'
-export * from './utils'
+export * from '../shared/index.js'
+export * from './theme.js'
+export * from './utils/index.js'
 
 export default theme

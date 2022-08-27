@@ -5,16 +5,20 @@ import {
   stripTags,
 } from '@starzkg/vuepress-shared'
 import * as convert from 'xml-js'
-import type { FeedCategory, FeedEnclosure, FeedItemOption } from '../../shared'
-import type { Feed } from '../feed'
-import { FEED_GENERATOR } from '../utils'
+import type {
+  FeedCategory,
+  FeedEnclosure,
+  FeedItemOption,
+} from '../../shared/index.js'
+import type { Feed } from '../feed.js'
+import { FEED_GENERATOR } from '../utils.js'
 import type {
   RSSCategory,
   RSSContent,
   RSSEnclosure,
   RSSGuid,
   RSSItem,
-} from './typings'
+} from './typings.js'
 
 const genCategory = (category: FeedCategory): RSSCategory => {
   const { name, domain } = category

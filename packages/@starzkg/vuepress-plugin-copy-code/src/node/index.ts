@@ -2,10 +2,10 @@ import { getLocales } from '@starzkg/vuepress-shared'
 import type { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
-import type { CopyCodeOptions } from '../shared'
-import { i18n } from './i18n'
+import type { CopyCodeOptions } from '../shared/index.js'
+import { i18n } from './i18n.js'
 
-export * from '../shared'
+export * from '../shared/index.js'
 
 export const copyCodePlugin =
   (options: CopyCodeOptions): Plugin =>

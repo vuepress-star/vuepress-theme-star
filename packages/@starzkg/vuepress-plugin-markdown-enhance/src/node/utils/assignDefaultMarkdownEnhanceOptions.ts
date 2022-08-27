@@ -2,7 +2,7 @@ import {
   DEFAULT_MARKDOWN_SPEC,
   MarkdownEnhanceOptions,
   MarkdownFavor,
-} from '../../shared'
+} from '../../shared/index.js'
 
 export const assignDefaultMarkdownEnhanceOptions = (
   options: MarkdownEnhanceOptions | MarkdownFavor | boolean = true

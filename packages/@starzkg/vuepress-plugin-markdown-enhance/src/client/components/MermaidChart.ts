@@ -1,4 +1,4 @@
-import type MermaidAPI from 'mermaid/mermaidAPI'
+import type MermaidAPI from 'mermaid/mermaidAPI.js'
 import {
   defineComponent,
   h,
@@ -8,12 +8,12 @@ import {
   ref,
 } from 'vue'
 import type { VNode } from 'vue'
-import { LoadingIcon } from './icons'
+import { LoadingIcon } from './icons.js'
 
 import '../styles/mermaid.scss'
 
 declare const MARKDOWN_DELAY: number
-declare const MERMAID_OPTIONS: MermaidAPI.Config
+declare const MERMAID_OPTIONS: MermaidAPI.default.Config
 
 export default defineComponent({
   name: 'MermaidChart',
@@ -37,7 +37,7 @@ export default defineComponent({
         import(/* webpackChunkName: "mermaid" */ 'mermaid'),
         delay(),
       ]).then(([mermaid]) => {
-        const { initialize, render } = mermaid.default
+        const { initialize, render } = mermaid.default.default
 
         const renderMermaid = (isDarkTheme: boolean): void => {
           // generate a unvisiable container

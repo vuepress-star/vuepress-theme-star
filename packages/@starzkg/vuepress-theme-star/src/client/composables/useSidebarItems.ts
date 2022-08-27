@@ -16,8 +16,8 @@ import type {
   SidebarItem,
   StarThemeData,
   StarThemeNormalPageFrontmatter,
-} from '../../shared'
-import { useNavLink, useThemeLocaleData } from '.'
+} from '../../shared/index.js'
+import { useNavLink, useThemeLocaleData } from './index.js'
 
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>
 

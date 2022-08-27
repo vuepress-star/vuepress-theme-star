@@ -1,4 +1,4 @@
-import type { PhowoSwipeLocaleConfig } from '../shared'
+import type { PhowoSwipeLocaleConfig } from '../shared/index.js'
 
 export const i18n: PhowoSwipeLocaleConfig = {
   '/zh/': {

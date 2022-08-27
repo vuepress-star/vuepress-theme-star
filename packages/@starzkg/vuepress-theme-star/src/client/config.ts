@@ -2,19 +2,19 @@ import * as Icons from '@starzkg/vuepress-icons'
 import * as SocialIcons from '@starzkg/vuepress-social-icons'
 import { defineClientConfig } from '@vuepress/client'
 import { h } from 'vue'
-import { Suspension } from './components'
 import Badge from './components/Badge.vue'
-import BreadCrumb from './components/BreadCrumb'
+import BreadCrumb from './components/BreadCrumb.js'
 import ExternalLink from './components/ExternalLink.vue'
 import ExternalLinkIcon from './components/ExternalLinkIcon.vue'
 import GithubCorner from './components/GithubCorner.vue'
+import { Suspension } from './components/index.js'
 import Pagination from './components/Pagination.vue'
-import ScreenFull from './components/ScreenFull'
+import ScreenFull from './components/ScreenFull.js'
 import {
   setupDarkMode,
   setupSidebarItems,
   useScrollPromise,
-} from './composables'
+} from './composables/index.js'
 import './styles/index.scss'
 import DocumentHome from './pages/document/components/Home.vue'
 import Document from './pages/document/components/Page.vue'

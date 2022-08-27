@@ -1,5 +1,5 @@
 <script>
-import { i18n, options } from '../config'
+import { i18n, options } from '../config.js'
 export default {
   props: {
     html: {

@@ -2,7 +2,7 @@
 import { computed, ref, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import type { ResolvedSidebarItem } from '../../shared'
+import type { ResolvedSidebarItem } from '../../shared/index.js'
 import { isActiveSidebarItem } from '../utils'
 import AutoLink from './AutoLink.vue'
 import DropdownTransition from './DropdownTransition.vue'

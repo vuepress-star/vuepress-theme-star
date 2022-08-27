@@ -1,7 +1,7 @@
 import { usePreferredDark, useStorage } from '@vueuse/core'
 import { computed, inject, onMounted, onUnmounted, provide, watch } from 'vue'
 import type { InjectionKey, WritableComputedRef } from 'vue'
-import { useThemeLocaleData } from '.'
+import { useThemeLocaleData } from './useThemeData.js'
 
 export type DarkModeRef = WritableComputedRef<boolean>
 

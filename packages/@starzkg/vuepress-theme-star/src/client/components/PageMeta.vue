@@ -6,8 +6,8 @@ import type {
   NavLink,
   StarThemeNormalPageFrontmatter,
   StarThemePageData,
-} from '../../shared'
-import { useThemeLocaleData } from '../composables'
+} from '../../shared/index.js'
+import { useThemeLocaleData } from '../composables/index.js'
 import { resolveEditLink } from '../utils'
 import AutoLink from './AutoLink.vue'
 

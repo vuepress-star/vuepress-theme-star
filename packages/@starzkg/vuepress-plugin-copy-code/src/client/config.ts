@@ -1,13 +1,13 @@
 import {
   useCopyToClipboard,
   useLocaleConfig,
-} from '@starzkg/vuepress-shared/es/client'
+} from '@starzkg/vuepress-shared/client'
 import { defineClientConfig } from '@vuepress/client'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import './styles/index.scss'
 import 'balloon-css/balloon.css'
-import type { CopyCodeLocaleConfig, CopyCodeOptions } from '../shared'
+import type { CopyCodeLocaleConfig, CopyCodeOptions } from '../shared/index.js'
 
 declare const CODE_COPY_OPTIONS: Required<CopyCodeOptions>
 declare const CODE_COPY_I18N: CopyCodeLocaleConfig

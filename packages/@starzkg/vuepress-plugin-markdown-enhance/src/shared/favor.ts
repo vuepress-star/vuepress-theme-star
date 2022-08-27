@@ -1,4 +1,4 @@
-import type { MarkdownEnhanceOptions } from './options'
+import type { MarkdownEnhanceOptions } from './options/index.js'
 
 /**
  * markdown favor

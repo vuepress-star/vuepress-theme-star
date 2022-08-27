@@ -6,8 +6,8 @@ import type {
   ManifestTransform,
   ManifestTransformResult,
 } from 'workbox-build'
-import type { PWAOptions } from '../shared'
-import { logger } from './logger'
+import type { PWAOptions } from '../shared/index.js'
+import { logger } from './logger.js'
 
 const imageFilter =
   (outDir: string, maxsize = 1024): ManifestTransform =>

@@ -1,1 +1,1 @@
-export * from './assignDefaultLocaleOptions'
+export * from './assignDefaultLocaleOptions.js'

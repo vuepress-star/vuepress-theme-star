@@ -8,8 +8,8 @@ import {
 import { isArray } from '@vuepress/shared'
 import type { FunctionalComponent } from 'vue'
 import { computed, h } from 'vue'
-import type { StarThemeHomePageFrontmatter } from '../../shared'
-import { useDarkMode } from '../composables'
+import type { StarThemeHomePageFrontmatter } from '../../shared/index.js'
+import { useDarkMode } from '../composables/index.js'
 import AutoLink from './AutoLink.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()

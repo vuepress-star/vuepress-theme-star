@@ -1,1 +1,1 @@
-export * from './useBaiduAnalytics'
+export * from './useBaiduAnalytics.js'

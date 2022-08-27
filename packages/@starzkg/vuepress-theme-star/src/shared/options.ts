@@ -1,9 +1,9 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
 import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
-import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap/lib/shared'
+import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
-import type { NavbarConfig, SidebarConfig } from './nav'
+import type { NavbarConfig, SidebarConfig } from './nav.js'
 
 export interface StarThemePluginsOptions {
   /**
@@ -298,9 +298,9 @@ export interface StarThemeLocaleData extends LocaleData {
   openInNewWindow?: string
 
   /**
-   * A11y text for dark mode toggle button
+   * A11y text for color mode toggle button
    */
-  toggleDarkMode?: string
+  toggleColorMode?: string
 
   /**
    * A11y text for sidebar toggle button

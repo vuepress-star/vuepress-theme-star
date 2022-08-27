@@ -1,7 +1,7 @@
 import type { App, HeadConfig } from '@vuepress/core'
-import { getFilename } from './options'
-import type { ResolvedFeedOptionsMap } from './options'
-import { resolveUrl } from './utils'
+import { getFilename } from './options.js'
+import type { ResolvedFeedOptionsMap } from './options.js'
+import { resolveUrl } from './utils.js'
 
 export const injectLinkstoHead = (
   app: App,

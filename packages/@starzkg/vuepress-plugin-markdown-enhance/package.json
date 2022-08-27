@@ -31,6 +31,12 @@
     "email": "shentuzhigang@shentuzhigang.cn",
     "url": "https://shentuzhigang.cn"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
@@ -49,13 +55,13 @@
   },
   "dependencies": {
     "@starzkg/vuepress-shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
-    "@vuepress/markdown": "2.0.0-beta.48",
-    "@vuepress/plugin-container": "2.0.0-beta.48",
-    "@vuepress/shared": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48",
-    "@vueuse/core": "^8.5.0",
+    "@vuepress/client": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/markdown": "2.0.0-beta.50",
+    "@vuepress/plugin-container": "2.0.0-beta.50",
+    "@vuepress/shared": "2.0.0-beta.50",
+    "@vuepress/utils": "2.0.0-beta.50",
+    "@vueuse/core": "^9.1.0",
     "balloon-css": "^1.2.0",
     "chart.js": "^3.7.1",
     "echarts": "^5.3.2",
@@ -79,8 +85,8 @@
     "mermaid": "^9.1.1",
     "reveal.js": "^4.3.1",
     "ts-debounce": "^4.0.0",
-    "vue": "^3.2.36",
-    "vue-router": "^4.0.16"
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.4"
   },
   "devDependencies": {
     "@types/babel__core": "^7.1.19",

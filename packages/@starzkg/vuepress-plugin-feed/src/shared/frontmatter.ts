@@ -1,5 +1,5 @@
 import type { BasePageFrontMatter } from '@starzkg/vuepress-shared'
-import type { FeedAuthor, FeedCategory, FeedContributor } from './feed'
+import type { FeedAuthor, FeedCategory, FeedContributor } from './feed.js'
 
 export interface FeedFrontmatterOption {
   /**

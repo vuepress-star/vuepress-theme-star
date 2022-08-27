@@ -1,5 +1,5 @@
 import { defineClientConfig } from '@vuepress/client'
-import { useCnzzAnalytics } from './composables'
+import { useCnzzAnalytics } from './composables/index.js'
 
 declare const __CNZZ_ID__: string
 declare const __CNZZ_WEB_ID__: string

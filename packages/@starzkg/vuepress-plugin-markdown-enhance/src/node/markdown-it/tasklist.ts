@@ -1,14 +1,14 @@
 import type MarkdownIt from 'markdown-it'
-import type StateCore from 'markdown-it/lib/rules_core/state_core'
-import Token from 'markdown-it/lib/token'
-import type { TaskListOptions } from '../../shared'
+import type StateCore from 'markdown-it/lib/rules_core/state_core.js'
+import Token from 'markdown-it/lib/token.js'
+import type { TaskListOptions } from '../../shared/index.js'
 import {
   getParentTokenIndex,
   isInlineToken,
   isListItemToken,
   isParagraphToken,
   setTokenAttr,
-} from './utils'
+} from './utils.js'
 
 interface TaskListEnv {
   tasklists: number

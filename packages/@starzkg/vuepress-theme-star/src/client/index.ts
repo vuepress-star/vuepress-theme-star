@@ -22,7 +22,7 @@ import type {
   StarThemePageData,
   StarThemePageFrontmatter,
   StarThemePluginsOptions,
-} from '../shared'
+} from '../shared/index.js'
 
 export type {
   NavbarConfig,
@@ -49,5 +49,5 @@ export type {
   StarThemeHomePageFrontmatter,
   StarThemeNormalPageFrontmatter,
 }
-export * from './composables'
-export * from './utils'
+export * from './composables/index.js'
+export * from './utils/index.js'

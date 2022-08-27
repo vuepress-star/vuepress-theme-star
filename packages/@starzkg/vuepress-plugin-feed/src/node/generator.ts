@@ -2,12 +2,12 @@ import { dirname } from 'path'
 import type { App, Page } from '@vuepress/core'
 import type { GitData } from '@vuepress/plugin-git'
 import { chalk, fs } from '@vuepress/utils'
-import type { FeedPluginFrontmatter } from '../shared'
-import { Feed } from './feed'
-import { getFeedChannelOption, getFeedLinks, getFilename } from './options'
-import type { ResolvedFeedOptionsMap } from './options'
-import { FeedPage } from './page'
-import { compareDate, logger } from './utils'
+import type { FeedPluginFrontmatter } from '../shared/index.js'
+import { Feed } from './feed.js'
+import { getFeedChannelOption, getFeedLinks, getFilename } from './options.js'
+import type { ResolvedFeedOptionsMap } from './options.js'
+import { FeedPage } from './page.js'
+import { compareDate, logger } from './utils.js'
 
 export class FeedGenerator {
   /** feed 生成器 */

@@ -1,7 +1,7 @@
 import type { Page } from '@vuepress/core'
 import type { GitPluginPageData } from '@vuepress/plugin-git'
-import { getDate, timeTransformer } from '../../shared'
-import type { DateOptions } from '../../shared'
+import { getDate, timeTransformer } from '../../shared/index.js'
+import type { DateOptions } from '../../shared/index.js'
 
 export const injectLocalizedDate = (
   page: Page<{ localizedDate?: string } & Partial<GitPluginPageData>>,

@@ -1,5 +1,5 @@
-import ant from './ant'
-import vue from './vue'
+import ant from './ant.js'
+import vue from './vue.js'
 
 export default {
   ant,

@@ -5,7 +5,7 @@ import PageCategory from './PageCategory.vue'
 import PageDate from './PageDate.vue'
 import PageReadingTime from './PageReadingTime.vue'
 import PageTag from './PageTag.vue'
-import PageTitle from './PageTitle'
+import PageTitle from './PageTitle.js'
 import PageView from './PageView.vue'
 import PageWord from './PageWord.vue'
 

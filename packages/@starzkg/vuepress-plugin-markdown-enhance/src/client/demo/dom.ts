@@ -1,5 +1,5 @@
-import type { Code, CodeType } from './typings'
-import { h, injectCSS, injectScript } from './utils'
+import type { Code, CodeType } from './typings.js'
+import { h, injectCSS, injectScript } from './utils.js'
 
 export const select = (
   node: Element | Document,

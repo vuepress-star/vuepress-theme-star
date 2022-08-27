@@ -1,5 +1,5 @@
-import { elementPlusPlugin } from './elementPlusPlugin'
+import { elementPlusPlugin } from './elementPlusPlugin.js'
 
-export * from './elementPlusPlugin'
+export * from './elementPlusPlugin.js'
 
 export default elementPlusPlugin

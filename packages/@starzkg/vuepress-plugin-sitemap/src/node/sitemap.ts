@@ -9,7 +9,7 @@ import type {
   SitemapLinkOption,
   SitemapOptions,
   SitemapVideoOption,
-} from '../shared'
+} from '../shared/index.js'
 
 interface SitemapPageInfo {
   lastmod: string

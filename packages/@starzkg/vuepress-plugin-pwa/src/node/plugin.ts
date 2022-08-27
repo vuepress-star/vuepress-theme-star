@@ -7,12 +7,12 @@ import {
 import type { PluginFunction } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
-import type { PWAOptions } from '../shared'
-import { generateManifest, getManifest } from './generateManifest'
-import { generateServiceWorker } from './generateServiceWorker'
-import { appendBase } from './helper'
-import { injectLinkstoHead } from './injectHead'
-import { pwaLocales } from './locales'
+import type { PWAOptions } from '../shared/index.js'
+import { generateManifest, getManifest } from './generateManifest.js'
+import { generateServiceWorker } from './generateServiceWorker.js'
+import { appendBase } from './helper.js'
+import { injectLinkstoHead } from './injectHead.js'
+import { pwaLocales } from './locales.js'
 
 export const pwaPlugin =
   (options: PWAOptions = {}): PluginFunction =>

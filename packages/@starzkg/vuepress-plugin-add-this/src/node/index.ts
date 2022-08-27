@@ -1,8 +1,8 @@
 import type { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import type { AddThisPluginOptions } from '../shared'
+import type { AddThisPluginOptions } from '../shared/index.js'
 
-export * from '../shared'
+export * from '../shared/index.js'
 
 const addThisPlugin =
   (options: AddThisPluginOptions): Plugin =>

@@ -1,13 +1,12 @@
 import type { App } from '@vuepress/core'
-import containerPlugin, {
-  ContainerPluginOptions,
-} from '@vuepress/plugin-container'
-import type { MarkdownEnhanceOptions } from '../../../shared'
-import { resolveAlignContainerOptions } from './align'
-import { resolveCodeDemoContainerOptions } from './code-demo'
-import { resolveComponentContainerOptions } from './component'
-import { resolveDetailsContainerOptions } from './details'
-import { resolveVPreContainerOptions } from './v-pre'
+import type { ContainerPluginOptions } from '@vuepress/plugin-container'
+import { containerPlugin } from '@vuepress/plugin-container'
+import type { MarkdownEnhanceOptions } from '../../../shared/index.js'
+import { resolveAlignContainerOptions } from './align.js'
+import { resolveCodeDemoContainerOptions } from './code-demo.js'
+import { resolveComponentContainerOptions } from './component.js'
+import { resolveDetailsContainerOptions } from './details.js'
+import { resolveVPreContainerOptions } from './v-pre.js'
 
 export {
   resolveAlignContainerOptions,

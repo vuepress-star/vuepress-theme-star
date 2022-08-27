@@ -4,7 +4,7 @@ import type {
   ForInlinePluginOptions,
   MarkdownEnhanceOptions,
   MarkdownFavor,
-} from '../shared'
+} from '../shared/index.js'
 import {
   abbr,
   cjkBreaks,
@@ -21,9 +21,9 @@ import {
   sub,
   sup,
   tasklist,
-} from './markdown-it'
-import { usePlugins } from './plugins'
-import { assignDefaultMarkdownEnhanceOptions } from './utils'
+} from './markdown-it/index.js'
+import { usePlugins } from './plugins/index.js'
+import { assignDefaultMarkdownEnhanceOptions } from './utils/index.js'
 
 export const markdownEnhancePlugin =
   (options: MarkdownEnhanceOptions | MarkdownFavor | boolean = true): Plugin =>
@@ -60,16 +60,16 @@ export const markdownEnhancePlugin =
       alias: {
         '@FlowChart': flowchartEnable
           ? path.resolve(__dirname, '../client/components/FlowChart.vue')
-          : '@starzkg/vuepress-shared/es/client/noopModule.js',
+          : '@starzkg/vuepress-shared/client/noopModule.js',
         '@Mermaid': mermaidEnable
           ? path.resolve(__dirname, '../client/components/MermaidChart.js')
-          : '@starzkg/vuepress-shared/es/client/noopModule.js',
+          : '@starzkg/vuepress-shared/client/noopModule.js',
         '@Presentation': presentationEnable
           ? path.resolve(
               __dirname,
               '../client/components/PresentationViewer.js'
             )
-          : '@starzkg/vuepress-shared/es/client/noopModule.js',
+          : '@starzkg/vuepress-shared/client/noopModule.js',
       },
 
       define: (): Record<string, unknown> => ({

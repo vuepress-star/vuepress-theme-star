@@ -1,1 +1,1 @@
-export * from './code-group'
+export * from './code-group/index.js'

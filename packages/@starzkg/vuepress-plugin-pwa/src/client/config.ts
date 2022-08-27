@@ -1,11 +1,15 @@
 import { defineClientConfig } from '@vuepress/client'
 import mitt from 'mitt'
 import { onMounted, provide } from 'vue'
-import { pwaEventSymbol, useForceUpdate, useRegister } from './composables'
-import type { PWAEvent } from './composables'
-import PWAInstall from './global-components/PWAInstall'
-import SWHintPopup from './global-components/SWHintPopup'
-import SWUpdatePopup from './global-components/SWUpdatePopup'
+import {
+  pwaEventSymbol,
+  useForceUpdate,
+  useRegister,
+} from './composables/index.js'
+import type { PWAEvent } from './composables/index.js'
+import PWAInstall from './global-components/PWAInstall.js'
+import SWHintPopup from './global-components/SWHintPopup.js'
+import SWUpdatePopup from './global-components/SWUpdatePopup.js'
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_SSR__: boolean

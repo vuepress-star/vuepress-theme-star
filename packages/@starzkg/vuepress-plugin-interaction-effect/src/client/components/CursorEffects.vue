@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Boom } from '../utils/mouse'
+import { Boom } from '../utils/mouse/index.js'
 
 interface CursorEffect {
   shape: string

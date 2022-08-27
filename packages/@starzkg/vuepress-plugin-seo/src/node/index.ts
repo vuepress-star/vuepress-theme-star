@@ -1,10 +1,15 @@
 import { resolvePagePermalink } from '@vuepress/core'
 import type { Plugin } from '@vuepress/core'
-import type { ExtendPage, PageSeoInfo, SeoContent, SeoOptions } from '../shared'
-import { appendSEO } from './appendHead'
-import { generateRobotsTxt, generateSeo } from './seo'
+import type {
+  ExtendPage,
+  PageSeoInfo,
+  SeoContent,
+  SeoOptions,
+} from '../shared/index.js'
+import { appendSEO } from './appendHead.js'
+import { generateRobotsTxt, generateSeo } from './seo.js'
 
-export * from '../shared'
+export * from '../shared/index.js'
 
 export const seoPlugin =
   (options: SeoOptions = {}): Plugin =>

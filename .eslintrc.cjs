@@ -11,13 +11,12 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.ts', '*.vue'],
+      files: ['*.ts', '*.vue', '*.cts'],
       extends: 'vuepress-typescript',
       parserOptions: {
         project: ['tsconfig.json'],
       },
       rules: {
-        '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-var-requires': 'off',
@@ -32,12 +31,13 @@ module.exports = {
       },
     },
     {
-      files: ['**/__tests__/**/*.ts'],
+      files: ['**/tests/**/*.ts', 'tsup.config.ts'],
       env: {
         jest: true,
       },
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
+        'import/no-extraneous-dependencies': 'off',
         'vue/one-component-per-file': 'off',
       },
     },

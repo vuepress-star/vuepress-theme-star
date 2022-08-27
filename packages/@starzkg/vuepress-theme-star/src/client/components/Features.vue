@@ -2,7 +2,7 @@
 import { usePageFrontmatter } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
-import type { StarThemeHomePageFrontmatter } from '../../shared'
+import type { StarThemeHomePageFrontmatter } from '../../shared/index.js'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const features = computed(() => {

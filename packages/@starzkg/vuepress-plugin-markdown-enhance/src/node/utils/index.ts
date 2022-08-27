@@ -1,1 +1,1 @@
-export * from './assignDefaultMarkdownEnhanceOptions'
+export * from './assignDefaultMarkdownEnhanceOptions.js'

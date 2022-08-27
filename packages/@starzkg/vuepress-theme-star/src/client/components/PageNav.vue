@@ -7,8 +7,8 @@ import type {
   NavLink,
   ResolvedSidebarItem,
   StarThemeNormalPageFrontmatter,
-} from '../../shared'
-import { useNavLink, useSidebarItems } from '../composables'
+} from '../../shared/index.js'
+import { useNavLink, useSidebarItems } from '../composables/index.js'
 import AutoLink from './AutoLink.vue'
 
 /**

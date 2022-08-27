@@ -4,8 +4,12 @@ import { isLinkHttp, isString } from '@vuepress/shared'
 import { computed } from 'vue'
 import type { ComputedRef } from 'vue'
 import { useRouter } from 'vue-router'
-import type { NavbarGroup, NavbarItem, ResolvedNavbarItem } from '../../shared'
-import { useNavLink, useThemeLocaleData } from '../composables'
+import type {
+  NavbarGroup,
+  NavbarItem,
+  ResolvedNavbarItem,
+} from '../../shared/index.js'
+import { useNavLink, useThemeLocaleData } from '../composables/index.js'
 import { resolveRepoType } from '../utils'
 import AutoLink from './AutoLink.vue'
 import NavbarDropdown from './NavbarDropdown.vue'

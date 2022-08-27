@@ -1,14 +1,14 @@
 import { encodeCDATA, encodeXML } from '@starzkg/vuepress-shared'
 import { js2xml } from 'xml-js'
-import type { FeedAuthor, FeedCategory } from '../../shared'
-import type { Feed } from '../feed'
-import { FEED_GENERATOR } from '../utils'
+import type { FeedAuthor, FeedCategory } from '../../shared/index.js'
+import type { Feed } from '../feed.js'
+import { FEED_GENERATOR } from '../utils.js'
 import type {
   AtomAuthor,
   AtomCategory,
   AtomContent,
   AtomEntry,
-} from './typings'
+} from './typings.js'
 
 const genAuthororContributor = (author: FeedAuthor): AtomAuthor => {
   const { name, email, url } = author

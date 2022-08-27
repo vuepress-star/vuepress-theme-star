@@ -2,11 +2,8 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "types": ["@vuepress/client/types", "@types/jest"]
   },
-  "references": [
-    { "path": "./tsconfig.cjs.json" },
-    { "path": "./tsconfig.esm.json" }
-  ],
-  "files": []
+  "include": ["./src"]
 }

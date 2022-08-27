@@ -2,10 +2,10 @@ import type {
   FeedContributor,
   FeedInitOptions,
   FeedItemOption,
-} from '../shared'
-import { renderAtom } from './atom'
-import { renderJSON } from './json'
-import { renderRSS } from './rss'
+} from '../shared/index.js'
+import { renderAtom } from './atom/index.js'
+import { renderJSON } from './json/index.js'
+import { renderRSS } from './rss/index.js'
 
 export class Feed {
   items: FeedItemOption[] = []

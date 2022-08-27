@@ -1,5 +1,5 @@
 import type * as PhotoSwipe from 'photoswipe'
-import type { PhowoSwipeLocaleConfig } from '../shared'
+import type { PhowoSwipeLocaleConfig } from '../shared/index.js'
 
 declare const IMAGE_SELECTOR: string
 declare const PHOTOSWIPE_DELAY: number

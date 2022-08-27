@@ -1,6 +1,6 @@
-import { copyrightPlugin } from './copyrightPlugin'
+import { copyrightPlugin } from './copyrightPlugin.js'
 
-export * from './copyrightPlugin'
-export * from '../shared'
+export * from './copyrightPlugin.js'
+export * from '../shared/index.js'
 
 export default copyrightPlugin

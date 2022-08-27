@@ -1,4 +1,4 @@
-import type { StarThemeLocaleOptions } from '../../shared'
+import type { StarThemeLocaleOptions } from '../../shared/index.js'
 
 export const en: StarThemeLocaleOptions = {
   // color mode
@@ -35,6 +35,6 @@ export const en: StarThemeLocaleOptions = {
 
   // a11y
   openInNewWindow: 'open in new window',
-  toggleDarkMode: 'toggle dark mode',
+  toggleColorMode: 'toggle dark mode',
   toggleSidebar: 'toggle sidebar',
 }

@@ -1,5 +1,5 @@
 import type { LocaleConfig } from '@vuepress/core'
-import type { CopyCodeI18nConfig } from './locales'
+import type { CopyCodeI18nConfig } from './locales.js'
 
 export interface CopyCodeOptions {
   /**

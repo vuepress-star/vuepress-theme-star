@@ -1,1 +1,1 @@
-export { Boom } from './click'
+export { Boom } from './click/index.js'

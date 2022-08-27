@@ -2,8 +2,8 @@
 import { getDate, Logger } from '@starzkg/vuepress-shared'
 import type { AppDir } from '@vuepress/core'
 import { fs } from '@vuepress/utils'
-import type { PageSeoInfo, SeoContent, SeoOptions } from '../shared'
-import { getLocales, resolveUrl } from './utils'
+import type { PageSeoInfo, SeoContent, SeoOptions } from '../shared/index.js'
+import { getLocales, resolveUrl } from './utils.js'
 
 const logger = new Logger('Seo')
 

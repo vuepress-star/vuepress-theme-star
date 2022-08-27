@@ -17,9 +17,9 @@ import type {
   FeedItemOption,
   FeedOptions,
   FeedPluginFrontmatter,
-} from '../shared'
-import type { Feed } from './feed'
-import { getImageMineType, resolveHTML, resolveUrl } from './utils'
+} from '../shared/index.js'
+import type { Feed } from './feed.js'
+import { getImageMineType, resolveHTML, resolveUrl } from './utils.js'
 
 export class FeedPage {
   private pageFeedOptions: FeedFrontmatterOption

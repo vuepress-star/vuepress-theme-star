@@ -1,7 +1,10 @@
 import Clipboard from '@clipboardComponent'
 import { defineClientConfig } from '@vuepress/client'
 import { createApp, h } from 'vue'
-import type { CopyrightLocaleConfig, CopyrightOptions } from '../shared'
+import type {
+  CopyrightLocaleConfig,
+  CopyrightOptions,
+} from '../shared/index.js'
 
 declare const COPYRIGHT_OPTIONS: Required<CopyrightOptions>
 declare const COPYRIGHT_I18N: CopyrightLocaleConfig

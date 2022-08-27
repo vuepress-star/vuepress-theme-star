@@ -1,1 +1,1 @@
-export * from './classification'
+export * from './classification.js'

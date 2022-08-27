@@ -1,4 +1,4 @@
-import type { SitemapImageOption, SitemapVideoOption } from './sitemap'
+import type { SitemapImageOption, SitemapVideoOption } from './sitemap.js'
 
 export interface SitemapFrontmatterOption {
   /**

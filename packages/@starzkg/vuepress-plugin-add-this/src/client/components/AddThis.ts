@@ -1,6 +1,6 @@
 import { defineComponent, h, onMounted } from 'vue'
 import type { VNode } from 'vue'
-import { pubID } from '../define'
+import { pubID } from '../define.js'
 
 export default defineComponent({
   name: 'AddThis',

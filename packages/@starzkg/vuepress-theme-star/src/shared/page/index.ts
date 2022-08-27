@@ -1,3 +1,3 @@
-export * from './page'
-export * from './normal'
-export * from './home'
+export * from './page.js'
+export * from './normal.js'
+export * from './home.js'

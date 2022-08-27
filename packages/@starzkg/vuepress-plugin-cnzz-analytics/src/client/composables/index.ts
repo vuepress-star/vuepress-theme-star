@@ -1,1 +1,1 @@
-export * from './useCnzzAnalytics'
+export * from './useCnzzAnalytics.js'

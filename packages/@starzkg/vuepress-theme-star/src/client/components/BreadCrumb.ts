@@ -2,8 +2,7 @@ import { usePageFrontmatter, usePagesData } from '@vuepress/client'
 import { computed, defineComponent, h, onMounted, ref, watch } from 'vue'
 import type { VNode } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { getLinks } from '../composables'
-import { useIconPrefix } from '../composables/useIconPrefix'
+import { getLinks, useIconPrefix } from '../composables/index.js'
 
 interface BreadCrumbConfig {
   title: string
@@ -41,9 +40,15 @@ export default defineComponent({
 
       // generate breadcrumb config
       for (let i = 1; i < links.length; i++) {
+        if (pages === undefined) {
+          continue
+        }
         for (const key in pages) {
-          // @ts-ignore
-          const page = await pages[key]()
+          const page1 = pages[key]
+          if (page1 === undefined) {
+            continue
+          }
+          const page = await page1()
           if (page.path === links[i]) {
             breadcrumbConfig.push({
               title: page.title,

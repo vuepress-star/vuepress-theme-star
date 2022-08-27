@@ -1,1 +1,1 @@
-export const noopModule = '@starzkg/vuepress-shared/es/client/noopModule.js'
+export const noopModule = '@starzkg/vuepress-shared/client/noopModule.js'

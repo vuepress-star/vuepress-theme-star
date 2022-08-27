@@ -1,6 +1,8 @@
 import type { Plugin } from '@vuepress/core'
-import type { SitemapOptions } from '../shared'
-import { generateSiteMap, logger } from './sitemap'
+import type { SitemapOptions } from '../shared/index.js'
+import { generateSiteMap, logger } from './sitemap.js'
+
+export type { SitemapOptions }
 
 export const sitemapPlugin =
   (options: SitemapOptions = { hostname: 'localhost' }): Plugin =>

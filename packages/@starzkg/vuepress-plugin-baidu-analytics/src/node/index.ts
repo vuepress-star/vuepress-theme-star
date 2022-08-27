@@ -1,5 +1,5 @@
-import { baiduAnalyticsPlugin } from './baiduAnalyticsPlugin'
+import { baiduAnalyticsPlugin } from './baiduAnalyticsPlugin.js'
 
-export * from './baiduAnalyticsPlugin'
+export * from './baiduAnalyticsPlugin.js'
 
 export default baiduAnalyticsPlugin

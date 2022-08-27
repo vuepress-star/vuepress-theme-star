@@ -1,7 +1,7 @@
 import type { ViteBundlerOptions } from '@vuepress/bundler-vite'
 import type { App } from '@vuepress/core'
-import { detectPackageManager } from '../utils'
-import { mergeViteConfig } from './mergeViteConfig'
+import { detectPackageManager } from '../utils/index.js'
+import { mergeViteConfig } from './mergeViteConfig.js'
 
 export interface ViteCommonOptions {
   app: App

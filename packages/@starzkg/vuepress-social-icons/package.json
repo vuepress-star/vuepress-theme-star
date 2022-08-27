@@ -23,6 +23,11 @@
     "url": "https://shentuzhigang.cn"
   },
   "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
   "main": "lib/index.js",
   "unpkg": "lib/index.js",
   "module": "es/index.js",
@@ -43,7 +48,7 @@
     "chalk": "^4.1.2",
     "ora": "^5.4.1",
     "svgo": "^2.3.1",
-    "vue": "^3.2.36"
+    "vue": "^3.2.37"
   },
   "publishConfig": {
     "access": "public"

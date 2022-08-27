@@ -7,8 +7,8 @@ import {
   LocaleConfig,
   resolveLocalePath,
 } from '@vuepress/shared'
-import type Token from 'markdown-it/lib/token'
-import type { MarkdownEnhanceOptions } from '../../../shared'
+import type Token from 'markdown-it/lib/token.js'
+import type { MarkdownEnhanceOptions } from '../../../shared/index.js'
 
 export const detailsRender =
   (

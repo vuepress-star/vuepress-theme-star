@@ -1,9 +1,9 @@
-import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/client'
 import { computed, defineComponent, h, onMounted, ref, Transition } from 'vue'
 import type { VNode } from 'vue'
-import { UpdateIcon } from '../components/icons'
-import { usePWAEvent, useSkipWaiting } from '../composables'
-import { locales } from '../define'
+import { UpdateIcon } from '../components/icons.js'
+import { usePWAEvent, useSkipWaiting } from '../composables/index.js'
+import { locales } from '../define.js'
 
 import '../styles/popup.scss'
 

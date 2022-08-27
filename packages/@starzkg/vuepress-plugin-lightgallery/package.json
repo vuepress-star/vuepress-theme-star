@@ -23,6 +23,12 @@
     "email": "shentuzhigang@shentuzhigang.cn",
     "url": "https://shentuzhigang.cn"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
@@ -34,12 +40,12 @@
     "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48",
-    "lightgallery": "^2.3.0",
-    "vue": "^3.2.36",
-    "vue-router": "^4.0.16",
+    "@vuepress/client": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/utils": "2.0.0-beta.50",
+    "lightgallery": "^2.5.0",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.4",
     "vuepress-plugin-sass-palette": "2.0.0-beta.79"
   },
   "publishConfig": {

@@ -1,5 +1,5 @@
-import { interactionEffectPlugin } from './interactionEffectPlugin'
+import { interactionEffectPlugin } from './interactionEffectPlugin.js'
 
-export * from './interactionEffectPlugin'
+export * from './interactionEffectPlugin.js'
 
 export default interactionEffectPlugin

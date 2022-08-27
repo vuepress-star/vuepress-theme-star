@@ -24,6 +24,12 @@
     "email": "shentuzhigang@shentuzhigang.cn",
     "url": "https://shentuzhigang.cn"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
@@ -34,9 +40,9 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48"
+    "@vuepress/client": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/utils": "2.0.0-beta.50"
   },
   "publishConfig": {
     "access": "public"

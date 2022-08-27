@@ -8,7 +8,7 @@ import type { App } from '@vuepress/core'
 import { removeEndingSlash, removeLeadingSlash } from '@vuepress/shared'
 import type { HandleFunction } from 'connect'
 import type { Plugin } from 'vite'
-import { mergeViteConfig } from './vite'
+import { mergeViteConfig } from './vite/index.js'
 
 /**
  * Handle specific path when runing VuePress DevServe

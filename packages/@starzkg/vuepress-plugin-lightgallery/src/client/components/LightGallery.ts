@@ -1,10 +1,10 @@
 import lightGallery from 'lightgallery'
-import type { LightGallerySettings } from 'lightgallery/lg-settings'
-import type { GalleryItem } from 'lightgallery/lg-utils'
-import type { LgQuery } from 'lightgallery/lgQuery'
-import type { LightGallery } from 'lightgallery/lightgallery'
-import { defineComponent, h, onMounted, onUnmounted, ref, watch } from 'vue'
+import type { LightGallerySettings } from 'lightgallery/lg-settings.js'
+import type { GalleryItem } from 'lightgallery/lg-utils.js'
+import type { LgQuery } from 'lightgallery/lgQuery.js'
+import type { LightGallery } from 'lightgallery/lightgallery.js'
 import type { VNode } from 'vue'
+import { defineComponent, h, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import 'lightgallery/scss/lightgallery.scss'
@@ -24,10 +24,10 @@ const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
   images.map(
     ({ alt, srcset, src }) =>
       ({
-        alt: alt,
-        src: src,
+        alt,
+        src,
         thumb: src || srcset,
-        srcset: srcset,
+        srcset,
         subHtml: alt,
       } as GalleryItem)
   )
@@ -55,37 +55,39 @@ export default defineComponent({
     const pluginsStyles: unknown[] = []
 
     if (LIGHT_GALLERY_AUTOPLAY) {
-      plugins.push(import('lightgallery/plugins/autoplay'))
+      plugins.push(import('lightgallery/plugins/autoplay/lg-autoplay.min.js'))
       pluginsStyles.push(import('lightgallery/scss/lg-autoplay.scss'))
     }
 
     if (LIGHT_GALLERY_FULLSCREEN) {
-      plugins.push(import('lightgallery/plugins/fullscreen'))
+      plugins.push(
+        import('lightgallery/plugins/fullscreen/lg-fullscreen.min.js')
+      )
       pluginsStyles.push(import('lightgallery/scss/lg-fullscreen.scss'))
     }
 
     if (LIGHT_GALLERY_PAGER) {
-      plugins.push(import('lightgallery/plugins/pager'))
+      plugins.push(import('lightgallery/plugins/pager/lg-pager.min.js'))
       pluginsStyles.push(import('lightgallery/scss/lg-pager.scss'))
     }
 
     if (LIGHT_GALLERY_ROTATE) {
-      plugins.push(import('lightgallery/plugins/rotate'))
+      plugins.push(import('lightgallery/plugins/rotate/lg-rotate.min.js'))
       pluginsStyles.push(import('lightgallery/scss/lg-rotate.scss'))
     }
 
     if (LIGHT_GALLERY_SHARE) {
-      plugins.push(import('lightgallery/plugins/share'))
+      plugins.push(import('lightgallery/plugins/share/lg-share.min.js'))
       pluginsStyles.push(import('lightgallery/scss/lg-share.scss'))
     }
 
     if (LIGHT_GALLERY_THUMBNAIL) {
-      plugins.push(import('lightgallery/plugins/thumbnail'))
+      plugins.push(import('lightgallery/plugins/thumbnail/lg-thumbnail.min.js'))
       pluginsStyles.push(import('lightgallery/scss/lg-thumbnail.scss'))
     }
 
     if (LIGHT_GALLERY_ZOOM) {
-      plugins.push(import('lightgallery/plugins/zoom'))
+      plugins.push(import('lightgallery/plugins/zoom/lg-zoom.min.js'))
       pluginsStyles.push(import('lightgallery/scss/lg-zoom.scss'))
     }
 
@@ -104,14 +106,17 @@ export default defineComponent({
             document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
           )
 
-          instance.value = lightGallery(container.value as HTMLElement, {
-            ...LIGHT_GALLERY_OPTIONS,
-            dynamic: true,
-            dynamicEl: getImages(images),
-            // this is a licenseKey to make this project under MIT, special thanks to @Sachin
-            licenseKey: 'VSY7R-J@WED-CJY76-UMDXQ',
-            plugins: plugins.map(({ default: plugin }) => plugin),
-          })
+          instance.value = lightGallery.default(
+            container.value as HTMLElement,
+            {
+              ...LIGHT_GALLERY_OPTIONS,
+              dynamic: true,
+              dynamicEl: getImages(images),
+              // this is a licenseKey to make this project under MIT, special thanks to @Sachin
+              licenseKey: 'VSY7R-J@WED-CJY76-UMDXQ',
+              plugins: plugins.map(({ default: plugin }) => plugin),
+            }
+          )
 
           images.forEach((image, index) => {
             image.addEventListener('click', () => {

@@ -1,3 +1,3 @@
-export * from './frontmatter'
-export * from './options'
-export * from './locales'
+export * from './frontmatter.js'
+export * from './options.js'
+export * from './locales.js'

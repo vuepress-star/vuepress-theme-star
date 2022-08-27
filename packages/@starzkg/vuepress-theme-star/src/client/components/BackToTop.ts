@@ -1,7 +1,7 @@
 import { debounce } from 'ts-debounce'
 import { computed, defineComponent, h, onMounted, ref, Transition } from 'vue'
-import { BackToTop } from '../icons'
-import { getScrollTop, scrollToTop } from '../utils'
+import { BackToTop } from '../icons/index.js'
+import { getScrollTop, scrollToTop } from '../utils/index.js'
 
 export default defineComponent({
   name: 'BackToTop',

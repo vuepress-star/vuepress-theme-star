@@ -1,9 +1,9 @@
 import type { Plugin } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
-import type { LightGalleryOptions } from '../shared'
+import type { LightGalleryOptions } from '../shared/index.js'
 
-export * from '../shared'
+export * from '../shared/index.js'
 
 const lightGalleryPlugin =
   (options: LightGalleryOptions): Plugin =>

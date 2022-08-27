@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { usePageData, usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import type { StarThemePageFrontmatter } from '../../shared'
+import type { StarThemePageFrontmatter } from '../../shared/index.js'
 import Content from '../components/Content.vue'
 import Navbar from '../components/Navbar.vue'
 import PageInfo from '../components/PageInfo'
@@ -14,20 +14,17 @@ import {
   useScrollPromise,
   useSidebarItems,
   useThemeLocaleData,
-} from '../composables'
+} from '../composables/index.js'
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
 
-const page = usePageData()
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
 
 // navbar
-const shouldShowNavbar = computed(
-  () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
-)
+const shouldShowNavbar = computed(() => themeLocale.value.navbar !== false)
 
 // sidebar
 const sidebarItems = useSidebarItems()

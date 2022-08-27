@@ -1,9 +1,9 @@
-import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/client'
 import { computed, defineComponent, h, onMounted, ref } from 'vue'
 import type { VNode } from 'vue'
-import type { ManifestRelatedApps } from '../../shared'
-import PWAInstallModal from '../components/PWAInstallModal'
-import { locales } from '../define'
+import type { ManifestRelatedApps } from '../../shared/index.js'
+import PWAInstallModal from '../components/PWAInstallModal.js'
+import { locales } from '../define.js'
 
 import '../styles/modal.scss'
 

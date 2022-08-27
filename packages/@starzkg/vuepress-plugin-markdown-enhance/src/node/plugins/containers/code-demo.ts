@@ -1,7 +1,7 @@
 import type { ContainerPluginOptions } from '@vuepress/plugin-container'
 import { hash } from '@vuepress/utils'
-import type Token from 'markdown-it/lib/token'
-import type { MarkdownEnhanceOptions } from '../../../shared'
+import type Token from 'markdown-it/lib/token.js'
+import type { MarkdownEnhanceOptions } from '../../../shared/index.js'
 
 export const codeDemoRender = (tokens: Token[], index: number): string => {
   const { nesting, info } = tokens[index]

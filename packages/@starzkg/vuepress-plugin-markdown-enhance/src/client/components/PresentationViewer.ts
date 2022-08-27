@@ -2,7 +2,7 @@ import { usePageFrontmatter } from '@vuepress/client'
 import type { RevealOptions } from 'reveal.js'
 import { defineComponent, h, onMounted, ref } from 'vue'
 import type { PropType, VNode } from 'vue'
-import { LoadingIcon } from './icons'
+import { LoadingIcon } from './icons.js'
 
 declare const MARKDOWN_DELAY: number
 declare const REVEAL_CONFIG: Partial<RevealOptions>
@@ -50,7 +50,6 @@ export default defineComponent({
         presentationElement.value.setAttribute('id', props.id)
         presentationElement.value.setAttribute('data-theme', props.theme)
 
-        // @ts-ignore
         const promises: [
           Promise<void>,
           Promise<typeof import(/* webpackChunkName: "reveal" */ 'reveal.js')>
@@ -122,15 +121,12 @@ export default defineComponent({
         //   );
 
         Promise.all(promises).then(([, revealJS, ...plugins]) => {
-          // @ts-ignore
-          const reveal = revealJS.default(
-            presentationElement.value as HTMLElement,
-            {
-              plugins: plugins.map(
-                (plugin) => (plugin as typeof import('reveal.js')).default
-              ),
-            }
-          )
+          const Reveal = revealJS.default
+          const reveal = new Reveal(presentationElement.value as HTMLElement, {
+            plugins: plugins.map(
+              (plugin) => (plugin as typeof import('reveal.js')).default
+            ),
+          })
 
           reveal
             .initialize({

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { stripTags } from '@starzkg/vuepress-shared'
-import type { FeedAuthor } from '../../shared'
-import type { Feed } from '../feed'
-import type { JSONAuthor, JSONContent, JSONItem } from './typings'
+import type { FeedAuthor } from '../../shared/index.js'
+import type { Feed } from '../feed.js'
+import type { JSONAuthor, JSONContent, JSONItem } from './typings.js'
 
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
   name: author.name as string,

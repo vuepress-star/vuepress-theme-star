@@ -2,8 +2,8 @@
 import { getRootLang } from '@starzkg/vuepress-shared'
 import type { App } from '@vuepress/core'
 import { chalk, fs, path } from '@vuepress/utils'
-import type { ManifestOption, PWAOptions } from '../shared'
-import { logger } from './logger'
+import type { ManifestOption, PWAOptions } from '../shared/index.js'
+import { logger } from './logger.js'
 
 export const getManifest = async (
   app: App,

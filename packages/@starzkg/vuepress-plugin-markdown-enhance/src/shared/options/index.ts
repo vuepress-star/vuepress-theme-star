@@ -1,17 +1,17 @@
 import type { LocaleConfig } from '@vuepress/core'
 import type { MarkdownOptions } from '@vuepress/markdown'
 import type { KatexOptions } from 'katex'
-import type { MarkdownEnhancePluginLocaleData } from '../locales'
-import type { CodeDemoOptions } from './code-demo'
-import type { ForInlinePluginOptions } from './for-inline'
-import type { PresentationOptions } from './presentation'
-import type { TaskListOptions } from './tasklist'
+import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
+import type { CodeDemoOptions } from './code-demo.js'
+import type { ForInlinePluginOptions } from './for-inline.js'
+import type { PresentationOptions } from './presentation.js'
+import type { TaskListOptions } from './tasklist.js'
 
-export * from './for-inline'
-export * from './emoji'
-export * from './code-demo'
-export * from './presentation'
-export * from './tasklist'
+export * from './for-inline.js'
+export * from './emoji.js'
+export * from './code-demo.js'
+export * from './presentation.js'
+export * from './tasklist.js'
 /**
  * markdown-enhance plugin configuration
  */
