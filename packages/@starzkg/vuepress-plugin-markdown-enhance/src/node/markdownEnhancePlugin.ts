@@ -1,5 +1,5 @@
 import type { Plugin } from '@vuepress/core'
-import { logger, path } from '@vuepress/utils'
+import { getDirname, logger, path } from '@vuepress/utils'
 import type {
   ForInlinePluginOptions,
   MarkdownEnhanceOptions,
@@ -24,6 +24,8 @@ import {
 } from './markdown-it/index.js'
 import { usePlugins } from './plugins/index.js'
 import { assignDefaultMarkdownEnhanceOptions } from './utils/index.js'
+
+const __dirname = getDirname(import.meta.url)
 
 export const markdownEnhancePlugin =
   (options: MarkdownEnhanceOptions | MarkdownFavor | boolean = true): Plugin =>

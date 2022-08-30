@@ -177,5 +177,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <canvas id="vuepress-canvas-cursor"></canvas>
+  <ClientOnly>
+    <canvas id="vuepress-canvas-cursor"></canvas>
+  </ClientOnly>
 </template>

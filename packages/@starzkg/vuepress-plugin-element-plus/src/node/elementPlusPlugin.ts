@@ -1,6 +1,8 @@
 import type { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
 import type { Plugin } from '@vuepress/core'
-import { path } from '@vuepress/utils'
+import { getDirname, path } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 export type ElementPlusPluginOptions = Record<never, never>
 

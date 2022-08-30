@@ -1,7 +1,9 @@
 import type { Plugin } from '@vuepress/core'
-import { path } from '@vuepress/utils'
+import { getDirname, path } from '@vuepress/utils'
 import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { LightGalleryOptions } from '../shared/index.js'
+
+const __dirname = getDirname(import.meta.url)
 
 export * from '../shared/index.js'
 

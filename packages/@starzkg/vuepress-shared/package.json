@@ -26,10 +26,10 @@
   "exports": {
     ".": "./lib/node/index.js",
     "./client": "./lib/client/index.js",
+    "./styles/": "./lib/client/styles/",
     "./package.json": "./package.json"
   },
   "main": "lib/node/index.js",
-  "module": "es/client/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
     "es",

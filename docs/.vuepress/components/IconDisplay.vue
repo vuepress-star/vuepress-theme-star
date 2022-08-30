@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import * as Icons from '@starzkg/vuepress-icons/es'
-import { useCopyToClipboard } from '@starzkg/vuepress-shared/es/client'
-import { computed } from 'vue'
+import * as Icons from '@starzkg/vuepress-icons'
+import { useCopyToClipboard } from '@starzkg/vuepress-shared/client'
 
-const icons = computed(() => {
-  return Icons
-})
 const copyIcon = (icon: string): void => {
   useCopyToClipboard(`<${icon} />`)
 }

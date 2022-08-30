@@ -19,6 +19,10 @@
 
 A Vuepress Theme For Building Personal Site ✨
 
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/vuepress-star/vuepress-theme-star.svg)](https://starchart.cc/vuepress-star/vuepress-theme-star)
+
 ## Status: Beta
 
 For users from VuePress v1, please check out the [migration guide](https://v2.vuepress.vuejs.org/guide/migration.html).

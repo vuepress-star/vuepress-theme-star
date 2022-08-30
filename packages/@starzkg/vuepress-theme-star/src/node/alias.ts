@@ -1,5 +1,7 @@
 import type { App } from '@vuepress/core'
-import { fs, path } from '@vuepress/utils'
+import { fs, getDirname, path } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 /**
  * use alias to make all components replaceable

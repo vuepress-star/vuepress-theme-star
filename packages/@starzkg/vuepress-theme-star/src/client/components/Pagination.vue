@@ -1,5 +1,4 @@
 <script lang="ts">
-import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
 import { computed, defineComponent, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 

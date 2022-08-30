@@ -1,7 +1,9 @@
 import type { Plugin } from '@vuepress/core'
-import { path } from '@vuepress/utils'
+import { getDirname, path } from '@vuepress/utils'
 import type { CopyrightOptions } from '../shared/index.js'
 import { i18n } from './i18n.js'
+
+const __dirname = getDirname(import.meta.url)
 
 export type CopyrightPluginOptions = CopyrightOptions
 

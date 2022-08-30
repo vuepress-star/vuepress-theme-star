@@ -13,7 +13,7 @@ import { palettePlugin } from '@vuepress/plugin-palette'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 import { tocPlugin } from '@vuepress/plugin-toc'
-import { path } from '@vuepress/utils'
+import { getDirname, path } from '@vuepress/utils'
 import type {
   StarThemeLocaleOptions,
   StarThemePluginsOptions,
@@ -22,6 +22,9 @@ import { resolveAlias } from './alias.js'
 import { preparePageData } from './preparePageData.js'
 import { prepareSiteData } from './prepareSiteData.js'
 import { assignDefaultLocaleOptions } from './utils/index.js'
+
+const __dirname = getDirname(import.meta.url)
+
 export interface StarThemeOptions extends StarThemeLocaleOptions {
   /**
    * To avoid confusion with the root `plugins` option,
@@ -30,7 +33,7 @@ export interface StarThemeOptions extends StarThemeLocaleOptions {
   themePlugins?: StarThemePluginsOptions
 }
 
-export const theme = ({
+export const starTheme = ({
   themePlugins = {},
   ...localeOptions
 }: StarThemeOptions = {}): Theme => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { useLocaleConfig } from '@starzkg/vuepress-shared/es/client'
+import { useLocaleConfig } from '@starzkg/vuepress-shared/client'
 import { defineComponent, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { getImages } from '../composables/index.js'

@@ -3,7 +3,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
-    "module": "ES2020",
     "paths": {
       "@theme/*": [
         "./packages/@starzkg/vuepress-theme-star/src/client/components/*"
@@ -12,9 +11,14 @@
         "./packages/@starzkg/vuepress-theme-star/src/client/siteData"
       ]
     },
-    "types": ["webpack-env", "vite/client", "@types/jest"]
+    "types": ["webpack-env", "vite/client"]
   },
   "files": [],
-  "include": ["**/.vuepress/**/*", "packages/**/*", "**/__tests__/**/*"],
+  "include": [
+    "**/.vuepress/**/*",
+    "packages/**/*",
+    "**/__tests__/**/*",
+    "vitest.config.ts"
+  ],
   "exclude": ["node_modules", ".temp", "lib", "dist"]
 }

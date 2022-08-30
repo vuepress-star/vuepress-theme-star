@@ -1,9 +1,11 @@
 import { getLocales } from '@starzkg/vuepress-shared'
 import type { Plugin } from '@vuepress/core'
-import { path } from '@vuepress/utils'
+import { getDirname, path } from '@vuepress/utils'
 import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { CopyCodeOptions } from '../shared/index.js'
 import { i18n } from './i18n.js'
+
+const __dirname = getDirname(import.meta.url)
 
 export * from '../shared/index.js'
 

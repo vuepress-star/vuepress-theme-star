@@ -24,13 +24,17 @@
     },
     {
       "path": "../vuepress-plugin-photo-swipe/tsconfig.build.json"
-    },
-    {
-      "path": "./tsconfig.esm.json"
-    },
-    {
-      "path": "./tsconfig.cjs.json"
     }
   ],
-  "files": []
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "types": ["@vuepress/client/types", "webpack-env", "vite/client"],
+    "paths": {
+      "@theme/*": ["./src/client/components/*"],
+      "@internal/siteData": ["./src/client/siteData.d.ts"]
+    }
+  },
+  "include": ["./src"]
 }

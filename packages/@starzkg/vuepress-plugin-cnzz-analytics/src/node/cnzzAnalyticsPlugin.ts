@@ -1,5 +1,7 @@
 import type { Plugin, PluginObject } from '@vuepress/core'
-import { logger, path } from '@vuepress/utils'
+import { getDirname, logger, path } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 /**
  * Options for @starzkg/vuepress-plugin-cnzz-analytics

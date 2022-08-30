@@ -1,9 +1,10 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "references": [
-    { "path": "../vuepress-shared/tsconfig.build.json" },
-    { "path": "./tsconfig.esm.json" },
-    { "path": "./tsconfig.cjs.json" }
-  ],
-  "files": []
+  "references": [{ "path": "../vuepress-shared/tsconfig.build.json" }],
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "types": ["@vuepress/client/types"]
+  },
+  "include": ["./src"]
 }

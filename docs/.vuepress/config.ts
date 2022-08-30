@@ -1,6 +1,6 @@
-import elementPlusPlugin from '@starzkg/vuepress-plugin-element-plus'
+import { elementPlusPlugin } from '@starzkg/vuepress-plugin-element-plus'
 import { addViteOptimizeDepsInclude } from '@starzkg/vuepress-shared'
-import starTheme from '@starzkg/vuepress-theme-star'
+import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'

@@ -1,6 +1,8 @@
 import type { Plugin } from '@vuepress/core'
-import { path } from '@vuepress/utils'
+import { getDirname, path } from '@vuepress/utils'
 import type { AddThisPluginOptions } from '../shared/index.js'
+
+const __dirname = getDirname(import.meta.url)
 
 export * from '../shared/index.js'
 

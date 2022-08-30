@@ -5,7 +5,7 @@ import {
   useCustomDevServer,
 } from '@starzkg/vuepress-shared'
 import type { PluginFunction } from '@vuepress/core'
-import { path } from '@vuepress/utils'
+import { getDirname, path } from '@vuepress/utils'
 import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
 import type { PWAOptions } from '../shared/index.js'
 import { generateManifest, getManifest } from './generateManifest.js'
@@ -13,6 +13,8 @@ import { generateServiceWorker } from './generateServiceWorker.js'
 import { appendBase } from './helper.js'
 import { injectLinkstoHead } from './injectHead.js'
 import { pwaLocales } from './locales.js'
+
+const __dirname = getDirname(import.meta.url)
 
 export const pwaPlugin =
   (options: PWAOptions = {}): PluginFunction =>
