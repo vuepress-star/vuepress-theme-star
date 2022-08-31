@@ -1,4 +1,5 @@
 @use '@starzkg/vuepress-shared/styles/reset';
+@use '@sass-palette/star-config';
 
 @keyframes pwa-opened {
   from {
@@ -107,12 +108,12 @@
 
     animation: 0.15s pwa-opened;
 
-    @media (max-width: hope-config.$laptop) {
+    @media (max-width: star-config.$laptop) {
       width: 92%;
       animation: 0.25s pwa-mobile;
     }
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: star-config.$mobile) {
       overflow-y: scroll;
       max-height: 80%;
 
@@ -125,11 +126,11 @@
   .header {
     margin: 40px 40px 32px;
 
-    @media (max-width: hope-config.$pad) {
+    @media (max-width: star-config.$pad) {
       margin-bottom: 24px;
     }
 
-    @media (max-width: hope-config.$tablet) {
+    @media (max-width: star-config.$tablet) {
       margin: 20px;
     }
 
@@ -154,11 +155,11 @@
       color: var(--dark-gery);
       font-size: 34px;
 
-      @media (max-width: hope-config.$pad) {
+      @media (max-width: star-config.$pad) {
         margin-bottom: 0;
       }
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: star-config.$mobile) {
         font-size: 26px;
       }
     }
@@ -172,23 +173,23 @@
 
       background: #eee;
 
-      @media (max-width: hope-config.$pad) {
+      @media (max-width: star-config.$pad) {
         width: 60px;
         height: 60px;
       }
 
-      @media (max-width: hope-config.$tablet) {
+      @media (max-width: star-config.$tablet) {
         margin-right: 12px;
         padding: 8px;
       }
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: star-config.$mobile) {
         width: 40px;
         height: 40px;
         padding: 6px;
       }
 
-      #{hope-config.$dark-selector} & {
+      #{star-config.$dark-selector} & {
         background: #444;
       }
     }
@@ -204,7 +205,7 @@
       text-overflow: ellipsis;
       white-space: pre-wrap;
 
-      @media (max-width: hope-config.$pad) {
+      @media (max-width: star-config.$pad) {
         display: none;
       }
     }
@@ -215,7 +216,7 @@
     margin: 0 40px;
     color: var(--grey3);
 
-    @media (max-width: hope-config.$tablet) {
+    @media (max-width: star-config.$tablet) {
       margin: 0 20px;
     }
 
@@ -235,7 +236,7 @@
     justify-content: space-around;
     margin-right: 20px;
 
-    @media (max-width: hope-config.$tablet) {
+    @media (max-width: star-config.$tablet) {
       flex-direction: column;
       align-items: flex-start;
       margin-right: 0;
@@ -247,7 +248,7 @@
       font-size: 22px;
       line-height: 225%;
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: star-config.$mobile) {
         margin-bottom: 0;
         font-size: 18px;
       }
@@ -262,7 +263,7 @@
       margin-block-start: 12px;
       padding-inline-start: 22px;
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: star-config.$mobile) {
         margin-top: 0;
       }
     }
@@ -280,7 +281,7 @@
     max-width: 30em;
     max-height: 220px;
 
-    @media (max-width: hope-config.$tablet) {
+    @media (max-width: star-config.$tablet) {
       width: 100%;
     }
 
@@ -299,6 +300,7 @@
         width: 28px;
         fill: #6b6969;
       }
+
       // stylelint-enable selector-max-compound-selectors
     }
   }
@@ -315,7 +317,7 @@
 
     scroll-snap-type: x mandatory;
 
-    @media (max-width: hope-config.$laptop) {
+    @media (max-width: star-config.$laptop) {
       justify-content: center;
     }
 
@@ -340,7 +342,7 @@
       object-fit: contain;
       height: 100%;
 
-      @media (max-width: hope-config.$tablet) {
+      @media (max-width: star-config.$tablet) {
         height: 180px;
       }
     }
@@ -355,7 +357,7 @@
     padding: 1rem 0;
     text-align: right;
 
-    @media (max-width: hope-config.$tablet) {
+    @media (max-width: star-config.$tablet) {
       text-align: center;
     }
   }
@@ -380,7 +382,7 @@
     background: var(--c-brand, #3eaf7c);
     color: var(--white);
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: star-config.$mobile) {
       span {
         display: none;
       }
