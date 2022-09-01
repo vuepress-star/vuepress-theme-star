@@ -3,170 +3,170 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+# [1.0.0-beta.25](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
 
 
 ### Bug Fixes
 
-* feat archive ([d2b3cba](https://github.com/shentuzhigang/vuepress-theme-star/commit/d2b3cbaf722c8a54c7b61dd072743aa67934463b))
-* fix ([3c2f3c2](https://github.com/shentuzhigang/vuepress-theme-star/commit/3c2f3c2d3f0ec9d7b517f4c5accf58dcc3e05e7d))
-* fix ([c8bb8cb](https://github.com/shentuzhigang/vuepress-theme-star/commit/c8bb8cb17cb196d4f2f5a58da3f11fd3185fd5df))
-* home content bounce ([0239c14](https://github.com/shentuzhigang/vuepress-theme-star/commit/0239c1459bfa292dec003b2af0ca4877b1e79895))
+* feat archive ([d2b3cba](https://github.com/vuepress-star/vuepress-theme-star/commit/d2b3cbaf722c8a54c7b61dd072743aa67934463b))
+* fix ([3c2f3c2](https://github.com/vuepress-star/vuepress-theme-star/commit/3c2f3c2d3f0ec9d7b517f4c5accf58dcc3e05e7d))
+* fix ([c8bb8cb](https://github.com/vuepress-star/vuepress-theme-star/commit/c8bb8cb17cb196d4f2f5a58da3f11fd3185fd5df))
+* home content bounce ([0239c14](https://github.com/vuepress-star/vuepress-theme-star/commit/0239c1459bfa292dec003b2af0ca4877b1e79895))
 
 
 ### Features
 
-* archive ([745646e](https://github.com/shentuzhigang/vuepress-theme-star/commit/745646ee221dcc8866a58942165a3d79891657c1))
-* fix ([98fb188](https://github.com/shentuzhigang/vuepress-theme-star/commit/98fb188f68beab80c872ee016f5881bb5eec0ef4))
-* fix home arrow ([07b0ba2](https://github.com/shentuzhigang/vuepress-theme-star/commit/07b0ba2fd2e705b8f8b75ee9f121bc7e28216330))
-* navbar background transparent ([004bbe6](https://github.com/shentuzhigang/vuepress-theme-star/commit/004bbe686d6c9df388809cbcac640cab9020f55b))
-* profile archive ([698a004](https://github.com/shentuzhigang/vuepress-theme-star/commit/698a004d5c5068dcf0f1930004b7b1f54ebc3d79))
-* profile info archive ([bf54c82](https://github.com/shentuzhigang/vuepress-theme-star/commit/bf54c82436a21eb3f70ed1896ca56cb909953698))
+* archive ([745646e](https://github.com/vuepress-star/vuepress-theme-star/commit/745646ee221dcc8866a58942165a3d79891657c1))
+* fix ([98fb188](https://github.com/vuepress-star/vuepress-theme-star/commit/98fb188f68beab80c872ee016f5881bb5eec0ef4))
+* fix home arrow ([07b0ba2](https://github.com/vuepress-star/vuepress-theme-star/commit/07b0ba2fd2e705b8f8b75ee9f121bc7e28216330))
+* navbar background transparent ([004bbe6](https://github.com/vuepress-star/vuepress-theme-star/commit/004bbe686d6c9df388809cbcac640cab9020f55b))
+* profile archive ([698a004](https://github.com/vuepress-star/vuepress-theme-star/commit/698a004d5c5068dcf0f1930004b7b1f54ebc3d79))
+* profile info archive ([bf54c82](https://github.com/vuepress-star/vuepress-theme-star/commit/bf54c82436a21eb3f70ed1896ca56cb909953698))
 
 
 
 
 
-# [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
-
-
-### Features
-
-* add description width ([1896025](https://github.com/shentuzhigang/vuepress-theme-star/commit/189602594c59e20b1c4d81a26c864e99b98a4bcd))
-* home arrow ([51bc462](https://github.com/shentuzhigang/vuepress-theme-star/commit/51bc462dba0210b3669348ac8c6aa3e3b723729f))
-* layout ([49ceb27](https://github.com/shentuzhigang/vuepress-theme-star/commit/49ceb2779e307a1650d548f14fa2adad80a32837))
-* layout background ([cd2de71](https://github.com/shentuzhigang/vuepress-theme-star/commit/cd2de712e864d23e31d37ec6e4ba345884a9566f))
-* photo swipe ([c140c3e](https://github.com/shentuzhigang/vuepress-theme-star/commit/c140c3e129575de62bfcad2ef02af2200ab8ecf8))
-* presentation theme frontmatter ([de5e43d](https://github.com/shentuzhigang/vuepress-theme-star/commit/de5e43df7187723dc004065d04f1c82fde753f1a))
-* profile ([6f51b95](https://github.com/shentuzhigang/vuepress-theme-star/commit/6f51b95b8d9aaed8705353e6d264149ec2f56590))
-* sitemap ([586754a](https://github.com/shentuzhigang/vuepress-theme-star/commit/586754a84f3a5ae3e151451cc21e92d0b3c5d60d))
-* update ([44a4408](https://github.com/shentuzhigang/vuepress-theme-star/commit/44a44081fd632e8ed57711f8adbad4c27b3d4233))
-* update vuepress ([528e6aa](https://github.com/shentuzhigang/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
-
-
-
-
-
-# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
-
-
-### Bug Fixes
-
-* **theme-star:** arrows displaying in page nav ([fc2a74b](https://github.com/shentuzhigang/vuepress-theme-star/commit/fc2a74b4b0e0c43ecbdaedea860b1416dbe52f6a))
+# [1.0.0-beta.24](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
 
 
 ### Features
 
-* page title display none ([b6365e5](https://github.com/shentuzhigang/vuepress-theme-star/commit/b6365e524b6090f58f7aee18c788dce75a3cd3a1))
+* add description width ([1896025](https://github.com/vuepress-star/vuepress-theme-star/commit/189602594c59e20b1c4d81a26c864e99b98a4bcd))
+* home arrow ([51bc462](https://github.com/vuepress-star/vuepress-theme-star/commit/51bc462dba0210b3669348ac8c6aa3e3b723729f))
+* layout ([49ceb27](https://github.com/vuepress-star/vuepress-theme-star/commit/49ceb2779e307a1650d548f14fa2adad80a32837))
+* layout background ([cd2de71](https://github.com/vuepress-star/vuepress-theme-star/commit/cd2de712e864d23e31d37ec6e4ba345884a9566f))
+* photo swipe ([c140c3e](https://github.com/vuepress-star/vuepress-theme-star/commit/c140c3e129575de62bfcad2ef02af2200ab8ecf8))
+* presentation theme frontmatter ([de5e43d](https://github.com/vuepress-star/vuepress-theme-star/commit/de5e43df7187723dc004065d04f1c82fde753f1a))
+* profile ([6f51b95](https://github.com/vuepress-star/vuepress-theme-star/commit/6f51b95b8d9aaed8705353e6d264149ec2f56590))
+* sitemap ([586754a](https://github.com/vuepress-star/vuepress-theme-star/commit/586754a84f3a5ae3e151451cc21e92d0b3c5d60d))
+* update ([44a4408](https://github.com/vuepress-star/vuepress-theme-star/commit/44a44081fd632e8ed57711f8adbad4c27b3d4233))
+* update vuepress ([528e6aa](https://github.com/vuepress-star/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
 
 
 
 
 
-# [1.0.0-beta.22](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
+# [1.0.0-beta.23](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 
 ### Bug Fixes
 
-* fix ([d7a6162](https://github.com/shentuzhigang/vuepress-theme-star/commit/d7a61628b181269b5a17ce3c7bac62896d7a545e))
-
-
-
-
-
-# [1.0.0-beta.21](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2021-12-18)
-
-
-### Bug Fixes
-
-* fix ([41423d9](https://github.com/shentuzhigang/vuepress-theme-star/commit/41423d9b4526348a79e52a3623c628e17f62d98c))
+* **theme-star:** arrows displaying in page nav ([fc2a74b](https://github.com/vuepress-star/vuepress-theme-star/commit/fc2a74b4b0e0c43ecbdaedea860b1416dbe52f6a))
 
 
 ### Features
 
-* blog ([6538218](https://github.com/shentuzhigang/vuepress-theme-star/commit/653821879690124ed668a68ef79c780c0f313dde))
-* social icons ([44dd8ae](https://github.com/shentuzhigang/vuepress-theme-star/commit/44dd8aec17f7d72673a0e0a621f7ac989e1192a5))
-* update code ([03d6d8d](https://github.com/shentuzhigang/vuepress-theme-star/commit/03d6d8d41cf8ba3352391ecd0ea589d7a03de628))
+* page title display none ([b6365e5](https://github.com/vuepress-star/vuepress-theme-star/commit/b6365e524b6090f58f7aee18c788dce75a3cd3a1))
 
 
 
 
 
-# [1.0.0-beta.20](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-12-05)
+# [1.0.0-beta.22](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
 
 
 ### Bug Fixes
 
-* fix vite optimizeDeps ([c90dc3d](https://github.com/shentuzhigang/vuepress-theme-star/commit/c90dc3dce56a44e0ab266ec17ad0199cf19b46d2))
+* fix ([d7a6162](https://github.com/vuepress-star/vuepress-theme-star/commit/d7a61628b181269b5a17ce3c7bac62896d7a545e))
 
 
 
 
 
-# [1.0.0-beta.19](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-12-05)
+# [1.0.0-beta.21](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2021-12-18)
+
+
+### Bug Fixes
+
+* fix ([41423d9](https://github.com/vuepress-star/vuepress-theme-star/commit/41423d9b4526348a79e52a3623c628e17f62d98c))
 
 
 ### Features
 
-* breadcrumb ([55a5561](https://github.com/shentuzhigang/vuepress-theme-star/commit/55a5561866ec09fb4694d2ed46af4bfa49453bf9))
-* full screen ([4b19b9f](https://github.com/shentuzhigang/vuepress-theme-star/commit/4b19b9fa3b94894dfa5d7e2f14809405e5bd7be5))
-* page header ([c98421f](https://github.com/shentuzhigang/vuepress-theme-star/commit/c98421fcbc109e18a4de33643e9b750140e247fd))
-* remove element-plus ([00a43ff](https://github.com/shentuzhigang/vuepress-theme-star/commit/00a43ff8e23fea7db9ef43b01a47ad8cda53fe62))
-* toc and fix ([e733afc](https://github.com/shentuzhigang/vuepress-theme-star/commit/e733afc621b774380ec0cb0559a0f254d6b9ced8))
+* blog ([6538218](https://github.com/vuepress-star/vuepress-theme-star/commit/653821879690124ed668a68ef79c780c0f313dde))
+* social icons ([44dd8ae](https://github.com/vuepress-star/vuepress-theme-star/commit/44dd8aec17f7d72673a0e0a621f7ac989e1192a5))
+* update code ([03d6d8d](https://github.com/vuepress-star/vuepress-theme-star/commit/03d6d8d41cf8ba3352391ecd0ea589d7a03de628))
 
 
 
 
 
-# [1.0.0-beta.18](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
-
-
-### Bug Fixes
-
-* fix ExternalLink Icon ([46ebfb3](https://github.com/shentuzhigang/vuepress-theme-star/commit/46ebfb35badfd06c6ae31d91469f86f250bd50fc))
-
-
-
-
-
-# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+# [1.0.0-beta.20](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-12-05)
 
 
 ### Bug Fixes
 
-* **theme-star:** fix mobile ([471de66](https://github.com/shentuzhigang/vuepress-theme-star/commit/471de668ab2768e8adafcc9f4ac8071263b812ed))
-* **theme-star:** windows resize ([acdf7cd](https://github.com/shentuzhigang/vuepress-theme-star/commit/acdf7cd31a109ffefd5336240b4e25cc485172f2))
+* fix vite optimizeDeps ([c90dc3d](https://github.com/vuepress-star/vuepress-theme-star/commit/c90dc3dce56a44e0ab266ec17ad0199cf19b46d2))
+
+
+
+
+
+# [1.0.0-beta.19](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-12-05)
 
 
 ### Features
 
-* copy code ([eb6dce9](https://github.com/shentuzhigang/vuepress-theme-star/commit/eb6dce920b09feac2cf72fad885d6ca208820105))
-* copyright ([8051d61](https://github.com/shentuzhigang/vuepress-theme-star/commit/8051d61432c304855ad50d3349071fcd8e8cfd1c))
-* links ([ba5f197](https://github.com/shentuzhigang/vuepress-theme-star/commit/ba5f19767d41b3449ee88447b43a6390c3b9eb67))
-* reset document home layout ([c9d1707](https://github.com/shentuzhigang/vuepress-theme-star/commit/c9d17075d04a2b7e19910c53e811c83365beea18))
+* breadcrumb ([55a5561](https://github.com/vuepress-star/vuepress-theme-star/commit/55a5561866ec09fb4694d2ed46af4bfa49453bf9))
+* full screen ([4b19b9f](https://github.com/vuepress-star/vuepress-theme-star/commit/4b19b9fa3b94894dfa5d7e2f14809405e5bd7be5))
+* page header ([c98421f](https://github.com/vuepress-star/vuepress-theme-star/commit/c98421fcbc109e18a4de33643e9b750140e247fd))
+* remove element-plus ([00a43ff](https://github.com/vuepress-star/vuepress-theme-star/commit/00a43ff8e23fea7db9ef43b01a47ad8cda53fe62))
+* toc and fix ([e733afc](https://github.com/vuepress-star/vuepress-theme-star/commit/e733afc621b774380ec0cb0559a0f254d6b9ced8))
 
 
 
 
 
-# [1.0.0-beta.16](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-11-16)
+# [1.0.0-beta.18](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
 
 
 ### Bug Fixes
 
-* fix home height ([58efc6b](https://github.com/shentuzhigang/vuepress-theme-star/commit/58efc6b2f4ba25ba8f02490950a3a53b7fae4ab7))
-* **theme-star:** fix home ([9ecfe0d](https://github.com/shentuzhigang/vuepress-theme-star/commit/9ecfe0d4ab36cd45586de983a479e7b0cae3bba6))
+* fix ExternalLink Icon ([46ebfb3](https://github.com/vuepress-star/vuepress-theme-star/commit/46ebfb35badfd06c6ae31d91469f86f250bd50fc))
+
+
+
+
+
+# [1.0.0-beta.17](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+
+
+### Bug Fixes
+
+* **theme-star:** fix mobile ([471de66](https://github.com/vuepress-star/vuepress-theme-star/commit/471de668ab2768e8adafcc9f4ac8071263b812ed))
+* **theme-star:** windows resize ([acdf7cd](https://github.com/vuepress-star/vuepress-theme-star/commit/acdf7cd31a109ffefd5336240b4e25cc485172f2))
 
 
 ### Features
 
-* scrollbar css ([499e05b](https://github.com/shentuzhigang/vuepress-theme-star/commit/499e05bb9f99bcf3cc7402c0d1886afb3496f156))
+* copy code ([eb6dce9](https://github.com/vuepress-star/vuepress-theme-star/commit/eb6dce920b09feac2cf72fad885d6ca208820105))
+* copyright ([8051d61](https://github.com/vuepress-star/vuepress-theme-star/commit/8051d61432c304855ad50d3349071fcd8e8cfd1c))
+* links ([ba5f197](https://github.com/vuepress-star/vuepress-theme-star/commit/ba5f19767d41b3449ee88447b43a6390c3b9eb67))
+* reset document home layout ([c9d1707](https://github.com/vuepress-star/vuepress-theme-star/commit/c9d17075d04a2b7e19910c53e811c83365beea18))
 
 
 
 
 
-# [1.0.0-beta.15](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2021-11-15)
+# [1.0.0-beta.16](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-11-16)
+
+
+### Bug Fixes
+
+* fix home height ([58efc6b](https://github.com/vuepress-star/vuepress-theme-star/commit/58efc6b2f4ba25ba8f02490950a3a53b7fae4ab7))
+* **theme-star:** fix home ([9ecfe0d](https://github.com/vuepress-star/vuepress-theme-star/commit/9ecfe0d4ab36cd45586de983a479e7b0cae3bba6))
+
+
+### Features
+
+* scrollbar css ([499e05b](https://github.com/vuepress-star/vuepress-theme-star/commit/499e05bb9f99bcf3cc7402c0d1886afb3496f156))
+
+
+
+
+
+# [1.0.0-beta.15](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2021-11-15)
 
 **Note:** Version bump only for package @starzkg/vuepress-theme-star
 
@@ -174,48 +174,48 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.14](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-11-15)
+# [1.0.0-beta.14](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-11-15)
 
 
 ### Bug Fixes
 
-* fix ([f944cee](https://github.com/shentuzhigang/vuepress-theme-star/commit/f944ceece7dad6fb332c0bd2d605d10b358b05e4))
-* fix document home ([4660853](https://github.com/shentuzhigang/vuepress-theme-star/commit/4660853a9d7c25e50de58bafc640e3ea47ffbc0b))
-* home full screen ([2e27858](https://github.com/shentuzhigang/vuepress-theme-star/commit/2e278588a0de1b99bf13c58abb678b6a81e5a296))
+* fix ([f944cee](https://github.com/vuepress-star/vuepress-theme-star/commit/f944ceece7dad6fb332c0bd2d605d10b358b05e4))
+* fix document home ([4660853](https://github.com/vuepress-star/vuepress-theme-star/commit/4660853a9d7c25e50de58bafc640e3ea47ffbc0b))
+* home full screen ([2e27858](https://github.com/vuepress-star/vuepress-theme-star/commit/2e278588a0de1b99bf13c58abb678b6a81e5a296))
 
 
 ### Features
 
-* 提取全局组件 ([76313e3](https://github.com/shentuzhigang/vuepress-theme-star/commit/76313e3d4e331cf41d944581bc9890a57062b2e4))
-* document home and fix component name repeat ([def2b2a](https://github.com/shentuzhigang/vuepress-theme-star/commit/def2b2a069aa27191d2f8ef05ba6cdb06cfc4bd1))
-* more pages ([c45bb87](https://github.com/shentuzhigang/vuepress-theme-star/commit/c45bb87060dd27e4ca5a4e6c0a6a75de3dc533d6))
-* remove template ([5e78214](https://github.com/shentuzhigang/vuepress-theme-star/commit/5e782140b2a9f6b9f6f209fb84c3456cbc0255d8))
-* test comment ([c9ba861](https://github.com/shentuzhigang/vuepress-theme-star/commit/c9ba861504c109dfacf99e788a73ed59d342350b))
-* update index.html ([02cfcff](https://github.com/shentuzhigang/vuepress-theme-star/commit/02cfcfffe93c88289c38dbce1533f7082829878a))
-* upload code ([7e9188c](https://github.com/shentuzhigang/vuepress-theme-star/commit/7e9188c95d056aa2e2c5d649026759642450bbab))
+* 提取全局组件 ([76313e3](https://github.com/vuepress-star/vuepress-theme-star/commit/76313e3d4e331cf41d944581bc9890a57062b2e4))
+* document home and fix component name repeat ([def2b2a](https://github.com/vuepress-star/vuepress-theme-star/commit/def2b2a069aa27191d2f8ef05ba6cdb06cfc4bd1))
+* more pages ([c45bb87](https://github.com/vuepress-star/vuepress-theme-star/commit/c45bb87060dd27e4ca5a4e6c0a6a75de3dc533d6))
+* remove template ([5e78214](https://github.com/vuepress-star/vuepress-theme-star/commit/5e782140b2a9f6b9f6f209fb84c3456cbc0255d8))
+* test comment ([c9ba861](https://github.com/vuepress-star/vuepress-theme-star/commit/c9ba861504c109dfacf99e788a73ed59d342350b))
+* update index.html ([02cfcff](https://github.com/vuepress-star/vuepress-theme-star/commit/02cfcfffe93c88289c38dbce1533f7082829878a))
+* upload code ([7e9188c](https://github.com/vuepress-star/vuepress-theme-star/commit/7e9188c95d056aa2e2c5d649026759642450bbab))
 
 
 
 
 
-# [1.0.0-beta.13](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2021-11-10)
+# [1.0.0-beta.13](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2021-11-10)
 
 
 ### Bug Fixes
 
-* fix ([40ad430](https://github.com/shentuzhigang/vuepress-theme-star/commit/40ad4302598edfb9d2373a82329b17a1bbe02b96))
+* fix ([40ad430](https://github.com/vuepress-star/vuepress-theme-star/commit/40ad4302598edfb9d2373a82329b17a1bbe02b96))
 
 
 ### Features
 
-* components star ([8cadebc](https://github.com/shentuzhigang/vuepress-theme-star/commit/8cadebc0bdb54be6cb14d9da91b097d3cebc2d6d))
-* **interaction-effect:** add cursor effect ([8f8dda1](https://github.com/shentuzhigang/vuepress-theme-star/commit/8f8dda188c41cbf5a54518d4773e767f7f878caa))
+* components star ([8cadebc](https://github.com/vuepress-star/vuepress-theme-star/commit/8cadebc0bdb54be6cb14d9da91b097d3cebc2d6d))
+* **interaction-effect:** add cursor effect ([8f8dda1](https://github.com/vuepress-star/vuepress-theme-star/commit/8f8dda188c41cbf5a54518d4773e767f7f878caa))
 
 
 
 
 
-# [1.0.0-beta.12](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2021-11-08)
+# [1.0.0-beta.12](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2021-11-08)
 
 **Note:** Version bump only for package @starzkg/vuepress-theme-star
 
@@ -223,26 +223,26 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.11](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-11-08)
+# [1.0.0-beta.11](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-11-08)
 
 
 ### Bug Fixes
 
-* code color ([0a79714](https://github.com/shentuzhigang/vuepress-theme-star/commit/0a79714718b5fa83be2f878bb0fb421dfaf9f897))
-* **vuepress-theme-star:** fix code group nav tab text color ([f7b25c4](https://github.com/shentuzhigang/vuepress-theme-star/commit/f7b25c495f390e3cf44d7b6f7bfd9fc5a5200dcd))
+* code color ([0a79714](https://github.com/vuepress-star/vuepress-theme-star/commit/0a79714718b5fa83be2f878bb0fb421dfaf9f897))
+* **vuepress-theme-star:** fix code group nav tab text color ([f7b25c4](https://github.com/vuepress-star/vuepress-theme-star/commit/f7b25c495f390e3cf44d7b6f7bfd9fc5a5200dcd))
 
 
 ### Features
 
-* **theme-star:** add element plus ([865e257](https://github.com/shentuzhigang/vuepress-theme-star/commit/865e2578eca2b7637b65dd8dda6dae0e1cf8e640))
-* **vuepress-theme-star:** add Badge color props ([9f38979](https://github.com/shentuzhigang/vuepress-theme-star/commit/9f389790a65d98f05b1ef41dc8beded6d1c96441))
-* **vuepress-theme-star:** badge is dot ([86b0adb](https://github.com/shentuzhigang/vuepress-theme-star/commit/86b0adb890f9b725d8ab750ad6a578bbf2503850))
+* **theme-star:** add element plus ([865e257](https://github.com/vuepress-star/vuepress-theme-star/commit/865e2578eca2b7637b65dd8dda6dae0e1cf8e640))
+* **vuepress-theme-star:** add Badge color props ([9f38979](https://github.com/vuepress-star/vuepress-theme-star/commit/9f389790a65d98f05b1ef41dc8beded6d1c96441))
+* **vuepress-theme-star:** badge is dot ([86b0adb](https://github.com/vuepress-star/vuepress-theme-star/commit/86b0adb890f9b725d8ab750ad6a578bbf2503850))
 
 
 
 
 
-# [1.0.0-beta.10](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-11-03)
+# [1.0.0-beta.10](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-11-03)
 
 **Note:** Version bump only for package @starzkg/vuepress-theme-star
 
@@ -250,7 +250,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.9](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2021-11-03)
+# [1.0.0-beta.9](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2021-11-03)
 
 **Note:** Version bump only for package @starzkg/vuepress-theme-star
 
@@ -258,84 +258,84 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.8](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-11-03)
+# [1.0.0-beta.8](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-11-03)
 
 
 ### Bug Fixes
 
-* update config ([465ce85](https://github.com/shentuzhigang/vuepress-theme-star/commit/465ce854089d3d19fe23209142541ccf612096ef))
+* update config ([465ce85](https://github.com/vuepress-star/vuepress-theme-star/commit/465ce854089d3d19fe23209142541ccf612096ef))
 
 
 
 
 
-# [1.0.0-beta.7](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.7) (2021-11-02)
+# [1.0.0-beta.7](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.7) (2021-11-02)
 
 
 ### Bug Fixes
 
-* md-enhance ([f2bfd98](https://github.com/shentuzhigang/vuepress-theme-star/commit/f2bfd98eb0a3ce02a150ab96e6d68eb09ecdff97))
+* md-enhance ([f2bfd98](https://github.com/vuepress-star/vuepress-theme-star/commit/f2bfd98eb0a3ce02a150ab96e6d68eb09ecdff97))
 
 
 ### Features
 
-* add markdown-enhance ([09d3f0b](https://github.com/shentuzhigang/vuepress-theme-star/commit/09d3f0b480c6a50f04ce869ae7ccd51b9b5a2b21))
+* add markdown-enhance ([09d3f0b](https://github.com/vuepress-star/vuepress-theme-star/commit/09d3f0b480c6a50f04ce869ae7ccd51b9b5a2b21))
 
 
 
 
 
-# [1.0.0-beta.6](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-02)
-
-
-### Features
-
-* add markdown-enhance ([09d3f0b](https://github.com/shentuzhigang/vuepress-theme-star/commit/09d3f0b480c6a50f04ce869ae7ccd51b9b5a2b21))
-
-
-
-
-
-# [1.0.0-beta.5](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.3...v1.0.0-beta.5) (2021-11-01)
+# [1.0.0-beta.6](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-02)
 
 
 ### Features
 
-* update vuepress ([9d0ed22](https://github.com/shentuzhigang/vuepress-theme-star/commit/9d0ed224fdc71e064b61f29cd65aee7bcb92be12))
-* **vuepress-plugin-github-corner:** add vuepress-plugin-github-corner ([be43509](https://github.com/shentuzhigang/vuepress-theme-star/commit/be435098ac96139de80125884a3a897dec0a3df7))
+* add markdown-enhance ([09d3f0b](https://github.com/vuepress-star/vuepress-theme-star/commit/09d3f0b480c6a50f04ce869ae7ccd51b9b5a2b21))
 
 
 
 
 
-# [1.0.0-beta.4](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-10-30)
-
-
-### Features
-
-* update vuepress ([9d0ed22](https://github.com/shentuzhigang/vuepress-theme-star/commit/9d0ed224fdc71e064b61f29cd65aee7bcb92be12))
-
-
-
-
-
-# [1.0.0-beta.3](https://github.com/shentuzhigang/vuepress-theme-star/compare/v2.0.0-beta.16...v1.0.0-beta.3) (2021-10-30)
+# [1.0.0-beta.5](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.3...v1.0.0-beta.5) (2021-11-01)
 
 
 ### Features
 
-* **vuepress-theme-star:** add github corner ([728448c](https://github.com/shentuzhigang/vuepress-theme-star/commit/728448c2d08733e99feaa191a14f71af091340a2))
+* update vuepress ([9d0ed22](https://github.com/vuepress-star/vuepress-theme-star/commit/9d0ed224fdc71e064b61f29cd65aee7bcb92be12))
+* **vuepress-plugin-github-corner:** add vuepress-plugin-github-corner ([be43509](https://github.com/vuepress-star/vuepress-theme-star/commit/be435098ac96139de80125884a3a897dec0a3df7))
 
 
 
 
 
-# [1.0.0-beta.2](https://github.com/shentuzhigang/vuepress-theme-star/compare/v2.0.0-beta.26...v1.0.0-beta.2) (2021-10-30)
+# [1.0.0-beta.4](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-10-30)
 
 
 ### Features
 
-* **vuepress-theme-star:** add github corner ([728448c](https://github.com/shentuzhigang/vuepress-theme-star/commit/728448c2d08733e99feaa191a14f71af091340a2))
+* update vuepress ([9d0ed22](https://github.com/vuepress-star/vuepress-theme-star/commit/9d0ed224fdc71e064b61f29cd65aee7bcb92be12))
+
+
+
+
+
+# [1.0.0-beta.3](https://github.com/vuepress-star/vuepress-theme-star/compare/v2.0.0-beta.16...v1.0.0-beta.3) (2021-10-30)
+
+
+### Features
+
+* **vuepress-theme-star:** add github corner ([728448c](https://github.com/vuepress-star/vuepress-theme-star/commit/728448c2d08733e99feaa191a14f71af091340a2))
+
+
+
+
+
+# [1.0.0-beta.2](https://github.com/vuepress-star/vuepress-theme-star/compare/v2.0.0-beta.26...v1.0.0-beta.2) (2021-10-30)
+
+
+### Features
+
+* **vuepress-theme-star:** add github corner ([728448c](https://github.com/vuepress-star/vuepress-theme-star/commit/728448c2d08733e99feaa191a14f71af091340a2))
 
 
 

@@ -3,26 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+# [1.0.0-beta.25](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
 
 
 ### Bug Fixes
 
-* copy code button in top of navbar ([ed16dd6](https://github.com/shentuzhigang/vuepress-theme-star/commit/ed16dd6c7a174620205c0b974ce8ece8d8fd40a2))
+* copy code button in top of navbar ([ed16dd6](https://github.com/vuepress-star/vuepress-theme-star/commit/ed16dd6c7a174620205c0b974ce8ece8d8fd40a2))
 
 
 
 
 
-# [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
-
-**Note:** Version bump only for package @starzkg/vuepress-plugin-copy-code
-
-
-
-
-
-# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
+# [1.0.0-beta.24](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-copy-code
 
@@ -30,7 +22,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.22](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
+# [1.0.0-beta.23](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-copy-code
 
@@ -38,7 +30,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.20](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-12-05)
+# [1.0.0-beta.22](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-copy-code
 
@@ -46,7 +38,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.18](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
+# [1.0.0-beta.20](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-12-05)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-copy-code
 
@@ -54,17 +46,25 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+# [1.0.0-beta.18](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
+
+**Note:** Version bump only for package @starzkg/vuepress-plugin-copy-code
+
+
+
+
+
+# [1.0.0-beta.17](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
 
 
 ### Bug Fixes
 
-* fix ([d488c7e](https://github.com/shentuzhigang/vuepress-theme-star/commit/d488c7eec24cbfb6d086417c91464299273df377))
+* fix ([d488c7e](https://github.com/vuepress-star/vuepress-theme-star/commit/d488c7eec24cbfb6d086417c91464299273df377))
 
 
 ### Features
 
-* copy code ([eb6dce9](https://github.com/shentuzhigang/vuepress-theme-star/commit/eb6dce920b09feac2cf72fad885d6ca208820105))
+* copy code ([eb6dce9](https://github.com/vuepress-star/vuepress-theme-star/commit/eb6dce920b09feac2cf72fad885d6ca208820105))
 
 
 

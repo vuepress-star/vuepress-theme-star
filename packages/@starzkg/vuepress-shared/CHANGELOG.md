@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+# [1.0.0-beta.25](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
 
 **Note:** Version bump only for package @starzkg/vuepress-shared
 
@@ -11,28 +11,20 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
+# [1.0.0-beta.24](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
 
 
 ### Features
 
-* photo swipe ([c140c3e](https://github.com/shentuzhigang/vuepress-theme-star/commit/c140c3e129575de62bfcad2ef02af2200ab8ecf8))
-* swo ([2dfb1db](https://github.com/shentuzhigang/vuepress-theme-star/commit/2dfb1db33048ee403f1314c7577e9b43388f1a80))
-* update vuepress ([528e6aa](https://github.com/shentuzhigang/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
+* photo swipe ([c140c3e](https://github.com/vuepress-star/vuepress-theme-star/commit/c140c3e129575de62bfcad2ef02af2200ab8ecf8))
+* swo ([2dfb1db](https://github.com/vuepress-star/vuepress-theme-star/commit/2dfb1db33048ee403f1314c7577e9b43388f1a80))
+* update vuepress ([528e6aa](https://github.com/vuepress-star/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
 
 
 
 
 
-# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
-
-**Note:** Version bump only for package @starzkg/vuepress-shared
-
-
-
-
-
-# [1.0.0-beta.22](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
+# [1.0.0-beta.23](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 **Note:** Version bump only for package @starzkg/vuepress-shared
 
@@ -40,7 +32,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+# [1.0.0-beta.22](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
+
+**Note:** Version bump only for package @starzkg/vuepress-shared
+
+
+
+
+
+# [1.0.0-beta.17](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
 
 **Note:** Version bump only for package @starzkg/vuepress-shared
 

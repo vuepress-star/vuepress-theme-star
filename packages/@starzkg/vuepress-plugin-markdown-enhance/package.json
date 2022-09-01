@@ -18,11 +18,11 @@
   ],
   "homepage": "https://vuepress-star.shentuzhigang.cn",
   "bugs": {
-    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
+    "url": "https://github.com/vuepress-star/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "url": "git+https://github.com/vuepress-star/vuepress-theme-star.git",
     "directory": "packages/@starzkg/vuepress-plugin-markdown-enhance"
   },
   "license": "MIT",
@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@starzkg/vuepress-shared": "workspace:*",
+    "@starzkg/vuepress-star-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.50",
     "@vuepress/core": "2.0.0-beta.50",
     "@vuepress/markdown": "2.0.0-beta.50",

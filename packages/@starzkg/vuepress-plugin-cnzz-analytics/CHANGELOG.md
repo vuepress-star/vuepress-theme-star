@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+# [1.0.0-beta.25](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-cnzz-analytics
 
@@ -11,14 +11,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
+# [1.0.0-beta.23](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 
 ### Bug Fixes
 
-* **plugin-cnzz-analytics:** fix ([7809e6b](https://github.com/shentuzhigang/vuepress-theme-star/commit/7809e6b2290074c9fabc2c0cd70b5da0dc4858d9))
+* **plugin-cnzz-analytics:** fix ([7809e6b](https://github.com/vuepress-star/vuepress-theme-star/commit/7809e6b2290074c9fabc2c0cd70b5da0dc4858d9))
 
 
 ### Features
 
-* cnzz analytics ([75d23c1](https://github.com/shentuzhigang/vuepress-theme-star/commit/75d23c1cc391f697e455a4966ba00456d417f09b))
+* cnzz analytics ([75d23c1](https://github.com/vuepress-star/vuepress-theme-star/commit/75d23c1cc391f697e455a4966ba00456d417f09b))

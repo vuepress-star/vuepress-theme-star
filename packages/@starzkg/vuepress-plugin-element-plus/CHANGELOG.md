@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+# [1.0.0-beta.25](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-element-plus
 
@@ -11,45 +11,45 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
+# [1.0.0-beta.23](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 
 ### Bug Fixes
 
-* **plugin-element-plus:** fix ([b0686e3](https://github.com/shentuzhigang/vuepress-theme-star/commit/b0686e352214cb558b5ed133172e9fe0da54d6d9))
+* **plugin-element-plus:** fix ([b0686e3](https://github.com/vuepress-star/vuepress-theme-star/commit/b0686e352214cb558b5ed133172e9fe0da54d6d9))
 
 
 
 
 
-# [1.0.0-beta.22](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
-
-
-### Features
-
-* update element-plus icons ([cea3f00](https://github.com/shentuzhigang/vuepress-theme-star/commit/cea3f005efef1f11ab0fcd12fb2303c4317742f6))
-
-
-
-
-
-# [1.0.0-beta.18](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
+# [1.0.0-beta.22](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
 
 
 ### Features
 
-* update ([9545934](https://github.com/shentuzhigang/vuepress-theme-star/commit/954593405e55b8a702993af6da59c6e2d6d2dd09))
+* update element-plus icons ([cea3f00](https://github.com/vuepress-star/vuepress-theme-star/commit/cea3f005efef1f11ab0fcd12fb2303c4317742f6))
 
 
 
 
 
-# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+# [1.0.0-beta.18](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-11-28)
 
 
 ### Features
 
-* links ([ba5f197](https://github.com/shentuzhigang/vuepress-theme-star/commit/ba5f19767d41b3449ee88447b43a6390c3b9eb67))
+* update ([9545934](https://github.com/vuepress-star/vuepress-theme-star/commit/954593405e55b8a702993af6da59c6e2d6d2dd09))
+
+
+
+
+
+# [1.0.0-beta.17](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+
+
+### Features
+
+* links ([ba5f197](https://github.com/vuepress-star/vuepress-theme-star/commit/ba5f19767d41b3449ee88447b43a6390c3b9eb67))
 
 
 

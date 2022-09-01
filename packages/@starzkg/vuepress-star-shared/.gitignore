@@ -1,0 +1,6 @@
+# Dist files
+lib/
+es/
+
+# Typescript build info
+*.tsbuildinfo

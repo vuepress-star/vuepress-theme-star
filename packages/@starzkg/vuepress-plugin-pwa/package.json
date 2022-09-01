@@ -11,11 +11,11 @@
   ],
   "homepage": "https://vuepress-star.shentuzhigang.cn",
   "bugs": {
-    "url": "https://github.com/shentuzhigang/vuepress-theme-star/issues"
+    "url": "https://github.com/vuepress-star/vuepress-theme-star/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shentuzhigang/vuepress-theme-star.git",
+    "url": "git+https://github.com/vuepress-star/vuepress-theme-star.git",
     "directory": "packages/@starzkg/vuepress-plugin-pwa"
   },
   "license": "MIT",

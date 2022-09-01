@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-beta.25](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
+# [1.0.0-beta.25](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-01-03)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance
 
@@ -11,32 +11,24 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.24](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
+# [1.0.0-beta.24](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-12-25)
 
 
 ### Bug Fixes
 
-* slide theme auto ([3ec7d42](https://github.com/shentuzhigang/vuepress-theme-star/commit/3ec7d42bd259bc11a6a7a77c589515cd1b04e392))
+* slide theme auto ([3ec7d42](https://github.com/vuepress-star/vuepress-theme-star/commit/3ec7d42bd259bc11a6a7a77c589515cd1b04e392))
 
 
 ### Features
 
-* update ([44a4408](https://github.com/shentuzhigang/vuepress-theme-star/commit/44a44081fd632e8ed57711f8adbad4c27b3d4233))
-* update vuepress ([528e6aa](https://github.com/shentuzhigang/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
+* update ([44a4408](https://github.com/vuepress-star/vuepress-theme-star/commit/44a44081fd632e8ed57711f8adbad4c27b3d4233))
+* update vuepress ([528e6aa](https://github.com/vuepress-star/vuepress-theme-star/commit/528e6aa7316dd64bf0955aa716fe529e7ba2d271))
 
 
 
 
 
-# [1.0.0-beta.23](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
-
-**Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance
-
-
-
-
-
-# [1.0.0-beta.22](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
+# [1.0.0-beta.23](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-12-21)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance
 
@@ -44,29 +36,37 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.20](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-12-05)
+# [1.0.0-beta.22](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-12-18)
+
+**Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance
+
+
+
+
+
+# [1.0.0-beta.20](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-12-05)
 
 
 ### Bug Fixes
 
-* fix vite optimizeDeps ([c90dc3d](https://github.com/shentuzhigang/vuepress-theme-star/commit/c90dc3dce56a44e0ab266ec17ad0199cf19b46d2))
+* fix vite optimizeDeps ([c90dc3d](https://github.com/vuepress-star/vuepress-theme-star/commit/c90dc3dce56a44e0ab266ec17ad0199cf19b46d2))
 
 
 
 
 
-# [1.0.0-beta.19](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-12-05)
+# [1.0.0-beta.19](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-12-05)
 
 
 ### Features
 
-* breadcrumb ([55a5561](https://github.com/shentuzhigang/vuepress-theme-star/commit/55a5561866ec09fb4694d2ed46af4bfa49453bf9))
+* breadcrumb ([55a5561](https://github.com/vuepress-star/vuepress-theme-star/commit/55a5561866ec09fb4694d2ed46af4bfa49453bf9))
 
 
 
 
 
-# [1.0.0-beta.17](https://github.com/shentuzhigang/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
+# [1.0.0-beta.17](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-11-28)
 
 **Note:** Version bump only for package @starzkg/vuepress-plugin-markdown-enhance
 

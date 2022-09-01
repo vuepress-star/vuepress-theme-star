@@ -11,6 +11,9 @@
       "path": "./packages/@starzkg/vuepress-shared/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-star-shared/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-plugin-add-this/tsconfig.build.json"
     },
     {
