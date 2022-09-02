@@ -5,38 +5,28 @@ import ora from 'ora'
  * Shell Logger
  */
 export class Logger {
-  private currentInstance: ora.Ora | null = ora()
+  private instance: ora.Ora
+
+  private static colors: string[] = [
+    '#FF0000',
+    '#FF7F00',
+    '#FFFF00',
+    '#00FF00',
+    '#00FFFF',
+    '#0000FF',
+    '#8B00FF',
+  ]
 
   constructor(
     /**
      * Plugin name
      */
     private name = ''
-  ) {}
-
-  /**
-   * Create a loading spinner with hint text
-   *
-   * @param text Loading hint text
-   * @returns Ora Instance
-   */
-  create(text: string): ora.Ora {
-    this.currentInstance = ora({
-      prefixText: chalk.blue(`${this.name}: `) || '',
-      text,
+  ) {
+    const color = Logger.colors[Math.floor(Math.random() * 7)]
+    this.instance = ora({
+      prefixText: chalk.hex(color)(`${this.name}: `) || '',
     })
-
-    return this.currentInstance
-  }
-
-  /**
-   * Update current loading spinner text
-   *
-   * @param text new hint text
-   */
-  update(text: string): void {
-    if (this.currentInstance) this.currentInstance.text = text
-    else this.create(text)
   }
 
   /**
@@ -46,9 +36,7 @@ export class Logger {
    * @returns Ora Instance
    */
   load(text = ''): ora.Ora {
-    return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
-    ).start()
+    return this.instance.start(text)
   }
 
   /**
@@ -58,9 +46,7 @@ export class Logger {
    * @returns Ora Instance
    */
   info(text = ''): ora.Ora {
-    return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
-    ).info()
+    return this.instance.info(text)
   }
 
   /**
@@ -70,9 +56,7 @@ export class Logger {
    * @returns Ora Instance
    */
   succeed(text = ''): ora.Ora {
-    return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
-    ).succeed()
+    return this.instance.succeed(text)
   }
 
   /**
@@ -82,9 +66,7 @@ export class Logger {
    * @returns Ora Instance
    */
   warn(text = ''): ora.Ora {
-    return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
-    ).warn()
+    return this.instance.warn(text)
   }
 
   /**
@@ -94,8 +76,6 @@ export class Logger {
    * @returns Ora Instance
    */
   error(text = ''): ora.Ora {
-    return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
-    ).fail()
+    return this.instance.fail(text)
   }
 }
