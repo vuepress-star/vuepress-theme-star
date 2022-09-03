@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, nextTick } from 'vue'
 import { Boom } from '../utils/mouse/index.js'
 
 interface CursorEffect {
@@ -34,18 +34,20 @@ export default defineComponent({
     } as CursorEffect
   },
   mounted() {
-    this.computerCanvas = document.createElement('canvas')
-    this.renderCanvas = document.getElementById(
-      'vuepress-canvas-cursor'
-    ) as HTMLCanvasElement
+    nextTick(() => {
+      this.computerCanvas = document.createElement('canvas')
+      this.renderCanvas = document.getElementById(
+        'vuepress-canvas-cursor'
+      ) as HTMLCanvasElement
 
-    this.computerContext = this.computerCanvas.getContext('2d')
-    this.renderContext = this.renderCanvas.getContext('2d')
+      this.computerContext = this.computerCanvas.getContext('2d')
+      this.renderContext = this.renderCanvas.getContext('2d')
 
-    this.clientSize.width = window.innerWidth
-    this.clientSize.height = window.innerHeight
+      this.clientSize.width = window.innerWidth
+      this.clientSize.height = window.innerHeight
 
-    this.init()
+      this.init()
+    })
   },
 
   methods: {
