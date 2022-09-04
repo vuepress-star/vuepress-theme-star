@@ -21,7 +21,7 @@ const shouldShowNavbar = computed(
 const content = ref<HTMLElement>()
 const gotoContent = (): void => {
   if (typeof content.value !== 'undefined') {
-    content.value.scrollTo({ top: window.outerHeight, behavior: 'smooth' })
+    content.value.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
   }
 }
 </script>
@@ -42,10 +42,11 @@ const gotoContent = (): void => {
       <header>
         <Hero />
         <Links />
+        <div class="arrow" @click="gotoContent">
+          <i class="i_cursor"></i>
+          <i class="i_bd"></i>
+        </div>
       </header>
-      <div class="arrow">
-        <IconArrowDownBold @click="gotoContent" />
-      </div>
       <main class="page">
         <Features />
         <slot name="top" />

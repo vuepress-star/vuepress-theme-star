@@ -41,7 +41,7 @@
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,html,vue,scss,svg}\" lib"
+    "copy": "cpx \"src/**/*.{d.ts,html,vue,scss,svg,png}\" lib"
   },
   "dependencies": {
     "@starzkg/vuepress-icons": "workspace:*",
