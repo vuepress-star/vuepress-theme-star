@@ -29,17 +29,19 @@
 
 .navbar {
   position: fixed;
+  opacity: 0;
   z-index: 20;
   top: 0;
   left: 0;
   right: 0;
   height: var(--navbar-height);
   box-sizing: border-box;
-  transition: background-color var(--t-color), border-color var(--t-color);
+  background-color: var(--c-bg-navbar);
+  border-bottom: 1px solid var(--c-border);
+  transition: opacity 0.5s;
 
   &:hover {
-    border-bottom: 1px solid var(--c-border);
-    background-color: var(--c-bg-navbar);
+    opacity: 1;
   }
 }
 
