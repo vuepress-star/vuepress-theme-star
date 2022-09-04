@@ -25,7 +25,7 @@ const links = computed(() => {
 </script>
 
 <template>
-  <p class="links">
+  <div class="links">
     <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
-  </p>
+  </div>
 </template>
