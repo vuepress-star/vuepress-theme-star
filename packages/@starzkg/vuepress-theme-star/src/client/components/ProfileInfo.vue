@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { usePageFrontmatter, withBase } from '@vuepress/client'
+import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useSiteData } from '../composables/index.js'
-import Links from './Links.vue'
 import PanThumb from './PanThumb.vue'
 
 interface ProfileInfoFrontmatter {
@@ -59,6 +59,22 @@ const tagNum = computed(() => {
 const archiveNum = computed(() => {
   return Object.keys(siteData.value.classifications?.tag).length || 0
 })
+
+const links = computed(() => {
+  if (!isArray(frontmatter.value.links)) {
+    return []
+  }
+  return frontmatter.value.links.map(({ text, icon, url }) => {
+    return {
+      text,
+      icon:
+        icon === undefined
+          ? icon
+          : (icon.startsWith('icon-social-') ? '' : 'icon-social-') + icon,
+      url,
+    }
+  })
+})
 </script>
 
 <template>
@@ -97,7 +113,9 @@ const archiveNum = computed(() => {
         <div>归档</div>
       </div>
     </div>
-    <Links />
+    <div class="links">
+      <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
+    </div>
   </div>
 </template>
 

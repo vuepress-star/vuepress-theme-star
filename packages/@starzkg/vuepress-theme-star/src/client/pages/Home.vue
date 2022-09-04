@@ -6,7 +6,6 @@ import Content from '../components/Content.vue'
 import Features from '../components/Features.vue'
 import Footer from '../components/Footer.vue'
 import Hero from '../components/Hero.vue'
-import Links from '../components/Links.vue'
 import Navbar from '../components/Navbar.vue'
 import { useThemeLocaleData } from '../composables/index.js'
 
@@ -41,7 +40,6 @@ const gotoContent = (): void => {
     <div ref="content" class="content">
       <header>
         <Hero />
-        <Links />
         <div class="arrow" @click="gotoContent">
           <i class="i_cursor"></i>
           <i class="i_bd"></i>

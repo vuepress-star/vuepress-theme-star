@@ -57,6 +57,22 @@ const actions = computed(() => {
   }))
 })
 
+const links = computed(() => {
+  if (!isArray(frontmatter.value.links)) {
+    return []
+  }
+  return frontmatter.value.links.map(({ text, icon, url }) => {
+    return {
+      text,
+      icon:
+        icon === undefined
+          ? icon
+          : (icon.startsWith('icon-social-') ? '' : 'icon-social-') + icon,
+      url,
+    }
+  })
+})
+
 const HomeHeroImage: FunctionalComponent = () => {
   if (!heroImage.value) return null
   const img = h('img', {
@@ -92,6 +108,10 @@ const HomeHeroImage: FunctionalComponent = () => {
         :class="[action.type]"
         :item="action"
       />
+    </p>
+
+    <p v-if="links.length" class="links">
+      <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
     </p>
   </div>
 </template>
