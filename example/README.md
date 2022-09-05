@@ -12,31 +12,31 @@ actions:
 links:
   - text: GitHub
     icon: github
-    url: #
+    url: /
   - text: Gitlab
     icon: gitlab
-    url: #
+    url: /
   - text: Gmail
     icon: gmail
-    url: #
+    url: /
   - text: Youtube
     icon: youtube
-    url: #
+    url: /
   - text: Steam
     icon: steam
-    url: #
+    url: /
   - text: Twitter
     icon: twitter
-    url: #
+    url: /
   - text: Instagram
     icon: instagram
-    url: #
+    url: /
   - text: Facebook
     icon: facebook
-    url: #
+    url: /
   - text: Flipboard
     icon: flipboard
-    url: #
+    url: /
 features:
   - title: Simplicity First
     details: Minimal setup with markdown-centered project structure helps you focus on writing.

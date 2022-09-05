@@ -303,6 +303,11 @@ export interface StarThemeLocaleData extends LocaleData {
   toggleColorMode?: string
 
   /**
+   * A11y text for navbar toggle button
+   */
+  toggleNavbar?: string
+
+  /**
    * A11y text for sidebar toggle button
    */
   toggleSidebar?: string

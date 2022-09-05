@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { useThemeLocaleData } from '../composables/index.js'
 import NavbarBrand from './NavbarBrand.vue'
 import NavbarItems from './NavbarItems.vue'
-import ToggleColorModeButton from './ToggleColorModeButton.vue'
+import NavbarLogo from './NavbarLogo.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
 defineEmits(['toggle-sidebar'])
-
-const themeLocale = useThemeLocaleData()
 
 const navbar = ref<HTMLElement | null>(null)
 const navbarBrand = ref<HTMLElement | null>(null)
@@ -57,18 +54,23 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 
 <template>
   <header ref="navbar" class="navbar">
-    <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
+    <div class="navbar-left">
+      <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
 
-    <span ref="navbarBrand">
-      <NavbarBrand />
-    </span>
-
-    <div class="navbar-items-wrapper" :style="linksWrapperStyle">
-      <slot name="before" />
-      <NavbarItems class="can-hide" is-header />
-      <slot name="after" />
-      <ToggleColorModeButton v-if="themeLocale.colorModeSwitch" />
-      <NavbarSearch />
+      <span ref="navbarBrand">
+        <NavbarBrand />
+      </span>
+    </div>
+    <div class="navbar-middle">
+      <NavbarLogo />
+    </div>
+    <div class="navbar-right">
+      <div class="navbar-items-wrapper" :style="linksWrapperStyle">
+        <slot name="before" />
+        <NavbarItems class="can-hide" is-header />
+        <slot name="after" />
+        <NavbarSearch />
+      </div>
     </div>
   </header>
 </template>

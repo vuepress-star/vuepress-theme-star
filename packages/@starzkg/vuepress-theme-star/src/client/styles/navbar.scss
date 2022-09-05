@@ -7,6 +7,39 @@
 
   padding: var(--navbar-padding-v) var(--navbar-padding-h);
   line-height: var(--navbar-line-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .navbar-left,
+  .navbar-right {
+    flex: 1;
+    display: inline-flex;
+  }
+
+  .navbar-middle {
+    width: 10rem;
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 99;
+    width: 10rem;
+    height: 8.2rem;
+    background: url(../assets/images/logo_bg.png) 50% 100% no-repeat;
+    background-size: cover;
+    top: 0;
+    text-align: center;
+
+    .logo {
+      height: 60%;
+      margin-right: var(--navbar-padding-v);
+      vertical-align: top;
+    }
+  }
 
   .logo {
     height: var(--navbar-line-height);

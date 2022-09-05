@@ -27,7 +27,11 @@ const heroText = computed(() => {
   if (frontmatter.value.heroText === null) {
     return null
   }
-  return frontmatter.value.heroText || siteLocale.value.title || 'Hello'
+  return (
+    frontmatter.value.heroText ||
+    siteLocale.value.title ||
+    'Hello VuePress Star'
+  )
 })
 
 const heroAlt = computed(
@@ -41,7 +45,7 @@ const tagline = computed(() => {
   return (
     frontmatter.value.tagline ||
     siteLocale.value.description ||
-    'Welcome to your VuePress site'
+    'Welcome to your VuePress Star site'
   )
 })
 
@@ -76,6 +80,7 @@ const links = computed(() => {
 const HomeHeroImage: FunctionalComponent = () => {
   if (!heroImage.value) return null
   const img = h('img', {
+    class: 'hero-image',
     src: withBase(heroImage.value),
     alt: heroAlt.value,
   })
@@ -92,7 +97,7 @@ const HomeHeroImage: FunctionalComponent = () => {
   <div class="hero">
     <HomeHeroImage />
 
-    <h1 v-if="heroText" id="main-title">
+    <h1 v-if="heroText" id="main-title" class="title">
       {{ heroText }}
     </h1>
 
