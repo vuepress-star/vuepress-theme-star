@@ -3,6 +3,7 @@ import { usePageFrontmatter } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared/index.js'
+import Icon from '../components/Icon.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const features = computed(() => {
@@ -16,6 +17,7 @@ const features = computed(() => {
 <template>
   <div v-if="features.length" class="features">
     <div v-for="feature in features" :key="feature.title" class="feature">
+      <Icon :icon="feature.icon" />
       <h2>{{ feature.title }}</h2>
       <p>{{ feature.details }}</p>
     </div>

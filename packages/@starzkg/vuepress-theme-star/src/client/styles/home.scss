@@ -102,51 +102,51 @@
         flex-wrap: wrap;
         margin: 1rem auto;
       }
-    }
 
-    .arrow {
-      position: absolute;
-      display: block;
-      background-size: auto 0.47rem;
-      border-radius: 50%;
-      z-index: 99;
-      padding: 0.12rem 0 0;
-      bottom: 1.6rem;
-      height: 4.5rem;
-      width: 4.5rem;
-      text-align: center;
-      cursor: pointer;
-      animation: arrow-float 2s linear infinite;
-      transform: scale(1.5, 1);
-
-      &::before {
-        content: '';
+      .arrow {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 1px dashed rgba(255, 255, 255, 0.5);
-        border-radius: 50%;
-        animation: arrow_rotate 6s 0s linear infinite;
-      }
-
-      i {
         display: block;
-        background-size: cover;
-        margin: 0 auto 0.06rem;
-      }
+        background-size: auto 0.47rem;
+        border-radius: 50%;
+        z-index: 99;
+        padding: 0.12rem 0 0;
+        bottom: 1.6rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        text-align: center;
+        cursor: pointer;
+        animation: arrow-float 2s linear infinite;
+        transform: scale(1.5, 1);
 
-      .i_cursor {
-        width: 1.8rem;
-        height: 2.7rem;
-        background: url(../assets/images/cursor.png) 50% no-repeat;
-      }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 1px dashed rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+          animation: arrow_rotate 6s 0s linear infinite;
+        }
 
-      .i_bd {
-        width: 1.2rem;
-        height: 1rem;
-        background: url(../assets/images/down.png) 50% no-repeat;
+        i {
+          display: block;
+          background-size: cover;
+          margin: 0 auto 0.06rem;
+        }
+
+        .i_cursor {
+          width: 1.8rem;
+          height: 2.7rem;
+          background: url(../assets/images/cursor.png) 50% no-repeat;
+        }
+
+        .i_bd {
+          width: 1.2rem;
+          height: 1rem;
+          background: url(../assets/images/down.png) 50% no-repeat;
+        }
       }
     }
 
@@ -160,31 +160,90 @@
       z-index: 2;
 
       .features {
-        transition: border-color var(--t-color);
-        padding: 1.2rem 0;
+        transition: border-color var(--color-transition);
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-start;
+        align-items: stretch;
         align-content: stretch;
-        justify-content: space-between;
+        justify-content: center;
+        overflow: hidden;
+        border-top: 1px solid var(--border-color);
+
+        @media (max-width: $md) {
+          margin: 0 -1.5rem;
+        }
+      }
+
+      .feature {
         position: relative;
 
-        .feature {
-          flex-grow: 1;
-          flex-basis: 30%;
-          max-width: 30%;
+        flex-basis: calc(33% - 4rem);
 
-          h2 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            border-bottom: none;
-            padding-bottom: 0;
-            color: var(--c-text-light);
-          }
+        overflow: hidden;
 
-          p {
-            color: var(--c-text-lighter);
+        margin: 0.5rem;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+
+        text-align: center;
+
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        @media (min-width: $lg) {
+          flex-basis: calc(25% - 4rem);
+        }
+
+        @media (max-width: $md) {
+          flex-basis: calc(50% - 4rem);
+        }
+
+        @media (max-width: $sm) {
+          font-size: 0.95rem;
+        }
+
+        @media (max-width: $xs) {
+          flex-basis: calc(100%);
+          margin: 0.5rem 0;
+          border-radius: 0;
+          font-size: 0.9rem;
+        }
+
+        &.link {
+          cursor: pointer;
+        }
+
+        &:hover {
+          box-shadow: 0 2px 12px 0 var(--card-shadow);
+          transform: scale(1.05);
+        }
+
+        .icon {
+          display: inline-block;
+          margin-bottom: 0.5rem;
+          color: var(--theme-color);
+          font-size: 2rem;
+          height: 2rem;
+          width: 2rem;
+        }
+
+        h2 {
+          font-weight: bold;
+          font-size: 1.25rem;
+
+          margin: 0.25rem 0;
+          border-bottom: none;
+
+          color: var(--text-color-light);
+
+          @media (max-width: $md) {
+            font-size: 1.2rem;
           }
+        }
+
+        p {
+          margin: 0;
+          color: var(--text-color-lighter);
+          line-height: 1.4;
         }
       }
 

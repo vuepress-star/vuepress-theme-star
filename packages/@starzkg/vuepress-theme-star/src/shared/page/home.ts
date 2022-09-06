@@ -19,6 +19,7 @@ export interface StarThemeHomePageFrontmatter extends StarThemePageFrontmatter {
   }[]
   features?: {
     title: string
+    icon: string
     details: string
   }[]
   footer?: string
