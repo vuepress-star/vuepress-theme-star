@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import NavbarBrand from './NavbarBrand.vue'
 import NavbarItems from './NavbarItems.vue'
 import NavbarLogo from './NavbarLogo.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
@@ -56,21 +55,17 @@ function getCssValue(el: HTMLElement | null, property: string): number {
   <header ref="navbar" class="navbar">
     <div class="navbar-left">
       <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
-
-      <span ref="navbarBrand">
-        <NavbarBrand />
-      </span>
+      <div class="navbar-items-wrapper" :style="linksWrapperStyle">
+        <slot name="before" />
+        <NavbarItems class="can-hide" is-header />
+        <slot name="after" />
+      </div>
     </div>
     <div class="navbar-middle">
       <NavbarLogo />
     </div>
     <div class="navbar-right">
-      <div class="navbar-items-wrapper" :style="linksWrapperStyle">
-        <slot name="before" />
-        <NavbarItems class="can-hide" is-header />
-        <slot name="after" />
-        <NavbarSearch />
-      </div>
+      <NavbarSearch />
     </div>
   </header>
 </template>
