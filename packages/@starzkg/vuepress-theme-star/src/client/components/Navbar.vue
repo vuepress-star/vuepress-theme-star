@@ -2,9 +2,10 @@
 import { computed, onMounted, ref } from 'vue'
 import NavbarItems from './NavbarItems.vue'
 import NavbarLogo from './NavbarLogo.vue'
+import ToggleNavbarButton from './ToggleNavbarButton.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
-defineEmits(['toggle-sidebar'])
+defineEmits(['toggle-sidebar', 'toggle-navbar'])
 
 const navbar = ref<HTMLElement | null>(null)
 const navbarBrand = ref<HTMLElement | null>(null)
@@ -66,6 +67,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     </div>
     <div class="navbar-right">
       <NavbarSearch />
+      <ToggleNavbarButton @toggle="$emit('toggle-navbar')" />
     </div>
   </header>
 </template>

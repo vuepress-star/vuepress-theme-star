@@ -6,7 +6,6 @@ export interface StarThemeHomePageFrontmatter extends StarThemePageFrontmatter {
   heroAlt?: string
   heroText?: string | null
   tagline?: string | null
-  navbar?: boolean
   actions?: {
     text: string
     link: string

@@ -1,4 +1,5 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
+import type { SidebarConfig } from '../nav.js'
 
 export interface StarThemePageData extends GitPluginPageData {
   filePathRelative: string | null
@@ -18,6 +19,8 @@ export interface StarThemePageData extends GitPluginPageData {
 }
 
 export interface StarThemePageFrontmatter {
+  navbar?: boolean
+  sidebar?: 'auto' | false | SidebarConfig
   page?: string
   pageClass?: string
 }

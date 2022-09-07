@@ -11,6 +11,8 @@ import HomeArrow from '../components/HomeArrow.vue'
 import Navbar from '../components/Navbar.vue'
 import { useThemeLocaleData } from '../composables/index.js'
 
+defineEmits(['toggle-sidebar', 'toggle-navbar'])
+
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
 
@@ -30,7 +32,11 @@ const gotoContent = (): void => {
 <template>
   <div class="home-container">
     <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar">
+      <Navbar
+        v-if="shouldShowNavbar"
+        @toggle-navbar="$emit('toggle-navbar')"
+        @toggle-sidebar="$emit('toggle-sidebar')"
+      >
         <template #before>
           <slot name="navbar-before" />
         </template>

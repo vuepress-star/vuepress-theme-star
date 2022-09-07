@@ -12,6 +12,8 @@ const toggleColorMode = (): void => {
 <template>
   <button
     class="toggle-color-mode-button"
+    aria-label="切换模式"
+    data-balloon-pos="left"
     :title="themeLocale.toggleColorMode"
     @click="toggleColorMode"
   >

@@ -36,5 +36,6 @@ export const en: StarThemeLocaleOptions = {
   // a11y
   openInNewWindow: 'open in new window',
   toggleColorMode: 'toggle dark mode',
+  toggleNavbar: 'toggle navbar',
   toggleSidebar: 'toggle sidebar',
 }

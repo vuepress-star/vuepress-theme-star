@@ -1,10 +1,8 @@
-import type { NavLink, SidebarConfig } from '../nav.js'
+import type { NavLink } from '../nav.js'
 import type { StarThemePageFrontmatter } from './page.js'
 
 export interface StarThemeNormalPageFrontmatter
   extends StarThemePageFrontmatter {
-  navbar?: boolean
-  sidebar?: 'auto' | false | SidebarConfig
   editLink?: boolean
   editLinkPattern?: string
   lastUpdated?: boolean
