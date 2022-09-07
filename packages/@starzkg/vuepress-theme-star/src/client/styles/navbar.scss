@@ -81,6 +81,9 @@
 
 @media (max-width: $MQMobile) {
   .navbar {
+    padding-left: 4rem;
+    padding-right: 4rem;
+
     .can-hide {
       display: none;
     }

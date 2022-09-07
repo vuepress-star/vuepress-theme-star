@@ -25,6 +25,7 @@ const themeLocale = useThemeLocaleData()
 
 <style lang="scss" scoped>
 .toggle-navbar-button {
+  position: absolute;
   display: none;
   align-items: center;
   justify-content: center;
