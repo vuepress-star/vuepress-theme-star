@@ -1,13 +1,8 @@
 <script setup lang="ts">
-import {
-  ClientOnly,
-  useRouteLocale,
-  useSiteLocaleData,
-  withBase,
-} from '@vuepress/client'
-import { computed, h } from 'vue'
-import type { FunctionalComponent } from 'vue'
+import { useRouteLocale, useSiteLocaleData } from '@vuepress/client'
+import { computed } from 'vue'
 import { useDarkMode, useThemeLocaleData } from '../composables/index.js'
+import NavbarLogo from './NavbarLogo.js'
 
 const routeLocale = useRouteLocale()
 const siteLocale = useSiteLocaleData()
@@ -24,25 +19,11 @@ const navbarBrandLogo = computed(() => {
   }
   return themeLocale.value.logo
 })
-const NavbarBrandLogo: FunctionalComponent = () => {
-  if (!navbarBrandLogo.value) return null
-  const img = h('img', {
-    class: 'logo',
-    src: withBase(navbarBrandLogo.value),
-    alt: navbarBrandTitle.value,
-  })
-  if (themeLocale.value.logoDark === undefined) {
-    return img
-  }
-  // wrap brand logo with <ClientOnly> to avoid ssr-mismatch
-  // when using a different brand logo in dark mode
-  return h(ClientOnly, img)
-}
 </script>
 
 <template>
   <RouterLink :to="navbarBrandLink">
-    <NavbarBrandLogo />
+    <NavbarLogo />
 
     <span
       v-if="navbarBrandTitle"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import NavbarBadge from './NavbarBadge.vue'
 import NavbarItems from './NavbarItems.vue'
-import NavbarLogo from './NavbarLogo.vue'
 import ToggleNavbarButton from './ToggleNavbarButton.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
@@ -63,7 +63,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       </div>
     </div>
     <div class="navbar-middle">
-      <NavbarLogo />
+      <NavbarBadge />
     </div>
     <div class="navbar-right">
       <NavbarSearch />
