@@ -12,28 +12,28 @@ intro: 你已经是一个成熟的程序猿了，要学会自己DEBUG了
 links:
   - text: QQ
     icon: qq
-    url: #
+    url: /
   - text: QZone
     icon: qzone
-    url: #
+    url: /
   - text: Wechat
     icon: wechat
-    url: #
+    url: /
   - text: WechatFriend
     icon: wechat-friend
-    url: #
+    url: /
   - text: CSDN
     icon: csdn
-    url: #
+    url: /
   - text: 博客园
     icon: cnblogs
-    url: #
+    url: /
   - text: 简书
     icon: jianshu
-    url: #
+    url: /
   - text: 掘金
     icon: juejin
-    url: #
+    url: /
 footer: <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备19031217号</a> | MIT Licensed | Copyright © 2021-present Starzkg 
 footerHtml: true
 ---

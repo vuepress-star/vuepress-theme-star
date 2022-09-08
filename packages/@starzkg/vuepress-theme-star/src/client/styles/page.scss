@@ -30,6 +30,8 @@
     }
 
     .middle {
+      width: 100%;
+      max-width: calc(var(--content-width) + 5rem);
     }
 
     .right {
