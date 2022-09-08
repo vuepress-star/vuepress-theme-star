@@ -11,20 +11,8 @@
       html.dark {
         --c-bg: #22272e;
       }
-      html, body {
-        background-color: var(--c-bg);
-      }
-    </style>
-    <script>
-      const userMode = localStorage.getItem('vuepress-color-scheme');
-			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-				document.documentElement.classList.toggle('dark', true);
-			}
-    </script>
-    <style>
       body{padding:0;margin:0}
-      .loading-container{width:100%;height:100%;background-color:#fff;position:absolute;z-index:30}
+      .loading-container{width:100%;height:100%;background-color:var(--c-bg);position:absolute;z-index:30}
       .loading-container .loading{width:115px;height:115px;margin:0 auto;top:calc(50% - 115px);position:relative}
       .configure-border-1{width:115px;height:115px;padding:3px;position:absolute;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,0.9);animation:configure-clockwise 5s ease-in-out 0s infinite alternate}
       .configure-border-2{width:115px;height:115px;padding:3px;left:-115px;display:flex;justify-content:center;align-items:center;transform:rotate(45deg);animation:configure-xclockwise 5s ease-in-out 0s infinite alternate}
@@ -34,6 +22,13 @@
       .loading-fade-out{transition:all .8s ease-in-out;opacity:0}
       .loading-container .tip{font-weight:700;width:100%;text-align:center;position:absolute;top:calc(50% + 57px);color:#000}
     </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+      const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+        document.documentElement.classList.toggle('dark', true);
+      }
+    </script>
     <script lang="javascript">
       document.onreadystatechange = function(){
         if(document.readyState==='interactive'||document.readyState==='complete'){
