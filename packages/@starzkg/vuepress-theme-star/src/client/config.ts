@@ -18,8 +18,8 @@ import {
 import './styles/index.scss'
 import DocumentHome from './pages/document/components/Home.vue'
 import Document from './pages/document/components/Page.vue'
-import Home from './pages/Home.vue'
-import Page from './pages/Page.vue'
+import { Home } from './pages/home/index.js'
+import { Page } from './pages/page/index.js'
 import Presentation from './pages/presentation/components/Presentation.vue'
 import Profile from './pages/profile/components/Profile.vue'
 

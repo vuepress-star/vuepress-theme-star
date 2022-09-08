@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed, ref } from 'vue'
-import type { StarThemeHomePageFrontmatter } from '../../shared/index.js'
-import Content from '../components/Content.vue'
-import Features from '../components/Features.vue'
-import Footer from '../components/Footer.vue'
-import GithubCorner from '../components/GithubCorner.vue'
-import Hero from '../components/Hero.vue'
-import HomeArrow from '../components/HomeArrow.vue'
-import Navbar from '../components/Navbar.vue'
-import { useThemeLocaleData } from '../composables/index.js'
+import type { StarThemeHomePageFrontmatter } from '../../../shared/index.js'
+import Content from '../../components/Content.vue'
+import Features from '../../components/Features.vue'
+import Footer from '../../components/Footer.vue'
+import GithubCorner from '../../components/GithubCorner.vue'
+import Hero from '../../components/Hero.vue'
+import HomeArrow from '../../components/HomeArrow.vue'
+import Navbar from '../../components/Navbar.vue'
+import { useThemeLocaleData } from '../../composables/index.js'
 
 defineEmits(['toggle-sidebar', 'toggle-navbar'])
 

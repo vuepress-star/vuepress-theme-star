@@ -41,6 +41,7 @@
     background-size: cover;
     top: 0;
     text-align: center;
+    transition: width 0.25s ease-in-out;
 
     .logo {
       height: 60%;
@@ -151,13 +152,25 @@
   }
 }
 
-@media screen and (max-width: $MQMobile) {
-  .toggle-navbar-button {
-    display: flex !important;
+@media screen and (max-width: $xs) {
+  .navbar-middle {
+    display: none;
+  }
+}
+@media screen and (max-width: $sm) {
+  .navbar-middle {
+    width: 5rem !important;
+  }
+  .navbar-logo {
+    width: 5rem !important;
+    height: 4.1rem !important;
   }
 }
 
 @media screen and (max-width: $MQMobile) {
+  .toggle-navbar-button {
+    display: flex !important;
+  }
   .toggle-sidebar-button {
     display: block !important;
   }
@@ -173,7 +186,6 @@
   border: 0;
   background: none;
   color: var(--c-text);
-  opacity: 0.8;
   cursor: pointer;
 
   &:hover {

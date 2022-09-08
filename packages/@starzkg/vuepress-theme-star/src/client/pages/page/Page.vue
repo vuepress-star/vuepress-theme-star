@@ -2,19 +2,19 @@
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import type { StarThemePageFrontmatter } from '../../shared/index.js'
-import Content from '../components/Content.vue'
-import Navbar from '../components/Navbar.vue'
-import PageInfo from '../components/PageInfo'
-import PageMeta from '../components/PageMeta.vue'
-import PageNav from '../components/PageNav.vue'
-import ProfileInfo from '../components/ProfileInfo.vue'
-import Sidebar from '../components/Sidebar.vue'
+import type { StarThemePageFrontmatter } from '../../../shared/index.js'
+import Content from '../../components/Content.vue'
+import Navbar from '../../components/Navbar.vue'
+import PageInfo from '../../components/PageInfo'
+import PageMeta from '../../components/PageMeta.vue'
+import PageNav from '../../components/PageNav.vue'
+import ProfileInfo from '../../components/ProfileInfo.vue'
+import Sidebar from '../../components/Sidebar.vue'
 import {
   useScrollPromise,
   useSidebarItems,
   useThemeLocaleData,
-} from '../composables/index.js'
+} from '../../composables/index.js'
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve

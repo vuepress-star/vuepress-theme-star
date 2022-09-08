@@ -3,10 +3,10 @@ page: Home
 title: Home
 heroImage: /images/hero.png
 actions:
-  - text: Get Started
+  - text: Get Started 💡
     link: /guide/getting-started.html
     type: primary
-  - text: Introduction
+  - text: Introduction 🚀
     link: /guide/
     type: secondary
 links:
