@@ -1,6 +1,6 @@
 @import '_variables';
 
-.home-container {
+.home {
   .features {
     transition: border-color var(--color-transition);
     display: flex;
@@ -91,7 +91,7 @@
 }
 
 @media (max-width: $MQMobile) {
-  .home-container {
+  .home {
     .features {
       flex-direction: column;
     }

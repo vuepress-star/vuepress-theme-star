@@ -1,63 +1,26 @@
 <script setup lang="ts">
-import { usePageFrontmatter } from '@vuepress/client'
+import BreadCrumb from '@theme/BreadCrumb.js'
+import Content from '@theme/Content.vue'
+import Navbar from '@theme/Navbar.vue'
+import PageInfo from '@theme/PageInfo.js'
+import PageMeta from '@theme/PageMeta.vue'
+import PageNav from '@theme/PageNav.vue'
+import ProfileInfo from '@theme/ProfileInfo.vue'
+import Sidebar from '@theme/Sidebar.vue'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import type { StarThemePageFrontmatter } from '../../../shared/index.js'
-import Content from '../../components/Content.vue'
-import Navbar from '../../components/Navbar.vue'
-import PageInfo from '../../components/PageInfo'
-import PageMeta from '../../components/PageMeta.vue'
-import PageNav from '../../components/PageNav.vue'
-import ProfileInfo from '../../components/ProfileInfo.vue'
-import Sidebar from '../../components/Sidebar.vue'
 import {
   useScrollPromise,
-  useSidebarItems,
   useThemeLocaleData,
 } from '../../composables/index.js'
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
-
-const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
 
+defineEmits(['toggle-sidebar', 'toggle-navbar'])
 // navbar
 const shouldShowNavbar = computed(() => themeLocale.value.navbar !== false)
-
-// sidebar
-const sidebarItems = useSidebarItems()
-const isSidebarOpen = ref(false)
-const toggleSidebar = (to?: boolean): void => {
-  isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
-}
-const touchStart = { x: 0, y: 0 }
-const onTouchStart = (e): void => {
-  touchStart.x = e.changedTouches[0].clientX
-  touchStart.y = e.changedTouches[0].clientY
-}
-const onTouchEnd = (e): void => {
-  const dx = e.changedTouches[0].clientX - touchStart.x
-  const dy = e.changedTouches[0].clientY - touchStart.y
-  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-    if (dx > 0 && touchStart.x <= 80) {
-      toggleSidebar(true)
-    } else {
-      toggleSidebar(false)
-    }
-  }
-}
-
-// classes
-const containerClass = computed(() => [
-  {
-    'no-navbar': !shouldShowNavbar.value,
-    'no-sidebar': !sidebarItems.value.length,
-    'sidebar-open': isSidebarOpen.value,
-  },
-  frontmatter.value.pageClass,
-])
 
 const scrollX = ref(0)
 const scrollY = ref(0)
@@ -67,33 +30,23 @@ const handleScroll = (): void => {
   scrollY.value = window.scrollY
 }
 
-// close sidebar after navigation
-let unregisterRouterHook
 onMounted(() => {
-  const router = useRouter()
-  unregisterRouterHook = router.afterEach(() => {
-    toggleSidebar(false)
-  })
   // 滚动条的获取
   window.addEventListener('scroll', handleScroll, true)
 })
 onUnmounted(() => {
-  unregisterRouterHook()
+  window.removeEventListener('scroll', handleScroll, true)
 })
 </script>
 
 <template>
-  <div
-    class="page-container"
-    :class="containerClass"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
+  <div class="page">
     <slot name="navbar">
       <Navbar
         v-if="shouldShowNavbar"
         :style="{ opacity: Math.max(200 - scrollY, 0) / 200 }"
-        @toggle-sidebar="toggleSidebar"
+        @toggle-navbar="$emit('toggle-navbar')"
+        @toggle-sidebar="$emit('toggle-sidebar')"
       >
         <template #before>
           <slot name="navbar-before" />
@@ -104,62 +57,72 @@ onUnmounted(() => {
       </Navbar>
     </slot>
 
-    <div class="header-mask">
-      <BreadCrumb />
-      <PageInfo />
-    </div>
+    <div class="sidebar-mask" @click="$emit('toggle-sidebar')" />
 
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
+    <slot name="sidebar">
+      <Sidebar>
+        <template #top>
+          <slot name="sidebar-top" />
+        </template>
+        <template #bottom>
+          <slot name="sidebar-bottom" />
+        </template>
+      </Sidebar>
+    </slot>
 
-    <main>
-      <div class="left">
-        <slot name="left-top" />
-        <slot name="sidebar">
-          <Sidebar>
-            <template #top>
-              <slot name="sidebar-top" />
-            </template>
-            <template #bottom>
-              <slot name="sidebar-bottom" />
-            </template>
-          </Sidebar>
-        </slot>
-        <slot name="left-bottom" />
-      </div>
-      <div class="middle">
-        <slot name="middle-top" />
-        <Transition
-          name="fade-slide-y"
-          mode="out-in"
-          @before-enter="onBeforeEnter"
-          @before-leave="onBeforeLeave"
-        >
-          <div class="page">
-            <header class="page-header">
-              <GithubCorner />
-            </header>
-            <slot name="page-top" />
-            <main class="page-content">
-              <slot name="page-content-top" />
+    <main class="container">
+      <slot name="container-top" />
+      <header class="container-header">
+        <BreadCrumb />
+        <PageInfo />
+      </header>
+      <main class="container-content">
+        <div class="left">
+          <slot name="left-top" />
+          <slot name="sidebar">
+            <Sidebar>
+              <template #top>
+                <slot name="sidebar-top" />
+              </template>
+              <template #bottom>
+                <slot name="sidebar-bottom" />
+              </template>
+            </Sidebar>
+          </slot>
+          <slot name="left-bottom" />
+        </div>
+        <div class="middle">
+          <slot name="middle-top" />
+          <Transition
+            name="fade-slide-y"
+            mode="out-in"
+            @before-enter="onBeforeEnter"
+            @before-leave="onBeforeLeave"
+          >
+            <div class="content">
+              <slot name="top" />
+              <header class="content-header">
+                <GithubCorner />
+              </header>
               <Content />
-              <slot name="page-content-bottom" />
-            </main>
-            <slot name="page-bottom" />
-            <footer class="page-footer">
-              <PageMeta />
+              <footer class="content-footer">
+                <PageMeta />
 
-              <PageNav />
-            </footer>
-          </div>
-        </Transition>
-        <slot name="page-bottom" />
-      </div>
-      <div class="right">
-        <slot name="right-top" />
-        <ProfileInfo />
-        <slot name="right-bottom" />
-        <Toc class="anchor" />
-      </div>
+                <PageNav />
+              </footer>
+              <slot name="bottom" />
+            </div>
+          </Transition>
+          <slot name="middle-bottom" />
+        </div>
+        <div class="right">
+          <slot name="right-top" />
+          <ProfileInfo />
+          <slot name="right-bottom" />
+          <Toc class="anchor" />
+        </div>
+      </main>
+      <slot name="container-bottom" />
     </main>
   </div>
 </template>

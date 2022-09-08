@@ -30,7 +30,7 @@ const gotoContent = (): void => {
 </script>
 
 <template>
-  <div class="home-container">
+  <div class="home">
     <slot name="navbar">
       <Navbar
         v-if="shouldShowNavbar"

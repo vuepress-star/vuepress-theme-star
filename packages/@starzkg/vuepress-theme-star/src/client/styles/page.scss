@@ -1,7 +1,7 @@
 @import '_mixins';
 @import '_variables';
 
-.page-container {
+.page {
   display: block;
   margin: 0 auto;
 
@@ -10,52 +10,56 @@
     padding-top: 0;
   }
 
-  .header-mask {
-    height: 40vh;
-    max-width: calc(var(--content-width) + 5rem);
-    margin: 0 auto;
-  }
-
-  > main {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: var(--page-width);
-
-    .left {
-      margin-right: 5px;
-      height: calc(100vh - var(--navbar-height));
-      position: sticky;
-      top: var(--navbar-height);
-    }
-
-    .middle {
+  .container {
+    .container-header {
+      height: 40vh;
       width: 100%;
       max-width: calc(var(--content-width) + 5rem);
+      margin: 0 auto;
+      padding: var(--navbar-height) 0;
     }
 
-    .right {
-      margin-left: 5px;
-    }
+    .container-content {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: var(--page-width);
 
-    .left,
-    .right {
-      width: var(--page-aside-width);
-      transition: transform 0.25s ease-in-out 0.12s,
-        opacity 0.25s ease-in-out 0.12s;
-      transform: translateY(0px);
-      opacity: 1;
-    }
-
-    @media (max-width: $lg) {
       .left {
-        display: none;
+        margin-right: 5px;
+        height: calc(100vh - var(--navbar-height));
+        position: sticky;
+        top: var(--navbar-height);
       }
-    }
 
-    @media (max-width: $md) {
+      .middle {
+        width: 100%;
+        max-width: calc(var(--content-width) + 5rem);
+      }
+
       .right {
-        display: none;
+        margin-left: 5px;
+      }
+
+      .left,
+      .right {
+        width: var(--page-aside-width);
+        transition: transform 0.25s ease-in-out 0.12s,
+          opacity 0.25s ease-in-out 0.12s;
+        transform: translateY(0px);
+        opacity: 1;
+      }
+
+      @media (max-width: $lg) {
+        .left {
+          display: none;
+        }
+      }
+
+      @media (max-width: $md) {
+        .right {
+          display: none;
+        }
       }
     }
   }
@@ -89,7 +93,7 @@
     }
   }
 
-  .page {
+  .content {
     max-width: calc(var(--content-width) + 5rem);
     margin: 0 auto;
     background: #fff;
@@ -227,6 +231,14 @@
 
     a:after {
       content: '→';
+    }
+  }
+}
+
+@media screen and (min-width: $MQMobile) {
+  .page {
+    > .sidebar {
+      display: none;
     }
   }
 }

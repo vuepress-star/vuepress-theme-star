@@ -1,6 +1,6 @@
 @import '_variables';
 
-.home-container {
+.home {
   display: block;
   position: relative;
   overflow: hidden;
@@ -96,7 +96,7 @@
 }
 
 @media (max-width: $MQMobileNarrow) {
-  .home-container .content {
+  .home .content {
     header {
       .hero {
         img {

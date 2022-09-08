@@ -3,7 +3,7 @@
 @import '_mixins';
 @import '_variables';
 
-.page-container .page-info {
+.page .page-info {
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -51,6 +51,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 0 1rem;
 
     > * {
       display: flex;

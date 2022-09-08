@@ -111,6 +111,7 @@ const onBeforeLeave = scrollPromise.pending
       >
         <Component
           :is="pageName"
+          class="page-container"
           :class="pageClass"
           @toggle-navbar="toggleNavbar"
           @toggle-sidebar="toggleSidebar"
