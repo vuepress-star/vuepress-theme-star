@@ -103,6 +103,24 @@
         var(--code-bg-color, #282c34) 50%
       );
     }
+
+    &:hover {
+      &::before {
+        background: radial-gradient(
+          12px at left top,
+          transparent 50%,
+          var(--code-group-nav-hover-color, #434a57) 50%
+        );
+      }
+
+      &::after {
+        background: radial-gradient(
+          12px at right top,
+          transparent 50%,
+          var(--code-group-nav-hover-color, #434a57) 50%
+        );
+      }
+    }
   }
 
   @media (max-width: 419px) {
