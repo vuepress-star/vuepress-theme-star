@@ -54,5 +54,19 @@ const themeLocale = useThemeLocaleData()
       margin: 6px 0;
     }
   }
+
+  .sidebar-open & {
+    span {
+      &:nth-child(1) {
+        transform: translateY(0.5rem) rotate(135deg);
+      }
+      &:nth-child(2) {
+        transform: scale(0);
+      }
+      &:nth-child(3) {
+        transform: translateY(-0.5rem) rotate(-135deg);
+      }
+    }
+  }
 }
 </style>

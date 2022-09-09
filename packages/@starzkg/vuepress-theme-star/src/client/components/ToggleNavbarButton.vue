@@ -92,19 +92,19 @@ const themeLocale = useThemeLocaleData()
     }
   }
 
-  &.is-active {
+  .navbar-open & {
     .button-top {
-      top: 0.375rem;
+      top: 0.625rem;
       transform: translateX(0) rotate(225deg);
     }
 
     .button-middle {
-      top: 0.375rem;
-      transform: translateX(16px);
+      top: 0.625rem;
+      transform: translateX(20px);
     }
 
     .button-bottom {
-      top: 0.375rem;
+      top: 0.625rem;
       transform: translateX(0) rotate(135deg);
     }
 
