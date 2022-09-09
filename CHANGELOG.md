@@ -1,3 +1,54 @@
+# [1.0.0-beta.26](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2022-09-09)
+
+
+### Bug Fixes
+
+* fix ([3d31e98](https://github.com/vuepress-star/vuepress-theme-star/commit/3d31e98de66669a845d033c20850a7e0014616f9))
+* fix ([0b3cdb1](https://github.com/vuepress-star/vuepress-theme-star/commit/0b3cdb1265171ee897335887714d01fb77ed50b5))
+* fix ([cfe44d5](https://github.com/vuepress-star/vuepress-theme-star/commit/cfe44d5bde6b8a2dfbeede1666ea4a6cfc4a8ac8))
+* fix ([aa32b58](https://github.com/vuepress-star/vuepress-theme-star/commit/aa32b58149d718b45c0364508e8f90db215101f2))
+* fix ([387445a](https://github.com/vuepress-star/vuepress-theme-star/commit/387445a6d4e3a354560bd5d838dcdafd792c0149))
+* fix ([7e01068](https://github.com/vuepress-star/vuepress-theme-star/commit/7e010688f5b2bf11c2709935faef09651a1cdd5e))
+* fix ([2641f72](https://github.com/vuepress-star/vuepress-theme-star/commit/2641f729ce33eb6cd15f0c9db5ca9dad4ee8269c))
+* fix ([bde4ca2](https://github.com/vuepress-star/vuepress-theme-star/commit/bde4ca20a0e1c83bf5f231ef8ef5739f46bad328))
+* fix ([ea70324](https://github.com/vuepress-star/vuepress-theme-star/commit/ea70324511b0f3bb98809bbd626315701ed67d2e))
+* fix ([1e54ad9](https://github.com/vuepress-star/vuepress-theme-star/commit/1e54ad97ec1743a7c6d2684fc063eb6f86c0acd7))
+* fix ([7598de9](https://github.com/vuepress-star/vuepress-theme-star/commit/7598de9a92e9ea4f513c6c6ddde433625f10ecc0))
+* fix ([020b348](https://github.com/vuepress-star/vuepress-theme-star/commit/020b348f5b8e499a4bf0f301e148dc7b7d11ffdf))
+* fix ([ca8581e](https://github.com/vuepress-star/vuepress-theme-star/commit/ca8581eb637941214c24ea597e4455b3d4c3dcc4))
+* fix ([e37dbd8](https://github.com/vuepress-star/vuepress-theme-star/commit/e37dbd80ea3b5f5f1e66b2a82a94f23067676442))
+* fix ([76bceb7](https://github.com/vuepress-star/vuepress-theme-star/commit/76bceb7502289cff2ef4e21b9eace09353ca4699))
+* fix arrow ([bb5fab5](https://github.com/vuepress-star/vuepress-theme-star/commit/bb5fab5019cd683c91d5f92688d7430a8eb1f7fe))
+* fix button ([5e5c73b](https://github.com/vuepress-star/vuepress-theme-star/commit/5e5c73b636f8b74154e515beb6b5205e60f57ae9))
+* fix code-group.scss ([99c18ab](https://github.com/vuepress-star/vuepress-theme-star/commit/99c18abedc72f516c8cd2bdea752a3580f43c1b2))
+* fix home ([538923a](https://github.com/vuepress-star/vuepress-theme-star/commit/538923aa5e0a972babf44f0532acef5fae6b0610))
+* fix layout ([ca8d303](https://github.com/vuepress-star/vuepress-theme-star/commit/ca8d303908df6099b9b9b6f308b2e9c85d38fa53))
+* fix links ([9fe7f9a](https://github.com/vuepress-star/vuepress-theme-star/commit/9fe7f9a0812cd68fc2803563c54e939eb4084951))
+* fix links ([a5688d1](https://github.com/vuepress-star/vuepress-theme-star/commit/a5688d1c5b9ccb873abd4f5822d2f9268fd1b50a))
+* fix loading ([0925b4a](https://github.com/vuepress-star/vuepress-theme-star/commit/0925b4a8f0452a0b0228486a5c0a982b3210ed43))
+* fix navbar ([0088888](https://github.com/vuepress-star/vuepress-theme-star/commit/008888878c80430e4fbf6ecf6ae0f42d72ed5563))
+* fix navbar ([98a66e9](https://github.com/vuepress-star/vuepress-theme-star/commit/98a66e9fe6f3f8e125c2bea6807fe0dd14097c47))
+* fix navbar ([b2b48da](https://github.com/vuepress-star/vuepress-theme-star/commit/b2b48dabe3deafbac4751fa96fe01b6ba3cc6970))
+* fix navbar ([480b9df](https://github.com/vuepress-star/vuepress-theme-star/commit/480b9dfa24f43a61f2494a49aecfd9b9849b5286))
+* fix navbar ([0cdb17d](https://github.com/vuepress-star/vuepress-theme-star/commit/0cdb17d982b1cc4433831e5402103d79646f288f))
+* fix page ([f6f9889](https://github.com/vuepress-star/vuepress-theme-star/commit/f6f988954dab6f6987378498ce52c6b3dbe030c6))
+* fix page ([ac42e33](https://github.com/vuepress-star/vuepress-theme-star/commit/ac42e339bc8f9c975d3cb8ebd796398ee93b256e))
+* fix pages ([f09f273](https://github.com/vuepress-star/vuepress-theme-star/commit/f09f2738b373c1486f720630eeb2243007e9cfd5))
+* markdown enhance ([79a9201](https://github.com/vuepress-star/vuepress-theme-star/commit/79a9201da2733bba4d924700fdd5705147bf932c))
+* update vuepress ([6d54a14](https://github.com/vuepress-star/vuepress-theme-star/commit/6d54a14d59959e920ddc302c2ad09cc4f1d484ef))
+* update vuepress ([c63373f](https://github.com/vuepress-star/vuepress-theme-star/commit/c63373f566bb2192b2d56938a0cfc5818d6c60b8))
+
+
+### Features
+
+* multi default local options ([f8aecb1](https://github.com/vuepress-star/vuepress-theme-star/commit/f8aecb1b9cbfe8129e99955bccc8e4fb138555a2))
+* page info ([74ce91e](https://github.com/vuepress-star/vuepress-theme-star/commit/74ce91e0d14c1fa64d7450adbc90ca6c506e8225))
+* remove some module ([51607a7](https://github.com/vuepress-star/vuepress-theme-star/commit/51607a7b54930d4626512a79f5c26ee8d032232a))
+* site data ([42bf051](https://github.com/vuepress-star/vuepress-theme-star/commit/42bf0512e5b5f1e5e7b229aa4880ca50d7defa3e))
+* supsension ([8166ca1](https://github.com/vuepress-star/vuepress-theme-star/commit/8166ca1e9391328250dd59b7865246847adea5f1))
+
+
+
 # Change Log
 
 All notable changes to this project will be documented in this file.

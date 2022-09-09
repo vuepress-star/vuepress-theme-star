@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-photo-swipe",
-  "version": "1.0.0-beta.25",
+  "version": "1.0.0-beta.26",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
