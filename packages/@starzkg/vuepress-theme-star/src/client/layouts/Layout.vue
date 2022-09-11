@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
+import { UAParser } from 'ua-parser-js'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { StarThemePageFrontmatter } from '../../shared/index.js'
@@ -13,6 +14,11 @@ import {
 
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
+
+const uaParser = ref(new UAParser())
+const loadUA = (): void => {
+  uaParser.value = new UAParser()
+}
 
 // navbar
 const shouldShowNavbar = computed(
@@ -41,6 +47,7 @@ const containerClass = computed(() => [
     'navbar-open': isNavbarOpen.value,
     'sidebar-open': isSidebarOpen.value,
   },
+  uaParser.value.getResult().device.type,
   frontmatter.value.pageClass,
 ])
 
@@ -52,9 +59,11 @@ onMounted(() => {
     toggleNavbar(false)
     toggleSidebar(false)
   })
+  window.addEventListener('resize', loadUA)
 })
 onUnmounted(() => {
   unregisterRouterHook()
+  window.removeEventListener('resize', loadUA)
 })
 
 const touchStart = { x: 0, y: 0 }

@@ -72,6 +72,7 @@
     "sass": "^1.54.5",
     "screenfull": "^5.2.0",
     "ts-debounce": "^3.0.0",
+    "ua-parser-js": "^1.0.2",
     "vue": "^3.2.37",
     "vue-router": "^4.1.4",
     "vuepress-plugin-sass-palette": "2.0.0-beta.94"
