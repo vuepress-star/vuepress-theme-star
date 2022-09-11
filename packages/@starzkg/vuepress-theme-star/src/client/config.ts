@@ -12,6 +12,7 @@ import Pagination from './components/Pagination.vue'
 import ScreenFull from './components/ScreenFull.js'
 import {
   setupDarkMode,
+  setupNavbar,
   setupSidebarItems,
   useScrollPromise,
 } from './composables/index.js'
@@ -72,6 +73,7 @@ export default defineClientConfig({
   setup() {
     setupDarkMode()
     setupSidebarItems()
+    setupNavbar()
   },
 
   rootComponents: [Suspension],

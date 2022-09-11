@@ -45,7 +45,6 @@ onUnmounted(() => {
       <Navbar
         v-if="shouldShowNavbar"
         :style="{ opacity: Math.max(200 - scrollY, 0) / 200 }"
-        @toggle-navbar="$emit('toggle-navbar')"
         @toggle-sidebar="$emit('toggle-sidebar')"
       >
         <template #before>

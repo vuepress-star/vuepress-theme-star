@@ -32,11 +32,7 @@ const gotoContainer = (): void => {
 <template>
   <div class="home">
     <slot name="navbar">
-      <Navbar
-        v-if="shouldShowNavbar"
-        @toggle-navbar="$emit('toggle-navbar')"
-        @toggle-sidebar="$emit('toggle-sidebar')"
-      >
+      <Navbar v-if="shouldShowNavbar" @toggle-sidebar="$emit('toggle-sidebar')">
         <template #before>
           <slot name="navbar-before" />
         </template>

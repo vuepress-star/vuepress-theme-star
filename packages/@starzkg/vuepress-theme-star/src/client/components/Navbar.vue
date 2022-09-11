@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import { useNavbar } from '../composables/index.js'
 import NavbarBadge from './NavbarBadge.vue'
 import NavbarItems from './NavbarItems.vue'
 import NavbarLogo from './NavbarLogo.js'
 import ToggleNavbarButton from './ToggleNavbarButton.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
-defineEmits(['toggle-sidebar', 'toggle-navbar'])
+defineEmits(['toggle-sidebar'])
 
-const navbar = ref<HTMLElement | null>(null)
+const navbar = useNavbar()
+
+const navbarEl = ref<HTMLElement | null>(null)
 const navbarBrand = ref<HTMLElement | null>(null)
 
 const linksWrapperMaxWidth = ref(0)
@@ -26,14 +29,14 @@ onMounted(() => {
   // refer to _variables.scss
   const MOBILE_DESKTOP_BREAKPOINT = 719
   const navbarHorizontalPadding =
-    getCssValue(navbar.value, 'paddingLeft') +
-    getCssValue(navbar.value, 'paddingRight')
+    getCssValue(navbarEl.value, 'paddingLeft') +
+    getCssValue(navbarEl.value, 'paddingRight')
   const handleLinksWrapWidth = (): void => {
     if (window.innerWidth <= MOBILE_DESKTOP_BREAKPOINT) {
       linksWrapperMaxWidth.value = 0
     } else {
       linksWrapperMaxWidth.value =
-        navbar.value!.offsetWidth -
+        navbarEl.value!.offsetWidth -
         navbarHorizontalPadding -
         (navbarBrand.value?.offsetWidth || 0)
     }
@@ -54,7 +57,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 </script>
 
 <template>
-  <header ref="navbar" class="navbar">
+  <header ref="navbarEl" class="navbar">
     <section class="navbar-wrapper">
       <div class="navbar-left">
         <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
@@ -69,18 +72,20 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       </div>
       <div class="navbar-right">
         <NavbarSearch />
-        <ToggleNavbarButton @toggle="$emit('toggle-navbar')" />
+        <ToggleNavbarButton />
       </div>
     </section>
-    <section class="navbar-mobile-wrapper">
-      <div class="navbar-items-wrapper">
-        <slot name="before" />
-        <NavbarItems :is-header="false" />
-        <slot name="after" />
-      </div>
-      <div class="navbar-brand-wrapper">
-        <NavbarLogo />
-      </div>
-    </section>
+    <Transition name="fade">
+      <section v-if="navbar.open" class="navbar-mobile-wrapper">
+        <div class="navbar-items-wrapper">
+          <slot name="before" />
+          <NavbarItems :is-header="false" />
+          <slot name="after" />
+        </div>
+        <div class="navbar-brand-wrapper">
+          <NavbarLogo />
+        </div>
+      </section>
+    </Transition>
   </header>
 </template>

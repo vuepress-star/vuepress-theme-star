@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { useThemeLocaleData } from '../composables/index.js'
-
-defineEmits(['toggle'])
+import { toggleNavbar, useThemeLocaleData } from '../composables/index.js'
 
 const themeLocale = useThemeLocaleData()
 </script>
@@ -13,7 +11,7 @@ const themeLocale = useThemeLocaleData()
     aria-expanded="false"
     role="button"
     tabindex="0"
-    @click="$emit('toggle')"
+    @click="toggleNavbar"
   >
     <div class="icon button-container" aria-hidden="true">
       <span class="button-top"></span>
@@ -112,7 +110,7 @@ const themeLocale = useThemeLocaleData()
       .button-top,
       .button-middle,
       .button-bottom {
-        background-color: var(--theme-color);
+        background-color: var(--c-text);
         transition: top 0.25s, background-color 0.25s, transform 0.25s;
       }
     }

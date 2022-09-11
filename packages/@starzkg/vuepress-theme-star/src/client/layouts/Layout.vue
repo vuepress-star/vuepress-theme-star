@@ -7,13 +7,12 @@ import type { StarThemePageFrontmatter } from '../../shared/index.js'
 import Background from '../components/Background.vue'
 import Foreground from '../components/Foreground.vue'
 import {
+  useNavbar,
   useScrollPromise,
   useSidebarItems,
-  useThemeLocaleData,
 } from '../composables/index.js'
 
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
-const themeLocale = useThemeLocaleData()
 
 const uaParser = ref(new UAParser())
 const loadUA = (): void => {
@@ -21,13 +20,7 @@ const loadUA = (): void => {
 }
 
 // navbar
-const shouldShowNavbar = computed(
-  () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
-)
-const isNavbarOpen = ref(false)
-const toggleNavbar = (to?: boolean): void => {
-  isNavbarOpen.value = typeof to === 'boolean' ? to : !isNavbarOpen.value
-}
+const navbar = useNavbar()
 
 // sidebar
 const sidebarItems = useSidebarItems()
@@ -42,9 +35,9 @@ const toggleSidebar = (to?: boolean): void => {
 // container classes
 const containerClass = computed(() => [
   {
-    'no-navbar': !shouldShowNavbar.value,
+    'no-navbar': !navbar.value.enable,
     'no-sidebar': !shouldShowSidebar.value,
-    'navbar-open': isNavbarOpen.value,
+    'navbar-open': navbar.value.open,
     'sidebar-open': isSidebarOpen.value,
   },
   uaParser.value.getResult().device.type,
@@ -56,7 +49,6 @@ let unregisterRouterHook
 onMounted(() => {
   const router = useRouter()
   unregisterRouterHook = router.afterEach(() => {
-    toggleNavbar(false)
     toggleSidebar(false)
   })
   window.addEventListener('resize', loadUA)
@@ -122,7 +114,6 @@ const onBeforeLeave = scrollPromise.pending
           :is="pageName"
           class="page-container"
           :class="pageClass"
-          @toggle-navbar="toggleNavbar"
           @toggle-sidebar="toggleSidebar"
         />
       </Transition>
