@@ -22,7 +22,7 @@ const navbarBrandLogo = computed(() => {
 </script>
 
 <template>
-  <RouterLink :to="navbarBrandLink">
+  <RouterLink :to="navbarBrandLink" class="navbar-brand">
     <NavbarLogo />
 
     <span
