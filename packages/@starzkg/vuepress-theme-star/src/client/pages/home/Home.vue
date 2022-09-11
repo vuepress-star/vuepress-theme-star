@@ -21,10 +21,10 @@ const shouldShowNavbar = computed(
   () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
 )
 
-const content = ref<HTMLElement>()
-const gotoContent = (): void => {
-  if (typeof content.value !== 'undefined') {
-    content.value.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+const container = ref<HTMLElement>()
+const gotoContainer = (): void => {
+  if (typeof container.value !== 'undefined') {
+    container.value.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
   }
 }
 </script>
@@ -45,21 +45,21 @@ const gotoContent = (): void => {
         </template>
       </Navbar>
     </slot>
-    <div ref="content" class="content">
-      <header>
+    <main ref="container" class="container">
+      <header class="container-header">
         <slot name="hero">
           <Hero />
         </slot>
         <GithubCorner />
-        <HomeArrow @click="gotoContent" />
+        <HomeArrow @click="gotoContainer" />
       </header>
-      <main class="page">
+      <main class="container-content">
         <Features />
         <slot name="top" />
         <Content class="custom" />
         <slot name="bottom" />
         <Footer />
       </main>
-    </div>
+    </main>
   </div>
 </template>

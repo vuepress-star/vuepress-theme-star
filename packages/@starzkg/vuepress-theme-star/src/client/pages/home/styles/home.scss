@@ -6,7 +6,7 @@
   overflow: hidden;
   height: 100vh;
 
-  .content {
+  .container {
     margin: 0 -6px 0 auto;
     padding: 0;
     height: 100vh;
@@ -17,7 +17,7 @@
     overflow-y: scroll;
     background: transparent;
 
-    header {
+    .container-header {
       position: sticky;
       z-index: -1;
       top: 0;
@@ -55,7 +55,7 @@
       }
     }
 
-    main {
+    .container-content {
       margin-right: auto;
       margin-left: auto;
       min-height: calc(100vh - 2rem);
@@ -96,7 +96,7 @@
 }
 
 @media (max-width: $MQMobileNarrow) {
-  .home .content {
+  .home .container {
     header {
       .hero {
         img {
