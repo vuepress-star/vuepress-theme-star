@@ -18,7 +18,7 @@ const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
 const themeLocale = useThemeLocaleData()
 
-defineEmits(['toggle-sidebar', 'toggle-navbar'])
+defineEmits(['toggle-sidebar'])
 // navbar
 const shouldShowNavbar = computed(() => themeLocale.value.navbar !== false)
 
