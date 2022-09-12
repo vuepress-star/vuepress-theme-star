@@ -12,8 +12,6 @@ import { computed, ref } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../../shared/index.js'
 import { useThemeLocaleData } from '../../composables/index.js'
 
-defineEmits(['toggle-sidebar'])
-
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
 
@@ -33,7 +31,7 @@ const gotoContainer = (): void => {
 <template>
   <div class="home">
     <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar" @toggle-sidebar="$emit('toggle-sidebar')">
+      <Navbar v-if="shouldShowNavbar">
         <template #before>
           <slot name="navbar-before" />
         </template>

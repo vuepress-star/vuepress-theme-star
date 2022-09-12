@@ -13,6 +13,7 @@ import ScreenFull from './components/ScreenFull.js'
 import {
   setupDarkMode,
   setupNavbar,
+  setupSidebar,
   setupSidebarItems,
   useScrollPromise,
 } from './composables/index.js'
@@ -74,6 +75,7 @@ export default defineClientConfig({
     setupDarkMode()
     setupSidebarItems()
     setupNavbar()
+    setupSidebar()
   },
 
   rootComponents: [Suspension],

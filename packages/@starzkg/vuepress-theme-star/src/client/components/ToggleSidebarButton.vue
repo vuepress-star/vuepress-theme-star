@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { useThemeLocaleData } from '../composables/index.js'
-
-defineEmits(['toggle'])
+import { toggleSidebar, useThemeLocaleData } from '../composables/index.js'
 
 const themeLocale = useThemeLocaleData()
 </script>
@@ -13,7 +11,7 @@ const themeLocale = useThemeLocaleData()
     aria-expanded="false"
     role="button"
     tabindex="0"
-    @click="$emit('toggle')"
+    @click="toggleSidebar"
   >
     <div class="icon" aria-hidden="true">
       <span></span>

@@ -7,8 +7,6 @@ import NavbarLogo from './NavbarLogo.js'
 import ToggleNavbarButton from './ToggleNavbarButton.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
-defineEmits(['toggle-sidebar'])
-
 const navbar = useNavbar()
 
 const navbarEl = ref<HTMLElement | null>(null)
@@ -60,7 +58,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
   <header ref="navbarEl" class="navbar">
     <section class="navbar-wrapper">
       <div class="navbar-left">
-        <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
+        <ToggleSidebarButton />
         <div class="navbar-items-wrapper" :style="linksWrapperStyle">
           <slot name="before" />
           <NavbarItems class="can-hide" is-header />

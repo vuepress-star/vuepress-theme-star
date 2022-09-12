@@ -9,6 +9,7 @@ import ProfileInfo from '@theme/ProfileInfo.vue'
 import Sidebar from '@theme/Sidebar.vue'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import {
+  toggleSidebar,
   useScrollPromise,
   useThemeLocaleData,
 } from '../../composables/index.js'
@@ -18,7 +19,6 @@ const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
 const themeLocale = useThemeLocaleData()
 
-defineEmits(['toggle-sidebar'])
 // navbar
 const shouldShowNavbar = computed(() => themeLocale.value.navbar !== false)
 
@@ -45,7 +45,6 @@ onUnmounted(() => {
       <Navbar
         v-if="shouldShowNavbar"
         :style="{ opacity: Math.max(200 - scrollY, 0) / 200 }"
-        @toggle-sidebar="$emit('toggle-sidebar')"
       >
         <template #before>
           <slot name="navbar-before" />
@@ -56,7 +55,7 @@ onUnmounted(() => {
       </Navbar>
     </slot>
 
-    <div class="sidebar-mask" @click="$emit('toggle-sidebar')" />
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
     <slot name="sidebar">
       <Sidebar>

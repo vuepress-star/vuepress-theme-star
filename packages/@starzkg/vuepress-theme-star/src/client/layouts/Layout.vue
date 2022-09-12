@@ -2,14 +2,15 @@
 import { usePageFrontmatter } from '@vuepress/client'
 import { UAParser } from 'ua-parser-js'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
 import type { StarThemePageFrontmatter } from '../../shared/index.js'
 import Background from '../components/Background.vue'
 import Foreground from '../components/Foreground.vue'
 import {
+  toggleNavbar,
+  toggleSidebar,
   useNavbar,
   useScrollPromise,
-  useSidebarItems,
+  useSidebar,
 } from '../composables/index.js'
 
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
@@ -23,38 +24,24 @@ const loadUA = (): void => {
 const navbar = useNavbar()
 
 // sidebar
-const sidebarItems = useSidebarItems()
-const shouldShowSidebar = computed(
-  () => sidebarItems.value.length && sidebarItems.value.length !== 0
-)
-const isSidebarOpen = ref(false)
-const toggleSidebar = (to?: boolean): void => {
-  isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
-}
+const sidebar = useSidebar()
 
 // container classes
 const containerClass = computed(() => [
   {
     'no-navbar': !navbar.value.enable,
-    'no-sidebar': !shouldShowSidebar.value,
+    'no-sidebar': !sidebar.value.enable,
     'navbar-open': navbar.value.open,
-    'sidebar-open': isSidebarOpen.value,
+    'sidebar-open': sidebar.value.open,
   },
   uaParser.value.getResult().device.type,
   frontmatter.value.pageClass,
 ])
 
-// close navbar sidebar after navigation
-let unregisterRouterHook
 onMounted(() => {
-  const router = useRouter()
-  unregisterRouterHook = router.afterEach(() => {
-    toggleSidebar(false)
-  })
   window.addEventListener('resize', loadUA)
 })
 onUnmounted(() => {
-  unregisterRouterHook()
   window.removeEventListener('resize', loadUA)
 })
 
@@ -68,8 +55,10 @@ const onTouchEnd = (e): void => {
   const dy = e.changedTouches[0].clientY - touchStart.y
   if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
     if (dx > 0 && touchStart.x <= 80) {
+      toggleNavbar(true)
       toggleSidebar(true)
     } else {
+      toggleNavbar(false)
       toggleSidebar(false)
     }
   }
@@ -110,12 +99,7 @@ const onBeforeLeave = scrollPromise.pending
         @before-enter="onBeforeEnter"
         @before-leave="onBeforeLeave"
       >
-        <Component
-          :is="pageName"
-          class="page-container"
-          :class="pageClass"
-          @toggle-sidebar="toggleSidebar"
-        />
+        <Component :is="pageName" class="page-container" :class="pageClass" />
       </Transition>
     </slot>
 
