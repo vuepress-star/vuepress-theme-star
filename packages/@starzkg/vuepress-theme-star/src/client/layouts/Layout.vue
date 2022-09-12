@@ -41,9 +41,10 @@ const pageName = computed(() => frontmatter.value.page ?? 'Page')
 
 // page classes
 const pageClass = computed(() => [
-  (pageName.value.toLocaleLowerCase() === 'page'
-    ? 'normal'
-    : pageName.value.toLocaleLowerCase()) + '-page',
+  'page-' +
+    (pageName.value.toLocaleLowerCase() === 'page'
+      ? 'normal'
+      : pageName.value.toLocaleLowerCase()),
   frontmatter.value.pageClass,
 ])
 
@@ -74,7 +75,7 @@ const onBeforeLeave = scrollPromise.pending
 
 <template>
   <div
-    class="theme-container"
+    class="theme-container theme-star"
     :class="containerClass"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
