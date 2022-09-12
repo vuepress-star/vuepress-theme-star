@@ -1,3 +1,25 @@
+# [1.0.0-beta.27](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2022-09-12)
+
+
+### Bug Fixes
+
+* fix ([a21c4de](https://github.com/vuepress-star/vuepress-theme-star/commit/a21c4de30687c8b892bec4d847c87fbe26d0ff34))
+* fix ([5265447](https://github.com/vuepress-star/vuepress-theme-star/commit/526544796bb89c6594670cd7ef35401b35221401))
+* fix github corner ([a9f084d](https://github.com/vuepress-star/vuepress-theme-star/commit/a9f084dc8957cf079abf4923bc4f661b5877e888))
+* fix home ([90bd3c4](https://github.com/vuepress-star/vuepress-theme-star/commit/90bd3c477038ca6f1292df64777de5f08c6d1520))
+* fix ua ([dd7dea8](https://github.com/vuepress-star/vuepress-theme-star/commit/dd7dea862c06c4a0ac9c8fa51d53f97cec7837c3))
+* sidebar ([64b5251](https://github.com/vuepress-star/vuepress-theme-star/commit/64b5251cead8e98cb9591ae07eaf2cd2b6065b8d))
+
+
+### Features
+
+* navbar ([2a48667](https://github.com/vuepress-star/vuepress-theme-star/commit/2a486676a6e5687d194c78025889d4640c2d7fd5))
+* navbar mobile ([2e18562](https://github.com/vuepress-star/vuepress-theme-star/commit/2e185622c1ae11f77b627e661c90b247427a7034))
+* typed.js ([154d825](https://github.com/vuepress-star/vuepress-theme-star/commit/154d825f537896f205f20ca3015763deebab4d95))
+* ua parser ([4c800fa](https://github.com/vuepress-star/vuepress-theme-star/commit/4c800fa4da023eb2bdd1a7ff7898d9850ad9205d))
+
+
+
 # [1.0.0-beta.26](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2022-09-09)
 
 

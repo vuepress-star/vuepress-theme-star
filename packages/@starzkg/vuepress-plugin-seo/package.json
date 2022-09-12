@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-seo",
-  "version": "1.0.0-beta.26",
+  "version": "1.0.0-beta.27",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
