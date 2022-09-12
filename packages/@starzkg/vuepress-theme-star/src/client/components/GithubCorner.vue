@@ -1,17 +1,38 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { isLinkHttp } from '@vuepress/shared'
+import { computed } from 'vue'
+import { useThemeLocaleData } from '../composables'
+import { resolveRepoType } from '../utils/index.js'
 
-export default defineComponent({
-  name: 'GithubCorner',
+const themeLocale = useThemeLocaleData()
+
+const repo = computed(() => themeLocale.value.repo)
+const repoType = computed(() =>
+  repo.value ? resolveRepoType(repo.value) : null
+)
+
+const repoLink = computed(() => {
+  if (repo.value && !isLinkHttp(repo.value)) {
+    return `https://github.com/${repo.value}`
+  }
+
+  return repo.value
+})
+
+const repoLabel = computed(() => {
+  if (!repoLink.value) return null
+  if (themeLocale.value.repoLabel) return themeLocale.value.repoLabel
+  if (repoType.value === null) return 'Source'
+  return repoType.value
 })
 </script>
 
 <template>
   <a
-    href="https://github.com/PanJiaChen/vue-element-admin"
+    :href="repoLink"
     target="_blank"
     class="github-corner"
-    aria-label="View source on Github"
+    :aria-label="'View source on ' + repoLabel"
   >
     <svg
       width="80"
