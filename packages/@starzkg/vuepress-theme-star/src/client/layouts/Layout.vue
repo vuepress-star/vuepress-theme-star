@@ -103,7 +103,7 @@ const onBeforeLeave = scrollPromise.pending
       </Transition>
     </slot>
 
-    <slot name="front">
+    <slot name="fore">
       <Foreground />
     </slot>
   </div>
