@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
-import { UAParser } from 'ua-parser-js'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed } from 'vue'
 import type { StarThemePageFrontmatter } from '../../shared/index.js'
 import Background from '../components/Background.vue'
 import Foreground from '../components/Foreground.vue'
@@ -11,14 +10,13 @@ import {
   useNavbar,
   useScrollPromise,
   useSidebar,
+  useUA,
 } from '../composables/index.js'
 
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 
-const uaParser = ref(new UAParser())
-const loadUA = (): void => {
-  uaParser.value = new UAParser()
-}
+// ua
+const ua = useUA()
 
 // navbar
 const navbar = useNavbar()
@@ -34,16 +32,20 @@ const containerClass = computed(() => [
     'navbar-open': navbar.value.open,
     'sidebar-open': sidebar.value.open,
   },
-  uaParser.value.getResult().device.type,
+  ua.value.getResult().device.type,
   frontmatter.value.pageClass,
 ])
 
-onMounted(() => {
-  window.addEventListener('resize', loadUA)
-})
-onUnmounted(() => {
-  window.removeEventListener('resize', loadUA)
-})
+// page name
+const pageName = computed(() => frontmatter.value.page ?? 'Page')
+
+// page classes
+const pageClass = computed(() => [
+  (pageName.value.toLocaleLowerCase() === 'page'
+    ? 'normal'
+    : pageName.value.toLocaleLowerCase()) + '-page',
+  frontmatter.value.pageClass,
+])
 
 const touchStart = { x: 0, y: 0 }
 const onTouchStart = (e): void => {
@@ -63,17 +65,6 @@ const onTouchEnd = (e): void => {
     }
   }
 }
-
-// page name
-const pageName = computed(() => frontmatter.value.page ?? 'Page')
-
-// page classes
-const pageClass = computed(() => [
-  (pageName.value.toLocaleLowerCase() === 'page'
-    ? 'normal'
-    : pageName.value.toLocaleLowerCase()) + '-page',
-  frontmatter.value.pageClass,
-])
 
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()

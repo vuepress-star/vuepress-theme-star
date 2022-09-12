@@ -571,6 +571,7 @@ importers:
       '@starzkg/vuepress-plugin-sitemap': workspace:*
       '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
+      '@types/ua-parser-js': ^0.7.36
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-active-header-links': 2.0.0-beta.50
@@ -629,6 +630,8 @@ importers:
       vue: 3.2.37
       vue-router: 4.1.5_vue@3.2.37
       vuepress-plugin-sass-palette: 2.0.0-beta.94
+    devDependencies:
+      '@types/ua-parser-js': 0.7.36
 
 packages:
 
@@ -2611,6 +2614,10 @@ packages:
   /@types/trusted-types/2.0.2:
     resolution: {integrity: sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==}
     dev: false
+
+  /@types/ua-parser-js/0.7.36:
+    resolution: {integrity: sha512-N1rW+njavs70y2cApeIw1vLMYXRwfBy+7trgavGuuTfOd7j1Yh7QTRc/yqsPl6ncokt72ZXuxEU0PiCp9bSwNQ==}
+    dev: true
 
   /@types/web-bluetooth/0.0.15:
     resolution: {integrity: sha512-w7hEHXnPMEZ+4nGKl/KDRVpxkwYxYExuHOYXyzIzCDzEZ9ZCGMAewulr9IqJu2LR4N37fcnb1XVeuZ09qgOxhA==}
