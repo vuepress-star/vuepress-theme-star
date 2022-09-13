@@ -112,8 +112,8 @@ importers:
 
   example/.vuepress:
     specifiers:
-      '@starzkg/vuepress-plugin-baidu-analytics': workspace:*
-      '@starzkg/vuepress-plugin-cnzz-analytics': workspace:*
+      '@starzkg/vuepress-plugin-baidu-analytics': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-cnzz-analytics': 1.0.0-beta.28
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -129,8 +129,8 @@ importers:
       vue: ^3.2.37
       vuepress: 2.0.0-beta.50
     dependencies:
-      '@starzkg/vuepress-plugin-baidu-analytics': link:../../packages/@starzkg/vuepress-plugin-baidu-analytics
-      '@starzkg/vuepress-plugin-cnzz-analytics': link:../../packages/@starzkg/vuepress-plugin-cnzz-analytics
+      '@starzkg/vuepress-plugin-baidu-analytics': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-cnzz-analytics': 1.0.0-beta.28
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -169,26 +169,6 @@ importers:
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
       vue: 3.2.37
-
-  packages/@starzkg/vuepress-plugin-baidu-analytics:
-    specifiers:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-    dependencies:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-
-  packages/@starzkg/vuepress-plugin-cnzz-analytics:
-    specifiers:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-    dependencies:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
 
   packages/@starzkg/vuepress-plugin-copy-code:
     specifiers:
@@ -2334,6 +2314,26 @@ packages:
       estree-walker: 1.0.1
       picomatch: 2.3.1
       rollup: 2.75.7
+
+  /@starzkg/vuepress-plugin-baidu-analytics/1.0.0-beta.28:
+    resolution: {integrity: sha512-NN656RrIQpglROvxhwpOqKfL45sGYwnwlP64qbqVmIaUxkT25I03uBWU3yj3Kg9vLz/OW/l0rXrgLXtANQsNIw==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@starzkg/vuepress-plugin-cnzz-analytics/1.0.0-beta.28:
+    resolution: {integrity: sha512-6fKPxsXadEX0cZx6Wn/J3vdAEuvdu5agIHoJPL2tgTf/w5BdfH/w9GXJjy71f5I1fFiv98y19gdQrFl//I5GCg==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@surma/rollup-plugin-off-main-thread/2.2.3:
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
