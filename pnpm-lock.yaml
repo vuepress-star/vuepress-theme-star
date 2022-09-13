@@ -112,15 +112,13 @@ importers:
 
   example/.vuepress:
     specifiers:
-      '@starzkg/vuepress-plugin-baidu-analytics': 1.0.0-beta.28
-      '@starzkg/vuepress-plugin-cnzz-analytics': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-analytics': 1.0.0
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
       '@vuepress/cli': 2.0.0-beta.50
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/plugin-docsearch': 2.0.0-beta.50
-      '@vuepress/plugin-google-analytics': 2.0.0-beta.50
       '@vuepress/plugin-register-components': 2.0.0-beta.50
       '@vuepress/plugin-shiki': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
@@ -129,15 +127,13 @@ importers:
       vue: ^3.2.37
       vuepress: 2.0.0-beta.50
     dependencies:
-      '@starzkg/vuepress-plugin-baidu-analytics': 1.0.0-beta.28
-      '@starzkg/vuepress-plugin-cnzz-analytics': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-analytics': 1.0.0
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
       '@vuepress/cli': 2.0.0-beta.50
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/plugin-docsearch': 2.0.0-beta.50
-      '@vuepress/plugin-google-analytics': 2.0.0-beta.50
       '@vuepress/plugin-register-components': 2.0.0-beta.50
       '@vuepress/plugin-shiki': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
@@ -2315,8 +2311,21 @@ packages:
       picomatch: 2.3.1
       rollup: 2.75.7
 
-  /@starzkg/vuepress-plugin-baidu-analytics/1.0.0-beta.28:
-    resolution: {integrity: sha512-NN656RrIQpglROvxhwpOqKfL45sGYwnwlP64qbqVmIaUxkT25I03uBWU3yj3Kg9vLz/OW/l0rXrgLXtANQsNIw==}
+  /@starzkg/vuepress-plugin-analytics/1.0.0:
+    resolution: {integrity: sha512-u30VNHcaXmiY2mEjeO7ikqWA2tDy0VO1RHB3rihEZOC5IVo0eM+9DX1H7jKa9rDp12NqQ035e2ue9SuNBk8vRw==}
+    dependencies:
+      '@starzkg/vuepress-plugin-baidu-analytics': 1.0.0
+      '@starzkg/vuepress-plugin-cnzz-analytics': 1.0.0
+      '@starzkg/vuepress-plugin-google-analytics': 1.0.0
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@starzkg/vuepress-plugin-baidu-analytics/1.0.0:
+    resolution: {integrity: sha512-OL4caYEdePgFmBlUHgJ1xmRHMpV9RIuGkqFQZID8QophC5aRVisVKQv8SNa+S7CRDfUKtLznWoGAYvLXQtejAw==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2325,8 +2334,18 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-cnzz-analytics/1.0.0-beta.28:
-    resolution: {integrity: sha512-6fKPxsXadEX0cZx6Wn/J3vdAEuvdu5agIHoJPL2tgTf/w5BdfH/w9GXJjy71f5I1fFiv98y19gdQrFl//I5GCg==}
+  /@starzkg/vuepress-plugin-cnzz-analytics/1.0.0:
+    resolution: {integrity: sha512-FTW1A1YDA1YHCXiulVAwzcjBnm7K1i4MnXPXu72jrn7f1PLxgaevBODSbSSthgKcP0ZeBKPUaFzsnkuQnFnZgQ==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@starzkg/vuepress-plugin-google-analytics/1.0.0:
+    resolution: {integrity: sha512-9qi8Y2HSVWLsHfBCg9tv0pj6c22ERp0Q9765ea3zBf7BNdXbk/SfssUcskX92/13Gg/oFwvl0Zs5Xs8dj8nutw==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50

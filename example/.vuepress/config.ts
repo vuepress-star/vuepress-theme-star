@@ -1,11 +1,9 @@
-import { baiduAnalyticsPlugin } from '@starzkg/vuepress-plugin-baidu-analytics'
-import { cnzzAnalyticsPlugin } from '@starzkg/vuepress-plugin-cnzz-analytics'
+import { analyticsPlugin } from '@starzkg/vuepress-plugin-analytics'
 import starTheme from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from '@vuepress/cli'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { path } from '@vuepress/utils'
@@ -163,19 +161,21 @@ export default defineUserConfig({
         },
       },
     }),
-    googleAnalyticsPlugin({
-      // we have multiple deployments, which would use different id
-      id: process.env.DOCS_GA_ID ?? '',
-    }),
-    baiduAnalyticsPlugin({
-      // we have multiple deployments, which would use different id
-      id: process.env.DOCS_GA_ID ?? '',
-      spa: true,
-    }),
-    cnzzAnalyticsPlugin({
-      id: process.env.DOCS_CNZZ_ID ?? '',
-      webId: process.env.DOCS_CNZZ_WEB_ID ?? '',
-      spa: true,
+    analyticsPlugin({
+      google: {
+        // we have multiple deployments, which would use different id
+        id: process.env.DOCS_GA_ID ?? '',
+      },
+      baidu: {
+        // we have multiple deployments, which would use different id
+        id: process.env.DOCS_GA_ID ?? '',
+        spa: true,
+      },
+      cnzz: {
+        id: process.env.DOCS_CNZZ_ID ?? '',
+        webId: process.env.DOCS_CNZZ_WEB_ID ?? '',
+        spa: true,
+      },
     }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
