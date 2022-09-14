@@ -112,7 +112,7 @@ importers:
 
   example/.vuepress:
     specifiers:
-      '@starzkg/vuepress-plugin-analytics': 1.1.0
+      '@starzkg/vuepress-plugin-analytics': 1.1.1
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -127,7 +127,7 @@ importers:
       vue: ^3.2.37
       vuepress: 2.0.0-beta.50
     dependencies:
-      '@starzkg/vuepress-plugin-analytics': 1.1.0
+      '@starzkg/vuepress-plugin-analytics': 1.1.1
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -2311,19 +2311,19 @@ packages:
       picomatch: 2.3.1
       rollup: 2.75.7
 
-  /@starzkg/vuepress-plugin-analytics/1.1.0:
-    resolution: {integrity: sha512-MTx4tEZuDrzgYlPUayhvpNLYFjD9+xKhKdw00tvk+pCeAW6yxLf2hcN007RlR8PBokSXaofclwchg3HhIskl7A==}
+  /@starzkg/vuepress-plugin-analytics/1.1.1:
+    resolution: {integrity: sha512-nMrgsUw2gCZKMN4vIUoITWHIw2UJrHJEOu6JbB2Dz6FOKapDcdcJtRNQV55zCNK2fL2e8xS2rL/v9ruoYg/nHw==}
     dependencies:
-      '@starzkg/vuepress-plugin-baidu-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-clarity-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-cnzz-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-fathom-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-google-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-micro-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-panelbear-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-pirsch-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-plausible-analytics': 1.1.0
-      '@starzkg/vuepress-plugin-simple-analytics': 1.1.0
+      '@starzkg/vuepress-plugin-baidu-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-clarity-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-cnzz-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-fathom-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-google-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-micro-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-panelbear-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-pirsch-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-plausible-analytics': 1.1.1
+      '@starzkg/vuepress-plugin-simple-analytics': 1.1.1
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
@@ -2331,18 +2331,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-baidu-analytics/1.1.0:
-    resolution: {integrity: sha512-hgUApvxt6fWobE3QucKQksYTWP0P4s+XKaIQ2bo242jCuf3crnTLEB8Pisqp8eY80sChujrwHPwlPQt0CtetnA==}
-    dependencies:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@starzkg/vuepress-plugin-clarity-analytics/1.1.0:
-    resolution: {integrity: sha512-vuTe8N0ZIwB0de2TvzXUYe7MeiGIe8m/QzXwBPgYNECNed8qfOB+/LDPoh67d2oiAf6UvmzuWLwf6OZoRBKfeQ==}
+  /@starzkg/vuepress-plugin-baidu-analytics/1.1.1:
+    resolution: {integrity: sha512-uejxTWN7wbQcOnmny21Gl3bg9kJFuEfB67BM/nWCF9oDWOxE8gKrpWkKELVyTRmqUdk6hkdd3bqDNKe7yFgrjA==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2351,8 +2341,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-cnzz-analytics/1.1.0:
-    resolution: {integrity: sha512-UYIyeJAt3bviuPu9YEt0atVxyiwhktiRLZDm91BqqWKI6SrLPXAbSYXVcKX3XG5YMGkS/vUbpVvIZ+sOZoOTZg==}
+  /@starzkg/vuepress-plugin-clarity-analytics/1.1.1:
+    resolution: {integrity: sha512-XnJLZ+JpqYcjjjtpBHyfL4eAf/NIlEC0SZK34P0h4wIMFDlbH1HL1TL8vBCB0vmgnjLtFG6qN8RqOhp26jdLHg==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2361,8 +2351,18 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-fathom-analytics/1.1.0:
-    resolution: {integrity: sha512-Jy9YylXQVRqHgOdGXMY304hL9js+wA0ThlwA3z6auzePxmf9OSLpK6sApTgfBhtg5d0oPJFYj+VyslTkOIKD5Q==}
+  /@starzkg/vuepress-plugin-cnzz-analytics/1.1.1:
+    resolution: {integrity: sha512-T6jUVJqLp1sClAyb7+AfXt10+kU50cjVO+8vh8JevCUsycIr632Z+BZuRIB9fAYwmt4eK/wgBgYetE/JK/TWOA==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@starzkg/vuepress-plugin-fathom-analytics/1.1.1:
+    resolution: {integrity: sha512-npmf70AcSYgaTNaZSvl8Lsh/zEAIUk+8RBSg8T+kWB5+NUz1HQLSUt45utZaxOldKH/3u1Wr/XleIdu5Ptl+bg==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2372,8 +2372,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-google-analytics/1.1.0:
-    resolution: {integrity: sha512-UndjLQQXS9FAK79I8bfa6ZXfENYZPfPdlowHlnxn0YeRQFn2EBCiGW6nHrqkQ0wpyIC7JviUglpSGfzoMqwZng==}
+  /@starzkg/vuepress-plugin-google-analytics/1.1.1:
+    resolution: {integrity: sha512-O7sJUkarpN1te5o3ws42Xd4tCSWAKgzunjXNvbbsXm2sREjqxnrCCJvEfUQm6fSJtBXeZ2zIYg5Q7FIkYlt3EQ==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2382,8 +2382,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-micro-analytics/1.1.0:
-    resolution: {integrity: sha512-k6nVNNx2MbW/9NYP8ET5bYWPdxL7s+MlQAsOQ6u86Emc6EKn3wBEsxkhOMaeEzA56gZgkiDf9sYTvhA/oPcFQQ==}
+  /@starzkg/vuepress-plugin-micro-analytics/1.1.1:
+    resolution: {integrity: sha512-TivYgJLkGcgCGaZO6gh8hXmzTPWSbcT0LW/1meh+LJhhg0EGst77xn60XPeKp5s6mOEeb1WnduUNVj/58jeLWQ==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2392,8 +2392,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-panelbear-analytics/1.1.0:
-    resolution: {integrity: sha512-FVscrGF3KyYF2RHZrp+X72nh/LrRHxoVybmdtA0vRv1KugHoi9nW9L5BbeUgaCC6hR7ho99DAiJLcqrsYMlFsA==}
+  /@starzkg/vuepress-plugin-panelbear-analytics/1.1.1:
+    resolution: {integrity: sha512-Yq6GcSlM064ao3Gl8+bF3VMW+DJIoLBjDIKVPEw5MRpkGwgMdbOpItY2SW0HvMgURspZY8kBgegzyXArrfdssw==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2402,8 +2402,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-pirsch-analytics/1.1.0:
-    resolution: {integrity: sha512-Li6rBYfYe/od+xFIHHJoBOJq6qhO3KjyKvwt8PrpWeBLTzCD8K1PV+8jRQAnALUh9C+6Y3sEo88R3eooSlKgNg==}
+  /@starzkg/vuepress-plugin-pirsch-analytics/1.1.1:
+    resolution: {integrity: sha512-2Ohq2tTW2KsfdhTXAR0KFqtJVegwwo7iihZ4iqQJA0+nwrmKwgMNKV1Pn5a4fFx6DdXTY6MLkLNbJZOTZyyBgw==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2412,8 +2412,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-plausible-analytics/1.1.0:
-    resolution: {integrity: sha512-FhFbsA+IM8bGvufqLtZdGSCbJWTsD8FBGwdKsxH6aFV3lecy8bE++6yLlNrhhmqn1wugzPUXzvv4q5zJtPrXYw==}
+  /@starzkg/vuepress-plugin-plausible-analytics/1.1.1:
+    resolution: {integrity: sha512-IObvCbtu+HeMjCYEh2+n61e4NnnnQM+Hg/6XboNaP5I1JXPgSNlhk2o5QolTn7x0aX3tCURgxNeJoaqDAaEzQA==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -2422,8 +2422,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-simple-analytics/1.1.0:
-    resolution: {integrity: sha512-xxSMPD+SwwH5lejFBECVGW48Xcp1Z8i0C7bNDRvjabCRCJzD7vGJDzyZ9MnJMiIMF/5ew4OsGWJ0BtuQYtJwPQ==}
+  /@starzkg/vuepress-plugin-simple-analytics/1.1.1:
+    resolution: {integrity: sha512-Z5D15xKl+O1brb/HTV0Q46Ol4Or9ncZe/NQnxKl8vUANfdaXbC6PWeY5HNqpCOQ4Is0siGn9aVwc/UO2QTih1g==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50

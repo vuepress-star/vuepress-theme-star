@@ -1,5 +1,5 @@
 import { analyticsPlugin } from '@starzkg/vuepress-plugin-analytics'
-import starTheme from '@starzkg/vuepress-theme-star'
+import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from '@vuepress/cli'
