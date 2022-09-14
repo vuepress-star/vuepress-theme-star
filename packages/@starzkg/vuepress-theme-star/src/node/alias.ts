@@ -8,7 +8,7 @@ const __dirname = getDirname(import.meta.url)
  * @see https://vuepress.github.io/reference/plugin-api.html#alias
  * @param app
  */
-export const resolveAlias = (app: App): Record<string, string> => {
+export const alias = (app: App): Record<string, string> => {
   return Object.fromEntries([
     ...fs
       .readdirSync(path.resolve(__dirname, '../client/components'))

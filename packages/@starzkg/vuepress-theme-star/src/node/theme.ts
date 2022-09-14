@@ -18,9 +18,9 @@ import type {
   StarThemeLocaleOptions,
   StarThemePluginsOptions,
 } from '../shared/index.js'
-import { resolveAlias } from './alias.js'
-import { preparePageData } from './preparePageData.js'
-import { prepareSiteData } from './prepareSiteData.js'
+import { alias } from './alias.js'
+import { extendsPage } from './extendsPage.js'
+import { prepareBreadcrumb, prepareSiteData } from './prepare/index.js'
 import { assignDefaultLocaleOptions } from './utils/index.js'
 
 const __dirname = getDirname(import.meta.url)
@@ -47,19 +47,24 @@ export const starTheme = ({
 
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
 
+    //  extend per page data
+    extendsPage,
+
+    onInitialized: async (app) => {
+      // extend site data
+      await prepareBreadcrumb(app)
+    },
+
+    // client config file
+    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
+
     onPrepared: async (app) => {
       // extend site data
       await prepareSiteData(app)
     },
 
     // use alias to make all components replaceable
-    alias: resolveAlias,
-
-    //  extend per page data
-    extendsPage: preparePageData,
-
-    // client config file
-    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
+    alias,
 
     plugins: [
       // @vuepress/plugin-active-header-link

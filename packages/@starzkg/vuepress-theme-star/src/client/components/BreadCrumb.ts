@@ -1,25 +1,21 @@
-import { usePageFrontmatter, usePagesData } from '@vuepress/client'
-import { computed, defineComponent, h, onMounted, ref, watch } from 'vue'
+import { usePageData, usePageFrontmatter } from '@vuepress/client'
+import { computed, defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
-import { getLinks, useIconPrefix } from '../composables/index.js'
-
-interface BreadCrumbConfig {
-  title: string
-  icon?: string
-  url: string
-}
+import { RouterLink } from 'vue-router'
+import type { StarThemePageData } from '../../shared/index.js'
+import { useIconPrefix } from '../composables/index.js'
 
 export default defineComponent({
   name: 'BreadCrumb',
 
   setup() {
     const pageFrontmatter = usePageFrontmatter()
-    const pagesData = usePagesData()
-    const route = useRoute()
+    const pageData = usePageData<StarThemePageData>()
     const iconPrefix = useIconPrefix()
 
-    const config = ref<BreadCrumbConfig[]>([])
+    const config = computed(() => {
+      return pageData.value.breadcrumb
+    })
 
     const enable = computed<boolean>(() => {
       const pageEnable = pageFrontmatter.value.breadcrumb
@@ -31,42 +27,6 @@ export default defineComponent({
       const pageEnable = pageFrontmatter.value.breadcrumbIcon
 
       return enable.value && pageEnable !== false
-    })
-
-    const updateConfig = async (): Promise<void> => {
-      const breadcrumbConfig: BreadCrumbConfig[] = []
-      const pages = pagesData.value
-      const links = getLinks(route)
-
-      // generate breadcrumb config
-      for (let i = 1; i < links.length; i++) {
-        if (pages === undefined) {
-          continue
-        }
-        for (const key in pages) {
-          const page1 = pages[key]
-          if (page1 === undefined) {
-            continue
-          }
-          const page = await page1()
-          if (page.path === links[i]) {
-            breadcrumbConfig.push({
-              title: page.title,
-              icon: page.frontmatter.icon as string,
-              url: page.path,
-            })
-            break
-          }
-        }
-      }
-
-      if (breadcrumbConfig.length > 1) config.value = breadcrumbConfig
-    }
-
-    watch(() => route.path, updateConfig)
-
-    onMounted(() => {
-      updateConfig()
     })
 
     return (): VNode =>
@@ -91,7 +51,7 @@ export default defineComponent({
                   h(
                     RouterLink,
                     {
-                      to: item.url,
+                      to: item.path,
                       property: 'item',
                       typeof: 'WebPage',
                     },

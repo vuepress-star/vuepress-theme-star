@@ -3,7 +3,7 @@ import type {
   Classification,
   ClassificationData,
   StarSiteData,
-} from '../shared/index.js'
+} from '../../shared/index.js'
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {

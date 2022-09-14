@@ -21,9 +21,7 @@ export const resolvePageReadingTime = (
   return Math.round((length / wordsPerMinute) * 100) / 100
 }
 
-export const preparePageData = (
-  page: Page<Partial<StarThemePageData>>
-): void => {
+export const extendsPage = (page: Page<Partial<StarThemePageData>>): void => {
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = page.filePathRelative
   // save title into route meta to generate navbar and sidebar
@@ -34,4 +32,6 @@ export const preparePageData = (
   page.data.length = resolvePageLength(page.content)
   // reading time
   page.data.readingTime = resolvePageReadingTime(page.data.length)
+  // breadcrumb
+  page.data.breadcrumb = []
 }
