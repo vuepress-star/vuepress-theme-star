@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-star-shared.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-star-shared.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-star-shared?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-star-shared)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-star-shared/beta)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-star-shared/next)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-star-shared)](https://github.com/vuepress-star/vuepress-star-shared/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-star-shared.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-star-shared.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-star-shared.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-star-shared.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-star-shared?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-star-shared?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-star-shared)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-star-shared.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-star-shared/blob/main/LICENSE)
 
 Shared Utils for vuepress-theme-star and its plugins / vuepress-theme-star 及其插件的共享库
 

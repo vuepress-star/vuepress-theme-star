@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://shentuzhigang.cn/vuepress-theme-star/images/hero.png" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-star.shentuzhigang.cn/images/hero.png" style="text-align: center;"/>
 </p>
 <h1 align="center">vuepress-plugin-markdown-enhance</h1>
 <h4 align="center">Markdown Enhancement Plugin 📄 / Markdown 增强插件 📄</h4>
@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-markdown-enhance.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-markdown-enhance.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-markdown-enhance?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-markdown-enhance)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-markdown-enhance/beta)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-markdown-enhance/next)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-plugin-markdown-enhance)](https://github.com/vuepress-star/vuepress-plugin-markdown-enhance/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-markdown-enhance.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-plugin-markdown-enhance.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-markdown-enhance.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-plugin-markdown-enhance.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-plugin-markdown-enhance?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-markdown-enhance?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-markdown-enhance)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-plugin-markdown-enhance.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-plugin-markdown-enhance/blob/main/LICENSE)
 
 Markdown Enhancement Plugin 📄 / Markdown 增强插件 📄
 

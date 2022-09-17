@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-interaction-effect?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-interaction-effect)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-interaction-effect/beta)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-interaction-effect/next)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-plugin-interaction-effect)](https://github.com/vuepress-star/vuepress-plugin-interaction-effect/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-plugin-interaction-effect?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-interaction-effect?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-interaction-effect)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-plugin-interaction-effect.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-plugin-interaction-effect/blob/main/LICENSE)
 
 VuePress Interaction Effect Plugin 📋 / VuePress 交互效果 插件 📋
 

@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-lightgallery.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-lightgallery.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-lightgallery?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-lightgallery)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-lightgallery/beta)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-lightgallery/next)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-plugin-lightgallery)](https://github.com/vuepress-star/vuepress-plugin-lightgallery/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-lightgallery.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-plugin-lightgallery.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-lightgallery.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-plugin-lightgallery.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-plugin-lightgallery?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-lightgallery?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-lightgallery)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-plugin-lightgallery.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-plugin-lightgallery/blob/main/LICENSE)
 
 VuePress Light Gallery Plugin 🔍 / VuePress lightgallery 插件 🔍
 

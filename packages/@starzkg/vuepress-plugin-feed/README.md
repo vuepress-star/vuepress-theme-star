@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-feed.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-feed.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-feed?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-feed)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-feed/beta)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-feed/next)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-plugin-feed)](https://github.com/vuepress-star/vuepress-plugin-feed/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-feed.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-plugin-feed.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-feed.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-plugin-feed.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-plugin-feed?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-feed?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-feed)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-plugin-feed.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-plugin-feed/blob/main/LICENSE)
 
 VuePress feed plugin 📡 / VuePress Feed 插件 📡
 

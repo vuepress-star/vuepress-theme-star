@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-add-this.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-add-this.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-add-this?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-add-this)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-add-this/beta)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-add-this/next)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-plugin-add-this)](https://github.com/vuepress-star/vuepress-plugin-add-this/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-add-this.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-plugin-add-this.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-add-this.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-plugin-add-this.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-plugin-add-this?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-add-this?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-add-this)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-plugin-add-this.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-plugin-add-this/blob/main/LICENSE)
 
 VuePress add-this plugin 💌 / VuePress AddThis 插件 💌
 

@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-copyright?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-copyright)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-copyright/beta)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-copyright/next)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-plugin-copyright)](https://github.com/vuepress-star/vuepress-plugin-copyright/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-plugin-copyright?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-copyright?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copyright)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-plugin-copyright.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-plugin-copyright/blob/main/LICENSE)
 
 VuePress Copyright Plugin 📋 / VuePress 版权信息插件 📋
 

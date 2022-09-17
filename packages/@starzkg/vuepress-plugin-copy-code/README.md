@@ -9,7 +9,18 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-copy-code?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-copy-code)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-copy-code/beta)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![npm](https://badgen.net/npm/v/@starzkg/vuepress-plugin-copy-code/next)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![license](https://badgen.net/npm/license/@starzkg/vuepress-plugin-copy-code)](https://github.com/vuepress-star/vuepress-plugin-copy-code/blob/main/LICENSE)
+
+[![Version](https://img.shields.io/npm/v/@starzkg/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![Downloads](https://img.shields.io/npm/dw/@starzkg/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![Downloads](https://img.shields.io/npm/dm/@starzkg/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![Downloads](https://img.shields.io/npm/dy/@starzkg/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![Total downloads](https://img.shields.io/npm/dt/@starzkg/vuepress-plugin-copy-code?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![Size](https://img.shields.io/bundlephobia/min/@starzkg/vuepress-plugin-copy-code?style=flat-square&logo=npm)](https://www.npmjs.com/package/@starzkg/vuepress-plugin-copy-code)
+[![License](https://img.shields.io/npm/l/@starzkg/vuepress-plugin-copy-code.svg?style=flat-square&logo=npm)](https://github.com/vuepress-star/vuepress-plugin-copy-code/blob/main/LICENSE)
 
 VuePress copy code plugin 📋 / VuePress 代码复制插件 📋
 
