@@ -6,19 +6,11 @@ import GithubCorner from '@theme/GithubCorner.vue'
 import Hero from '@theme/Hero.vue'
 import HomeArrow from '@theme/HomeArrow.vue'
 import Navbar from '@theme/Navbar.vue'
-import VueTypedJs from '@theme/VueTypedJs.vue'
-import { usePageFrontmatter } from '@vuepress/client'
-import { computed, ref } from 'vue'
-import type { StarThemeHomePageFrontmatter } from '../../../shared/index.js'
-import { useThemeLocaleData } from '../../composables/index.js'
-
-const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
-const themeLocale = useThemeLocaleData()
+import { ref } from 'vue'
+import { useNavbar } from '../../composables/index.js'
 
 // navbar
-const shouldShowNavbar = computed(
-  () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
-)
+const navbar = useNavbar()
 
 const container = ref<HTMLElement>()
 const gotoContainer = (): void => {
@@ -31,7 +23,7 @@ const gotoContainer = (): void => {
 <template>
   <div class="home">
     <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar">
+      <Navbar v-if="navbar.enable">
         <template #before>
           <slot name="navbar-before" />
         </template>
@@ -46,9 +38,6 @@ const gotoContainer = (): void => {
           <Hero />
         </slot>
         <GithubCorner />
-        <div style="height: 2rem">
-          <VueTypedJs :strings="['Hello World!', 'Hello Vuepress!']" loop />
-        </div>
         <HomeArrow @click="gotoContainer" />
       </header>
       <main class="container-content">

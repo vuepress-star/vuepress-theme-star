@@ -37,6 +37,13 @@
       color: var(--c-text-lightest);
     }
 
+    .slogan {
+      display: flex;
+      justify-content: center;
+      font-size: 1.6rem;
+      height: 2rem;
+    }
+
     .action-button {
       display: inline-block;
       font-size: 1.2rem;
@@ -67,6 +74,13 @@
           background-color: var(--c-brand-light);
         }
       }
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1rem auto;
     }
   }
 }
