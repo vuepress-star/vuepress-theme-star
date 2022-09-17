@@ -1,4 +1,5 @@
 import { analyticsPlugin } from '@starzkg/vuepress-plugin-analytics'
+import { live2dWidgetPlugin } from '@starzkg/vuepress-plugin-live2d-widget'
 import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
@@ -182,6 +183,36 @@ export default defineUserConfig({
     }),
     // only enable shiki plugin in production mode
     isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
+    live2dWidgetPlugin({
+      dev: {
+        log: true,
+      },
+      model: {
+        jsonPath: 'asuna',
+      },
+      display: {
+        position: 'left',
+        hOffset: 50,
+      },
+      mobile: {
+        scale: 0.3,
+      },
+      dialog: {
+        // 开启对话框
+        enable: true,
+        hitokoto: true,
+        script: {
+          // 每空闲 10 秒钟，显示一条一言
+          'every idle 10s': '$hitokoto$',
+          // 当触摸到星星图案
+          'hover .star': '星星在天上而你在我心里 (*!/ω＼*)',
+          // 当触摸到角色身体
+          'tap body': '哎呀！别碰我！',
+          // 当触摸到角色头部
+          'tap face': '人家已经不是小孩子了！',
+        },
+      },
+    }),
     // ['@starzkg/element-plus'],
   ],
 })
