@@ -11,7 +11,7 @@ import { computed, h } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared/index.js'
 import { useDarkMode } from '../composables/index.js'
 import AutoLink from './AutoLink.vue'
-import VueTypedJs from './VueTypedJs.vue'
+// import VueTypedJs from './VueTypedJs.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
@@ -106,9 +106,9 @@ const HomeHeroImage: FunctionalComponent = () => {
       {{ tagline }}
     </p>
 
-    <p class="slogan">
+    <!--    <p class="slogan">
       <VueTypedJs :strings="['Hello World!', 'Hello Vuepress!']" loop />
-    </p>
+    </p>-->
 
     <p v-if="actions.length" class="actions">
       <AutoLink
@@ -120,8 +120,13 @@ const HomeHeroImage: FunctionalComponent = () => {
       />
     </p>
 
-    <p v-if="links.length" class="links">
-      <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
+    <p v-if="links.length" :class="{ links: links.length }">
+      <ExternalLink
+        v-for="link in links"
+        :key="link.url"
+        v-bind="link"
+        :class="'link-' + link.text"
+      />
     </p>
   </div>
 </template>
