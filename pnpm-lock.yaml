@@ -113,7 +113,7 @@ importers:
   example/.vuepress:
     specifiers:
       '@starzkg/vuepress-plugin-analytics': 1.1.2
-      '@starzkg/vuepress-plugin-live2d-widget': 1.0.9
+      '@starzkg/vuepress-plugin-live2d-widget': 1.0.12
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -129,7 +129,7 @@ importers:
       vuepress: 2.0.0-beta.50
     dependencies:
       '@starzkg/vuepress-plugin-analytics': 1.1.2
-      '@starzkg/vuepress-plugin-live2d-widget': 1.0.9
+      '@starzkg/vuepress-plugin-live2d-widget': 1.0.12
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -2384,8 +2384,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-live2d-widget/1.0.9:
-    resolution: {integrity: sha512-ZoqJvDUGwrP9j3e6c3pBVl6YsHfHF0xeDJekaTLyZV+Xv0YRS6heZMJnQK3jbUO5iznnhuwbdi12BqMvdoML0Q==}
+  /@starzkg/vuepress-plugin-live2d-widget/1.0.12:
+    resolution: {integrity: sha512-UjOEX0uWuaKdlXhokhNw3r0vHcHrupu5w3vvJMEN+y0f/D6rQeM7vJNzyzthubO7Mqvxtxs8SDQ/CiCJ/NxuEg==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50

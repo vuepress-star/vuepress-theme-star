@@ -1,13 +1,14 @@
 import { analyticsPlugin } from '@starzkg/vuepress-plugin-analytics'
 import { live2dWidgetPlugin } from '@starzkg/vuepress-plugin-live2d-widget'
 import { starTheme } from '@starzkg/vuepress-theme-star'
-import { viteBundler } from '@vuepress/bundler-vite'
+import { viteBundler, ViteBundlerOptions } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from '@vuepress/cli'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { path } from '@vuepress/utils'
+import { mergeConfig } from 'vite'
 import locales from './locales'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -79,6 +80,21 @@ export default defineUserConfig({
     process.env.DOCS_BUNDLER === 'webpack' || isProd
       ? webpackBundler()
       : viteBundler(),
+
+  extendsBundlerOptions: (config: unknown, app) => {
+    if (app.env.isDev && app.options.bundler.name.endsWith('vite')) {
+      const bundlerConfig = <ViteBundlerOptions>config
+      bundlerConfig.viteOptions = mergeConfig(bundlerConfig.viteOptions || {}, {
+        optimizeDeps: {
+          include: ['live2d-widget'],
+        },
+        commonjsOptions: {
+          include: ['live2d-widget/lib/L2Dwidget.common.js', /node_modules/],
+          transformMixedEsModules: true,
+        },
+      })
+    }
+  },
 
   theme: starTheme({
     logo: '/images/hero.png',
