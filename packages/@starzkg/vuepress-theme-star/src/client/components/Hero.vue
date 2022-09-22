@@ -100,10 +100,13 @@ const HomeHeroSlogan: FunctionalComponent = () => {
     {
       class: 'slogan',
     },
-    h(
-      ClientOnly,
-      h(VueTypedJs, {
-        strings: ['Hello World!', 'Hello Vuepress!'],
+    h(ClientOnly, () =>
+      h(h(VueTypedJs), {
+        strings: frontmatter.value.slogan || [
+          'Hello World!',
+          'Hello Vuepress!',
+          'Hello Vuepress Star!',
+        ],
         loop: true,
       })
     )

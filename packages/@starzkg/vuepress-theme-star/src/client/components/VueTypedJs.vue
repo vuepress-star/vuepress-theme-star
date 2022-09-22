@@ -1,7 +1,8 @@
 <script>
 import Typed from 'typed.js'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'VueTypedJs',
   props: {
     strings: {
@@ -174,7 +175,7 @@ export default {
       })
     },
   },
-}
+})
 </script>
 
 <template>

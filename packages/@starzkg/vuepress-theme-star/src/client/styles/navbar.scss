@@ -89,15 +89,13 @@
   }
 }
 
+.navbar.collapse {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 @media (max-width: $MQMobile) {
   .navbar {
-    padding-left: 4rem;
-    padding-right: 4rem;
-
-    .can-hide {
-      display: none;
-    }
-
     .site-name {
       width: calc(100vw - 9.4rem);
       overflow: hidden;
@@ -136,8 +134,8 @@
   }
 }
 
-.theme-container.mobile.navbar-open {
-  .navbar .navbar-mobile-wrapper {
+.theme-container.navbar-open {
+  .navbar.collapse .navbar-mobile-wrapper {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -145,7 +143,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 150;
+    z-index: 90;
     overflow-y: auto;
     padding: 0 2rem;
     background-color: var(--c-bg);
@@ -161,20 +159,11 @@
 
         .navbar-item {
           display: block;
+          margin-left: 0;
           padding: 12px 4px 11px 0;
           border-bottom: 1px solid var(--c-border);
           line-height: 1.5rem;
           transition: border-bottom-color var(--color-transition);
-
-          .navbar-dropdown-wrapper {
-            .navbar-dropdown-title {
-              display: block;
-            }
-            .navbar-dropdown {
-              list-style-type: none;
-              padding-inline-start: 0;
-            }
-          }
         }
       }
     }
@@ -247,15 +236,6 @@
   .navbar-logo {
     width: 5rem !important;
     height: 4.1rem !important;
-  }
-}
-
-@media screen and (max-width: $MQMobile) {
-  .toggle-navbar-button {
-    display: flex !important;
-  }
-  .toggle-sidebar-button {
-    display: block !important;
   }
 }
 

@@ -11,9 +11,10 @@ const props = defineProps({
     type: Object as PropType<Exclude<ResolvedNavbarItem, NavbarItem>>,
     required: true,
   },
-  isHeader: {
-    type: Boolean,
-    required: true,
+  mode: {
+    type: String,
+    required: false,
+    default: 'horizontal',
   },
 })
 
@@ -42,7 +43,7 @@ watch(
  */
 const handleDropdown = (e): void => {
   const isTriggerByTab = e.detail === 0
-  if (isTriggerByTab || props.isHeader) {
+  if (isTriggerByTab || props.mode === 'vertical') {
     open.value = !open.value
   } else {
     open.value = false
@@ -56,30 +57,21 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
 <template>
   <div
     class="navbar-dropdown-wrapper"
-    :class="{ open }"
+    :class="[{ open: open }, 'navbar-dropdown__' + mode]"
     @mouseleave="open = false"
   >
     <button
-      v-if="isHeader"
       class="navbar-dropdown-title"
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
-      @mouseenter="open = true"
+      @mouseenter="open = mode !== 'vertical'"
     >
       <span class="title">{{ item.text }}</span>
-      <span class="arrow down" />
-    </button>
-
-    <button
-      v-else
-      class="navbar-dropdown-title-mobile"
-      type="button"
-      :aria-label="dropdownAriaLabel"
-      @click="open = !open"
-    >
-      <span class="title">{{ item.text }}</span>
-      <span class="arrow" :class="open ? 'down' : 'right'" />
+      <span
+        class="arrow"
+        :class="open && mode === 'vertical' ? 'down' : 'right'"
+      />
     </button>
 
     <DropdownTransition>

@@ -15,10 +15,10 @@ import AutoLink from './AutoLink.vue'
 import NavbarDropdown from './NavbarDropdown.vue'
 
 defineProps({
-  isHeader: {
-    type: Boolean,
+  mode: {
+    type: String,
     required: false,
-    default: false,
+    default: 'horizontal',
   },
 })
 
@@ -164,7 +164,7 @@ const navbarLinks = computed(() => [
 <template>
   <nav v-if="navbarLinks.length" class="navbar-items">
     <div v-for="item in navbarLinks" :key="item.text" class="navbar-item">
-      <NavbarDropdown v-if="item.children" :item="item" :is-header="isHeader" />
+      <NavbarDropdown v-if="item.children" :item="item" :mode="mode" />
       <AutoLink v-else :item="item" />
     </div>
   </nav>

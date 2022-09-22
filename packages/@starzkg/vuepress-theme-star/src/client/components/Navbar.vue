@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 import { useNavbar } from '../composables/index.js'
 import NavbarBadge from './NavbarBadge.vue'
 import NavbarItems from './NavbarItems.vue'
@@ -10,38 +10,25 @@ import ToggleSidebarButton from './ToggleSidebarButton.vue'
 const navbar = useNavbar()
 
 const navbarEl = ref<HTMLElement | null>(null)
-const navbarBrand = ref<HTMLElement | null>(null)
+const navbarLeft = ref<HTMLElement | null>(null)
+const navbarMiddle = ref<HTMLElement | null>(null)
+const navbarRight = ref<HTMLElement | null>(null)
+const navbarItemsWrapper = ref<HTMLElement | null>(null)
 
-const linksWrapperMaxWidth = ref(0)
-const linksWrapperStyle = computed(() => {
-  if (!linksWrapperMaxWidth.value) {
-    return {}
-  }
-  return {
-    maxWidth: linksWrapperMaxWidth.value + 'px',
-  }
-})
-// avoid overlapping of long title and long navbar links
+const collapse = ref(false)
 onMounted(() => {
-  // TODO: migrate to css var
-  // refer to _variables.scss
-  const MOBILE_DESKTOP_BREAKPOINT = 719
-  const navbarHorizontalPadding =
-    getCssValue(navbarEl.value, 'paddingLeft') +
-    getCssValue(navbarEl.value, 'paddingRight')
-  const handleLinksWrapWidth = (): void => {
-    if (window.innerWidth <= MOBILE_DESKTOP_BREAKPOINT) {
-      linksWrapperMaxWidth.value = 0
-    } else {
-      linksWrapperMaxWidth.value =
-        navbarEl.value!.offsetWidth -
-        navbarHorizontalPadding -
-        (navbarBrand.value?.offsetWidth || 0)
+  nextTick(() => {
+    const navbarItemsWrapperWidth = getCssValue(
+      navbarItemsWrapper.value,
+      'width'
+    )
+    const handleCollapse = (): void => {
+      collapse.value = navbarLeft.value!.offsetWidth < navbarItemsWrapperWidth
     }
-  }
-  handleLinksWrapWidth()
-  window.addEventListener('resize', handleLinksWrapWidth, false)
-  window.addEventListener('orientationchange', handleLinksWrapWidth, false)
+    handleCollapse()
+    window.addEventListener('resize', handleCollapse, false)
+    window.addEventListener('orientationchange', handleCollapse, false)
+  })
 })
 
 function getCssValue(el: HTMLElement | null, property: string): number {
@@ -55,29 +42,33 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 </script>
 
 <template>
-  <header ref="navbarEl" class="navbar">
+  <header ref="navbarEl" class="navbar" :class="{ collapse: collapse }">
     <section class="navbar-wrapper">
-      <div class="navbar-left">
-        <ToggleSidebarButton />
-        <div class="navbar-items-wrapper" :style="linksWrapperStyle">
+      <div ref="navbarLeft" class="navbar-left">
+        <ToggleSidebarButton v-show="collapse" />
+        <div
+          v-show="!collapse"
+          ref="navbarItemsWrapper"
+          class="navbar-items-wrapper"
+        >
           <slot name="before" />
-          <NavbarItems class="can-hide" is-header />
+          <NavbarItems />
           <slot name="after" />
         </div>
       </div>
-      <div class="navbar-middle">
+      <div ref="navbarMiddle" class="navbar-middle">
         <NavbarBadge />
       </div>
-      <div class="navbar-right">
+      <div ref="navbarRight" class="navbar-right">
         <NavbarSearch />
-        <ToggleNavbarButton />
+        <ToggleNavbarButton v-show="collapse" />
       </div>
     </section>
     <Transition name="fade">
-      <section v-if="navbar.open" class="navbar-mobile-wrapper">
+      <section v-if="collapse && navbar.open" class="navbar-mobile-wrapper">
         <div class="navbar-items-wrapper">
           <slot name="before" />
-          <NavbarItems :is-header="false" />
+          <NavbarItems mode="vertical" />
           <slot name="after" />
         </div>
         <div class="navbar-brand-wrapper">

@@ -24,7 +24,7 @@ const themeLocale = useThemeLocaleData()
 <style lang="scss" scoped>
 .toggle-sidebar-button {
   position: absolute;
-  display: none;
+  display: block;
   top: 0.6rem;
   left: 1rem;
   padding: 0.6rem;
