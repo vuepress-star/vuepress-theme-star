@@ -1,7 +1,7 @@
 <script lang="ts">
-import * as Flowchart from 'flowchart.js'
+import type * as Flowchart from 'flowchart.js'
 import debounce from 'lodash.debounce'
-import Vue, { defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
 import presets from '../presets'
 import { LoadingIcon } from './icons'

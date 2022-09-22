@@ -60,7 +60,6 @@ export default defineUserConfig({
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
   ],
 
-  // site-level locales config
   locales: {
     '/': {
       lang: 'en-US',
@@ -74,11 +73,18 @@ export default defineUserConfig({
     },
   },
 
+  markdown: {
+    importCode: {
+      handleImportPath: (str) =>
+        str.replace(
+          /^@vuepress/,
+          path.resolve(__dirname, '../../packages/@vuepress')
+        ),
+    },
+  },
+
   bundler:
-    // specify bundler via environment variable
-    process.env.DOCS_BUNDLER === 'webpack' || isProd
-      ? webpackBundler()
-      : viteBundler(),
+    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
 
   theme: starTheme({
     logo: '/images/hero.png',
@@ -101,15 +107,6 @@ export default defineUserConfig({
     },
   }),
 
-  markdown: {
-    importCode: {
-      handleImportPath: (str) =>
-        str.replace(
-          /^@vuepress/,
-          path.resolve(__dirname, '../../packages/@vuepress')
-        ),
-    },
-  },
   plugins: [
     docsearchPlugin({
       appId: '34YFD9IUQ2',
@@ -213,6 +210,5 @@ export default defineUserConfig({
         },
       },
     }),
-    // ['@starzkg/element-plus'],
   ],
 })

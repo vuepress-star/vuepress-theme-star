@@ -1,3 +1,13 @@
+<script lang="ts">
+/* eslint-disable import/first, import/no-duplicates, import/order */
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'Background',
+})
+/* eslint-enable import/order */
+</script>
+
 <script setup lang="ts">
 import { onMounted } from 'vue'
 
