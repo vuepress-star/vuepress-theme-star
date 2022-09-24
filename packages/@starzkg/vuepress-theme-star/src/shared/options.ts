@@ -1,5 +1,8 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
-import type { MarkdownEnhanceOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
+import type {
+  MarkdownEnhanceOptions,
+  MarkdownOptions,
+} from '@starzkg/vuepress-plugin-markdown-enhance'
 import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
@@ -74,6 +77,11 @@ export interface StarThemePluginsOptions {
    * 网站地图
    */
   sitemap?: SitemapOptions | boolean
+
+  /**
+   *
+   */
+  markdown?: MarkdownOptions | boolean
 }
 
 export type StarThemeLocaleOptions = StarThemeData

@@ -9,7 +9,6 @@ import {
   abbr,
   cjkBreaks,
   deflist,
-  emoji,
   flowchart,
   footnote,
   forInline,
@@ -119,7 +118,6 @@ export const markdownEnhancePlugin =
         if (markdownOptions.abbr) markdownIt.use(abbr)
         if (markdownOptions.cjkBreaks) markdownIt.use(cjkBreaks)
         if (markdownOptions.deflist) markdownIt.use(deflist)
-        if (markdownOptions.emoji) markdownIt.use(emoji)
         if (markdownOptions.forInline) {
           markdownIt.use<ForInlinePluginOptions>(
             forInline,

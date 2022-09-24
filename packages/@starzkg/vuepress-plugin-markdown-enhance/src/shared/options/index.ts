@@ -1,5 +1,5 @@
 import type { LocaleConfig } from '@vuepress/core'
-import type { MarkdownOptions } from '@vuepress/markdown'
+import type { MarkdownOptions as _MarkdownOptions } from '@vuepress/markdown'
 import type { KatexOptions } from 'katex'
 import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
 import type { CodeDemoOptions } from './code-demo.js'
@@ -15,7 +15,7 @@ export * from './tasklist.js'
 /**
  * markdown-enhance plugin configuration
  */
-export interface MarkdownEnhanceOptions extends MarkdownOptions {
+export interface MarkdownEnhanceOptions {
   /**
    * 是否启用自定义容器
    *
@@ -214,3 +214,5 @@ export interface MarkdownEnhanceOptions extends MarkdownOptions {
    */
   locales?: LocaleConfig<MarkdownEnhancePluginLocaleData>
 }
+
+export declare type MarkdownOptions = MarkdownEnhanceOptions & _MarkdownOptions
