@@ -1,36 +1,31 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
-import type { SidebarConfig } from '../nav.js'
-
-export interface BreadcrumbData {
-  title: string
-  icon: string
-  path: string
-}
+import type { BreadcrumbData } from './breadcrumb.js'
 
 export interface StarThemePageData extends GitPluginPageData {
+  /**
+   * relative file path.
+   */
   filePathRelative: string | null
+  /**
+   * page content.
+   */
   content: string
   /**
-   * length of page
+   * length of page.
    *
    * 字数
    */
   length: number
   /**
-   * reading time
+   * reading time.
    *
    * 预计的阅读时间
    */
   readingTime: number
   /**
-   * breadcrumb
+   * breadcrumb.
+   *
+   * 面包屑
    */
   breadcrumb: BreadcrumbData[]
-}
-
-export interface StarThemePageFrontmatter {
-  navbar?: boolean
-  sidebar?: 'auto' | false | SidebarConfig
-  page?: string
-  pageClass?: string
 }

@@ -1,5 +1,5 @@
 import type { NavLink } from '../nav.js'
-import type { StarThemePageFrontmatter } from './page.js'
+import type { StarThemePageFrontmatter } from './frontmatter.js'
 
 export interface StarThemeNormalPageFrontmatter
   extends StarThemePageFrontmatter {
