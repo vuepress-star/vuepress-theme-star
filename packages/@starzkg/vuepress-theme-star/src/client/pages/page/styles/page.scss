@@ -35,22 +35,22 @@
       margin: 0 auto;
       max-width: var(--page-width);
 
-      .left {
+      .content-left {
         height: calc(100vh - var(--navbar-height));
         position: sticky;
         top: var(--navbar-height);
       }
 
-      .middle {
+      .content-middle {
         margin: 0 0.5rem;
         max-width: var(--content-width);
       }
 
-      .right {
+      .content-right {
       }
 
-      .left,
-      .right {
+      .content-left,
+      .content-right {
         width: var(--page-aside-width);
         transition: transform 0.25s ease-in-out 0.12s,
           opacity 0.25s ease-in-out 0.12s;
@@ -59,17 +59,17 @@
       }
 
       @media (max-width: $md) {
-        .left {
+        .content-left {
           display: none;
         }
 
-        .middle {
+        .content-middle {
           width: 100%;
         }
       }
 
       @media (max-width: $lg) {
-        .right {
+        .content-right {
           display: none;
         }
       }
@@ -105,7 +105,7 @@
     }
   }
 
-  .content {
+  .main-content {
     max-width: var(--content-width);
     margin: 0 auto;
     background: #fff;

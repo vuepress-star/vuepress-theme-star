@@ -77,7 +77,7 @@ onUnmounted(() => {
         </div>
       </header>
       <main class="container-content">
-        <div class="left">
+        <div class="content-left">
           <slot name="left-top" />
           <slot name="sidebar">
             <Sidebar>
@@ -91,7 +91,7 @@ onUnmounted(() => {
           </slot>
           <slot name="left-bottom" />
         </div>
-        <div class="middle">
+        <div class="content-middle">
           <slot name="middle-top" />
           <Transition
             name="fade-slide-y"
@@ -99,7 +99,7 @@ onUnmounted(() => {
             @before-enter="onBeforeEnter"
             @before-leave="onBeforeLeave"
           >
-            <div class="content">
+            <div class="main-content">
               <slot name="top" />
               <header class="content-header">
                 <GithubCorner />
@@ -115,7 +115,7 @@ onUnmounted(() => {
           </Transition>
           <slot name="middle-bottom" />
         </div>
-        <div class="right">
+        <div class="content-right">
           <slot name="right-top" />
           <ProfileInfo />
           <slot name="right-bottom" />
