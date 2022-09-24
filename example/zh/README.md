@@ -80,6 +80,12 @@ features:
 footer: MIT Licensed | Copyright © 2021-present Starzkg
 ---
 
+::: tip
+
+如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-star/vuepress-theme-star/issues) 。
+
+:::
+
 ### 像数 1, 2, 3 一样容易
 
 :::: code-group

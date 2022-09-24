@@ -4,7 +4,10 @@ export default {
       text: '指南',
       link: '/zh/guide/README.md',
       children: [
+        '/zh/guide/introduction.md',
         '/zh/guide/getting-started.md',
+        '/zh/guide/install.md',
+        '/zh/guide/using.md',
         '/zh/guide/configuration.md',
         '/zh/guide/page.md',
         '/zh/guide/assets.md',
