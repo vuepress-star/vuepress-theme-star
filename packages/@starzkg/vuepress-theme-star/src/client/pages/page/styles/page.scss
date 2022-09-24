@@ -17,6 +17,16 @@
       max-width: calc(var(--content-width) + 5rem);
       margin: 0 auto;
       padding: var(--navbar-height) 0;
+
+      .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .container-content {

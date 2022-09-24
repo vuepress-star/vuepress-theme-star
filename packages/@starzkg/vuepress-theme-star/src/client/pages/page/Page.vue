@@ -71,8 +71,10 @@ onUnmounted(() => {
     <main class="container">
       <slot name="container-top" />
       <header class="container-header">
-        <BreadCrumb />
-        <PageInfo />
+        <div class="header-wrapper">
+          <BreadCrumb />
+          <PageInfo />
+        </div>
       </header>
       <main class="container-content">
         <div class="left">
