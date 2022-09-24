@@ -66,6 +66,14 @@ export const starTheme = ({
     // use alias to make all components replaceable
     alias,
 
+    onWatched: (app) => {
+      console.log('done')
+    },
+
+    onGenerated: (app) => {
+      console.log('done')
+    },
+
     plugins: [
       // @vuepress/plugin-active-header-link
       themePlugins.activeHeaderLinks !== false
