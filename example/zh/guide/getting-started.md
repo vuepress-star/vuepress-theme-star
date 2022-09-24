@@ -3,8 +3,10 @@ title: 快速上手
 icon: home
 date: 2022-05-18
 categories:
+  - 指南
   - 教程
 tags: 
+  - 指南
   - 教程
 author: Starzkg
 avatar: https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif
