@@ -60,13 +60,13 @@
         opacity: 1;
       }
 
-      @media (max-width: $lg) {
+      @media (max-width: $md) {
         .left {
           display: none;
         }
       }
 
-      @media (max-width: $md) {
+      @media (max-width: $lg) {
         .right {
           display: none;
         }
