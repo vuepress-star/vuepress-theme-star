@@ -1,11 +1,6 @@
 @import '_variables';
 @import '_mixins';
 
-.page {
-  padding-bottom: 2rem;
-  display: block;
-}
-
 .page-meta {
   @include content_wrapper;
   padding-top: 1rem;
