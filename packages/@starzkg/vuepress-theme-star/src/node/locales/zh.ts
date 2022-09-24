@@ -1,28 +1,12 @@
-import type { StarThemeLocaleOptions } from '../../shared/index.js'
+import type { StarThemeLocaleData } from '../../shared/index.js'
 
-export const zh: StarThemeLocaleOptions = {
-  // color mode
-  colorMode: 'auto',
-  colorModeSwitch: true,
-
-  // navbar
-  navbar: [],
-  logo: null,
-  repo: null,
+export const zh: StarThemeLocaleData = {
   selectLanguageName: '简体中文',
   selectLanguageText: '选择语言',
   selectLanguageAriaLabel: '选择语言',
 
-  // sidebar
-  sidebar: 'auto',
-  sidebarDepth: 2,
-
-  // page meta
-  editLink: true,
   editLinkText: '在 GitHub 上编辑此页',
-  lastUpdated: true,
   lastUpdatedText: '上次更新',
-  contributors: true,
   contributorsText: '贡献者',
 
   // 404 page messages

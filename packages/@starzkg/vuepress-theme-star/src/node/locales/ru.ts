@@ -1,6 +1,6 @@
 import type { StarThemeLocaleData } from '../../shared/index.js'
 
-export const en: StarThemeLocaleData = {
+export const ru: StarThemeLocaleData = {
   selectLanguageName: 'English',
   selectLanguageText: 'Languages',
   selectLanguageAriaLabel: 'Select language',
