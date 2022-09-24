@@ -51,7 +51,7 @@ export const starTheme = ({
     extendsPage,
 
     onInitialized: async (app) => {
-      // extend site data
+      // prepare breadcrumb
       await prepareBreadcrumb(app)
     },
 
