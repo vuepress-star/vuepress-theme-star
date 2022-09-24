@@ -1,4 +1,10 @@
-@use 'hero';
-@use 'feature';
-@use 'arrow';
-@use 'home';
+.theme-star {
+  @import 'hero';
+  @import 'feature';
+  @import 'arrow';
+  @import 'home';
+
+  &.mobile {
+    @import 'mobile';
+  }
+}
