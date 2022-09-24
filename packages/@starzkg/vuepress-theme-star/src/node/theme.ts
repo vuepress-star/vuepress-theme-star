@@ -20,7 +20,10 @@ import type {
 } from '../shared/index.js'
 import { alias } from './alias.js'
 import { extendsPage } from './extendsPage.js'
-import { prepareBreadcrumb, prepareSiteData } from './prepare/index.js'
+import { onGenerated } from './onGenerated.js'
+import { onInitialized } from './onInitialized.js'
+import { onPrepared } from './onPrepared.js'
+import { onWatched } from './onWatched.js'
 import { assignDefaultLocaleOptions } from './utils/index.js'
 
 const __dirname = getDirname(import.meta.url)
@@ -50,29 +53,23 @@ export const starTheme = ({
     //  extend per page data
     extendsPage,
 
-    onInitialized: async (app) => {
-      // prepare breadcrumb
-      await prepareBreadcrumb(app)
-    },
+    // on initialized
+    onInitialized,
 
     // client config file
     clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
-    onPrepared: async (app) => {
-      // extend site data
-      await prepareSiteData(app)
-    },
+    // on prepared
+    onPrepared,
 
     // use alias to make all components replaceable
     alias,
 
-    onWatched: (app) => {
-      console.log('done')
-    },
+    // on watched
+    onWatched,
 
-    onGenerated: (app) => {
-      console.log('done')
-    },
+    // on generated
+    onGenerated,
 
     plugins: [
       // @vuepress/plugin-active-header-link
