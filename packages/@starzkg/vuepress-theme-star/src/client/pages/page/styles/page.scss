@@ -36,7 +36,6 @@
       max-width: var(--page-width);
 
       .left {
-        margin-right: 5px;
         height: calc(100vh - var(--navbar-height));
         position: sticky;
         top: var(--navbar-height);
@@ -48,7 +47,6 @@
       }
 
       .right {
-        margin-left: 5px;
       }
 
       .left,
@@ -63,6 +61,10 @@
       @media (max-width: $md) {
         .left {
           display: none;
+        }
+
+        .middle {
+          width: 100%;
         }
       }
 
