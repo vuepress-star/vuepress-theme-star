@@ -19,13 +19,13 @@ links:
   - text: QQ
     icon: qq
     url: /
-  - text: QZone
+  - text: QQ空间
     icon: qzone
     url: /
-  - text: Wechat
+  - text: 微信
     icon: wechat
     url: /
-  - text: WechatFriend
+  - text: 朋友圈
     icon: wechat-friend
     url: /
   - text: CSDN
