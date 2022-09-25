@@ -1,4 +1,5 @@
 import { analyticsPlugin } from '@starzkg/vuepress-plugin-analytics'
+import { elementPlusPlugin } from '@starzkg/vuepress-plugin-element-plus'
 import { live2dWidgetPlugin } from '@starzkg/vuepress-plugin-live2d-widget'
 import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
@@ -100,7 +101,7 @@ export default defineUserConfig({
       backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
-      mdEnhance: true,
+      markdown: true,
       sitemap: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
       },
@@ -180,6 +181,7 @@ export default defineUserConfig({
     }),
     // only enable shiki plugin in production mode
     isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
+    elementPlusPlugin(),
     live2dWidgetPlugin({
       dev: {
         log: true,

@@ -170,7 +170,7 @@ export default defineUserConfig({
       git: isProd,
       // use shiki plugin in production mode instead
       prismjs: !isProd,
-      mdEnhance: true,
+      markdown: true,
       copyright: {
         noCopy: false,
         noSelect: false,
