@@ -8,6 +8,7 @@ import type {
 import {
   abbr,
   cjkBreaks,
+  colorModel,
   deflist,
   emoji,
   flowchart,
@@ -121,6 +122,7 @@ export const markdownEnhancePlugin =
       },
 
       extendsMarkdown: (markdownIt): void => {
+        markdownIt.use(colorModel)
         if (markdownOptions.sup) markdownIt.use(sup)
         if (markdownOptions.sub) markdownIt.use(sub)
         if (markdownOptions.flowchart) markdownIt.use(flowchart)
