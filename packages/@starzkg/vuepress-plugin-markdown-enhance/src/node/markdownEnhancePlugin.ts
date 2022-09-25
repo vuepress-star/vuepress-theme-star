@@ -66,9 +66,6 @@ export const markdownEnhancePlugin =
         '@FlowChart': flowchartEnable
           ? path.resolve(__dirname, '../client/components/FlowChart.vue')
           : '@starzkg/vuepress-shared/client/noopModule.js',
-        '@Mermaid': mermaidEnable
-          ? path.resolve(__dirname, '../client/components/MermaidChart.js')
-          : '@starzkg/vuepress-shared/client/noopModule.js',
         '@Presentation': presentationEnable
           ? path.resolve(
               __dirname,

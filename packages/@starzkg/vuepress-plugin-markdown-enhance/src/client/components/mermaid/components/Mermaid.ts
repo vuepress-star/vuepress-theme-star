@@ -8,18 +8,17 @@ import {
   ref,
 } from 'vue'
 import type { VNode } from 'vue'
-import { LoadingIcon } from './icons.js'
-
-import '../styles/mermaid.scss'
+import { LoadingIcon } from '../../icons.js'
 
 declare const MARKDOWN_DELAY: number
 declare const MERMAID_OPTIONS: Config
 
 export default defineComponent({
-  name: 'MermaidChart',
+  name: 'Mermaid',
 
   props: {
     id: { type: String, required: true },
+    code: { type: String, required: true },
   },
 
   setup(props) {
@@ -31,7 +30,7 @@ export default defineComponent({
       new Promise((resolve) => setTimeout(resolve, MARKDOWN_DELAY))
 
     onMounted(() => {
-      const code = decodeURIComponent(mermaidElement.value?.dataset.code || '')
+      const code = decodeURIComponent(props.code)
 
       Promise.all([
         import(

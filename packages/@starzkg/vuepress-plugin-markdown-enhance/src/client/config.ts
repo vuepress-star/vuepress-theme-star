@@ -1,10 +1,10 @@
 import FlowChart from '@FlowChart'
-import Mermaid from '@Mermaid'
 import Presentation from '@Presentation'
 import { defineClientConfig } from '@vuepress/client'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { CodeGroup, CodeGroupItem } from './components/code-group/index.js'
+import { Mermaid } from './components/mermaid/index.js'
 import { initDemo } from './demo/index.js'
 import './styles/index.scss'
 import './styles/code-demo.scss'
@@ -25,7 +25,7 @@ export default defineClientConfig({
     if (MARKDOWN_ENHANCE_FOOTNOTE) import('./styles/footnote.scss')
 
     app.component('FlowChart', FlowChart)
-    if (MARKDOWN_ENHANCE_MERMAID) app.component('MermaidChart', Mermaid)
+    if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
 
     if (MARKDOWN_ENHANCE_PRESENTATION) {
       app.component('PresentationViewer', Presentation)
