@@ -1,29 +1,23 @@
 import type { Plugin } from '@vuepress/core'
 import { getDirname, path } from '@vuepress/utils'
-import type {
-  ForInlinePluginOptions,
-  MarkdownFavor,
-  MarkdownOptions,
-} from '../shared/index.js'
-import {
-  abbr,
-  attrs,
-  cjkBreaks,
-  colorModel,
-  deflist,
-  emoji,
-  flowchart,
-  footnote,
-  forInline,
-  ins,
-  katex,
-  mark,
-  mermaid,
-  presentation,
-  sub,
-  sup,
-  tasklist,
-} from './markdown-it/index.js'
+import { abbr } from '../markdown-it/plugins/abbr.js'
+import { attrs } from '../markdown-it/plugins/attrs.js'
+import { cjkBreaks } from '../markdown-it/plugins/cjk-breaks.js'
+import { colorModel } from '../markdown-it/plugins/color-model.js'
+import { deflist } from '../markdown-it/plugins/deflist.js'
+import { emoji } from '../markdown-it/plugins/emoji.js'
+import { flowchart } from '../markdown-it/plugins/flowchart.js'
+import { footnote } from '../markdown-it/plugins/footnote.js'
+import { forInline } from '../markdown-it/plugins/for-inline.js'
+import { ins } from '../markdown-it/plugins/ins.js'
+import { katex } from '../markdown-it/plugins/katex.js'
+import { mark } from '../markdown-it/plugins/mark.js'
+import { mermaid } from '../markdown-it/plugins/mermaid.js'
+import { presentation } from '../markdown-it/plugins/presentation.js'
+import { sub } from '../markdown-it/plugins/sub.js'
+import { sup } from '../markdown-it/plugins/sup.js'
+import { taskList } from '../markdown-it/plugins/task-list.js'
+import type { MarkdownFavor, MarkdownOptions } from '../shared/index.js'
 import { usePlugins } from './plugins/index.js'
 import { assignDefaultMarkdownOptions, logger } from './utils/index.js'
 
@@ -141,14 +135,11 @@ export const markdownEnhancePlugin =
         if (markdownOptions.deflist) markdownIt.use(deflist)
         if (markdownOptions.emoji) markdownIt.use(emoji)
         if (markdownOptions.forInline) {
-          markdownIt.use<ForInlinePluginOptions>(
-            forInline,
-            markdownOptions.forInline
-          )
+          markdownIt.use(forInline, markdownOptions.forInline)
         }
         if (markdownOptions.mark) markdownIt.use(mark)
         if (tasklistEnable)
-          markdownIt.use(tasklist, [
+          markdownIt.use(taskList, [
             typeof markdownOptions.tasklist === 'object'
               ? markdownOptions.tasklist
               : {},

@@ -1,14 +1,33 @@
 import type MarkdownIt from 'markdown-it'
 import type StateCore from 'markdown-it/lib/rules_core/state_core.js'
 import Token from 'markdown-it/lib/token.js'
-import type { TaskListOptions } from '../../shared/index.js'
 import {
   getParentTokenIndex,
   isInlineToken,
   isListItemToken,
   isParagraphToken,
   setTokenAttr,
-} from './utils.js'
+} from '../utils/index.js'
+
+export interface TaskListOptions {
+  /**
+   * Whether use `<label>` to wrap text
+   *
+   * 是否使用 `<label>` 来包裹文字
+   *
+   * @default true
+   */
+  label?: boolean
+
+  /**
+   * Whether place `<label>` after `<input>` or wrap `<input>`
+   *
+   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
+   *
+   * @default true
+   */
+  labelAfter?: boolean
+}
 
 interface TaskListEnv {
   tasklists: number
@@ -100,7 +119,7 @@ const todoify = (
     }
 }
 
-export const tasklist = (
+export const taskList = (
   md: MarkdownIt,
   { label = true, labelAfter = true }: TaskListOptions = {}
 ): void => {

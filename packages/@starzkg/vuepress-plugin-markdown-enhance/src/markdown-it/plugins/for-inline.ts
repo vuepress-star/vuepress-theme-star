@@ -1,3 +1,5 @@
+import type { PluginWithOptions } from 'markdown-it'
+import markdownItForInline from 'markdown-it-for-inline'
 import type Token from 'markdown-it/lib/token.js'
 
 /**
@@ -21,3 +23,13 @@ export interface ForInlinePluginOptions {
    */
   iterator: (tokens: Token[], idx: number) => void
 }
+
+/**
+ * markdown-it-for-inline
+ *
+ * @see https://github.com/markdown-it/markdown-it-for-inline
+ */
+export const forInline: PluginWithOptions<ForInlinePluginOptions> =
+  markdownItForInline
+
+export default markdownItForInline

@@ -1,18 +1,16 @@
 import type { LocaleConfig } from '@vuepress/core'
 import type { MarkdownOptions as _MarkdownOptions } from '@vuepress/markdown'
 import type { KatexOptions } from 'katex'
+import type { AttrsPluginOptions } from '../../markdown-it/plugins/attrs.js'
+import type { EmojiPluginOptions } from '../../markdown-it/plugins/emoji.js'
+import type { ForInlinePluginOptions } from '../../markdown-it/plugins/for-inline.js'
+import type { TaskListOptions } from '../../markdown-it/plugins/task-list.js'
 import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
-import type { AttrsOptions } from './attrs.js'
 import type { CodeDemoOptions } from './code-demo.js'
-import type { ForInlinePluginOptions } from './for-inline.js'
 import type { PresentationOptions } from './presentation.js'
-import type { TaskListOptions } from './tasklist.js'
 
-export * from './for-inline.js'
-export * from './emoji.js'
 export * from './code-demo.js'
 export * from './presentation.js'
-export * from './tasklist.js'
 /**
  * markdown-enhance plugin configuration
  */
@@ -24,7 +22,9 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  attrs?: AttrsOptions | boolean
+  attrs?: AttrsPluginOptions | boolean
+
+  emoji?: false | EmojiPluginOptions
   /**
    * Color Model
    */

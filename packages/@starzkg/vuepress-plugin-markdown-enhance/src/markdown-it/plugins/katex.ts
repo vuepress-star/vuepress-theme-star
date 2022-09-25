@@ -2,7 +2,7 @@ import Katex, { KatexOptions } from 'katex'
 import type MarkdownIt from 'markdown-it'
 import type StateBlock from 'markdown-it/lib/rules_block/state_block.js'
 import type StateInline from 'markdown-it/lib/rules_inline/state_inline.js'
-import { escapeHtml } from './utils.js'
+import { escapeHtml } from '../utils/index.js'
 
 /*
  * Test if potential opening or closing delimieter

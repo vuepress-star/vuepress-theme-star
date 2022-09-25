@@ -1,4 +1,11 @@
-export interface AttrsOptions {
+import markdownItAttrs from 'markdown-it-attrs'
+
+/**
+ * Options for markdown-it-attrs
+ *
+ * @see https://github.com/arve0/markdown-it-attrs
+ */
+export interface AttrsPluginOptions {
   /**
    * left delimiter
    *
@@ -30,3 +37,12 @@ export interface AttrsOptions {
    */
   allowedAttributes?: (string | RegExp)[]
 }
+
+/**
+ * markdown-it-attrs
+ *
+ * @see https://github.com/arve0/markdown-it-attrs
+ */
+export const attrs = markdownItAttrs
+
+export default markdownItAttrs

@@ -1,3 +1,6 @@
+import type { PluginWithOptions } from 'markdown-it'
+import markdownItEmoji from 'markdown-it-emoji'
+
 /**
  * Options for markdown-it-emoji
  *
@@ -23,3 +26,12 @@ export interface EmojiPluginOptions {
    */
   shortcuts?: Record<string, string | string[]>
 }
+
+/**
+ * markdown-it-emoji
+ *
+ * @see https://github.com/markdown-it/markdown-it-emoji
+ */
+export const emoji: PluginWithOptions<EmojiPluginOptions> = markdownItEmoji
+
+export default markdownItEmoji

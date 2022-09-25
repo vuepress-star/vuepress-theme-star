@@ -1,6 +1,6 @@
 import { hash } from '@vuepress/utils'
 import type MarkdownIt from 'markdown-it'
-import { generateUML } from './utils.js'
+import { generateUML } from '../utils/index.js'
 
 export const presentation = (md: MarkdownIt): void => {
   md.block.ruler.before(
