@@ -7,6 +7,7 @@ import type {
 } from '../shared/index.js'
 import {
   abbr,
+  attrs,
   cjkBreaks,
   colorModel,
   deflist,
@@ -122,7 +123,14 @@ export const markdownEnhancePlugin =
       },
 
       extendsMarkdown: (markdownIt): void => {
-        markdownIt.use(colorModel)
+        if (markdownOptions.attrs)
+          markdownIt.use(
+            attrs,
+            typeof markdownOptions.attrs === 'object'
+              ? markdownOptions.attrs
+              : {}
+          )
+        if (markdownOptions.colorModel) markdownIt.use(colorModel)
         if (markdownOptions.sup) markdownIt.use(sup)
         if (markdownOptions.sub) markdownIt.use(sub)
         if (markdownOptions.flowchart) markdownIt.use(flowchart)

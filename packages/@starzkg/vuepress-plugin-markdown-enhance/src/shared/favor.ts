@@ -9,6 +9,10 @@ export type MarkdownFavor = 'default' | 'gfm' | 'vscode' | 'vuepress'
  * default markdown spec
  */
 export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
+  attrs: true,
+
+  colorModel: true,
+
   typographer: true,
 
   container: true,

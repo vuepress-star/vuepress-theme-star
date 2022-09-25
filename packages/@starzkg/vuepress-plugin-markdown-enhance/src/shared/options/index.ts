@@ -2,6 +2,7 @@ import type { LocaleConfig } from '@vuepress/core'
 import type { MarkdownOptions as _MarkdownOptions } from '@vuepress/markdown'
 import type { KatexOptions } from 'katex'
 import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
+import type { AttrsOptions } from './attrs.js'
 import type { CodeDemoOptions } from './code-demo.js'
 import type { ForInlinePluginOptions } from './for-inline.js'
 import type { PresentationOptions } from './presentation.js'
@@ -16,6 +17,18 @@ export * from './tasklist.js'
  * markdown-enhance plugin configuration
  */
 export interface MarkdownEnhanceOptions {
+  /**
+   * Whether to enable attr support
+   *
+   * 是否启用属性支持。
+   *
+   * @default false
+   */
+  attrs?: AttrsOptions | boolean
+  /**
+   * Color Model
+   */
+  colorModel?: boolean
   /**
    * 是否启用自定义容器
    *
