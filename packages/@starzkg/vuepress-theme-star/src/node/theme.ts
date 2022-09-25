@@ -128,7 +128,9 @@ export const starTheme = ({
 
       interactionEffectPlugin(),
 
-      markdownEnhancePlugin(themePlugins.mdEnhance),
+      themePlugins.markdown !== false
+        ? markdownEnhancePlugin(themePlugins.markdown || true)
+        : [],
     ],
   }
 }

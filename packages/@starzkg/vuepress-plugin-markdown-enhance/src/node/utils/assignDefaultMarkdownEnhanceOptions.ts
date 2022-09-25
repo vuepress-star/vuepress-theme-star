@@ -1,14 +1,14 @@
 import {
   DEFAULT_MARKDOWN_SPEC,
-  MarkdownEnhanceOptions,
   MarkdownFavor,
+  MarkdownOptions,
 } from '../../shared/index.js'
 
-export const assignDefaultMarkdownEnhanceOptions = (
-  options: MarkdownEnhanceOptions | MarkdownFavor | boolean = true
-): MarkdownEnhanceOptions => {
+export const assignDefaultMarkdownOptions = (
+  options: MarkdownOptions | MarkdownFavor | boolean = true
+): MarkdownOptions => {
   if (typeof options === 'boolean') {
-    return options ? DEFAULT_MARKDOWN_SPEC : ({} as MarkdownEnhanceOptions)
+    return options ? DEFAULT_MARKDOWN_SPEC : ({} as MarkdownOptions)
   } else if (typeof options === 'string') {
     return {}
   }

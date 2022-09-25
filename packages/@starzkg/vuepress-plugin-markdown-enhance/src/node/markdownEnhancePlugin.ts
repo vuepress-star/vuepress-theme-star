@@ -2,13 +2,14 @@ import type { Plugin } from '@vuepress/core'
 import { getDirname, path } from '@vuepress/utils'
 import type {
   ForInlinePluginOptions,
-  MarkdownEnhanceOptions,
   MarkdownFavor,
+  MarkdownOptions,
 } from '../shared/index.js'
 import {
   abbr,
   cjkBreaks,
   deflist,
+  emoji,
   flowchart,
   footnote,
   forInline,
@@ -22,21 +23,28 @@ import {
   tasklist,
 } from './markdown-it/index.js'
 import { usePlugins } from './plugins/index.js'
-import { assignDefaultMarkdownEnhanceOptions, logger } from './utils/index.js'
+import { assignDefaultMarkdownOptions, logger } from './utils/index.js'
 
 const __dirname = getDirname(import.meta.url)
 
+export declare type MarkdownEnhancePluginOptions =
+  | MarkdownOptions
+  | MarkdownFavor
+  | boolean
+
 export const markdownEnhancePlugin =
-  (options: MarkdownEnhanceOptions | MarkdownFavor | boolean = true): Plugin =>
+  (options: MarkdownEnhancePluginOptions = true): Plugin =>
   (app) => {
     if (app.env.isDebug) {
-      logger.info(`Options: ${JSON.stringify(options)}`)
+      logger.info(`source Options:\n${JSON.stringify(options, null, '\t')}`)
     }
 
-    const markdownOptions = assignDefaultMarkdownEnhanceOptions(options)
+    const markdownOptions = assignDefaultMarkdownOptions(options)
 
     if (app.env.isDebug) {
-      logger.info(`merged Options: ${JSON.stringify(markdownOptions)}`)
+      logger.info(
+        `merged Options:\n${JSON.stringify(markdownOptions, null, '\t')}`
+      )
     }
 
     const alignEnable = markdownOptions.align || false
@@ -105,8 +113,11 @@ export const markdownEnhancePlugin =
 
       clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
-      extendsMarkdownOptions: (markdownOptions): void => {
-        Object.assign(markdownOptions, options)
+      extendsMarkdownOptions: (mdOptions): void => {
+        Object.assign(mdOptions, {
+          ...mdOptions,
+          ...markdownOptions,
+        })
       },
 
       extendsMarkdown: (markdownIt): void => {
@@ -118,6 +129,7 @@ export const markdownEnhancePlugin =
         if (markdownOptions.abbr) markdownIt.use(abbr)
         if (markdownOptions.cjkBreaks) markdownIt.use(cjkBreaks)
         if (markdownOptions.deflist) markdownIt.use(deflist)
+        if (markdownOptions.emoji) markdownIt.use(emoji)
         if (markdownOptions.forInline) {
           markdownIt.use<ForInlinePluginOptions>(
             forInline,

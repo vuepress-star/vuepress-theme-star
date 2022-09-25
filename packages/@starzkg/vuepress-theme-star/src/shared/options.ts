@@ -1,8 +1,5 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
-import type {
-  MarkdownEnhanceOptions,
-  MarkdownOptions,
-} from '@starzkg/vuepress-plugin-markdown-enhance'
+import type { MarkdownEnhancePluginOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
 import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
@@ -56,15 +53,6 @@ export interface StarThemePluginsOptions {
   prismjs?: boolean
 
   /**
-   * Markdown 增强插件配置
-   * @see http://vuepress-theme-star.github.io/markdown-enhance/zh/config/
-   *
-   * Markdown enhance plugin options
-   * @see http://vuepress-theme-star.github.io/markdown-enhance/config/
-   */
-  mdEnhance?: MarkdownEnhanceOptions | boolean
-
-  /**
    * Copyright
    *
    * 版权信息
@@ -79,9 +67,13 @@ export interface StarThemePluginsOptions {
   sitemap?: SitemapOptions | boolean
 
   /**
+   * Markdown 增强插件配置
+   * @see http://vuepress-star.github.io/docs/markdown-enhance/zh/config/
    *
+   * Markdown enhance plugin options
+   * @see http://vuepress-star.github.io/docs/markdown-enhance/config/
    */
-  markdown?: MarkdownOptions | boolean
+  markdown?: MarkdownEnhancePluginOptions
 }
 
 export type StarThemeLocaleOptions = StarThemeData

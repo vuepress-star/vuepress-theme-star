@@ -1,4 +1,4 @@
-import type { MarkdownEnhanceOptions } from './options/index.js'
+import type { MarkdownOptions } from './options/index.js'
 
 /**
  * markdown favor
@@ -8,7 +8,9 @@ export type MarkdownFavor = 'default' | 'gfm' | 'vscode' | 'vuepress'
 /**
  * default markdown spec
  */
-export const DEFAULT_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
+export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
+  typographer: true,
+
   container: true,
 
   align: true,
@@ -57,11 +59,18 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
 }
 
 /**
+ * CommonMark Spec
+ *
+ * @see https://spec.commonmark.org/
+ */
+export const COMMON_MARK_SPEC: MarkdownOptions = {}
+
+/**
  * GitHub Flavored Markdown Spec
  *
  * @see https://github.github.com/gfm/
  */
-export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownEnhanceOptions = {
+export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownOptions = {
   container: true,
 
   align: true,
