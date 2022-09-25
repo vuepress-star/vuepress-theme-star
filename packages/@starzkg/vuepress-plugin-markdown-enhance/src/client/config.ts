@@ -34,7 +34,7 @@ export default defineClientConfig({
       import('./styles/theme/fonts/source-sans-pro/source-sans-pro.css')
     }
 
-    if (MARKDOWN_ENHANCE_TASKLIST) import('./styles/tasklist.scss')
+    if (MARKDOWN_ENHANCE_TASKLIST) import('./styles/task-list.scss')
 
     if (MARKDOWN_ENHANCE_TEX) {
       import('./styles/tex.scss')
