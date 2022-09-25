@@ -1,4 +1,4 @@
-import type MermaidAPI from 'mermaid/mermaidAPI.js'
+import type { Config, Mermaid } from 'mermaid'
 import {
   defineComponent,
   h,
@@ -13,7 +13,7 @@ import { LoadingIcon } from './icons.js'
 import '../styles/mermaid.scss'
 
 declare const MARKDOWN_DELAY: number
-declare const MERMAID_OPTIONS: MermaidAPI.default.Config
+declare const MERMAID_OPTIONS: Config
 
 export default defineComponent({
   name: 'MermaidChart',
@@ -34,10 +34,14 @@ export default defineComponent({
       const code = decodeURIComponent(mermaidElement.value?.dataset.code || '')
 
       Promise.all([
-        import(/* webpackChunkName: "mermaid" */ 'mermaid'),
+        import(
+          /* webpackChunkName: "mermaid" */ 'mermaid'
+        ) as unknown as Promise<{
+          default: Mermaid
+        }>,
         delay(),
-      ]).then(([mermaid]) => {
-        const { initialize, render } = mermaid.default.default
+      ]).then(([{ default: mermaid }]) => {
+        const { initialize, render } = mermaid
 
         const renderMermaid = (isDarkTheme: boolean): void => {
           // generate a unvisiable container
