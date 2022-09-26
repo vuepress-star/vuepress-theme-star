@@ -2,6 +2,7 @@ import type { Plugin } from '@vuepress/core'
 import { getDirname, path } from '@vuepress/utils'
 import { abbr } from '../markdown-it/plugins/abbr.js'
 import { attrs } from '../markdown-it/plugins/attrs.js'
+import { chart } from '../markdown-it/plugins/chart.js'
 import { cjkBreaks } from '../markdown-it/plugins/cjk-breaks.js'
 import { colorModel } from '../markdown-it/plugins/color-model.js'
 import { deflist } from '../markdown-it/plugins/deflist.js'
@@ -123,6 +124,7 @@ export const markdownEnhancePlugin =
               : {}
           )
         }
+        if (markdownOptions.chart) markdownIt.use(chart)
         if (markdownOptions.cjkBreaks) markdownIt.use(cjkBreaks)
         if (markdownOptions.colorModel) markdownIt.use(colorModel)
         if (markdownOptions.deflist) markdownIt.use(deflist)

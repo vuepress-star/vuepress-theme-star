@@ -3,6 +3,7 @@ import Presentation from '@Presentation'
 import { defineClientConfig } from '@vuepress/client'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { Chart } from './components/chart/index.js'
 import { CodeGroup, CodeGroupItem } from './components/code-group/index.js'
 import { Mermaid } from './components/mermaid/index.js'
 import { initDemo } from './demo/index.js'
@@ -25,6 +26,7 @@ export default defineClientConfig({
     if (MARKDOWN_ENHANCE_FOOTNOTE) import('./styles/footnote.scss')
 
     app.component('FlowChart', FlowChart)
+    app.component('Chart', Chart)
     if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
 
     if (MARKDOWN_ENHANCE_PRESENTATION) {

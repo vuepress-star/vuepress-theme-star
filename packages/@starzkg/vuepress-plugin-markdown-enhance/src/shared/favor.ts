@@ -13,6 +13,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   colorModel: true,
 
+  chart: true,
+
   typographer: true,
 
   container: true,

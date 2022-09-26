@@ -1,0 +1,95 @@
+<script lang="ts">
+/* eslint-disable import/first, import/no-duplicates, import/order */
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'Chart',
+})
+</script>
+
+<script lang="ts" setup>
+import type {
+  Chart,
+  ChartConfiguration,
+  ChartItem,
+} from 'chart.js/auto/auto.esm.js'
+import { onMounted, PropType, ref } from 'vue'
+import { Loading } from '../../loading/index.js'
+
+const props = defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
+  language: {
+    type: String as PropType<'javascript' | 'json'>,
+    default: 'json',
+  },
+  title: {
+    type: String,
+    required: false,
+    default: undefined,
+  },
+  code: {
+    type: String,
+    required: true,
+  },
+})
+
+const parseChartConfig = (
+  config: string,
+  type: 'javascript' | 'json'
+): ChartConfiguration => {
+  if (type === 'json') return <ChartConfiguration>JSON.parse(config)
+
+  const exports = {}
+  const module = { exports }
+
+  // eslint-disable-next-line no-eval
+  eval(config)
+
+  return <ChartConfiguration>module.exports
+}
+
+const loading = ref(true)
+
+const chartElement = ref<HTMLElement | null>(null)
+const chartCanvasElement = ref<HTMLCanvasElement | null>(null)
+
+const chart = ref<Chart>()
+
+onMounted(() => {
+  Promise.all([
+    import(/* webpackChunkName: "chart" */ 'chart.js/auto/auto.esm.js'),
+  ]).then(([{ default: Chart }]) => {
+    Chart.defaults.maintainAspectRatio = false
+
+    const data = parseChartConfig(
+      decodeURIComponent(props.code),
+      props.language
+    )
+    const ctx = chartCanvasElement.value!.getContext('2d')! as ChartItem
+
+    chart.value = new Chart(ctx, data)
+
+    loading.value = false
+  })
+})
+</script>
+
+<template>
+  <div
+    :id="id"
+    ref="chartElement"
+    class="markdown-enhance-chart"
+    :class="['chart-' + language]"
+  >
+    <div v-if="title" class="chart-title">{{ decodeURIComponent(title) }}</div>
+    <div class="chart-wrapper">
+      <Loading :loading="loading" />
+      <canvas v-show="!loading" ref="chartCanvasElement" />
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped></style>

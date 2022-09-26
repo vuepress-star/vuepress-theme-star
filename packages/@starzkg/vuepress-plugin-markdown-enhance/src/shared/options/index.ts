@@ -16,19 +16,61 @@ export * from './presentation.js'
  */
 export interface MarkdownEnhanceOptions {
   /**
-   * Whether to enable attr support
+   * 是否启用Abbreviation支持
    *
+   * Whether to enable abbreviation format support
+   *
+   * @default false
+   */
+  abbr?: boolean
+  /**
    * 是否启用属性支持。
+   *
+   * Whether to enable attr support
    *
    * @default false
    */
   attrs?: AttrsPluginOptions | boolean
-
-  emoji?: false | EmojiPluginOptions
   /**
-   * Color Model
+   * 是否启用 chart 图表支持
+   *
+   * Whether to enable chart support
+   *
+   * @default false
+   */
+  chart?: boolean
+  /**
+   * 是否禁止汉字字符之间的换行
+   *
+   * Whether to enable suppress linebreaks between east asian characters
+   *
+   * @default false
+   */
+  cjkBreaks?: boolean
+  /**
+   * 是否启用颜色格式
+   *
+   * Whether to enable Color Model
+   *
+   * @default false
    */
   colorModel?: boolean
+  /**
+   * 是否启用定义列表支持
+   *
+   * Whether to enable def list format support
+   *
+   * @default false
+   */
+  deflist?: boolean
+  /**
+   * 是否启用 emoji
+   *
+   * Whether to enable emoji
+   *
+   * @default false
+   */
+  emoji?: false | EmojiPluginOptions
   /**
    * 是否启用自定义容器
    *
@@ -98,33 +140,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   footnote?: boolean
-
-  /**
-   * 是否启用Abbreviation支持
-   *
-   * Whether to enable abbreviation format support
-   *
-   * @default false
-   */
-  abbr?: boolean
-
-  /**
-   * 是否禁止汉字字符之间的换行
-   *
-   * Whether to enable suppress linebreaks between east asian characters
-   *
-   * @default false
-   */
-  cjkBreaks?: boolean
-
-  /**
-   * 是否启用定义列表支持
-   *
-   * Whether to enable def list format support
-   *
-   * @default false
-   */
-  deflist?: boolean
 
   /**
    * 是否启用内联标记迭代器支持
