@@ -37,12 +37,16 @@ Markdown Enhancement Plugin 📄 / Markdown 增强插件 📄
 - [x] [insert](https://github.com/markdown-it/markdown-it-ins)
 - [x] [mark](https://github.com/markdown-it/markdown-it-mark)
 - [x] [anchor](https://github.com/valeriangalliat/markdown-it-anchor)
-- [ ] code demo
-- [ ] flowChart
-- [ ] katex
-- [ ] mermaid
+- [x] task list
+- [ ] chart
+- [ ] echarts
+- [x] mermaid
+- [ ] flowchart
+- [ ] tex
+  - [x] katex
+  - [ ] mathjax
 - [ ] presentation
-- [ ] task list
+- [ ] code demo
 - ... and [others](https://www.npmjs.org/browse/keyword/markdown-it-plugin)
 
 ## Install

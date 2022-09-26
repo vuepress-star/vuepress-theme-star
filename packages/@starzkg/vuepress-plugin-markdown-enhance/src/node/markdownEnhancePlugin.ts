@@ -114,34 +114,30 @@ export const markdownEnhancePlugin =
       },
 
       extendsMarkdown: (markdownIt): void => {
-        if (markdownOptions.attrs)
+        if (markdownOptions.abbr) markdownIt.use(abbr)
+        if (markdownOptions.attrs) {
           markdownIt.use(
             attrs,
             typeof markdownOptions.attrs === 'object'
               ? markdownOptions.attrs
               : {}
           )
-        if (markdownOptions.colorModel) markdownIt.use(colorModel)
-        if (markdownOptions.sup) markdownIt.use(sup)
-        if (markdownOptions.sub) markdownIt.use(sub)
-        if (markdownOptions.flowchart) markdownIt.use(flowchart)
-        if (footnoteEnable) markdownIt.use(footnote)
-        if (markdownOptions.ins) markdownIt.use(ins)
-        if (markdownOptions.abbr) markdownIt.use(abbr)
+        }
         if (markdownOptions.cjkBreaks) markdownIt.use(cjkBreaks)
+        if (markdownOptions.colorModel) markdownIt.use(colorModel)
         if (markdownOptions.deflist) markdownIt.use(deflist)
         if (markdownOptions.emoji) markdownIt.use(emoji)
+        if (markdownOptions.flowchart) markdownIt.use(flowchart)
+        if (markdownOptions.footnote) markdownIt.use(footnote)
         if (markdownOptions.forInline) {
-          markdownIt.use(forInline, markdownOptions.forInline)
+          markdownIt.use(
+            forInline,
+            typeof markdownOptions.forInline === 'object'
+              ? markdownOptions.forInline
+              : {}
+          )
         }
-        if (markdownOptions.mark) markdownIt.use(mark)
-        if (tasklistEnable)
-          markdownIt.use(taskList, [
-            typeof markdownOptions.tasklist === 'object'
-              ? markdownOptions.tasklist
-              : {},
-          ])
-        if (mermaidEnable) markdownIt.use(mermaid)
+        if (markdownOptions.ins) markdownIt.use(ins)
         if (texEnable)
           markdownIt.use(katex, {
             macros: {
@@ -154,7 +150,18 @@ export const markdownEnhancePlugin =
               ? markdownOptions.tex
               : {}),
           })
+        if (markdownOptions.mark) markdownIt.use(mark)
+        if (mermaidEnable) markdownIt.use(mermaid)
         if (presentationEnable) markdownIt.use(presentation)
+        if (markdownOptions.sup) markdownIt.use(sup)
+        if (markdownOptions.sub) markdownIt.use(sub)
+        if (markdownOptions.tasklist) {
+          markdownIt.use(taskList, [
+            typeof markdownOptions.tasklist === 'object'
+              ? markdownOptions.tasklist
+              : {},
+          ])
+        }
       },
     }
   }

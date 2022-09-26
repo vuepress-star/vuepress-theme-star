@@ -1,4 +1,5 @@
 import hash from 'hash-sum'
+import type { PluginSimple } from 'markdown-it'
 import type MarkdownIt from 'markdown-it'
 import type Token from 'markdown-it/lib/token.js'
 
@@ -12,7 +13,7 @@ const flowchartRender = (tokens: Token[], idx: number): string => {
   )}" preset="${info.trim().split(':')[1] || 'vue'}"></FlowChart>`
 }
 
-export const flowchart = (md: MarkdownIt): void => {
+export const flowchart: PluginSimple = (md: MarkdownIt): void => {
   // Handle ```flow and ```flowchart blocks
   const fence = md.renderer.rules.fence
 
@@ -30,3 +31,5 @@ export const flowchart = (md: MarkdownIt): void => {
 
   md.renderer.rules.flowchart = flowchartRender
 }
+
+export default flowchart

@@ -1,8 +1,9 @@
 import { hash } from '@vuepress/utils'
 import type MarkdownIt from 'markdown-it'
+import type { PluginSimple } from 'markdown-it'
 import { generateUML } from '../utils/index.js'
 
-export const presentation = (md: MarkdownIt): void => {
+export const presentation: PluginSimple = (md: MarkdownIt): void => {
   md.block.ruler.before(
     'fence',
     'presentation',
@@ -24,3 +25,5 @@ export const presentation = (md: MarkdownIt): void => {
     )}" theme="${info.trim() || 'auto'}"></PresentationViewer>`
   }
 }
+
+export default presentation

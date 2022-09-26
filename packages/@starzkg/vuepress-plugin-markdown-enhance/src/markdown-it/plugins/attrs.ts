@@ -1,3 +1,4 @@
+import type { PluginWithOptions } from 'markdown-it'
 import markdownItAttrs from 'markdown-it-attrs'
 
 /**
@@ -43,6 +44,6 @@ export interface AttrsPluginOptions {
  *
  * @see https://github.com/arve0/markdown-it-attrs
  */
-export const attrs = markdownItAttrs
+export const attrs: PluginWithOptions<AttrsPluginOptions> = markdownItAttrs
 
 export default markdownItAttrs

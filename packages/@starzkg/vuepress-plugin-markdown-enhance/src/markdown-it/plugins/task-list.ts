@@ -1,4 +1,5 @@
 import type MarkdownIt from 'markdown-it'
+import type { PluginWithOptions } from 'markdown-it'
 import type StateCore from 'markdown-it/lib/rules_core/state_core.js'
 import Token from 'markdown-it/lib/token.js'
 import {
@@ -119,7 +120,7 @@ const todoify = (
     }
 }
 
-export const taskList = (
+export const taskList: PluginWithOptions<TaskListOptions> = (
   md: MarkdownIt,
   { label = true, labelAfter = true }: TaskListOptions = {}
 ): void => {
@@ -147,3 +148,5 @@ export const taskList = (
     }
   )
 }
+
+export default taskList

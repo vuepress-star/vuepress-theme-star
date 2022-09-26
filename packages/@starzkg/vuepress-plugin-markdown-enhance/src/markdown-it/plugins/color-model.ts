@@ -1,4 +1,5 @@
 import type MarkdownIt from 'markdown-it'
+import type { PluginSimple } from 'markdown-it'
 
 /**
  * @see https://www.w3.org/wiki/CSS/Properties/color/HSL
@@ -34,7 +35,7 @@ const hex = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/
  *
  * @param md
  */
-export const colorModel = (md: MarkdownIt): void => {
+export const colorModel: PluginSimple = (md: MarkdownIt): void => {
   const rawInlineCodeRule = md.renderer.rules.code_inline!
   md.renderer.rules.code_inline = (tokens, idx, options, env, slf) => {
     const result = rawInlineCodeRule(tokens, idx, options, env, slf)

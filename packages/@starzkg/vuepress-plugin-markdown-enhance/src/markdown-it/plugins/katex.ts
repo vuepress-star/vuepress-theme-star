@@ -1,5 +1,6 @@
 import Katex, { KatexOptions } from 'katex'
 import type MarkdownIt from 'markdown-it'
+import type { PluginWithOptions } from 'markdown-it'
 import type StateBlock from 'markdown-it/lib/rules_block/state_block.js'
 import type StateInline from 'markdown-it/lib/rules_inline/state_inline.js'
 import { escapeHtml } from '../utils/index.js'
@@ -200,7 +201,7 @@ const katexBlock = (tex: string, options: KatexOptions): string => {
   }
 }
 
-export const katex = (
+export const katex: PluginWithOptions<KatexOptions> = (
   md: MarkdownIt,
   options: KatexOptions = { throwOnError: false }
 ): void => {
@@ -217,3 +218,5 @@ export const katex = (
   md.renderer.rules.blockTex = (tokens, index): string =>
     `${katexBlock(tokens[index].content, katexOptions)}\n`
 }
+
+export default katex

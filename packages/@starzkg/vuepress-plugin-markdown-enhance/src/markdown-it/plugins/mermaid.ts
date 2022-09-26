@@ -1,5 +1,6 @@
 import { hash } from '@vuepress/utils'
 import type MarkdownIt from 'markdown-it'
+import type { PluginSimple } from 'markdown-it'
 import type Token from 'markdown-it/lib/token.js'
 
 const mermaidRender = (tokens: Token[], index: number): string => {
@@ -10,7 +11,7 @@ const mermaidRender = (tokens: Token[], index: number): string => {
   return `<Mermaid id="${key}" code="${encodeURIComponent(content)}"/>`
 }
 
-export const mermaid = (md: MarkdownIt): void => {
+export const mermaid: PluginSimple = (md: MarkdownIt): void => {
   // Handle ```mermaid blocks
   const fence = md.renderer.rules.fence
 
@@ -26,3 +27,5 @@ export const mermaid = (md: MarkdownIt): void => {
 
   md.renderer.rules.mermaid = mermaidRender
 }
+
+export default mermaid
