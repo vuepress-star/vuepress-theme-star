@@ -64,6 +64,14 @@ export interface MarkdownEnhanceOptions {
    */
   deflist?: boolean
   /**
+   * 是否启用 echarts 图表支持
+   *
+   * Whether to enable echarts support
+   *
+   * @default false
+   */
+  echarts?: boolean
+  /**
    * 是否启用 emoji
    *
    * Whether to enable emoji

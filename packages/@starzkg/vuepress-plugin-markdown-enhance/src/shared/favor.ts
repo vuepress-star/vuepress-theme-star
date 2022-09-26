@@ -15,6 +15,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   chart: true,
 
+  echarts: true,
+
   typographer: true,
 
   container: true,

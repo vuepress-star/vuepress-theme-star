@@ -1,0 +1,41 @@
+.markdown-enhance-echarts {
+  overflow-x: auto;
+  padding: 0.6em 0.4em;
+  text-align: center;
+  transition: all 1s;
+  width: 100%;
+
+  .echarts-title {
+    margin: 0.5rem auto;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .echarts-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .loading {
+      position: absolute;
+    }
+
+    .loading-icon {
+      width: 4em;
+      height: 4em;
+      margin: 2.5em auto;
+      color: var(--c-brand);
+    }
+
+    .echarts-instance {
+      width: 100%;
+      min-height: 360px;
+      padding: 0.6em 0.4em;
+      text-align: center;
+      transition: all 1s;
+    }
+  }
+}

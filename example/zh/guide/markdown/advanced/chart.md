@@ -23,15 +23,11 @@ tags:
 ## 格式
 
 ````md
-::: chart 标题
-
-```json
+```chart:json 标题
 {
   // 此处为图表配置
 }
 ```
-
-:::
 ````
 
 我们也支持 `js` 和 `javascript` 的代码块，你应当将导出对象赋值给 `module.exports`。

@@ -5,6 +5,7 @@ import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { Chart } from './components/chart/index.js'
 import { CodeGroup, CodeGroupItem } from './components/code-group/index.js'
+import { ECharts } from './components/echarts/index.js'
 import { Mermaid } from './components/mermaid/index.js'
 import { initDemo } from './demo/index.js'
 import './styles/index.scss'
@@ -25,8 +26,9 @@ export default defineClientConfig({
 
     if (MARKDOWN_ENHANCE_FOOTNOTE) import('./styles/footnote.scss')
 
-    app.component('FlowChart', FlowChart)
     app.component('Chart', Chart)
+    app.component('ECharts', ECharts)
+    app.component('FlowChart', FlowChart)
     if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
 
     if (MARKDOWN_ENHANCE_PRESENTATION) {

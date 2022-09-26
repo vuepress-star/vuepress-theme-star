@@ -6,6 +6,7 @@ import { chart } from '../markdown-it/plugins/chart.js'
 import { cjkBreaks } from '../markdown-it/plugins/cjk-breaks.js'
 import { colorModel } from '../markdown-it/plugins/color-model.js'
 import { deflist } from '../markdown-it/plugins/deflist.js'
+import { echarts } from '../markdown-it/plugins/echarts.js'
 import { emoji } from '../markdown-it/plugins/emoji.js'
 import { flowchart } from '../markdown-it/plugins/flowchart.js'
 import { footnote } from '../markdown-it/plugins/footnote.js'
@@ -128,6 +129,7 @@ export const markdownEnhancePlugin =
         if (markdownOptions.cjkBreaks) markdownIt.use(cjkBreaks)
         if (markdownOptions.colorModel) markdownIt.use(colorModel)
         if (markdownOptions.deflist) markdownIt.use(deflist)
+        if (markdownOptions.echarts) markdownIt.use(echarts)
         if (markdownOptions.emoji) markdownIt.use(emoji)
         if (markdownOptions.flowchart) markdownIt.use(flowchart)
         if (markdownOptions.footnote) markdownIt.use(footnote)
