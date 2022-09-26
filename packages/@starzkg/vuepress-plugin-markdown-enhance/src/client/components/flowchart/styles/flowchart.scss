@@ -1,6 +1,6 @@
 @use '@sass-palette/star-config';
-.md-flowchart {
-  overflow-x: scroll;
+.markdown-enhance-flowchart {
+  overflow-x: auto;
   text-align: center;
   transition: all 1s;
   padding: 0.6em 0.4em;
@@ -14,7 +14,7 @@
     margin: 0 -1.5rem;
     padding: 0.6em 0;
   }
-  svg.md-flowchart-loading-icon {
+  svg.markdown-enhance-flowchart-loading-icon {
     width: 4em;
     height: 4em;
     margin: 2.5em auto;

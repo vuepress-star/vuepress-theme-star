@@ -80,6 +80,62 @@ export interface MarkdownEnhanceOptions {
    */
   emoji?: false | EmojiPluginOptions
   /**
+   * 是否启用流程图
+   *
+   * Whether to enable flowchart format support
+   *
+   * @default false
+   */
+  flowchart?: boolean
+  /**
+   * 是否启用脚注格式支持
+   *
+   * Whether to enable footnote format support
+   *
+   * @default false
+   */
+  footnote?: boolean
+  /**
+   * 是否启用内联标记迭代器支持
+   *
+   * Whether to enable inline tokens iterator support
+   *
+   * @default false
+   */
+  forInline?: false | ForInlinePluginOptions
+  /**
+   * 是否启用ins支持
+   *
+   * Whether to enable ins format support
+   *
+   * @default false
+   */
+  ins?: boolean
+  /**
+   * 是否启用 KaTeX 语法支持
+   *
+   * Whether to enable KaTeX syntax support
+   *
+   * @default false
+   */
+  katex?: KatexOptions | boolean
+  /**
+   * 是否启用标注支持
+   *
+   * Whether to enable mark format support
+   *
+   * @default false
+   */
+  mark?: boolean
+  /**
+   * 是否启用 Mermaid 流程图支持
+   *
+   * Whether to enable mermaid support
+   *
+   * @default false
+   */
+  mermaid?: boolean
+  /**
    * 是否启用自定义容器
    *
    * - info
@@ -141,42 +197,6 @@ export interface MarkdownEnhanceOptions {
   sub?: boolean
 
   /**
-   * 是否启用脚注格式支持
-   *
-   * Whether to enable footnote format support
-   *
-   * @default false
-   */
-  footnote?: boolean
-
-  /**
-   * 是否启用内联标记迭代器支持
-   *
-   * Whether to enable inline tokens iterator support
-   *
-   * @default false
-   */
-  forInline?: false | ForInlinePluginOptions
-
-  /**
-   * 是否启用ins支持
-   *
-   * Whether to enable ins format support
-   *
-   * @default false
-   */
-  ins?: boolean
-
-  /**
-   * 是否启用标注支持
-   *
-   * Whether to enable mark format support
-   *
-   * @default false
-   */
-  mark?: boolean
-
-  /**
    * 是否启用任务里表支持
    *
    * Whether to enable tastlist format support
@@ -186,15 +206,6 @@ export interface MarkdownEnhanceOptions {
   tasklist?: TaskListOptions | boolean
 
   /**
-   * 是否启用流程图
-   *
-   * Whether to enable flowchart format support
-   *
-   * @default false
-   */
-  flowchart?: boolean
-
-  /**
    * 是否启用 TeX 语法支持
    *
    * Whether to enable TeX syntax support
@@ -202,15 +213,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   tex?: KatexOptions | boolean
-
-  /**
-   * 是否启用 Mermaid 流程图支持
-   *
-   * Whether to enable mermaid support
-   *
-   * @default false
-   */
-  mermaid?: boolean
 
   /**
    * 是否启用代码示例功能
