@@ -186,7 +186,14 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   vPre?: boolean
-
+  /**
+   * 是否启用 reveal.js 支持
+   *
+   * Whether to enable reveal.js support
+   *
+   * @default false
+   */
+  reveal?: RevealOptions | boolean
   /**
    * 是否启用上角标格式支持
    *
@@ -233,15 +240,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   demo?: Partial<CodeDemoOptions> | boolean
-
-  /**
-   * 是否启用 reveal.js 支持
-   *
-   * Whether to enable reveal.js support
-   *
-   * @default false
-   */
-  reveal?: RevealOptions | boolean
 
   /**
    * 操作页面 DOM 的延时，单位 ms

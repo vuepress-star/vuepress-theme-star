@@ -3,7 +3,7 @@ import { getCode, getNormalCode, getReactCode, getVueCode } from './code.js'
 import { initDom, select } from './dom.js'
 import { loadScript } from './utils.js'
 
-declare const MARKDOWN_DELAY: number
+declare const MARKDOWN_ENHANCE_DELAY: number
 
 export const initDemo = (): void => {
   setTimeout(() => {
@@ -57,5 +57,5 @@ export const initDemo = (): void => {
         }
       })
     )
-  }, MARKDOWN_DELAY)
+  }, MARKDOWN_ENHANCE_DELAY)
 }

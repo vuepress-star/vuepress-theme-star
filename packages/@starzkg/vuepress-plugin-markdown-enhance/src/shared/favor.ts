@@ -63,7 +63,7 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
     reactDOM: 'https://unpkg.com/react-dom/umd/react-dom.production.min.js',
   },
 
-  presentation: true,
+  reveal: true,
 }
 
 /**
@@ -113,5 +113,5 @@ export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownOptions = {
 
   demo: true,
 
-  presentation: true,
+  reveal: true,
 }

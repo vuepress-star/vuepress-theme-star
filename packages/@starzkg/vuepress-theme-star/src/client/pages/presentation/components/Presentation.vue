@@ -8,19 +8,20 @@ const code = encodeURIComponent(pageData.value.content)
 
 <template>
   <div
-    class="presentation-page"
+    id="presentation"
+    class="presentation"
     :style="{
       height: frontmatter.navbar === false ? '100vh' : '',
       paddingTop: frontmatter.navbar === false ? '0' : '',
     }"
   >
-    <PresentationViewer
-      id="presentation"
+    <Reveal
+      id="reveal-presentation"
       class="presentation-container"
       :style="{
         height: frontmatter.navbar === false ? '100vh' : '',
       }"
-      :data-code="code || ''"
+      :code="code || ''"
       :theme="frontmatter.theme || 'auto'"
     />
   </div>

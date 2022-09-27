@@ -55,7 +55,7 @@ on GitHub.
 - Use `---` to split slides
 - Use `--` to split the slides second time (vertical display)
 
-```presentation
+```presentation:moon
 
 <!-- slide1 -->
 slide1

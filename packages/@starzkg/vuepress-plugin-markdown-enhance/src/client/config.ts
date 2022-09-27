@@ -33,9 +33,6 @@ export default defineClientConfig({
 
     if (MARKDOWN_ENHANCE_PRESENTATION) {
       app.component('Reveal', Reveal)
-      import('./styles/slides.scss')
-      import('./styles/theme/fonts/league-gothic/league-gothic.css')
-      import('./styles/theme/fonts/source-sans-pro/source-sans-pro.css')
     }
 
     if (MARKDOWN_ENHANCE_TASKLIST) import('./styles/task-list.scss')

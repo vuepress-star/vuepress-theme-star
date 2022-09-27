@@ -1,30 +1,15 @@
 import { usePageFrontmatter } from '@vuepress/client'
-import type { RevealOptions } from 'reveal.js'
 import { defineComponent, h, onMounted, ref } from 'vue'
 import type { PropType, VNode } from 'vue'
+import type {
+  RevealOptions,
+  RevealThemeType,
+} from '../../../../shared/index.js'
 import { Loading } from '../../loading/index.js'
+import * as packages from '../plugins/index.js'
 
-declare const MARKDOWN_DELAY: number
-declare const REVEAL_CONFIG: Partial<RevealOptions>
-declare const REVEAL_PLUGIN_HIGHLIGHT: boolean
-declare const REVEAL_PLUGIN_MATH: boolean
-declare const REVEAL_PLUGIN_NOTES: boolean
-declare const REVEAL_PLUGIN_SEARCH: boolean
-declare const REVEAL_PLUGIN_ZOOM: boolean
-
-type ThemeType =
-  | 'auto'
-  | 'black'
-  | 'white'
-  | 'league'
-  | 'beige'
-  | 'sky'
-  | 'night'
-  | 'serif'
-  | 'simple'
-  | 'solarized'
-  | 'blood'
-  | 'moon'
+declare const MARKDOWN_ENHANCE_DELAY: number
+declare const REVEAL_OPTIONS: RevealOptions
 
 export default defineComponent({
   name: 'Reveal',
@@ -32,111 +17,61 @@ export default defineComponent({
   props: {
     id: { type: String, required: true },
     code: { type: String, required: true },
-    theme: { type: String as PropType<ThemeType>, default: 'auto' },
+    theme: { type: String as PropType<RevealThemeType>, default: 'auto' },
+    config: {
+      type: Object as PropType<RevealOptions>,
+      default: () => {
+        return {}
+      },
+    },
   },
 
   setup(props) {
     const frontmatter = usePageFrontmatter<{ reveal: RevealOptions }>()
     const code = ref('')
     const loading = ref(false)
-    const presentationContainer = ref<HTMLElement | null>(null)
-    const presentationElement = ref<HTMLElement | null>(null)
+    const revealContainer = ref<HTMLElement | null>(null)
+    const revealElement = ref<HTMLElement | null>(null)
 
     onMounted(() => {
-      if (presentationElement.value) {
+      if (revealElement.value) {
         code.value = decodeURIComponent(props.code)
-
-        presentationElement.value.setAttribute('id', props.id)
-        presentationElement.value.setAttribute('data-theme', props.theme)
 
         const promises: [
           Promise<void>,
-          Promise<typeof import(/* webpackChunkName: "reveal" */ 'reveal.js')>
+          ...Promise<typeof import('reveal.js/dist/reveal.esm.js')>[]
         ] = [
-          new Promise((resolve) => setTimeout(resolve, MARKDOWN_DELAY)),
-          import(/* webpackChunkName: "reveal" */ 'reveal.js'),
+          new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+          packages.reveal(),
+          packages.markdown(),
+          ...((REVEAL_OPTIONS.plugins || []) as string[]).map((plugin) =>
+            packages[plugin]()
+          ),
         ]
-
-        promises.push(
-          import(
-            /* webpackChunkName: "reveal" */ 'reveal.js/plugin/markdown/markdown.esm.js'
-          )
-        )
-
-        if (REVEAL_PLUGIN_HIGHLIGHT)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ 'reveal.js/plugin/highlight/highlight.esm.js'
-            )
-          )
-
-        if (REVEAL_PLUGIN_MATH)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ 'reveal.js/plugin/math/math.esm.js'
-            )
-          )
-
-        if (REVEAL_PLUGIN_SEARCH)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ 'reveal.js/plugin/search/search.esm.js'
-            )
-          )
-
-        if (REVEAL_PLUGIN_NOTES)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ 'reveal.js/plugin/notes/notes.esm.js'
-            )
-          )
-
-        if (REVEAL_PLUGIN_ZOOM)
-          promises.push(
-            import(
-              /* webpackChunkName: "reveal" */ 'reveal.js/plugin/zoom/zoom.esm.js'
-            )
-          )
-
-        // if (REVEAL_PLUGINS.includes("anything"))
-        //   promises.push(
-        //     import(
-        //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/anything/anything.js"
-        //     )
-        //   );
-
-        // if (REVEAL_PLUGINS.includes("audio"))
-        //   promises.push(
-        //     import(
-        //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/audio-slideshow/audio-slideshow.js"
-        //     )
-        //   );
-
-        // if (REVEAL_PLUGINS.includes("chalkboard"))
-        //   promises.push(
-        //     import(
-        //       /* webpackChunkName: "reveal" */ "reveal.js-plugins/chalkboard/chalkboard.js"
-        //     )
-        //   );
 
         Promise.all(promises).then(([, revealJS, ...plugins]) => {
           const Reveal = revealJS.default
-          const reveal = new Reveal(presentationElement.value as HTMLElement, {
-            plugins: plugins.map(
-              (plugin) => (plugin as typeof import('reveal.js')).default
-            ),
+          const reveal = new Reveal(revealElement.value!, {
+            plugins: plugins.map((plugin) => plugin.default),
           })
 
           reveal
             .initialize({
-              backgroundTransition: 'slide',
-              hash: frontmatter.value.layout === 'Slide',
-              mouseWheel: frontmatter.value.layout === 'Slide',
               transition: 'slide',
+              backgroundTransition: 'slide',
+              hash: frontmatter.value.layout === 'Presentation',
+              mouseWheel: frontmatter.value.layout === 'Presentation',
+              embedded: frontmatter.value.layout !== 'Presentation',
               slideNumber: true,
-              ...REVEAL_CONFIG,
-              ...(frontmatter.value.reveal || {}),
-              embedded: frontmatter.value.layout !== 'Slide',
+              // Factor of the display size that should remain empty around the content
+              margin: 0.1,
+
+              // Bounds for smallest/largest possible scale to apply to content
+              minScale: 0.2,
+              maxScale: 1.0,
+              ...(REVEAL_OPTIONS.revealConfig || {}),
+              ...(frontmatter.value.reveal?.revealConfig || {}),
+              ...(props.config?.revealConfig || {}),
             })
             .then(() => {
               loading.value = false
@@ -150,9 +85,9 @@ export default defineComponent({
       h(
         'div',
         {
-          ref: presentationContainer,
+          ref: revealContainer,
           class: {
-            'markdown-enhance-presentation': true,
+            'markdown-enhance-reveal': true,
             'loading': loading.value,
           },
         },
@@ -161,8 +96,10 @@ export default defineComponent({
           h(
             'div',
             {
-              ref: presentationElement,
-              class: ['reveal', 'reveal-viewport'],
+              'id': props.id,
+              'ref': revealElement,
+              'data-theme': props.theme,
+              'class': ['reveal', 'reveal-viewport'],
             },
             h('div', {
               class: 'slides',

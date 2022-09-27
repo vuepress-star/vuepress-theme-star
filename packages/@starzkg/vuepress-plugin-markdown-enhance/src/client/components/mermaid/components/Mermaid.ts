@@ -10,7 +10,7 @@ import {
 import type { VNode } from 'vue'
 import { Loading } from '../../loading/index.js'
 
-declare const MARKDOWN_DELAY: number
+declare const MARKDOWN_ENHANCE_DELAY: number
 declare const MERMAID_OPTIONS: Config
 
 export default defineComponent({
@@ -27,7 +27,7 @@ export default defineComponent({
     let observer: MutationObserver
 
     const delay = (): Promise<void> =>
-      new Promise((resolve) => setTimeout(resolve, MARKDOWN_DELAY))
+      new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY))
 
     onMounted(() => {
       const code = decodeURIComponent(props.code)

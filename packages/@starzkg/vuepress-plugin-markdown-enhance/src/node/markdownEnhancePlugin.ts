@@ -59,19 +59,13 @@ export const markdownEnhancePlugin =
     const revealEnable = Boolean(markdownOptions.reveal) || false
     const texEnable = Boolean(markdownOptions.tex) || false
 
-    const revealPlugins =
-      typeof markdownOptions.reveal === 'object' &&
-      Array.isArray(markdownOptions.reveal.plugins)
-        ? markdownOptions.reveal.plugins
-        : []
-
     usePlugins(app, markdownOptions)
 
     return {
       name: '@starzkg/vuepress-plugin-markdown-enhance',
 
       define: (): Record<string, unknown> => ({
-        MARKDOWN_DELAY: markdownOptions.delay || 500,
+        MARKDOWN_ENHANCE_DELAY: markdownOptions.delay || 500,
         MARKDOWN_ENHANCE_ALIGN: alignEnable,
         MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
         MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
@@ -88,16 +82,10 @@ export const markdownEnhancePlugin =
           typeof markdownOptions.mermaid === 'object'
             ? markdownOptions.mermaid
             : {},
-        REVEAL_CONFIG:
-          typeof markdownOptions.reveal === 'object' &&
-          typeof markdownOptions.reveal.revealConfig === 'object'
-            ? markdownOptions.reveal.revealConfig
+        REVEAL_OPTIONS:
+          typeof markdownOptions.reveal === 'object'
+            ? markdownOptions.reveal
             : {},
-        REVEAL_PLUGIN_HIGHLIGHT: revealPlugins.includes('highlight'),
-        REVEAL_PLUGIN_MATH: revealPlugins.includes('math'),
-        REVEAL_PLUGIN_NOTES: revealPlugins.includes('notes'),
-        REVEAL_PLUGIN_SEARCH: revealPlugins.includes('search'),
-        REVEAL_PLUGIN_ZOOM: revealPlugins.includes('zoom'),
       }),
 
       clientConfigFile: path.resolve(__dirname, '../client/config.js'),

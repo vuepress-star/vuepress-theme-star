@@ -370,6 +370,20 @@ interface _RevealOptions {
   plugins: any[]
 }
 
+export type RevealThemeType =
+  | 'auto'
+  | 'black'
+  | 'white'
+  | 'league'
+  | 'beige'
+  | 'sky'
+  | 'night'
+  | 'serif'
+  | 'simple'
+  | 'solarized'
+  | 'blood'
+  | 'moon'
+
 export type RevealPlugin =
   | 'highlight'
   | 'math'

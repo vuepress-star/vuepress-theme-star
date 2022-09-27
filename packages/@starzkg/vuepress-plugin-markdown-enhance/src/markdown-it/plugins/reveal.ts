@@ -3,16 +3,20 @@ import type MarkdownIt from 'markdown-it'
 import type { PluginSimple } from 'markdown-it'
 import type Token from 'markdown-it/lib/token.js'
 
-const presentationRender = (tokens: Token[], index: number): string => {
+const revealRender = (tokens: Token[], index: number): string => {
   const token = tokens[index]
-  const key = `presentation-${hash(index)}`
-  const { content } = token
+  const key = `reveal-${hash(index)}`
+  const { content, info } = token
 
-  return `<Reveal id="${key}" code="${encodeURIComponent(content)}"/>`
+  const theme = info.trim().split(' ')[0].trim().split(':')[1] || 'auto'
+  console.log(info)
+  return `<Reveal id="${key}"
+    code="${encodeURIComponent(content)}"
+    theme="${theme}"/>`
 }
 
 export const reveal: PluginSimple = (md: MarkdownIt): void => {
-  // Handle ```presentation blocks
+  // Handle ```reveal blocks
   const fence = md.renderer.rules.fence
 
   md.renderer.rules.fence = (...args): string => {
@@ -20,13 +24,13 @@ export const reveal: PluginSimple = (md: MarkdownIt): void => {
     const { info } = tokens[index]
 
     if (info.startsWith('reveal') || info.startsWith('presentation'))
-      return presentationRender(tokens, index)
+      return revealRender(tokens, index)
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args)
   }
 
-  md.renderer.rules.presentation = presentationRender
+  md.renderer.rules.reveal = revealRender
 }
 
 export default reveal
