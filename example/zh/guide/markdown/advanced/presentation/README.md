@@ -55,20 +55,21 @@ on GitHub.
 - Use `---` to split slides
 - Use `--` to split the slides second time (vertical display)
 
-```md
-@slidestart [theme]
+```presentation
 
 <!-- slide1 -->
+slide1
 
 ---
 
 <!-- slide2 -->
+slide2
 
 ---
 
 <!-- slide3 -->
+slide3
 
-@slideend
 ```
 
 Theme available(replace `[theme]` with them):

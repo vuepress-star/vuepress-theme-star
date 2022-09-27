@@ -6,7 +6,7 @@ import { CodeGroup, CodeGroupItem } from './components/code-group/index.js'
 import { ECharts } from './components/echarts/index.js'
 import { FlowChart } from './components/flowchart/index.js'
 import { Mermaid } from './components/mermaid/index.js'
-import { Presentation } from './components/presentation/index.js'
+import { Reveal } from './components/reveal/index.js'
 import { initDemo } from './demo/index.js'
 import './styles/index.scss'
 import './styles/code-demo.scss'
@@ -32,7 +32,7 @@ export default defineClientConfig({
     if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
 
     if (MARKDOWN_ENHANCE_PRESENTATION) {
-      app.component('PresentationViewer', Presentation)
+      app.component('Reveal', Reveal)
       import('./styles/slides.scss')
       import('./styles/theme/fonts/league-gothic/league-gothic.css')
       import('./styles/theme/fonts/source-sans-pro/source-sans-pro.css')

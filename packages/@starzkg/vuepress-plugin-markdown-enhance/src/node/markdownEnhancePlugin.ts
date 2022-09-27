@@ -17,7 +17,7 @@ import { katex } from '../markdown-it/plugins/katex.js'
 import { mark } from '../markdown-it/plugins/mark.js'
 import { mathjax } from '../markdown-it/plugins/mathjax.js'
 import { mermaid } from '../markdown-it/plugins/mermaid.js'
-import { presentation } from '../markdown-it/plugins/presentation.js'
+import { reveal } from '../markdown-it/plugins/reveal.js'
 import { sub } from '../markdown-it/plugins/sub.js'
 import { sup } from '../markdown-it/plugins/sup.js'
 import { taskList } from '../markdown-it/plugins/task-list.js'
@@ -56,13 +56,13 @@ export const markdownEnhancePlugin =
     const footnoteEnable = markdownOptions.footnote || false
     const tasklistEnable = markdownOptions.tasklist || false
     const mermaidEnable = Boolean(markdownOptions.mermaid) || false
-    const presentationEnable = Boolean(markdownOptions.presentation) || false
+    const revealEnable = Boolean(markdownOptions.reveal) || false
     const texEnable = Boolean(markdownOptions.tex) || false
 
     const revealPlugins =
-      typeof markdownOptions.presentation === 'object' &&
-      Array.isArray(markdownOptions.presentation.plugins)
-        ? markdownOptions.presentation.plugins
+      typeof markdownOptions.reveal === 'object' &&
+      Array.isArray(markdownOptions.reveal.plugins)
+        ? markdownOptions.reveal.plugins
         : []
 
     usePlugins(app, markdownOptions)
@@ -76,7 +76,7 @@ export const markdownEnhancePlugin =
         MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
         MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
         MARKDOWN_ENHANCE_MERMAID: mermaidEnable,
-        MARKDOWN_ENHANCE_PRESENTATION: presentationEnable,
+        MARKDOWN_ENHANCE_PRESENTATION: revealEnable,
         MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
         MARKDOWN_ENHANCE_TEX: texEnable,
         CODE_DEMO_OPTIONS: {
@@ -89,9 +89,9 @@ export const markdownEnhancePlugin =
             ? markdownOptions.mermaid
             : {},
         REVEAL_CONFIG:
-          typeof markdownOptions.presentation === 'object' &&
-          typeof markdownOptions.presentation.revealConfig === 'object'
-            ? markdownOptions.presentation.revealConfig
+          typeof markdownOptions.reveal === 'object' &&
+          typeof markdownOptions.reveal.revealConfig === 'object'
+            ? markdownOptions.reveal.revealConfig
             : {},
         REVEAL_PLUGIN_HIGHLIGHT: revealPlugins.includes('highlight'),
         REVEAL_PLUGIN_MATH: revealPlugins.includes('math'),
@@ -137,8 +137,8 @@ export const markdownEnhancePlugin =
         }
         if (markdownOptions.ins) markdownIt.use(ins)
         if (markdownOptions.mark) markdownIt.use(mark)
-        if (mermaidEnable) markdownIt.use(mermaid)
-        if (presentationEnable) markdownIt.use(presentation)
+        if (markdownOptions.mermaid) markdownIt.use(mermaid)
+        if (markdownOptions.reveal) markdownIt.use(reveal)
         if (markdownOptions.sup) markdownIt.use(sup)
         if (markdownOptions.sub) markdownIt.use(sub)
         if (markdownOptions.tasklist) {

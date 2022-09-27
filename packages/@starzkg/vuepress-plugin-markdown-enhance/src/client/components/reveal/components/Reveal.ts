@@ -27,10 +27,11 @@ type ThemeType =
   | 'moon'
 
 export default defineComponent({
-  name: 'PresentationViewer',
+  name: 'Reveal',
 
   props: {
     id: { type: String, required: true },
+    code: { type: String, required: true },
     theme: { type: String as PropType<ThemeType>, default: 'auto' },
   },
 
@@ -43,9 +44,7 @@ export default defineComponent({
 
     onMounted(() => {
       if (presentationElement.value) {
-        code.value = decodeURIComponent(
-          presentationContainer.value?.dataset.code || ''
-        )
+        code.value = decodeURIComponent(props.code)
 
         presentationElement.value.setAttribute('id', props.id)
         presentationElement.value.setAttribute('data-theme', props.theme)

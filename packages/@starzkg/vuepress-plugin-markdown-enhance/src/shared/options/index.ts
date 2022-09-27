@@ -8,10 +8,10 @@ import type { MathJaxOptions } from '../../markdown-it/plugins/mathjax.js'
 import type { TaskListOptions } from '../../markdown-it/plugins/task-list.js'
 import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
 import type { CodeDemoOptions } from './code-demo.js'
-import type { PresentationOptions } from './presentation.js'
+import type { RevealOptions } from './reveal.js'
 
 export * from './code-demo.js'
-export * from './presentation.js'
+export * from './reveal.js'
 /**
  * markdown-enhance plugin configuration
  */
@@ -235,13 +235,13 @@ export interface MarkdownEnhanceOptions {
   demo?: Partial<CodeDemoOptions> | boolean
 
   /**
-   * 是否启用幻灯片支持
+   * 是否启用 reveal.js 支持
    *
-   * Whether to enable presentation support
+   * Whether to enable reveal.js support
    *
    * @default false
    */
-  presentation?: PresentationOptions | boolean
+  reveal?: RevealOptions | boolean
 
   /**
    * 操作页面 DOM 的延时，单位 ms
