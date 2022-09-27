@@ -41,9 +41,9 @@ const props = defineProps({
 
 const parseChartConfig = (
   config: string,
-  type: LanguageType
+  language: LanguageType
 ): ChartConfiguration => {
-  if (type === 'json') return <ChartConfiguration>JSON.parse(config)
+  if (language === 'json') return <ChartConfiguration>JSON.parse(config)
 
   const exports = {}
   const module = { exports }

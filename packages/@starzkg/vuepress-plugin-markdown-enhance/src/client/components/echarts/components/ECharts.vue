@@ -38,9 +38,9 @@ const props = defineProps({
 
 const parseEChartsConfig = (
   config: string,
-  type: LanguageType
+  language: LanguageType
 ): EChartsOption => {
-  if (type === 'json') return <EChartsOption>JSON.parse(config)
+  if (language === 'json') return <EChartsOption>JSON.parse(config)
 
   const exports = {}
   const module = { exports }
