@@ -4,7 +4,7 @@ import { HTML_TAGS, SVG_TAGS } from '../../tags/index.js'
 export const tagHint = (tag: string, isDebug = false): void => {
   if (
     isDebug &&
-    !HTML_TAGS + ',' + SVG_TAGS.split(',').includes(tag) &&
+    !(HTML_TAGS + ',' + SVG_TAGS).split(',').includes(tag) &&
     tag === tag.toLowerCase() &&
     !tag.includes('-')
   ) {
