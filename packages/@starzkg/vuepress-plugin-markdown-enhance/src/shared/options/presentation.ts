@@ -18,8 +18,9 @@ export interface PresentationOptions {
    */
   plugins?: RevealPlugin[]
   /**
-   * 直接传入 reval.js 的配置项
-   * Config options passed directly to reval.js
+   * 直接传入 reveal.js 的配置项
+   *
+   * Config options passed directly to reveal.js
    */
   revealConfig?: Partial<RevealOptions>
 }
