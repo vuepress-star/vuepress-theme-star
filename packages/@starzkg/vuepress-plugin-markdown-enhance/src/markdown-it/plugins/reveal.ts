@@ -9,7 +9,7 @@ const revealRender = (tokens: Token[], index: number): string => {
   const { content, info } = token
 
   const theme = info.trim().split(' ')[0].trim().split(':')[1] || 'auto'
-  console.log(info)
+
   return `<Reveal id="${key}"
     code="${encodeURIComponent(content)}"
     theme="${theme}"/>`
