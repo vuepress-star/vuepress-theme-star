@@ -1,180 +1,55 @@
-import Katex, { KatexOptions } from 'katex'
-import type MarkdownIt from 'markdown-it'
-import type { PluginWithOptions } from 'markdown-it'
-import type StateBlock from 'markdown-it/lib/rules_block/state_block.js'
-import type StateInline from 'markdown-it/lib/rules_inline/state_inline.js'
-import { escapeHtml } from '../utils/index.js'
-
-/*
- * Test if potential opening or closing delimieter
- * Assumes that there is a "$" at state.src[pos]
+/**
+ * Forked from https://github.com/waylonflinn/markdown-it-katex/blob/master/index.js
+ *
+ * @see  https://github.com/waylonflinn/markdown-it-katex
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2016 Waylon Flinn
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
-const isValidDelim = (
-  state: StateInline,
-  pos: number
-): { canOpen: boolean; canClose: boolean } => {
-  const prevChar = pos > 0 ? state.src.charAt(pos - 1) : ''
-  const nextChar = pos + 1 <= state.posMax ? state.src.charAt(pos + 1) : ''
 
-  return {
-    canOpen: nextChar !== ' ' && nextChar !== '\t',
+import { createRequire } from 'node:module'
+import { default as Katex } from 'katex'
+import type { KatexOptions as _KatexOptions } from 'katex'
+import type { PluginWithOptions } from 'markdown-it'
+import { escapeHtml } from '../utils/index.js'
+import { tex } from './tex.js'
 
-    /*
-     * Check non-whitespace conditions for opening and closing, and
-     * check that closing delimeter isn’t followed by a number
-     */
-    canClose: !(
-      prevChar === ' ' ||
-      prevChar === '\t' ||
-      /[0-9]/u.exec(nextChar)
-    ),
-  }
-}
+const require = createRequire(import.meta.url)
 
-const inlineTex = (state: StateInline, silent?: boolean): boolean => {
-  let match
-  let pos
-  let res
-  let token
-
-  if (state.src[state.pos] !== '$') return false
-
-  res = isValidDelim(state, state.pos)
-  if (!res.canOpen) {
-    if (!silent) state.pending += '$'
-
-    state.pos += 1
-    return true
-  }
-
-  /*
-   * First check for and bypass all properly escaped delimieters
-   * This loop will assume that the first leading backtick can not
-   * be the first character in state.src, which is known since
-   * we have found an opening delimieter already.
+export interface KatexOptions extends _KatexOptions {
+  /**
+   * Whether enable mhchem extension
+   *
+   * 是否启用 mhchem 扩展
+   *
+   * @default false
    */
-  const start = state.pos + 1
-  match = start
-  while ((match = state.src.indexOf('$', match)) !== -1) {
-    /*
-     * Found potential $, look for escapes, pos will point to
-     * first non escape when complete
-     */
-    pos = match - 1
-    while (state.src[pos] === '\\') pos -= 1
-
-    // Even number of escapes, potential closing delimiter found
-    if ((match - pos) % 2 === 1) break
-
-    match += 1
-  }
-
-  // No closing delimter found.  Consume $ and continue.
-  if (match === -1) {
-    if (!silent) state.pending += '$'
-
-    state.pos = start
-    return true
-  }
-
-  // Check if we have empty content, ie: $$.  Do not parse.
-  if (match - start === 0) {
-    if (!silent) state.pending += '$$'
-
-    state.pos = start + 1
-    return true
-  }
-
-  // Check for valid closing delimiter
-  res = isValidDelim(state, match)
-
-  if (!res.canClose) {
-    if (!silent) state.pending += '$'
-
-    state.pos = start
-    return true
-  }
-
-  if (!silent) {
-    token = state.push('inlineTex', 'math', 0)
-    token.markup = '$'
-    token.content = state.src.slice(start, match)
-  }
-
-  state.pos = match + 1
-
-  return true
-}
-
-const blockTex = (
-  state: StateBlock,
-  start: number,
-  end: number,
-  silent: boolean
-): boolean => {
-  let firstLine
-  let lastLine
-  let next
-  let lastPos
-  let found = false
-  let pos = state.bMarks[start] + state.tShift[start]
-  let max = state.eMarks[start]
-
-  if (pos + 2 > max) return false
-
-  if (state.src.slice(pos, pos + 2) !== '$$') return false
-
-  pos += 2
-  firstLine = state.src.slice(pos, max)
-
-  if (silent) return true
-
-  if (firstLine.trim().endsWith('$$')) {
-    // Single line expression
-    firstLine = firstLine.trim().slice(0, -2)
-    found = true
-  }
-
-  for (next = start; !found; ) {
-    next += 1
-
-    if (next >= end) break
-
-    pos = state.bMarks[next] + state.tShift[next]
-    max = state.eMarks[next]
-
-    if (pos < max && state.tShift[next] < state.blkIndent)
-      // non-empty line with negative indent should stop the list:
-      break
-
-    if (state.src.slice(pos, max).trim().endsWith('$$')) {
-      lastPos = state.src.slice(0, max).lastIndexOf('$$')
-      lastLine = state.src.slice(pos, lastPos)
-      found = true
-    }
-  }
-
-  state.line = next + 1
-
-  const token = state.push('blockTex', 'math', 0)
-
-  token.block = true
-  token.content =
-    (firstLine?.trim() ? `${firstLine}\n` : '') +
-    state.getLines(start + 1, next, state.tShift[start], true) +
-    (lastLine?.trim() ? lastLine : '')
-  token.map = [start, state.line]
-  token.markup = '$$'
-
-  return true
+  mhchem?: boolean
 }
 
 // set KaTeX as the renderer for markdown-it-simplemath
-const katexInline = (tex: string, options: KatexOptions): string => {
-  options.displayMode = false
-
+const katexInline = (tex: string, options: _KatexOptions): string => {
   try {
-    return Katex.default.renderToString(tex, options)
+    return Katex.renderToString(tex, { ...options, displayMode: false })
   } catch (error) {
     if (options.throwOnError) console.warn(error)
 
@@ -184,39 +59,45 @@ const katexInline = (tex: string, options: KatexOptions): string => {
   }
 }
 
-const katexBlock = (tex: string, options: KatexOptions): string => {
-  options.displayMode = true
-
+const katexBlock = (tex: string, options: _KatexOptions): string => {
   try {
-    return `<p class='katex-block'>${Katex.default.renderToString(
-      tex,
-      options
-    )}</p>`
+    return `<p class='katex-block'>${Katex.renderToString(tex, {
+      ...options,
+      displayMode: true,
+      strict: (errorCode: string): string =>
+        errorCode === 'newLineInDisplayMode' ? 'ignore' : 'warn',
+    })}</p>\n`
   } catch (error) {
     if (options.throwOnError) console.warn(error)
 
     return `<p class='katex-block katex-error' title='${escapeHtml(
       (error as Error).toString()
-    )}'>${escapeHtml(tex)}</p>`
+    )}'>${escapeHtml(tex)}</p>\n`
   }
 }
 
-export const katex: PluginWithOptions<KatexOptions> = (
-  md: MarkdownIt,
-  options: KatexOptions = { throwOnError: false }
-): void => {
-  const katexOptions: KatexOptions = { ...options, output: 'html' }
+export const katex: PluginWithOptions<KatexOptions> = (md, options = {}) => {
+  const { mhchem = false, ...userOptions } = options
 
-  md.inline.ruler.after('escape', 'inlineTex', inlineTex)
-  // It’s a workaround here because types issue
-  md.block.ruler.after('blockquote', 'blockTex', blockTex, {
-    alt: ['paragraph', 'reference', 'blockquote', 'list'],
+  if (mhchem) require('katex/contrib/mhchem')
+
+  const katexOptions = {
+    throwOnError: false,
+    macros: {
+      // support more symbols
+      '\\liiiint': '\\int\\!\\!\\!\\iiint',
+      '\\iiiint': '\\int\\!\\!\\!\\!\\iiint',
+      '\\idotsint': '\\int\\!\\cdots\\!\\int',
+    },
+    ...userOptions,
+  }
+
+  md.use(tex, {
+    render: (content, displayMode) =>
+      displayMode
+        ? katexBlock(content, katexOptions)
+        : katexInline(content, katexOptions),
   })
-
-  md.renderer.rules.inlineTex = (tokens, index): string =>
-    katexInline(tokens[index].content, katexOptions)
-  md.renderer.rules.blockTex = (tokens, index): string =>
-    `${katexBlock(tokens[index].content, katexOptions)}\n`
 }
 
 export default katex

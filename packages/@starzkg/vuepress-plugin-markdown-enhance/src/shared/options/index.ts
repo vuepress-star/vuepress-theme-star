@@ -1,9 +1,10 @@
 import type { LocaleConfig } from '@vuepress/core'
 import type { MarkdownOptions as _MarkdownOptions } from '@vuepress/markdown'
-import type { KatexOptions } from 'katex'
 import type { AttrsPluginOptions } from '../../markdown-it/plugins/attrs.js'
 import type { EmojiPluginOptions } from '../../markdown-it/plugins/emoji.js'
 import type { ForInlinePluginOptions } from '../../markdown-it/plugins/for-inline.js'
+import type { KatexOptions } from '../../markdown-it/plugins/katex.js'
+import type { MathJaxOptions } from '../../markdown-it/plugins/mathjax.js'
 import type { TaskListOptions } from '../../markdown-it/plugins/task-list.js'
 import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
 import type { CodeDemoOptions } from './code-demo.js'
@@ -128,6 +129,14 @@ export interface MarkdownEnhanceOptions {
    */
   mark?: boolean
   /**
+   * 是否启用 MathJax 语法支持
+   *
+   * Whether to enable MathJax syntax support
+   *
+   * @default false
+   */
+  mathjax?: MathJaxOptions | boolean
+  /**
    * 是否启用 Mermaid 流程图支持
    *
    * Whether to enable mermaid support
@@ -210,9 +219,11 @@ export interface MarkdownEnhanceOptions {
    *
    * Whether to enable TeX syntax support
    *
+   * @see katex
+   * @see mathjax
    * @default false
    */
-  tex?: KatexOptions | boolean
+  tex?: 'katex' | 'mathjax' | boolean
 
   /**
    * 是否启用代码示例功能

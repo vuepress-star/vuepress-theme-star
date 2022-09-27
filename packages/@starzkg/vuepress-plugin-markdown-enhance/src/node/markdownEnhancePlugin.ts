@@ -14,6 +14,7 @@ import { forInline } from '../markdown-it/plugins/for-inline.js'
 import { ins } from '../markdown-it/plugins/ins.js'
 import { katex } from '../markdown-it/plugins/katex.js'
 import { mark } from '../markdown-it/plugins/mark.js'
+import { mathjax } from '../markdown-it/plugins/mathjax.js'
 import { mermaid } from '../markdown-it/plugins/mermaid.js'
 import { presentation } from '../markdown-it/plugins/presentation.js'
 import { sub } from '../markdown-it/plugins/sub.js'
@@ -142,18 +143,6 @@ export const markdownEnhancePlugin =
           )
         }
         if (markdownOptions.ins) markdownIt.use(ins)
-        if (texEnable)
-          markdownIt.use(katex, {
-            macros: {
-              // support more symbols
-              '\\liiiint': '\\int\\!\\!\\!\\iiint',
-              '\\iiiint': '\\int\\!\\!\\!\\!\\iiint',
-              '\\idotsint': '\\int\\!\\cdots\\!\\int',
-            },
-            ...(typeof markdownOptions.tex === 'object'
-              ? markdownOptions.tex
-              : {}),
-          })
         if (markdownOptions.mark) markdownIt.use(mark)
         if (mermaidEnable) markdownIt.use(mermaid)
         if (presentationEnable) markdownIt.use(presentation)
@@ -165,6 +154,23 @@ export const markdownEnhancePlugin =
               ? markdownOptions.tasklist
               : {},
           ])
+        }
+        if (markdownOptions.tex) {
+          if (markdownOptions.tex === 'katex' || markdownOptions.tex === true) {
+            markdownIt.use(
+              katex,
+              typeof markdownOptions.katex === 'object'
+                ? markdownOptions.katex
+                : {}
+            )
+          } else if (markdownOptions.mathjax) {
+            markdownIt.use(
+              mathjax,
+              typeof markdownOptions.mathjax === 'object'
+                ? markdownOptions.mathjax
+                : {}
+            )
+          }
         }
       },
     }
