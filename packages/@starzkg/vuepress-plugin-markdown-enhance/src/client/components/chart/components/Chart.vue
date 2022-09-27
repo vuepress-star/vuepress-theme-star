@@ -64,6 +64,7 @@ const chart = ref<Chart>()
 onMounted(() => {
   Promise.all([
     import(/* webpackChunkName: "chart" */ 'chart.js/auto/auto.esm.js'),
+    // delay
     delay(),
   ]).then(([{ default: Chart }]) => {
     Chart.defaults.maintainAspectRatio = false

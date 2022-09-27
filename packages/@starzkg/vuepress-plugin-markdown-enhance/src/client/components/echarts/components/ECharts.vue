@@ -61,6 +61,7 @@ const chart = ref<EChartsType>()
 onMounted(() => {
   Promise.all([
     import(/* webpackChunkName: "echarts" */ 'echarts'),
+    // delay
     delay(),
   ]).then(([echarts]) => {
     const data = parseEChartsConfig(
