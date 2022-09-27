@@ -70,18 +70,6 @@ export const markdownEnhancePlugin =
     return {
       name: '@starzkg/vuepress-plugin-markdown-enhance',
 
-      alias: {
-        '@FlowChart': flowchartEnable
-          ? path.resolve(__dirname, '../client/components/FlowChart.vue')
-          : '@starzkg/vuepress-shared/client/noopModule.js',
-        '@Presentation': presentationEnable
-          ? path.resolve(
-              __dirname,
-              '../client/components/PresentationViewer.js'
-            )
-          : '@starzkg/vuepress-shared/client/noopModule.js',
-      },
-
       define: (): Record<string, unknown> => ({
         MARKDOWN_DELAY: markdownOptions.delay || 500,
         MARKDOWN_ENHANCE_ALIGN: alignEnable,

@@ -2,7 +2,7 @@ import { usePageFrontmatter } from '@vuepress/client'
 import type { RevealOptions } from 'reveal.js'
 import { defineComponent, h, onMounted, ref } from 'vue'
 import type { PropType, VNode } from 'vue'
-import { LoadingIcon } from './icons.js'
+import { Loading } from '../../loading/index.js'
 
 declare const MARKDOWN_DELAY: number
 declare const REVEAL_CONFIG: Partial<RevealOptions>
@@ -158,7 +158,7 @@ export default defineComponent({
           },
         },
         [
-          loading.value ? h(LoadingIcon) : null,
+          loading.value ? h(Loading) : null,
           h(
             'div',
             {

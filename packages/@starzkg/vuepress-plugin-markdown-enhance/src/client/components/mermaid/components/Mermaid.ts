@@ -8,7 +8,7 @@ import {
   ref,
 } from 'vue'
 import type { VNode } from 'vue'
-import { LoadingIcon } from '../../icons.js'
+import { Loading } from '../../loading/index.js'
 
 declare const MARKDOWN_DELAY: number
 declare const MERMAID_OPTIONS: Config
@@ -160,7 +160,7 @@ export default defineComponent({
           ? // mermaid
             h('div', { class: 'content', innerHTML: svgCode.value })
           : // loading
-            h(LoadingIcon)
+            h(Loading)
       )
   },
 })
