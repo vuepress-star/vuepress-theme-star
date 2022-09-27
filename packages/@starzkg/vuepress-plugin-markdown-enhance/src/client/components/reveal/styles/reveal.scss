@@ -1,8 +1,8 @@
 @use '@sass-palette/star-config';
 @use 'highlight';
 @use 'theme';
-@use 'theme/fonts/league-gothic/league-gothic.css';
-@use 'theme/fonts/source-sans-pro/source-sans-pro.css';
+@import './theme/fonts/league-gothic/league-gothic.css';
+@import './theme/fonts/source-sans-pro/source-sans-pro.css';
 
 @import 'reveal.js/dist/reveal.css';
 
