@@ -87,7 +87,14 @@ onMounted(() => {
     <div v-if="title" class="chart-title">{{ decodeURIComponent(title) }}</div>
     <div class="chart-wrapper">
       <Loading :loading="loading" />
-      <canvas v-show="!loading" ref="chartCanvasElement" />
+      <canvas
+        v-show="!loading"
+        ref="chartCanvasElement"
+        :aria-label="decodeURIComponent(title)"
+        role="img"
+      >
+        Your browser does not support the canvas element.
+      </canvas>
     </div>
   </div>
 </template>
