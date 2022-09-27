@@ -8,9 +8,9 @@ import {
   ref,
 } from 'vue'
 import type { VNode } from 'vue'
+import { delay } from '../../../utils/index.js'
 import { Loading } from '../../loading/index.js'
 
-declare const MARKDOWN_ENHANCE_DELAY: number
 declare const MARKDOWN_ENHANCE_MERMAID: Config
 
 export default defineComponent({
@@ -25,9 +25,6 @@ export default defineComponent({
     const svgCode = ref('')
     const mermaidElement = ref<HTMLElement | null>(null)
     let observer: MutationObserver
-
-    const delay = (): Promise<void> =>
-      new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY))
 
     onMounted(() => {
       const code = decodeURIComponent(props.code)

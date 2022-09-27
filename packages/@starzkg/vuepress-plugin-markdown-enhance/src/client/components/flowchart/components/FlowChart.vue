@@ -14,6 +14,7 @@ import { computed, onMounted, ref } from 'vue'
 import type { PropType } from 'vue'
 import { Loading } from '../../loading/index.js'
 import presets from '../presets'
+import { delay } from '../../../utils/index.js'
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -52,7 +53,7 @@ onMounted(() => {
   Promise.all([
     import(/* webpackChunkName: "flowchart" */ 'flowchart.js'),
     // delay
-    new Promise((resolve) => setTimeout(resolve, 500)),
+    delay(),
   ]).then(([flowchart]) => {
     const { parse } = flowchart
 

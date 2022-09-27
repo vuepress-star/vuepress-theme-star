@@ -5,10 +5,10 @@ import type {
   RevealOptions,
   RevealThemeType,
 } from '../../../../shared/index.js'
+import { delay } from '../../../utils/index.js'
 import { Loading } from '../../loading/index.js'
 import * as packages from '../plugins/index.js'
 
-declare const MARKDOWN_ENHANCE_DELAY: number
 declare const MARKDOWN_ENHANCE_REVEAL: RevealOptions
 
 export default defineComponent({
@@ -41,7 +41,7 @@ export default defineComponent({
           Promise<void>,
           ...Promise<typeof import('reveal.js/dist/reveal.esm.js')>[]
         ] = [
-          new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+          delay(),
           packages.reveal(),
           packages.markdown(),
           ...((MARKDOWN_ENHANCE_REVEAL.plugins || []) as string[]).map(

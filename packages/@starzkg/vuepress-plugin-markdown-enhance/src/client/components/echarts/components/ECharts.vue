@@ -12,6 +12,9 @@ import { useDebounceFn, useEventListener } from '@vueuse/core'
 import type { EChartsOption, EChartsType } from 'echarts'
 import { onBeforeUnmount, onMounted, PropType, ref } from 'vue'
 import { Loading } from '../../loading/index.js'
+import { delay } from '../../../utils/index.js'
+
+type LanguageType = 'javascript' | 'json'
 
 const props = defineProps({
   id: {
@@ -19,7 +22,7 @@ const props = defineProps({
     required: true,
   },
   language: {
-    type: String as PropType<'javascript' | 'json'>,
+    type: String as PropType<LanguageType>,
     default: 'json',
   },
   title: {
@@ -35,7 +38,7 @@ const props = defineProps({
 
 const parseEChartsConfig = (
   config: string,
-  type: 'javascript' | 'json'
+  type: LanguageType
 ): EChartsOption => {
   if (type === 'json') return <EChartsOption>JSON.parse(config)
 
@@ -56,21 +59,22 @@ const echartsInstance = ref<HTMLCanvasElement | null>(null)
 const chart = ref<EChartsType>()
 
 onMounted(() => {
-  Promise.all([import(/* webpackChunkName: "echarts" */ 'echarts')]).then(
-    ([echarts]) => {
-      const data = parseEChartsConfig(
-        decodeURIComponent(props.code),
-        props.language
-      )
+  Promise.all([
+    import(/* webpackChunkName: "echarts" */ 'echarts'),
+    delay(),
+  ]).then(([echarts]) => {
+    const data = parseEChartsConfig(
+      decodeURIComponent(props.code),
+      props.language
+    )
 
-      chart.value = echarts.init(echartsInstance.value!)
-      chart.value.showLoading()
-      chart.value.setOption(data)
-      chart.value.hideLoading()
+    chart.value = echarts.init(echartsInstance.value!)
+    chart.value.showLoading()
+    chart.value.setOption(data)
+    chart.value.hideLoading()
 
-      loading.value = false
-    }
-  )
+    loading.value = false
+  })
   useEventListener(
     'resize',
     useDebounceFn(() => chart.value?.resize(), 100)

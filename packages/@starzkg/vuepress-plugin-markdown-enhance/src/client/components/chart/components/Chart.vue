@@ -15,6 +15,9 @@ import type {
 } from 'chart.js/auto/auto.esm.js'
 import { onMounted, PropType, ref } from 'vue'
 import { Loading } from '../../loading/index.js'
+import { delay } from '../../../utils/index.js'
+
+type LanguageType = 'javascript' | 'json'
 
 const props = defineProps({
   id: {
@@ -22,7 +25,7 @@ const props = defineProps({
     required: true,
   },
   language: {
-    type: String as PropType<'javascript' | 'json'>,
+    type: String as PropType<LanguageType>,
     default: 'json',
   },
   title: {
@@ -38,7 +41,7 @@ const props = defineProps({
 
 const parseChartConfig = (
   config: string,
-  type: 'javascript' | 'json'
+  type: LanguageType
 ): ChartConfiguration => {
   if (type === 'json') return <ChartConfiguration>JSON.parse(config)
 
@@ -61,6 +64,7 @@ const chart = ref<Chart>()
 onMounted(() => {
   Promise.all([
     import(/* webpackChunkName: "chart" */ 'chart.js/auto/auto.esm.js'),
+    delay(),
   ]).then(([{ default: Chart }]) => {
     Chart.defaults.maintainAspectRatio = false
 
