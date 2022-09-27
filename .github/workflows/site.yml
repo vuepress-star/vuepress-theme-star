@@ -40,9 +40,13 @@ jobs:
         run: pnpm build
 
       - name: Build example site
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm example:build
 
       - name: Build documentation site
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm docs:build
 
       - name: Combine output
