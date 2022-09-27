@@ -40,7 +40,7 @@ const parseEChartsConfig = (
   config: string,
   language: LanguageType
 ): EChartsOption => {
-  if (language === 'json') return <EChartsOption>JSON.parse(config)
+  if (language === 'json') return JSON.parse(config) as EChartsOption
 
   const exports = {}
   const module = { exports }
@@ -48,7 +48,7 @@ const parseEChartsConfig = (
   // eslint-disable-next-line no-eval
   eval(config)
 
-  return <EChartsOption>module.exports
+  return module.exports as EChartsOption
 }
 
 const loading = ref(true)

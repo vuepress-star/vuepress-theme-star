@@ -43,7 +43,7 @@ const parseChartConfig = (
   config: string,
   language: LanguageType
 ): ChartConfiguration => {
-  if (language === 'json') return <ChartConfiguration>JSON.parse(config)
+  if (language === 'json') return JSON.parse(config) as ChartConfiguration
 
   const exports = {}
   const module = { exports }
@@ -51,7 +51,7 @@ const parseChartConfig = (
   // eslint-disable-next-line no-eval
   eval(config)
 
-  return <ChartConfiguration>module.exports
+  return module.exports as ChartConfiguration
 }
 
 const loading = ref(true)
