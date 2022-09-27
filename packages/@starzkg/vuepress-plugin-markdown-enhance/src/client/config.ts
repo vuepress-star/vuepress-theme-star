@@ -12,9 +12,12 @@ import './styles/index.scss'
 import './styles/code-demo.scss'
 
 declare const MARKDOWN_ENHANCE_ALIGN: boolean
+declare const MARKDOWN_ENHANCE_CHART: boolean
+declare const MARKDOWN_ENHANCE_ECHARTS: boolean
+declare const MARKDOWN_ENHANCE_FLOWCHART: boolean
 declare const MARKDOWN_ENHANCE_FOOTNOTE: boolean
 declare const MARKDOWN_ENHANCE_MERMAID: boolean
-declare const MARKDOWN_ENHANCE_PRESENTATION: boolean
+declare const MARKDOWN_ENHANCE_REVEAL: boolean
 declare const MARKDOWN_ENHANCE_TASKLIST: boolean
 declare const MARKDOWN_ENHANCE_TEX: boolean
 export default defineClientConfig({
@@ -24,16 +27,17 @@ export default defineClientConfig({
 
     if (MARKDOWN_ENHANCE_ALIGN) import('./styles/align.scss')
 
+    if (MARKDOWN_ENHANCE_CHART) app.component('Chart', Chart)
+
+    if (MARKDOWN_ENHANCE_ECHARTS) app.component('ECharts', ECharts)
+
+    if (MARKDOWN_ENHANCE_FLOWCHART) app.component('FlowChart', FlowChart)
+
     if (MARKDOWN_ENHANCE_FOOTNOTE) import('./styles/footnote.scss')
 
-    app.component('Chart', Chart)
-    app.component('ECharts', ECharts)
-    app.component('FlowChart', FlowChart)
     if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
 
-    if (MARKDOWN_ENHANCE_PRESENTATION) {
-      app.component('Reveal', Reveal)
-    }
+    if (MARKDOWN_ENHANCE_REVEAL) app.component('Reveal', Reveal)
 
     if (MARKDOWN_ENHANCE_TASKLIST) import('./styles/task-list.scss')
 

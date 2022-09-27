@@ -51,42 +51,18 @@ export const markdownEnhancePlugin =
       )
     }
 
-    const alignEnable = markdownOptions.align || false
-    const flowchartEnable = markdownOptions.flowchart || false
-    const footnoteEnable = markdownOptions.footnote || false
-    const tasklistEnable = markdownOptions.tasklist || false
-    const mermaidEnable = Boolean(markdownOptions.mermaid) || false
-    const revealEnable = Boolean(markdownOptions.reveal) || false
-    const texEnable = Boolean(markdownOptions.tex) || false
-
     usePlugins(app, markdownOptions)
 
     return {
       name: '@starzkg/vuepress-plugin-markdown-enhance',
 
-      define: (): Record<string, unknown> => ({
-        MARKDOWN_ENHANCE_DELAY: markdownOptions.delay || 500,
-        MARKDOWN_ENHANCE_ALIGN: alignEnable,
-        MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
-        MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
-        MARKDOWN_ENHANCE_MERMAID: mermaidEnable,
-        MARKDOWN_ENHANCE_PRESENTATION: revealEnable,
-        MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
-        MARKDOWN_ENHANCE_TEX: texEnable,
-        CODE_DEMO_OPTIONS: {
-          ...(typeof markdownOptions.demo === 'object'
-            ? markdownOptions.demo
-            : {}),
-        },
-        MERMAID_OPTIONS:
-          typeof markdownOptions.mermaid === 'object'
-            ? markdownOptions.mermaid
-            : {},
-        REVEAL_OPTIONS:
-          typeof markdownOptions.reveal === 'object'
-            ? markdownOptions.reveal
-            : {},
-      }),
+      define: (): Record<string, unknown> =>
+        Object.keys(markdownOptions).reduce((newData, key) => {
+          const newKey =
+            'MARKDOWN_ENHANCE_' + key.replace(/([A-Z])/g, '_$1').toUpperCase()
+          newData[newKey] = markdownOptions[key]
+          return newData
+        }, {}),
 
       clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 

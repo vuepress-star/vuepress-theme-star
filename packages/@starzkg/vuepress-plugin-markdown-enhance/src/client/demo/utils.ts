@@ -1,9 +1,9 @@
 import type { CodeDemoOptions } from '../../shared/index.js'
 import type { Code } from './typings.js'
 
-declare const CODE_DEMO_OPTIONS: CodeDemoOptions
+declare const MARKDOWN_ENHANCE_CODE_DEMO: CodeDemoOptions
 
-export const options = CODE_DEMO_OPTIONS
+export const options = MARKDOWN_ENHANCE_CODE_DEMO
 
 export type PreProcessorType = 'html' | 'js' | 'css'
 

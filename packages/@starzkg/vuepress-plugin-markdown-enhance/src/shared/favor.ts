@@ -51,7 +51,7 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   mermaid: true,
 
-  demo: {
+  codeDemo: {
     useBabel: false,
     jsLib: [],
     cssLib: [],
@@ -64,6 +64,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
   },
 
   reveal: true,
+
+  delay: 500,
 }
 
 /**
@@ -111,7 +113,7 @@ export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownOptions = {
 
   mermaid: true,
 
-  demo: true,
+  codeDemo: true,
 
   reveal: true,
 }

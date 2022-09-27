@@ -73,7 +73,7 @@ export const usePlugins = (
   }
 
   // demo
-  if (markdownOptions.demo) {
+  if (markdownOptions.codeDemo) {
     useContainerPlugin(app, resolveCodeDemoContainerOptions(markdownOptions))
   }
 

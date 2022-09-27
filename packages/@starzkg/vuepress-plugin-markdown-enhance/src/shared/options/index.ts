@@ -239,7 +239,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  demo?: Partial<CodeDemoOptions> | boolean
+  codeDemo?: Partial<CodeDemoOptions> | boolean
 
   /**
    * 操作页面 DOM 的延时，单位 ms

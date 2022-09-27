@@ -11,7 +11,7 @@ import type { VNode } from 'vue'
 import { Loading } from '../../loading/index.js'
 
 declare const MARKDOWN_ENHANCE_DELAY: number
-declare const MERMAID_OPTIONS: Config
+declare const MARKDOWN_ENHANCE_MERMAID: Config
 
 export default defineComponent({
   name: 'Mermaid',
@@ -111,7 +111,7 @@ export default defineComponent({
               fillType6: '#096dd9',
               fillType7: '#aa6fe9',
             },
-            ...MERMAID_OPTIONS,
+            ...MARKDOWN_ENHANCE_MERMAID,
             startOnLoad: false,
           })
 

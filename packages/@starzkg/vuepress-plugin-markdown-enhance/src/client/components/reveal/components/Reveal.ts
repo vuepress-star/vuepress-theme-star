@@ -9,7 +9,7 @@ import { Loading } from '../../loading/index.js'
 import * as packages from '../plugins/index.js'
 
 declare const MARKDOWN_ENHANCE_DELAY: number
-declare const REVEAL_OPTIONS: RevealOptions
+declare const MARKDOWN_ENHANCE_REVEAL: RevealOptions
 
 export default defineComponent({
   name: 'Reveal',
@@ -44,8 +44,8 @@ export default defineComponent({
           new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
           packages.reveal(),
           packages.markdown(),
-          ...((REVEAL_OPTIONS.plugins || []) as string[]).map((plugin) =>
-            packages[plugin]()
+          ...((MARKDOWN_ENHANCE_REVEAL.plugins || []) as string[]).map(
+            (plugin) => packages[plugin]()
           ),
         ]
 
@@ -69,7 +69,7 @@ export default defineComponent({
               // Bounds for smallest/largest possible scale to apply to content
               minScale: 0.2,
               maxScale: 1.0,
-              ...(REVEAL_OPTIONS.revealConfig || {}),
+              ...(MARKDOWN_ENHANCE_REVEAL.revealConfig || {}),
               ...(frontmatter.value.reveal?.revealConfig || {}),
               ...(props.config?.revealConfig || {}),
             })
