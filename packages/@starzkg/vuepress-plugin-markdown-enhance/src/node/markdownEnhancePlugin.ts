@@ -1,3 +1,4 @@
+import { addCustomElement } from '@starzkg/vuepress-star-shared'
 import type { Plugin } from '@vuepress/core'
 import { getDirname, path } from '@vuepress/utils'
 import { abbr } from '../markdown-it/plugins/abbr.js'
@@ -22,7 +23,11 @@ import { sup } from '../markdown-it/plugins/sup.js'
 import { taskList } from '../markdown-it/plugins/task-list.js'
 import type { MarkdownFavor, MarkdownOptions } from '../shared/index.js'
 import { usePlugins } from './plugins/index.js'
-import { assignDefaultMarkdownOptions, logger } from './utils/index.js'
+import {
+  assignDefaultMarkdownOptions,
+  logger,
+  MATHML_TAGS,
+} from './utils/index.js'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -172,6 +177,10 @@ export const markdownEnhancePlugin =
             )
           }
         }
+      },
+
+      extendsBundlerOptions: (config, app) => {
+        addCustomElement(app, config, MATHML_TAGS)
       },
     }
   }

@@ -3,27 +3,13 @@ title: Mermaid
 icon: diagram
 ---
 
+# Mermaid
+
 Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
 
 <!-- more -->
 
-## Configuration
-
-```js {7}
-module.exports = {
-  plugins: [
-    [
-      "markdown-enhance",
-      {
-        // Enable mermaid
-        mermaid: true,
-      },
-    ],
-  ],
-};
-```
-
-## Syntax
+## 格式
 
 ````md
 ```mermaid
@@ -83,21 +69,23 @@ flowchart TB
 
 ### Sequence Diagram
 
-```sequence
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
+```mermaid
+sequenceDiagram
+  Alice ->> Bob: Hello Bob, how are you?
+  Bob-->>John: How about you John?
+  Bob--x Alice: I am good thanks!
+  Bob-x John: I am good thanks!
+  Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+  
+  Bob-->Alice: Checking with John...
+  Alice->John: Yes... John, how are you?
 ```
 
 ::: details Code
 
 ````md
-```sequence
+```mermaid
+sequenceDiagram
 Alice ->> Bob: Hello Bob, how are you?
 Bob-->>John: How about you John?
 Bob--x Alice: I am good thanks!
@@ -113,7 +101,8 @@ Alice->John: Yes... John, how are you?
 
 ### Class Diagram
 
-```class
+```mermaid
+classDiagram
 class Square~Shape~{
     int id
     List~int~ position
@@ -129,7 +118,8 @@ Square : +getMessages() List~string~
 ::: details Code
 
 ````md
-```class
+```mermaid
+classDiagram
 class Square~Shape~{
     int id
     List~int~ position
@@ -147,7 +137,8 @@ Square : +getMessages() List~string~
 
 ### State Diagram
 
-```state
+```mermaid
+stateDiagram
 [*] --> Active
 
 state Active {
@@ -168,7 +159,8 @@ state Active {
 ::: details Code
 
 ````md
-```state
+```mermaid
+stateDiagram
 [*] --> Active
 
 state Active {
@@ -191,7 +183,8 @@ state Active {
 
 ### Entity Relationship Diagrams
 
-```er
+```mermaid
+erDiagram
 CAR ||--o{ NAMED-DRIVER : allows
 CAR {
     string registrationNumber
@@ -209,19 +202,20 @@ PERSON {
 ::: details Code
 
 ````md
-```er
-CAR ||--o{ NAMED-DRIVER : allows
-CAR {
-    string registrationNumber
-    string make
-    string model
-}
-PERSON ||--o{ NAMED-DRIVER : is
-PERSON {
-    string firstName
-    string lastName
-    int age
-}
+```mermaid
+erDiagram
+  CAR ||--o{ NAMED-DRIVER : allows
+  CAR {
+      string registrationNumber
+      string make
+      string model
+  }
+  PERSON ||--o{ NAMED-DRIVER : is
+  PERSON {
+      string firstName
+      string lastName
+      int age
+  }
 ```
 ````
 
@@ -229,7 +223,8 @@ PERSON {
 
 ### User Journey Diagram
 
-```journey
+```mermaid
+journey
 title My working day
 section Go to work
   Make tea: 5: Me
@@ -243,7 +238,8 @@ section Go home
 ::: details Code
 
 ````md
-```journey
+```mermaid
+journey
 title My working day
 section Go to work
   Make tea: 5: Me
@@ -259,7 +255,8 @@ section Go home
 
 ### Gantt diagrams
 
-```gantt
+```mermaid
+gantt
 dateFormat  YYYY-MM-DD
 title       Adding GANTT diagram functionality to mermaid
 excludes    weekends
@@ -293,7 +290,8 @@ Add another diagram to demo page    :48h
 ::: details Code
 
 ````md
-```gantt
+```mermaid
+gantt
 dateFormat  YYYY-MM-DD
 title       Adding GANTT diagram functionality to mermaid
 excludes    weekends
@@ -329,7 +327,8 @@ Add another diagram to demo page    :48h
 
 ### Pie chart diagrams
 
-```pie
+```mermaid
+pie
 title What Voldemort doesn't have?
   "FRIENDS" : 2
   "FAMILY" : 3
@@ -339,7 +338,8 @@ title What Voldemort doesn't have?
 ::: details Code
 
 ````md
-```pie
+```mermaid
+pie
 title What Voldemort doesn't have?
   "FRIENDS" : 2
   "FAMILY" : 3
