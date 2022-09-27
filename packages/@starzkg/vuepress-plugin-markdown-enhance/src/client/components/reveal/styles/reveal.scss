@@ -1,9 +1,10 @@
 @use '@sass-palette/star-config';
 @use 'highlight';
 @use 'theme';
-@use 'reveal.js/dist/reveal.css';
 @use 'theme/fonts/league-gothic/league-gothic.css';
 @use 'theme/fonts/source-sans-pro/source-sans-pro.css';
+
+@import 'reveal.js/dist/reveal.css';
 
 .markdown-enhance-reveal {
   width: 100%;
