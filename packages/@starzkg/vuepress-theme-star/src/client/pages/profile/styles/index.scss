@@ -1,1 +1,7 @@
-@use 'profile-page';
+.theme-star {
+  @import 'profile';
+
+  &.mobile {
+    @import 'mobile';
+  }
+}

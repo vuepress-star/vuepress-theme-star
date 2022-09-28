@@ -1,80 +1,7 @@
-import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
-import type { MarkdownEnhancePluginOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
-import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
-import type { NavbarConfig, SidebarConfig } from './nav.js'
-
-export interface StarThemePluginsOptions {
-  /**
-   * Enable @vuepress/plugin-active-header-links or not
-   */
-  activeHeaderLinks?: boolean
-
-  /**
-   * Enable @vuepress/plugin-back-to-top or not
-   */
-  backToTop?: boolean
-
-  /**
-   * Enable @vuepress/plugin-container or not
-   */
-  container?: {
-    tip?: boolean
-    warning?: boolean
-    danger?: boolean
-    details?: boolean
-    codeGroup?: boolean
-    codeGroupItem?: boolean
-  }
-  /**
-   * Enable @vuepress/plugin-external-link-icon or not
-   */
-  externalLinkIcon?: boolean
-
-  /**
-   * Enable @vuepress/plugin-git or not
-   */
-  git?: boolean
-
-  /**
-   * Enable @vuepress/plugin-medium-zoom or not
-   */
-  mediumZoom?: boolean
-
-  /**
-   * Enable @vuepress/plugin-nprogress or not
-   */
-  nprogress?: boolean
-
-  /**
-   * Enable @vuepress/plugin-prismjs or not
-   */
-  prismjs?: boolean
-
-  /**
-   * Copyright
-   *
-   * 版权信息
-   */
-  copyright?: CopyrightOptions | boolean
-
-  /**
-   * Sitemap
-   *
-   * 网站地图
-   */
-  sitemap?: SitemapOptions | boolean
-
-  /**
-   * Markdown 增强插件配置
-   * @see http://vuepress-star.github.io/docs/markdown-enhance/zh/config/
-   *
-   * Markdown enhance plugin options
-   * @see http://vuepress-star.github.io/docs/markdown-enhance/config/
-   */
-  markdown?: MarkdownEnhancePluginOptions
-}
+import type { NavbarConfig, SidebarConfig } from '../nav.js'
+import type { ProfileOptions } from './profile.js'
 
 export type StarThemeLocaleOptions = StarThemeData
 
@@ -321,4 +248,11 @@ export interface StarThemeLocaleData extends LocaleData {
    * fullscreen
    */
   fullscreen?: boolean
+
+  /**
+   * 个人信息配置
+   *
+   * Profile Config
+   */
+  profile?: ProfileOptions
 }

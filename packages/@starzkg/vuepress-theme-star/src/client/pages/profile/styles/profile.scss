@@ -1,17 +1,16 @@
 @import '_variables';
 
-.profile-page {
-  padding-top: var(--navbar-height);
+.profile {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  max-width: 1290px;
+  min-height: 100vh;
 
-  .profile-page-header {
-    padding-top: 16px;
-    margin: auto;
-    height: 100px;
+  .profile-header {
+    min-height: calc(2 * var(--navbar-height));
   }
 
-  .profile-page-body {
+  .profile-body {
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -40,8 +39,6 @@
     }
 
     .profile-main-wrapper {
-      margin: 0 20px;
-      padding: 0 2.5rem;
       border-radius: 8px;
       background: #fff;
       max-width: var(--pagepage-width);
@@ -50,28 +47,12 @@
     }
   }
 
-  .profile-page-footer,
-  .footer {
+  .profile-footer {
     padding: 2.5rem;
     border-top: 1px solid var(--c-border);
+    background: #fff;
     text-align: center;
     color: var(--c-text-lighter);
     transition: border-color var(--t-color);
-  }
-}
-
-@media (max-width: 719px) {
-  .profile-page {
-    .profile-page-body {
-      .profile-aside-wrapper {
-        display: none;
-      }
-    }
-  }
-}
-
-@media (min-width: 719px) {
-  .profile-page {
-    padding: var(--navbar-height) 1rem 0;
   }
 }

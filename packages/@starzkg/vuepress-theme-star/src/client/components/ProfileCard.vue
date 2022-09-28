@@ -3,7 +3,7 @@ import { usePageFrontmatter, withBase } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useSiteData } from '../composables/index.js'
+import { useSiteData, useThemeLocaleData } from '../composables/index.js'
 import PanThumb from './PanThumb.vue'
 
 interface ProfileInfoFrontmatter {
@@ -21,23 +21,23 @@ const route = useRoute()
 const router = useRouter()
 
 const siteData = useSiteData()
+const themeLocale = useThemeLocaleData()
 const frontmatter = usePageFrontmatter<ProfileInfoFrontmatter>()
 
 const author = computed(() => {
-  return frontmatter.value.author
+  return frontmatter.value.author || themeLocale.value.profile?.name
 })
 
 const avatar = computed(() => {
-  if (frontmatter.value.avatar === undefined) {
+  const avatar = frontmatter.value.avatar || themeLocale.value.profile?.avatar
+  if (avatar === undefined) {
     return ''
   }
-  return frontmatter.value.avatar.startsWith('http')
-    ? frontmatter.value.avatar
-    : withBase(frontmatter.value.avatar)
+  return avatar.startsWith('http') ? avatar : withBase(avatar)
 })
 
 const intro = computed(() => {
-  return frontmatter.value.intro
+  return frontmatter.value.intro || themeLocale.value.profile?.intro
 })
 
 const navigate = (path: string): void => {
@@ -78,7 +78,7 @@ const links = computed(() => {
 </script>
 
 <template>
-  <div class="profile-info" vocab="https://schema.org/" typeof="Person">
+  <div class="profile-card" vocab="https://schema.org/" typeof="Person">
     <div
       class="author"
       :class="{ hasIntro: intro !== undefined }"
@@ -120,7 +120,7 @@ const links = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.profile-info {
+.profile-card {
   &.page {
     background: var(--bgcolor);
   }

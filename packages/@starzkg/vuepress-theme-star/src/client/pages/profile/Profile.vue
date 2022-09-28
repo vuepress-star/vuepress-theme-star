@@ -3,16 +3,20 @@ import Archive from '@theme/Archive.vue'
 import Content from '@theme/Content.vue'
 import Features from '@theme/Features.vue'
 import Footer from '@theme/Footer.vue'
-import ProfileInfo from '@theme/ProfileInfo.vue'
+import Navbar from '@theme/Navbar.vue'
+import ProfileCard from '@theme/ProfileCard.vue'
 </script>
 
 <template>
-  <main class="profile-page">
-    <header class="profile-page-header"></header>
+  <div class="profile">
+    <header class="profile-header">
+      <Navbar />
+      <div class="profile-banner" />
+    </header>
 
-    <section class="profile-page-body">
+    <main class="profile-body">
       <aside class="profile-aside-wrapper">
-        <ProfileInfo />
+        <ProfileCard class="mobile-show" />
         <Archive />
         <div class="profile-info-list"></div>
       </aside>
@@ -22,8 +26,10 @@ import ProfileInfo from '@theme/ProfileInfo.vue'
         <Content class="custom" />
         <div class="article-list"></div>
       </main>
-    </section>
+    </main>
 
-    <Footer class="profile-page-footer" />
-  </main>
+    <footer class="profile-footer">
+      <Footer />
+    </footer>
+  </div>
 </template>

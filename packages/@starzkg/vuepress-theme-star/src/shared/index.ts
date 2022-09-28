@@ -1,6 +1,6 @@
 export * from './nav.js'
 export * from './breadcrumb.js'
-export * from './options.js'
+export * from './options/index.js'
 export * from './page.js'
 export * from './frontmatter/index.js'
 export * from './site.js'

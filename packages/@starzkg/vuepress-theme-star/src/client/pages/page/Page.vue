@@ -5,7 +5,7 @@ import Navbar from '@theme/Navbar.vue'
 import PageInfo from '@theme/PageInfo.js'
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
-import ProfileInfo from '@theme/ProfileInfo.vue'
+import ProfileCard from '@theme/ProfileCard.vue'
 import Sidebar from '@theme/Sidebar.vue'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import {
@@ -117,7 +117,7 @@ onUnmounted(() => {
         </div>
         <div class="content-right">
           <slot name="right-top" />
-          <ProfileInfo />
+          <ProfileCard />
           <slot name="right-bottom" />
           <Toc class="anchor" />
         </div>

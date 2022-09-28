@@ -94,6 +94,14 @@ export default defineUserConfig({
 
     docsDir: 'docs',
 
+    profile: {
+      name: 'Vuepress Theme Star',
+      firstName: 'Star',
+      lastName: 'Vuepress Theme Star',
+      avatar:
+        'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    },
+
     // theme-level locales config
     locales,
 

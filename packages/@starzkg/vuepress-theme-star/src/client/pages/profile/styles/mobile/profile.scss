@@ -1,0 +1,26 @@
+.profile {
+  width: 100%;
+
+  .navbar {
+    opacity: 1;
+  }
+
+  .profile-body {
+    flex-direction: column;
+    width: 100%;
+
+    .profile-aside-wrapper {
+      width: 100%;
+      position: unset;
+      padding: 0 1rem;
+
+      > *:not(.mobile-show) {
+        display: none;
+      }
+    }
+    .profile-main-wrapper {
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+}
