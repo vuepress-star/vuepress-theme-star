@@ -49,6 +49,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   tex: true,
 
+  markmap: true,
+
   mermaid: true,
 
   codeDemo: {

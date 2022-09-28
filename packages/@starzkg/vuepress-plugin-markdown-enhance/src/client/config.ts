@@ -5,6 +5,7 @@ import { Chart } from './components/chart/index.js'
 import { CodeGroup, CodeGroupItem } from './components/code-group/index.js'
 import { ECharts } from './components/echarts/index.js'
 import { FlowChart } from './components/flowchart/index.js'
+import { Markmap } from './components/markmap/index.js'
 import { Mermaid } from './components/mermaid/index.js'
 import { Reveal } from './components/reveal/index.js'
 import { initDemo } from './demo/index.js'
@@ -16,6 +17,7 @@ declare const MARKDOWN_ENHANCE_CHART: boolean
 declare const MARKDOWN_ENHANCE_ECHARTS: boolean
 declare const MARKDOWN_ENHANCE_FLOWCHART: boolean
 declare const MARKDOWN_ENHANCE_FOOTNOTE: boolean
+declare const MARKDOWN_ENHANCE_MARKMAP: boolean
 declare const MARKDOWN_ENHANCE_MERMAID: boolean
 declare const MARKDOWN_ENHANCE_REVEAL: boolean
 declare const MARKDOWN_ENHANCE_TASKLIST: boolean
@@ -36,6 +38,8 @@ export default defineClientConfig({
     if (MARKDOWN_ENHANCE_FOOTNOTE) import('./styles/footnote.scss')
 
     if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
+
+    if (MARKDOWN_ENHANCE_MARKMAP) app.component('Markmap', Markmap)
 
     if (MARKDOWN_ENHANCE_REVEAL) app.component('Reveal', Reveal)
 

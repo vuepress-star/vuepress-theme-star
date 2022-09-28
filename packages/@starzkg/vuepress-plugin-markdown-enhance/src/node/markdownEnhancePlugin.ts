@@ -15,6 +15,7 @@ import { forInline } from '../markdown-it/plugins/for-inline.js'
 import { ins } from '../markdown-it/plugins/ins.js'
 import { katex } from '../markdown-it/plugins/katex.js'
 import { mark } from '../markdown-it/plugins/mark.js'
+import { markmap } from '../markdown-it/plugins/markmap.js'
 import { mathjax } from '../markdown-it/plugins/mathjax.js'
 import { mermaid } from '../markdown-it/plugins/mermaid.js'
 import { reveal } from '../markdown-it/plugins/reveal.js'
@@ -101,6 +102,7 @@ export const markdownEnhancePlugin =
         }
         if (markdownOptions.ins) markdownIt.use(ins)
         if (markdownOptions.mark) markdownIt.use(mark)
+        if (markdownOptions.markmap) markdownIt.use(markmap)
         if (markdownOptions.mermaid) markdownIt.use(mermaid)
         if (markdownOptions.reveal) markdownIt.use(reveal)
         if (markdownOptions.sup) markdownIt.use(sup)

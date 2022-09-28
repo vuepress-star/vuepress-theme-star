@@ -35,7 +35,7 @@ export const echarts: PluginSimple = (md: MarkdownIt): void => {
 
     const language = resolveLanguage(info)
 
-    const title = tokens[index].info
+    const title = info
       .trimStart()
       .slice(tokens[index].info.trimStart().indexOf(' '))
       .trim()

@@ -129,6 +129,14 @@ export interface MarkdownEnhanceOptions {
    */
   mark?: boolean
   /**
+   * 是否启用 Markmap 支持
+   *
+   * Whether to enable markmap support
+   *
+   * @default false
+   */
+  markmap?: boolean
+  /**
    * 是否启用 MathJax 语法支持
    *
    * Whether to enable MathJax syntax support
