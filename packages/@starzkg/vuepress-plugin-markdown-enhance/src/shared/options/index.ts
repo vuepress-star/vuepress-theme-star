@@ -105,6 +105,14 @@ export interface MarkdownEnhanceOptions {
    */
   forInline?: false | ForInlinePluginOptions
   /**
+   * 是否启用文件导入支持
+   *
+   * Whether to enable include support
+   *
+   * @default false
+   */
+  include?: boolean
+  /**
    * 是否启用ins支持
    *
    * Whether to enable ins format support

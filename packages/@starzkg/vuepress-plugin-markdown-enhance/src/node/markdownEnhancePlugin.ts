@@ -12,6 +12,7 @@ import { emoji } from '../markdown-it/plugins/emoji.js'
 import { flowchart } from '../markdown-it/plugins/flowchart.js'
 import { footnote } from '../markdown-it/plugins/footnote.js'
 import { forInline } from '../markdown-it/plugins/for-inline.js'
+import { include } from '../markdown-it/plugins/include.js'
 import { ins } from '../markdown-it/plugins/ins.js'
 import { katex } from '../markdown-it/plugins/katex.js'
 import { mark } from '../markdown-it/plugins/mark.js'
@@ -100,6 +101,7 @@ export const markdownEnhancePlugin =
               : {}
           )
         }
+        if (markdownOptions.include) markdownIt.use(include)
         if (markdownOptions.ins) markdownIt.use(ins)
         if (markdownOptions.mark) markdownIt.use(mark)
         if (markdownOptions.markmap) markdownIt.use(markmap)
