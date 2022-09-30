@@ -47,6 +47,7 @@ export default {
             '/zh/guide/markdown/advanced/markmap.md',
             '/zh/guide/markdown/advanced/tex.md',
             '/zh/guide/markdown/advanced/include/README.md',
+            '/zh/guide/markdown/advanced/import/README.md',
             '/zh/guide/markdown/advanced/presentation/README.md',
           ],
         },

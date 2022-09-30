@@ -1,7 +1,7 @@
 ---
-title: 文件导入
+title: 文件包含
 ---
-# 文件导入
+# 文件包含
 ```md
 #include<include.md>
 ```
@@ -25,5 +25,8 @@ title: 文件导入
 
 
 #include<./nest/README.md>
+
+
+#include<foo.js>
 
 @[code js{2,4-5}](./foo.js)

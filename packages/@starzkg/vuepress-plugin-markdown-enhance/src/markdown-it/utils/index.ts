@@ -1,5 +1,6 @@
 import type StateBlock from 'markdown-it/lib/rules_block/state_block.js'
 import type Token from 'markdown-it/lib/token.js'
+export * from './parseArgs.js'
 
 export const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu
 

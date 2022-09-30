@@ -107,6 +107,14 @@ export interface MarkdownEnhanceOptions {
   /**
    * 是否启用文件导入支持
    *
+   * Whether to enable import support
+   *
+   * @default false
+   */
+  import?: boolean
+  /**
+   * 是否启用文件包含支持
+   *
    * Whether to enable include support
    *
    * @default false

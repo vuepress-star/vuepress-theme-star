@@ -65,7 +65,7 @@ interface IncludeMarkdownEnv extends MarkdownEnv {
 // min length of the include syntax, i.e. '@[code]()'
 const MIN_LENGTH = 9
 
-// char codes of '@[code'
+// char codes of '#include<'
 const START_CODES = [0x23, 0x69, 0x6e, 0x63, 0x6c, 0x75, 0x64, 0x65, 0x3c]
 
 // regexp to match the include syntax
@@ -145,6 +145,14 @@ export const resolveInclude = (
       '..',
       path.defaultExt(includePath, '.md')
     )
+  }
+
+  // only extname === '.md'
+  if (path.extname(includeFilePath) !== '.md') {
+    return {
+      includeFilePath,
+      include: 'Not Markdown File',
+    }
   }
 
   // check file existence

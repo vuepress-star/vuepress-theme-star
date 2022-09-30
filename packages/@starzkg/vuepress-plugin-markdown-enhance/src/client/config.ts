@@ -7,6 +7,7 @@ import { ECharts } from './components/echarts/index.js'
 import { FlowChart } from './components/flowchart/index.js'
 import { Markmap } from './components/markmap/index.js'
 import { Mermaid } from './components/mermaid/index.js'
+import { PDF } from './components/pdf/index.js'
 import { Reveal } from './components/reveal/index.js'
 import { initDemo } from './demo/index.js'
 import './styles/index.scss'
@@ -40,6 +41,8 @@ export default defineClientConfig({
     if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
 
     if (MARKDOWN_ENHANCE_MARKMAP) app.component('Markmap', Markmap)
+
+    app.component('PDF', PDF)
 
     if (MARKDOWN_ENHANCE_REVEAL) app.component('Reveal', Reveal)
 

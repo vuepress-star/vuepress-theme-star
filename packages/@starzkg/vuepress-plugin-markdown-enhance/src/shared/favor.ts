@@ -39,6 +39,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   forInline: false,
 
+  import: true,
+
   include: true,
 
   ins: true,
