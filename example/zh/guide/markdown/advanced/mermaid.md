@@ -4,8 +4,9 @@ icon: diagram
 ---
 
 # Mermaid
+让你的 VuePress 站点中的 Markdown 文件支持 [mermaid](https://mermaid-js.github.io/mermaid/#/)。
 
-Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
+使用 [mermaid](https://mermaid-js.github.io/mermaid/#/) 提供相应功能。
 
 <!-- more -->
 

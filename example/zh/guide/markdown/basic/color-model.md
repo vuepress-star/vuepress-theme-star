@@ -10,6 +10,8 @@ tags:
 
 您可以使用反引号在句子中标注颜色。 反引号内支持的颜色模型将显示颜色的可视化。
 
+## 示例
+
 **输入**
 ```markdown
 The background color should be `#ffffff` for light mode and `#0d1117` for dark mode.

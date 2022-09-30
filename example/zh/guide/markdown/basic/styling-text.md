@@ -6,7 +6,12 @@ categories:
 tags:
   - Markdown
 ---
-# 样式化文本 {#styling-text}
+# 样式化文本
+让你的 VuePress 站点中的 Markdown 文件支持样式化文本。
+
+目前支持**粗体**、*斜体*、~~删除线~~、==标记==、下~标~、上^标^ 进行文本的样式化
+
+## 示例
 
 | 样式	      | 语法                 | 示例                   | 输出      |
 |----------|--------------------|----------------------|---------|
@@ -18,3 +23,9 @@ tags:
 | 标记       | == ==	             | 	`==标记==`	           |     ==标记== |
 | 下标       | <sub> </sub> 或 ~ ~ | 这是<sub>下标</sub>文本    |  H~2~O  |
 | 上标       | <sup> </sup> 或 ^ ^ | 这是<sup>上标</sup>文本    |  19^th^ |
+
+
+## 参考
+- [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)
+- [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
+- [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)

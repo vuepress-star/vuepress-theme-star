@@ -11,6 +11,8 @@ tags:
 ## 引用文本
 您可以使用 `>` 引用文本。
 
+### 示例
+
 **输入**
 ```markdown
 > Blockquotes can also be nested...
@@ -26,6 +28,8 @@ tags:
 ## 引用代码
 您可以在带有单个反引号的句子中调用代码或命令。 反引号内的文本不会被格式化。
 
+### 示例
+
 **输入**
 ```markdown
 Use `git status` to list all new or modified files that haven't yet been committed.
@@ -33,9 +37,13 @@ Use `git status` to list all new or modified files that haven't yet been committ
 
 **输出**
 
+## 引用代码块
+
 Use `git status` to list all new or modified files that haven't yet been committed.
 
 要将代码或文本格式化为自己独特的块，请使用三重反引号。
+
+### 示例
 
 **输入**
 ````markdown

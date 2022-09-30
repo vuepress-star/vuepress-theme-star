@@ -6,7 +6,12 @@ categories:
 tags:
   - Markdown
 ---
+# Markdown 基础语法
+本章节介绍 VuePress Star 的 Markdown 基本语法。
 
+这是来自 [markdown-it](https://markdown-it.github.io/) 的 MarkDown Demo
+
+---
 __Advertisement :)__
 
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
@@ -16,17 +21,8 @@ __Advertisement :)__
 
 You will like those projects!
 
-# Markdown 基础语法
-本章节介绍 VuePress Star 的 Markdown 基本语法。
-## 标题
-```markdown
-# h1 Heading 8-)
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-```
+---
+
 # h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading
@@ -34,18 +30,8 @@ You will like those projects!
 ##### h5 Heading
 ###### h6 Heading
 
-## 标题锚点
-
-你可能已经注意到，当你把鼠标放在各个章节的标题上时，会显示出一个 `#` 锚点。点击这个 `#` 锚点，可以直接跳转到对应章节。
-
-::: tip
-标题锚点扩展由 [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 支持。
-
-配置参考： [markdown.anchor](../reference/config.md#markdown-anchor)
-:::
 
 ## 水平分割线
-```markdown
 
 ___
 
@@ -53,16 +39,10 @@ ___
 
 ***
 
-```
-
-___
-
----
-
-***
 
 ## 排版替换
-```md
+
+Enable typographer option to see result.
 
 (c) (C) (r) (R) (tm) (TM) (p) (P) +-
 
@@ -72,15 +52,6 @@ test.. test... test..... test?..... test!....
 
 "Smartypants, double quotes" and 'single quotes'
 
-```
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,,  -- ---
-
-"Smartypants, double quotes" and 'single quotes'
 
 ## 样式文本
 
@@ -94,17 +65,14 @@ _This is italic text_
 
 ~~Strikethrough~~
 
-|   样式	 | 语法     | 示例            | 输出      |
-|----|--------|---------------|---------|
-| 粗体 | ** ** 或 __ __ | `**这是粗体文本**	` | **这是粗体文本** |
-| 斜体 | * * 或 _ _ | 	`*这是斜体文本*`   |  	*这是斜体文本* |
-| 删除线 | ~~ ~~	 | `~~这是错误文本~~`	 |  ~~这是错误文本~~ |
-| 粗体和嵌入的斜体 | ** ** 和 _ _	 | 	`**此文本 _非常_ 重要**` |   **此文本 _非常_ 重要** |
-| 全部粗体和斜体 | *** ***	 | 	`***所有这些文本都很重要***`	 |     ***所有这些文本都很重要*** |
-| 下标 | <sub> </sub> 或 ~ ~ |  <sub>这是下标文本</sub> |  H~2~O  |
-| 上标 | <sup> </sup> 或 ^ ^ |  <sup>这是上标文本</sup> |  19^th^ |
 
-[参考](./styling-text.md)
+## 引用
+
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
 
 ## 列表
 
@@ -133,13 +101,6 @@ Start numbering with offset:
 57. foo
 1. bar
 
-## 引用
-
-> Blockquotes can also be nested...
-> > ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-[参考](./quote.md)
 
 ## 代码
 
@@ -186,14 +147,7 @@ Right aligned columns
 | ext    | extension to be used for dest files. |
 
 
-
 ## 链接
-
-您可以通过将链接文本括在括号`[ ]`中，然后将 URL 括在括号中来创建内联链接`( )`
-
-`This site was built using [GitHub Pages](https://pages.github.com/).`
-
-This site was built using [GitHub Pages](https://pages.github.com/).
 
 [link text](http://dev.nodeca.com)
 
@@ -203,10 +157,6 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
 
 ## 图片
-
-可以通过`!`在`[ ]`. 然后将图片的链接用括号括起来`( )`。
-
-`![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)`
 
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")

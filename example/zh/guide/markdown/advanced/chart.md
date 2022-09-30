@@ -7,9 +7,9 @@ tags:
   - Markdown
 ---
 # Chart
-让你 VuePress 站点中的 Markdown 文件支持图表。
+让你 VuePress 站点中的 Markdown 文件支持 Chart 图表。
 
-此插件使用 [chart.js](https://www.chartjs.org/docs/latest/) 提供相应功能。
+使用 [chart.js](https://www.chartjs.org/docs/latest/) 提供相应功能。
 
 <!-- more -->
 

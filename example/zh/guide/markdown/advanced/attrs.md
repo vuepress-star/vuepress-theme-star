@@ -9,8 +9,6 @@ tag:
 ---
 # 属性支持
 
-- 参考 [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs)
-
 你可以使用特殊标记为 Markdown 元素添加属性。
 
 <!-- more -->
@@ -42,6 +40,8 @@ tag:
   一个包含文字的段落。
 </p>
 ```
+
+## 示例
 
 **输入**
 
@@ -131,3 +131,5 @@ interface AttrsOptions {
   allowedAttributes?: (string | RegExp)[]
 }
 ```
+## 参考 
+- [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs)

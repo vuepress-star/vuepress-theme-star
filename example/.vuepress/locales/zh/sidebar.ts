@@ -31,7 +31,6 @@ export default {
             '/zh/guide/markdown/basic/quote.md',
             '/zh/guide/markdown/basic/color-model.md',
             '/zh/guide/markdown/basic/task-list.md',
-            '/zh/guide/markdown/basic/attrs.md',
           ],
         },
         {
@@ -40,6 +39,7 @@ export default {
           children: [
             '/zh/guide/markdown/advanced/vuepress.md',
             '/zh/guide/markdown/advanced/vue.md',
+            '/zh/guide/markdown/advanced/attrs.md',
             '/zh/guide/markdown/advanced/chart.md',
             '/zh/guide/markdown/advanced/echarts.md',
             '/zh/guide/markdown/advanced/flowchart.md',
