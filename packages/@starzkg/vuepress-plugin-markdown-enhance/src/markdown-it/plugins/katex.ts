@@ -27,7 +27,7 @@
  */
 
 import { createRequire } from 'node:module'
-import { default as Katex } from 'katex'
+import Katex from 'katex'
 import type { KatexOptions as _KatexOptions } from 'katex'
 import type { PluginWithOptions } from 'markdown-it'
 import { escapeHtml } from '../utils/index.js'
@@ -49,6 +49,8 @@ export interface KatexOptions extends _KatexOptions {
 // set KaTeX as the renderer for markdown-it-simplemath
 const katexInline = (tex: string, options: _KatexOptions): string => {
   try {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     return Katex.renderToString(tex, { ...options, displayMode: false })
   } catch (error) {
     if (options.throwOnError) console.warn(error)
@@ -61,6 +63,8 @@ const katexInline = (tex: string, options: _KatexOptions): string => {
 
 const katexBlock = (tex: string, options: _KatexOptions): string => {
   try {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     return `<p class='katex-block'>${Katex.renderToString(tex, {
       ...options,
       displayMode: true,
