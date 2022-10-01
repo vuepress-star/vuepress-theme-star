@@ -9,7 +9,11 @@ title: FlowChart
 
 <!-- more -->
 
-## 格式
+## 文档
+
+相关详情，详见 [flowchart 文档](http://flowchart.js.org/).
+
+## 语法
 
 ````md
 <!-- ↓ :preset 是可选的 -->

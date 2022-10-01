@@ -20,7 +20,7 @@ tags:
 ## Visual Studio Code Plugin
 - [Chart.js Markdown Preview](https://marketplace.visualstudio.com/items?itemName=FlomoN.chartjs-markdown-preview)
 
-## 格式
+## 语法
 
 ````md
 ```chart:json 标题

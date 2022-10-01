@@ -8,11 +8,13 @@ tag:
   - 属性
 ---
 # 属性支持
+让你的 VuePress 站点中的 Markdown 文件支持属性支持。
 
 你可以使用特殊标记为 Markdown 元素添加属性。
 
 <!-- more -->
 
+## 语法
 你可以使用语法 `{attrs}` 来为 Markdown 元素添加属性。
 
 比如，如果你想要一个 id 为 say-hello-world，文字为 Hello World 的二级标题，你可以使用:

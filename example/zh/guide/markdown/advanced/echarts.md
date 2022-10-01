@@ -19,7 +19,7 @@ tags:
 
 相关详情，详见 [ECharts 文档](https://echarts.apache.org/handbook/zh/get-started/).
 
-## 格式
+## 语法
 
 ````md
 ```echarts:json 标题

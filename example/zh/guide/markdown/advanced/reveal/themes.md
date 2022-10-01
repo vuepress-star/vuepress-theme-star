@@ -2,6 +2,9 @@
 title: Themes
 icon: skin
 ---
+# Reveal.js Themes
+
+<!-- more -->
 
 <!--lint disable no-duplicate-headings-->
 
@@ -24,7 +27,7 @@ Theme available:
 
 ## `auto`
 
-@slidestart
+````reveal
 
 ## Slide Title
 
@@ -42,11 +45,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `black`
 
-@slidestart black
+````reveal:black
 
 ## Slide Title
 
@@ -64,11 +67,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `white`
 
-@slidestart white
+````reveal:white
 
 ## Slide Title
 
@@ -86,11 +89,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `league`
 
-@slidestart league
+````reveal:league
 
 ## Slide Title
 
@@ -108,11 +111,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `beige`
 
-@slidestart beige
+````reveal:beige
 
 ## Slide Title
 
@@ -130,11 +133,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `sky`
 
-@slidestart sky
+````reveal:sky
 
 ## Slide Title
 
@@ -152,11 +155,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `night`
 
-@slidestart night
+````reveal:night
 
 ## Slide Title
 
@@ -174,11 +177,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `serif`
 
-@slidestart serif
+````reveal:serif
 
 ## Slide Title
 
@@ -196,11 +199,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `simple`
 
-@slidestart simple
+````reveal:simple
 
 ## Slide Title
 
@@ -218,11 +221,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `solarized`
 
-@slidestart solarized
+````reveal:solarized
 
 ## Slide Title
 
@@ -240,11 +243,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `blood`
 
-@slidestart blood
+````reveal:blood
 
 ## Slide Title
 
@@ -262,11 +265,11 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 ## `moon`
 
-@slidestart moon
+````reveal:moon
 
 ## Slide Title
 
@@ -284,6 +287,6 @@ const add = (a, b) => {
 };
 ```
 
-@slideend
+````
 
 <!-- markdownlint-restore -->

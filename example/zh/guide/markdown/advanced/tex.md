@@ -3,33 +3,25 @@ title: Tex
 icon: tex
 ---
 
-# Tex
-
-Let the Markdown file in your VuePress site support the $\TeX$ syntax.
+让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。
 
 <!-- more -->
+## 文档
 
-## Configuration
+Katex:
 
-```js {7}
-module.exports = {
-  plugins: [
-    [
-      "markdown-enhance",
-      {
-        // Enable Tex Support
-        tex: true,
-      },
-    ],
-  ],
-};
-```
+- [$\KaTeX$ 支持功能](https://katex.org/docs/supported.html)
+- [$\KaTeX$ 支持列表](https://katex.org/docs/support_table.html)
 
-## Grammar
+Mathjax:
 
-### Inline syntax
+- [支持的 TeX/LaTeX 命令](https://docs.mathjax.org/en/latest/input/tex/macros/index.html#tex-commands)
 
-Use `$codes$`.
+## 语法
+
+### 行内语法
+
+使用 `$codes$` 来表示。
 
 ```md
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -37,32 +29,52 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
-### Block syntax
+### 块语法
 
-Use `$$codes$$`.
+使用 `$$codes$$` 来表示。
 
 ```md
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 ```
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
+= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-## Tutorial
+## 高级
 
-### Operator
+::: info KaTeX
 
-- Some operators can be entered directly in math mode; others need to be generated using control sequences:
+使用 KaTeX 时，您可以将对象作为 `KatexOptions` 传递给 `katex`。 它将被传递给 KaTeX 有关可用选项，请参阅 [KaTeX Docs](https://katex.org/docs/options.html)。
+
+此外，我们还支持一个特殊选项 `mhchem`，您可以通过将其设置为 `true` 来启用 mhchem 扩展。
+
+:::
+
+::: info Mathjax
+
+使用 mathjax 时，您可以将对象传递给 `mathjax`。
+
+您可以将 `output` 选项设置为 `svg` (默认) 或 `chtml` 以更改 SVG 和 HTML 输出。
+
+此外，您可以通过 `tex` 选项将设置传递给 TeX 输入解析器，并且可以根据出书格式，通过 `chtml` 或 `svg` 选项传递给通用 HTML 输出解析器和 SVG 输出解析器的输出语法设置 。
+
+:::
+
+## TeX 教程
+
+### 运算符
+
+- 一些运算符，可以在数学模式下直接输入；另一些需要用控制序列生成:
 
   - `+`: $+$
   - `-`: $-$
   - `\times`: $\times$
-  - `\ div`: $\div$
+  - `\div`: $\div$
   - `=`: $=$
   - `\pm`: $\pm$
   - `\cdot`: $\cdot$
@@ -72,37 +84,33 @@ $$
   - `\neq`: $\neq$
   - `\approx`: $\approx$
   - `\equiv`: $\equiv$
-  - `\quad`: $\quad$ (blank separator)
+  - `\quad`: $\quad$ (空白分隔符)
 
-- Radical: `\sqrt{xxx}` $\sqrt{xxx}$
+- 根式: `\sqrt{xxx}` $\sqrt{xxx}$
 
-- Fraction `\frac{aaa}{bbb}` $\frac{aaa}{bbb}$ (the first parameter is the numerator and the second is the denominator).
+- 分式 `\frac{aaa}{bbb}` $\frac{aaa}{bbb}$ (第一个参数为分子，第二个为分母) 。
 
-- Lianjia: `\sum` $\sum$
-
-- Tandem: `\prod` $\prod$
-
-- Limit: `\lim` $\lim$
-
-- Points: `\int` $\int$
-
-- Multiple points:
+- 连加: `\sum` $\sum$
+- 连乘: `\prod` $\prod$
+- 极限: `\lim` $\lim$
+- 积分: `\int` $\int$
+- 多重积分:
   - `\iint`: $\iint$
   - `\iiint`: $\iiint$
-  - `\liiiint`: $\liiiint$ (Use `\iiiint` for block as normal)
+  - `\liiiint`: $\liiiint$ (块级公式正常使用 `\iiiint`)
   - `\idotsint` $\idotsint$
 
 ::: tip
 
-Large operators such as continuous addition, multiplication, limits, and integrals can use `\limits` and `\nolimits` to force explicitly specify compress these superscripts or not.
+连加、连乘、极限、积分等大型运算符可以用 `\limits` 和 `\nolimits` 来强制显式地指定是否压缩这些上下标。
 
-`\iiiint`($\liiiint$) is support by hack, so for inline display you should use `\liiiint`.
+`\iiiint`($\liiiint$) 是使用 hack 实现的，由于间距问题对于行公式需要使用 `\liiiint` 命令。
 
-`\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` are not supported currently.
+`\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` 目前不被支持。
 
 :::
 
-::: tip Case
+::: tip 案例
 
 $\sqrt{x}$, $\frac{1}{2}$.
 
@@ -134,9 +142,9 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 :::
 
-### Symbol
+### 符号
 
-- English letters can be entered directly
+- 英文字母可以直接输入
 
   $a \quad b \quad c \quad x \quad y \quad z \quad A \quad B \quad C$
 
@@ -144,7 +152,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
   $a \quad b \quad c \quad x \quad y \quad z \quad A \quad B \quad C$
   ```
 
-- Greek characters use `\characterName` to enter symbols, and output capital letters when the first letter is capitalized.
+- 希腊字母使用 `\characterName` 来输入符号，首字母大写时输出大写字母。
 
   $\alpha \quad \beta \quad \gamma \quad \Omega \quad \Delta \quad \Gamma$
 
@@ -152,7 +160,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
   $\alpha \quad \beta \quad \gamma \quad \Omega \quad \Delta \quad \Gamma$
   ```
 
-- Other mathematical expressions can be used correspondingly
+- 其他数学表达式可以对应使用
 
   $\log_{a}{b} \quad \partial x$
 
@@ -160,13 +168,13 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
   $\log_{a}{b} \quad \partial x$
   ```
 
-### Superscript and subscript
+### 上下标
 
-- Superscript, use `^` to achieve
-- Subscript, use `_` to achieve
-- By default, superscript and subscript only apply to the next character. To work with mutiple consecutive characters, please enclose these characters in curly brackets `{}`.
+- 上标，使用 `^` 来实现
+- 下标，使用 `_` 来实现
+- 上下标默认只作用于之后的一个字符，如果想对连续的几个字符起作用，请将这些字符用花括号 `{}` 括起来。
 
-#### Case
+#### 例子
 
 Einstein ’s $E=mc^2$.
 
@@ -178,23 +186,23 @@ Einstein ’s $E=mc^2$.
 $2^{10} > 1000$
 ```
 
-### Delimiters (parentheses, etc.)
+### 定界符 (括号等)
 
-Various parentheses are represented by commands such as `()`, `[]`, `\{\}`, `\langle\rangle`.
+各种括号用 `()`, `[]`, `\{\}`, `\langle\rangle` 等命令表示。
 
 ::: tip
 
-Note that curly braces are usually used to enter command and environment parameters, so they must be preceded by `\` in mathematical formulas.
+注意花括号通常用来输入命令和环境的参数，所以在数学公式中它们前面要加 `\`。
 
-Because the application of `|` and `\|` in LaTeX is too casual, we recommend using `\lvert\rvert` and `\ lVert\rVert` instead.
+因为 LaTeX 中 `|` 和 `\|` 的应用过于随意，推荐用 `\lvert\rvert` 和 `\lVert\rVert` 取而代之。
 
 :::
 
-To adjust the size of these delimiters, we recommend using `\big`, `\Big`, `\bigg`, `\Bigg` and a series of commands to adjust the size before the above brackets.
+为了调整这些定界符的大小，推荐使用 `\big`, `\Big`, `\bigg`, `\Bigg` 等一系列命令放在上述括号前面调整大小。
 
 $\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
 $\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr]$
-$\Biggl \{\biggl \{\Bigl \{\bigl \{ \{x \}\bigr \}\Bigr \}\biggr \}\Biggr\}$
+$\Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\}$
 $\Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
 \rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle$
 $\Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x
@@ -205,7 +213,7 @@ $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 ```md
 $\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
 $\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr]$
-$\Biggl \{\biggl \{\Bigl \{\bigl \{ \{x \}\bigr \}\Bigr \}\biggr \}\Biggr\}$
+$\Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\}$
 $\Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
 \rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle$
 $\Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x
@@ -214,13 +222,13 @@ $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 \rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert$
 ```
 
-### Ellipsis
+### 省略号
 
-The ellipsis is represented by commands such as `\dots`,`\cdots`, `\vdots`,`\ddots`.
+省略号用 `\dots`, `\cdots`, `\vdots`, `\ddots` 等命令表示。
 
 ::: tip
 
-`\dots` and`\cdots` have different vertical positions. The former is generally used for subscripted sequences.
+`\dots` 和 `\cdots` 的纵向位置不同，前者一般用于有下标的序列。
 
 :::
 
@@ -230,9 +238,9 @@ $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 ```
 
-### Matrix
+### 矩阵
 
-`pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix` and other environments can add various separators on both sides of the matrix.
+`pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix` 等环境可以在矩阵两边加上各种分隔符。
 
 $$
 \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
@@ -252,7 +260,7 @@ $$
 $$
 ```
 
-Using the `smallmatrix` environment, you can generate small matrices of inline formulas.
+使用 `smallmatrix` 环境，可以生成行内公式的小矩阵。
 
 A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
@@ -260,11 +268,11 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 ```
 
-### Multi-line formula
+### 多行公式
 
-- **newline**
+- **换行**
 
-  Use `\\` or `\newline` to wrap
+  使用 `\\` 或 `\newline` 进行换行
 
   $$
   x = a+b+c+{} \\
@@ -288,15 +296,9 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   $$
   ```
 
-  ::: tip
+- **对齐**
 
-  Note that because $\KaTeX$ supports auto word wrapping, if you specify a line feed manually, a warning is output in the console.
-
-  :::
-
-- **Alignment**
-
-  You can use the `aligned` environment to achieve alignment, and`&`to identify fixed anchor points
+  可以使用 `aligned` 环境来实现对齐，使用 `&` 标识固定锚点
 
   $$
   \begin{aligned}
@@ -307,8 +309,8 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
   $$
   \begin{alignedat}{2}
-     10&x+ &3&y = 2 \\
-     3&x+&13&y = 4
+  10&x+ &3&y = 2 \\
+  3&x+&13&y = 4
   \end{alignedat}
   $$
 
@@ -328,9 +330,9 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   $$
   ```
 
-### Formula group
+### 公式组
 
-Formula groups that do not require alignment can use the `gather` environment.
+无需对齐的公式组可以使用 `gather` 环境。
 
 $$
 \begin{gathered}
@@ -348,7 +350,7 @@ x = y+z
 $$
 ```
 
-### Numbering
+### 编号
 
 $$
 \tag{1} x+y^{2x}
@@ -364,9 +366,9 @@ $\tag{1} x+y^{2x}$
 $\tag*{1} x+y^{2x}$
 ```
 
-### Segmented functions
+### 分段函数
 
-Use `case` environment
+使用 `case` 环境
 
 $$
 y= \begin{cases}
@@ -384,13 +386,6 @@ x,\quad x>0
 $$
 ```
 
-## Text
+## 文字
 
-To insert text in tex, you should use `\text{}` to wrap them.
-
-## More
-
-For more symbols, pleasae check out
-
-- [$\KaTeX$ Support Features](https://katex.org/docs/supported.html)
-- [$\KaTeX$ Support List](https://katex.org/docs/support_table.html)
+如果你需要在公式中插入文字，请使用 `\text{}`。

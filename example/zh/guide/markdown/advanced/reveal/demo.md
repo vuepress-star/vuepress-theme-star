@@ -1,12 +1,14 @@
 ---
 title: Demo
 icon: discover
-layout: Slide
+navbar: false
+page: Presentation
 ---
+# Reveal.js Demo
+
+<!-- more -->
 
 <!-- markdownlint-disable MD024 MD033 -->
-
-@slidestart
 
 <!-- .slide: data-transition="slide" -->
 
@@ -429,5 +431,3 @@ Click again to zoom back out.
 <!-- .element: class="r-fit-text" -->
 
 ## The End
-
-@slideend

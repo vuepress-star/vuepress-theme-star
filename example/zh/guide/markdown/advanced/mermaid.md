@@ -10,7 +10,11 @@ icon: diagram
 
 <!-- more -->
 
-## 格式
+## 文档
+
+相关详情，详见 [mermaid](https://mermaid-js.github.io/mermaid/#/).
+
+## 语法
 
 ````md
 ```mermaid
@@ -20,11 +24,7 @@ icon: diagram
 ```
 ````
 
-## Usage
-
-Please see [mermaid](https://mermaid-js.github.io/mermaid/#/).
-
-## Demo
+## 示例
 
 ### Flowchart
 

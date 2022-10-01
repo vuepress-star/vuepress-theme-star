@@ -9,7 +9,7 @@ Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/)
 
 <!-- more -->
 
-## 格式
+## 语法
 
 ````md
 ```mermaid

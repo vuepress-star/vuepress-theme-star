@@ -11,6 +11,8 @@ tags:
 
 这是来自 [markdown-it](https://markdown-it.github.io/) 的 MarkDown Demo
 
+<!-- more -->
+
 ---
 __Advertisement :)__
 

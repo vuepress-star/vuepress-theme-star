@@ -1,13 +1,17 @@
-
+---
+title: Markmap
+icon: diagram
+---
 # Markmap
 让你的 VuePress 站点中的 Markdown 文件支持 [Markmap 文档](https://markmap.js.org/docs/markmap)。
 
 使用 [Markmap 文档](https://markmap.js.org/docs/markmap) 提供相应功能。
 
+<!-- more -->
+
 ## 文档
 
 相关详情，详见 [Markmap 文档](https://markmap.js.org/docs/markmap).
-
 
 ## 示例
 
