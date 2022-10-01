@@ -62,7 +62,7 @@
     "eslint-config-vuepress": "4.0.3",
     "eslint-config-vuepress-typescript": "4.0.3",
     "husky": "8.0.1",
-    "lint-staged": "12.5.0",
+    "lint-staged": "13.0.3",
     "markdownlint-cli": "0.32.2",
     "npm-check-updates": "16.3.4",
     "prettier": "2.7.1",
