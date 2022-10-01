@@ -74,7 +74,9 @@ export const usePlugins = (
 
   // demo
   if (markdownOptions.codeDemo) {
-    useContainerPlugin(app, resolveCodeDemoContainerOptions(markdownOptions))
+    useContainerPlugin(app, resolveCodeDemoContainerOptions())
+    useContainerPlugin(app, resolveCodeDemoContainerOptions('vue'))
+    useContainerPlugin(app, resolveCodeDemoContainerOptions('react'))
   }
 
   // component

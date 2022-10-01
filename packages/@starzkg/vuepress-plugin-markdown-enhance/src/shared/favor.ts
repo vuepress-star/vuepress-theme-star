@@ -53,6 +53,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   tex: true,
 
+  katex: true,
+
   markmap: true,
 
   mermaid: true,

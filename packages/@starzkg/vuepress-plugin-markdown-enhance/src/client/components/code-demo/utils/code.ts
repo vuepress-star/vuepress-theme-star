@@ -1,6 +1,6 @@
 import type Babel from '@babel/core'
-import type { CodeDemoOptions } from '../../shared/index.js'
-import type { Code, CodeType } from './typings.js'
+import type { CodeDemoOptions } from '../../../../shared/index.js'
+import type { Code, CodeType } from '../types/index.js'
 import { getConfig, preProcessorConfig } from './utils.js'
 import type { PreProcessorType } from './utils.js'
 
@@ -19,7 +19,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
     isLegal: false,
   }
 
-  ;(['html', 'js', 'css'] as PreProcessorType[]).forEach((type) => {
+  ;(<PreProcessorType[]>['html', 'js', 'css']).forEach((type) => {
     const match = languages.filter((language) =>
       preProcessorConfig[type].types.includes(language)
     )
@@ -54,16 +54,19 @@ const getReactTemplate = (code: string): string =>
     .replace(
       /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
       ''
-    )};\nReactDOM.render(React.createElement($reactApp), document.getElementById("app"))`
+    )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`
 
 const getVueJsTemplate = (js: string): string =>
-  `new Vue({ el: '#app', ${js
-    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, '$1')
+  js
     .replace(
-      /export\s+default\s*Vue\.extend\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      '$1'
+      /export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u,
+      "Vue.createApp({$1}).mount('#app')"
     )
-    .trim()} })`
+    .replace(
+      /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
+      "Vue.createApp({$1}).mount('#app')"
+    )
+    .trim()
 
 export const wrapper = (scriptStr: string): string =>
   `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?module.exports.default:module.exports;})({})`
@@ -154,15 +157,16 @@ export const getReactCode = (
         : ''),
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
+    jsx: true,
     getScript: (): string => {
       const scriptStr =
         window.Babel?.transform(code.js[0] || '', {
           presets: ['es2015', 'react'],
         })?.code || ''
 
-      return `window.ReactDOM.render(window.React.createElement(${wrapper(
+      return `window.ReactDOM.createRoot(document.firstElementChild).render(window.React.createElement(${wrapper(
         scriptStr
-      )}), document.firstElementChild)`
+      )}))`
     },
   }
 }

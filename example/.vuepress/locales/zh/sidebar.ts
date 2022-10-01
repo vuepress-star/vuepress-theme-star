@@ -51,6 +51,7 @@ export default {
             '/zh/guide/markdown/advanced/flowchart.md',
             '/zh/guide/markdown/advanced/mermaid.md',
             '/zh/guide/markdown/advanced/markmap.md',
+            '/zh/guide/markdown/advanced/code-demo/README.md',
             '/zh/guide/markdown/advanced/tex.md',
             '/zh/guide/markdown/advanced/reveal/README.md',
             '/zh/guide/markdown/advanced/include/README.md',

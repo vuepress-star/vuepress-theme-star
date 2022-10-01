@@ -1,5 +1,5 @@
-import type { CodeDemoOptions } from '../../shared/index.js'
-import type { Code } from './typings.js'
+import type { CodeDemoOptions } from '../../../../shared/index.js'
+import type { Code } from '../types/index.js'
 
 declare const MARKDOWN_ENHANCE_CODE_DEMO: CodeDemoOptions
 
@@ -56,10 +56,12 @@ export const h = (
   children?: HTMLElement[]
 ): HTMLElement => {
   const node = document.createElement(tag)
+
   attrs &&
     Object.keys(attrs).forEach((key) => {
       if (!key.indexOf('data')) {
         const k = key.replace('data', '')
+
         node.dataset[k] = attrs[key]
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
@@ -97,7 +99,7 @@ export const loadScript = (
     const script = document.createElement('script')
 
     script.src = link
-    document.getElementsByTagName('body')[0].appendChild(script)
+    document.querySelector('body')?.appendChild(script)
 
     script.onload = (): void => {
       resolve()
@@ -142,7 +144,7 @@ export const injectScript = (
     script.appendChild(
       document.createTextNode(
         // here we are fixing `document` variable back to shadowDOM
-        `{const document=window.document.querySelector('#${id} .demo-wrapper').shadowRoot;\n${scriptText}}`
+        `{const document=window.document.querySelector('#${id} .code-demo-container').shadowRoot;\n${scriptText}}`
       )
     )
     shadowRoot.appendChild(script)
