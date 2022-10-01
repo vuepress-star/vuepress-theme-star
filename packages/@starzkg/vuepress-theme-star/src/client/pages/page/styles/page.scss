@@ -43,7 +43,6 @@
 
       .content-middle {
         margin: 0 0.5rem;
-        max-width: var(--content-width);
       }
 
       .content-right {
@@ -106,6 +105,7 @@
   }
 
   .main-content {
+    min-width: min(60vw, var(--content-width));
     max-width: var(--content-width);
     margin: 0 auto;
     background: #fff;
