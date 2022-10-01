@@ -158,12 +158,12 @@ importers:
 
   packages/@starzkg/vuepress-icons:
     specifiers:
-      chalk: ^4.1.2
+      chalk: ^5.0.0
       ora: ^5.4.1
       svgo: ^2.3.1
       vue: ^3.2.37
     dependencies:
-      chalk: 4.1.2
+      chalk: 5.0.1
       ora: 5.4.1
       svgo: 2.8.0
       vue: 3.2.37
@@ -479,7 +479,7 @@ importers:
       '@vuepress/plugin-theme-data': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      chalk: ^4.1.2
+      chalk: ^5.0.0
       copy-to-clipboard: ^3.3.2
       dayjs: ^1.11.5
       execa: ^5.1.1
@@ -495,7 +495,7 @@ importers:
       '@vuepress/plugin-theme-data': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      chalk: 4.1.2
+      chalk: 5.0.1
       copy-to-clipboard: 3.3.2
       dayjs: 1.11.5
       execa: 5.1.1
@@ -511,12 +511,12 @@ importers:
 
   packages/@starzkg/vuepress-social-icons:
     specifiers:
-      chalk: ^4.1.2
+      chalk: ^5.0.0
       ora: ^5.4.1
       svgo: ^2.3.1
       vue: ^3.2.37
     dependencies:
-      chalk: 4.1.2
+      chalk: 5.0.1
       ora: 5.4.1
       svgo: 2.8.0
       vue: 3.2.37
@@ -532,7 +532,7 @@ importers:
       '@vuepress/plugin-theme-data': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      chalk: ^4.1.2
+      chalk: ^5.0.0
       copy-to-clipboard: ^3.3.2
       dayjs: ^1.11.5
       execa: ^5.1.1
@@ -548,7 +548,7 @@ importers:
       '@vuepress/plugin-theme-data': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      chalk: 4.1.2
+      chalk: 5.0.1
       copy-to-clipboard: 3.3.2
       dayjs: 1.11.5
       execa: 5.1.1
