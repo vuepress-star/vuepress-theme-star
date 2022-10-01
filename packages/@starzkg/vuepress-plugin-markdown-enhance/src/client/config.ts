@@ -8,10 +8,11 @@ import { Markmap } from './components/markmap/index.js'
 import { Mermaid } from './components/mermaid/index.js'
 import { PDF } from './components/pdf/index.js'
 import { Reveal } from './components/reveal/index.js'
-import './styles/index.scss'
 
 declare const MARKDOWN_ENHANCE_ALIGN: boolean
+declare const MARKDOWN_ENHANCE_CONTAINER: boolean
 declare const MARKDOWN_ENHANCE_CODE_DEMO: boolean
+declare const MARKDOWN_ENHANCE_COLOR_MODEL: boolean
 declare const MARKDOWN_ENHANCE_CHART: boolean
 declare const MARKDOWN_ENHANCE_ECHARTS: boolean
 declare const MARKDOWN_ENHANCE_FLOWCHART: boolean
@@ -19,6 +20,7 @@ declare const MARKDOWN_ENHANCE_FOOTNOTE: boolean
 declare const MARKDOWN_ENHANCE_MARKMAP: boolean
 declare const MARKDOWN_ENHANCE_MERMAID: boolean
 declare const MARKDOWN_ENHANCE_REVEAL: boolean
+declare const MARKDOWN_ENHANCE_IMPORT: boolean
 declare const MARKDOWN_ENHANCE_TASKLIST: boolean
 declare const MARKDOWN_ENHANCE_TEX: boolean
 declare const MARKDOWN_ENHANCE_KATEX: boolean
@@ -29,7 +31,11 @@ export default defineClientConfig({
 
     if (MARKDOWN_ENHANCE_ALIGN) import('./styles/align.scss')
 
+    if (MARKDOWN_ENHANCE_CONTAINER) import('./styles/container/index.scss')
+
     if (MARKDOWN_ENHANCE_CODE_DEMO) app.component('CodeDemo', CodeDemo)
+
+    if (MARKDOWN_ENHANCE_COLOR_MODEL) import('./styles/color-model.scss')
 
     if (MARKDOWN_ENHANCE_CHART) app.component('Chart', Chart)
 
@@ -43,7 +49,7 @@ export default defineClientConfig({
 
     if (MARKDOWN_ENHANCE_MARKMAP) app.component('Markmap', Markmap)
 
-    app.component('PDF', PDF)
+    if (MARKDOWN_ENHANCE_IMPORT) app.component('PDF', PDF)
 
     if (MARKDOWN_ENHANCE_REVEAL) app.component('Reveal', Reveal)
 
