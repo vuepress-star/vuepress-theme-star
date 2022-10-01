@@ -39,11 +39,15 @@
     }
 
     .profile-main-wrapper {
+      margin: 0 1rem;
       border-radius: 8px;
       background: #fff;
       max-width: var(--pagepage-width);
       width: 100%;
       overflow: hidden;
+      .theme-star-content {
+        padding: 0 1.5rem;
+      }
     }
   }
 
