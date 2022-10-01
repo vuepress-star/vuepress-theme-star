@@ -79,7 +79,7 @@
     "vuepress-plugin-sass-palette": "2.0.0-beta.94"
   },
   "devDependencies": {
-    "@types/ua-parser-js": "^0.7.36"
+    "@types/ua-parser-js": "0.7.36"
   },
   "peerDependencies": {
     "sass-loader": "^13.0.0"
