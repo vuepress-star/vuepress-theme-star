@@ -1,4 +1,4 @@
-import type { App, LocaleConfig } from '@vuepress/core'
+import type { App, LocaleConfig, LocaleData } from '@vuepress/core'
 import type { ConvertLocaleConfig } from '../../shared/index.js'
 import { Logger } from '../logger.js'
 import { deepAssign } from '../utils/index.js'
@@ -76,7 +76,7 @@ export const getRootLangPath = (app: App): string =>
 export const getLocalePaths = (app: App): string[] =>
   Array.from(new Set([...Object.keys(app.siteData.locales)]))
 
-export interface GetLocalesOptions<T> {
+export interface GetLocalesOptions<T extends LocaleData = LocaleData> {
   app: App
   default: ConvertLocaleConfig<T>
   config?: LocaleConfig<T> | undefined
@@ -87,11 +87,12 @@ export interface GetLocalesOptions<T> {
  * Get final locale config to passed to client
  *
  * @param app  VuePress Node App
+ * @param name
  * @param defaultLocalesConfig default locale config
  * @param userLocalesConfig user locale config
  * @returns final locale config
  */
-export const getLocales = <T>({
+export const getLocales = <T extends LocaleData = LocaleData>({
   app,
   name,
   default: defaultLocalesConfig,
