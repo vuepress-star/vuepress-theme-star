@@ -117,6 +117,145 @@ export default defineComponent({
       }, MARKDOWN_ENHANCE_DELAY)
     })
 
+    const header = (): VNode =>
+      h('div', { class: 'code-demo-header' }, [
+        code.value.isLegal
+          ? h('button', {
+              class: ['toggle-button', isExpanded.value ? 'down' : 'right'],
+              onClick: () => {
+                height.value = isExpanded.value
+                  ? '0'
+                  : `${codeContainer.value!.clientHeight + 13.8}px`
+                isExpanded.value = !isExpanded.value
+              },
+            })
+          : null,
+        props.title
+          ? h('span', { class: 'title' }, decodeURIComponent(props.title))
+          : null,
+
+        code.value.isLegal && code.value.jsfiddle !== false
+          ? h(
+              'form',
+              {
+                class: 'code-demo-jsfiddle',
+                target: '_blank',
+                action: 'https://jsfiddle.net/api/post/library/pure/',
+                method: 'post',
+              },
+              [
+                h('input', {
+                  type: 'hidden',
+                  name: 'html',
+                  value: code.value.html,
+                }),
+                h('input', {
+                  type: 'hidden',
+                  name: 'js',
+                  value: code.value.js,
+                }),
+                h('input', {
+                  type: 'hidden',
+                  name: 'css',
+                  value: code.value.css,
+                }),
+                h('input', { type: 'hidden', name: 'wrap', value: '1' }),
+                h('input', { type: 'hidden', name: 'panel_js', value: '3' }),
+                h('input', {
+                  type: 'hidden',
+                  name: 'resources',
+                  value: [...code.value.cssLib, ...code.value.jsLib].join(','),
+                }),
+                h(
+                  'button',
+                  {
+                    'type': 'submit',
+                    'class': 'jsfiddle-button',
+                    'aria-label': 'JSFiddle',
+                    'data-balloon-pos': 'up',
+                  },
+                  h(Jsfiddle)
+                ),
+              ]
+            )
+          : null,
+
+        !code.value.isLegal || code.value.codepen !== false
+          ? h(
+              'form',
+              {
+                class: 'code-demo-codepen',
+                target: '_blank',
+                action: 'https://codepen.io/pen/define',
+                method: 'post',
+              },
+              [
+                h('input', {
+                  type: 'hidden',
+                  name: 'data',
+                  value: JSON.stringify({
+                    html: code.value.html,
+                    js: code.value.js,
+                    css: code.value.css,
+                    // eslint-disable-next-line @typescript-eslint/naming-convention
+                    js_external: code.value.jsLib.join(';'),
+                    // eslint-disable-next-line @typescript-eslint/naming-convention
+                    css_external: code.value.cssLib.join(';'),
+                    layout: code.value.codepenLayout,
+                    // eslint-disable-next-line @typescript-eslint/naming-convention
+                    html_pre_processor: codeType.value
+                      ? codeType.value.html[1]
+                      : 'none',
+                    // eslint-disable-next-line @typescript-eslint/naming-convention
+                    js_pre_processor: codeType.value
+                      ? codeType.value.js[1]
+                      : code.value.jsx
+                      ? 'babel'
+                      : 'none',
+                    // eslint-disable-next-line @typescript-eslint/naming-convention
+                    css_pre_processor: codeType.value
+                      ? codeType.value.css[1]
+                      : 'none',
+                    editors: code.value.codepenEditors,
+                  }),
+                }),
+                h(
+                  'button',
+                  {
+                    'type': 'submit',
+                    'class': 'codepen-button',
+                    'aria-label': 'Codepen',
+                    'data-balloon-pos': 'up',
+                  },
+                  h(CodePen)
+                ),
+              ]
+            )
+          : null,
+      ])
+
+    const container = (): VNode =>
+      h('div', {
+        ref: demoWrapper,
+        class: 'code-demo-container',
+        style: {
+          display: isLegal.value && loaded.value ? 'block' : 'none',
+        },
+      })
+
+    const codeWrapper = (): VNode =>
+      h(
+        'div',
+        { class: 'code-demo-code-wrapper', style: { height: height.value } },
+        h(
+          'div',
+          {
+            ref: codeContainer,
+            class: 'code-demo-codes',
+          },
+          slots.default?.()
+        )
+      )
     return (): VNode =>
       h('div', { class: 'code-demo-wrapper', id: props.id }, [
         loaded.value
@@ -128,144 +267,14 @@ export default defineComponent({
               },
               Loading
             ),
-        h('div', { class: 'code-demo-header' }, [
-          code.value.isLegal
-            ? h('button', {
-                class: ['toggle-button', isExpanded.value ? 'down' : 'right'],
-                onClick: () => {
-                  height.value = isExpanded.value
-                    ? '0'
-                    : `${codeContainer.value!.clientHeight + 13.8}px`
-                  isExpanded.value = !isExpanded.value
-                },
-              })
-            : null,
-          props.title
-            ? h('span', { class: 'title' }, decodeURIComponent(props.title))
-            : null,
 
-          code.value.isLegal && code.value.jsfiddle !== false
-            ? h(
-                'form',
-                {
-                  class: 'code-demo-jsfiddle',
-                  target: '_blank',
-                  action: 'https://jsfiddle.net/api/post/library/pure/',
-                  method: 'post',
-                },
-                [
-                  h('input', {
-                    type: 'hidden',
-                    name: 'html',
-                    value: code.value.html,
-                  }),
-                  h('input', {
-                    type: 'hidden',
-                    name: 'js',
-                    value: code.value.js,
-                  }),
-                  h('input', {
-                    type: 'hidden',
-                    name: 'css',
-                    value: code.value.css,
-                  }),
-                  h('input', { type: 'hidden', name: 'wrap', value: '1' }),
-                  h('input', { type: 'hidden', name: 'panel_js', value: '3' }),
-                  h('input', {
-                    type: 'hidden',
-                    name: 'resources',
-                    value: [...code.value.cssLib, ...code.value.jsLib].join(
-                      ','
-                    ),
-                  }),
-                  h(
-                    'button',
-                    {
-                      'type': 'submit',
-                      'class': 'jsfiddle-button',
-                      'aria-label': 'JSFiddle',
-                      'data-balloon-pos': 'up',
-                    },
-                    h(Jsfiddle)
-                  ),
-                ]
-              )
-            : null,
+        h(header),
 
-          !code.value.isLegal || code.value.codepen !== false
-            ? h(
-                'form',
-                {
-                  class: 'code-demo-codepen',
-                  target: '_blank',
-                  action: 'https://codepen.io/pen/define',
-                  method: 'post',
-                },
-                [
-                  h('input', {
-                    type: 'hidden',
-                    name: 'data',
-                    value: JSON.stringify({
-                      html: code.value.html,
-                      js: code.value.js,
-                      css: code.value.css,
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
-                      js_external: code.value.jsLib.join(';'),
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
-                      css_external: code.value.cssLib.join(';'),
-                      layout: code.value.codepenLayout,
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
-                      html_pre_processor: codeType.value
-                        ? codeType.value.html[1]
-                        : 'none',
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
-                      js_pre_processor: codeType.value
-                        ? codeType.value.js[1]
-                        : code.value.jsx
-                        ? 'babel'
-                        : 'none',
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
-                      css_pre_processor: codeType.value
-                        ? codeType.value.css[1]
-                        : 'none',
-                      editors: code.value.codepenEditors,
-                    }),
-                  }),
-                  h(
-                    'button',
-                    {
-                      'type': 'submit',
-                      'class': 'codepen-button',
-                      'aria-label': 'Codepen',
-                      'data-balloon-pos': 'up',
-                    },
-                    h(CodePen)
-                  ),
-                ]
-              )
-            : null,
-        ]),
+        h(container),
 
-        h('div', {
-          ref: demoWrapper,
-          class: 'code-demo-container',
-          style: {
-            display: isLegal.value && loaded.value ? 'block' : 'none',
-          },
-        }),
+        h(codeWrapper),
 
-        h(
-          'div',
-          { class: 'code-demo-code-wrapper', style: { height: height.value } },
-          h(
-            'div',
-            {
-              ref: codeContainer,
-              class: 'code-demo-codes',
-            },
-            slots.default?.()
-          )
-        ),
+        h(codeWrapper),
       ])
   },
 })
