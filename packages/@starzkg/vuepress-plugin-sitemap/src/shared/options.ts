@@ -1,10 +1,9 @@
-import type { PageData } from '@vuepress/core'
+import type { EnumChangefreq } from 'sitemap'
+import type { SitemapStreamOptions } from 'sitemap/dist/lib/sitemap-stream.js'
 
-export type DateFormatter = (
-  page: PageData & { lastUpdatedTime?: number }
-) => string
-
-/** Sitemap 配置选项 */
+/**
+ * Sitemap 配置选项
+ */
 export interface SitemapOptions {
   /**
    * 网站域名
@@ -13,11 +12,17 @@ export interface SitemapOptions {
    */
   hostname: string
   /**
+   * SiteMap 选项
+   *
+   * options for sitemap
+   */
+  options?: SitemapStreamOptions
+  /**
    * 需要额外包含的网址
    *
    * Extra urls to be included
    */
-  urls?: string[]
+  include?: string[]
   /**
    * 不被收录的页面
    *
@@ -31,7 +36,7 @@ export interface SitemapOptions {
    *
    * @default 'sitemap.xml'
    */
-  outFile?: string
+  filename?: string
   /**
    * 页面默认更新频率
    *
@@ -39,27 +44,5 @@ export interface SitemapOptions {
    *
    * @default "daily"
    */
-  changefreq?:
-    | 'always'
-    | 'hourly'
-    | 'daily'
-    | 'weekly'
-    | 'monthly'
-    | 'yearly'
-    | 'never'
-  /**
-   * 时间格式化器
-   *
-   * Date format function
-   */
-  dateFormatter?: DateFormatter
-  xslUrl?: string
-  /** XML namespaces to turn on - all by default */
-  xmlNameSpace?: {
-    news: boolean
-    video: boolean
-    xhtml: boolean
-    image: boolean
-    custom?: string[]
-  }
+  changefreq?: EnumChangefreq
 }

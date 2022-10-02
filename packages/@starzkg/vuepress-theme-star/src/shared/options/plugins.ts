@@ -69,7 +69,7 @@ export interface StarThemePluginsOptions {
    *
    * 网站地图
    */
-  sitemap?: SitemapOptions | boolean
+  sitemap?: SitemapOptions | false
 
   /**
    * Markdown 增强插件配置

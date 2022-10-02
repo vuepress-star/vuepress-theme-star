@@ -4,7 +4,7 @@ import { feedPlugin } from '@starzkg/vuepress-plugin-feed'
 import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
 import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
-// import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
+import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
 import type { Theme } from '@vuepress/core'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { gitPlugin } from '@vuepress/plugin-git'
@@ -123,7 +123,9 @@ export const starTheme = ({
         ? feedPlugin(themePlugins.feed)
         : [],
 
-      // themePlugins.sitemap !== false ? sitemapPlugin() : [],
+      themePlugins.feed !== undefined && themePlugins.sitemap !== false
+        ? sitemapPlugin(themePlugins.sitemap)
+        : [],
 
       copyCodePlugin({
         selector: '.theme-star-content div[class*="language-"] pre',

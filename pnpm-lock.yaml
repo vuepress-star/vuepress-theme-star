@@ -450,17 +450,17 @@ importers:
 
   packages/@starzkg/vuepress-plugin-sitemap:
     specifiers:
-      '@starzkg/vuepress-shared': workspace:*
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
+      '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
       sitemap: ^7.0.0
     dependencies:
-      '@starzkg/vuepress-shared': link:../vuepress-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
+      '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
       sitemap: 7.1.1
 
@@ -3859,9 +3859,6 @@ packages:
       '@vue/shared': 3.2.40
       vue: 3.2.40
 
-  /@vue/shared/3.2.37:
-    resolution: {integrity: sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==}
-
   /@vue/shared/3.2.40:
     resolution: {integrity: sha512-0PLQ6RUtZM0vO3teRfzGi4ltLUO5aO+kLgwh4Um3THSR03rpQWLTuRCkuO5A41ITzwdWeKdPHtSARuPkoo5pCQ==}
 
@@ -4164,7 +4161,7 @@ packages:
   /@vuepress/shared/2.0.0-beta.50:
     resolution: {integrity: sha512-o3/6ohstbcOygCz2qd7aOrkN1niW2QLbI8HyVALeBLGGFi8+lenFn3tcfS+nDZOaJeaax4TerV565d4sd3UjCQ==}
     dependencies:
-      '@vue/shared': 3.2.37
+      '@vue/shared': 3.2.40
 
   /@vuepress/theme-default/2.0.0-beta.50_sass-loader@13.0.2:
     resolution: {integrity: sha512-dCpCAzQbHXkoQdOedtm9sv7dR72T4UD7OwHzis9Wsjl7zn6TKf/TwOz4MgaJ8ay0UM7mjzg86i4bxBJdbCtliQ==}
