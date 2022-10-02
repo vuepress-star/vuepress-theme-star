@@ -1,17 +1,7 @@
 ---
-title: 外部引入
-icon: link
-cateogry: markdown
-tags:
-- markdown
+title: shields.io
 ---
-# 外部引入
-
-除了在 Markdown 内部使用新语法来增强内容外，你也可以使用 `<iframe>` 或 `<img>` 从外部引入链接来增强你的 Markdown 内容。
-
-<!-- more -->
-
-## shields.io
+# shields.io
 
 你可以使用 [shields.io](https://shields.io/) 生成大量的动态勋章，比如项目的 Stars，NPM 版本号，下载量等。
 
@@ -48,53 +38,4 @@ tags:
 
 详细的参数与使用请见 [首页](https://shields.io/)。
 
-:::
-
-
-## CodePen
-
-[CodePen](https://codepen.io/) 可以很方便的创建代码演示并嵌入。
-
-```html
-<iframe
-  height="265"
-  style="width: 100%;"
-  scrolling="no"
-  title="Solar System animation - Pure CSS"
-  src="https://codepen.io/kowlor/embed/ZYYQoy?height=265&theme-id=light&default-tab=css,result"
-  frameborder="no"
-  loading="lazy"
-  allowtransparency="true"
-  allowfullscreen="true"
->
-  See the Pen
-  <a href="https://codepen.io/kowlor/pen/ZYYQoy"
-    >Solar System animation - Pure CSS</a
-  >
-  by Malik Dellidj (<a href="https://codepen.io/kowlor">@kowlor</a>) on
-  <a href="https://codepen.io">CodePen</a>.
-</iframe>
-```
-
-<!-- markdownlint-disable MD033 -->
-
-<iframe height="265" style="width: 100%;" scrolling="no" title="Solar System animation - Pure CSS" src="https://codepen.io/kowlor/embed/ZYYQoy?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/kowlor/pen/ZYYQoy'>Solar System animation - Pure CSS</a> by Malik Dellidj
-  (<a href='https://codepen.io/kowlor'>@kowlor</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-
-## YouTobe
-
-<!-- markdownlint-disable MD033 -->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/t4P7oR-95-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-## Bilibili
-
-<!-- markdownlint-disable MD033 -->
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=815968268&bvid=BV1gG4y1x7QJ&cid=845042357&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-::: info
-我们认为对于各类网站内容的内嵌代码而且使用`<iframe>`标签引入会比开发新Markdown语法更加合适，同时也不必为这些代码做长久的兼容。
 :::
