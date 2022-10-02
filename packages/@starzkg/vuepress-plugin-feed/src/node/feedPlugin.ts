@@ -1,4 +1,4 @@
-import type { PluginFunction } from '@vuepress/core'
+import type { Plugin } from '@vuepress/core'
 import { removeEndingSlash, removeLeadingSlash } from '@vuepress/shared'
 import { logger } from '@vuepress/utils'
 import { Feed } from 'feed'
@@ -6,14 +6,10 @@ import type { FeedPluginOptions } from '../shared/index.js'
 import { outputFile } from './utils/index.js'
 
 export const feedPlugin =
-  (options: FeedPluginOptions): PluginFunction =>
+  (options: FeedPluginOptions = { hostname: 'localhost' }): Plugin =>
   (app) => {
     const plugin = {
       name: '@starkzg/vuepress-plugin-feed',
-    }
-
-    if (app.env.isDev) {
-      return plugin
     }
 
     if (!options.hostname) {
@@ -33,7 +29,7 @@ export const feedPlugin =
     return {
       name: '@starkzg/vuepress-plugin-feed',
 
-      onPrepared: async (app) => {
+      onGenerated: async (app) => {
         const locales = Object.assign(
           { '/': app.siteData },
           app.siteData.locales
