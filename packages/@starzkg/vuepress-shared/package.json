@@ -55,7 +55,7 @@
     "dayjs": "^1.11.5",
     "execa": "^5.1.1",
     "ora": "^5.4.1",
-    "vue": "^3.2.37",
+    "vue": "^3.2.40",
     "vue-router": "^4.1.4"
   },
   "devDependencies": {

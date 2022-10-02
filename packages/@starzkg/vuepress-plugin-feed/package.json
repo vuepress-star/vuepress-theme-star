@@ -45,7 +45,7 @@
     "@vuepress/plugin-git": "2.0.0-beta.50",
     "@vuepress/shared": "2.0.0-beta.50",
     "@vuepress/utils": "2.0.0-beta.50",
-    "vue": "^3.2.37",
+    "vue": "^3.2.40",
     "xml-js": "^1.6.11"
   },
   "publishConfig": {

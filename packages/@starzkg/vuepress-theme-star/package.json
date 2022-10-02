@@ -74,7 +74,7 @@
     "ts-debounce": "^3.0.0",
     "typed.js": "^2.0.12",
     "ua-parser-js": "^1.0.2",
-    "vue": "^3.2.37",
+    "vue": "^3.2.40",
     "vue-router": "^4.1.4",
     "vuepress-plugin-sass-palette": "2.0.0-beta.94"
   },
