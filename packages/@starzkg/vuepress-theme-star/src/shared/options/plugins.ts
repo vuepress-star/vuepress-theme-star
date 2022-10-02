@@ -1,4 +1,5 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
+import type { FeedPluginOptions } from '@starzkg/vuepress-plugin-feed'
 import type { MarkdownEnhancePluginOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
 import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap'
 
@@ -55,6 +56,13 @@ export interface StarThemePluginsOptions {
    * 版权信息
    */
   copyright?: CopyrightOptions | boolean
+
+  /**
+   * Feed
+   *
+   * Feed 订阅
+   */
+  feed?: FeedPluginOptions | false
 
   /**
    * Sitemap

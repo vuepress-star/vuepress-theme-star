@@ -1,5 +1,6 @@
 import { copyCodePlugin } from '@starzkg/vuepress-plugin-copy-code'
 import { copyrightPlugin } from '@starzkg/vuepress-plugin-copyright'
+import { feedPlugin } from '@starzkg/vuepress-plugin-feed'
 import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
 import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
@@ -117,6 +118,10 @@ export const starTheme = ({
       tocPlugin(),
 
       photoSwipePlugin(),
+
+      themePlugins.feed !== undefined && themePlugins.feed !== false
+        ? feedPlugin(themePlugins.feed)
+        : [],
 
       // themePlugins.sitemap !== false ? sitemapPlugin() : [],
 

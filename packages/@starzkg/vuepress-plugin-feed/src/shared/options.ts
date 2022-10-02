@@ -1,7 +1,10 @@
-import type { Page } from '@vuepress/core'
-import type { FeedChannelOption, FeedGetter } from './feed.js'
+import type { LocaleConfig } from '@vuepress/shared'
+import type { FeedOptions } from 'feed'
+import type { FeedFilter } from './filter.js'
+import type { FeedGetter } from './getter.js'
+import type { FeedSorter } from './sorter.js'
 
-export interface BaseFeedOptions {
+export interface FeedLocaleData {
   /**
    * Whether to output Atom syntax files.
    *
@@ -9,7 +12,7 @@ export interface BaseFeedOptions {
    *
    * @default false
    */
-  atom?: boolean
+  atom?: boolean | string
 
   /**
    * Whether to output JSON syntax files.
@@ -18,7 +21,7 @@ export interface BaseFeedOptions {
    *
    * @default false
    */
-  json?: boolean
+  json?: boolean | string
 
   /**
    * Whether to output RSS syntax files.
@@ -27,7 +30,12 @@ export interface BaseFeedOptions {
    *
    * @default false
    */
-  rss?: boolean
+  rss?: boolean | string
+
+  /**
+   * options for feed
+   */
+  options?: Partial<FeedOptions>
 
   /**
    * A large image/icon of the feed, probably used as banner.
@@ -66,79 +74,14 @@ export interface BaseFeedOptions {
    *
    * Feed 项目过滤器
    */
-  filter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
-  >(
-    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-  ) => boolean
+  filter?: FeedFilter
 
   /**
    * A custom sort function, used to sort feed items.
    *
    * Feed 项目排序器
    */
-  sorter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
-  >(
-    pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
-    pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-  ) => number
-
-  /**
-   * Options to init feed channel
-   *
-   * Feed 频道选项
-   */
-  channel?: Partial<FeedChannelOption>
-
-  /**
-   * Atom syntax output filename, relative to dest folder.
-   *
-   * Atom 格式输出路径，相对于输出路径。
-   *
-   * @default 'atom.xml'
-   */
-  atomOutputFilename?: string
-
-  /**
-   * JSON syntax output filename, relative to dest folder.
-   *
-   * JSON 格式输出路径，相对于输出路径。
-   *
-   * @default 'feed.json'
-   */
-  jsonOutputFilename?: string
-
-  /**
-   * RSS syntax output filename, relative to dest folder.
-   *
-   * RSS 格式输出路径，相对于输出路径。
-   *
-   * @default 'rss.xml'
-   */
-  rssOutputFilename?: string
+  sorter?: FeedSorter
 
   /**
    * Feed generation controller
@@ -152,7 +95,9 @@ export interface BaseFeedOptions {
   getter?: FeedGetter
 }
 
-export interface FeedOptions extends BaseFeedOptions {
+export declare type FeedLocaleConfig = LocaleConfig<FeedLocaleData>
+
+export declare type FeedPluginOptions = FeedLocaleData & {
   /**
    * Deploy hostname
    *
@@ -160,6 +105,8 @@ export interface FeedOptions extends BaseFeedOptions {
    */
   hostname: string
 
-  /** Locales for feed */
-  locales?: Record<string, BaseFeedOptions>
+  /**
+   *  Locales for feed
+   *  */
+  locales?: FeedLocaleConfig
 }

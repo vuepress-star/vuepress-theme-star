@@ -110,6 +110,12 @@ export default defineUserConfig({
       // only enable git plugin in production mode
       git: isProd,
       markdown: true,
+      feed: {
+        hostname: 'https://vuepress-star.shentuzhigang.cn',
+        atom: true,
+        json: true,
+        rss: true,
+      },
       sitemap: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
       },

@@ -47,6 +47,7 @@
     "@starzkg/vuepress-icons": "workspace:*",
     "@starzkg/vuepress-plugin-copy-code": "workspace:*",
     "@starzkg/vuepress-plugin-copyright": "workspace:*",
+    "@starzkg/vuepress-plugin-feed": "workspace:*",
     "@starzkg/vuepress-plugin-interaction-effect": "workspace:*",
     "@starzkg/vuepress-plugin-markdown-enhance": "workspace:*",
     "@starzkg/vuepress-plugin-photo-swipe": "workspace:*",

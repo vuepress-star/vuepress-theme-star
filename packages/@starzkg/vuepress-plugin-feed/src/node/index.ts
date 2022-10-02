@@ -1,6 +1,6 @@
-import { feedPlugin } from './plugin.js'
+import { feedPlugin } from './feedPlugin.js'
 
-export * from './plugin.js'
+export * from './feedPlugin.js'
 export * from '../shared/index.js'
 
 export default feedPlugin

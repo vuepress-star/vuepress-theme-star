@@ -237,23 +237,19 @@ importers:
 
   packages/@starzkg/vuepress-plugin-feed:
     specifiers:
-      '@starzkg/vuepress-shared': workspace:*
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      vue: ^3.2.40
-      xml-js: ^1.6.11
+      feed: ^4.2.2
     dependencies:
-      '@starzkg/vuepress-shared': link:../vuepress-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      vue: 3.2.40
-      xml-js: 1.6.11
+      feed: 4.2.2
 
   packages/@starzkg/vuepress-plugin-interaction-effect:
     specifiers:
@@ -567,6 +563,7 @@ importers:
       '@starzkg/vuepress-icons': workspace:*
       '@starzkg/vuepress-plugin-copy-code': workspace:*
       '@starzkg/vuepress-plugin-copyright': workspace:*
+      '@starzkg/vuepress-plugin-feed': workspace:*
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-markdown-enhance': workspace:*
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
@@ -602,6 +599,7 @@ importers:
       '@starzkg/vuepress-icons': link:../vuepress-icons
       '@starzkg/vuepress-plugin-copy-code': link:../vuepress-plugin-copy-code
       '@starzkg/vuepress-plugin-copyright': link:../vuepress-plugin-copyright
+      '@starzkg/vuepress-plugin-feed': link:../vuepress-plugin-feed
       '@starzkg/vuepress-plugin-interaction-effect': link:../vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-markdown-enhance': link:../vuepress-plugin-markdown-enhance
       '@starzkg/vuepress-plugin-photo-swipe': link:../vuepress-plugin-photo-swipe
@@ -8307,6 +8305,13 @@ packages:
     engines: {node: '>=0.8.0'}
     dependencies:
       websocket-driver: 0.7.4
+
+  /feed/4.2.2:
+    resolution: {integrity: sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==}
+    engines: {node: '>=0.4.0'}
+    dependencies:
+      xml-js: 1.6.11
+    dev: false
 
   /figures/2.0.0:
     resolution: {integrity: sha512-Oa2M9atig69ZkfwiApY8F2Yy+tzMbazyvqv21R0NsSC8floSOC09BbT1ITWAdoMGQvJ/aZnR1KMwdx9tvHnTNA==}
