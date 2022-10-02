@@ -4,6 +4,7 @@ import { feedPlugin } from '@starzkg/vuepress-plugin-feed'
 import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
 import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
+import { pwaPlugin } from '@starzkg/vuepress-plugin-pwa'
 import { seoPlugin } from '@starzkg/vuepress-plugin-seo'
 import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
 import type { Theme } from '@vuepress/core'
@@ -122,6 +123,10 @@ export const starTheme = ({
 
       themePlugins.feed !== undefined && themePlugins.feed !== false
         ? feedPlugin(themePlugins.feed)
+        : [],
+
+      themePlugins.pwa !== undefined && themePlugins.pwa !== false
+        ? pwaPlugin(themePlugins.pwa)
         : [],
 
       themePlugins.seo !== undefined && themePlugins.seo !== false

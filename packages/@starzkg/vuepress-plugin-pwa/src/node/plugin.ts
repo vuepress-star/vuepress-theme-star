@@ -30,7 +30,7 @@ export const pwaPlugin =
     useSassPalettePlugin(app, { id: 'star' })
 
     return {
-      name: 'vuepress-plugin-pwa2',
+      name: '@starzkg/vuepress-plugin-pwa',
 
       define: () => ({
         PWA_LOCALES: getLocales({

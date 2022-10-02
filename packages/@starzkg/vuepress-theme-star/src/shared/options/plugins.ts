@@ -1,6 +1,7 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
 import type { FeedPluginOptions } from '@starzkg/vuepress-plugin-feed'
 import type { MarkdownEnhancePluginOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
+import type { PWAOptions } from '@starzkg/vuepress-plugin-pwa'
 import type { SeoPluginOptions } from '@starzkg/vuepress-plugin-seo'
 import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap'
 
@@ -64,6 +65,13 @@ export interface StarThemePluginsOptions {
    * Feed 订阅
    */
   feed?: FeedPluginOptions | false
+
+  /**
+   * PWA
+   *
+   * PWA 增强
+   */
+  pwa?: PWAOptions | false
 
   /**
    * Seo

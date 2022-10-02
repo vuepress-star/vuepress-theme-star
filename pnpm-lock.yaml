@@ -565,6 +565,7 @@ importers:
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-markdown-enhance': workspace:*
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
+      '@starzkg/vuepress-plugin-pwa': workspace:*
       '@starzkg/vuepress-plugin-seo': workspace:*
       '@starzkg/vuepress-plugin-sitemap': workspace:*
       '@starzkg/vuepress-shared': workspace:*
@@ -602,6 +603,7 @@ importers:
       '@starzkg/vuepress-plugin-interaction-effect': link:../vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-markdown-enhance': link:../vuepress-plugin-markdown-enhance
       '@starzkg/vuepress-plugin-photo-swipe': link:../vuepress-plugin-photo-swipe
+      '@starzkg/vuepress-plugin-pwa': link:../vuepress-plugin-pwa
       '@starzkg/vuepress-plugin-seo': link:../vuepress-plugin-seo
       '@starzkg/vuepress-plugin-sitemap': link:../vuepress-plugin-sitemap
       '@starzkg/vuepress-shared': link:../vuepress-shared
