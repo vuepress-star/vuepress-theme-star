@@ -38,6 +38,9 @@
       "path": "./packages/@starzkg/vuepress-plugin-feed/tsconfig.build.json"
     },
     {
+      "path": "./packages/@starzkg/vuepress-plugin-seo/tsconfig.build.json"
+    },
+    {
       "path": "./packages/@starzkg/vuepress-plugin-sitemap/tsconfig.build.json"
     },
     {

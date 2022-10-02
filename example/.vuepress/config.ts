@@ -116,6 +116,9 @@ export default defineUserConfig({
         json: true,
         rss: true,
       },
+      seo: {
+        hostname: 'https://vuepress-star.shentuzhigang.cn',
+      },
       sitemap: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
       },

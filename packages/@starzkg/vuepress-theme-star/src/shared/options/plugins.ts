@@ -1,6 +1,7 @@
 import type { CopyrightOptions } from '@starzkg/vuepress-plugin-copyright'
 import type { FeedPluginOptions } from '@starzkg/vuepress-plugin-feed'
 import type { MarkdownEnhancePluginOptions } from '@starzkg/vuepress-plugin-markdown-enhance'
+import type { SeoPluginOptions } from '@starzkg/vuepress-plugin-seo'
 import type { SitemapOptions } from '@starzkg/vuepress-plugin-sitemap'
 
 export interface StarThemePluginsOptions {
@@ -63,6 +64,13 @@ export interface StarThemePluginsOptions {
    * Feed 订阅
    */
   feed?: FeedPluginOptions | false
+
+  /**
+   * Seo
+   *
+   * Seo 增强
+   */
+  seo?: SeoPluginOptions | false
 
   /**
    * Sitemap

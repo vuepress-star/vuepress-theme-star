@@ -1,17 +1,28 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import { getDate, Logger } from '@starzkg/vuepress-shared'
-import type { AppDir } from '@vuepress/core'
-import { fs } from '@vuepress/utils'
-import type { PageSeoInfo, SeoContent, SeoOptions } from '../shared/index.js'
+import type { App, AppDir } from '@vuepress/core'
+import { resolvePagePermalink } from '@vuepress/core'
+import { isArray } from '@vuepress/shared'
+import { fs, withSpinner } from '@vuepress/utils'
+import type { SeoContent, SeoPage, SeoPluginOptions } from '../shared/index.js'
+import { logger } from './logger.js'
 import { getLocales, resolveUrl } from './utils.js'
 
-const logger = new Logger('Seo')
-
-export const generateSeo = (
-  options: SeoOptions,
-  base: string,
-  { page, app, permalink }: PageSeoInfo
+export const resolveSeo = (
+  app: App,
+  page: SeoPage,
+  options: SeoPluginOptions
 ): SeoContent => {
+  const { base } = app.options
+
+  const { frontmatter } = page
+
+  const permalink = resolvePagePermalink({
+    app,
+    frontmatter,
+    slug: page.slug,
+    date: page.date,
+    pathInferred: page.pathInferred,
+    pathLocale: page.pathLocale,
+  })
   const {
     frontmatter: {
       author: pageAuthor,
@@ -23,7 +34,7 @@ export const generateSeo = (
       tags = tag as string[],
     },
     git = {},
-  } = page
+  } = page.data
   const { siteData } = app
   const locales = getLocales(siteData.locales)
 
@@ -45,13 +56,8 @@ export const generateSeo = (
     ? [tag]
     : []
 
-  let publishTime = ''
-
-  if (date instanceof Date) publishTime = new Date(date).toISOString()
-  else if (date) {
-    const dateInfo = getDate(date)
-    if (dateInfo && dateInfo.value) publishTime = dateInfo.value.toISOString()
-  }
+  const publishTime =
+    date instanceof Date ? new Date(date).toISOString() : date || ''
 
   return {
     'og:url': resolveUrl(base, permalink || page.path),
@@ -78,24 +84,66 @@ export const generateSeo = (
   }
 }
 
-export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
-  logger.load('Generating robots.txt')
-  const publicPath = dir.public('robots.txt')
+export const appendSeo = (
+  page: SeoPage,
+  content: SeoContent,
+  options: SeoPluginOptions
+): void => {
+  page.frontmatter.head = page.frontmatter.head || []
 
-  let content = fs.existsSync(publicPath)
-    ? await fs.readFile(publicPath, { encoding: 'utf8' })
-    : ''
+  const appendMeta = ({ name, content }): void => {
+    page.frontmatter.head?.push(['meta', { name, content }])
+  }
 
-  if (content && !content.includes('User-agent')) {
-    logger.error()
-    logger.update('robots.txt seems invalid!')
-  } else {
-    content += '\nUser-agent:*\nDisallow:\n'
-
-    await fs.writeFile(dir.dest('robots.txt'), content, {
-      flag: 'w',
+  for (const property in content) {
+    if (isArray(content[property])) {
+      content[property].forEach((tag: string) =>
+        appendMeta({ name: property, content: tag })
+      )
+    } else {
+      appendMeta({
+        name: property,
+        content: content[property] as string,
+      })
+    }
+  }
+  if (options.restrictions)
+    appendMeta({
+      name: 'og:restrictions:age',
+      content: options.restrictions,
     })
 
-    logger.succeed()
-  }
+  if (options.twitterID)
+    appendMeta({ name: 'twitter:creator', content: options.twitterID })
+}
+
+export const generateSeo = (
+  app: App,
+  page: SeoPage,
+  options: SeoPluginOptions
+): void => {
+  const metaContext: SeoContent = resolveSeo(app, page, options)
+  appendSeo(page, metaContext, options)
+  if (options.extendsSeo) options.extendsSeo(app, page)
+}
+
+export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
+  await withSpinner('Generating robots.txt')(async () => {
+    const publicPath = dir.public('robots.txt')
+
+    let content = fs.existsSync(publicPath)
+      ? await fs.readFile(publicPath, { encoding: 'utf8' })
+      : ''
+
+    if (content && !content.includes('User-agent')) {
+      logger.error()
+      logger.info('robots.txt seems invalid!')
+    } else {
+      content += '\nUser-agent:*\nDisallow:\n'
+
+      await fs.writeFile(dir.dest('robots.txt'), content, {
+        flag: 'w',
+      })
+    }
+  })
 }
