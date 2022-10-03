@@ -1,5 +1,6 @@
 import { analyticsPlugin } from '@starzkg/vuepress-plugin-analytics'
 import { elementPlusPlugin } from '@starzkg/vuepress-plugin-element-plus'
+import { giscusCommentPlugin } from '@starzkg/vuepress-plugin-giscus-comment'
 import { live2dWidgetPlugin } from '@starzkg/vuepress-plugin-live2d-widget'
 import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
@@ -192,6 +193,12 @@ export default defineUserConfig({
         webId: process.env.DOCS_CNZZ_WEB_ID ?? '',
         spa: true,
       },
+    }),
+    giscusCommentPlugin({
+      repo: 'vuepress-star/vuepress-star',
+      repoId: 'R_kgDOGlaj0w',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOGlaj084CRwyw',
     }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),

@@ -109,6 +109,8 @@ onUnmounted(() => {
                 <PageMeta />
 
                 <PageNav />
+
+                <Comment />
               </footer>
               <slot name="bottom" />
             </div>

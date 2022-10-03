@@ -64,6 +64,29 @@ export default defineClientConfig({
       return null
     })
 
+    // compat with
+    // @starzkg/vuepress-plugin-giscus-comment
+    // @starzkg/vuepress-plugin-twikoo-comment
+    // @starzkg/vuepress-plugin-waline-comment
+    app.component('Comment', () => {
+      const CommentComponent =
+        app.component('GiscusComment') ||
+        app.component('TwikooComment') ||
+        app.component('WalineComment')
+      if (CommentComponent) {
+        return h(
+          'div',
+          {
+            class: {
+              'comment-wrapper': true,
+            },
+          },
+          h(CommentComponent)
+        )
+      }
+      return null
+    })
+
     // handle scrollBehavior with transition
     const scrollBehavior = router.options.scrollBehavior!
     router.options.scrollBehavior = async (...args) => {
