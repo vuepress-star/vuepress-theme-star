@@ -108,7 +108,7 @@
     min-width: min(60vw, var(--content-width));
     max-width: var(--content-width);
     margin: 0 auto;
-    background: #fff;
+    background: var(--c-bg);
     border-radius: 2px;
     position: relative;
     overflow: hidden;
@@ -169,7 +169,6 @@
   }
 
   .profile-card {
-    background: #fff;
     border-radius: 2px;
     padding: 1rem 0;
     margin-bottom: 1.5rem;

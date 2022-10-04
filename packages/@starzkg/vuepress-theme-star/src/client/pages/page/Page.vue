@@ -10,6 +10,7 @@ import Sidebar from '@theme/Sidebar.vue'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import {
   toggleSidebar,
+  useDarkMode,
   useScrollPromise,
   useThemeLocaleData,
 } from '../../composables/index.js'
@@ -21,6 +22,8 @@ const themeLocale = useThemeLocaleData()
 
 // navbar
 const shouldShowNavbar = computed(() => themeLocale.value.navbar !== false)
+
+const darkMode = useDarkMode()
 
 const scrollX = ref(0)
 const scrollY = ref(0)
@@ -110,7 +113,7 @@ onUnmounted(() => {
 
                 <PageNav />
 
-                <Comment />
+                <Comment :dark-mode="darkMode" />
               </footer>
               <slot name="bottom" />
             </div>

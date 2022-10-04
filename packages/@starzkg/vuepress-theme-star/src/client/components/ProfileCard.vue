@@ -121,9 +121,7 @@ const links = computed(() => {
 
 <style scoped lang="scss">
 .profile-card {
-  &.page {
-    background: var(--bgcolor);
-  }
+  background: var(--c-bg);
 
   .author {
     padding: 8px 0;

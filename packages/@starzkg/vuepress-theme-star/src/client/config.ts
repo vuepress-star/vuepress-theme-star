@@ -1,7 +1,7 @@
 import * as Icons from '@starzkg/vuepress-icons'
 import * as SocialIcons from '@starzkg/vuepress-social-icons'
 import { defineClientConfig } from '@vuepress/client'
-import { h, onMounted } from 'vue'
+import { defineComponent, FunctionalComponent, h, onMounted, VNode } from 'vue'
 import Badge from './components/Badge.vue'
 import BreadCrumb from './components/BreadCrumb.js'
 import ExternalLink from './components/ExternalLink.vue'
@@ -68,24 +68,35 @@ export default defineClientConfig({
     // @starzkg/vuepress-plugin-giscus-comment
     // @starzkg/vuepress-plugin-twikoo-comment
     // @starzkg/vuepress-plugin-waline-comment
-    app.component('Comment', () => {
-      const CommentComponent =
-        app.component('GiscusComment') ||
-        app.component('TwikooComment') ||
-        app.component('WalineComment')
-      if (CommentComponent) {
-        return h(
-          'div',
-          {
-            class: {
-              'comment-wrapper': true,
-            },
-          },
-          h(CommentComponent)
-        )
-      }
-      return null
-    })
+    app.component(
+      'Comment',
+      defineComponent({
+        name: 'Comment',
+        props: {
+          darkMode: Boolean,
+        },
+        setup: (props) => {
+          const CommentComponent: FunctionalComponent = (props) => {
+            const comment =
+              app.component('GiscusComment') ||
+              app.component('TwikooComment') ||
+              app.component('WalineComment')
+            return comment ? h(h(comment), props) : null
+          }
+
+          return (): VNode | null =>
+            h(
+              'div',
+              {
+                class: {
+                  'comment-wrapper': true,
+                },
+              },
+              h(CommentComponent, { darkmode: props.darkMode })
+            )
+        },
+      })
+    )
 
     router.beforeEach((to, from, next) => {
       // same path no route
