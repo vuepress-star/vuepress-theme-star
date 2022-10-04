@@ -1,0 +1,24 @@
+.page-info .page-type {
+  text-align: center;
+  padding: 0 0.2rem;
+
+  > span {
+    line-height: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  &.origin {
+    color: #e33e33;
+    background: rgba(227, 62, 51, 0.2);
+  }
+
+  &.reprint {
+    color: #67bb55;
+    background-color: rgba(103, 187, 85, 0.2);
+  }
+
+  &.translation {
+    color: #277ccc;
+    background-color: rgba(39, 124, 85, 0.2);
+  }
+}

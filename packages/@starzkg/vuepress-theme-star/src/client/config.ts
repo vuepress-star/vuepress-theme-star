@@ -1,7 +1,7 @@
 import * as Icons from '@starzkg/vuepress-icons'
 import * as SocialIcons from '@starzkg/vuepress-social-icons'
 import { defineClientConfig } from '@vuepress/client'
-import { h } from 'vue'
+import { h, onMounted } from 'vue'
 import Badge from './components/Badge.vue'
 import BreadCrumb from './components/BreadCrumb.js'
 import ExternalLink from './components/ExternalLink.vue'
@@ -87,6 +87,13 @@ export default defineClientConfig({
       return null
     })
 
+    router.beforeEach((to, from, next) => {
+      // same path no route
+      if (to.path !== from.path) {
+        next()
+      }
+    })
+
     // handle scrollBehavior with transition
     const scrollBehavior = router.options.scrollBehavior!
     router.options.scrollBehavior = async (...args) => {
@@ -101,6 +108,17 @@ export default defineClientConfig({
     setupSidebarItems()
     setupNavbar()
     setupSidebar()
+
+    onMounted(() => {
+      console.log(
+        '%c vuepress-theme-star %c by starzkg',
+        'font-weight: bold;color: white;display: inline-block;text-align: center;height: 1rem;line-height: 1rem;background-color: rgba(255,202,212,.8);padding: 10px;border-bottom-left-radius: 13px;border-top-left-radius: 12px;',
+        'font-weight: bold;color: white;display: inline-block;text-align: center;height: 1rem;line-height: 1rem;background-color: rgba(178,247,239,.85);padding: 10px;border-bottom-right-radius: 13px;border-top-right-radius: 12px;'
+      )
+      console.log(
+        '想要了解更多，请点击：https://github.com/vuepress-star/vuepress-theme-star'
+      )
+    })
   },
 
   rootComponents: [Suspension],

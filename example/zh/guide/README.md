@@ -1,9 +1,14 @@
 ---
 title: 指南
+icon: guide
+author: Starzkg
+date: 2021/01/01
 categories:
   - 指南
 tags:
   - 指南
+  - 主题
+  - Markdown
 ---
 # 指南
 

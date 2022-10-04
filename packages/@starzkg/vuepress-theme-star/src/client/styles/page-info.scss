@@ -53,12 +53,15 @@
     flex-wrap: wrap;
     padding: 0 1rem;
 
-    > * {
+    .page__meta {
       display: flex;
       flex-shrink: 0;
       align-items: center;
-      margin-right: 0.5rem;
       line-height: 1rem;
+
+      + .page__meta {
+        margin-left: 0.5rem;
+      }
     }
   }
 

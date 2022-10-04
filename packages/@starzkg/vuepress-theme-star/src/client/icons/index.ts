@@ -1,6 +1,6 @@
 export { default as Author } from './Author.vue'
 export { default as Calendar } from './Calendar.vue'
-export { default as Category } from './Tag.vue'
+export { default as Category } from './Category.vue'
 export { default as Tag } from './Tag.vue'
 export { default as Time } from './Time.vue'
 export { default as Word } from './Word.vue'

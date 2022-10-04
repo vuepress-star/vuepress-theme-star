@@ -1,6 +1,7 @@
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
 import type { NavbarConfig, SidebarConfig } from '../nav.js'
+import type { ArticleOptions } from './article.js'
 import type { ProfileOptions } from './profile.js'
 
 export type StarThemeLocaleOptions = StarThemeData
@@ -248,6 +249,13 @@ export interface StarThemeLocaleData extends LocaleData {
    * fullscreen
    */
   fullscreen?: boolean
+
+  /**
+   * 文章配置
+   *
+   * Article Config
+   */
+  article?: ArticleOptions
 
   /**
    * 个人信息配置

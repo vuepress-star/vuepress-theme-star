@@ -1,15 +1,14 @@
 <script lang="ts" setup>
-import { usePageFrontmatter } from '@vuepress/client'
-import { computed, ComputedRef, ref, toRef } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { usePageFrontmatter, useRouteLocale } from '@vuepress/client'
+import { computed, ComputedRef } from 'vue'
+import { useThemeLocaleData } from '../composables/index.js'
 import { Tag } from '../icons'
 interface TagPageFrontmatter {
   tags?: string[] | string
 }
 
-const route = useRoute()
-const router = useRouter()
-
+const routeLocale = useRouteLocale()
+const themeLocale = useThemeLocaleData()
 const frontmatter = usePageFrontmatter<TagPageFrontmatter>()
 
 const useTag = (): ComputedRef<null | string[]> => {
@@ -25,12 +24,6 @@ const useTag = (): ComputedRef<null | string[]> => {
     return null
   })
 }
-
-const navigate = (tagName: string): void => {
-  const path = `/tag/${encodeURI(tagName)}/`
-  if (route.path !== path) router.push(path)
-}
-
 const tags = useTag()
 </script>
 <template>
@@ -47,9 +40,16 @@ const tags = useTag()
         :key="tag"
         :class="['tag', `tag${index}`]"
       >
-        <span>{{ tag }}</span>
+        <RouterLink
+          v-if="themeLocale.article?.tag"
+          :to="`${routeLocale}tag/${encodeURI(category)}`"
+          disabled
+        >
+          {{ tag }}
+        </RouterLink>
+        <span v-else>{{ tag }}</span>
       </li>
     </ul>
-    <meta property="author" :content="tags.join(', ')" />
+    <meta property="keywords" :content="tags.join(', ')" />
   </span>
 </template>

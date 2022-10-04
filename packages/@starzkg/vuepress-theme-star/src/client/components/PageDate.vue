@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { usePageData, usePageFrontmatter } from '@vuepress/client'
+import { ClientOnly, usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, ComputedRef } from 'vue'
 import type {
-  StarThemeNormalPageFrontmatter,
+  StarThemeArticlePageFrontmatter,
   StarThemePageData,
 } from '../../shared/index.js'
 import { useThemeLocaleData } from '../composables/index.js'
@@ -10,24 +10,23 @@ import { Calendar } from '../icons'
 
 interface DatePageFrontmatter {
   date?: string
-  createdTime?: string
-  updatedTime?: string
+  dateFormat: string
+  createdTime?: boolean
+  updatedTime?: boolean
 }
 
 const frontmatter = usePageFrontmatter<DatePageFrontmatter>()
-
-const themeLocale = useThemeLocaleData()
 
 const useCreatedTime = (): ComputedRef<null | string> => {
   const page = usePageData<StarThemePageData>()
 
   return computed(() => {
-    if (frontmatter.value.date) {
-      return new Date(frontmatter.value.date).toLocaleString()
-    }
+    const showCreatedTime = frontmatter.value.createdTime ?? true
 
-    if (frontmatter.value.createdTime) {
-      return new Date(frontmatter.value.createdTime).toLocaleString()
+    if (!showCreatedTime) return null
+
+    if (frontmatter.value.date) {
+      return frontmatter.value.date
     }
 
     if (!page.value.git?.createdTime) return null
@@ -41,7 +40,7 @@ const useCreatedTime = (): ComputedRef<null | string> => {
 const useUpdatedTime = (): ComputedRef<null | string> => {
   const themeLocale = useThemeLocaleData()
   const page = usePageData<StarThemePageData>()
-  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
 
   return computed(() => {
     const showLastUpdated =
@@ -61,9 +60,13 @@ const createdTime = useCreatedTime()
 
 const updatedTime = useUpdatedTime()
 
+const date = computed(() => {
+  return updatedTime.value || createdTime.value
+})
+
 const ariaLabel = computed(() => {
   if (updatedTime.value) {
-    return themeLocale.value.lastUpdatedText + updatedTime.value
+    return '创建于' + createdTime.value
   }
   return '日期'
 })
@@ -71,19 +74,19 @@ const ariaLabel = computed(() => {
 
 <template>
   <span
-    v-if="createdTime"
+    v-if="date"
     class="page-date"
     :aria-label="ariaLabel"
     data-balloon-pos="down"
   >
     <Calendar />
-    <span>{{ createdTime }}</span>
-    <meta
-      v-if="createdTime"
-      property="create-date"
-      :content="createdTime || ''"
-    />
+    <span>{{ date }}</span>
     <ClientOnly>
+      <meta
+        v-if="createdTime"
+        property="create-date"
+        :content="createdTime || ''"
+      />
       <meta
         v-if="updatedTime"
         property="update-date"

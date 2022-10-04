@@ -1,15 +1,14 @@
 <script lang="ts" setup>
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter, useRouteLocale } from '@vuepress/client'
 import { computed, ComputedRef } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useThemeLocaleData } from '../composables/index.js'
 import { Category } from '../icons'
 interface CategoryPageFrontmatter {
   categories?: string[] | string
 }
 
-const route = useRoute()
-const router = useRouter()
-
+const routeLocale = useRouteLocale()
+const themeLocale = useThemeLocaleData()
 const frontmatter = usePageFrontmatter<CategoryPageFrontmatter>()
 
 const useCategory = (): ComputedRef<null | string[]> => {
@@ -19,18 +18,11 @@ const useCategory = (): ComputedRef<null | string[]> => {
     }
     if (Array.isArray(frontmatter.value.categories)) {
       return frontmatter.value.categories
-    } else if (typeof frontmatter.value.categories === 'string') {
+    } else {
       return frontmatter.value.categories.split(',')
     }
-    return null
   })
 }
-
-const navigate = (categoryName: string): void => {
-  const path = `/category/${encodeURI(categoryName)}/`
-  if (route.path !== path) router.push(path)
-}
-
 const categories = useCategory()
 </script>
 <template>
@@ -47,9 +39,16 @@ const categories = useCategory()
         :key="category"
         :class="['category', `category${index}`]"
       >
-        <span>{{ category }}</span>
+        <RouterLink
+          v-if="themeLocale.article?.category"
+          :to="`${routeLocale}category/${encodeURI(category)}`"
+          disabled
+        >
+          # {{ category }}
+        </RouterLink>
+        <span v-else># {{ category }}</span>
       </li>
     </ul>
-    <meta property="author" :content="categories.join(', ')" />
+    <meta property="articleSection" :content="categories.join(', ')" />
   </span>
 </template>

@@ -1,53 +1,25 @@
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import type { GitData } from '@vuepress/plugin-git'
-import { computed, ComputedRef } from 'vue'
-import type {
-  StarThemeNormalPageFrontmatter,
-  StarThemePageData,
-} from '../../shared/index.js'
-import { useThemeLocaleData } from '../composables/index.js'
+import { computed } from 'vue'
+import type { StarThemePageData } from '../../shared/index.js'
 import { Author } from '../icons'
 
 interface AuthorPageFrontmatter {
-  author: string[] | string
-}
-
-interface AuthorPageData {
-  author: string[] | string
-  git?: GitData
+  author?: string[] | string
 }
 
 const frontmatter = usePageFrontmatter<AuthorPageFrontmatter>()
-const page = usePageData<AuthorPageData>()
-
-const useContributors = (): ComputedRef<
-  null | Required<StarThemePageData['git']>['contributors']
-> => {
-  const themeLocale = useThemeLocaleData()
-  const page = usePageData<StarThemePageData>()
-  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
-
-  return computed(() => {
-    const showContributors =
-      frontmatter.value.contributors ?? themeLocale.value.contributors ?? true
-
-    if (!showContributors) return null
-
-    return page.value.git?.contributors ?? null
-  })
-}
+const page = usePageData<StarThemePageData>()
 
 const author = computed(() => {
   const author = frontmatter.value.author || page.value.author
 
   if (Array.isArray(author)) {
-    return author
+    return author.map((item) => (typeof item === 'string' ? item : item.name))
   } else if (typeof author === 'string') {
     return author.split(',')
-  } else if (author === undefined) {
-    const contributors = useContributors()
-    return contributors.value?.map((item) => item.name)
+  } else if (typeof author === 'object') {
+    return author.name
   }
   return []
 })

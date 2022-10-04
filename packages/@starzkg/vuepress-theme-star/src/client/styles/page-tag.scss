@@ -17,16 +17,24 @@
     position: relative;
     vertical-align: middle;
     min-width: 1.5em;
-    margin: 0 0.2em;
-    padding: 0 0.2em;
-    border-width: 0.5px;
-    border-style: solid;
-    border-radius: 0.5em;
-    background: #f8f8f8;
-    font-size: 0.75em;
+    padding: 0 0.875rem;
+    border: 0;
+    margin-right: -0.5rem;
+    line-height: 1rem;
+    font-size: 0.5rem;
     text-align: center;
     overflow: hidden;
-    transition: all 0.2s;
+    transition: background-color var(--color-transition),
+      color var(--color-transition);
+
+    + .tag {
+      margin-left: -0.5rem;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0.125rem;
+    }
 
     #{star-config.$dark-selector} & {
       background: #222;
@@ -43,23 +51,69 @@
     $index: list.index(star-config.$colors, $color) - 1;
 
     .tag#{$index} {
-      & {
-        color: color.scale($color, $lightness: 10%);
-        border-color: color.scale($color, $lightness: 10%);
-
-        &.clickable:hover {
-          color: $color;
-          border-color: $color;
-        }
-      }
+      background: color.scale($color, $lightness: 90%);
+      background: linear-gradient(
+            135deg,
+            transparent 0.5rem,
+            color.scale($color, $lightness: 90%) 0
+          )
+          top,
+        linear-gradient(
+            45deg,
+            transparent 0.5rem,
+            color.scale($color, $lightness: 90%) 0
+          )
+          bottom;
+      background-size: 100% 52% !important;
+      background-repeat: no-repeat !important;
+      color: color.scale($color, $lightness: 20%);
 
       #{star-config.$dark-selector} & {
+        background: color.scale($color, $lightness: -75%);
+        background: linear-gradient(
+              135deg,
+              transparent 0.5rem,
+              color.scale($color, $lightness: -75%) 0
+            )
+            top,
+          linear-gradient(
+              45deg,
+              transparent 0.5rem,
+              color.scale($color, $lightness: -75%) 0
+            )
+            bottom;
         color: color.scale($color, $lightness: -10%);
-        border-color: color.scale($color, $lightness: - 10%);
+      }
 
-        &.clickable:hover {
-          color: $color;
-          border-color: $color;
+      &.clickable:hover {
+        background: color.scale($color, $lightness: 75%);
+        background: linear-gradient(
+              135deg,
+              transparent 0.5rem,
+              color.scale($color, $lightness: 75%) 0
+            )
+            top,
+          linear-gradient(
+              45deg,
+              transparent 0.5rem,
+              color.scale($color, $lightness: 75%) 0
+            )
+            bottom;
+
+        #{star-config.$dark-selector} & {
+          background: color.scale($color, $lightness: -60%);
+          background: linear-gradient(
+                135deg,
+                transparent 0.5rem,
+                color.scale($color, $lightness: -60%) 0
+              )
+              top,
+            linear-gradient(
+                45deg,
+                transparent 0.5rem,
+                color.scale($color, $lightness: -60%) 0
+              )
+              bottom;
         }
       }
     }

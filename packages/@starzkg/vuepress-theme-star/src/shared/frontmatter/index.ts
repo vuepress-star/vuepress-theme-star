@@ -1,3 +1,3 @@
 export * from './frontmatter.js'
-export * from './normal.js'
+export * from './article.js'
 export * from './home.js'

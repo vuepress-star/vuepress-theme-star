@@ -5,7 +5,7 @@ import { useIconPrefix } from '../composables/index.js'
 
 interface PageTitleFrontmatter {
   title: string
-  icon: string
+  icon?: string
 }
 
 export default defineComponent({

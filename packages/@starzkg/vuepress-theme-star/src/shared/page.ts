@@ -1,7 +1,8 @@
-import type { GitPluginPageData } from '@vuepress/plugin-git'
+import type { GitData } from '@vuepress/plugin-git'
+import type { AuthorData } from './author.js'
 import type { BreadcrumbData } from './breadcrumb.js'
 
-export interface StarThemePageData extends GitPluginPageData {
+export interface StarThemePageData {
   /**
    * relative file path.
    */
@@ -12,10 +13,24 @@ export interface StarThemePageData extends GitPluginPageData {
   content: string
   /**
    * length of page.
+   */
+  length: number
+  /**
+   * Git data
+   */
+  git: GitData
+  /**
+   * author
+   *
+   * 作者
+   */
+  author: AuthorData
+  /**
+   * words of content.
    *
    * 字数
    */
-  length: number
+  words: number
   /**
    * reading time.
    *
@@ -27,5 +42,5 @@ export interface StarThemePageData extends GitPluginPageData {
    *
    * 面包屑
    */
-  breadcrumb: BreadcrumbData[]
+  breadcrumb: BreadcrumbData
 }

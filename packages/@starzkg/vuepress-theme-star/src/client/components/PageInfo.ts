@@ -6,6 +6,7 @@ import PageDate from './PageDate.vue'
 import PageReadingTime from './PageReadingTime.vue'
 import PageTag from './PageTag.vue'
 import PageTitle from './PageTitle.js'
+import PageType from './PageType.vue'
 import PageView from './PageView.vue'
 import PageWord from './PageWord.vue'
 
@@ -18,6 +19,7 @@ export interface PageInfoFrontmatter {
  * Type of page infomation
  */
 export type PageInfoType =
+  | 'Type'
   | 'Title'
   | 'Author'
   | 'Category'
@@ -37,6 +39,7 @@ export default defineComponent({
     PageCategory,
     PageTag,
     PageReadingTime,
+    PageType,
     PageView,
     PageWord,
   },
@@ -50,6 +53,7 @@ export default defineComponent({
         h('div', { class: 'page-metas' }, [
           (
             frontmatter.value.pageInfo || [
+              'Type',
               'Author',
               'View',
               'Date',
@@ -58,7 +62,9 @@ export default defineComponent({
               'Word',
               'ReadingTime',
             ]
-          ).map((item) => h(resolveComponent(`Page${item}`))),
+          ).map((item) =>
+            h(resolveComponent(`Page${item}`), { class: 'page__meta' })
+          ),
         ]),
       ])
   },

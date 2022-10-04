@@ -10,8 +10,8 @@ export const prepareBreadcrumb = async (app: App): Promise<void> => {
 export const resolveBreadcrumb = (
   page: Page<Partial<StarThemePageData>>,
   pages: Page[]
-) => {
-  const breadcrumbConfig: BreadcrumbData[] = []
+): void => {
+  const breadcrumbConfig: BreadcrumbData = []
   // generate breadcrumb config
   for (let i = 1; i < pages.length; i++) {
     if (pages[i] === undefined) {
