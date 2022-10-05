@@ -26,7 +26,9 @@
   "type": "module",
   "exports": {
     ".": "./lib/index.js",
-    "./package.json": "./package.json"
+    "./global": "./lib/global.js",
+    "./package.json": "./package.json",
+    "./*": "./*"
   },
   "main": "lib/index.js",
   "unpkg": "lib/index.js",
@@ -39,8 +41,8 @@
   ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
-    "clean": "rimraf lib es *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.vue\" es && cpx \"src/**/*.vue\" lib",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.vue\" lib",
     "gen": "node ./scripts/generate.js && yarn prettier",
     "prettier": "prettier ./src -w"
   },

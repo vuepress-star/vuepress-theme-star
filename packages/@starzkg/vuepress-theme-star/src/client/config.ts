@@ -1,5 +1,5 @@
-import * as Icons from '@starzkg/vuepress-icons'
-import * as SocialIcons from '@starzkg/vuepress-social-icons'
+import Icons from '@starzkg/vuepress-icons/global'
+import SocialIcons from '@starzkg/vuepress-social-icons/global'
 import { defineClientConfig } from '@vuepress/client'
 import { defineComponent, FunctionalComponent, h, onMounted, VNode } from 'vue'
 import Badge from './components/Badge.vue'
@@ -39,15 +39,9 @@ export default defineClientConfig({
     app.component('Profile', Profile)
 
     // icon
-    for (const icon in Icons) {
-      // eslint-disable-next-line import/namespace
-      app.component('Icon' + icon, Icons[icon])
-    }
+    app.use(Icons)
     // social icon
-    for (const icon in SocialIcons) {
-      // eslint-disable-next-line import/namespace
-      app.component('IconSocial' + icon, SocialIcons[icon])
-    }
+    app.use(SocialIcons)
 
     app.component('Badge', Badge)
     app.component('ExternalLinkIcon', ExternalLinkIcon)

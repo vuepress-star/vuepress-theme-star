@@ -62,6 +62,7 @@ export default {
           text: '外部引入',
           link: '/zh/guide/markdown/external/',
           children: [
+            '/zh/guide/markdown/external/embedded-file-viewer.md',
             '/zh/guide/markdown/external/shields.io.md',
             '/zh/guide/markdown/external/codpen.md',
             '/zh/guide/markdown/external/youtobe.md',
