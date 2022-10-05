@@ -26,6 +26,9 @@ import { Page } from './pages/page/index.js'
 import Presentation from './pages/presentation/components/Presentation.vue'
 import { Profile } from './pages/profile/index.js'
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
+declare const __VUEPRESS_SSR__: boolean
+
 export default defineClientConfig({
   enhance: ({ app, router }) => {
     app.component('Page', Page)
@@ -99,6 +102,9 @@ export default defineClientConfig({
     )
 
     router.beforeEach((to, from, next) => {
+      if (__VUEPRESS_SSR__) {
+        next()
+      }
       // same path no route
       if (to.path !== from.path) {
         next()
