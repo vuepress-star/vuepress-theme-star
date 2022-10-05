@@ -28,6 +28,10 @@
     overflow: hidden;
     transition: all 0.2s;
 
+    + .category {
+      margin-left: 4px;
+    }
+
     > span {
       color: #0a7bf4;
       &:after {

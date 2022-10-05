@@ -118,7 +118,7 @@
   .anchor {
     border-radius: 2px;
     margin-bottom: 1.5rem;
-    background: white;
+    background: var(--c-bg);
     position: sticky;
     top: var(--navbar-height);
     max-height: calc(100vh - var(--navbar-height));
