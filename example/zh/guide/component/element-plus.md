@@ -3,6 +3,9 @@
 ::: tip
 为了避免组件名称冲突，使用`Element Plus`图标组件与`Element Plus`相比需要加`el-icon-`前缀
 :::
+
+## 组件
+
 <el-row>
 <el-button>Default</el-button>
 <el-button type="primary">Primary</el-button>
@@ -40,6 +43,8 @@
   <el-button type="danger" icon="icon-delete" circle></el-button>
 </el-row>
 
+## 图标
+请参考：[Element Plus Icon](https://element-plus.org/zh-CN/component/icon.html)
 
 ::: tip
 更多内容可以访问[Element Plus官网](https://element-plus.org)
