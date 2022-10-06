@@ -54,7 +54,6 @@
     "docs:vite-dev": "vuepress-vite dev docs"
   },
   "dependencies": {
-    "@starzkg/vuepress-shared": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.50",
     "@vuepress/core": "2.0.0-beta.50",

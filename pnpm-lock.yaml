@@ -285,7 +285,6 @@ importers:
 
   packages/@starzkg/vuepress-plugin-markdown-enhance:
     specifiers:
-      '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-star-shared': workspace:*
       '@types/babel__core': 7.1.19
       '@types/hash-sum': 1.0.0
@@ -338,7 +337,6 @@ importers:
       vue: ^3.2.40
       vue-router: ^4.1.4
     dependencies:
-      '@starzkg/vuepress-shared': link:../vuepress-shared
       '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
