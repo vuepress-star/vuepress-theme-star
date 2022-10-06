@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-add-this",
-  "version": "1.0.0-beta.28",
+  "version": "1.0.0-beta.29",
   "description": "Add This plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
