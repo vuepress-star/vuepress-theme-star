@@ -2,12 +2,12 @@ import type { App } from 'vue'
 import * as icons from './components/index.js'
 
 export interface InstallOptions {
-  /** @default `SocialIcon` */
+  /** @default `IconSocial` */
   prefix?: string
 }
 export default (
   app: App,
-  { prefix = 'SocialIcon' }: InstallOptions = {}
+  { prefix = 'IconSocial' }: InstallOptions = {}
 ): void => {
   for (const [key, component] of Object.entries(icons)) {
     app.component(prefix + key, component)
