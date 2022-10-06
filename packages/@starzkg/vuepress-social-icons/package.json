@@ -32,12 +32,9 @@
   },
   "main": "lib/index.js",
   "unpkg": "lib/index.js",
-  "module": "es/index.js",
-  "types": "types/index.d.ts",
+  "types": "lib/index.d.ts",
   "files": [
-    "es",
-    "lib",
-    "types"
+    "lib"
   ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
