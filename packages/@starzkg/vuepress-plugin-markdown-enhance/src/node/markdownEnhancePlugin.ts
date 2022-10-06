@@ -1,6 +1,8 @@
 import { addCustomElement } from '@starzkg/vuepress-star-shared'
+import type { ViteBundlerOptions } from '@vuepress/bundler-vite'
 import type { Plugin } from '@vuepress/core'
 import { getDirname, path } from '@vuepress/utils'
+import { mergeConfig } from 'vite'
 import { abbr } from '../markdown-it/plugins/abbr.js'
 import { attrs } from '../markdown-it/plugins/attrs.js'
 import { chart } from '../markdown-it/plugins/chart.js'
@@ -138,7 +140,32 @@ export const markdownEnhancePlugin =
       },
 
       extendsBundlerOptions: (config, app) => {
-        addCustomElement(app, config, MATHML_TAGS)
+        if (markdownOptions.katex) {
+          addCustomElement(app, config, MATHML_TAGS)
+        } else if (markdownOptions.mathjax) {
+          addCustomElement(app, config, /^mjx-/)
+        }
+
+        if (app.options.bundler.name.endsWith('vite')) {
+          const bundlerConfig = <ViteBundlerOptions>config
+          bundlerConfig.viteOptions = mergeConfig(
+            bundlerConfig.viteOptions || {},
+            {
+              ssr: {
+                external: [
+                  ...(markdownOptions.chart ? ['chart.js'] : []),
+                  ...(markdownOptions.echarts ? ['echarts'] : []),
+                  ...(markdownOptions.flowchart ? ['flowchart.js'] : []),
+                  ...(markdownOptions.mermaid ? ['mermaid'] : []),
+                  ...(markdownOptions.markmap
+                    ? ['markmap-lib', 'markmap-view']
+                    : []),
+                  ...(markdownOptions.reveal ? ['reveal.js'] : []),
+                ],
+              },
+            }
+          )
+        }
       },
     }
   }
