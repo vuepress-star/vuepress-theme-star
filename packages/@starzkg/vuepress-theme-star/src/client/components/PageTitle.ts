@@ -1,7 +1,7 @@
+import Icon from '@theme/Icon.js'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { defineComponent, h, resolveComponent } from 'vue'
+import { defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
-import { useIconPrefix } from '../composables/index.js'
 
 interface PageTitleFrontmatter {
   title: string
@@ -14,18 +14,12 @@ export default defineComponent({
   setup() {
     const page = usePageData()
     const frontmatter = usePageFrontmatter<PageTitleFrontmatter>()
-    const iconPrefix = useIconPrefix()
-
     return (): VNode =>
       h('div', { class: 'page-title' }, [
         frontmatter.value.icon
-          ? h(
-              resolveComponent(
-                `${iconPrefix.value}${frontmatter.value.icon}`,
-                false
-              ),
-              { class: 'page-title-icon' }
-            )
+          ? h(h(Icon, { name: frontmatter.value.icon }), {
+              class: 'page-title-icon',
+            })
           : null,
         h('h1', page.value.title),
       ])
