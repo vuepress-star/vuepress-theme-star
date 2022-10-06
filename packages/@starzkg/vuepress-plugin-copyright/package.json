@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-copyright",
-  "version": "1.0.0-beta.27",
+  "version": "1.0.0-beta.28",
   "description": "A VuePress plugin which handles copy behaviors.",
   "keywords": [
     "vuepress",
