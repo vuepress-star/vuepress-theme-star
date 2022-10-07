@@ -6,8 +6,9 @@ import type { ForInlinePluginOptions } from '../../markdown-it/plugins/for-inlin
 import type { KatexPluginOptions } from '../../markdown-it/plugins/katex.js'
 import type { MathJaxPluginOptions } from '../../markdown-it/plugins/mathjax.js'
 import type { TaskListPluginOptions } from '../../markdown-it/plugins/task-list.js'
-import type { ContainerLocaleData, ContainerOptions } from './container.js'
+import type { ContainerOptions } from './container.js'
 import type { ExternalLinkIconOptions } from './external-link-icon.js'
+import type { MarkdownEnhanceLocaleData } from './locales.js'
 import type { RevealPluginOptions } from './reveal.js'
 
 export * from './code-demo.js'
@@ -230,5 +231,5 @@ export declare type MarkdownOptions = MarkdownEnhanceOptions &
   ContainerOptions &
   ExternalLinkIconOptions &
   _MarkdownOptions & {
-    locales?: LocaleConfig<ContainerLocaleData>
+    locales?: LocaleConfig<MarkdownEnhanceLocaleData>
   }
