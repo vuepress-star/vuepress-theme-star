@@ -8,9 +8,13 @@ import type { MathJaxOptions } from '../../markdown-it/plugins/mathjax.js'
 import type { TaskListOptions } from '../../markdown-it/plugins/task-list.js'
 import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
 import type { CodeDemoOptions } from './code-demo.js'
+import type { ContainerOptions } from './container.js'
+import type { ExternalLinkIconOptions } from './external-link-icon.js'
 import type { RevealOptions } from './reveal.js'
 
 export * from './code-demo.js'
+export * from './container.js'
+export * from './external-link-icon.js'
 export * from './reveal.js'
 /**
  * markdown-enhance plugin configuration
@@ -169,48 +173,6 @@ export interface MarkdownEnhanceOptions {
    */
   mermaid?: boolean
   /**
-   * 是否启用自定义容器
-   *
-   * - info
-   * - tip
-   * - warning
-   * - danger
-   * - details
-   *
-   * ⚠ 最后四个会和默认主题冲突，且可能会覆盖默认主题的样式与行为
-   *
-   * Whether to enable custom container including
-   *
-   * - info
-   * - tip
-   * - warning
-   * - danger
-   * - details
-   *
-   * ⚠ The last 4 is conflict with default theme and may overide it.
-   *
-   * @default false
-   */
-  container?: boolean
-
-  /**
-   * 是否启用自定义对齐支持
-   *
-   * Whether to enable align support
-   *
-   * @default false
-   */
-  align?: boolean
-
-  /**
-   * Whether to enable v-pre wrapper.
-   *
-   * 是否启用 v-pre 容器。
-   *
-   * @default false
-   */
-  vPre?: boolean
-  /**
    * 是否启用 reveal.js 支持
    *
    * Whether to enable reveal.js support
@@ -226,7 +188,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   sup?: boolean
-
   /**
    * 是否启用下角标格式支持
    *
@@ -235,7 +196,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   sub?: boolean
-
   /**
    * 是否启用任务里表支持
    *
@@ -244,7 +204,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   tasklist?: TaskListOptions | boolean
-
   /**
    * 是否启用 TeX 语法支持
    *
@@ -255,7 +214,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   tex?: 'katex' | 'mathjax' | boolean
-
   /**
    * 是否启用代码示例功能
    *
@@ -264,7 +222,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   codeDemo?: Partial<CodeDemoOptions> | boolean
-
   /**
    * 操作页面 DOM 的延时，单位 ms
    *
@@ -277,7 +234,6 @@ export interface MarkdownEnhanceOptions {
    * @default 500
    */
   delay?: number
-
   /**
    * 国际化配置选项
    *
@@ -286,4 +242,7 @@ export interface MarkdownEnhanceOptions {
   locales?: LocaleConfig<MarkdownEnhancePluginLocaleData>
 }
 
-export declare type MarkdownOptions = MarkdownEnhanceOptions & _MarkdownOptions
+export declare type MarkdownOptions = MarkdownEnhanceOptions &
+  ContainerOptions &
+  ExternalLinkIconOptions &
+  _MarkdownOptions

@@ -73,6 +73,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   reveal: true,
 
+  externalLinkIcon: true,
+
   delay: 500,
 }
 

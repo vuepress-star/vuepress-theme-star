@@ -1,7 +1,10 @@
 import type { App } from '@vuepress/core'
 import type { ContainerPluginOptions } from '@vuepress/plugin-container'
 import { containerPlugin } from '@vuepress/plugin-container'
-import type { MarkdownEnhanceOptions } from '../../../shared/index.js'
+import type {
+  ContainerType,
+  MarkdownEnhanceOptions,
+} from '../../../shared/index.js'
 import { resolveAlignContainerOptions } from './align.js'
 import { resolveCodeDemoContainerOptions } from './code-demo.js'
 import { resolveComponentContainerOptions } from './component.js'
@@ -30,14 +33,7 @@ export const useContainerPlugin = (
  */
 export const resolveContainerPluginOptions = (
   localeOptions: MarkdownEnhanceOptions,
-  type:
-    | 'default'
-    | 'tip'
-    | 'note'
-    | 'primary'
-    | 'info'
-    | 'warning'
-    | 'danger' = 'default'
+  type: ContainerType = 'default'
 ): ContainerPluginOptions => {
   const locales = Object.entries(localeOptions.locales || {}).reduce(
     (result, [key, value]) => {

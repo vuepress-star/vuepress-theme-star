@@ -1,5 +1,6 @@
 import type { App } from '@vuepress/core'
-import type { MarkdownEnhanceOptions } from '../../shared/index.js'
+import type { ContainerType, MarkdownOptions } from '../../shared/index.js'
+import { ContainerTypeArray } from '../../shared/index.js'
 import {
   resolveAlignContainerOptions,
   resolveCodeDemoContainerOptions,
@@ -8,49 +9,36 @@ import {
   resolveDetailsContainerOptions,
   resolveVPreContainerOptions,
   useContainerPlugin,
-} from './containers/index.js'
+} from './container/index.js'
+import { useExternalLinkIconPlugin } from './external-link-icon/index.js'
 
 export const usePlugins = (
   app: App,
-  markdownOptions: MarkdownEnhanceOptions
+  markdownOptions: MarkdownOptions
 ): void => {
   // container
   if (markdownOptions.container) {
-    // default
-    useContainerPlugin(
-      app,
-      resolveContainerPluginOptions(markdownOptions, 'default')
-    )
-    // tip
-    useContainerPlugin(
-      app,
-      resolveContainerPluginOptions(markdownOptions, 'tip')
-    )
-    // note
-    useContainerPlugin(
-      app,
-      resolveContainerPluginOptions(markdownOptions, 'note')
-    )
-    // primary
-    useContainerPlugin(
-      app,
-      resolveContainerPluginOptions(markdownOptions, 'primary')
-    )
-    // info
-    useContainerPlugin(
-      app,
-      resolveContainerPluginOptions(markdownOptions, 'info')
-    )
-    // warning
-    useContainerPlugin(
-      app,
-      resolveContainerPluginOptions(markdownOptions, 'warning')
-    )
-    // danger
-    useContainerPlugin(
-      app,
-      resolveContainerPluginOptions(markdownOptions, 'danger')
-    )
+    for (const containerTypeKey in ContainerTypeArray) {
+      let enable = false
+      if (typeof markdownOptions.container === 'object') {
+        const container = markdownOptions.container
+        enable = container[containerTypeKey]
+      } else {
+        enable = markdownOptions.container
+      }
+      if (enable) {
+        useContainerPlugin(
+          app,
+          resolveContainerPluginOptions(
+            markdownOptions,
+            containerTypeKey as ContainerType
+          )
+        )
+      }
+    }
+  }
+
+  if (markdownOptions.details) {
     // details
     useContainerPlugin(app, resolveDetailsContainerOptions(markdownOptions))
   }
@@ -82,4 +70,12 @@ export const usePlugins = (
   // component
   useContainerPlugin(app, resolveComponentContainerOptions('code-group'))
   useContainerPlugin(app, resolveComponentContainerOptions('code-group-item'))
+
+  // external-link-icon
+  useExternalLinkIconPlugin(
+    app,
+    typeof markdownOptions.externalLinkIcon === 'object'
+      ? markdownOptions.externalLinkIcon
+      : {}
+  )
 }
