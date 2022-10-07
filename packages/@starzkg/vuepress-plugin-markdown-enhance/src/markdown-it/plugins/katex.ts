@@ -35,7 +35,7 @@ import { tex } from './tex.js'
 
 const require = createRequire(import.meta.url)
 
-export interface KatexOptions extends _KatexOptions {
+export interface KatexPluginOptions extends _KatexOptions {
   /**
    * Whether enable mhchem extension
    *
@@ -80,7 +80,10 @@ const katexBlock = (tex: string, options: _KatexOptions): string => {
   }
 }
 
-export const katex: PluginWithOptions<KatexOptions> = (md, options = {}) => {
+export const katex: PluginWithOptions<KatexPluginOptions> = (
+  md,
+  options = {}
+) => {
   const { mhchem = false, ...userOptions } = options
 
   if (mhchem) require('katex/contrib/mhchem')

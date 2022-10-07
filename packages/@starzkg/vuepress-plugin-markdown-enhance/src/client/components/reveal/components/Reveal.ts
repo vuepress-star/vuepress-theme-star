@@ -2,14 +2,14 @@ import { usePageFrontmatter } from '@vuepress/client'
 import { defineComponent, h, onMounted, ref } from 'vue'
 import type { PropType, VNode } from 'vue'
 import type {
-  RevealOptions,
+  RevealPluginOptions,
   RevealThemeType,
 } from '../../../../shared/index.js'
 import { delay } from '../../../utils/index.js'
 import { Loading } from '../../loading/index.js'
 import * as packages from '../plugins/index.js'
 
-declare const MARKDOWN_ENHANCE_REVEAL: RevealOptions
+declare const MARKDOWN_ENHANCE_REVEAL: RevealPluginOptions
 
 export default defineComponent({
   name: 'Reveal',
@@ -19,7 +19,7 @@ export default defineComponent({
     code: { type: String, required: true },
     theme: { type: String as PropType<RevealThemeType>, default: 'auto' },
     config: {
-      type: Object as PropType<RevealOptions>,
+      type: Object as PropType<RevealPluginOptions>,
       default: () => {
         return {}
       },
@@ -27,7 +27,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const frontmatter = usePageFrontmatter<{ reveal: RevealOptions }>()
+    const frontmatter = usePageFrontmatter<{ reveal: RevealPluginOptions }>()
     const code = ref('')
     const loading = ref(false)
     const revealContainer = ref<HTMLElement | null>(null)

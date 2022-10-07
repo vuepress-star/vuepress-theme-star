@@ -3,12 +3,12 @@ import type { MarkdownOptions as _MarkdownOptions } from '@vuepress/markdown'
 import type { AttrsPluginOptions } from '../../markdown-it/plugins/attrs.js'
 import type { EmojiPluginOptions } from '../../markdown-it/plugins/emoji.js'
 import type { ForInlinePluginOptions } from '../../markdown-it/plugins/for-inline.js'
-import type { KatexOptions } from '../../markdown-it/plugins/katex.js'
-import type { MathJaxOptions } from '../../markdown-it/plugins/mathjax.js'
-import type { TaskListOptions } from '../../markdown-it/plugins/task-list.js'
+import type { KatexPluginOptions } from '../../markdown-it/plugins/katex.js'
+import type { MathJaxPluginOptions } from '../../markdown-it/plugins/mathjax.js'
+import type { TaskListPluginOptions } from '../../markdown-it/plugins/task-list.js'
 import type { ContainerLocaleData, ContainerOptions } from './container.js'
 import type { ExternalLinkIconOptions } from './external-link-icon.js'
-import type { RevealOptions } from './reveal.js'
+import type { RevealPluginOptions } from './reveal.js'
 
 export * from './code-demo.js'
 export * from './container.js'
@@ -137,7 +137,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  katex?: KatexOptions | boolean
+  katex?: KatexPluginOptions | boolean
   /**
    * 是否启用标注支持
    *
@@ -161,7 +161,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  mathjax?: MathJaxOptions | boolean
+  mathjax?: MathJaxPluginOptions | boolean
   /**
    * 是否启用 Mermaid 流程图支持
    *
@@ -177,7 +177,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  reveal?: RevealOptions | boolean
+  reveal?: RevealPluginOptions | boolean
   /**
    * 是否启用上角标格式支持
    *
@@ -201,7 +201,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  tasklist?: TaskListOptions | boolean
+  tasklist?: TaskListPluginOptions | boolean
   /**
    * 是否启用 TeX 语法支持
    *

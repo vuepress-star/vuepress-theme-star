@@ -9,7 +9,7 @@ import {
   setTokenAttr,
 } from '../utils/index.js'
 
-export interface TaskListOptions {
+export interface TaskListPluginOptions {
   /**
    * 是否禁用 checkbox
    *
@@ -91,7 +91,7 @@ const endLabel = (): Token => new Token('label_close', 'label', -1)
 const todoify = (
   token: Token,
   state: TaskListStateCore,
-  options: Required<TaskListOptions>
+  options: Required<TaskListPluginOptions>
 ): void => {
   const id = `task-item-${state.env.taskLists++}`
 
@@ -109,7 +109,7 @@ const todoify = (
   token.children.unshift(generateCheckbox(token, id, options.disabled))
 }
 
-export const taskList: PluginWithOptions<TaskListOptions> = (
+export const taskList: PluginWithOptions<TaskListPluginOptions> = (
   md,
   { disabled = true, label = true, labelAfter = true } = {}
 ) => {

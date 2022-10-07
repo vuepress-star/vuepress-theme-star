@@ -257,7 +257,7 @@ export interface MathjaxSVGOutputOptions extends MathjaxCommonOutputOptions {
 }
 
 // TODO: Add mathjax options
-export interface MathJaxOptions {
+export interface MathJaxPluginOptions {
   /**
    * Output syntax
    *
@@ -312,7 +312,7 @@ const renderMath = (
   return juice(html + stylesheet)
 }
 
-export const mathjax: PluginWithOptions<MathJaxOptions> = (
+export const mathjax: PluginWithOptions<MathJaxPluginOptions> = (
   md,
   options = {}
 ) => {

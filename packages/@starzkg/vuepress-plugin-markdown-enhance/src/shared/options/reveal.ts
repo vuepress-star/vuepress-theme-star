@@ -5,7 +5,7 @@ import type {
 
 export { RevealThemeType, RevealPlugin } from '../../@types/reveal.js/index.js'
 
-export interface RevealOptions {
+export interface RevealPluginOptions {
   /**
    * 启用的 Reveal.js 插件
    *
