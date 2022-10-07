@@ -1,5 +1,5 @@
 import type { App } from '@vuepress/core'
-import type { ContainerType, MarkdownOptions } from '../../shared/index.js'
+import type { MarkdownOptions } from '../../shared/index.js'
 import { SimpleContainerTypeArray } from '../../shared/index.js'
 import {
   resolveAlignContainerOptions,
@@ -19,20 +19,18 @@ export const usePlugins = (
   // container
   if (markdownOptions.container) {
     for (const containerTypeKey in SimpleContainerTypeArray) {
-      let enable = false
+      const containerType = SimpleContainerTypeArray[containerTypeKey]
+      let enable: boolean | undefined = false
       if (typeof markdownOptions.container === 'object') {
         const container = markdownOptions.container
-        enable = container[containerTypeKey]
+        enable = container[containerType]
       } else {
         enable = markdownOptions.container
       }
       if (enable) {
         useContainerPlugin(
           app,
-          resolveContainerPluginOptions(
-            markdownOptions,
-            containerTypeKey as ContainerType
-          )
+          resolveContainerPluginOptions(markdownOptions, containerType)
         )
       }
     }
