@@ -1,6 +1,6 @@
 import type { App } from '@vuepress/core'
 import type { ContainerType, MarkdownOptions } from '../../shared/index.js'
-import { ContainerTypeArray } from '../../shared/index.js'
+import { SimpleContainerTypeArray } from '../../shared/index.js'
 import {
   resolveAlignContainerOptions,
   resolveCodeDemoContainerOptions,
@@ -18,7 +18,7 @@ export const usePlugins = (
 ): void => {
   // container
   if (markdownOptions.container) {
-    for (const containerTypeKey in ContainerTypeArray) {
+    for (const containerTypeKey in SimpleContainerTypeArray) {
       let enable = false
       if (typeof markdownOptions.container === 'object') {
         const container = markdownOptions.container

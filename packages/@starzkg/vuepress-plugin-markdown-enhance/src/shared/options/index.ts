@@ -6,9 +6,7 @@ import type { ForInlinePluginOptions } from '../../markdown-it/plugins/for-inlin
 import type { KatexOptions } from '../../markdown-it/plugins/katex.js'
 import type { MathJaxOptions } from '../../markdown-it/plugins/mathjax.js'
 import type { TaskListOptions } from '../../markdown-it/plugins/task-list.js'
-import type { MarkdownEnhancePluginLocaleData } from '../locales.js'
-import type { CodeDemoOptions } from './code-demo.js'
-import type { ContainerOptions } from './container.js'
+import type { ContainerLocaleData, ContainerOptions } from './container.js'
 import type { ExternalLinkIconOptions } from './external-link-icon.js'
 import type { RevealOptions } from './reveal.js'
 
@@ -215,14 +213,6 @@ export interface MarkdownEnhanceOptions {
    */
   tex?: 'katex' | 'mathjax' | boolean
   /**
-   * 是否启用代码示例功能
-   *
-   * Whether to enable code-demo support
-   *
-   * @default false
-   */
-  codeDemo?: Partial<CodeDemoOptions> | boolean
-  /**
    * 操作页面 DOM 的延时，单位 ms
    *
    * 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
@@ -234,15 +224,11 @@ export interface MarkdownEnhanceOptions {
    * @default 500
    */
   delay?: number
-  /**
-   * 国际化配置选项
-   *
-   * locales config
-   */
-  locales?: LocaleConfig<MarkdownEnhancePluginLocaleData>
 }
 
 export declare type MarkdownOptions = MarkdownEnhanceOptions &
   ContainerOptions &
   ExternalLinkIconOptions &
-  _MarkdownOptions
+  _MarkdownOptions & {
+    locales?: LocaleConfig<ContainerLocaleData>
+  }

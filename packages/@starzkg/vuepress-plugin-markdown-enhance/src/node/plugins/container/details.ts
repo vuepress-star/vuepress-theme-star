@@ -8,7 +8,7 @@ import {
   resolveLocalePath,
 } from '@vuepress/shared'
 import type Token from 'markdown-it/lib/token.js'
-import type { MarkdownEnhanceOptions } from '../../../shared/index.js'
+import type { MarkdownOptions } from '../../../shared/index.js'
 
 export const detailsRender =
   (
@@ -50,7 +50,7 @@ export const detailsRender =
   }
 
 export const resolveDetailsContainerOptions = (
-  localeOptions: MarkdownEnhanceOptions
+  localeOptions: MarkdownOptions
 ): ContainerPluginOptions => {
   return {
     type: 'details',

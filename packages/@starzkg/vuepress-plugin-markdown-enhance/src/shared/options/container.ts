@@ -1,5 +1,6 @@
-import type { LocaleConfig } from '@vuepress/core'
-export const ContainerTypeArray = [
+import type { CodeDemoOptions } from './code-demo.js'
+
+export const SimpleContainerTypeArray = [
   'default',
   'tip',
   'note',
@@ -9,7 +10,7 @@ export const ContainerTypeArray = [
   'danger',
 ] as const
 
-export type ContainerType = typeof ContainerTypeArray[number]
+export type ContainerType = typeof SimpleContainerTypeArray[number]
 
 export type ContainerLocaleData = Record<ContainerType, string> & {
   /**
@@ -75,5 +76,12 @@ export type ContainerOptions = {
    */
   vPre?: boolean
 
-  locales?: LocaleConfig<ContainerLocaleData>
+  /**
+   * 是否启用代码示例功能
+   *
+   * Whether to enable code-demo support
+   *
+   * @default false
+   */
+  codeDemo?: Partial<CodeDemoOptions> | boolean
 }
