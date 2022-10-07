@@ -19,12 +19,6 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   typographer: true,
 
-  container: true,
-
-  align: true,
-
-  vPre: true,
-
   sup: true,
 
   sub: true,
@@ -59,6 +53,16 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   mermaid: true,
 
+  reveal: true,
+
+  container: true,
+
+  details: true,
+
+  align: true,
+
+  vPre: true,
+
   codeDemo: {
     useBabel: false,
     jsLib: [],
@@ -70,8 +74,6 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
     react: 'https://unpkg.com/react/umd/react.production.min.js',
     reactDOM: 'https://unpkg.com/react-dom/umd/react-dom.production.min.js',
   },
-
-  reveal: true,
 
   externalLinkIcon: true,
 
