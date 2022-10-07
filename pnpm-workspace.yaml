@@ -2,3 +2,4 @@ packages:
   - docs/.vuepress
   - example/.vuepress
   - packages/@starzkg/*
+  - ecosystem/@starzkg/*

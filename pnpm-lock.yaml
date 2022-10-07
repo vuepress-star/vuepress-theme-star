@@ -96,7 +96,7 @@ importers:
       vuepress: 2.0.0-beta.50
     dependencies:
       '@starzkg/vuepress-icons': link:../../packages/@starzkg/vuepress-icons
-      '@starzkg/vuepress-plugin-element-plus': link:../../packages/@starzkg/vuepress-plugin-element-plus
+      '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
       '@starzkg/vuepress-shared': link:../../packages/@starzkg/vuepress-shared
       '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
@@ -114,13 +114,100 @@ importers:
       vue: 3.2.40
       vuepress: 2.0.0-beta.50_i42gnzbcavtkm7o4m35z5zgj2u
 
+  ecosystem/@starzkg/vuepress-plugin-add-this:
+    specifiers:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      vue: ^3.2.40
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      vue: 3.2.40
+
+  ecosystem/@starzkg/vuepress-plugin-element-plus:
+    specifiers:
+      '@element-plus/icons-vue': ^2.0.9
+      '@vuepress/bundler-vite': 2.0.0-beta.50
+      '@vuepress/bundler-webpack': 2.0.0-beta.50
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      element-plus: 2.2.17
+      vue: ^3.2.40
+    dependencies:
+      '@element-plus/icons-vue': 2.0.9_vue@3.2.40
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      element-plus: 2.2.17_vue@3.2.40
+      vue: 3.2.40
+    devDependencies:
+      '@vuepress/bundler-vite': 2.0.0-beta.50
+      '@vuepress/bundler-webpack': 2.0.0-beta.50
+
+  ecosystem/@starzkg/vuepress-plugin-interaction-effect:
+    specifiers:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      vue: ^3.2.40
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      vue: 3.2.40
+
+  ecosystem/@starzkg/vuepress-plugin-lightgallery:
+    specifiers:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      lightgallery: ^2.5.0
+      vue: ^3.2.40
+      vue-router: ^4.1.4
+      vuepress-plugin-sass-palette: 2.0.0-beta.94
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      lightgallery: 2.5.0
+      vue: 3.2.40
+      vue-router: 4.1.5_vue@3.2.40
+      vuepress-plugin-sass-palette: 2.0.0-beta.94
+
+  ecosystem/@starzkg/vuepress-plugin-photo-swipe:
+    specifiers:
+      '@starzkg/vuepress-shared': workspace:*
+      '@types/photoswipe': ^4.1.2
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      photoswipe: ^4.1.3
+      vue: ^3.2.40
+      vue-router: ^4.1.4
+      vuepress-plugin-sass-palette: 2.0.0-beta.94
+    dependencies:
+      '@starzkg/vuepress-shared': link:../../../packages/@starzkg/vuepress-shared
+      '@types/photoswipe': 4.1.2
+      '@vuepress/client': 2.0.0-beta.50
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      photoswipe: 4.1.3
+      vue: 3.2.40
+      vue-router: 4.1.5_vue@3.2.40
+      vuepress-plugin-sass-palette: 2.0.0-beta.94
+
   example/.vuepress:
     specifiers:
       '@starzkg/vuepress-icons': workspace:*
       '@starzkg/vuepress-plugin-analytics': 1.1.2
       '@starzkg/vuepress-plugin-element-plus': workspace:*
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-live2d-widget': 1.0.12
+      '@starzkg/vuepress-plugin-photo-swipe': workspace:*
       '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
       '@starzkg/vuepress-theme-star': workspace:*
@@ -139,9 +226,11 @@ importers:
     dependencies:
       '@starzkg/vuepress-icons': link:../../packages/@starzkg/vuepress-icons
       '@starzkg/vuepress-plugin-analytics': 1.1.2
-      '@starzkg/vuepress-plugin-element-plus': link:../../packages/@starzkg/vuepress-plugin-element-plus
+      '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-interaction-effect': link:../../ecosystem/@starzkg/vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-live2d-widget': 1.0.12
+      '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
       '@starzkg/vuepress-shared': link:../../packages/@starzkg/vuepress-shared
       '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
@@ -168,18 +257,6 @@ importers:
       chalk: 5.0.1
       ora: 5.4.1
       svgo: 2.8.0
-      vue: 3.2.40
-
-  packages/@starzkg/vuepress-plugin-add-this:
-    specifiers:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      vue: ^3.2.40
-    dependencies:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
       vue: 3.2.40
 
   packages/@starzkg/vuepress-plugin-copy-code:
@@ -216,27 +293,6 @@ importers:
       '@vuepress/utils': 2.0.0-beta.50
       vue: 3.2.40
 
-  packages/@starzkg/vuepress-plugin-element-plus:
-    specifiers:
-      '@element-plus/icons-vue': ^2.0.9
-      '@vuepress/bundler-vite': 2.0.0-beta.50
-      '@vuepress/bundler-webpack': 2.0.0-beta.50
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      element-plus: 2.2.17
-      vue: ^3.2.40
-    dependencies:
-      '@element-plus/icons-vue': 2.0.9_vue@3.2.40
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      element-plus: 2.2.17_vue@3.2.40
-      vue: 3.2.40
-    devDependencies:
-      '@vuepress/bundler-vite': 2.0.0-beta.50
-      '@vuepress/bundler-webpack': 2.0.0-beta.50
-
   packages/@starzkg/vuepress-plugin-feed:
     specifiers:
       '@vuepress/client': 2.0.0-beta.50
@@ -252,36 +308,6 @@ importers:
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
       feed: 4.2.2
-
-  packages/@starzkg/vuepress-plugin-interaction-effect:
-    specifiers:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      vue: ^3.2.40
-    dependencies:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      vue: 3.2.40
-
-  packages/@starzkg/vuepress-plugin-lightgallery:
-    specifiers:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      lightgallery: ^2.5.0
-      vue: ^3.2.40
-      vue-router: ^4.1.4
-      vuepress-plugin-sass-palette: 2.0.0-beta.94
-    dependencies:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      lightgallery: 2.5.0
-      vue: 3.2.40
-      vue-router: 4.1.5_vue@3.2.40
-      vuepress-plugin-sass-palette: 2.0.0-beta.94
 
   packages/@starzkg/vuepress-plugin-markdown-enhance:
     specifiers:
@@ -391,28 +417,6 @@ importers:
       '@vuepress/bundler-webpack': 2.0.0-beta.50
       markdown-it-testgen: 0.1.6
       rimraf: 3.0.2
-
-  packages/@starzkg/vuepress-plugin-photo-swipe:
-    specifiers:
-      '@starzkg/vuepress-shared': workspace:*
-      '@types/photoswipe': ^4.1.2
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      photoswipe: ^4.1.3
-      vue: ^3.2.40
-      vue-router: ^4.1.4
-      vuepress-plugin-sass-palette: 2.0.0-beta.94
-    dependencies:
-      '@starzkg/vuepress-shared': link:../vuepress-shared
-      '@types/photoswipe': 4.1.2
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      photoswipe: 4.1.3
-      vue: 3.2.40
-      vue-router: 4.1.5_vue@3.2.40
-      vuepress-plugin-sass-palette: 2.0.0-beta.94
 
   packages/@starzkg/vuepress-plugin-pwa:
     specifiers:
@@ -570,9 +574,7 @@ importers:
       '@starzkg/vuepress-plugin-copy-code': workspace:*
       '@starzkg/vuepress-plugin-copyright': workspace:*
       '@starzkg/vuepress-plugin-feed': workspace:*
-      '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-markdown-enhance': workspace:*
-      '@starzkg/vuepress-plugin-photo-swipe': workspace:*
       '@starzkg/vuepress-plugin-pwa': workspace:*
       '@starzkg/vuepress-plugin-seo': workspace:*
       '@starzkg/vuepress-plugin-sitemap': workspace:*
@@ -608,9 +610,7 @@ importers:
       '@starzkg/vuepress-plugin-copy-code': link:../vuepress-plugin-copy-code
       '@starzkg/vuepress-plugin-copyright': link:../vuepress-plugin-copyright
       '@starzkg/vuepress-plugin-feed': link:../vuepress-plugin-feed
-      '@starzkg/vuepress-plugin-interaction-effect': link:../vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-markdown-enhance': link:../vuepress-plugin-markdown-enhance
-      '@starzkg/vuepress-plugin-photo-swipe': link:../vuepress-plugin-photo-swipe
       '@starzkg/vuepress-plugin-pwa': link:../vuepress-plugin-pwa
       '@starzkg/vuepress-plugin-seo': link:../vuepress-plugin-seo
       '@starzkg/vuepress-plugin-sitemap': link:../vuepress-plugin-sitemap
@@ -6974,7 +6974,7 @@ packages:
       '@popperjs/core': /@sxzz/popperjs-es/2.11.7
       '@types/lodash': 4.14.182
       '@types/lodash-es': 4.17.6
-      '@vueuse/core': 9.1.1_vue@3.2.40
+      '@vueuse/core': 9.3.0_vue@3.2.40
       async-validator: 4.2.5
       dayjs: 1.11.5
       escape-html: 1.0.3

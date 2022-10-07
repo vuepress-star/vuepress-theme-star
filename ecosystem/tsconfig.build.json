@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.base.json",
+  "references": [
+    {
+      "path": "./@starzkg/vuepress-plugin-add-this/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-element-plus/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-interaction-effect/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-photo-swipe/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-lightgallery/tsconfig.build.json"
+    }
+  ],
+  "files": []
+}

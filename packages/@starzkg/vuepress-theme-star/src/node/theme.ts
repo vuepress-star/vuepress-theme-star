@@ -1,9 +1,7 @@
 import { copyCodePlugin } from '@starzkg/vuepress-plugin-copy-code'
 import { copyrightPlugin } from '@starzkg/vuepress-plugin-copyright'
 import { feedPlugin } from '@starzkg/vuepress-plugin-feed'
-import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
-import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
 import { pwaPlugin } from '@starzkg/vuepress-plugin-pwa'
 import { seoPlugin } from '@starzkg/vuepress-plugin-seo'
 import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
@@ -117,9 +115,17 @@ export const starTheme = ({
       // @vuepress/plugin-theme-data
       themeDataPlugin({ themeData: localeOptions }),
 
+      themePlugins.markdown !== false
+        ? markdownEnhancePlugin(themePlugins.markdown || true)
+        : [],
+
       tocPlugin(),
 
-      photoSwipePlugin(),
+      copyCodePlugin({
+        selector: '.theme-star-content div[class*="language-"] pre',
+      }),
+
+      themePlugins.copyright !== false ? copyrightPlugin() : [],
 
       themePlugins.feed !== undefined && themePlugins.feed !== false
         ? feedPlugin(themePlugins.feed)
@@ -135,18 +141,6 @@ export const starTheme = ({
 
       themePlugins.feed !== undefined && themePlugins.sitemap !== false
         ? sitemapPlugin(themePlugins.sitemap)
-        : [],
-
-      copyCodePlugin({
-        selector: '.theme-star-content div[class*="language-"] pre',
-      }),
-
-      themePlugins.copyright !== false ? copyrightPlugin() : [],
-
-      interactionEffectPlugin(),
-
-      themePlugins.markdown !== false
-        ? markdownEnhancePlugin(themePlugins.markdown || true)
         : [],
     ],
   }

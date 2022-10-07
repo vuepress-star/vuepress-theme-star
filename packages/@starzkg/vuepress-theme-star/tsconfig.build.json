@@ -8,22 +8,28 @@
       "path": "../vuepress-icons/tsconfig.build.json"
     },
     {
+      "path": "../vuepress-social-icons/tsconfig.build.json"
+    },
+    {
       "path": "../vuepress-plugin-copy-code/tsconfig.build.json"
     },
     {
       "path": "../vuepress-plugin-copyright/tsconfig.build.json"
     },
     {
-      "path": "../vuepress-plugin-element-plus/tsconfig.build.json"
-    },
-    {
       "path": "../vuepress-plugin-markdown-enhance/tsconfig.build.json"
     },
     {
-      "path": "../vuepress-plugin-interaction-effect/tsconfig.build.json"
+      "path": "../vuepress-plugin-feed/tsconfig.build.json"
     },
     {
-      "path": "../vuepress-plugin-photo-swipe/tsconfig.build.json"
+      "path": "../vuepress-plugin-pwa/tsconfig.build.json"
+    },
+    {
+      "path": "../vuepress-plugin-seo/tsconfig.build.json"
+    },
+    {
+      "path": "../vuepress-plugin-sitemap/tsconfig.build.json"
     }
   ],
   "compilerOptions": {

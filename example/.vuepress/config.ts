@@ -1,6 +1,8 @@
 import { analyticsPlugin } from '@starzkg/vuepress-plugin-analytics'
 import { elementPlusPlugin } from '@starzkg/vuepress-plugin-element-plus'
 import { giscusCommentPlugin } from '@starzkg/vuepress-plugin-giscus-comment'
+import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
+import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
 import { live2dWidgetPlugin } from '@starzkg/vuepress-plugin-live2d-widget'
 import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
@@ -206,6 +208,8 @@ export default defineUserConfig({
     // only enable shiki plugin in production mode
     isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
     elementPlusPlugin(),
+    photoSwipePlugin(),
+    interactionEffectPlugin(),
     live2dWidgetPlugin({
       dev: {
         log: true,

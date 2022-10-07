@@ -1,0 +1,42 @@
+{
+  "extends": "../tsconfig.base.json",
+  "references": [
+    {
+      "path": "./@starzkg/vuepress-icons/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-social-icons/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-shared/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-star-shared/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-copy-code/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-copyright/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-markdown-enhance/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-feed/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-pwa/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-seo/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-plugin-sitemap/tsconfig.build.json"
+    },
+    {
+      "path": "./@starzkg/vuepress-theme-star/tsconfig.build.json"
+    }
+  ],
+  "files": []
+}
