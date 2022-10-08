@@ -7,6 +7,7 @@ import { FlowChart } from './components/flowchart/index.js'
 import { Markmap } from './components/markmap/index.js'
 import { Mermaid } from './components/mermaid/index.js'
 import { PDF } from './components/pdf/index.js'
+import { PlantUML } from './components/plantuml/index.js'
 import { Reveal } from './components/reveal/index.js'
 
 declare const MARKDOWN_ENHANCE_ALIGN: boolean
@@ -19,6 +20,7 @@ declare const MARKDOWN_ENHANCE_FLOWCHART: boolean
 declare const MARKDOWN_ENHANCE_FOOTNOTE: boolean
 declare const MARKDOWN_ENHANCE_MARKMAP: boolean
 declare const MARKDOWN_ENHANCE_MERMAID: boolean
+declare const MARKDOWN_ENHANCE_PLANTUML: boolean
 declare const MARKDOWN_ENHANCE_REVEAL: boolean
 declare const MARKDOWN_ENHANCE_IMPORT: boolean
 declare const MARKDOWN_ENHANCE_TASKLIST: boolean
@@ -48,6 +50,8 @@ export default defineClientConfig({
     if (MARKDOWN_ENHANCE_MERMAID) app.component('Mermaid', Mermaid)
 
     if (MARKDOWN_ENHANCE_MARKMAP) app.component('Markmap', Markmap)
+
+    if (MARKDOWN_ENHANCE_PLANTUML) app.component('PlantUML', PlantUML)
 
     if (MARKDOWN_ENHANCE_IMPORT) app.component('PDF', PDF)
 

@@ -1,0 +1,23 @@
+.markdown-enhance-flowchart {
+  overflow-x: auto;
+  text-align: center;
+  transition: all 1s;
+  padding: 0.6em 0.4em;
+  &.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--grey15, #eee);
+  }
+  svg.markdown-enhance-flowchart-loading-icon {
+    width: 4em;
+    height: 4em;
+    margin: 2.5em auto;
+    color: var(--accent-color);
+  }
+}
+.operation-element,
+.parallel-element {
+  rx: 5px;
+  ry: 5px;
+}

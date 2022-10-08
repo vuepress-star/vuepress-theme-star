@@ -172,6 +172,14 @@ export interface MarkdownEnhanceOptions {
    */
   mermaid?: boolean
   /**
+   * 是否启用 PlantUML 支持
+   *
+   * Whether to enable PlantUML support
+   *
+   * @default false
+   */
+  plantuml?: boolean
+  /**
    * 是否启用 reveal.js 支持
    *
    * Whether to enable reveal.js support

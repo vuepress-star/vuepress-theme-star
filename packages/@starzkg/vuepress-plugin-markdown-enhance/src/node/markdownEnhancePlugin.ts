@@ -22,6 +22,7 @@ import { mark } from '../markdown-it/plugins/mark.js'
 import { markmap } from '../markdown-it/plugins/markmap.js'
 import { mathjax } from '../markdown-it/plugins/mathjax.js'
 import { mermaid } from '../markdown-it/plugins/mermaid.js'
+import plantuml from '../markdown-it/plugins/plantuml.js'
 import { reveal } from '../markdown-it/plugins/reveal.js'
 import { sub } from '../markdown-it/plugins/sub.js'
 import { sup } from '../markdown-it/plugins/sup.js'
@@ -111,6 +112,7 @@ export const markdownEnhancePlugin =
         if (markdownOptions.mark) markdownIt.use(mark)
         if (markdownOptions.markmap) markdownIt.use(markmap)
         if (markdownOptions.mermaid) markdownIt.use(mermaid)
+        if (markdownOptions.plantuml) markdownIt.use(plantuml)
         if (markdownOptions.reveal) markdownIt.use(reveal)
         if (markdownOptions.sup) markdownIt.use(sup)
         if (markdownOptions.sub) markdownIt.use(sub)

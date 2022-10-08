@@ -357,6 +357,7 @@ importers:
       mathjax-full: ^3.2.2
       mdurl: ^1.0.1
       mermaid: ^9.1.7
+      plantuml-encoder: ^1.4.0
       reveal.js: ^4.3.1
       rimraf: 3.0.2
       ts-debounce: ^4.0.0
@@ -401,6 +402,7 @@ importers:
       mathjax-full: 3.2.2
       mdurl: 1.0.1
       mermaid: 9.1.7
+      plantuml-encoder: 1.4.0
       reveal.js: 4.3.1
       ts-debounce: 4.0.0
       vite: 3.1.6
@@ -11404,6 +11406,10 @@ packages:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
     engines: {node: '>= 6'}
     dev: true
+
+  /plantuml-encoder/1.4.0:
+    resolution: {integrity: sha512-sxMwpDw/ySY1WB2CE3+IdMuEcWibJ72DDOsXLkSmEaSzwEUaYBT6DWgOfBiHGCux4q433X6+OEFWjlVqp7gL6g==}
+    dev: false
 
   /posix-character-classes/0.1.1:
     resolution: {integrity: sha512-xTgYBc3fuo7Yt7JbiuFxSYGToMoz8fLoE6TC9Wx1P/u+LfeThMOAqmuyECnlBaaJb+u1m9hHiXUEtwW4OzfUJg==}

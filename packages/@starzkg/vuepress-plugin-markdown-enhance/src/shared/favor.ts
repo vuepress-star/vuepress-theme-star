@@ -53,6 +53,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   mermaid: true,
 
+  plantuml: true,
+
   reveal: true,
 
   container: true,
