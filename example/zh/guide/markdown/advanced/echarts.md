@@ -8,7 +8,6 @@ tags:
   - Markdown
 ---
 # ECharts
-
 让你 VuePress 站点中的 Markdown 文件支持 ECharts 图表。
 
 使用 [ECharts](https://echarts.apache.org/zh/index.html) 提供相应功能。
