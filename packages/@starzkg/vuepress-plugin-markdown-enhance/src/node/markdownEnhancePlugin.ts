@@ -26,6 +26,7 @@ import { reveal } from '../markdown-it/plugins/reveal.js'
 import { sub } from '../markdown-it/plugins/sub.js'
 import { sup } from '../markdown-it/plugins/sup.js'
 import { taskList } from '../markdown-it/plugins/task-list.js'
+import { tex } from '../markdown-it/plugins/tex.js'
 import type { MarkdownFavor, MarkdownOptions } from '../shared/index.js'
 import { usePlugins } from './plugins/index.js'
 import {
@@ -121,6 +122,7 @@ export const markdownEnhancePlugin =
           ])
         }
         if (markdownOptions.tex) {
+          markdownIt.use(tex)
           if (markdownOptions.tex === 'katex' || markdownOptions.tex === true) {
             markdownIt.use(
               katex,

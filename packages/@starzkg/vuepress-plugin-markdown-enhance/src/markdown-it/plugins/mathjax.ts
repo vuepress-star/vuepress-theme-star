@@ -38,7 +38,6 @@ import type { default as TexError } from 'mathjax-full/js/input/tex/TexError.js'
 import { mathjax as MathJax } from 'mathjax-full/js/mathjax.js'
 import { CHTML } from 'mathjax-full/js/output/chtml.js'
 import { SVG } from 'mathjax-full/js/output/svg.js'
-import { tex } from './tex.js'
 
 export interface MathJaxTexInputOptions {
   /**
@@ -332,15 +331,17 @@ export const mathjax: PluginWithOptions<MathJaxPluginOptions> = (
           }),
   }
 
-  md.use(tex, {
-    render: (content, displayMode) => {
-      const convertOptions = {
-        display: displayMode,
-      }
+  md.renderer.rules.math_inline = (tokens, index): string => {
+    return renderMath(tokens[index].content, documentOptions, {
+      display: false,
+    })
+  }
 
-      renderMath(content, documentOptions, convertOptions)
-    },
-  })
+  md.renderer.rules.math_block = (tokens, index): string => {
+    return renderMath(tokens[index].content, documentOptions, {
+      display: true,
+    })
+  }
 }
 
 export default mathjax

@@ -199,23 +199,11 @@ const blockTex: RuleBlock = (state, start, end, silent) => {
   return true
 }
 
-export const tex: PluginWithOptions<TexOptions> = (md, options) => {
-  const { render } = options || {}
-
-  if (typeof render !== 'function')
-    return console.error(
-      'markdown-it tex: "render" option should be a function'
-    )
-
+export const tex: PluginWithOptions<TexOptions> = (md) => {
   md.inline.ruler.after('escape', 'math_inline', inlineTex)
   md.block.ruler.after('blockquote', 'math_block', blockTex, {
     alt: ['paragraph', 'reference', 'blockquote', 'list'],
   })
-
-  md.renderer.rules.math_inline = (tokens, index): string =>
-    render(tokens[index].content, false)
-  md.renderer.rules.math_block = (tokens, index): string =>
-    render(tokens[index].content, true)
 }
 
 export default tex

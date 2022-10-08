@@ -31,7 +31,6 @@ import Katex from 'katex'
 import type { KatexOptions as _KatexOptions } from 'katex'
 import type { PluginWithOptions } from 'markdown-it'
 import { escapeHtml } from '../utils/index.js'
-import { tex } from './tex.js'
 
 const require = createRequire(import.meta.url)
 
@@ -99,12 +98,11 @@ export const katex: PluginWithOptions<KatexPluginOptions> = (
     ...userOptions,
   }
 
-  md.use(tex, {
-    render: (content, displayMode) =>
-      displayMode
-        ? katexBlock(content, katexOptions)
-        : katexInline(content, katexOptions),
-  })
+  md.renderer.rules.math_inline = (tokens, index): string =>
+    katexInline(tokens[index].content, katexOptions)
+
+  md.renderer.rules.math_block = (tokens, index): string =>
+    katexBlock(tokens[index].content, katexOptions)
 }
 
 export default katex
