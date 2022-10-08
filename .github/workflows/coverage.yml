@@ -38,7 +38,7 @@ jobs:
         run: pnpm build
 
       - name: Test coverage
-        run: pnpm test:cov
+        run: pnpm test:coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
