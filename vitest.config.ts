@@ -9,6 +9,7 @@ const getSubDirectories = (dir: string): string[] =>
     .filter((item) => fs.statSync(path.join(dir, item)).isDirectory())
 const root = path.dirname(fileURLToPath(import.meta.url))
 const corePackages = getSubDirectories(path.resolve(root, 'packages'))
+const ecosystemPackages = getSubDirectories(path.resolve(root, 'ecosystem'))
 
 export default defineConfig({
   resolve: {
@@ -16,6 +17,10 @@ export default defineConfig({
       {
         find: new RegExp(`^@starzkg/(${corePackages.join('|')})$`),
         replacement: path.resolve(root, './packages/$1/src/index.ts'),
+      },
+      {
+        find: new RegExp(`^@vuepress/(${ecosystemPackages.join('|')})$`),
+        replacement: path.resolve(root, './ecosystem/$1/src/index.ts'),
       },
     ],
   },
