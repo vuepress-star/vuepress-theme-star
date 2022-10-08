@@ -15,7 +15,7 @@ importers:
       '@rollup/plugin-typescript': 8.5.0
       '@types/node': 18.7.23
       '@types/webpack-env': 1.18.0
-      '@vitest/coverage-istanbul': 0.23.4
+      '@vitest/coverage-istanbul': 0.24.0
       bumpp: 8.2.1
       conventional-changelog-cli: 2.2.2
       cpx2: 4.2.0
@@ -50,7 +50,7 @@ importers:
       '@rollup/plugin-typescript': 8.5.0_hafrwlgfjmvsm7253l3bfjzhnq
       '@types/node': 18.7.23
       '@types/webpack-env': 1.18.0
-      '@vitest/coverage-istanbul': 0.23.4
+      '@vitest/coverage-istanbul': 0.24.0
       bumpp: 8.2.1
       conventional-changelog-cli: 2.2.2
       cpx2: 4.2.0
@@ -3790,8 +3790,8 @@ packages:
       vite: 3.0.9
       vue: 3.2.40
 
-  /@vitest/coverage-istanbul/0.23.4:
-    resolution: {integrity: sha512-vl+c682jwCkthdOomO7aBRY/H2bXfxjYAo+WZoGktdWEiSBfwhFUOcJJW3+Ery9i8ja+M1Jd19HrqYriLixGPw==}
+  /@vitest/coverage-istanbul/0.24.0:
+    resolution: {integrity: sha512-H93pxVdG1/VqqpAeA2cuw5XTYBg0/dy0RPdsluQMSjlcmBVaV4c76XqBmTKJRZh21/qIs+YT8YTRnl4IdwQ8Zg==}
     dependencies:
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-instrument: 5.2.0
@@ -3799,7 +3799,7 @@ packages:
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.1.5
       test-exclude: 6.0.0
-      vitest: 0.23.4
+      vitest: 0.24.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
