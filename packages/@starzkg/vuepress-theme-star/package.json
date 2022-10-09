@@ -70,7 +70,7 @@
     "@vueuse/core": "^9.1.0",
     "@waline/client": "^2.0.0",
     "balloon-css": "^1.2.0",
-    "sass": "^1.54.5",
+    "sass": "^1.55.0",
     "screenfull": "^5.2.0",
     "ts-debounce": "^3.0.0",
     "typed.js": "^2.0.12",
@@ -83,7 +83,7 @@
     "@types/ua-parser-js": "0.7.36"
   },
   "peerDependencies": {
-    "sass-loader": "^13.0.0"
+    "sass-loader": "^13.1.0"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

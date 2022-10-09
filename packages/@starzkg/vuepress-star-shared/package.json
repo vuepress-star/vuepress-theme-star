@@ -39,9 +39,7 @@
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib es *.tsbuildinfo",
-    "copy": "pnpm copy1 && pnpm copy2",
-    "copy1": "cpx \"src/**/*.{css,svg,vue,scss}\" es",
-    "copy2": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
+    "copy": "cpx \"src/**/*.{css,svg,vue,scss}\" lib"
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.50",

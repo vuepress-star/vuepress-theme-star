@@ -52,7 +52,7 @@ $asciiHexMap: (
 }
 
 // 将svg字符串转换成 URL 编码
-@function sass-svg-encode-uri($svg: '') {
+@function svg-encode-uri($svg: '') {
   $svg: insertXmlns($svg);
   $url: 'data:image/svg+xml;charset=utf-8,';
   $str_len: str_length($svg);

@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   extends: 'vuepress',
   globals: {
+    NodeJS: 'readonly',
     __VUEPRESS_VERSION__: 'readonly',
     __VUEPRESS_DEV__: 'readonly',
     __VUEPRESS_SSR__: 'readonly',

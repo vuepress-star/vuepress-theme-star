@@ -227,7 +227,7 @@ $asciiMap: (
 }
 
 // 将svg字符串转换成base64数据
-@function sass-svg-base64($svg: '') {
+@function svg-base64($svg: '') {
   $svg: insertXmlns($svg);
   $base64: 'data:image/svg+xml;base64,';
   $str_len: str_length($svg);

@@ -1,19 +1,24 @@
-import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared'
+import type { LocaleData } from '@vuepress/shared'
 
-export interface CopyCodeI18nConfig {
+export interface CopyCodeLocaleData extends LocaleData {
   /**
-   * 复制按钮文字
+   * Copy text
    *
-   * Copy button label text
+   * 复制文字
    */
   copy: string
 
   /**
-   * 复制成功提示消息文字
+   * Copied text
    *
+   * 已复制文字
+   */
+  copied: string
+
+  /**
    * Success message text after content is copied
+   *
+   * 复制成功提示消息文字
    */
   hint: string
 }
-
-export type CopyCodeLocaleConfig = ConvertLocaleConfig<CopyCodeI18nConfig>

@@ -1,6 +1,6 @@
 @import 'icons';
 @import 'variables';
-@import '@starzkg/vuepress-star-shared/styles/sass-svg-encode-uri';
+@import '@starzkg/vuepress-star-shared/styles/svg-encode-uri';
 
 .custom-container {
   position: relative;
@@ -65,10 +65,10 @@
       color: var(--info-title-color);
 
       &::before {
-        background-image: url(sass-svg-encode-uri($info-icon));
+        background-image: url(svg-encode-uri($info-icon));
 
         #{$dark-selector} & {
-          background-image: url(sass-svg-encode-uri($info-dark-icon));
+          background-image: url(svg-encode-uri($info-dark-icon));
         }
       }
     }
@@ -82,10 +82,10 @@
       color: var(--note-title-color);
 
       &::before {
-        background-image: url(sass-svg-encode-uri($note-icon));
+        background-image: url(svg-encode-uri($note-icon));
 
         #{$dark-selector} & {
-          background-image: url(sass-svg-encode-uri($note-dark-icon));
+          background-image: url(svg-encode-uri($note-dark-icon));
         }
       }
     }
@@ -99,10 +99,10 @@
       color: var(--tip-title-color);
 
       &::before {
-        background-image: url(sass-svg-encode-uri($tip-icon));
+        background-image: url(svg-encode-uri($tip-icon));
 
         #{$dark-selector} & {
-          background-image: url(sass-svg-encode-uri($tip-dark-icon));
+          background-image: url(svg-encode-uri($tip-dark-icon));
         }
       }
     }
@@ -116,10 +116,10 @@
       color: var(--warning-title-color);
 
       &::before {
-        background-image: url(sass-svg-encode-uri($warning-icon));
+        background-image: url(svg-encode-uri($warning-icon));
 
         #{$dark-selector} & {
-          background-image: url(sass-svg-encode-uri($warning-dark-icon));
+          background-image: url(svg-encode-uri($warning-dark-icon));
         }
       }
     }
@@ -133,10 +133,10 @@
       color: var(--danger-title-color);
 
       &::before {
-        background-image: url(sass-svg-encode-uri($danger-icon));
+        background-image: url(svg-encode-uri($danger-icon));
 
         #{$dark-selector} & {
-          background-image: url(sass-svg-encode-uri($danger-dark-icon));
+          background-image: url(svg-encode-uri($danger-dark-icon));
         }
       }
     }

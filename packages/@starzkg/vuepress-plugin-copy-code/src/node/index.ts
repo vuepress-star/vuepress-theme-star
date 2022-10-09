@@ -1,32 +1,6 @@
-import { getLocales } from '@starzkg/vuepress-shared'
-import type { Plugin } from '@vuepress/core'
-import { getDirname, path } from '@vuepress/utils'
-import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
-import type { CopyCodeOptions } from '../shared/index.js'
-import { i18n } from './i18n.js'
+import { copyCodePlugin } from './copyCodePlugin.js'
 
-const __dirname = getDirname(import.meta.url)
-
+export * from './copyCodePlugin.js'
 export * from '../shared/index.js'
 
-export const copyCodePlugin =
-  (options: CopyCodeOptions): Plugin =>
-  (app) => {
-    useSassPalettePlugin(app, { id: 'star' })
-
-    return {
-      name: '@starzkg/vuepress-plugin-copy-code',
-
-      define: (): Record<string, unknown> => ({
-        CODE_COPY_OPTIONS: options,
-        CODE_COPY_I18N: getLocales({
-          app,
-          name: 'copy-code',
-          default: i18n,
-          config: options.locale,
-        }),
-      }),
-
-      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
-    }
-  }
+export default copyCodePlugin
