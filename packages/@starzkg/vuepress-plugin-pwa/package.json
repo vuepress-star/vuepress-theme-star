@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-pwa",
-  "version": "1.0.0-beta.29",
+  "version": "1.0.0-beta.30",
   "description": "Powerful PWA plugin for vuepress",
   "keywords": [
     "vuepress-plugin",

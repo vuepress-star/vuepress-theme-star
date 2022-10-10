@@ -1,6 +1,6 @@
 {
   "name": "@starzkg/vuepress-plugin-feed",
-  "version": "1.0.0-beta.29",
+  "version": "1.0.0-beta.30",
   "description": "Feed plugin",
   "keywords": [
     "vuepress-plugin",
