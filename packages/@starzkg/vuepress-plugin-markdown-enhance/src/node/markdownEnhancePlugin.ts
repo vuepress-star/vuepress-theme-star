@@ -155,6 +155,32 @@ export const markdownEnhancePlugin =
           bundlerConfig.viteOptions = mergeConfig(
             bundlerConfig.viteOptions || {},
             {
+              optimizeDeps: {
+                include: [
+                  ...(markdownOptions.chart ? ['chart.js/auto/auto.mjs'] : []),
+                  ...(markdownOptions.echarts ? ['echarts'] : []),
+                  ...(markdownOptions.flowchart
+                    ? ['flowchart.js/src/flowchart.parse.js']
+                    : []),
+                  ...(markdownOptions.mermaid ? ['mermaid'] : []),
+                  ...(markdownOptions.markmap
+                    ? ['markmap-lib', 'markmap-view']
+                    : []),
+                  ...(markdownOptions.reveal
+                    ? [
+                        'reveal.js/dist/reveal.esm.js',
+                        'reveal.js/plugin/markdown/markdown.esm.js',
+                        ...(typeof markdownOptions.reveal === 'object'
+                          ? markdownOptions.reveal.plugins || []
+                          : []
+                        ).map(
+                          (plugin) =>
+                            `reveal.js/plugin/${plugin}/${plugin}.esm.js`
+                        ),
+                      ]
+                    : []),
+                ],
+              },
               ssr: {
                 external: [
                   ...(markdownOptions.chart ? ['chart.js'] : []),
