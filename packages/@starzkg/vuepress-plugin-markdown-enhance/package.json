@@ -94,7 +94,7 @@
     "plantuml-encoder": "^1.4.0",
     "reveal.js": "^4.3.1",
     "ts-debounce": "^4.0.0",
-    "vite": "3.1.6",
+    "vite": "3.1.7",
     "vue": "^3.2.40",
     "vue-router": "^4.1.4"
   },
