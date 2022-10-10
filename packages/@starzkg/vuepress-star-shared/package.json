@@ -33,6 +33,7 @@
   "types": "lib/node/index.d.ts",
   "files": [
     "lib",
+    "src",
     "client",
     "styles"
   ],

@@ -34,6 +34,7 @@
   "files": [
     "es",
     "lib",
+    "src",
     "styles"
   ],
   "scripts": {

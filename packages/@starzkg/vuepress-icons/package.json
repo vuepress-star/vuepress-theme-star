@@ -34,7 +34,8 @@
   "unpkg": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
