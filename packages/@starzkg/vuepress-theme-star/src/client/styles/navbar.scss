@@ -34,35 +34,16 @@
     justify-content: end;
   }
 
-  .navbar-middle {
-    width: 10rem;
-  }
-
   .navbar-logo {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    position: fixed;
-    z-index: 99;
-    width: 10rem;
-    height: 8.2rem;
-    background: url(../assets/images/logo_bg.png) 50% 100% no-repeat;
-    background-size: cover;
-    top: 0;
-    text-align: center;
-    transition: width 0.25s ease-in-out;
+    justify-content: center;
 
     .logo {
-      height: 60%;
-      margin: 0 auto;
+      height: var(--navbar-line-height);
+      margin-right: var(--navbar-padding-v);
       vertical-align: top;
     }
-  }
-
-  .logo {
-    height: var(--navbar-line-height);
-    margin-right: var(--navbar-padding-v);
-    vertical-align: top;
   }
 
   .site-name {
@@ -73,13 +54,11 @@
   }
 
   .navbar-items-wrapper {
-    display: flex;
-    position: absolute;
     box-sizing: border-box;
     top: var(--navbar-padding-v);
     left: var(--navbar-padding-h);
     height: var(--navbar-line-height);
-    white-space: nowrap;
+    white-space: pre;
     font-size: 0.9rem;
 
     .search-box {
@@ -221,21 +200,6 @@
       margin-bottom: -2px;
       border-bottom: 2px solid var(--c-text-accent);
     }
-  }
-}
-
-@media screen and (max-width: $xs) {
-  .navbar-middle {
-    display: none;
-  }
-}
-@media screen and (max-width: $sm) {
-  .navbar-middle {
-    width: 5rem !important;
-  }
-  .navbar-logo {
-    width: 5rem !important;
-    height: 4.1rem !important;
   }
 }
 

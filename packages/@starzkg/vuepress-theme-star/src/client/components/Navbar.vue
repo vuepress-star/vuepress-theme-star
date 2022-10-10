@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { nextTick, onMounted, ref } from 'vue'
 import { useNavbar } from '../composables/index.js'
-import NavbarBadge from './NavbarBadge.vue'
 import NavbarItems from './NavbarItems.vue'
 import NavbarLogo from './NavbarLogo.js'
 import ToggleNavbarButton from './ToggleNavbarButton.vue'
@@ -9,58 +8,39 @@ import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
 const navbar = useNavbar()
 
-const navbarEl = ref<HTMLElement | null>(null)
-const navbarLeft = ref<HTMLElement | null>(null)
-const navbarMiddle = ref<HTMLElement | null>(null)
-const navbarRight = ref<HTMLElement | null>(null)
-const navbarItemsWrapper = ref<HTMLElement | null>(null)
+const navbarWrapper = ref<HTMLElement | null>(null)
 
 const collapse = ref(false)
 onMounted(() => {
   nextTick(() => {
-    const navbarItemsWrapperWidth = getCssValue(
-      navbarItemsWrapper.value,
-      'width'
-    )
     const handleCollapse = (): void => {
-      collapse.value = navbarLeft.value!.offsetWidth < navbarItemsWrapperWidth
+      collapse.value = navbarWrapper.value!.scrollWidth > window.innerWidth
     }
     handleCollapse()
-    window.addEventListener('resize', handleCollapse, false)
-    window.addEventListener('orientationchange', handleCollapse, false)
+    window.addEventListener('resize', handleCollapse)
+    window.addEventListener('orientationchange', handleCollapse)
   })
 })
-
-function getCssValue(el: HTMLElement | null, property: string): number {
-  // NOTE: Known bug, will return 'auto' if style value is 'auto'
-  const val = el?.ownerDocument?.defaultView?.getComputedStyle(el, null)?.[
-    property
-  ]
-  const num = Number.parseInt(val, 10)
-  return Number.isNaN(num) ? 0 : num
-}
 </script>
 
 <template>
-  <header ref="navbarEl" class="navbar" :class="{ collapse: collapse }">
-    <section class="navbar-wrapper">
-      <div ref="navbarLeft" class="navbar-left">
+  <header class="navbar" :class="{ collapse: collapse }">
+    <section ref="navbarWrapper" class="navbar-wrapper">
+      <div class="navbar-left">
         <ToggleSidebarButton v-show="collapse" />
-        <div
-          v-show="!collapse"
-          ref="navbarItemsWrapper"
-          class="navbar-items-wrapper"
-        >
+        <div class="navbar-logo">
+          <NavbarLogo />
+        </div>
+        <div v-show="!collapse" class="navbar-items-wrapper">
           <slot name="before" />
           <NavbarItems />
           <slot name="after" />
         </div>
       </div>
-      <div ref="navbarMiddle" class="navbar-middle">
-        <NavbarBadge />
-      </div>
-      <div ref="navbarRight" class="navbar-right">
+      <div class="navbar-middle">
         <NavbarSearch />
+      </div>
+      <div class="navbar-right">
         <ToggleNavbarButton v-show="collapse" />
       </div>
     </section>
