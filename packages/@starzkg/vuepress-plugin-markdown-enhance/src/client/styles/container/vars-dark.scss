@@ -1,26 +1,35 @@
-html.dark {
+@import 'variables';
+@import 'icons';
+
+#{$dark-selector} {
   // info
   --info-title-color: #eef9fd;
   --info-bg-color: #193c47;
+  --info-icon: #{$info-dark-icon};
 
   // note
   --note-title-color: #fdfdfe;
   --note-bg-color: #474748;
+  --note-icon: #{$note-dark-icon};
 
   // tip
   --tip-title-color: #e6f6e6;
   --tip-bg-color: #003100;
+  --tip-icon: #{$tip-dark-icon};
 
   // warning
   --warning-title-color: #fff8e6;
   --warning-bg-color: #4d3800;
+  --warning-icon: #{$warning-dark-icon};
 
   // danger
   --danger-title-color: #ffebec;
   --danger-bg-color: #4b1113;
+  --danger-icon: #{$danger-dark-icon};
 
   // detail
   --detail-bg-color: #333;
   --detail-summary-bg-color: #555;
   --detail-text-color: #a8a8a8;
+  --detail-icon: #{$detail-dark-icon};
 }

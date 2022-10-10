@@ -112,7 +112,13 @@ export default defineUserConfig({
       backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
-      markdown: true,
+      markdown: {
+        locales: {
+          '/zh/': {
+            details: '详情',
+          },
+        },
+      },
       feed: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
         atom: true,

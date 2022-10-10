@@ -12,5 +12,5 @@ export const assignDefaultMarkdownOptions = (
   } else if (typeof options === 'string') {
     return {}
   }
-  return options || {}
+  return { ...options, ...DEFAULT_MARKDOWN_SPEC } || {}
 }

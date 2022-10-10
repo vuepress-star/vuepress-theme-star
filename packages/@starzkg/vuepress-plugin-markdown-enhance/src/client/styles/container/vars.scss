@@ -1,31 +1,38 @@
+@import 'icons';
 :root {
   // info
   --info-title-color: #193c47;
   --info-bg-color: #eef9fd;
   --info-border-color: #4cb3d4;
+  --info-icon: #{$info-icon};
 
   // note
   --note-title-color: #474748;
   --note-bg-color: #fdfdfe;
   --note-border-color: #d4d5d8;
+  --note-icon: #{$note-icon};
 
   // tip
   --tip-title-color: #003100;
   --tip-bg-color: #e6f6e6;
   --tip-border-color: #009400;
+  --tip-icon: #{$tip-icon};
 
   // warning
   --warning-title-color: #4d3800;
   --warning-bg-color: #fff8e6;
   --warning-border-color: #e6a700;
+  --warning-icon: #{$warning-icon};
 
   // danger
   --danger-title-color: #4b1113;
   --danger-bg-color: #ffebec;
   --danger-border-color: #e13238;
+  --danger-icon: #{$danger-icon};
 
   // detail
   --detail-bg-color: #eee;
   --detail-summary-bg-color: #ccc;
   --detail-text-color: inherit;
+  --detail-icon: #{$detail-icon};
 }

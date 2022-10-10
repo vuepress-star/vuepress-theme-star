@@ -13,8 +13,8 @@ import type { MarkdownOptions } from '../../../shared/index.js'
 export const detailsRender =
   (
     locales: LocaleConfig<{
-      defaultInfo: string
-    }>
+      details?: string
+    }> = {}
   ): MarkdownItContainerRenderFunction =>
   (tokens: Token[], index, _options, env): string => {
     const token = tokens[index]
@@ -38,12 +38,10 @@ export const detailsRender =
         const localePath = resolveLocalePath(locales, relativePath)
         const localeData = locales[localePath] ?? {}
 
-        info = localeData.defaultInfo || 'Details'
+        info = localeData.details || 'Details'
       }
 
-      return `<details class="custom-container details"><summary>${
-        info || 'Details'
-      }</summary>\n`
+      return `<details class="custom-container details">\n<summary>${info}</summary>\n`
     }
 
     return '\n</details>\n'
@@ -54,10 +52,6 @@ export const resolveDetailsContainerOptions = (
 ): ContainerPluginOptions => {
   return {
     type: 'details',
-    before: (info) =>
-      `<details class="custom-container details">\n${
-        info ? `<summary>${info}</summary>` : ''
-      }\n`,
-    after: () => '\n</details>\n',
+    render: detailsRender(localeOptions.locales),
   }
 }
