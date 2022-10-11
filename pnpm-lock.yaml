@@ -12,7 +12,7 @@ importers:
       '@rollup/plugin-commonjs': 23.0.0
       '@rollup/plugin-json': 5.0.0
       '@rollup/plugin-node-resolve': 15.0.0
-      '@rollup/plugin-typescript': 9.0.0
+      '@rollup/plugin-typescript': 9.0.1
       '@types/node': 18.7.23
       '@types/webpack-env': 1.18.0
       '@vitest/coverage-istanbul': 0.24.1
@@ -52,7 +52,7 @@ importers:
       '@rollup/plugin-commonjs': 23.0.0_rollup@2.79.1
       '@rollup/plugin-json': 5.0.0_rollup@2.79.1
       '@rollup/plugin-node-resolve': 15.0.0_rollup@2.79.1
-      '@rollup/plugin-typescript': 9.0.0_hafrwlgfjmvsm7253l3bfjzhnq
+      '@rollup/plugin-typescript': 9.0.1_hafrwlgfjmvsm7253l3bfjzhnq
       '@types/node': 18.7.23
       '@types/webpack-env': 1.18.0
       '@vitest/coverage-istanbul': 0.24.1
@@ -2460,8 +2460,8 @@ packages:
       rollup: 2.79.1
     dev: false
 
-  /@rollup/plugin-typescript/9.0.0_hafrwlgfjmvsm7253l3bfjzhnq:
-    resolution: {integrity: sha512-zGTFF6bt/Vl9LzsBfKsqNu01G3ILNhwmkGP/zciLv4bQ2JPNIAJEBabph4S8aq3pdhDNdm1ISUMQ9rBDzLIqLA==}
+  /@rollup/plugin-typescript/9.0.1_hafrwlgfjmvsm7253l3bfjzhnq:
+    resolution: {integrity: sha512-fj+CTk8+HvFCEwwDQdNgWd0lIJVXtMQ0Z3vH/ZgzFSbK2s1zs5wjZrjzrhViTTN+UF49+P69/tybgKRdGHpj/Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.14.0||^3.0.0
