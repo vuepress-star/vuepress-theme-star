@@ -29,6 +29,7 @@ const repoLabel = computed(() => {
 
 <template>
   <a
+    v-if="repoLink"
     :href="repoLink"
     target="_blank"
     class="github-corner"
