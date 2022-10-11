@@ -9,20 +9,17 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import { nextTick, onMounted } from 'vue'
-
+import { nextTick, onMounted, ref } from 'vue'
+const renderCanvas = ref<HTMLCanvasElement | null>(null)
 onMounted(() => {
   nextTick(() => {
-    const renderCanvas = document.getElementById(
-      'vuepress-canvas-hack'
-    ) as HTMLCanvasElement
     const yPositions: number[] = Array(500)
     for (let i = 0; i < 500; i++) {
       yPositions[i] = 0
     }
-    let width = (renderCanvas.width = window.innerWidth)
-    let height = (renderCanvas.height = window.innerHeight)
-    const ctx = renderCanvas.getContext('2d')
+    let width = (renderCanvas.value.width = window.innerWidth)
+    let height = (renderCanvas.value.height = window.innerHeight)
+    const ctx = renderCanvas.value.getContext('2d')
     if (ctx != null) {
       setInterval(() => {
         ctx.fillStyle = 'rgba(0,0,0,0.05)'
@@ -44,8 +41,8 @@ onMounted(() => {
       }, 30)
     }
     window.addEventListener('resize', () => {
-      width = renderCanvas.width = window.innerWidth
-      height = renderCanvas.height = window.innerHeight
+      width = renderCanvas.value.width = window.innerWidth
+      height = renderCanvas.value.height = window.innerHeight
     })
   })
 })
