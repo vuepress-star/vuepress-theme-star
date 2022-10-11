@@ -171,6 +171,7 @@ export default defineUserConfig({
       // use shiki plugin in production mode instead
       prismjs: !isProd,
       markdown: true,
+      pwa: {},
       copyright: {
         noCopy: false,
         noSelect: false,
