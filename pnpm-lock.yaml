@@ -216,7 +216,7 @@ importers:
       '@starzkg/vuepress-plugin-element-plus': workspace:*
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0-beta.28
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
-      '@starzkg/vuepress-plugin-live2d-widget': 1.0.12
+      '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
       '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
@@ -239,7 +239,7 @@ importers:
       '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0-beta.28
       '@starzkg/vuepress-plugin-interaction-effect': link:../../ecosystem/@starzkg/vuepress-plugin-interaction-effect
-      '@starzkg/vuepress-plugin-live2d-widget': 1.0.12
+      '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
       '@starzkg/vuepress-shared': link:../../packages/@starzkg/vuepress-shared
       '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
@@ -2591,8 +2591,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-live2d-widget/1.0.12:
-    resolution: {integrity: sha512-UjOEX0uWuaKdlXhokhNw3r0vHcHrupu5w3vvJMEN+y0f/D6rQeM7vJNzyzthubO7Mqvxtxs8SDQ/CiCJ/NxuEg==}
+  /@starzkg/vuepress-plugin-live2d-widget/1.1.0:
+    resolution: {integrity: sha512-E/Tk7h6oU2T3b4bFzrJuaHdjfgxIm60h8pZ05UWbEKXOECWDci99QbMCWez5eK8Rso2TDvON3VZVbNvZTdk7og==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
