@@ -10,9 +10,12 @@ export default defineComponent({
 
 <script setup lang="ts">
 import { nextTick, onMounted, ref } from 'vue'
-const renderCanvas = ref<HTMLCanvasElement | null>(null)
+const renderCanvas = ref<HTMLCanvasElement>()
 onMounted(() => {
   nextTick(() => {
+    if (!renderCanvas.value) {
+      return
+    }
     const yPositions: number[] = Array(500)
     for (let i = 0; i < 500; i++) {
       yPositions[i] = 0
@@ -41,6 +44,9 @@ onMounted(() => {
       }, 30)
     }
     window.addEventListener('resize', () => {
+      if (!renderCanvas.value) {
+        return
+      }
       width = renderCanvas.value.width = window.innerWidth
       height = renderCanvas.value.height = window.innerHeight
     })
@@ -50,7 +56,7 @@ onMounted(() => {
 
 <template>
   <div class="background">
-    <canvas id="vuepress-canvas-hack"></canvas>
+    <canvas id="vuepress-canvas-hack" ref="renderCanvas"></canvas>
   </div>
 </template>
 
