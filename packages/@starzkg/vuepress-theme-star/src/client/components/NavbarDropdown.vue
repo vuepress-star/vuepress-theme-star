@@ -70,7 +70,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
       <span class="title">{{ item.text }}</span>
       <span
         class="arrow"
-        :class="open && mode === 'vertical' ? 'down' : 'right'"
+        :class="open || mode !== 'vertical' ? 'down' : 'right'"
       />
     </button>
 
