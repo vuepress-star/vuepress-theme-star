@@ -376,6 +376,7 @@ importers:
       vue-router: ^4.1.4
     dependencies:
       '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
+      '@types/markdown-it': 12.2.3
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/markdown': 2.0.0-beta.50
@@ -423,7 +424,6 @@ importers:
       '@types/hash-sum': 1.0.0
       '@types/katex': 0.14.0
       '@types/lodash.debounce': 4.0.7
-      '@types/markdown-it': 12.2.3
       '@types/mermaid': 9.1.0
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
