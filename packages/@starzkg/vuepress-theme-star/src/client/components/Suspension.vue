@@ -10,13 +10,13 @@ const themeLocale = useThemeLocaleData()
 
 <template>
   <div class="suspension">
+    <BackToTop key="back-to-top" class="suspension-item" />
+
     <ToggleColorModeButton
       v-if="themeLocale.colorModeSwitch"
       key="toggle-color-mode-button"
       class="suspension-item"
     />
-
-    <BackToTop key="back-to-top" class="suspension-item" />
 
     <Repo key="repo" class="suspension-item" />
 

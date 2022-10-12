@@ -5,7 +5,7 @@ import SidebarItems from './SidebarItems.vue'
 
 <template>
   <aside class="sidebar">
-    <NavbarItems />
+    <NavbarItems mode="vertical" />
     <slot name="top" />
     <SidebarItems />
     <slot name="bottom" />
