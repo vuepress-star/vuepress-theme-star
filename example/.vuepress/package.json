@@ -17,7 +17,7 @@
     "@starzkg/vuepress-icons": "workspace:*",
     "@starzkg/vuepress-plugin-analytics": "1.1.2",
     "@starzkg/vuepress-plugin-element-plus": "workspace:*",
-    "@starzkg/vuepress-plugin-giscus-comment": "1.0.0-beta.28",
+    "@starzkg/vuepress-plugin-giscus-comment": "1.0.0",
     "@starzkg/vuepress-plugin-interaction-effect": "workspace:*",
     "@starzkg/vuepress-plugin-live2d-widget": "1.1.0",
     "@starzkg/vuepress-plugin-photo-swipe": "workspace:*",

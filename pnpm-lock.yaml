@@ -214,7 +214,7 @@ importers:
       '@starzkg/vuepress-icons': workspace:*
       '@starzkg/vuepress-plugin-analytics': 1.1.2
       '@starzkg/vuepress-plugin-element-plus': workspace:*
-      '@starzkg/vuepress-plugin-giscus-comment': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-giscus-comment': 1.0.0
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
@@ -237,7 +237,7 @@ importers:
       '@starzkg/vuepress-icons': link:../../packages/@starzkg/vuepress-icons
       '@starzkg/vuepress-plugin-analytics': 1.1.2
       '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
-      '@starzkg/vuepress-plugin-giscus-comment': 1.0.0-beta.28
+      '@starzkg/vuepress-plugin-giscus-comment': 1.0.0
       '@starzkg/vuepress-plugin-interaction-effect': link:../../ecosystem/@starzkg/vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
@@ -2568,8 +2568,8 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-giscus-comment/1.0.0-beta.28:
-    resolution: {integrity: sha512-qEo6lDjlBMJd3rjaNr4ltSWXlH8n/4/T1UnISlWrMOdyGQTpUBVzNkuWH6DVY6w8UME++3nKjpdwlyROfqN9Jg==}
+  /@starzkg/vuepress-plugin-giscus-comment/1.0.0:
+    resolution: {integrity: sha512-O+zSI/eAgzJ32iWQfen462M1jdNc1L36u/eSsaDgBfy/A1o1+SVio39NQIarKfygP1ccKahLawenA2MLnq15ZQ==}
     dependencies:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
