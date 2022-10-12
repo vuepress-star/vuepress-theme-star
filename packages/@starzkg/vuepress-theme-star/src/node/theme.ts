@@ -51,6 +51,8 @@ export const starTheme = ({
 
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
 
+    templateDev: path.resolve(__dirname, '../../templates/index.dev.html'),
+
     //  extend per page data
     extendsPage,
 
