@@ -5,4 +5,7 @@ export interface StarThemePageFrontmatter {
   sidebar?: 'auto' | false | SidebarConfig
   page?: string
   pageClass?: string
+  license?: string
+  copyright?: string
+  footer?: string
 }

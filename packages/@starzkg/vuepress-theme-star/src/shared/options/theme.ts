@@ -263,4 +263,25 @@ export interface StarThemeLocaleData extends LocaleData {
    * Profile Config
    */
   profile?: ProfileOptions
+
+  /**
+   * 协议
+   *
+   * License
+   */
+  license?: string
+
+  /**
+   * 版权
+   *
+   * Copyright
+   */
+
+  copyright?: string
+  /**
+   * 页脚
+   *
+   * footer
+   */
+  footer?: string
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BreadCrumb from '@theme/BreadCrumb.js'
 import Content from '@theme/Content.vue'
+import Footer from '@theme/Footer.vue'
 import Navbar from '@theme/Navbar.vue'
 import PageInfo from '@theme/PageInfo.js'
 import PageMeta from '@theme/PageMeta.vue'
@@ -44,7 +45,7 @@ onUnmounted(() => {
 
 <template>
   <div class="page">
-    <slot name="navbar">
+    <slot name="header">
       <Navbar
         v-if="shouldShowNavbar"
         :style="{ opacity: Math.max(200 - scrollY, 0) / 200 }"
@@ -129,5 +130,9 @@ onUnmounted(() => {
       </main>
       <slot name="container-bottom" />
     </main>
+
+    <slot name="footer">
+      <Footer />
+    </slot>
   </div>
 </template>

@@ -173,6 +173,15 @@
     padding: 1rem 0;
     margin-bottom: 1.5rem;
   }
+
+  .footer {
+    padding: 2.5rem;
+    border-top: 1px solid var(--c-border);
+    text-align: center;
+    color: var(--c-text-lighter);
+    transition: border-color var(--t-color);
+    background: var(--c-bg);
+  }
 }
 
 .page-meta {

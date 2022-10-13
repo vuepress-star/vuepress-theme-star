@@ -22,6 +22,4 @@ export interface StarThemeHomePageFrontmatter extends StarThemePageFrontmatter {
     icon: string
     details: string
   }[]
-  footer?: string
-  footerHtml?: boolean
 }

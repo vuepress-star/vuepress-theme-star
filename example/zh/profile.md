@@ -30,7 +30,6 @@ links:
     icon: juejin
     url: /
 footer: <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备19031217号</a> | MIT Licensed | Copyright © 2021-present Starzkg
-footerHtml: true
 ---
 
 ### 像数 1, 2, 3 一样容易
