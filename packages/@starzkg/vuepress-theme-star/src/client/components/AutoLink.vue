@@ -15,6 +15,7 @@ import { computed, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavLink } from '../../shared/index.js'
+import Icon from '../components/Icon.vue'
 
 const props = defineProps({
   item: {
@@ -94,6 +95,7 @@ const isActive = computed(() => {
     v-bind="$attrs"
   >
     <slot name="before" />
+    <Icon v-if="item.icon" :icon="item.icon" />
     {{ item.text }}
     <slot name="after" />
   </RouterLink>
@@ -107,6 +109,7 @@ const isActive = computed(() => {
     v-bind="$attrs"
   >
     <slot name="before" />
+    <Icon v-if="item.icon" :icon="item.icon" />
     {{ item.text }}
     <ExternalLinkIcon v-if="isBlankTarget" />
     <slot name="after" />

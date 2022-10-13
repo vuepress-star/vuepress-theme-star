@@ -7,10 +7,6 @@ import Hero from '@theme/Hero.vue'
 import HomeArrow from '@theme/HomeArrow.vue'
 import Navbar from '@theme/Navbar.vue'
 import { ref } from 'vue'
-import { useNavbar } from '../../composables/index.js'
-
-// navbar
-const navbar = useNavbar()
 
 const container = ref<HTMLElement>()
 const gotoContainer = (): void => {
@@ -23,7 +19,7 @@ const gotoContainer = (): void => {
 <template>
   <div class="home">
     <slot name="navbar">
-      <Navbar v-if="navbar.enable">
+      <Navbar>
         <template #before>
           <slot name="navbar-before" />
         </template>

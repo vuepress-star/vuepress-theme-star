@@ -12,9 +12,13 @@ export interface StarThemePageData {
    */
   content: string
   /**
-   * length of page.
+   * length of the page.
    */
   length: number
+  /**
+   * Icon of the page
+   */
+  icon: string
   /**
    * Git data
    */

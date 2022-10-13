@@ -3,6 +3,8 @@
 .profile {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   min-height: 100vh;
 
@@ -18,8 +20,8 @@
     box-sizing: border-box;
     justify-content: center;
     align-items: flex-start;
-    min-width: 0;
-    width: 100%;
+    min-width: 80%;
+    max-width: var(--profile-page-width);
 
     .profile-aside-wrapper {
       position: sticky;

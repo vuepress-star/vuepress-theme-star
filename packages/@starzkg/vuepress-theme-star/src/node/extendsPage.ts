@@ -40,6 +40,8 @@ export const resolvePageReadingTime = (
 export const extendsPage = (page: Page<Partial<StarThemePageData>>): void => {
   // save title into route meta to generate navbar and sidebar
   page.routeMeta.title = page.title
+  // page icon
+  page.routeMeta.icon = page.data.icon = page.frontmatter.icon as string
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = page.filePathRelative
   // content

@@ -12,7 +12,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
   }
 
   .navbar-mobile-wrapper {
@@ -68,11 +67,6 @@
   }
 }
 
-.navbar.collapse {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
 @media (max-width: $MQMobile) {
   .navbar {
     .site-name {
@@ -88,10 +82,13 @@
  * navbar-items
  */
 .navbar-items {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  height: 100%;
 
   a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     line-height: 1.4rem;
     color: inherit;
 
@@ -109,71 +106,6 @@
 
     &:first-child {
       margin-left: 0;
-    }
-  }
-}
-
-.theme-container.navbar-open {
-  .navbar.collapse .navbar-mobile-wrapper {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: var(--navbar-height);
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 90;
-    overflow-y: auto;
-    padding: 0 2rem;
-    background-color: var(--c-bg);
-
-    .navbar-items-wrapper {
-      position: unset;
-      height: unset;
-
-      .navbar-items {
-        display: block;
-        width: 100%;
-        padding-top: 1rem;
-
-        .navbar-item {
-          display: block;
-          margin-left: 0;
-          padding: 12px 4px 11px 0;
-          border-bottom: 1px solid var(--c-border);
-          line-height: 1.5rem;
-          transition: border-bottom-color var(--color-transition);
-        }
-      }
-    }
-
-    .navbar-brand-wrapper {
-      display: block;
-      margin: 0 auto;
-      padding: 0.5rem;
-
-      .logo {
-        height: 20vh;
-        margin: 0;
-      }
-    }
-
-    &.fade-enter-active,
-    &.fade-leave-active {
-      transition: opacity 0.25s;
-
-      div {
-        transition: transform 0.25s ease;
-      }
-    }
-
-    &.fade-enter-from,
-    &.fade-leave-to {
-      opacity: 0;
-
-      div {
-        transform: translateY(-8px);
-      }
     }
   }
 }
@@ -201,6 +133,20 @@
       border-bottom: 2px solid var(--c-text-accent);
     }
   }
+}
+
+/**
+ * toggle-navbar-button
+ */
+.toggle-navbar-button {
+  display: none !important;
+}
+
+/**
+ * toggle-sidebar-button
+ */
+.toggle-sidebar-button {
+  display: none !important;
 }
 
 /**

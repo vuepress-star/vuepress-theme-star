@@ -10,7 +10,16 @@ import ProfileCard from '@theme/ProfileCard.vue'
 <template>
   <div class="profile">
     <header class="profile-header">
-      <Navbar />
+      <slot name="navbar">
+        <Navbar>
+          <template #before>
+            <slot name="navbar-before" />
+          </template>
+          <template #after>
+            <slot name="navbar-after" />
+          </template>
+        </Navbar>
+      </slot>
       <div class="profile-banner" />
     </header>
 

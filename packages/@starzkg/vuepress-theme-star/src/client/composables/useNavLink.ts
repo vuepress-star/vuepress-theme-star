@@ -21,6 +21,7 @@ export const useNavLink = (item: string): NavLink => {
   const resolved = useResolveRouteWithRedirect(encodeURI(item))
   return {
     text: resolved.meta.title || item,
+    icon: resolved.meta.icon as string,
     link: resolved.name === '404' ? item : resolved.fullPath,
   }
 }
