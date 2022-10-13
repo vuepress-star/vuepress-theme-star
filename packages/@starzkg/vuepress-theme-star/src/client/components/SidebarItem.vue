@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AutoLink from '@theme/AutoLink.vue'
 import DropdownTransition from '@theme/DropdownTransition.vue'
+import Icon from '@theme/Icon.js'
 import { useToggle } from '@vueuse/core'
 import { computed, nextTick, onBeforeUnmount, toRefs } from 'vue'
 import type { PropType } from 'vue'
@@ -65,6 +66,7 @@ onBeforeUnmount(() => {
       @click="onClick"
       @keydown.enter="onClick"
     >
+      <Icon v-if="item.icon" :icon="item.icon" />
       {{ item.text }}
       <span
         v-if="item.collapsible"

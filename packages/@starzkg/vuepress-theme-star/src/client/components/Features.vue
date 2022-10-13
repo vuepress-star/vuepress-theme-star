@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import Icon from '@theme/Icon.js'
 import { usePageFrontmatter } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import type { StarThemeHomePageFrontmatter } from '../../shared/index.js'
-import Icon from '../components/Icon.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const features = computed(() => {

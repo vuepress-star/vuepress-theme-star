@@ -9,7 +9,12 @@
   }
 
   a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-right: 0.25rem;
+    }
   }
 
   .navbar-items {
@@ -104,7 +109,6 @@
   &:not(.sidebar-heading) {
     font-size: 1em;
     font-weight: 400;
-    display: inline-block;
     margin: 0;
     padding: 0.35rem 1rem 0.35rem 2rem;
     line-height: 1.4;

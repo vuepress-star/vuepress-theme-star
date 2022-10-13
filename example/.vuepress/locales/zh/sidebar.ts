@@ -2,6 +2,7 @@ export default {
   '/zh/guide/': [
     {
       text: '指南',
+      icon: 'guide',
       link: '/zh/guide/README.md',
       children: [
         '/zh/guide/introduction.md',

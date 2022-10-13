@@ -9,13 +9,13 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
+import Icon from '@theme/Icon.js'
 import { useSiteData } from '@vuepress/client'
 import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
 import { computed, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavLink } from '../../shared/index.js'
-import Icon from '../components/Icon.vue'
 
 const props = defineProps({
   item: {

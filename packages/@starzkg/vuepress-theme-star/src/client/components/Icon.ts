@@ -1,39 +1,70 @@
-import { defineComponent, h, PropType, resolveComponent, VNode } from 'vue'
+import { withBase } from '@vuepress/client'
+import { isLinkHttp } from '@vuepress/shared'
+import {
+  computed,
+  defineComponent,
+  FunctionalComponent,
+  h,
+  resolveComponent,
+  VNode,
+} from 'vue'
 import { useIconPrefix } from '../composables/index.js'
-
-declare type IconType = 'component' | 'font-icon'
 
 export default defineComponent({
   name: 'Icon',
   props: {
-    name: {
+    icon: {
       type: String,
       required: true,
     },
     type: {
-      type: String as PropType<IconType>,
+      type: String,
       default: 'component',
+    },
+    color: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    size: {
+      type: String,
+      required: false,
+      default: '',
     },
   },
   setup(props) {
     const iconPrefix = useIconPrefix()
-    return (): null | VNode => {
-      if (props.type === 'component') {
-        const component = resolveComponent(`${iconPrefix.value}${props.name}`)
 
-        return component
-          ? h(
-              'i',
-              {
-                class: ['icon'],
-              },
-              h(component)
-            )
-          : null
-      } else if (props.type === 'font-icon') {
-        return h('i', { class: ['icon', props.name] })
+    const style = computed(() => ({
+      ...(props.color ? { color: props.color } : {}),
+      ...(props.size ? { 'font-size': `${props.size}px` } : {}),
+    }))
+
+    const icon: FunctionalComponent = () => {
+      if (props.type === 'component') {
+        const component = resolveComponent(`${iconPrefix.value}${props.icon}`)
+
+        return component ? h(component) : null
+      } else if (props.type === 'img') {
+        if (isLinkHttp(props.icon)) {
+          return h('img', { src: props.icon, alt: props.icon })
+        } else if (props.icon.startsWith('/')) {
+          return h('img', { src: withBase(props.icon), alt: props.icon })
+        }
+      } else if (props.type.startsWith('font-')) {
+        return h('i', {
+          class: [
+            'font-icon',
+            props.type.slice(5),
+            `${iconPrefix.value}${props.icon}`,
+          ],
+        })
       }
       return null
+    }
+
+    return (): null | VNode => {
+      return h('span', { class: ['icon'] }, h(icon, { style: style.value }))
     }
   },
 })

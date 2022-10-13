@@ -17,7 +17,7 @@ export default defineComponent({
     return (): VNode =>
       h('div', { class: 'page-title' }, [
         frontmatter.value.icon
-          ? h(h(Icon, { name: frontmatter.value.icon }), {
+          ? h(h(Icon, { icon: frontmatter.value.icon }), {
               class: 'page-title-icon',
             })
           : null,
