@@ -7,13 +7,13 @@ actions:
     link: /zh/guide/getting-started.html
     type: primary
   - text: 配置 🛠
-    link: /zh/config/
+    link: /zh/config/configuration.html
     type: secondary
   - text: 案例 🧩
     link: /zh/example/
     type: secondary
   - text: 项目简介 🚀
-    link: /zh/guide/
+    link: /zh/guide/introduction.html
     type: primary
 links:
   - text: QQ
