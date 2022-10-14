@@ -1,7 +1,7 @@
 @use '@starzkg/vuepress-star-shared/styles/reset';
 @import '@starzkg/vuepress-star-shared/styles/svg-encode-uri';
 
-$copy-icon: url(svg-encode-uri(
+$copy-code-icon: url(svg-encode-uri(
   '<svg viewBox="0 0 24 24" fill="none" height="20" width="20" stroke="rgba(128,128,128,1)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/></svg>'
 ));
 $copied-icon: url(svg-encode-uri(
@@ -9,64 +9,24 @@ $copied-icon: url(svg-encode-uri(
 ));
 
 :root {
-  --copy-icon: #{$copy-icon};
+  --copy-code-icon: #{$copy-code-icon};
   --copied-icon: #{$copied-icon};
 }
 
-div[class*='language-'] {
-  > button.copy {
+.code-enhance {
+  .code-copy-button {
     @include reset.button;
     position: absolute;
     outline: none;
     cursor: pointer;
 
-    .copy-icon {
+    .copy-code-icon {
       background-color: currentcolor;
 
-      mask-image: var(--copy-icon);
+      mask-image: var(--copy-code-icon);
       mask-position: 50%;
       mask-repeat: no-repeat;
       mask-size: 1em;
-    }
-
-    &:not(.pure) {
-      right: -14px;
-      bottom: -14px;
-      z-index: 5;
-
-      width: 2rem;
-      height: 2rem;
-      padding: 7px 8px;
-      border-radius: 50%;
-
-      background: #339af0;
-      color: #fff;
-
-      .mobile & {
-        right: 0;
-        bottom: 0;
-
-        width: 28px;
-        height: 28px;
-        border-radius: 50% 10% 0;
-      }
-
-      &:hover {
-        background: #228be6;
-      }
-
-      .copy-icon {
-        width: 100%;
-        height: 100%;
-        color: #fff;
-        font-size: 1.25rem;
-
-        .mobile & {
-          position: relative;
-          top: 2px;
-          left: 2px;
-        }
-      }
     }
 
     &.pure {
@@ -108,7 +68,7 @@ div[class*='language-'] {
         line-height: 1.25rem;
       }
 
-      .copy-icon {
+      .copy-code-icon {
         width: 1.25rem;
         height: 1.25rem;
         padding: 0.625rem;
@@ -120,14 +80,55 @@ div[class*='language-'] {
     }
 
     &.copied {
-      .copy-icon {
+      .copy-code-icon {
         mask-image: var(--copied-icon);
       }
     }
   }
 
-  &:hover > button.copy.pure,
-  > button.copy.pure:focus {
+  .code-copy-button:not(.pure) {
+    position: absolute;
+    right: -14px;
+    bottom: -14px;
+    z-index: 5;
+
+    width: 2rem;
+    height: 2rem;
+    padding: 7px 8px;
+    border-radius: 50%;
+
+    background: #339af0;
+    color: #fff;
+
+    .mobile & {
+      right: -1.5rem;
+      bottom: 0;
+
+      width: 28px;
+      height: 28px;
+      border-radius: 50% 10% 0;
+    }
+
+    &:hover {
+      background: #228be6;
+    }
+
+    .copy-code-icon {
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      font-size: 1.25rem;
+
+      .mobile & {
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
+
+  &:hover > .code-copy-button.pure,
+  > .code-copy-button.pure:focus {
     opacity: 1;
   }
 }

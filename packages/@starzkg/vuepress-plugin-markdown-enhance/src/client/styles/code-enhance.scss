@@ -1,0 +1,7 @@
+.code-enhance {
+  position: relative;
+
+  div[class*='markdown-enhance-'] + div[class*='language-'] {
+    display: none;
+  }
+}

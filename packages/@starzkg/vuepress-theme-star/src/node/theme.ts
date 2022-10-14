@@ -1,4 +1,3 @@
-import { copyCodePlugin } from '@starzkg/vuepress-plugin-copy-code'
 import { copyrightPlugin } from '@starzkg/vuepress-plugin-copyright'
 import { feedPlugin } from '@starzkg/vuepress-plugin-feed'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
@@ -122,10 +121,6 @@ export const starTheme = ({
         : [],
 
       tocPlugin(),
-
-      copyCodePlugin({
-        selector: '.theme-star-content div[class*="language-"] pre',
-      }),
 
       themePlugins.copyright !== false ? copyrightPlugin({ global: true }) : [],
 

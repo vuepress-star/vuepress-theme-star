@@ -6,11 +6,13 @@ import type { ForInlinePluginOptions } from '../../markdown-it/plugins/for-inlin
 import type { KatexPluginOptions } from '../../markdown-it/plugins/katex.js'
 import type { MathJaxPluginOptions } from '../../markdown-it/plugins/mathjax.js'
 import type { TaskListPluginOptions } from '../../markdown-it/plugins/task-list.js'
+import type { CodeEnhanceOptions } from './code-enhance.js'
 import type { ContainerOptions } from './container.js'
 import type { ExternalLinkIconOptions } from './external-link-icon.js'
 import type { MarkdownEnhanceLocaleData } from './locales.js'
-import type { RevealPluginOptions } from './reveal.js'
 
+export * from './code-copy.js'
+export * from './code-enhance.js'
 export * from './code-demo.js'
 export * from './container.js'
 export * from './external-link-icon.js'
@@ -36,14 +38,6 @@ export interface MarkdownEnhanceOptions {
    */
   attrs?: AttrsPluginOptions | boolean
   /**
-   * 是否启用 chart 图表支持
-   *
-   * Whether to enable chart support
-   *
-   * @default false
-   */
-  chart?: boolean
-  /**
    * 是否禁止汉字字符之间的换行
    *
    * Whether to enable suppress linebreaks between east asian characters
@@ -51,6 +45,14 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   cjkBreaks?: boolean
+  /**
+   * 是否启用代码块增强
+   *
+   * Whether to enable code enhance
+   *
+   * @default false
+   */
+  codeEnhance?: CodeEnhanceOptions | false
   /**
    * 是否启用颜色格式
    *
@@ -68,14 +70,6 @@ export interface MarkdownEnhanceOptions {
    */
   deflist?: boolean
   /**
-   * 是否启用 echarts 图表支持
-   *
-   * Whether to enable echarts support
-   *
-   * @default false
-   */
-  echarts?: boolean
-  /**
    * 是否启用 emoji
    *
    * Whether to enable emoji
@@ -83,14 +77,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   emoji?: false | EmojiPluginOptions
-  /**
-   * 是否启用流程图
-   *
-   * Whether to enable flowchart format support
-   *
-   * @default false
-   */
-  flowchart?: boolean
   /**
    * 是否启用脚注格式支持
    *
@@ -148,14 +134,6 @@ export interface MarkdownEnhanceOptions {
    */
   mark?: boolean
   /**
-   * 是否启用 Markmap 支持
-   *
-   * Whether to enable markmap support
-   *
-   * @default false
-   */
-  markmap?: boolean
-  /**
    * 是否启用 MathJax 语法支持
    *
    * Whether to enable MathJax syntax support
@@ -163,30 +141,6 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   mathjax?: MathJaxPluginOptions | boolean
-  /**
-   * 是否启用 Mermaid 流程图支持
-   *
-   * Whether to enable mermaid support
-   *
-   * @default false
-   */
-  mermaid?: boolean
-  /**
-   * 是否启用 PlantUML 支持
-   *
-   * Whether to enable PlantUML support
-   *
-   * @default false
-   */
-  plantuml?: boolean
-  /**
-   * 是否启用 reveal.js 支持
-   *
-   * Whether to enable reveal.js support
-   *
-   * @default false
-   */
-  reveal?: RevealPluginOptions | boolean
   /**
    * 是否启用上角标格式支持
    *
@@ -235,9 +189,9 @@ export interface MarkdownEnhanceOptions {
   delay?: number
 }
 
-export declare type MarkdownOptions = MarkdownEnhanceOptions &
+export declare type MarkdownOptions = _MarkdownOptions &
   ContainerOptions &
   ExternalLinkIconOptions &
-  _MarkdownOptions & {
+  MarkdownEnhanceOptions & {
     locales?: LocaleConfig<MarkdownEnhanceLocaleData>
   }

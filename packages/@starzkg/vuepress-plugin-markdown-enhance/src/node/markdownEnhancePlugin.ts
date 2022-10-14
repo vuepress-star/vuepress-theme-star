@@ -5,13 +5,11 @@ import { getDirname, path } from '@vuepress/utils'
 import { mergeConfig } from 'vite'
 import { abbr } from '../markdown-it/plugins/abbr.js'
 import { attrs } from '../markdown-it/plugins/attrs.js'
-import { chart } from '../markdown-it/plugins/chart.js'
 import { cjkBreaks } from '../markdown-it/plugins/cjk-breaks.js'
+import { codeEnhance } from '../markdown-it/plugins/code/index.js'
 import { colorModel } from '../markdown-it/plugins/color-model.js'
 import { deflist } from '../markdown-it/plugins/deflist.js'
-import { echarts } from '../markdown-it/plugins/echarts.js'
 import { emoji } from '../markdown-it/plugins/emoji.js'
-import { flowchart } from '../markdown-it/plugins/flowchart.js'
 import { footnote } from '../markdown-it/plugins/footnote.js'
 import { forInline } from '../markdown-it/plugins/for-inline.js'
 import { _import } from '../markdown-it/plugins/import/index.js'
@@ -19,11 +17,7 @@ import { include } from '../markdown-it/plugins/include.js'
 import { ins } from '../markdown-it/plugins/ins.js'
 import { katex } from '../markdown-it/plugins/katex.js'
 import { mark } from '../markdown-it/plugins/mark.js'
-import { markmap } from '../markdown-it/plugins/markmap.js'
 import { mathjax } from '../markdown-it/plugins/mathjax.js'
-import { mermaid } from '../markdown-it/plugins/mermaid.js'
-import plantuml from '../markdown-it/plugins/plantuml.js'
-import { reveal } from '../markdown-it/plugins/reveal.js'
 import { sub } from '../markdown-it/plugins/sub.js'
 import { sup } from '../markdown-it/plugins/sup.js'
 import { taskList } from '../markdown-it/plugins/task-list.js'
@@ -65,16 +59,25 @@ export const markdownEnhancePlugin =
 
     usePlugins(app, markdownOptions)
 
+    const codeEnhanceOptions = markdownOptions.codeEnhance || {}
+
     return {
       ...plugin,
 
-      define: (): Record<string, unknown> =>
-        Object.keys(markdownOptions).reduce((newData, key) => {
+      define: (): Record<string, unknown> => ({
+        ...Object.keys(markdownOptions).reduce((newData, key) => {
           const newKey =
             'MARKDOWN_ENHANCE_' + key.replace(/([A-Z])/g, '_$1').toUpperCase()
           newData[newKey] = markdownOptions[key]
           return newData
         }, {}),
+        ...Object.keys(codeEnhanceOptions).reduce((newData, key) => {
+          const newKey =
+            'MARKDOWN_ENHANCE_' + key.replace(/([A-Z])/g, '_$1').toUpperCase()
+          newData[newKey] = codeEnhanceOptions[key]
+          return newData
+        }, {}),
+      }),
 
       clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
@@ -95,13 +98,11 @@ export const markdownEnhancePlugin =
               : {}
           )
         }
-        if (markdownOptions.chart) markdownIt.use(chart)
         if (markdownOptions.cjkBreaks) markdownIt.use(cjkBreaks)
+        if (markdownOptions.codeEnhance) markdownIt.use(codeEnhance)
         if (markdownOptions.colorModel) markdownIt.use(colorModel)
         if (markdownOptions.deflist) markdownIt.use(deflist)
-        if (markdownOptions.echarts) markdownIt.use(echarts)
         if (markdownOptions.emoji) markdownIt.use(emoji)
-        if (markdownOptions.flowchart) markdownIt.use(flowchart)
         if (markdownOptions.footnote) markdownIt.use(footnote)
         if (markdownOptions.forInline) {
           markdownIt.use(
@@ -115,10 +116,6 @@ export const markdownEnhancePlugin =
         if (markdownOptions.include) markdownIt.use(include)
         if (markdownOptions.ins) markdownIt.use(ins)
         if (markdownOptions.mark) markdownIt.use(mark)
-        if (markdownOptions.markmap) markdownIt.use(markmap)
-        if (markdownOptions.mermaid) markdownIt.use(mermaid)
-        if (markdownOptions.plantuml) markdownIt.use(plantuml)
-        if (markdownOptions.reveal) markdownIt.use(reveal)
         if (markdownOptions.sup) markdownIt.use(sup)
         if (markdownOptions.sub) markdownIt.use(sub)
         if (markdownOptions.tasklist) {
@@ -162,21 +159,22 @@ export const markdownEnhancePlugin =
             {
               optimizeDeps: {
                 include: [
-                  ...(markdownOptions.chart ? ['chart.js/auto/auto.mjs'] : []),
-                  ...(markdownOptions.echarts ? ['echarts'] : []),
-                  ...(markdownOptions.flowchart
+                  ...(codeEnhanceOptions.chart
+                    ? ['chart.js/auto/auto.mjs']
+                    : []),
+                  ...(codeEnhanceOptions.flowchart
                     ? ['flowchart.js/src/flowchart.parse.js']
                     : []),
-                  ...(markdownOptions.mermaid ? ['mermaid'] : []),
-                  ...(markdownOptions.markmap
+                  ...(codeEnhanceOptions.mermaid ? ['mermaid'] : []),
+                  ...(codeEnhanceOptions.markmap
                     ? ['markmap-lib', 'markmap-view']
                     : []),
-                  ...(markdownOptions.reveal
+                  ...(codeEnhanceOptions.reveal
                     ? [
                         'reveal.js/dist/reveal.esm.js',
                         'reveal.js/plugin/markdown/markdown.esm.js',
-                        ...(typeof markdownOptions.reveal === 'object'
-                          ? markdownOptions.reveal.plugins || []
+                        ...(typeof codeEnhanceOptions.reveal === 'object'
+                          ? codeEnhanceOptions.reveal.plugins || []
                           : []
                         ).map(
                           (plugin) =>
@@ -188,14 +186,14 @@ export const markdownEnhancePlugin =
               },
               ssr: {
                 external: [
-                  ...(markdownOptions.chart ? ['chart.js'] : []),
-                  ...(markdownOptions.echarts ? ['echarts'] : []),
-                  ...(markdownOptions.flowchart ? ['flowchart.js'] : []),
-                  ...(markdownOptions.mermaid ? ['mermaid'] : []),
-                  ...(markdownOptions.markmap
+                  ...(codeEnhanceOptions.chart ? ['chart.js'] : []),
+                  ...(codeEnhanceOptions.echarts ? ['echarts'] : []),
+                  ...(codeEnhanceOptions.flowchart ? ['flowchart.js'] : []),
+                  ...(codeEnhanceOptions.mermaid ? ['mermaid'] : []),
+                  ...(codeEnhanceOptions.markmap
                     ? ['markmap-lib', 'markmap-view']
                     : []),
-                  ...(markdownOptions.reveal ? ['reveal.js'] : []),
+                  ...(codeEnhanceOptions.reveal ? ['reveal.js'] : []),
                 ],
               },
             }

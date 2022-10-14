@@ -13,9 +13,21 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   colorModel: true,
 
-  chart: true,
+  codeEnhance: {
+    chart: true,
+    copy: { showInMobile: true },
+    echarts: true,
 
-  echarts: true,
+    flowchart: true,
+
+    markmap: true,
+
+    mermaid: true,
+
+    plantuml: true,
+
+    reveal: true,
+  },
 
   typographer: true,
 
@@ -41,21 +53,11 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   mark: true,
 
-  flowchart: true,
-
   tasklist: true,
 
   tex: true,
 
   katex: true,
-
-  markmap: true,
-
-  mermaid: true,
-
-  plantuml: true,
-
-  reveal: true,
 
   container: true,
 
@@ -105,6 +107,12 @@ export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownOptions = {
 
   sub: true,
 
+  codeEnhance: {
+    mermaid: true,
+    flowchart: true,
+    reveal: true,
+  },
+
   footnote: true,
 
   abbr: true,
@@ -119,15 +127,9 @@ export const GITHUB_FAVOR_MARKDOWN_SPEC: MarkdownOptions = {
 
   mark: true,
 
-  flowchart: true,
-
   tasklist: true,
 
   tex: true,
 
-  mermaid: true,
-
   codeDemo: true,
-
-  reveal: true,
 }

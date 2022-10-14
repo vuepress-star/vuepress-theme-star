@@ -269,26 +269,6 @@ importers:
       svgo: 2.8.0
       vue: 3.2.40
 
-  packages/@starzkg/vuepress-plugin-copy-code:
-    specifiers:
-      '@starzkg/vuepress-star-shared': workspace:*
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/shared': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      balloon-css: ^1.2.0
-      vue: ^3.2.40
-      vue-router: ^4.1.4
-    dependencies:
-      '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/shared': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
-      balloon-css: 1.2.0
-      vue: 3.2.40
-      vue-router: 4.1.5_vue@3.2.40
-
   packages/@starzkg/vuepress-plugin-copyright:
     specifiers:
       '@starzkg/vuepress-shared': workspace:*
@@ -597,7 +577,6 @@ importers:
   packages/@starzkg/vuepress-theme-star:
     specifiers:
       '@starzkg/vuepress-icons': workspace:*
-      '@starzkg/vuepress-plugin-copy-code': workspace:*
       '@starzkg/vuepress-plugin-copyright': workspace:*
       '@starzkg/vuepress-plugin-feed': workspace:*
       '@starzkg/vuepress-plugin-markdown-enhance': workspace:*
@@ -633,7 +612,6 @@ importers:
       vuepress-plugin-sass-palette: 2.0.0-beta.94
     dependencies:
       '@starzkg/vuepress-icons': link:../vuepress-icons
-      '@starzkg/vuepress-plugin-copy-code': link:../vuepress-plugin-copy-code
       '@starzkg/vuepress-plugin-copyright': link:../vuepress-plugin-copyright
       '@starzkg/vuepress-plugin-feed': link:../vuepress-plugin-feed
       '@starzkg/vuepress-plugin-markdown-enhance': link:../vuepress-plugin-markdown-enhance
