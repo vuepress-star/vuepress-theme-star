@@ -53,7 +53,6 @@
     "@starzkg/vuepress-plugin-pwa": "workspace:*",
     "@starzkg/vuepress-plugin-seo": "workspace:*",
     "@starzkg/vuepress-plugin-sitemap": "workspace:*",
-    "@starzkg/vuepress-shared": "workspace:*",
     "@starzkg/vuepress-social-icons": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.50",

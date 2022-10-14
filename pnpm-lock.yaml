@@ -600,7 +600,6 @@ importers:
       '@starzkg/vuepress-plugin-pwa': workspace:*
       '@starzkg/vuepress-plugin-seo': workspace:*
       '@starzkg/vuepress-plugin-sitemap': workspace:*
-      '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
       '@starzkg/vuepress-star-shared': workspace:*
       '@types/ua-parser-js': 0.7.36
@@ -637,7 +636,6 @@ importers:
       '@starzkg/vuepress-plugin-pwa': link:../vuepress-plugin-pwa
       '@starzkg/vuepress-plugin-seo': link:../vuepress-plugin-seo
       '@starzkg/vuepress-plugin-sitemap': link:../vuepress-plugin-sitemap
-      '@starzkg/vuepress-shared': link:../vuepress-shared
       '@starzkg/vuepress-social-icons': link:../vuepress-social-icons
       '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/client': 2.0.0-beta.50
