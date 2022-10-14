@@ -1,3 +1,3 @@
-import { logger } from '@vuepress/utils'
+import { Logger } from '@starzkg/vuepress-star-shared'
 
-export { logger }
+export const logger = Logger.create('@starkzg/vuepress-plugin-sitemap')

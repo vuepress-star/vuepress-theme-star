@@ -29,12 +29,9 @@ import { sup } from '../markdown-it/plugins/sup.js'
 import { taskList } from '../markdown-it/plugins/task-list.js'
 import { tex } from '../markdown-it/plugins/tex.js'
 import type { MarkdownFavor, MarkdownOptions } from '../shared/index.js'
+import { logger } from './logger.js'
 import { usePlugins } from './plugins/index.js'
-import {
-  assignDefaultMarkdownOptions,
-  logger,
-  MATHML_TAGS,
-} from './utils/index.js'
+import { assignDefaultMarkdownOptions, MATHML_TAGS } from './utils/index.js'
 
 const __dirname = getDirname(import.meta.url)
 

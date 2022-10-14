@@ -292,12 +292,14 @@ importers:
   packages/@starzkg/vuepress-plugin-copyright:
     specifiers:
       '@starzkg/vuepress-shared': workspace:*
+      '@starzkg/vuepress-star-shared': workspace:*
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
       vue: ^3.2.40
     dependencies:
       '@starzkg/vuepress-shared': link:../vuepress-shared
+      '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
@@ -305,6 +307,7 @@ importers:
 
   packages/@starzkg/vuepress-plugin-feed:
     specifiers:
+      '@starzkg/vuepress-star-shared': workspace:*
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
@@ -312,6 +315,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.50
       feed: ^4.2.2
     dependencies:
+      '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
@@ -433,6 +437,7 @@ importers:
   packages/@starzkg/vuepress-plugin-pwa:
     specifiers:
       '@starzkg/vuepress-shared': workspace:*
+      '@starzkg/vuepress-star-shared': workspace:*
       '@vuepress/cli': 2.0.0-beta.50
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -445,6 +450,7 @@ importers:
       workbox-build: ^6.4.2
     dependencies:
       '@starzkg/vuepress-shared': link:../vuepress-shared
+      '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/cli': 2.0.0-beta.50
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -458,12 +464,14 @@ importers:
 
   packages/@starzkg/vuepress-plugin-seo:
     specifiers:
+      '@starzkg/vuepress-star-shared': workspace:*
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
     dependencies:
+      '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
@@ -472,6 +480,7 @@ importers:
 
   packages/@starzkg/vuepress-plugin-sitemap:
     specifiers:
+      '@starzkg/vuepress-star-shared': workspace:*
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
@@ -479,6 +488,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.50
       sitemap: ^7.0.0
     dependencies:
+      '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-git': 2.0.0-beta.50
@@ -550,11 +560,11 @@ importers:
       '@vuepress/plugin-theme-data': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      chalk: ^5.0.0
+      chalk: ^5.0.1
       copy-to-clipboard: ^3.3.2
       dayjs: ^1.11.5
       execa: ^6.0.0
-      ora: ^6.0.0
+      ora: ^6.1.2
       rimraf: 3.0.2
       vite: 3.1.7
       vue: ^3.2.40
@@ -592,6 +602,7 @@ importers:
       '@starzkg/vuepress-plugin-sitemap': workspace:*
       '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
+      '@starzkg/vuepress-star-shared': workspace:*
       '@types/ua-parser-js': 0.7.36
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
@@ -628,6 +639,7 @@ importers:
       '@starzkg/vuepress-plugin-sitemap': link:../vuepress-plugin-sitemap
       '@starzkg/vuepress-shared': link:../vuepress-shared
       '@starzkg/vuepress-social-icons': link:../vuepress-social-icons
+      '@starzkg/vuepress-star-shared': link:../vuepress-star-shared
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-active-header-links': 2.0.0-beta.50

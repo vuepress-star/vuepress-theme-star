@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@starzkg/vuepress-shared": "workspace:*",
+    "@starzkg/vuepress-star-shared": "workspace:*",
     "@vuepress/cli": "2.0.0-beta.50",
     "@vuepress/client": "2.0.0-beta.50",
     "@vuepress/core": "2.0.0-beta.50",

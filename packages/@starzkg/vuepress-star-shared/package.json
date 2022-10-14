@@ -49,11 +49,11 @@
     "@vuepress/plugin-theme-data": "2.0.0-beta.50",
     "@vuepress/shared": "2.0.0-beta.50",
     "@vuepress/utils": "2.0.0-beta.50",
-    "chalk": "^5.0.0",
+    "chalk": "^5.0.1",
     "copy-to-clipboard": "^3.3.2",
     "dayjs": "^1.11.5",
     "execa": "^6.0.0",
-    "ora": "^6.0.0",
+    "ora": "^6.1.2",
     "vue": "^3.2.40",
     "vue-router": "^4.1.4"
   },

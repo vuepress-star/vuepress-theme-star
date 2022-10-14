@@ -62,8 +62,7 @@ export const generateManifest = async (
     flag: 'w',
   })
 
-  logger.succeed()
-  logger.update(
+  logger.succeed(
     `Manifest generated and saved to ${chalk.cyan(
       path.relative(process.cwd(), manifestPath)
     )}!`

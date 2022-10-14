@@ -1,11 +1,12 @@
 import chalk from 'chalk'
 import ora from 'ora'
+import type { Ora } from 'ora'
 
 /**
  * Shell Logger
  */
 export class Logger {
-  private instance: ora.Ora
+  private instance: Ora
 
   private static colors: string[] = [
     '#FF0000',
@@ -17,7 +18,7 @@ export class Logger {
     '#8B00FF',
   ]
 
-  constructor(
+  private constructor(
     /**
      * Plugin name
      */
@@ -29,13 +30,22 @@ export class Logger {
     })
   }
 
+  public static create(
+    /**
+     * Plugin name
+     */
+    name = ''
+  ): Logger {
+    return new Logger(name)
+  }
+
   /**
    * Trigger current instance to loading state or create a new loading spinner with hint text
    *
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  load(text = ''): ora.Ora {
+  load(text = ''): Ora {
     return this.instance.start(text)
   }
 
@@ -45,7 +55,7 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  info(text = ''): ora.Ora {
+  info(text = ''): Ora {
     return this.instance.info(text)
   }
 
@@ -55,7 +65,7 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  succeed(text = ''): ora.Ora {
+  succeed(text = ''): Ora {
     return this.instance.succeed(text)
   }
 
@@ -65,7 +75,7 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  warn(text = ''): ora.Ora {
+  warn(text = ''): Ora {
     return this.instance.warn(text)
   }
 
@@ -75,7 +85,7 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  error(text = ''): ora.Ora {
+  error(text = ''): Ora {
     return this.instance.fail(text)
   }
 }

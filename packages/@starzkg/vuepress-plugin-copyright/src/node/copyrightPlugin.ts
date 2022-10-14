@@ -11,7 +11,7 @@ export const copyrightPlugin =
   (options: CopyrightPluginOptions = {}): Plugin =>
   (app) => {
     return {
-      name: 'vuepress-plugin-copyright',
+      name: '@starzkg/vuepress-plugin-copyright',
 
       alias: {
         '@clipboardComponent':

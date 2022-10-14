@@ -1,3 +1,3 @@
-import { Logger } from '@starzkg/vuepress-shared'
+import { Logger } from '@starzkg/vuepress-star-shared'
 
-export const logger = new Logger('vuepress-plugin-pwa2')
+export const logger = Logger.create('@starzkg/vuepress-plugin-pwa')
