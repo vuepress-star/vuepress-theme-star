@@ -47,6 +47,14 @@ export const markdownEnhancePlugin =
       logger.info(`source Options:\n${JSON.stringify(options, null, '\t')}`)
     }
 
+    const plugin = {
+      name: '@starzkg/vuepress-plugin-markdown-enhance',
+    }
+
+    if (!options) {
+      return plugin
+    }
+
     const markdownOptions = assignDefaultMarkdownOptions(options)
 
     if (app.env.isDebug) {
@@ -58,7 +66,7 @@ export const markdownEnhancePlugin =
     usePlugins(app, markdownOptions)
 
     return {
-      name: '@starzkg/vuepress-plugin-markdown-enhance',
+      ...plugin,
 
       define: (): Record<string, unknown> =>
         Object.keys(markdownOptions).reduce((newData, key) => {
