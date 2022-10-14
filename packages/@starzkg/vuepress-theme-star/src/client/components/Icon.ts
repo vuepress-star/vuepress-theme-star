@@ -42,9 +42,7 @@ export default defineComponent({
 
     const icon: FunctionalComponent = () => {
       if (props.type === 'component') {
-        const component = resolveComponent(`${iconPrefix.value}${props.icon}`)
-
-        return component ? h(component) : null
+        return resolveComponent(`${iconPrefix.value}${props.icon}`)
       } else if (props.type === 'img') {
         if (isLinkHttp(props.icon)) {
           return h('img', { src: props.icon, alt: props.icon })
