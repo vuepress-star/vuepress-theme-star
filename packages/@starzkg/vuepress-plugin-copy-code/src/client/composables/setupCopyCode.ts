@@ -1,4 +1,7 @@
-import { copyToClipboard, Message } from '@starzkg/vuepress-star-shared/client'
+import {
+  Message,
+  useCopyToClipboard,
+} from '@starzkg/vuepress-star-shared/client'
 import { useRouteLocale } from '@vuepress/client'
 import type { LocaleConfig } from '@vuepress/core'
 import { computed, onMounted, watch } from 'vue'
@@ -87,7 +90,7 @@ export const setupCopyCode = (): void => {
     )
       text = text.replace(/^ *(\$|>) /gm, '')
 
-    copyToClipboard(text).then(() => {
+    useCopyToClipboard(text).then(() => {
       button.classList.add('copied')
       clearTimeout(timeoutIdMap.get(button))
 
