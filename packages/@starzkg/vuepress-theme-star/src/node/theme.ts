@@ -127,7 +127,7 @@ export const starTheme = ({
         selector: '.theme-star-content div[class*="language-"] pre',
       }),
 
-      themePlugins.copyright !== false ? copyrightPlugin() : [],
+      themePlugins.copyright !== false ? copyrightPlugin({ global: true }) : [],
 
       themePlugins.feed !== undefined && themePlugins.feed !== false
         ? feedPlugin(themePlugins.feed)

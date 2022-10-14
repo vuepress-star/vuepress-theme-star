@@ -1,5 +1,6 @@
 ---
 title: 快速上手
+copy: true
 icon: home
 date: 2022-05-18
 categories:
