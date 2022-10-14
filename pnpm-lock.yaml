@@ -611,7 +611,7 @@ importers:
       balloon-css: ^1.2.0
       sass: ^1.55.0
       screenfull: ^5.2.0
-      ts-debounce: ^3.0.0
+      ts-debounce: ^4.0.0
       typed.js: ^2.0.12
       ua-parser-js: ^1.0.2
       vue: ^3.2.40
@@ -646,7 +646,7 @@ importers:
       balloon-css: 1.2.0
       sass: 1.55.0
       screenfull: 5.2.0
-      ts-debounce: 3.0.0
+      ts-debounce: 4.0.0
       typed.js: 2.0.12
       ua-parser-js: 1.0.2
       vue: 3.2.40
@@ -12539,10 +12539,6 @@ packages:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
     engines: {node: '>=8'}
     dev: true
-
-  /ts-debounce/3.0.0:
-    resolution: {integrity: sha512-7jiRWgN4/8IdvCxbIwnwg2W0bbYFBH6BxFqBjMKk442t7+liF2Z1H6AUCcl8e/pD93GjPru+axeiJwFmRww1WQ==}
-    dev: false
 
   /ts-debounce/4.0.0:
     resolution: {integrity: sha512-+1iDGY6NmOGidq7i7xZGA4cm8DAa6fqdYcvO5Z6yBevH++Bdo9Qt/mN0TzHUgcCcKv1gmh9+W5dHqz8pMWbCbg==}
