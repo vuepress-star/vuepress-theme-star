@@ -1,6 +1,5 @@
 import type { App, LocaleConfig, LocaleData } from '@vuepress/core'
 import type { ConvertLocaleConfig } from '../../shared/index.js'
-import { Logger } from '../logger.js'
 import { deepAssign } from '../utils/index.js'
 import { lang2PathConfig, path2langConfig, supportedLangs } from './config.js'
 import type { HopeLang } from './types.js'
@@ -99,15 +98,11 @@ export const getLocales = <T extends LocaleData = LocaleData>({
   config: userLocalesConfig = {},
 }: GetLocalesOptions<T>): ConvertLocaleConfig<T> => {
   const rootPath = getRootLangPath(app)
-  const logger = new Logger(name)
 
   return Object.fromEntries([
     ...getLocalePaths(app)
       .filter((localePath) => localePath !== '/')
       .map<[string, T]>((localePath) => {
-        if (!defaultLocalesConfig[localePath])
-          logger.warn(`Locale ${localePath} is missing it's i18n config`)
-
         return [
           localePath,
           deepAssign(

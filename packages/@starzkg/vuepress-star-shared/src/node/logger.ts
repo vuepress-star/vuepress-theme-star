@@ -1,6 +1,7 @@
 import chalk from 'chalk'
 import ora from 'ora'
 import type { Ora } from 'ora'
+import { dayjs } from '../shared/index.js'
 
 /**
  * Shell Logger
@@ -46,7 +47,9 @@ export class Logger {
    * @returns Ora Instance
    */
   load(text = ''): Ora {
-    return this.instance.start(text)
+    return this.instance.start(
+      `[${dayjs().format('YYYY-MM-DD HH:mm:ss,SSS')}]  ${text}`
+    )
   }
 
   /**
@@ -56,7 +59,9 @@ export class Logger {
    * @returns Ora Instance
    */
   info(text = ''): Ora {
-    return this.instance.info(text)
+    return this.instance.info(
+      `[${dayjs().format('YYYY-MM-DD HH:mm:ss,SSS')}]  ${text}`
+    )
   }
 
   /**
@@ -66,7 +71,9 @@ export class Logger {
    * @returns Ora Instance
    */
   succeed(text = ''): Ora {
-    return this.instance.succeed(text)
+    return this.instance.succeed(
+      `[${dayjs().format('YYYY-MM-DD HH:mm:ss,SSS')}]  ${text}`
+    )
   }
 
   /**
@@ -76,7 +83,9 @@ export class Logger {
    * @returns Ora Instance
    */
   warn(text = ''): Ora {
-    return this.instance.warn(text)
+    return this.instance.warn(
+      `[${dayjs().format('YYYY-MM-DD HH:mm:ss,SSS')}]  ${text}`
+    )
   }
 
   /**
@@ -86,6 +95,8 @@ export class Logger {
    * @returns Ora Instance
    */
   error(text = ''): Ora {
-    return this.instance.fail(text)
+    return this.instance.fail(
+      `[${dayjs().format('YYYY-MM-DD HH:mm:ss,SSS')}]  ${text}`
+    )
   }
 }
