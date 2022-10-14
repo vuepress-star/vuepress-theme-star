@@ -27,16 +27,6 @@
     }
   }
 
-  .navbar-dropdown-title-mobile {
-    @extend .navbar-dropdown-title;
-    display: none;
-    font-weight: 600;
-    font-size: inherit;
-    &:hover {
-      color: var(--c-text-accent);
-    }
-  }
-
   .navbar-dropdown {
     .navbar-dropdown-item {
       color: inherit;
@@ -111,6 +101,15 @@
 }
 
 .navbar-dropdown-wrapper.navbar-dropdown__vertical {
+  .navbar-dropdown-title {
+    @extend .navbar-dropdown-title;
+    font-weight: 600;
+    font-size: inherit;
+    &:hover {
+      color: var(--c-text-accent);
+    }
+  }
+
   &.open .navbar-dropdown-title {
     margin-bottom: 0.5rem;
   }
