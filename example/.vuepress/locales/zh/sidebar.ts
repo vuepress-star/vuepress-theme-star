@@ -3,7 +3,7 @@ export default {
     {
       text: '指南',
       icon: 'guide',
-      link: '/zh/guide/README.md',
+      link: '/zh/guide/',
       children: [
         '/zh/guide/introduction.md',
         '/zh/guide/getting-started.md',
