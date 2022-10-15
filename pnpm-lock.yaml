@@ -88,8 +88,8 @@ importers:
     specifiers:
       '@starzkg/vuepress-icons': workspace:*
       '@starzkg/vuepress-plugin-element-plus': workspace:*
-      '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
+      '@starzkg/vuepress-star-shared': workspace:*
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -107,8 +107,8 @@ importers:
     dependencies:
       '@starzkg/vuepress-icons': link:../../packages/@starzkg/vuepress-icons
       '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
-      '@starzkg/vuepress-shared': link:../../packages/@starzkg/vuepress-shared
       '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
+      '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -218,8 +218,8 @@ importers:
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
-      '@starzkg/vuepress-shared': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
+      '@starzkg/vuepress-star-shared': workspace:*
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
@@ -241,8 +241,8 @@ importers:
       '@starzkg/vuepress-plugin-interaction-effect': link:../../ecosystem/@starzkg/vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
-      '@starzkg/vuepress-shared': link:../../packages/@starzkg/vuepress-shared
       '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
+      '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50
       '@vuepress/bundler-webpack': 2.0.0-beta.50
