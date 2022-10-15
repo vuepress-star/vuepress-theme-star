@@ -36,9 +36,18 @@ export const codeEnhance: PluginWithOptions<CodeEnhancePluginOptions> = (
   const fence = md.renderer.rules.fence
   // override vuepress default fence renderer
   md.renderer.rules.fence = (...args): string => {
-    const result = fence!(...args)
-    const [tokens, index] = args
+    const [tokens, index, options] = args
     const { info } = tokens[index]
+    const highlight = options.highlight
+    options.highlight = (...args) => {
+      try {
+        return highlight!(...args)
+      } catch (e) {
+        const [code, , attrs] = args
+        return highlight!(code, 'text', attrs)
+      }
+    }
+    const result = fence!(...args)
     return `<div class="code-enhance">
               ${chart ? resolveChart(md, tokens, index) : ''}
               ${echarts ? resolveEcharts(md, tokens, index) : ''}
