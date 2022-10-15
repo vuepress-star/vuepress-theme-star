@@ -82,6 +82,8 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
   externalLinkIcon: true,
 
   delay: 500,
+
+  locales: {},
 }
 
 /**
