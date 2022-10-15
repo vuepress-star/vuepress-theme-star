@@ -1,5 +1,4 @@
 import { elementPlusPlugin } from '@starzkg/vuepress-plugin-element-plus'
-import { addViteOptimizeDepsInclude } from '@starzkg/vuepress-shared'
 import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
@@ -79,26 +78,6 @@ export default defineUserConfig({
       ? webpackBundler()
       : viteBundler(),
 
-  extendsBundlerOptions: (config: unknown, app): void => {
-    if (app.env.isDev)
-      addViteOptimizeDepsInclude({ app, config }, [
-        '@starzkg/vuepress-shared/lib/client',
-        'dayjs',
-        'dayjs/plugin/localizedFormat',
-        'dayjs/plugin/objectSupport',
-        'dayjs/plugin/timezone',
-        'dayjs/plugin/utc',
-      ])
-
-    addViteOptimizeDepsInclude({ app, config }, [
-      'axios',
-      'three',
-      'three',
-      'three/examples/jsm/controls/OrbitControls',
-      'three/examples/jsm/loaders/STLLoader',
-    ])
-  },
-
   theme: starTheme({
     logo: '/images/hero.png',
 
@@ -173,19 +152,7 @@ export default defineUserConfig({
       markdown: true,
       pwa: {},
       copyright: {
-        noCopy: false,
-        noSelect: false,
-        disabled: false,
-        minLength: 1000,
-        authorName: 'Starzkg',
-        locales: {
-          'en-US': {
-            author: 'Starzkg',
-          },
-          'zh-CN': {
-            author: 'Starzkg',
-          },
-        },
+        copy: false,
       },
     },
   }),
@@ -200,6 +167,7 @@ export default defineUserConfig({
         ),
     },
   },
+
   plugins: [
     docsearchPlugin({
       appId: '34YFD9IUQ2',
