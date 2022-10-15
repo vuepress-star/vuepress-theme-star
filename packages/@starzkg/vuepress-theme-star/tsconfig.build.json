@@ -11,9 +11,6 @@
       "path": "../vuepress-social-icons/tsconfig.build.json"
     },
     {
-      "path": "../vuepress-plugin-copy-code/tsconfig.build.json"
-    },
-    {
       "path": "../vuepress-plugin-copyright/tsconfig.build.json"
     },
     {
