@@ -41,6 +41,7 @@ export const codeEnhance: PluginWithOptions<CodeEnhancePluginOptions> = (
     const highlight = options.highlight
     options.highlight = (...args) => {
       try {
+        console.log(info)
         return highlight!(...args)
       } catch (e) {
         const [code, , attrs] = args
