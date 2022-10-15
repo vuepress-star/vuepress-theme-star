@@ -120,12 +120,16 @@ export default defineUserConfig({
           },
         },
       },
+      copyright: {
+        copyright: 'Copyright © 2021-present Starzkg',
+      },
       feed: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
         atom: true,
         json: true,
         rss: true,
       },
+      pwa: {},
       seo: {
         hostname: 'https://vuepress-star.shentuzhigang.cn',
       },

@@ -1,61 +1,32 @@
-import type { LocaleConfig, Page } from '@vuepress/core'
-import type { CopyrightLocaleData } from './locales.js'
+import type { Page } from '@vuepress/core'
 
 export interface CopyrightOptions {
   /**
-   * Deploy hostname
+   * CSS选择器
    *
-   * 部署的域名
+   * CSS Selector
+   *
+   * @default #app
    */
-  hostname?: string
+  selector?: string
 
   /**
-   * Author Information
+   * Copy
    *
-   * 作者信息
+   * 复制
+   *
+   * @default false
    */
-  author?:
-    | string
-    | (<
-        ExtraPageData extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<never, never>,
-        ExtraPageFrontmatter extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<string, unknown>,
-        ExtraPageFields extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<never, never>
-      >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-      ) => string)
+  copy?: boolean
 
   /**
-   * License Information
+   * Selection
    *
-   * 协议信息
+   * 选择
+   *
+   * @default false
    */
-  license?:
-    | string
-    | (<
-        ExtraPageData extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<never, never>,
-        ExtraPageFrontmatter extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<string, unknown>,
-        ExtraPageFields extends Record<
-          string | number | symbol,
-          unknown
-        > = Record<never, never>
-      >(
-        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-      ) => string)
+  selection?: boolean
 
   /**
    * Min words triggering copyright append
@@ -67,36 +38,25 @@ export interface CopyrightOptions {
   triggerWords?: number
 
   /**
-   * Whether enabled globally
    *
-   * 是否全局启用
-   *
-   * @default false
    */
-  global?: boolean
-
-  /**
-   * Disable copy
-   *
-   * 禁用复制
-   *
-   * @default false
-   */
-  disableCopy?: boolean
-
-  /**
-   * Disable selection
-   *
-   * 禁用选择
-   *
-   * @default false
-   */
-  disableSelection?: boolean
-
-  /**
-   * Locales config for copyright
-   *
-   * 复制版权的多语言配置
-   */
-  locales?: LocaleConfig<CopyrightLocaleData>
+  copyright?:
+    | string
+    | 'auto'
+    | (<
+        ExtraPageData extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>,
+        ExtraPageFrontmatter extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<string, unknown>,
+        ExtraPageFields extends Record<
+          string | number | symbol,
+          unknown
+        > = Record<never, never>
+      >(
+        page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+      ) => string)
 }

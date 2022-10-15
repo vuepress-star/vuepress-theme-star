@@ -57,7 +57,7 @@ export interface StarThemePluginsOptions {
    *
    * 版权信息
    */
-  copyright?: CopyrightOptions | boolean
+  copyright?: CopyrightOptions | false
 
   /**
    * Feed

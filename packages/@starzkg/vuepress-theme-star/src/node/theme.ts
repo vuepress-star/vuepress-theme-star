@@ -122,7 +122,9 @@ export const starTheme = ({
 
       tocPlugin(),
 
-      themePlugins.copyright !== false ? copyrightPlugin({ global: true }) : [],
+      themePlugins.copyright !== false
+        ? copyrightPlugin(themePlugins.copyright || {})
+        : [],
 
       themePlugins.feed !== undefined && themePlugins.feed !== false
         ? feedPlugin(themePlugins.feed)
@@ -136,7 +138,7 @@ export const starTheme = ({
         ? seoPlugin(themePlugins.seo)
         : [],
 
-      themePlugins.feed !== undefined && themePlugins.sitemap !== false
+      themePlugins.sitemap !== undefined && themePlugins.sitemap !== false
         ? sitemapPlugin(themePlugins.sitemap)
         : [],
     ],

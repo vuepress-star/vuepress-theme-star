@@ -1,9 +1,4 @@
-import type { Page, PluginFunction } from '@vuepress/core'
-import {
-  isLinkHttp,
-  removeEndingSlash,
-  removeLeadingSlash,
-} from '@vuepress/shared'
+import type { Page, Plugin } from '@vuepress/core'
 import { getDirname, path } from '@vuepress/utils'
 import type { CopyrightOptions } from '../shared/index.js'
 import { logger } from './logger.js'
@@ -11,66 +6,38 @@ import { logger } from './logger.js'
 const __dirname = getDirname(import.meta.url)
 
 export const copyrightPlugin =
-  (options: CopyrightOptions): PluginFunction =>
+  (options: CopyrightOptions): Plugin =>
   (app) => {
     if (app.env.isDebug) {
       logger.info(`Options:\n${JSON.stringify(options, null, '\t')}`)
     }
 
     const {
-      hostname,
-      author = '',
-      license = '',
-      disableCopy = false,
-      disableSelection = false,
-      global = false,
+      selector = '#app',
+      copy = true,
+      selection = true,
       triggerWords = 100,
-      locales,
+      copyright = 'auto',
     } = options
 
     return {
       name: '@starzkg/vuepress-plugin-copyright',
 
       define: (): Record<string, unknown> => ({
-        COPYRIGHT_GLOBAL: global,
-        COPYRIGHT_DISABLE_COPY: disableCopy,
-        COPYRIGHT_DISABLE_SELECTION: disableSelection,
+        COPYRIGHT_SELECTOR: selector,
+        COPYRIGHT_COPY: copy,
+        COPYRIGHT_SELECTION: selection,
         COPYRIGHT_TRIGGER_WORDS: triggerWords,
       }),
 
       extendsPage: (page: Page<{ copyright?: string }>, app): void => {
-        const { base } = app.options
-
-        const locale = locales?.[page.pathLocale] || {}
-
-        const authorText = author
-          ? locale.author?.replace(
-              ':author',
-              typeof author === 'function' ? author(page) : author
-            )
-          : ''
-
-        const licenseText = license
-          ? locale.license?.replace(
-              ':license',
-              typeof license === 'function' ? license(page) : license
-            )
-          : ''
-
-        const linkText = hostname
-          ? locale.link?.replace(
-              ':link',
-              `${
-                isLinkHttp(hostname)
-                  ? removeEndingSlash(hostname)
-                  : `https://${removeEndingSlash(hostname)}`
-              }${base}${removeLeadingSlash(page.path)}`
-            )
-          : ''
-
-        page.data.copyright = [authorText, licenseText, linkText]
-          .filter((item) => item)
-          .join('\n')
+        if (copyright === 'auto') {
+          page.data.copyright = ''
+        } else if (typeof copyright === 'function') {
+          page.data.copyright = copyright(page)
+        } else {
+          page.data.copyright = copyright
+        }
       },
 
       clientConfigFile: path.resolve(__dirname, '../client/config.js'),
