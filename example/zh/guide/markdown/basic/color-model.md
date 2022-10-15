@@ -1,6 +1,6 @@
 ---
 title: 颜色
-icon: color
+icon: BgColors
 categories:
   - Markdown
 tags:

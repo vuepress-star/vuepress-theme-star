@@ -1,6 +1,6 @@
 ---
 title: Reveal
-icon: slides
+icon: data-board
 ---
 # Reveal
 让你的 VuePress 站点中的 Markdown 文件支持Reveal。

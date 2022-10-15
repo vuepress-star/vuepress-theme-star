@@ -1,3 +1,4 @@
 ---
 title: Feed
+icon: feed
 ---

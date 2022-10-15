@@ -1,3 +1,4 @@
 ---
 title: SEO
+icon: seo
 ---

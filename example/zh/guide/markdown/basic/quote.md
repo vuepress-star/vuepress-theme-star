@@ -1,6 +1,6 @@
 ---
 title: 引用
-icon: quote
+icon: flag
 categories:
   - Markdown
 tags:

@@ -1,9 +1,10 @@
 ---
 title: 外部引入
-icon: link
-cateogry: markdown
+icon: Connection
+categories: 
+ - markdown
 tags:
-- markdown
+ - markdown
 ---
 # 外部引入
 

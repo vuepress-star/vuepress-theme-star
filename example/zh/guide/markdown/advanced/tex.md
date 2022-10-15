@@ -1,6 +1,6 @@
 ---
 title: Tex
-icon: tex
+icon: Calculator
 ---
 # Tex
 让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。

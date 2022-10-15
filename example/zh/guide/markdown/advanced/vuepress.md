@@ -1,3 +1,7 @@
+---
+title: Vuepress 语法扩展
+icon: More
+---
 # Vuepress 语法扩展
 
 VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来解析 Markdown 内容，因此可以借助于 markdown-it 插件来实现 [语法扩展](https://github.com/markdown-it/markdown-it#syntax-extensions) 。

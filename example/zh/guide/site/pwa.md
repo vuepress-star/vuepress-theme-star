@@ -1,3 +1,4 @@
 ---
 title: PWA
+icon: pwa
 ---

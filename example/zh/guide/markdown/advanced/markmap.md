@@ -1,6 +1,6 @@
 ---
 title: Markmap
-icon: diagram
+icon: Opportunity
 ---
 # Markmap
 让你的 VuePress 站点中的 Markdown 文件支持 [Markmap 文档](https://markmap.js.org/docs/markmap)。

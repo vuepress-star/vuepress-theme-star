@@ -1,5 +1,6 @@
 ---
-title:PlantUML
+title: PlantUML
+icon: AreaChart
 ---
 # PlantUML
 

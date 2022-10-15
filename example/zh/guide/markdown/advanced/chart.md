@@ -1,6 +1,6 @@
 ---
 title: Chart
-icon: chart
+icon: LineChart
 categories:
   - Markdown
 tags:

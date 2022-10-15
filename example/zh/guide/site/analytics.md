@@ -1,3 +1,4 @@
 ---
 title: Analytics
+icon: analytics
 ---

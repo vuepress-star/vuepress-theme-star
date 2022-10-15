@@ -1,6 +1,6 @@
 ---
 title: 代码演示
-icon: discover
+icon: Code
 categories:
  - Markdown
 tags:

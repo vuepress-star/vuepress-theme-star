@@ -1,6 +1,6 @@
 ---
 title: 样式化文本
-icon: flag
+icon: FileText
 categories:
   - Markdown
 tags:

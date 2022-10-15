@@ -1,5 +1,6 @@
 ---
 title: 定义列表
+icon: OrderedList
 ---
 # 定义列表
 让你的 VuePress 站点中的 Markdown 文件支持定义列表。

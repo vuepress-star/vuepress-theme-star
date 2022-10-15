@@ -1,6 +1,6 @@
 ---
 title: 在 Markdown 中使用 Vue
-icon: markdown
+icon: Open
 ---
 # 在 Markdown 中使用 Vue
 

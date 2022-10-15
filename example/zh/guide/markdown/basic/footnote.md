@@ -1,6 +1,6 @@
 ---
 title: 脚注
-icon: footnote
+icon: Notebook
 category: markdown
 tags:
   - feature

@@ -1,6 +1,6 @@
 ---
 title: 自定义对齐
-icon: align
+icon: AlignCenter
 ---
 # 自定义对齐
 让你的 VuePress 站点中的 Markdown 文件支持自定义对齐。
