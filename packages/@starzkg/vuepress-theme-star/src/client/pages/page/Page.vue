@@ -115,6 +115,7 @@ onUnmounted(() => {
                 <PageNav />
 
                 <Comment :dark-mode="darkMode" />
+                <Footer />
               </footer>
               <slot name="bottom" />
             </div>
@@ -130,9 +131,5 @@ onUnmounted(() => {
       </main>
       <slot name="container-bottom" />
     </main>
-
-    <slot name="footer">
-      <Footer />
-    </slot>
   </div>
 </template>
