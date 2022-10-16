@@ -55,7 +55,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="background">
+  <div class="background-star">
     <canvas id="vuepress-canvas-hack" ref="renderCanvas"></canvas>
   </div>
 </template>

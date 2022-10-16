@@ -2,8 +2,8 @@
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed } from 'vue'
 import type { StarThemePageFrontmatter } from '../../shared/index.js'
-import Background from '../components/Background.vue'
-import Foreground from '../components/Foreground.vue'
+import Background from '../components/layout/Background.vue'
+import Foreground from '../components/layout/Foreground.vue'
 import {
   toggleNavbar,
   toggleSidebar,
@@ -80,23 +80,27 @@ const onBeforeLeave = scrollPromise.pending
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <slot name="back">
-      <Background />
-    </slot>
+    <div class="background">
+      <slot name="background">
+        <Background />
+      </slot>
+    </div>
 
-    <slot name="page">
-      <Transition
-        name="fade-slide-y"
-        mode="out-in"
-        @before-enter="onBeforeEnter"
-        @before-leave="onBeforeLeave"
-      >
+    <Transition
+      name="fade-slide-y"
+      mode="out-in"
+      @before-enter="onBeforeEnter"
+      @before-leave="onBeforeLeave"
+    >
+      <slot name="page-container">
         <Component :is="pageName" class="page-container" :class="pageClass" />
-      </Transition>
-    </slot>
+      </slot>
+    </Transition>
 
-    <slot name="fore">
-      <Foreground />
-    </slot>
+    <div class="foreground">
+      <slot name="foreground">
+        <Foreground />
+      </slot>
+    </div>
   </div>
 </template>
