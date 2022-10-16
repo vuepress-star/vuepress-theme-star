@@ -50,16 +50,18 @@ onUnmounted(() => {
 <template>
   <div class="page">
     <aside class="aside">
-      <slot name="page-aside">
-        <Sidebar>
-          <template #top>
-            <slot name="sidebar-top" />
-          </template>
-          <template #bottom>
-            <slot name="sidebar-bottom" />
-          </template>
-        </Sidebar>
-      </slot>
+      <div class="aside-container">
+        <slot name="page-aside">
+          <Sidebar>
+            <template #top>
+              <slot name="sidebar-top" />
+            </template>
+            <template #bottom>
+              <slot name="sidebar-bottom" />
+            </template>
+          </Sidebar>
+        </slot>
+      </div>
 
       <div class="toggle-aside" @click="toggleSidebar(!sidebar.open)">
         <Icon :icon="sidebar.open ? 'arrow-left-bold' : 'arrow-right-bold'" />
