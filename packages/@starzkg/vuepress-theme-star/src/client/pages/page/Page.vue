@@ -2,27 +2,31 @@
 import BreadCrumb from '@theme/BreadCrumb.js'
 import Content from '@theme/Content.vue'
 import Footer from '@theme/Footer.vue'
+import Icon from '@theme/Icon.js'
 import Navbar from '@theme/Navbar.vue'
 import PageInfo from '@theme/PageInfo.js'
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
 import ProfileCard from '@theme/ProfileCard.vue'
 import Sidebar from '@theme/Sidebar.vue'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import {
   toggleSidebar,
   useDarkMode,
+  useNavbar,
   useScrollPromise,
-  useThemeLocaleData,
+  useSidebar,
 } from '../../composables/index.js'
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
-const themeLocale = useThemeLocaleData()
 
 // navbar
-const shouldShowNavbar = computed(() => themeLocale.value.navbar !== false)
+const navbar = useNavbar()
+
+// sidebar
+const sidebar = useSidebar()
 
 const darkMode = useDarkMode()
 
@@ -45,91 +49,82 @@ onUnmounted(() => {
 
 <template>
   <div class="page">
-    <slot name="header">
-      <Navbar
-        v-if="shouldShowNavbar"
-        :style="{ opacity: Math.max(200 - scrollY, 0) / 200 }"
-      >
-        <template #before>
-          <slot name="navbar-before" />
-        </template>
-        <template #after>
-          <slot name="navbar-after" />
-        </template>
-      </Navbar>
-    </slot>
+    <aside class="aside">
+      <slot name="page-aside">
+        <Sidebar>
+          <template #top>
+            <slot name="sidebar-top" />
+          </template>
+          <template #bottom>
+            <slot name="sidebar-bottom" />
+          </template>
+        </Sidebar>
+      </slot>
 
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
+      <div class="toggle-aside" @click="toggleSidebar(!sidebar.open)">
+        <Icon :icon="sidebar.open ? 'arrow-left-bold' : 'arrow-right-bold'" />
+      </div>
 
-    <slot name="sidebar">
-      <Sidebar>
-        <template #top>
-          <slot name="sidebar-top" />
-        </template>
-        <template #bottom>
-          <slot name="sidebar-bottom" />
-        </template>
-      </Sidebar>
-    </slot>
+      <div class="aside-mask" @click="toggleSidebar(false)" />
+    </aside>
 
-    <main class="container">
-      <slot name="container-top" />
-      <header class="container-header">
-        <div class="header-wrapper">
-          <BreadCrumb />
-          <PageInfo />
-        </div>
-      </header>
-      <main class="container-content">
-        <div class="content-left">
-          <slot name="left-top" />
-          <slot name="sidebar">
-            <Sidebar>
-              <template #top>
-                <slot name="sidebar-top" />
+    <section class="container">
+      <slot name="page-main">
+        <header class="container-header">
+          <slot name="header">
+            <Navbar
+              v-if="navbar.enable"
+              :style="{ opacity: Math.max(200 - scrollY, 0) / 200 }"
+            >
+              <template #before>
+                <slot name="navbar-before" />
               </template>
-              <template #bottom>
-                <slot name="sidebar-bottom" />
+              <template #after>
+                <slot name="navbar-after" />
               </template>
-            </Sidebar>
+            </Navbar>
           </slot>
-          <slot name="left-bottom" />
-        </div>
-        <div class="content-middle">
-          <slot name="middle-top" />
-          <Transition
-            name="fade-slide-y"
-            mode="out-in"
-            @before-enter="onBeforeEnter"
-            @before-leave="onBeforeLeave"
-          >
-            <div class="main-content">
-              <slot name="top" />
+        </header>
+        <Transition
+          name="fade-slide-y"
+          mode="out-in"
+          @before-enter="onBeforeEnter"
+          @before-leave="onBeforeLeave"
+        >
+          <main class="container-content">
+            <slot name="top" />
+            <div class="content">
               <header class="content-header">
+                <BreadCrumb />
+                <PageInfo />
                 <GithubCorner />
               </header>
-              <Content />
+              <section class="content-container">
+                <main class="content-main">
+                  <Content />
+                </main>
+                <aside class="content-aside">
+                  <slot name="right-top" />
+                  <ProfileCard />
+                  <slot name="right-bottom" />
+                  <Toc class="anchor" />
+                </aside>
+              </section>
               <footer class="content-footer">
                 <PageMeta />
 
                 <PageNav />
 
                 <Comment :dark-mode="darkMode" />
-                <Footer />
               </footer>
-              <slot name="bottom" />
             </div>
-          </Transition>
-          <slot name="middle-bottom" />
-        </div>
-        <div class="content-right">
-          <slot name="right-top" />
-          <ProfileCard />
-          <slot name="right-bottom" />
-          <Toc class="anchor" />
-        </div>
-      </main>
-      <slot name="container-bottom" />
-    </main>
+            <slot name="bottom" />
+          </main>
+        </Transition>
+        <footer class="container-footer">
+          <Footer />
+        </footer>
+      </slot>
+    </section>
   </div>
 </template>

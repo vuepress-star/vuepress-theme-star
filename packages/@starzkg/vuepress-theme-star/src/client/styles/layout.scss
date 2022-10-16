@@ -10,8 +10,6 @@
 }
 
 .navbar {
-  position: fixed;
-  opacity: 0;
   z-index: 20;
   top: 0;
   left: 0;
@@ -21,10 +19,6 @@
   background-color: var(--c-bg-navbar);
   border-bottom: 1px solid var(--c-border);
   transition: opacity 0.5s;
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .sidebar-mask {

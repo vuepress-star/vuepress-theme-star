@@ -18,16 +18,19 @@ const gotoContainer = (): void => {
 
 <template>
   <div class="home">
-    <slot name="navbar">
-      <Navbar>
-        <template #before>
-          <slot name="navbar-before" />
-        </template>
-        <template #after>
-          <slot name="navbar-after" />
-        </template>
-      </Navbar>
-    </slot>
+    <header class="header">
+      <slot name="header">
+        <Navbar>
+          <template #before>
+            <slot name="navbar-before" />
+          </template>
+          <template #after>
+            <slot name="navbar-after" />
+          </template>
+        </Navbar>
+      </slot>
+    </header>
+
     <main ref="container" class="container">
       <header class="container-header">
         <slot name="hero">

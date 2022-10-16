@@ -1,6 +1,8 @@
 .theme-star {
+  @import 'aside';
+  @import 'container';
+  @import 'content';
   @import 'breadcrumb';
-  @import 'page';
   @import 'comment';
 
   &.mobile {

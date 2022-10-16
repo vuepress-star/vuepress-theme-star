@@ -1,0 +1,28 @@
+@import '_mixins';
+@import '_variables';
+
+.container-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.container-content {
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.container-footer {
+  min-width: min(60vw, var(--content-width));
+  max-width: var(--content-width);
+  width: 100%;
+  margin: 0 auto;
+}

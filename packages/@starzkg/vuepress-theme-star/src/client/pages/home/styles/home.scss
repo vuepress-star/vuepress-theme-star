@@ -6,7 +6,26 @@
   overflow: hidden;
   height: 100vh;
 
+  .header {
+    position: fixed;
+    opacity: 0;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--navbar-height);
+    box-sizing: border-box;
+    background-color: var(--c-bg-navbar);
+    border-bottom: 1px solid var(--c-border);
+    transition: opacity 0.5s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   .container {
+    display: block;
     margin: 0 -6px 0 auto;
     padding: 0;
     height: 100vh;

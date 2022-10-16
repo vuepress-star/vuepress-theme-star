@@ -4,10 +4,10 @@ import SidebarItems from './SidebarItems.vue'
 </script>
 
 <template>
-  <aside class="sidebar">
+  <div class="sidebar">
     <NavbarItems mode="vertical" />
     <slot name="top" />
     <SidebarItems />
     <slot name="bottom" />
-  </aside>
+  </div>
 </template>
