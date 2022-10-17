@@ -33,13 +33,13 @@ importers:
       sort-package-json: 2.0.0
       stylelint: 14.14.0
       stylelint-config-prettier: 9.0.3
-      stylelint-config-standard: 28.0.0
+      stylelint-config-standard: 29.0.0
       stylelint-config-standard-scss: 5.0.0
       stylelint-order: 5.0.0
       ts-node: 10.9.1
       tsconfig-vuepress: 4.0.0
       tslib: 2.4.0
-      tsup: 6.2.3
+      tsup: 6.3.0
       typescript: 4.8.4
       vite: 3.1.8
       vitest: 0.24.3
@@ -73,13 +73,13 @@ importers:
       sort-package-json: 2.0.0
       stylelint: 14.14.0
       stylelint-config-prettier: 9.0.3_stylelint@14.14.0
-      stylelint-config-standard: 28.0.0_stylelint@14.14.0
+      stylelint-config-standard: 29.0.0_stylelint@14.14.0
       stylelint-config-standard-scss: 5.0.0_stylelint@14.14.0
       stylelint-order: 5.0.0_stylelint@14.14.0
       ts-node: 10.9.1_gbhfbbeqrol7fxixnzbkbuanxe
       tsconfig-vuepress: 4.0.0
       tslib: 2.4.0
-      tsup: 6.2.3_mwhvu7sfp6vq5ryuwb6hlbjfka
+      tsup: 6.3.0_mwhvu7sfp6vq5ryuwb6hlbjfka
       typescript: 4.8.4
       vite: 3.1.8
       vitest: 0.24.3
@@ -12192,10 +12192,10 @@ packages:
       stylelint-config-recommended: 8.0.0_stylelint@14.14.0
     dev: true
 
-  /stylelint-config-standard/28.0.0_stylelint@14.14.0:
-    resolution: {integrity: sha512-q/StuowDdDmFCravzGHAwgS9pjX0bdOQUEBBDIkIWsQuYGgYz/xsO8CM6eepmIQ1fc5bKdDVimlJZ6MoOUcJ5Q==}
+  /stylelint-config-standard/29.0.0_stylelint@14.14.0:
+    resolution: {integrity: sha512-uy8tZLbfq6ZrXy4JKu3W+7lYLgRQBxYTUUB88vPgQ+ZzAxdrvcaSUW9hOMNLYBnwH+9Kkj19M2DHdZ4gKwI7tg==}
     peerDependencies:
-      stylelint: ^14.11.0
+      stylelint: ^14.14.0
     dependencies:
       stylelint: 14.14.0
       stylelint-config-recommended: 9.0.0_stylelint@14.14.0
@@ -12666,8 +12666,8 @@ packages:
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
-  /tsup/6.2.3_mwhvu7sfp6vq5ryuwb6hlbjfka:
-    resolution: {integrity: sha512-J5Pu2Dx0E1wlpIEsVFv9ryzP1pZ1OYsJ2cBHZ7GrKteytNdzaSz5hmLX7/nAxtypq+jVkVvA79d7S83ETgHQ5w==}
+  /tsup/6.3.0_mwhvu7sfp6vq5ryuwb6hlbjfka:
+    resolution: {integrity: sha512-IaNQO/o1rFgadLhNonVKNCT2cks+vvnWX3DnL8sB87lBDqRvJXHENr5lSPJlqwplUlDxSwZK8dSg87rgBu6Emw==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
