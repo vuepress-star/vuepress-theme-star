@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { dayjs } from '@starzkg/vuepress-star-shared/client'
 import { usePageData } from '@vuepress/client'
 import { computed } from 'vue'
 import { Time } from '../icons'
@@ -10,9 +11,12 @@ interface ReadingTimePageData {
 const page = usePageData<ReadingTimePageData>()
 
 const readingTime = computed(() => {
-  const readingTime = page.value.readingTime
+  const readingTime = dayjs
+    .duration(page.value.readingTime, 'minutes')
+    .locale(page.value.lang)
+    .humanize()
   if (!readingTime) {
-    return 0
+    return undefined
   }
   return readingTime
 })
