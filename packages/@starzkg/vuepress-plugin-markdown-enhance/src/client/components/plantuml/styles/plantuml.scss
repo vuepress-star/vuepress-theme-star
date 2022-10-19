@@ -1,4 +1,4 @@
-.markdown-enhance-flowchart {
+.markdown-enhance-plantuml {
   overflow-x: auto;
   text-align: center;
   transition: all 1s;
@@ -9,15 +9,10 @@
     align-items: center;
     background: var(--grey15, #eee);
   }
-  svg.markdown-enhance-flowchart-loading-icon {
+  svg.markdown-enhance-plantuml-loading-icon {
     width: 4em;
     height: 4em;
     margin: 2.5em auto;
     color: var(--accent-color);
   }
-}
-.operation-element,
-.parallel-element {
-  rx: 5px;
-  ry: 5px;
 }

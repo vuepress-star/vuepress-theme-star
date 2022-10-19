@@ -47,7 +47,7 @@ onMounted(() => {
         width: 100%;
         min-height: 400px;
         border: none;
-        background-color: #000;
+        background-color: var(--c-bg);
       "
       :src="url"
     />
