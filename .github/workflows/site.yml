@@ -55,7 +55,7 @@ jobs:
           pnpm cpx "docs/.vuepress/dist/**" dist/docs
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3.0.0
+        uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           repo: vuepress-star/vuepress-star
           target_branch: gh-pages
