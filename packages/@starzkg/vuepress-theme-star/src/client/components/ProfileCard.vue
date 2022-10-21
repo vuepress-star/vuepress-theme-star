@@ -57,7 +57,7 @@ const tagNum = computed(() => {
 })
 
 const archiveNum = computed(() => {
-  return Object.keys(siteData.value.classifications?.tag).length || 0
+  return Object.keys(siteData.value.classifications?.date).length || 0
 })
 
 const links = computed(() => {

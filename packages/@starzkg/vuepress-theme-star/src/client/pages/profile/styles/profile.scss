@@ -9,6 +9,10 @@
   min-height: 100vh;
 
   .profile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     min-height: calc(2 * var(--navbar-height));
   }
 
@@ -17,6 +21,7 @@
     flex-direction: row;
     flex: 1;
     flex-basis: auto;
+    padding-top: calc(2 * var(--navbar-height));
     box-sizing: border-box;
     justify-content: center;
     align-items: flex-start;
@@ -54,7 +59,7 @@
   }
 
   .profile-footer {
-    padding: 2.5rem;
+    width: 100%;
     border-top: 1px solid var(--c-border);
     background: #fff;
     text-align: center;

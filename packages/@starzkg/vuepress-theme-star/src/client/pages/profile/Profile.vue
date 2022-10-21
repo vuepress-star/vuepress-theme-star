@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Archive from '@theme/Archive.vue'
+import CalendarGraph from '@theme/CalendarGraph.vue'
 import Content from '@theme/Content.vue'
 import Features from '@theme/Features.vue'
 import Footer from '@theme/Footer.vue'
@@ -23,7 +24,7 @@ import ProfileCard from '@theme/ProfileCard.vue'
       <div class="profile-banner" />
     </header>
 
-    <main class="profile-body">
+    <section class="profile-body">
       <aside class="profile-aside-wrapper">
         <ProfileCard class="mobile-show" />
         <Archive />
@@ -32,10 +33,11 @@ import ProfileCard from '@theme/ProfileCard.vue'
 
       <main class="profile-main-wrapper">
         <Features />
+        <CalendarGraph />
         <Content class="custom" />
         <div class="article-list"></div>
       </main>
-    </main>
+    </section>
 
     <footer class="profile-footer">
       <Footer />

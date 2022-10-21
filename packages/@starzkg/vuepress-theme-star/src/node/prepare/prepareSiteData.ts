@@ -42,6 +42,7 @@ export const resolveSiteData = (app): StarSiteData => {
       type: classificationByType(app.pages),
       category: classificationByCategory(app.pages),
       tag: classificationByTag(app.pages),
+      date: classificationByDate(app.pages),
     } as ClassificationData,
   }
 }
@@ -84,4 +85,15 @@ export const classificationByTag = (pages: Page[]): Classification => {
     }
   }
   return tag
+}
+
+export const classificationByDate = (pages: Page[]): Classification => {
+  const dateMap: Record<string, string[]> = {}
+  for (const key in pages) {
+    const page = pages[key]
+    const date = page.date
+    dateMap[date] = dateMap[date] || []
+    dateMap[date].push(page.key)
+  }
+  return dateMap
 }
