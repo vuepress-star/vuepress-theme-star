@@ -45,7 +45,7 @@
     "@vuepress/core": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.52",
     "lightgallery": "^2.5.0",
-    "vue": "^3.2.40",
+    "vue": "^3.2.41",
     "vue-router": "^4.1.4",
     "vuepress-plugin-sass-palette": "2.0.0-beta.111"
   },

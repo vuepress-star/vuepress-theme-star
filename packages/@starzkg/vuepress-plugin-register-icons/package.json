@@ -48,7 +48,7 @@
     "chokidar": "^3.5.3",
     "ora": "^6.0.0",
     "svgo": "^2.3.1",
-    "vue": "^3.2.40"
+    "vue": "^3.2.41"
   },
   "publishConfig": {
     "access": "public"
