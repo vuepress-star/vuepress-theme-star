@@ -14,15 +14,12 @@
     "example:serve": "anywhere -s -h localhost -d dist"
   },
   "dependencies": {
-    "@starzkg/vuepress-icons": "workspace:*",
     "@starzkg/vuepress-plugin-analytics": "1.1.2",
     "@starzkg/vuepress-plugin-element-plus": "workspace:*",
     "@starzkg/vuepress-plugin-giscus-comment": "1.0.0",
     "@starzkg/vuepress-plugin-interaction-effect": "workspace:*",
     "@starzkg/vuepress-plugin-live2d-widget": "1.1.0",
     "@starzkg/vuepress-plugin-photo-swipe": "workspace:*",
-    "@starzkg/vuepress-plugin-register-icons": "workspace:*",
-    "@starzkg/vuepress-social-icons": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@starzkg/vuepress-theme-star": "workspace:*",
     "@vuepress/bundler-vite": "2.0.0-beta.52",
@@ -30,12 +27,12 @@
     "@vuepress/cli": "2.0.0-beta.50",
     "@vuepress/client": "2.0.0-beta.50",
     "@vuepress/plugin-docsearch": "2.0.0-beta.50",
-    "@vuepress/plugin-register-components": "2.0.0-beta.50",
+    "@vuepress/plugin-register-components": "2.0.0-beta.52",
     "@vuepress/plugin-shiki": "2.0.0-beta.50",
     "@vuepress/utils": "2.0.0-beta.50",
     "anywhere": "1.6.0",
     "sass-loader": "13.1.0",
     "vue": "3.2.40",
-    "vuepress": "2.0.0-beta.50"
+    "vuepress": "2.0.0-beta.52"
   }
 }
