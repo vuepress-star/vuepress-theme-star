@@ -144,14 +144,14 @@ importers:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      element-plus: 2.2.18
+      element-plus: 2.2.19
       vue: ^3.2.40
     dependencies:
       '@element-plus/icons-vue': 2.0.10_vue@3.2.40
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      element-plus: 2.2.18_vue@3.2.40
+      element-plus: 2.2.19_vue@3.2.40
       vue: 3.2.40
     devDependencies:
       '@vuepress/bundler-vite': 2.0.0-beta.50
@@ -2492,14 +2492,6 @@ packages:
       picomatch: 2.3.1
       rollup: 2.79.1
     dev: false
-
-  /@rollup/pluginutils/4.2.1:
-    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
-    engines: {node: '>= 8.0.0'}
-    dependencies:
-      estree-walker: 2.0.2
-      picomatch: 2.3.1
-    dev: true
 
   /@rollup/pluginutils/5.0.2_rollup@3.2.3:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
@@ -6412,8 +6404,8 @@ packages:
   /electron-to-chromium/1.4.277:
     resolution: {integrity: sha512-Ej4VyUfGdVY5D2J5WHAVNqrEFBKgeNcX7p/bBQU4x/VKwvnyEvGd62NEkIK3lykLEe9Cg4MCcoWAa+u97o0u/A==}
 
-  /element-plus/2.2.18_vue@3.2.40:
-    resolution: {integrity: sha512-2pK2zmVOwP14eFl3rGoR+3BWJwDyO+DZCvzjQ8L6qjUR+hVKwFhgxIcSkKJatbcHFw5Xui6UyN20jV+gQP7mLg==}
+  /element-plus/2.2.19_vue@3.2.40:
+    resolution: {integrity: sha512-uN0gt9lUus/IHzu5J6vkbYoYJgUtU05osdtFv9RO27bHKOG5GN7dH6uA3OKfkQQ6R2sV8ZxY1rc9PH1X8Dgrow==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
