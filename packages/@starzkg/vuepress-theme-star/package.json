@@ -78,7 +78,7 @@
     "ua-parser-js": "^1.0.2",
     "vue": "^3.2.41",
     "vue-router": "^4.1.4",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.111"
+    "vuepress-plugin-sass-palette": "2.0.0-beta.113"
   },
   "devDependencies": {
     "@types/ua-parser-js": "0.7.36"
