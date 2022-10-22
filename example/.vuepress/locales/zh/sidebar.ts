@@ -22,7 +22,7 @@ export default {
     },
     {
       text: 'MarkDown',
-      icon: 'FileMarkdown',
+      icon: 'markdown',
       link: '/zh/guide/markdown/',
       children: [
         {
