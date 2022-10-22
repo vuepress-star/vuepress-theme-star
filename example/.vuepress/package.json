@@ -30,12 +30,12 @@
     "@vuepress/cli": "2.0.0-beta.50",
     "@vuepress/client": "2.0.0-beta.50",
     "@vuepress/plugin-docsearch": "2.0.0-beta.50",
-    "@vuepress/plugin-register-components": "2.0.0-beta.50",
+    "@vuepress/plugin-register-components": "2.0.0-beta.52",
     "@vuepress/plugin-shiki": "2.0.0-beta.50",
     "@vuepress/utils": "2.0.0-beta.50",
     "anywhere": "1.6.0",
     "sass-loader": "13.1.0",
     "vue": "3.2.40",
-    "vuepress": "2.0.0-beta.50"
+    "vuepress": "2.0.0-beta.52"
   }
 }

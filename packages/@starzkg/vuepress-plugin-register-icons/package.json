@@ -42,7 +42,7 @@
     "copy": "cpx \"src/**/*.vue\" lib"
   },
   "dependencies": {
-    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.50",
     "chalk": "^5.0.0",
     "chokidar": "^3.5.3",
