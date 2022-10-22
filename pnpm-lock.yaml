@@ -211,7 +211,7 @@ importers:
       '@starzkg/vuepress-plugin-element-plus': workspace:*
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
-      '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
+      '@starzkg/vuepress-plugin-live2d-widget': 1.1.1
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
       '@starzkg/vuepress-star-shared': workspace:*
       '@starzkg/vuepress-theme-star': workspace:*
@@ -232,7 +232,7 @@ importers:
       '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0
       '@starzkg/vuepress-plugin-interaction-effect': link:../../ecosystem/@starzkg/vuepress-plugin-interaction-effect
-      '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
+      '@starzkg/vuepress-plugin-live2d-widget': 1.1.1
       '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
       '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
@@ -2708,13 +2708,13 @@ packages:
       - supports-color
     dev: false
 
-  /@starzkg/vuepress-plugin-live2d-widget/1.1.0:
-    resolution: {integrity: sha512-E/Tk7h6oU2T3b4bFzrJuaHdjfgxIm60h8pZ05UWbEKXOECWDci99QbMCWez5eK8Rso2TDvON3VZVbNvZTdk7og==}
+  /@starzkg/vuepress-plugin-live2d-widget/1.1.1:
+    resolution: {integrity: sha512-U8UE1nxYTQlfbQOpmDagGr3bMISAHfoAY8Lmcp/ZrH105bVxhtm+pzjWxh0S4E+6VLV+Ox9R2ZFoZIvtC9b21A==}
     dependencies:
-      '@vuepress/client': 2.0.0-beta.50
-      '@vuepress/core': 2.0.0-beta.50
-      '@vuepress/shared': 2.0.0-beta.50
-      '@vuepress/utils': 2.0.0-beta.50
+      '@vuepress/client': 2.0.0-beta.52
+      '@vuepress/core': 2.0.0-beta.52
+      '@vuepress/shared': 2.0.0-beta.52
+      '@vuepress/utils': 2.0.0-beta.52
       current-device: 0.10.2
       live2d-widget: 3.1.4
     transitivePeerDependencies:
