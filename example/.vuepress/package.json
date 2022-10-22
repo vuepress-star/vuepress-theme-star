@@ -14,11 +14,11 @@
     "example:serve": "anywhere -s -h localhost -d dist"
   },
   "dependencies": {
-    "@starzkg/vuepress-plugin-analytics": "1.1.2",
+    "@starzkg/vuepress-plugin-analytics": "1.1.3",
     "@starzkg/vuepress-plugin-element-plus": "workspace:*",
-    "@starzkg/vuepress-plugin-giscus-comment": "1.0.0",
+    "@starzkg/vuepress-plugin-giscus-comment": "1.0.1",
     "@starzkg/vuepress-plugin-interaction-effect": "workspace:*",
-    "@starzkg/vuepress-plugin-live2d-widget": "1.1.0",
+    "@starzkg/vuepress-plugin-live2d-widget": "1.1.1",
     "@starzkg/vuepress-plugin-photo-swipe": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@starzkg/vuepress-theme-star": "workspace:*",
