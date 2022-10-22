@@ -13,10 +13,10 @@ const themeLocale = useThemeLocaleData()
     tabindex="0"
     @click="toggleNavbar"
   >
-    <div class="icon button-container" aria-hidden="true">
-      <span class="button-top"></span>
-      <span class="button-middle"></span>
-      <span class="button-bottom"></span>
+    <div class="icon" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 </template>
@@ -24,92 +24,73 @@ const themeLocale = useThemeLocaleData()
 <style lang="scss" scoped>
 .toggle-navbar-button {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   top: 0.6rem;
   right: 1rem;
   padding: 0.6rem;
   cursor: pointer;
 
-  .button-container {
-    position: relative;
-    overflow: hidden;
+  .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 1.25rem;
     height: 1.25rem;
+    cursor: inherit;
+    overflow: hidden;
   }
 
-  .button-top,
-  .button-middle,
-  .button-bottom {
-    position: absolute;
-
+  span {
+    display: inline-block;
     width: 1.25rem;
     height: 0.125rem;
 
-    background-color: var(--dark-grey);
+    background-color: var(--c-text);
+    transition: top var(--t-transform), background-color 0.5s,
+      transform var(--t-transform);
 
-    transition: top 0.25s, background-color 0.5s, transform 0.25s;
-  }
-
-  .button-top {
-    top: 0.125rem;
-    left: 0;
-    transform: translateX(0);
-  }
-
-  .button-middle {
-    top: 0.5rem;
-    left: 0;
-    transform: translateX(8px);
-  }
-
-  .button-bottom {
-    top: 0.875rem;
-    left: 0;
-    transform: translateX(4px);
+    &:nth-child(1) {
+      transform: translateX(0);
+    }
+    &:nth-child(2) {
+      margin: 0.4rem 0;
+      transform: translateX(0.5rem);
+    }
+    &:nth-child(3) {
+      transform: translateX(0.25rem);
+    }
   }
 
   &:hover {
-    .button-top {
-      top: 0.125rem;
-      left: 0;
-      transform: translateX(4px);
-    }
-
-    .button-middle {
-      top: 0.5rem;
-      left: 0;
-      transform: translateX(0);
-    }
-
-    .button-bottom {
-      top: 0.875rem;
-      left: 0;
-      transform: translateX(8px);
+    span {
+      &:nth-child(1) {
+        transform: translateX(0.25rem);
+      }
+      &:nth-child(2) {
+        transform: translateX(0);
+      }
+      &:nth-child(3) {
+        transform: translateX(0.5rem);
+      }
     }
   }
 
   .navbar-open & {
-    .button-top {
-      top: 0.625rem;
-      transform: translateX(0) rotate(225deg);
-    }
-
-    .button-middle {
-      top: 0.625rem;
-      transform: translateX(20px);
-    }
-
-    .button-bottom {
-      top: 0.625rem;
-      transform: translateX(0) rotate(135deg);
+    span {
+      &:nth-child(1) {
+        transform: translateX(0) translateY(0.5rem) rotate(225deg);
+      }
+      &:nth-child(2) {
+        transform: translateX(1.25rem);
+      }
+      &:nth-child(3) {
+        transform: translateX(0) translateY(-0.5rem) rotate(135deg);
+      }
     }
 
     &:hover {
-      .button-top,
-      .button-middle,
-      .button-bottom {
+      span {
         background-color: var(--c-text);
         transition: top 0.25s, background-color 0.25s, transform 0.25s;
       }

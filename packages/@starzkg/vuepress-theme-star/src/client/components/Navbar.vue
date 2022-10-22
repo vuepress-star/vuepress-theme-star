@@ -9,7 +9,7 @@ const navbar = useNavbar()
 </script>
 
 <template>
-  <header v-if="navbar.enable" class="navbar">
+  <nav v-if="navbar.enable" class="navbar">
     <section ref="navbarWrapper" class="navbar-wrapper">
       <div class="navbar-left">
         <ToggleSidebarButton />
@@ -41,5 +41,5 @@ const navbar = useNavbar()
         </div>
       </section>
     </Transition>
-  </header>
+  </nav>
 </template>
