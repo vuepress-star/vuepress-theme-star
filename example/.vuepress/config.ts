@@ -4,7 +4,6 @@ import { giscusCommentPlugin } from '@starzkg/vuepress-plugin-giscus-comment'
 import { interactionEffectPlugin } from '@starzkg/vuepress-plugin-interaction-effect'
 import { live2dWidgetPlugin } from '@starzkg/vuepress-plugin-live2d-widget'
 import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
-import { registerIconsPlugin } from '@starzkg/vuepress-plugin-register-icons'
 import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
@@ -216,9 +215,6 @@ export default defineUserConfig({
     }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
-    }),
-    registerIconsPlugin({
-      iconsDir: path.resolve(__dirname, './icons'),
     }),
     // only enable shiki plugin in production mode
     isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],

@@ -86,9 +86,7 @@ importers:
 
   docs/.vuepress:
     specifiers:
-      '@starzkg/vuepress-icons': workspace:*
       '@starzkg/vuepress-plugin-element-plus': workspace:*
-      '@starzkg/vuepress-social-icons': workspace:*
       '@starzkg/vuepress-star-shared': workspace:*
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
@@ -105,9 +103,7 @@ importers:
       vue: 3.2.40
       vuepress: 2.0.0-beta.50
     dependencies:
-      '@starzkg/vuepress-icons': link:../../packages/@starzkg/vuepress-icons
       '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
-      '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
       '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50
@@ -211,15 +207,12 @@ importers:
 
   example/.vuepress:
     specifiers:
-      '@starzkg/vuepress-icons': workspace:*
       '@starzkg/vuepress-plugin-analytics': 1.1.2
       '@starzkg/vuepress-plugin-element-plus': workspace:*
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
-      '@starzkg/vuepress-plugin-register-icons': workspace:*
-      '@starzkg/vuepress-social-icons': workspace:*
       '@starzkg/vuepress-star-shared': workspace:*
       '@starzkg/vuepress-theme-star': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.50
@@ -235,15 +228,12 @@ importers:
       vue: 3.2.40
       vuepress: 2.0.0-beta.50
     dependencies:
-      '@starzkg/vuepress-icons': link:../../packages/@starzkg/vuepress-icons
       '@starzkg/vuepress-plugin-analytics': 1.1.2
       '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
       '@starzkg/vuepress-plugin-giscus-comment': 1.0.0
       '@starzkg/vuepress-plugin-interaction-effect': link:../../ecosystem/@starzkg/vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
-      '@starzkg/vuepress-plugin-register-icons': link:../../packages/@starzkg/vuepress-plugin-register-icons
-      '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
       '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
       '@vuepress/bundler-vite': 2.0.0-beta.50

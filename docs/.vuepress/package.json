@@ -9,9 +9,7 @@
     "docs:serve": "anywhere -s -h localhost -d dist"
   },
   "dependencies": {
-    "@starzkg/vuepress-icons": "workspace:*",
     "@starzkg/vuepress-plugin-element-plus": "workspace:*",
-    "@starzkg/vuepress-social-icons": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@starzkg/vuepress-theme-star": "workspace:*",
     "@vuepress/bundler-vite": "2.0.0-beta.50",

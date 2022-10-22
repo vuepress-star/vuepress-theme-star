@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { useCopyToClipboard } from '@starzkg/vuepress-star-shared/client'
-import * as Icons from 'packages/@starzkg/vuepress-icons'
+import { getCurrentInstance, PropType } from 'vue'
+
+const props = defineProps({
+  iconsPatterns: {
+    type: Object as PropType<RegExp>,
+    default: () => /icon-/,
+  },
+})
+
+const currentInstance = getCurrentInstance()
+
+const Icons = Object.keys(currentInstance?.appContext.components || {}).filter(
+  (key) => props.iconsPatterns?.test(key)
+)
 
 const copyIcon = (icon: string): void => {
   useCopyToClipboard(`<${icon} />`)
@@ -9,10 +22,13 @@ const copyIcon = (icon: string): void => {
 
 <template>
   <div class="icon-display-container">
-    <div v-for="(icon, name) in Icons" :key="icon" class="icon-item">
-      <span class="demo-svg-icon" @click="copyIcon(name)">
+    <div v-for="icon in Icons" :key="icon" class="icon-item">
+      <span class="demo-svg-icon" @click="copyIcon(icon)">
         <Component :is="icon" class="icon" />
-        <span class="text" v-text="name" />
+        <span
+          class="text"
+          v-text="icon.slice(icon.match(props.iconsPatterns)[0].length)"
+        />
       </span>
     </div>
   </div>

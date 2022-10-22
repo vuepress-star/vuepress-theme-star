@@ -11,7 +11,7 @@ copyright:
 ::: tip
 点击图标可复制组件代码
 :::
-<IconDisplay />
+<IconDisplay :iconsPatterns="/icon-(?!social-)/"  />
 
 ## 第三方社交媒体Logo
-<SocialIconDisplay />
+<IconDisplay :iconsPatterns="/icon-social-/" />
