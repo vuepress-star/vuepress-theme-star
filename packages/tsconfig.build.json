@@ -2,10 +2,7 @@
   "extends": "../tsconfig.base.json",
   "references": [
     {
-      "path": "./@starzkg/vuepress-icons/tsconfig.build.json"
-    },
-    {
-      "path": "./@starzkg/vuepress-social-icons/tsconfig.build.json"
+      "path": "./@starzkg/vuepress-plugin-register-icons/tsconfig.build.json"
     },
     {
       "path": "./@starzkg/vuepress-shared/tsconfig.build.json"

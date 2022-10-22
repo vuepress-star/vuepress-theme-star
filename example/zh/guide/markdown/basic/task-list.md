@@ -1,6 +1,6 @@
 ---
 title: 任务列表
-icon: Checked
+icon: checked
 categories:
   - Markdown
 tags:

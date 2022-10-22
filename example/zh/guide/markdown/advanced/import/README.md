@@ -1,6 +1,6 @@
 ---
 title: 文件导入
-icon: FileSync
+icon: file-sync
 ---
 # 文件导入
 ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")

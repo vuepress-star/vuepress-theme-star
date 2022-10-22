@@ -1,6 +1,6 @@
 ---
 title: Vuepress 语法扩展
-icon: More
+icon: more
 ---
 # Vuepress 语法扩展
 

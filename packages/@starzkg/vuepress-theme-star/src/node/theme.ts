@@ -1,7 +1,9 @@
+import { createRequire } from 'node:module'
 import { copyrightPlugin } from '@starzkg/vuepress-plugin-copyright'
 import { feedPlugin } from '@starzkg/vuepress-plugin-feed'
 import { markdownEnhancePlugin } from '@starzkg/vuepress-plugin-markdown-enhance'
 import { pwaPlugin } from '@starzkg/vuepress-plugin-pwa'
+import { registerIconsPlugin } from '@starzkg/vuepress-plugin-register-icons'
 import { seoPlugin } from '@starzkg/vuepress-plugin-seo'
 import { sitemapPlugin } from '@starzkg/vuepress-plugin-sitemap'
 import type { Theme } from '@vuepress/core'
@@ -25,6 +27,8 @@ import { onInitialized } from './onInitialized.js'
 import { onPrepared } from './onPrepared.js'
 import { onWatched } from './onWatched.js'
 import { assignDefaultLocaleOptions } from './utils/index.js'
+
+const require = createRequire(import.meta.url)
 
 const __dirname = getDirname(import.meta.url)
 
@@ -119,6 +123,16 @@ export const starTheme = ({
       themePlugins.markdown !== false
         ? markdownEnhancePlugin(themePlugins.markdown || true)
         : [],
+
+      registerIconsPlugin({
+        iconsDir: path.dirname(require.resolve('@starzkg/vuepress-icons')),
+      }),
+      registerIconsPlugin({
+        iconsDir: path.dirname(
+          require.resolve('@starzkg/vuepress-social-icons')
+        ),
+        iconPrefix: 'icon-social-',
+      }),
 
       tocPlugin(),
 

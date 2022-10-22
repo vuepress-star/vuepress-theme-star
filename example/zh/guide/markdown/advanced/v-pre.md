@@ -1,6 +1,6 @@
 ---
 title: v-pre 容器
-icon: Present
+icon: present
 ---
 
 <!-- more -->

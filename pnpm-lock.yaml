@@ -218,6 +218,7 @@ importers:
       '@starzkg/vuepress-plugin-interaction-effect': workspace:*
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': workspace:*
+      '@starzkg/vuepress-plugin-register-icons': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
       '@starzkg/vuepress-star-shared': workspace:*
       '@starzkg/vuepress-theme-star': workspace:*
@@ -241,6 +242,7 @@ importers:
       '@starzkg/vuepress-plugin-interaction-effect': link:../../ecosystem/@starzkg/vuepress-plugin-interaction-effect
       '@starzkg/vuepress-plugin-live2d-widget': 1.1.0
       '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
+      '@starzkg/vuepress-plugin-register-icons': link:../../packages/@starzkg/vuepress-plugin-register-icons
       '@starzkg/vuepress-social-icons': link:../../packages/@starzkg/vuepress-social-icons
       '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
@@ -258,16 +260,7 @@ importers:
       vuepress: 2.0.0-beta.50_i42gnzbcavtkm7o4m35z5zgj2u
 
   packages/@starzkg/vuepress-icons:
-    specifiers:
-      chalk: ^5.0.0
-      ora: ^6.0.0
-      svgo: ^2.3.1
-      vue: ^3.2.40
-    dependencies:
-      chalk: 5.1.0
-      ora: 6.1.2
-      svgo: 2.8.0
-      vue: 3.2.40
+    specifiers: {}
 
   packages/@starzkg/vuepress-plugin-copyright:
     specifiers:
@@ -446,6 +439,24 @@ importers:
       vuepress-plugin-sass-palette: 2.0.0-beta.94
       workbox-build: 6.5.4
 
+  packages/@starzkg/vuepress-plugin-register-icons:
+    specifiers:
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      chalk: ^5.0.0
+      chokidar: ^3.5.3
+      ora: ^6.0.0
+      svgo: ^2.3.1
+      vue: ^3.2.40
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
+      chalk: 5.1.2
+      chokidar: 3.5.3
+      ora: 6.1.2
+      svgo: 2.8.0
+      vue: 3.2.40
+
   packages/@starzkg/vuepress-plugin-seo:
     specifiers:
       '@starzkg/vuepress-star-shared': workspace:*
@@ -522,16 +533,7 @@ importers:
       vite: 3.1.8
 
   packages/@starzkg/vuepress-social-icons:
-    specifiers:
-      chalk: ^5.0.0
-      ora: ^6.0.0
-      svgo: ^2.3.1
-      vue: ^3.2.40
-    dependencies:
-      chalk: 5.1.0
-      ora: 6.1.2
-      svgo: 2.8.0
-      vue: 3.2.40
+    specifiers: {}
 
   packages/@starzkg/vuepress-star-shared:
     specifiers:
@@ -581,6 +583,7 @@ importers:
       '@starzkg/vuepress-plugin-feed': workspace:*
       '@starzkg/vuepress-plugin-markdown-enhance': workspace:*
       '@starzkg/vuepress-plugin-pwa': workspace:*
+      '@starzkg/vuepress-plugin-register-icons': workspace:*
       '@starzkg/vuepress-plugin-seo': workspace:*
       '@starzkg/vuepress-plugin-sitemap': workspace:*
       '@starzkg/vuepress-social-icons': workspace:*
@@ -616,6 +619,7 @@ importers:
       '@starzkg/vuepress-plugin-feed': link:../vuepress-plugin-feed
       '@starzkg/vuepress-plugin-markdown-enhance': link:../vuepress-plugin-markdown-enhance
       '@starzkg/vuepress-plugin-pwa': link:../vuepress-plugin-pwa
+      '@starzkg/vuepress-plugin-register-icons': link:../vuepress-plugin-register-icons
       '@starzkg/vuepress-plugin-seo': link:../vuepress-plugin-seo
       '@starzkg/vuepress-plugin-sitemap': link:../vuepress-plugin-sitemap
       '@starzkg/vuepress-social-icons': link:../vuepress-social-icons
@@ -3732,7 +3736,7 @@ packages:
       '@types/fs-extra': 9.0.13
       '@types/hash-sum': 1.0.0
       '@vuepress/shared': 2.0.0-beta.50
-      chalk: 5.1.0
+      chalk: 5.1.2
       debug: 4.3.4
       fs-extra: 10.1.0
       globby: 13.1.2
@@ -4675,7 +4679,6 @@ packages:
   /chalk/5.1.2:
     resolution: {integrity: sha512-E5CkT4jWURs1Vy5qGJye+XwCkNj7Od3Af7CP6SujMetSMkLs8Do2RWJK5yx1wamHV/op8Rz+9rltjaTQWDnEFQ==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
-    dev: true
 
   /chardet/0.4.2:
     resolution: {integrity: sha512-j/Toj7f1z98Hh2cYo2BVr85EpIRWqUi7rtRSGxh/cqUjqrnJe9l9UE7IUGd2vQ2p+kSHLkSzObQPZPLUC6TQwg==}
@@ -9393,7 +9396,7 @@ packages:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
     engines: {node: '>=12'}
     dependencies:
-      chalk: 5.1.0
+      chalk: 5.1.2
       is-unicode-supported: 1.3.0
 
   /log-update/4.0.0:

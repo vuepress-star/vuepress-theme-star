@@ -1,5 +1,3 @@
-import Icons from '@starzkg/vuepress-icons/global'
-import SocialIcons from '@starzkg/vuepress-social-icons/global'
 import { defineClientConfig } from '@vuepress/client'
 import { defineComponent, FunctionalComponent, h, onMounted, VNode } from 'vue'
 import Badge from './components/Badge.vue'
@@ -37,11 +35,6 @@ export default defineClientConfig({
     app.component('DocumentHome', DocumentHome)
     app.component('Presentation', Presentation)
     app.component('Profile', Profile)
-
-    // icon
-    app.use(Icons)
-    // social icon
-    app.use(SocialIcons)
 
     app.component('Badge', Badge)
     // app.component('ExternalLinkIcon', ExternalLinkIcon)

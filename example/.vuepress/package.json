@@ -21,6 +21,7 @@
     "@starzkg/vuepress-plugin-interaction-effect": "workspace:*",
     "@starzkg/vuepress-plugin-live2d-widget": "1.1.0",
     "@starzkg/vuepress-plugin-photo-swipe": "workspace:*",
+    "@starzkg/vuepress-plugin-register-icons": "workspace:*",
     "@starzkg/vuepress-social-icons": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@starzkg/vuepress-theme-star": "workspace:*",

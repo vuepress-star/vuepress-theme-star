@@ -1,6 +1,6 @@
 ---
 title: PlantUML
-icon: AreaChart
+icon: area-chart
 ---
 # PlantUML
 

@@ -1,6 +1,6 @@
 ---
 title: Mermaid
-icon: PieChart
+icon: pie-chart
 ---
 
 # Mermaid

@@ -1,6 +1,6 @@
 ---
 title: 文件包含
-icon: FileAdd
+icon: file-add
 ---
 # 文件包含
 ```md

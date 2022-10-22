@@ -50,6 +50,7 @@
     "@starzkg/vuepress-plugin-feed": "workspace:*",
     "@starzkg/vuepress-plugin-markdown-enhance": "workspace:*",
     "@starzkg/vuepress-plugin-pwa": "workspace:*",
+    "@starzkg/vuepress-plugin-register-icons": "workspace:*",
     "@starzkg/vuepress-plugin-seo": "workspace:*",
     "@starzkg/vuepress-plugin-sitemap": "workspace:*",
     "@starzkg/vuepress-social-icons": "workspace:*",

@@ -1,0 +1,56 @@
+{
+  "name": "@starzkg/vuepress-plugin-register-icons",
+  "version": "1.0.0-beta.32",
+  "description": "VuePress plugin - register-icons",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "plugin",
+    "icon",
+    "svg"
+  ],
+  "homepage": "https://vuepress-star.shentuzhigang.cn",
+  "bugs": {
+    "url": "https://github.com/vuepress-star/vuepress-theme-star/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-star/vuepress-theme-star.git",
+    "directory": "packages/@starzkg/vuepress-register-icons"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Starzkg",
+    "email": "shentuzhigang@shentuzhigang.cn",
+    "url": "https://shentuzhigang.cn"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.vue\" lib"
+  },
+  "dependencies": {
+    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/utils": "2.0.0-beta.50",
+    "chalk": "^5.0.0",
+    "chokidar": "^3.5.3",
+    "ora": "^6.0.0",
+    "svgo": "^2.3.1",
+    "vue": "^3.2.40"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

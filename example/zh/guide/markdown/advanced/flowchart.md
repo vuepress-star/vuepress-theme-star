@@ -1,6 +1,6 @@
 ---
 title: FlowChart
-icon: TrendCharts
+icon: trend-charts
 ---
 
 # FlowChart
