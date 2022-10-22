@@ -118,13 +118,19 @@ export const starTheme = ({
       // @vuepress/plugin-theme-data
       themeDataPlugin({ themeData: localeOptions }),
 
+      // @vuepress/plugin-toc
+      themePlugins.toc !== false ? tocPlugin() : [],
+
+      // @starzkg/vuepress-plugin-markdown-enhance
       themePlugins.markdown !== false
         ? markdownEnhancePlugin(themePlugins.markdown || true)
         : [],
 
+      // @starzkg/vuepress-plugin-register-icons
       registerIconsPlugin({
         iconsDir: path.dirname(require.resolve('@starzkg/vuepress-icons')),
       }),
+
       registerIconsPlugin({
         iconsDir: path.dirname(
           require.resolve('@starzkg/vuepress-social-icons')
@@ -132,24 +138,27 @@ export const starTheme = ({
         iconPrefix: 'icon-social-',
       }),
 
-      tocPlugin(),
-
+      // @starzkg/vuepress-plugin-copyright
       themePlugins.copyright !== false
         ? copyrightPlugin(themePlugins.copyright || {})
         : [],
 
+      // @starzkg/vuepress-plugin-feed
       themePlugins.feed !== undefined && themePlugins.feed !== false
         ? feedPlugin(themePlugins.feed)
         : [],
 
+      // @starzkg/vuepress-plugin-pwa
       themePlugins.pwa !== undefined && themePlugins.pwa !== false
         ? pwaPlugin(themePlugins.pwa)
         : [],
 
+      // @starzkg/vuepress-plugin-seo
       themePlugins.seo !== undefined && themePlugins.seo !== false
         ? seoPlugin(themePlugins.seo)
         : [],
 
+      // @starzkg/vuepress-plugin-sitemap
       themePlugins.sitemap !== undefined && themePlugins.sitemap !== false
         ? sitemapPlugin(themePlugins.sitemap)
         : [],

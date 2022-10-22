@@ -53,6 +53,11 @@ export interface StarThemePluginsOptions {
   prismjs?: boolean
 
   /**
+   * Enable @vuepress/plugin-toc or not
+   */
+  toc?: boolean
+
+  /**
    * Copyright
    *
    * 版权信息
