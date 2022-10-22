@@ -17,6 +17,8 @@ import {
   useScrollPromise,
 } from './composables/index.js'
 import './styles/index.scss'
+import Layout from './layouts/Layout.vue'
+import NotFound from './layouts/NotFound.vue'
 import DocumentHome from './pages/document/components/Home.vue'
 import Document from './pages/document/components/Page.vue'
 import { Home } from './pages/home/index.js'
@@ -126,4 +128,9 @@ export default defineClientConfig({
   },
 
   rootComponents: [Suspension],
+
+  layouts: {
+    Layout,
+    NotFound,
+  },
 })

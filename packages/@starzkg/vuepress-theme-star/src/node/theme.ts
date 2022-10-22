@@ -50,8 +50,6 @@ export const starTheme = ({
   return {
     name: '@starzkg/vuepress-theme-star',
 
-    layouts: path.resolve(__dirname, '../client/layouts'),
-
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
 
     templateDev: path.resolve(__dirname, '../../templates/index.dev.html'),
