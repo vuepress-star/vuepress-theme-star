@@ -63,7 +63,7 @@ const chart = ref<Chart>()
 
 onMounted(() => {
   Promise.all([
-    import(/* webpackChunkName: "chart" */ 'chart.js/auto/auto.mjs'),
+    import(/* webpackChunkName: "chart" */ 'chart.js/auto'),
     // delay
     delay(),
   ]).then(([{ default: Chart }]) => {

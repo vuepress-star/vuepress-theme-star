@@ -159,9 +159,7 @@ export const markdownEnhancePlugin =
             {
               optimizeDeps: {
                 include: [
-                  ...(codeEnhanceOptions.chart
-                    ? ['chart.js/auto/auto.mjs']
-                    : []),
+                  ...(codeEnhanceOptions.chart ? ['chart.js/auto'] : []),
                   ...(codeEnhanceOptions.flowchart
                     ? ['flowchart.js/src/flowchart.parse.js']
                     : []),
