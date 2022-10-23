@@ -1,67 +1,67 @@
-.timeline-box {
+.archive-box {
   padding: 0 2rem;
 }
 
-.timeline-box,
-.timeline-single {
+.archive-box,
+.archive-single {
   height: max-content;
 }
 
-.timeline-single {
+.archive-single {
   display: flex;
 }
 
-.timeline-line {
+.archive-line {
   text-align: center;
   flex: 0.3;
 }
 
-.timeline-content {
+.archive-content {
   flex: 6;
   margin-left: 1.5rem;
   border-radius: 7px;
   padding-left: 15px;
 }
 
-.timeline-line-icon-par {
+.archive-line-icon-par {
   height: 0.9rem;
   width: 100%;
 }
 
-.timeline-line-icon {
+.archive-line-icon {
   height: 7px;
   width: 7px;
   border-radius: 100px;
   text-align: center;
 }
 
-.timeline-line-bottom,
-.timeline-line-icon {
-  background: var(--archive-timeline, rgba(144, 241, 239, 0.35));
+.archive-line-bottom,
+.archive-line-icon {
+  background: var(--archive-archive, rgba(144, 241, 239, 0.35));
   margin: 0 auto;
 }
 
-.timeline-line-bottom {
+.archive-line-bottom {
   height: 90%;
   width: 4px;
   margin-top: 3px;
 }
 
-.timeline-create-link-single {
+.archive-create-link-single {
   margin-left: 1.15rem;
 }
 
-.timeline-create-link-single li:hover .timeline-line-icon {
-  -webkit-animation: timeline-active 0.3s;
-  animation: timeline-active 0.3s;
+.archive-create-link-single li:hover .archive-line-icon {
+  -webkit-animation: archive-active 0.3s;
+  animation: archive-active 0.3s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  background: var(--archive-timeline-active, pink);
+  background: var(--archive-archive-active, pink);
 }
 
-@-webkit-keyframes timeline-active {
+@-webkit-keyframes archive-active {
   0% {
     width: 7px;
     height: 7px;
@@ -88,42 +88,42 @@
   }
 }
 
-.timeline-create-links {
+.archive-create-links {
   flex: 4;
 }
 
-.timeline-create-month {
+.archive-create-month {
   flex: 6;
 }
 
-.timeline-create-time {
+.archive-create-time {
   height: 1.5rem;
   padding-left: 0.5rem;
   width: 10rem;
 }
 
-.timeline-create-time span {
+.archive-create-time span {
   line-height: 1.5rem;
 }
 
-.timeline-create-link-single ul {
+.archive-create-link-single ul {
   padding: 0;
 }
 
-.timeline-create-link-single ul li {
+.archive-create-link-single ul li {
   list-style: none;
   margin-bottom: 1.7rem;
   display: flex;
 }
 
-.timeline-create-link-single ul li .timeline-title span {
+.archive-create-link-single ul li .archive-title span {
   -webkit-animation-duration: 0.33s;
   animation-duration: 0.33s;
   -webkit-animation-name: archiveEnter;
   animation-name: archiveEnter;
 }
 
-.timeline-create-link-single ul li:hover .timeline-content {
+.archive-create-link-single ul li:hover .archive-content {
   cursor: pointer;
   -webkit-animation: archiveShade 0.6s;
   animation: archiveShade 0.6s;
@@ -131,12 +131,12 @@
   animation-fill-mode: forwards;
 }
 
-.timeline-create-link-single ul li:hover .timeline-title span {
+.archive-create-link-single ul li:hover .archive-title span {
   -webkit-animation: archiveHover 0.33s;
   animation: archiveHover 0.33s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  color: var(--archive-timeline-active-title, pink);
+  color: var(--archive-archive-active-title, pink);
 }
 
 @-webkit-keyframes archiveShade {
@@ -169,23 +169,22 @@
   }
 }
 
-.timeline-title a {
+.archive-title a {
   color: #2c3e50;
   font-weight: 700;
 }
 
-.timeline-create-page-time span {
+.archive-create-page-time span {
   font-size: 13px;
 }
 
-.timeline-year {
-  height: 3rem;
+.archive-year {
   position: relative;
   width: 6rem;
   padding-left: 1.15rem;
 }
 
-.timeline-year-title:before {
+.archive-year-title:before {
   display: inline-block;
   height: 7px;
   margin: 0 auto;
@@ -193,24 +192,24 @@
   bottom: 10%;
   content: '';
   border-radius: 10px;
-  -webkit-animation: timelineYearLevel 0.9s;
-  animation: timelineYearLevel 0.9s;
+  -webkit-animation: archiveYearLevel 0.9s;
+  animation: archiveYearLevel 0.9s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
-.timeline-year:hover .timeline-year-title {
+.archive-year:hover .archive-year-title {
   cursor: pointer;
 }
 
-.timeline-year:hover .timeline-year-title:before {
-  -webkit-animation: timelineTitleChange 0.9s;
-  animation: timelineTitleChange 0.9s;
+.archive-year:hover .archive-year-title:before {
+  -webkit-animation: archiveTitleChange 0.9s;
+  animation: archiveTitleChange 0.9s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes timelineYearLevel {
+@-webkit-keyframes archiveYearLevel {
   0% {
     background: rgba(0, 207, 200, 0.9);
     width: 50%;
@@ -222,7 +221,7 @@
   }
 }
 
-@keyframes timelineYearLevel {
+@keyframes archiveYearLevel {
   0% {
     background: rgba(0, 207, 200, 0.9);
     width: 50%;
@@ -234,7 +233,7 @@
   }
 }
 
-@-webkit-keyframes timelineTitleChange {
+@-webkit-keyframes archiveTitleChange {
   0% {
     background: rgba(0, 207, 200, 0.4);
     width: 15%;
@@ -246,7 +245,7 @@
   }
 }
 
-@keyframes timelineTitleChange {
+@keyframes archiveTitleChange {
   0% {
     background: rgba(0, 207, 200, 0.4);
     width: 15%;
@@ -258,12 +257,12 @@
   }
 }
 
-.timeline-year span {
+.archive-year span {
   line-height: 2rem;
   font-weight: 700;
   font-size: 32px;
 }
 
-.timeline-item {
+.archive-item {
   margin-bottom: 1.5rem;
 }

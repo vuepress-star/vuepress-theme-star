@@ -1,6 +1,18 @@
+import type { Page } from '@vuepress/core'
 import type { GitData } from '@vuepress/plugin-git'
 import type { AuthorData } from './author.js'
 import type { BreadcrumbData } from './breadcrumb.js'
+import type { StarThemePageFrontmatter } from './frontmatter/index.js'
+
+export type StarThemePage<
+  ExtraPageFrontmatter extends StarThemePageFrontmatter = StarThemePageFrontmatter
+> = Page<
+  Partial<StarThemePageData>,
+  Partial<ExtraPageFrontmatter>,
+  Partial<{
+    icon: string
+  }>
+>
 
 export interface StarThemePageData {
   /**

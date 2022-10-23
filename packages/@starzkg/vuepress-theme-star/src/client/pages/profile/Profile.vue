@@ -6,6 +6,7 @@ import Features from '@theme/Features.vue'
 import Footer from '@theme/Footer.vue'
 import Navbar from '@theme/Navbar.vue'
 import ProfileCard from '@theme/ProfileCard.vue'
+import Timeline from '@theme/Timeline.vue'
 </script>
 
 <template>
@@ -28,6 +29,7 @@ import ProfileCard from '@theme/ProfileCard.vue'
       <aside class="profile-aside-wrapper">
         <ProfileCard class="mobile-show" />
         <Archive />
+        <Timeline />
         <div class="profile-info-list"></div>
       </aside>
 

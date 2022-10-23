@@ -9,10 +9,10 @@ const getMonths = (item): number[] => {
 </script>
 
 <template>
-  <div id="timeline-box" class="timeline-box">
-    <div v-for="(item, index) in years" :key="index" class="timeline-item">
-      <div class="timeline-year">
-        <span class="timeline-year-title">{{ item }}</span>
+  <div id="archive-box" class="archive-box">
+    <div v-for="(item, index) in years" :key="index" class="archive-item">
+      <div class="archive-year">
+        <span class="archive-year-title">{{ item }}</span>
       </div>
       <ArchiveItem
         v-for="month in getMonths(item)"

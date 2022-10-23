@@ -1,7 +1,6 @@
-import type { Page } from '@vuepress/core'
 import type { GitData } from '@vuepress/plugin-git'
 import type { AuthorData } from '../shared/author.js'
-import type { StarThemePageData } from '../shared/index.js'
+import type { StarThemePage } from '../shared/index.js'
 
 export const getWords = (data: string): RegExpMatchArray =>
   data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) || []
@@ -23,11 +22,13 @@ export const resolvePageWords = (data: string): number =>
     0
   ) + getChinese(data).length
 
-export const resolvePageAuthor = (git: GitData): AuthorData => {
-  return (git.contributors || []).map((contributor) => ({
-    name: contributor.name,
-    email: contributor.email,
-  }))
+export const resolvePageAuthor = (git?: GitData): AuthorData | undefined => {
+  return git
+    ? (git.contributors || []).map((contributor) => ({
+        name: contributor.name,
+        email: contributor.email,
+      }))
+    : undefined
 }
 
 export const resolvePageReadingTime = (
@@ -37,7 +38,9 @@ export const resolvePageReadingTime = (
   return Math.round((length / wordsPerMinute) * 100) / 100
 }
 
-export const extendsPage = (page: Page<Partial<StarThemePageData>>): void => {
+export const extendsPage = (page: StarThemePage): void => {
+  // custom excerpt
+  page.excerpt = page.frontmatter.excerpt || page.excerpt
   // save title into route meta to generate navbar and sidebar
   page.routeMeta.title = page.title
   // page icon
@@ -51,9 +54,7 @@ export const extendsPage = (page: Page<Partial<StarThemePageData>>): void => {
   // words
   page.data.words = resolvePageWords(page.content)
   // author
-  page.data.author = page.data.git
-    ? resolvePageAuthor(page.data.git)
-    : undefined
+  page.data.author = resolvePageAuthor(page.data.git)
   // reading time
   page.data.readingTime = resolvePageReadingTime(page.data.length)
   // breadcrumb

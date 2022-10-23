@@ -49,26 +49,26 @@ const goPage = (path): void => {
 </script>
 
 <template>
-  <div id="timeline-single" class="timeline-single">
-    <div id="timeline-create-links" class="timeline-create-links">
-      <div id="timeline-create-time" class="timeline-create-time">
+  <div id="archive-single" class="archive-single">
+    <div id="archive-create-links" class="archive-create-links">
+      <div id="archive-create-time" class="archive-create-time">
         <span>{{ month }} 月 {{ currentPages.length }} 篇</span>
       </div>
 
-      <div id="timeline-create-link-single" class="timeline-create-link-single">
+      <div id="archive-create-link-single" class="archive-create-link-single">
         <ul>
           <li v-for="(item, index) in currentPages" :key="index">
-            <div class="timeline-line">
-              <div class="timeline-line-icon-par">
-                <div class="timeline-line-icon"></div>
+            <div class="archive-line">
+              <div class="archive-line-icon-par">
+                <div class="archive-line-icon"></div>
               </div>
-              <div class="timeline-line-bottom"></div>
+              <div class="archive-line-bottom"></div>
             </div>
-            <div class="timeline-content">
-              <div class="timeline-title">
+            <div class="archive-content">
+              <div class="archive-title">
                 <span @click="goPage(item.path)">{{ item.title }}</span>
               </div>
-              <div class="timeline-create-page-time">
+              <div class="archive-create-page-time">
                 <span>{{ item.time }}</span>
               </div>
             </div>
