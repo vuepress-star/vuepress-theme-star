@@ -1,6 +1,6 @@
 ---
 title: 外部引入
-icon: Connection
+icon: connection
 categories: 
  - markdown
 tags:
