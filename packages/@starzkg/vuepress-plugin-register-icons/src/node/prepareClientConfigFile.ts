@@ -93,34 +93,30 @@ export const prepareClientConfigFile = async (
   const iconsMap = await Object.entries({
     ...iconsFromDir,
     ...options.icons,
-  }).reduce<Promise<Record<string, string>>>(
-    async (result, [key, value]) => {
-      const result0 = await result
+  }).reduce<Promise<Record<string, string>>>(async (result, [key, value]) => {
+    const result0 = await result
 
-      if (path.extname(value) === '.svg') {
-        result0[key] = await generateIconComponent(app, key, value)
-      } else {
-        result0[key] = value
-      }
-      return new Promise((resolve) => resolve(result0))
-    },
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    new Promise((resolve) => resolve({}))
-  )
+    if (path.extname(value) === '.svg') {
+      result0[key] = await generateIconComponent(app, key, value)
+    } else {
+      result0[key] = value
+    }
+    return new Promise((resolve) => resolve(result0))
+  }, new Promise((resolve) => resolve({})))
 
   // client app enhance file content
   const content = `\
-import { defineAsyncComponent } from 'vue'
+import { defineComponent } from 'vue'
 
 export default {
-  enhance: ({ app }) => {\
+  enhance: async ({ app }) => {\
     ${Object.entries(iconsMap).map(
       ([name, filepath]) => `
       app.component(${JSON.stringify(
         (options.iconPrefix || '') + name
-      )}, defineAsyncComponent(() => import(/* webpackChunkName: "icons" */ ${JSON.stringify(
+      )}, (await import(/* webpackChunkName: "icons" */ ${JSON.stringify(
         filepath
-      )})))`
+      )})).default)`
     )}
   },
 }
