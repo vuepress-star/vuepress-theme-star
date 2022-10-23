@@ -89,7 +89,7 @@ export const starTheme = ({
       // @vuepress/plugin-git
       themePlugins.git !== false
         ? gitPlugin({
-            createdTime: false,
+            createdTime: true,
             updatedTime: localeOptions.lastUpdated !== false,
             contributors: localeOptions.contributors !== false,
           })
