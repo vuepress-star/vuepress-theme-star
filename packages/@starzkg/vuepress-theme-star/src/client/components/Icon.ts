@@ -41,6 +41,10 @@ export default defineComponent({
     }))
 
     const icon: FunctionalComponent = () => {
+      if (!props.icon) {
+        return null
+      }
+
       if (props.type === 'component') {
         return h(resolveComponent(`${iconPrefix.value}${props.icon}`))
       } else if (props.type === 'img') {
