@@ -5,6 +5,12 @@
       "path": "../vuepress-shared/tsconfig.build.json"
     },
     {
+      "path": "../vuepress-star-shared/tsconfig.build.json"
+    },
+    {
+      "path": "../vuepress-plugin-register-icons/tsconfig.build.json"
+    },
+    {
       "path": "../vuepress-plugin-copyright/tsconfig.build.json"
     },
     {
