@@ -118,7 +118,9 @@ export default {
       ([name, filepath]) => `
       app.component(${JSON.stringify(
         (options.iconPrefix || '') + name
-      )}, defineAsyncComponent(() => import(${JSON.stringify(filepath)})))`
+      )}, defineAsyncComponent(() => import(/* webpackChunkName: "icons" */ ${JSON.stringify(
+        filepath
+      )})))`
     )}
   },
 }
