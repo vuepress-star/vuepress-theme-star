@@ -1,4 +1,4 @@
-# TODOcccccccccccccccccccccccccccccccccccccc
+# TODO
 
 - [x] 背景
 - [x] presentation
