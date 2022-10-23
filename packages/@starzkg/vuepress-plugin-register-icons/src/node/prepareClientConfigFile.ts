@@ -43,6 +43,15 @@ const config = {
   ],
 }
 
+const underline2Camel = (name: string): string => {
+  return name
+    .split('-')
+    .map((s) => {
+      return s[0].toUpperCase() + s.slice(1)
+    })
+    .join('')
+}
+
 const generateIconComponent = async (
   app: App,
   name: string,
@@ -52,12 +61,7 @@ const generateIconComponent = async (
     encoding: 'utf-8',
   })
 
-  const componentName = name
-    .split('-')
-    .map((s) => {
-      return s[0].toUpperCase() + s.slice(1)
-    })
-    .join('')
+  const componentName = underline2Camel(name)
 
   const optimized = optimize(content, config)
 
@@ -107,17 +111,23 @@ export const prepareClientConfigFile = async (
   // client app enhance file content
   const content = `\
 import { defineComponent } from 'vue'
+${Object.entries(iconsMap)
+  .map(
+    ([name, filepath]) => `
+import ${underline2Camel(name)} from ${JSON.stringify(filepath)}`
+  )
+  .join('')}
 
 export default {
   enhance: async ({ app }) => {\
-    ${Object.entries(iconsMap).map(
-      ([name, filepath]) => `
+    ${Object.entries(iconsMap)
+      .map(
+        ([name, filepath]) => `
       app.component(${JSON.stringify(
         (options.iconPrefix || '') + name
-      )}, (await import(/* webpackChunkName: "icons" */ ${JSON.stringify(
-        filepath
-      )})).default)`
-    )}
+      )}, ${underline2Camel(name)})`
+      )
+      .join('')}
   },
 }
 `
