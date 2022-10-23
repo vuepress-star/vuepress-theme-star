@@ -47,7 +47,7 @@ import { dayjs } from '@starzkg/vuepress-star-shared/client'
                     </div>
                     <div class="timeline-line-bottom"></div>
                   </div>
-                  <RouterLink to="item.path" class="timeline-content">
+                  <RouterLink :to="item.path" class="timeline-content">
                     <div class="timeline-article-title">
                       {{ item.title }}
                     </div>
