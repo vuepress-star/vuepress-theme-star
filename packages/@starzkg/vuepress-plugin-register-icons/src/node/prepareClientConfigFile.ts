@@ -29,7 +29,6 @@ const config = {
     'removeNonInheritableGroupAttrs',
     'removeUselessStrokeAndFill',
     'removeUnusedNS',
-    'cleanupIDs',
     'cleanupNumericValues',
     'moveElemsAttrsToGroup',
     'moveGroupAttrsToElems',
@@ -69,7 +68,7 @@ const generateIconComponent = async (
 
   await app.writeTemp(
     tempIcon,
-    `
+    `\
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
@@ -119,7 +118,7 @@ import ${underline2Camel(name)} from ${JSON.stringify(filepath)}`
   .join('')}
 
 export default {
-  enhance: async ({ app }) => {\
+  enhance: ({ app }) => {\
     ${Object.entries(iconsMap)
       .map(
         ([name, filepath]) => `
