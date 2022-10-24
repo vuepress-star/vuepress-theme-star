@@ -2,6 +2,8 @@
 @import '_variables';
 
 .page-container {
+  overflow-x: hidden;
+
   .aside-container {
     width: 0;
     position: fixed;

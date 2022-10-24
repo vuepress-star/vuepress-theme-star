@@ -8,10 +8,11 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-// const props = defineProps({})
 import { dayjs } from '@starzkg/vuepress-star-shared/client'
 import { useSiteData } from '../composables/index.js'
 import { computed, reactive } from 'vue'
+
+// const props = defineProps({})
 
 const siteData = useSiteData()
 
@@ -48,6 +49,12 @@ const graphData = computed(() => {
   return graph
 })
 
+const from = computed(() =>
+  dayjs(graphData.value[0][0].date).startOf('day').format()
+)
+
+const to = computed(() => dayjs().endOf('day').format())
+
 const graphMonthData = computed(() => {
   const monthData = {}
   for (const week of graphData.value) {
@@ -66,12 +73,11 @@ const graphMonthData = computed(() => {
 </script>
 
 <template>
-  <div
-    class="calendar-graph"
-    :data-from="dayjs(graphData[0][0].date).startOf('day').format()"
-    :data-to="dayjs().endOf('day').format()"
-  >
-    <svg class="calendar-graph-svg" :width="53 * (size + 1) + 30" height="128">
+  <div class="calendar-graph" :data-from="from" :data-to="to">
+    <svg
+      class="calendar-graph-svg"
+      :viewBox="[0, 0, 53 * (size + 1) + 30, 128].join(' ')"
+    >
       <g transform="translate(30,20)">
         <g
           v-for="(week, i) in graphData"
