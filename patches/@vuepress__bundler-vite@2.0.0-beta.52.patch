@@ -1,0 +1,25 @@
+diff --git a/dist/index.js b/dist/index.js
+index 66bdc7b19393e5f118aafcec4b540a53b3c9330a..e4149b976df4569a1ba9a03d5906d7aefd64aef1 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -116,19 +116,7 @@ import '@vuepress/client/app'
+             fs.readJsonSync(app.dir.client("package.json")).exports["./app"]
+           ),
+           output: {
+-            ...isServer ? {
+-              entryFileNames: `[name].[hash].mjs`
+-            } : {
+-              manualChunks(id, ctx) {
+-                if (id.includes("plugin-vue:export-helper") || /@vue\/(runtime|shared|reactivity)/.test(id) || /@vuepress\/(client|shared)/.test(id)) {
+-                  return "framework";
+-                }
+-                if (id.includes("node_modules") && !/\.css($|\\?)/.test(id) && isStaticallyImportedByEntry(id, ctx.getModuleInfo)) {
+-                  return "vendor";
+-                }
+-                return void 0;
+-              }
+-            }
++            entryFileNames: `[name].[hash].mjs`
+           },
+           preserveEntrySignatures: "allow-extension"
+         },

@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  '@vuepress/bundler-vite@2.0.0-beta.52':
+    hash: 44tlsxslu73smntdhvxf6i5rue
+    path: patches/@vuepress__bundler-vite@2.0.0-beta.52.patch
+
 importers:
 
   .:
@@ -6449,6 +6454,7 @@ packages:
 
   /encoding/0.1.13:
     resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
+    requiresBuild: true
     dependencies:
       iconv-lite: 0.6.3
 
