@@ -7,11 +7,11 @@ import { photoSwipePlugin } from '@starzkg/vuepress-plugin-photo-swipe'
 import { starTheme } from '@starzkg/vuepress-theme-star'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
-import { defineUserConfig } from '@vuepress/cli'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { path } from '@vuepress/utils'
+import { defineUserConfig } from 'vuepress'
 import locales from './locales'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -62,6 +62,7 @@ export default defineUserConfig({
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
   ],
 
+  // site-level locales config
   locales: {
     '/': {
       lang: 'en-US',
