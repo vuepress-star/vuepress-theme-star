@@ -37,7 +37,9 @@ import { dayjs } from '@starzkg/vuepress-star-shared/client'
               }}</span>
               <ul class="article-list">
                 <li
-                  v-for="item in timeline[year][month][day]"
+                  v-for="item in timeline[year][month][day].sort(
+                    (a, b) => b.time - a.time
+                  )"
                   :key="item.path"
                   class="article-item"
                 >
