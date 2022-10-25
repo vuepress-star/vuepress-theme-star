@@ -13,7 +13,7 @@ import {
   setupNavbar,
   setupSidebar,
   setupSidebarItems,
-  setupUA,
+  setupUserAgent,
   useScrollPromise,
 } from './composables/index.js'
 import './styles/index.scss'
@@ -110,7 +110,7 @@ export default defineClientConfig({
   },
 
   setup() {
-    setupUA()
+    setupUserAgent()
     setupDarkMode()
     setupSidebarItems()
     setupNavbar()

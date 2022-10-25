@@ -8,15 +8,15 @@ import {
   useNavbar,
   useScrollPromise,
   useSidebar,
-  useUA,
+  useUserAgent,
 } from '../../../composables/index.js'
 import Background from './Background.vue'
 import Foreground from './Foreground.vue'
 
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 
-// ua
-const ua = useUA()
+// userAgent
+const userAgent = useUserAgent()
 
 // navbar
 const navbar = useNavbar()
@@ -32,7 +32,7 @@ const containerClass = computed(() => [
     'navbar-open': navbar.value.open,
     'sidebar-open': sidebar.value.open,
   },
-  ua.value.getResult().device.type,
+  userAgent.value.getResult().device.type,
   frontmatter.value.pageClass,
 ])
 
