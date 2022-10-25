@@ -9,7 +9,7 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import Icon from '@theme/Icon.js'
+import { Icon } from '@theme/components'
 import { useSiteData } from '@vuepress/client'
 import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
 import { computed, toRefs } from 'vue'

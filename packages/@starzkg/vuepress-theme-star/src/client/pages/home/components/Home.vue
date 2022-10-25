@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import Content from '@theme/Content.vue'
-import Features from '@theme/Features.vue'
-import Footer from '@theme/Footer.vue'
-import GithubCorner from '@theme/GithubCorner.vue'
-import Hero from '@theme/Hero.vue'
-import HomeArrow from '@theme/HomeArrow.vue'
-import Navbar from '@theme/Navbar.vue'
+import {
+  Content,
+  Features,
+  Footer,
+  GithubCorner,
+  Hero,
+  HomeArrow,
+  Navbar,
+} from '@theme/components'
 import { ref } from 'vue'
 
 const container = ref<HTMLElement>()

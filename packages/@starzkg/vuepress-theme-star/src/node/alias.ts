@@ -11,21 +11,17 @@ const __dirname = getDirname(import.meta.url)
 export const alias = (app: App): Record<string, string> => {
   return Object.fromEntries([
     ...fs
-      .readdirSync(path.resolve(__dirname, '../client/components'))
+      .readdirSync(path.resolve(__dirname, '../client'))
       .filter(
         (file) =>
-          file.endsWith('.js') || file.endsWith('.vue') || !file.includes('.')
+          fs
+            .statSync(path.resolve(__dirname, '../client', file))
+            .isDirectory() &&
+          fs.existsSync(path.resolve(__dirname, '../client', file, 'index.js'))
       )
       .map((file) => [
         `@theme/${file}`,
-        path.resolve(__dirname, '../client/components', file),
-      ]),
-    ...fs
-      .readdirSync(path.resolve(__dirname, '../client/icons'))
-      .filter((file) => file.endsWith('.vue'))
-      .map((file) => [
-        `@icon/${file}`,
-        path.resolve(__dirname, '../client/icons', file),
+        path.resolve(__dirname, '../client', file, 'index.js'),
       ]),
   ])
 }

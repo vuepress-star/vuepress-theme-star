@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import BreadCrumb from '@theme/BreadCrumb.js'
-import Content from '@theme/Content.vue'
-import Footer from '@theme/Footer.vue'
-import Icon from '@theme/Icon.js'
-import Navbar from '@theme/Navbar.vue'
-import PageInfo from '@theme/PageInfo.js'
-import PageMeta from '@theme/PageMeta.vue'
-import PageNav from '@theme/PageNav.vue'
-import ProfileCard from '@theme/ProfileCard.vue'
-import Sidebar from '@theme/Sidebar.vue'
+import {
+  BreadCrumb,
+  Content,
+  Footer,
+  Icon,
+  Navbar,
+  PageInfo,
+  PageMeta,
+  PageNav,
+  ProfileCard,
+  Sidebar,
+} from '@theme/components'
 import { onMounted, onUnmounted, ref } from 'vue'
 import {
   toggleSidebar,

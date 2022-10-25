@@ -1,4 +1,4 @@
-import Icon from '@theme/Icon.js'
+import { Icon } from '@theme/components'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { defineComponent, h } from 'vue'
 import type { VNode } from 'vue'

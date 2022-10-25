@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import PageMeta from '@theme/PageMeta.vue'
-import PageNav from '@theme/PageNav.vue'
+import { PageMeta, PageNav } from '@theme/components'
 import { useScrollPromise } from '../../../composables'
 
 // handle scrollBehavior with transition

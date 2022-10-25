@@ -5,7 +5,7 @@
     "jsx": "preserve",
     "paths": {
       "@theme/*": [
-        "./packages/@starzkg/vuepress-theme-star/src/client/components/*"
+        "./packages/@starzkg/vuepress-theme-star/src/client/*/index.js"
       ],
       "@internal/*": [
         "./packages/@starzkg/vuepress-theme-star/src/client/internal/*.d.ts"

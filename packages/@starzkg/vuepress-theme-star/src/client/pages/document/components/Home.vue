@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import Content from '@theme/Content.vue'
-import Features from '@theme/Features.vue'
-import Footer from '@theme/Footer.vue'
-import Hero from '@theme/Hero.vue'
+import { Content, Features, Footer, Hero } from '@theme/components'
 </script>
 
 <template>

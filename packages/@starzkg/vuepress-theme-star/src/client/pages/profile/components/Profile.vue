@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import Archive from '@theme/Archive.vue'
-import CalendarGraph from '@theme/CalendarGraph.vue'
-import Content from '@theme/Content.vue'
-import Features from '@theme/Features.vue'
-import Footer from '@theme/Footer.vue'
-import Navbar from '@theme/Navbar.vue'
-import ProfileCard from '@theme/ProfileCard.vue'
-import Timeline from '@theme/Timeline.vue'
+import {
+  Archive,
+  CalendarGraph,
+  Content,
+  Features,
+  Footer,
+  Navbar,
+  ProfileCard,
+  Timeline,
+} from '@theme/components'
 </script>
 
 <template>

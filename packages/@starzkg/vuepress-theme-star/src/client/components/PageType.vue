@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import AutoLink from '@theme/AutoLink.vue'
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed } from 'vue'
 import type { StarThemeArticlePageFrontmatter } from '../../shared/index.js'
+import AutoLink from './AutoLink.vue'
 
 const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
 

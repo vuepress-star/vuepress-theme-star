@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Repo from '@theme/Repo.js'
+import { Repo } from '@theme/components'
 import { useThemeLocaleData } from '../composables'
 import BackToTop from './BackToTop'
 import ScreenFull from './ScreenFull'

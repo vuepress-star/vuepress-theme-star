@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icon from '@theme/Icon.js'
+import { Icon } from '@theme/components'
 import { usePageFrontmatter } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'

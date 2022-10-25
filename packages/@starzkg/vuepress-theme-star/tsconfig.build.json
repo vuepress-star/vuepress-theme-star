@@ -35,7 +35,7 @@
     "outDir": "./lib",
     "types": ["@vuepress/client/types", "webpack-env", "vite/client"],
     "paths": {
-      "@theme/*": ["./src/client/components/*"],
+      "@theme/*": ["./src/client/*/index.js"],
       "@internal/*": ["./src/client/internal/*.d.ts"]
     }
   },

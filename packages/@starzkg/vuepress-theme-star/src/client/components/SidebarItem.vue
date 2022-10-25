@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import AutoLink from '@theme/AutoLink.vue'
-import DropdownTransition from '@theme/DropdownTransition.vue'
-import Icon from '@theme/Icon.js'
+import { AutoLink, DropdownTransition, Icon } from '@theme/components'
 import { useToggle } from '@vueuse/core'
 import { computed, nextTick, onBeforeUnmount, toRefs } from 'vue'
 import type { PropType } from 'vue'
