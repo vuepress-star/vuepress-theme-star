@@ -17,14 +17,15 @@ import {
   useScrollPromise,
 } from './composables/index.js'
 import './styles/index.scss'
-import Layout from './layouts/Layout.vue'
-import NotFound from './layouts/NotFound.vue'
-import DocumentHome from './pages/document/components/Home.vue'
-import Document from './pages/document/components/Page.vue'
-import { Home } from './pages/home/index.js'
-import { Page } from './pages/page/index.js'
-import Presentation from './pages/presentation/components/Presentation.vue'
-import { Profile } from './pages/profile/index.js'
+import layouts from './layouts/index.js'
+import {
+  Document,
+  DocumentHome,
+  Home,
+  Page,
+  Presentation,
+  Profile,
+} from './pages/index.js'
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_SSR__: boolean
@@ -129,8 +130,5 @@ export default defineClientConfig({
 
   rootComponents: [Suspension],
 
-  layouts: {
-    Layout,
-    NotFound,
-  },
+  layouts,
 })

@@ -26,14 +26,20 @@ import Timeline from '@theme/Timeline.vue'
     </header>
 
     <section class="profile-body">
-      <aside class="profile-aside-wrapper">
+      <aside class="profile-aside">
         <ProfileCard class="mobile-show" />
         <Archive />
         <Timeline />
         <div class="profile-info-list"></div>
       </aside>
 
-      <main class="profile-main-wrapper">
+      <main class="profile-main">
+        <nav>
+          <ul>
+            <li></li>
+          </ul>
+        </nav>
+        <section></section>
         <Features />
         <CalendarGraph />
         <Content class="custom" />

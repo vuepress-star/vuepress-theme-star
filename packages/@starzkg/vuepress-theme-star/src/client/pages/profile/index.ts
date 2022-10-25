@@ -1,5 +1,3 @@
 import './styles/index.scss'
 
-import Profile from './Profile.vue'
-
-export { Profile }
+export { default as Profile } from './components/Profile.vue'

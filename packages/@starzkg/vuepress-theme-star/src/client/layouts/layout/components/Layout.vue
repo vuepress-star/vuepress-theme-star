@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed } from 'vue'
-import type { StarThemePageFrontmatter } from '../../shared/index.js'
-import Background from '../components/layout/Background.vue'
-import Foreground from '../components/layout/Foreground.vue'
+import type { StarThemePageFrontmatter } from '../../../../shared/index.js'
 import {
   toggleNavbar,
   toggleSidebar,
@@ -11,7 +9,9 @@ import {
   useScrollPromise,
   useSidebar,
   useUA,
-} from '../composables/index.js'
+} from '../../../composables/index.js'
+import Background from './Background.vue'
+import Foreground from './Foreground.vue'
 
 const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
 

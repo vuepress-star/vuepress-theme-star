@@ -16,7 +16,7 @@ import {
   useNavbar,
   useScrollPromise,
   useSidebar,
-} from '../../composables/index.js'
+} from '../../../composables/index.js'
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve

@@ -28,7 +28,7 @@
     min-width: 80%;
     max-width: var(--profile-page-width);
 
-    .profile-aside-wrapper {
+    .profile-aside {
       position: sticky;
       box-sizing: border-box;
       top: 4.6rem;
@@ -46,7 +46,7 @@
       }
     }
 
-    .profile-main-wrapper {
+    .profile-main {
       margin: 0 1rem;
       border-radius: 8px;
       background: #fff;
