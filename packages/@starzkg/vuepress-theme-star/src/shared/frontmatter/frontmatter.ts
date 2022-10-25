@@ -1,6 +1,6 @@
 import type { SidebarConfig } from '../nav.js'
 
-export interface StarThemePageFrontmatter {
+export interface StarPageFrontmatter {
   title?: string
   icon?: string
   excerpt?: string

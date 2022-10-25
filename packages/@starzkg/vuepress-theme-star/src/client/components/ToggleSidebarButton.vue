@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { toggleSidebar, useThemeLocaleData } from '../composables/index.js'
+import { useSidebar, useThemeLocaleData } from '../composables/index.js'
 
 const themeLocale = useThemeLocaleData()
+const sidebar = useSidebar()
 </script>
 
 <template>
@@ -11,7 +12,7 @@ const themeLocale = useThemeLocaleData()
     aria-expanded="false"
     role="button"
     tabindex="0"
-    @click="toggleSidebar"
+    @click="sidebar.toggle"
   >
     <div class="icon" aria-hidden="true">
       <span></span>

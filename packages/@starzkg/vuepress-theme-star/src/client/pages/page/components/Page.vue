@@ -13,7 +13,6 @@ import {
 } from '@theme/components'
 import { onMounted, onUnmounted, ref } from 'vue'
 import {
-  toggleSidebar,
   useDarkMode,
   useNavbar,
   useScrollPromise,
@@ -65,11 +64,11 @@ onUnmounted(() => {
         </slot>
       </div>
 
-      <div class="toggle-aside" @click="toggleSidebar(!sidebar.open)">
+      <div class="toggle-aside" @click="sidebar.toggle(!sidebar.open)">
         <Icon :icon="sidebar.open ? 'arrow-left-bold' : 'arrow-right-bold'" />
       </div>
 
-      <div class="aside-mask" @click="toggleSidebar(false)" />
+      <div class="aside-mask" @click="sidebar.toggle(false)" />
     </aside>
 
     <section class="container">

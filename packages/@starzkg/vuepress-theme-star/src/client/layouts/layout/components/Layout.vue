@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
 import { computed } from 'vue'
-import type { StarThemePageFrontmatter } from '../../../../shared/index.js'
+import type { StarPageFrontmatter } from '../../../../shared/index.js'
 import {
-  toggleNavbar,
-  toggleSidebar,
   useNavbar,
   useScrollPromise,
   useSidebar,
@@ -13,7 +11,7 @@ import {
 import Background from './Background.vue'
 import Foreground from './Foreground.vue'
 
-const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
+const frontmatter = usePageFrontmatter<StarPageFrontmatter>()
 
 // userAgent
 const userAgent = useUserAgent()
@@ -58,11 +56,11 @@ const onTouchEnd = (e): void => {
   const dy = e.changedTouches[0].clientY - touchStart.y
   if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
     if (dx > 0 && touchStart.x <= 80) {
-      toggleNavbar(true)
-      toggleSidebar(true)
+      navbar.value.toggle(true)
+      sidebar.value.toggle(true)
     } else {
-      toggleNavbar(false)
-      toggleSidebar(false)
+      navbar.value.toggle(false)
+      sidebar.value.toggle(false)
     }
   }
 }

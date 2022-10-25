@@ -1,6 +1,6 @@
 import type { GitData } from '@vuepress/plugin-git'
 import type { AuthorData } from '../shared/author.js'
-import type { StarThemePage } from '../shared/index.js'
+import type { StarPage } from '../shared/index.js'
 
 export const getWords = (data: string): RegExpMatchArray =>
   data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) || []
@@ -38,7 +38,7 @@ export const resolvePageReadingTime = (
   return Math.round((length / wordsPerMinute) * 100) / 100
 }
 
-export const extendsPage = (page: StarThemePage): void => {
+export const extendsPage = (page: StarPage): void => {
   // custom excerpt
   page.excerpt = page.frontmatter.excerpt || page.excerpt
   // save title into route meta to generate navbar and sidebar

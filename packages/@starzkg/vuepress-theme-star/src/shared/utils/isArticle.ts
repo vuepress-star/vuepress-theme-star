@@ -1,6 +1,6 @@
-import type { StarThemePage } from '../page.js'
+import type { StarPage } from '../page.js'
 
-export const isArticle = (page: StarThemePage): boolean => {
+export const isArticle = (page: StarPage): boolean => {
   return (
     page.data.frontmatter.page === undefined ||
     page.data.frontmatter.page === '' ||

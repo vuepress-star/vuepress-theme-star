@@ -12,7 +12,7 @@ import {
 import { useRouter } from 'vue-router'
 import type {
   ResolvedSidebarItem,
-  StarThemePageFrontmatter,
+  StarPageFrontmatter,
 } from '../../shared/index.js'
 import { resolveSidebarItems } from './useSidebarItems.js'
 import { useThemeLocaleData } from './useThemeData.js'
@@ -20,6 +20,7 @@ import { useThemeLocaleData } from './useThemeData.js'
 export interface Sidebar {
   enable: boolean
   open: boolean
+  toggle: (to?: boolean) => void
   items: ResolvedSidebarItem[]
 }
 
@@ -39,7 +40,7 @@ export const useSidebar = (): SidebarRef => {
   return sidebar
 }
 
-export const toggleSidebar = (to?: boolean): void => {
+const toggleSidebar = (to?: boolean): void => {
   if (isSidebarOpen !== undefined) {
     isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
   }
@@ -50,7 +51,7 @@ export const toggleSidebar = (to?: boolean): void => {
  */
 export const setupSidebar = (): void => {
   const themeLocale = useThemeLocaleData()
-  const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarPageFrontmatter>()
 
   isSidebarOpen = ref(false)
 
@@ -77,6 +78,7 @@ export const setupSidebar = (): void => {
         enable: sidebarItems.value.length && sidebarItems.value.length !== 0,
         open: isSidebarOpen.value,
         items: sidebarItems.value,
+        toggle: toggleSidebar,
       }
     })
   )

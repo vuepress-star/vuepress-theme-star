@@ -1,10 +1,10 @@
 import { dayjs } from '@starzkg/vuepress-star-shared'
 import type { App } from '@vuepress/core'
-import type { StarThemePage } from '../../shared/index.js'
+import type { StarPage } from '../../shared/index.js'
 import { isArticle } from '../../shared/utils/index.js'
 
 export const prepareTimeline = async (app: App): Promise<void> => {
-  const timeline = app.pages.reduce((result, page: StarThemePage, index) => {
+  const timeline = app.pages.reduce((result, page: StarPage, index) => {
     if (!isArticle(page)) {
       return result
     }

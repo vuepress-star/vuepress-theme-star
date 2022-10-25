@@ -1,5 +1,5 @@
 import type { App, Page } from '@vuepress/core'
-import type { BreadcrumbData, StarThemePageData } from '../../shared/index.js'
+import type { BreadcrumbData, StarPageData } from '../../shared/index.js'
 
 export const prepareBreadcrumb = async (app: App): Promise<void> => {
   for (const page of app.pages) {
@@ -8,7 +8,7 @@ export const prepareBreadcrumb = async (app: App): Promise<void> => {
 }
 
 export const resolveBreadcrumb = (
-  page: Page<Partial<StarThemePageData>>,
+  page: Page<Partial<StarPageData>>,
   pages: Page[]
 ): void => {
   const breadcrumbConfig: BreadcrumbData = []

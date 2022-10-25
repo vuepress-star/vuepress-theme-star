@@ -2,7 +2,7 @@ import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
 import { RouterLink } from 'vue-router'
-import type { StarThemePageData } from '../../shared/index.js'
+import type { StarPageData } from '../../shared/index.js'
 import { useIconPrefix } from '../composables/index.js'
 
 export default defineComponent({
@@ -10,7 +10,7 @@ export default defineComponent({
 
   setup() {
     const pageFrontmatter = usePageFrontmatter()
-    const pageData = usePageData<StarThemePageData>()
+    const pageData = usePageData<StarPageData>()
     const iconPrefix = useIconPrefix()
 
     const config = computed(() => {

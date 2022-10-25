@@ -10,12 +10,13 @@ import {
   ref,
 } from 'vue'
 import { useRouter } from 'vue-router'
-import type { StarThemePageFrontmatter } from '../../shared/index.js'
+import type { StarPageFrontmatter } from '../../shared/index.js'
 import { useThemeLocaleData } from './useThemeData.js'
 
 export interface Navbar {
   enable: boolean
   open: boolean
+  toggle: (to?: boolean) => void
 }
 
 export type NavbarRef = ComputedRef<Navbar>
@@ -34,7 +35,7 @@ export const useNavbar = (): NavbarRef => {
   return navbar
 }
 
-export const toggleNavbar = (to?: boolean): void => {
+const toggleNavbar = (to?: boolean): void => {
   if (isNavbarOpen !== undefined) {
     isNavbarOpen.value = typeof to === 'boolean' ? to : !isNavbarOpen.value
   }
@@ -45,7 +46,7 @@ export const toggleNavbar = (to?: boolean): void => {
  */
 export const setupNavbar = (): void => {
   const themeLocale = useThemeLocaleData()
-  const frontmatter = usePageFrontmatter<StarThemePageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarPageFrontmatter>()
 
   isNavbarOpen = ref(false)
 
@@ -69,6 +70,7 @@ export const setupNavbar = (): void => {
           frontmatter.value.navbar !== false &&
           themeLocale.value.navbar !== false,
         open: isNavbarOpen.value,
+        toggle: toggleNavbar,
       }
     })
   )

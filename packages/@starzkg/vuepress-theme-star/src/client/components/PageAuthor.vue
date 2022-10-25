@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed } from 'vue'
-import type { StarThemePageData } from '../../shared/index.js'
+import type { StarPageData } from '../../shared/index.js'
 import { Author } from '../icons'
 
 interface AuthorPageFrontmatter {
@@ -9,7 +9,7 @@ interface AuthorPageFrontmatter {
 }
 
 const frontmatter = usePageFrontmatter<AuthorPageFrontmatter>()
-const page = usePageData<StarThemePageData>()
+const page = usePageData<StarPageData>()
 
 const author = computed(() => {
   const author = frontmatter.value.author || page.value.author

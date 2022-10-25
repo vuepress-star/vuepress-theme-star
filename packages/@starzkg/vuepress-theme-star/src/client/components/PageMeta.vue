@@ -4,8 +4,8 @@ import { computed } from 'vue'
 import type { ComputedRef } from 'vue'
 import type {
   NavLink,
+  StarPageData,
   StarThemeArticlePageFrontmatter,
-  StarThemePageData,
 } from '../../shared/index.js'
 import { useThemeLocaleData } from '../composables/index.js'
 import { resolveEditLink } from '../utils'
@@ -13,7 +13,7 @@ import AutoLink from './AutoLink.vue'
 
 const useEditNavLink = (): ComputedRef<null | NavLink> => {
   const themeLocale = useThemeLocaleData()
-  const page = usePageData<StarThemePageData>()
+  const page = usePageData<StarPageData>()
   const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
 
   return computed(() => {
@@ -53,7 +53,7 @@ const useEditNavLink = (): ComputedRef<null | NavLink> => {
 
 const useLastUpdated = (): ComputedRef<null | string> => {
   const themeLocale = useThemeLocaleData()
-  const page = usePageData<StarThemePageData>()
+  const page = usePageData<StarPageData>()
   const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
 
   return computed(() => {
@@ -71,10 +71,10 @@ const useLastUpdated = (): ComputedRef<null | string> => {
 }
 
 const useContributors = (): ComputedRef<
-  null | Required<StarThemePageData['git']>['contributors']
+  null | Required<StarPageData['git']>['contributors']
 > => {
   const themeLocale = useThemeLocaleData()
-  const page = usePageData<StarThemePageData>()
+  const page = usePageData<StarPageData>()
   const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
 
   return computed(() => {
