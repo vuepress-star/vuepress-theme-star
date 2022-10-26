@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { TabPane, Tabs } from '@starzkg/vuepress-star-shared/client'
 import {
   Archive,
   CalendarGraph,
@@ -30,22 +31,30 @@ import {
     <section class="profile-body">
       <aside class="profile-aside">
         <ProfileCard class="mobile-show" />
-        <Archive />
-        <Timeline />
         <div class="profile-info-list"></div>
       </aside>
 
       <main class="profile-main">
-        <nav>
-          <ul>
-            <li></li>
-          </ul>
-        </nav>
-        <section></section>
-        <Features />
-        <CalendarGraph />
-        <Content class="custom" />
-        <div class="article-list"></div>
+        <Tabs>
+          <TabPane title="Overview">
+            <Content class="custom" />
+          </TabPane>
+          <TabPane title="Article">
+            <div class="article-list"></div>
+          </TabPane>
+          <TabPane title="Projects">
+            <Features />
+          </TabPane>
+          <TabPane title="Calendar">
+            <CalendarGraph />
+          </TabPane>
+          <TabPane title="Timeline">
+            <Timeline />
+          </TabPane>
+          <TabPane title="Archive">
+            <Archive />
+          </TabPane>
+        </Tabs>
       </main>
     </section>
 
