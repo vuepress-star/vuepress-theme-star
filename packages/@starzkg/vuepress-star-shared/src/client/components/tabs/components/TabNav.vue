@@ -61,7 +61,7 @@ const keyboardHandler = (event: KeyboardEvent, i: number): void => {
 </script>
 
 <template>
-  <div class="tabs__nav">
+  <nav class="tabs__nav">
     <ul class="tabs__ul">
       <li v-for="(pane, i) in panes" :key="i" class="tabs__li">
         <button
@@ -78,7 +78,7 @@ const keyboardHandler = (event: KeyboardEvent, i: number): void => {
         </button>
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped></style>

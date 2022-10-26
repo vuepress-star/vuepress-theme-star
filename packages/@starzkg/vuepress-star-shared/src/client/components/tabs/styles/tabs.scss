@@ -5,6 +5,7 @@
   border-radius: 6px;
 
   .tabs__nav {
+    width: 100%;
     padding: 0;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -12,6 +13,7 @@
     background-color: var(--tabs-nav-bg-color, #fff);
     list-style: none;
 
+    overflow-x: auto;
     transition: background-color var(--color-transition, 0.3s);
   }
 
@@ -147,8 +149,6 @@
 
   @media (max-width: 419px) {
     .tabs__nav {
-      margin-left: -1.5rem;
-      margin-right: -1.5rem;
       border-radius: 0;
     }
   }
