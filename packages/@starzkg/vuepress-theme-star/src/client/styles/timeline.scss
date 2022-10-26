@@ -4,7 +4,6 @@
   flex-direction: column;
   overflow: hidden;
   border-radius: 8px;
-  background-color: var(--c-bg-light);
 
   ul {
     padding: 0;
@@ -137,23 +136,23 @@
 @keyframes timelineYearTitleLevel {
   0% {
     background: var(--c-brand);
-    width: 50%;
+    width: 12rem;
   }
 
   to {
     background: var(--c-brand-light);
-    width: 15%;
+    width: 6rem;
   }
 }
 
 @keyframes timelineYearTitleEnter {
   0% {
     background: var(--c-brand-light);
-    width: 15%;
+    width: 6rem;
   }
 
   to {
-    width: 50%;
     background: var(--c-brand);
+    width: 12rem;
   }
 }
