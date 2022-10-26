@@ -7,6 +7,7 @@ const sidebar = useSidebar()
 
 <template>
   <div
+    v-if="sidebar.enable"
     class="toggle-sidebar-button"
     :title="themeLocale.toggleSidebar"
     aria-expanded="false"

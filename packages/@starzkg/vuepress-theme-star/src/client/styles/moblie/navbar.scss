@@ -1,7 +1,4 @@
 .navbar {
-  padding-left: 4rem;
-  padding-right: 4rem;
-
   .navbar-wrapper .navbar-items-wrapper {
     display: none;
   }
@@ -68,18 +65,4 @@
       }
     }
   }
-}
-
-/**
- * toggle-navbar-button
- */
-.toggle-navbar-button {
-  display: block !important;
-}
-
-/**
- * toggle-sidebar-button
- */
-.toggle-sidebar-button {
-  display: block !important;
 }

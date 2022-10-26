@@ -7,6 +7,7 @@ const navbar = useNavbar()
 
 <template>
   <div
+    v-if="navbar.enable"
     class="toggle-navbar-button"
     :title="themeLocale.toggleNavbar"
     aria-expanded="false"

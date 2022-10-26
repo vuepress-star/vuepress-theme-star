@@ -36,10 +36,6 @@
 
 @use '@vuepress/plugin-palette/style';
 
-@import '../pages/document/styles/index.scss';
-@import '../pages/presentation/styles/index.scss';
-@import '../pages/wiki/styles/index.scss';
-
 .theme-star {
   &.mobile {
     @import 'moblie';

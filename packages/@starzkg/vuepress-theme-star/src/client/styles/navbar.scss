@@ -69,6 +69,14 @@
 
 @media (max-width: $MQMobile) {
   .navbar {
+    &:has(.toggle-sidebar-button) {
+      padding-left: 4rem;
+    }
+
+    &:has(.toggle-navbar-button) {
+      padding-right: 4rem;
+    }
+
     .site-name {
       width: calc(100vw - 9.4rem);
       overflow: hidden;
@@ -145,14 +153,32 @@
  * toggle-navbar-button
  */
 .toggle-navbar-button {
-  display: none !important;
+  display: none;
+}
+
+@media (max-width: $MQMobile) {
+  /**
+   * toggle-navbar-button
+   */
+  .toggle-navbar-button {
+    display: block;
+  }
 }
 
 /**
  * toggle-sidebar-button
  */
 .toggle-sidebar-button {
-  display: none !important;
+  display: none;
+}
+
+@media (max-width: $MQMobile) {
+  /**
+   * toggle-navbar-button
+   */
+  .toggle-sidebar-button {
+    display: block;
+  }
 }
 
 /**
