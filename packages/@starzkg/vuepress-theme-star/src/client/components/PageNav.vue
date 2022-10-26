@@ -6,7 +6,7 @@ import { useRoute } from 'vue-router'
 import type {
   NavLink,
   ResolvedSidebarItem,
-  StarThemeArticlePageFrontmatter,
+  StarThemeNormalPageFrontmatter,
 } from '../../shared/index.js'
 import { useNavLink, useSidebarItems } from '../composables/index.js'
 import AutoLink from './AutoLink.vue'
@@ -65,7 +65,7 @@ const resolveFromSidebarItems = (
   return null
 }
 
-const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
+const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 const sidebarItems = useSidebarItems()
 const route = useRoute()
 

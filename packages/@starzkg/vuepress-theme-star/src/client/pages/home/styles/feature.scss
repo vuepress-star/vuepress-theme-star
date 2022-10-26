@@ -90,7 +90,7 @@
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $sm) {
   .home {
     .features {
       flex-direction: column;

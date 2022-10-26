@@ -76,7 +76,6 @@ const OrderedTabs: FunctionalComponent = () => {
     <section class="profile-body">
       <aside class="profile-aside">
         <ProfileCard class="mobile-show" />
-        <div class="profile-info-list"></div>
       </aside>
       <main class="profile-main">
         <OrderedTabs />

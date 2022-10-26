@@ -51,6 +51,7 @@
   // transition vars
   --t-color: 0.3s ease;
   --t-transform: 0.3s ease;
+  --t-color-transition: 0.3s;
 
   // code blocks vars
   --code-color: #4e6e8e;
@@ -74,8 +75,15 @@
   --page-width: 1470px;
   --page-aside-width: 320px;
   --homepage-width: 960px;
-  --profile-page-width: 1470px;
+  --profile-page-width: 1092px;
+  --profile-main-width: var(--content-width);
   --profile-aside-width: 320px;
+}
+// tabs
+.tabs {
+  --tabs-nav-bg-color: var(--c-bg);
+  --tabs-nav-hover-color: var(--c-bg-light);
+  --tabs-nav-active-color: var(--c-bg-lighter);
 }
 
 // plugin-back-to-top

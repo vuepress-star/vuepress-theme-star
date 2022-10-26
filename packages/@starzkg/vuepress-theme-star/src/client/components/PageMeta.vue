@@ -5,7 +5,7 @@ import type { ComputedRef } from 'vue'
 import type {
   NavLink,
   StarPageData,
-  StarThemeArticlePageFrontmatter,
+  StarThemeNormalPageFrontmatter,
 } from '../../shared/index.js'
 import { useThemeLocaleData } from '../composables/index.js'
 import { resolveEditLink } from '../utils'
@@ -14,7 +14,7 @@ import AutoLink from './AutoLink.vue'
 const useEditNavLink = (): ComputedRef<null | NavLink> => {
   const themeLocale = useThemeLocaleData()
   const page = usePageData<StarPageData>()
-  const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showEditLink =
@@ -54,7 +54,7 @@ const useEditNavLink = (): ComputedRef<null | NavLink> => {
 const useLastUpdated = (): ComputedRef<null | string> => {
   const themeLocale = useThemeLocaleData()
   const page = usePageData<StarPageData>()
-  const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showLastUpdated =
@@ -75,7 +75,7 @@ const useContributors = (): ComputedRef<
 > => {
   const themeLocale = useThemeLocaleData()
   const page = usePageData<StarPageData>()
-  const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showContributors =

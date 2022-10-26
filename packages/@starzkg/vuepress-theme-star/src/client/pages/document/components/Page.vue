@@ -1,34 +1,17 @@
 <script setup lang="ts">
-import { PageMeta, PageNav } from '@theme/components'
-import { useScrollPromise } from '../../../composables'
-
-// handle scrollBehavior with transition
-const scrollPromise = useScrollPromise()
-const onBeforeEnter = scrollPromise.resolve
-const onBeforeLeave = scrollPromise.pending
+import { Content, PageMeta, PageNav } from '@theme/components'
 </script>
 
 <template>
-  <Transition
-    name="fade-slide-y"
-    mode="out-in"
-    @before-enter="onBeforeEnter"
-    @before-leave="onBeforeLeave"
-  >
-    <main class="page">
-      <slot name="top" />
+  <div class="document-page">
+    <slot name="top" />
 
-      <div class="theme-star-content">
-        <Content />
-      </div>
+    <Content />
 
-      <PageMeta />
+    <PageMeta />
 
-      <PageNav />
+    <PageNav />
 
-      <GithubCorner />
-
-      <slot name="bottom" />
-    </main>
-  </Transition>
+    <slot name="bottom" />
+  </div>
 </template>

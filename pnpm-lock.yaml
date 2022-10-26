@@ -111,7 +111,7 @@ importers:
       '@starzkg/vuepress-plugin-element-plus': link:../../ecosystem/@starzkg/vuepress-plugin-element-plus
       '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
-      '@vuepress/bundler-vite': 2.0.0-beta.52
+      '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
       '@vuepress/cli': 2.0.0-beta.52
       '@vuepress/client': 2.0.0-beta.52
@@ -155,7 +155,7 @@ importers:
       element-plus: 2.2.19_vue@3.2.41
       vue: 3.2.41
     devDependencies:
-      '@vuepress/bundler-vite': 2.0.0-beta.52
+      '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
 
   ecosystem/@starzkg/vuepress-plugin-interaction-effect:
@@ -241,7 +241,7 @@ importers:
       '@starzkg/vuepress-plugin-photo-swipe': link:../../ecosystem/@starzkg/vuepress-plugin-photo-swipe
       '@starzkg/vuepress-star-shared': link:../../packages/@starzkg/vuepress-star-shared
       '@starzkg/vuepress-theme-star': link:../../packages/@starzkg/vuepress-theme-star
-      '@vuepress/bundler-vite': 2.0.0-beta.52
+      '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
       '@vuepress/cli': 2.0.0-beta.52
       '@vuepress/client': 2.0.0-beta.52
@@ -401,7 +401,7 @@ importers:
       '@types/katex': 0.14.0
       '@types/lodash.debounce': 4.0.7
       '@types/mermaid': 9.1.0
-      '@vuepress/bundler-vite': 2.0.0-beta.52
+      '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
       markdown-it-testgen: 0.1.6
       rimraf: 3.0.2
@@ -516,7 +516,7 @@ importers:
       vue-router: 4.1.5_vue@3.2.41
     devDependencies:
       '@types/connect': 3.4.35
-      '@vuepress/bundler-vite': 2.0.0-beta.52
+      '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
       rimraf: 3.0.2
       vite: 3.1.8
@@ -541,6 +541,7 @@ importers:
       execa: ^6.0.0
       ora: ^6.1.2
       rimraf: 3.0.2
+      typed.js: ^2.0.12
       vite: 3.1.8
       vue: ^3.2.41
       vue-router: ^4.1.5
@@ -556,11 +557,12 @@ importers:
       dayjs: 1.11.6
       execa: 6.1.0
       ora: 6.1.2
+      typed.js: 2.0.12
       vue: 3.2.41
       vue-router: 4.1.5_vue@3.2.41
     devDependencies:
       '@types/connect': 3.4.35
-      '@vuepress/bundler-vite': 2.0.0-beta.52
+      '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
       rimraf: 3.0.2
       vite: 3.1.8
@@ -597,7 +599,6 @@ importers:
       sass: ^1.55.0
       screenfull: ^5.2.0
       ts-debounce: ^4.0.0
-      typed.js: ^2.0.12
       ua-parser-js: ^1.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
@@ -632,7 +633,6 @@ importers:
       sass: 1.55.0
       screenfull: 5.2.0
       ts-debounce: 4.0.0
-      typed.js: 2.0.12
       ua-parser-js: 1.0.32
       vue: 3.2.41
       vue-router: 4.1.5_vue@3.2.41
@@ -3388,7 +3388,7 @@ packages:
   /@vue/shared/3.2.41:
     resolution: {integrity: sha512-W9mfWLHmJhkfAmV+7gDjcHeAWALQtgGT3JErxULl0oz6R6+3ug91I7IErs93eCFhPCZPHBs4QJS7YWEV7A3sxw==}
 
-  /@vuepress/bundler-vite/2.0.0-beta.52:
+  /@vuepress/bundler-vite/2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue:
     resolution: {integrity: sha512-LLUoSrrtFi8DPCgdbsdnoBslFHgsW7ft3+Pa/m+H2bwywknkpo49uF8rSz20gJD9rJY26Lp7/yYfDuP/1aKczg==}
     dependencies:
       '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
@@ -3411,6 +3411,7 @@ packages:
       - supports-color
       - terser
       - ts-node
+    patched: true
 
   /@vuepress/bundler-webpack/2.0.0-beta.52:
     resolution: {integrity: sha512-xwBKL4zrCl4XPUHjVbQKWMz0mRElCNI4ovuC8mIu1zJ+bW4Tco3L92YUPYkV+KKvAC+TrAXXkXU68BCiSqFi7w==}
@@ -13053,7 +13054,7 @@ packages:
       '@vuepress/client': ^2.0.0-beta.50
       vue: ^3.2.37
     dependencies:
-      '@vuepress/bundler-vite': 2.0.0-beta.52
+      '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/cli': 2.0.0-beta.52
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/core': 2.0.0-beta.52

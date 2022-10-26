@@ -1,7 +1,7 @@
 import type { NavLink } from '../nav.js'
 import type { StarPageFrontmatter } from './frontmatter.js'
 
-export interface StarThemeArticlePageFrontmatter extends StarPageFrontmatter {
+export interface StarThemeNormalPageFrontmatter extends StarPageFrontmatter {
   type?: 'reprint' | 'origin' | 'translation'
   origin?: string
   editLink?: boolean

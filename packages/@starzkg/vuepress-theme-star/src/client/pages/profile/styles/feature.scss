@@ -91,7 +91,7 @@
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $sm) {
   .profile {
     .features {
       flex-direction: column;

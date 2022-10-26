@@ -4,11 +4,11 @@ import {
   Features,
   Footer,
   GithubCorner,
-  Hero,
-  HomeArrow,
   Navbar,
 } from '@theme/components'
 import { ref } from 'vue'
+import HomeArrow from './HomeArrow.vue'
+import HomeHero from './HomeHero.vue'
 
 const container = ref<HTMLElement>()
 const gotoContainer = (): void => {
@@ -36,17 +36,23 @@ const gotoContainer = (): void => {
     <main ref="container" class="container">
       <header class="container-header">
         <slot name="hero">
-          <Hero />
+          <HomeHero />
         </slot>
         <GithubCorner />
         <HomeArrow @click="gotoContainer" />
       </header>
       <main class="container-content">
-        <Features />
+        <header>
+          <Features />
+        </header>
         <slot name="top" />
-        <Content class="custom" />
+        <main>
+          <Content class="custom" />
+        </main>
         <slot name="bottom" />
-        <Footer />
+        <footer>
+          <Footer />
+        </footer>
       </main>
     </main>
   </div>

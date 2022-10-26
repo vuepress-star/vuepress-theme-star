@@ -14,8 +14,8 @@ import type {
   SidebarConfigArray,
   SidebarConfigObject,
   SidebarItem,
-  StarThemeArticlePageFrontmatter,
   StarThemeData,
+  StarThemeNormalPageFrontmatter,
 } from '../../shared/index.js'
 import { useNavLink, useThemeLocaleData } from './index.js'
 
@@ -40,7 +40,7 @@ export const useSidebarItems = (): SidebarItemsRef => {
  */
 export const setupSidebarItems = (): void => {
   const themeLocale = useThemeLocaleData()
-  const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
   const sidebarItems = computed(() =>
     resolveSidebarItems(frontmatter.value, themeLocale.value)
   )
@@ -53,7 +53,7 @@ export const setupSidebarItems = (): void => {
  * It should only be resolved and provided once
  */
 export const resolveSidebarItems = (
-  frontmatter: StarThemeArticlePageFrontmatter,
+  frontmatter: StarThemeNormalPageFrontmatter,
   themeLocale: StarThemeData
 ): ResolvedSidebarItem[] => {
   // get sidebar config from frontmatter > theme data

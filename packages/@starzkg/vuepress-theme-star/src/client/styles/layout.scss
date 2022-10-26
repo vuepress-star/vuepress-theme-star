@@ -100,7 +100,7 @@
   }
 }
 
-@media (min-width: ($MQMobile + 1px)) {
+@media (min-width: ($md + 1px)) {
   .theme-container.no-sidebar {
     .sidebar {
       display: none;
@@ -113,7 +113,7 @@
 }
 
 // narrow desktop / iPad
-@media (max-width: $MQNarrow) {
+@media (max-width: $md) {
   .sidebar {
     font-size: 15px;
     width: var(--sidebar-width-mobile);
@@ -121,7 +121,7 @@
 }
 
 // wide mobile
-@media (max-width: $MQMobile) {
+@media (max-width: $sm) {
   .sidebar {
     top: 0;
     padding-top: var(--navbar-height);
@@ -148,7 +148,7 @@
 }
 
 // narrow mobile
-@media (max-width: $MQMobileNarrow) {
+@media (max-width: $xs) {
   h1 {
     font-size: 1.9rem;
   }

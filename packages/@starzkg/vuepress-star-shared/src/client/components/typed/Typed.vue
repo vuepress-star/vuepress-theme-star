@@ -3,7 +3,7 @@ import Typed from 'typed.js'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'VueTypedJs',
+  name: 'Typed',
   props: {
     strings: {
       type: Array,

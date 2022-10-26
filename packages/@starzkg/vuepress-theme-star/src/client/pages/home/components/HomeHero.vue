@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { Typed } from '@starzkg/vuepress-star-shared/client'
+import { AutoLink, ExternalLink } from '@theme/components'
+import { useDarkMode } from '@theme/composables'
 import {
   ClientOnly,
   usePageFrontmatter,
@@ -8,10 +11,7 @@ import {
 import { isArray } from '@vuepress/shared'
 import type { FunctionalComponent } from 'vue'
 import { computed, h } from 'vue'
-import type { StarThemeHomePageFrontmatter } from '../../shared/index.js'
-import { useDarkMode } from '../composables/index.js'
-import AutoLink from './AutoLink.vue'
-import VueTypedJs from './VueTypedJs.vue'
+import type { StarThemeHomePageFrontmatter } from '../../../../shared/index.js'
 
 const frontmatter = usePageFrontmatter<StarThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
@@ -80,7 +80,7 @@ const links = computed(() => {
   })
 })
 
-const HomeHeroImage: FunctionalComponent = () => {
+const HeroImage: FunctionalComponent = () => {
   if (!heroImage.value) return null
   const img = h('img', {
     class: 'hero-image',
@@ -97,14 +97,14 @@ const HomeHeroImage: FunctionalComponent = () => {
 }
 
 // @fixme this is a bug when use template
-const HomeHeroSlogan: FunctionalComponent = () => {
+const HeroSlogan: FunctionalComponent = () => {
   return h(
     'p',
     {
       class: 'slogan',
     },
     h(ClientOnly, () =>
-      h(h(VueTypedJs), {
+      h(h(Typed), {
         strings: frontmatter.value.slogan || [
           'Hello World!',
           'Hello Vuepress!',
@@ -119,35 +119,36 @@ const HomeHeroSlogan: FunctionalComponent = () => {
 
 <template>
   <div class="hero">
-    <HomeHeroImage />
+    <HeroImage />
+    <div class="hero-info">
+      <h1 v-if="heroText" id="main-title" class="title">
+        {{ heroText }}
+      </h1>
 
-    <h1 v-if="heroText" id="main-title" class="title">
-      {{ heroText }}
-    </h1>
+      <p v-if="tagline" class="description">
+        {{ tagline }}
+      </p>
 
-    <p v-if="tagline" class="description">
-      {{ tagline }}
-    </p>
+      <HeroSlogan />
 
-    <HomeHeroSlogan />
+      <p v-if="actions.length" class="actions">
+        <AutoLink
+          v-for="action in actions"
+          :key="action.text"
+          class="action-button"
+          :class="[action.type]"
+          :item="action"
+        />
+      </p>
 
-    <p v-if="actions.length" class="actions">
-      <AutoLink
-        v-for="action in actions"
-        :key="action.text"
-        class="action-button"
-        :class="[action.type]"
-        :item="action"
-      />
-    </p>
-
-    <p v-if="links.length" :class="{ links: links.length }">
-      <ExternalLink
-        v-for="link in links"
-        :key="link.url"
-        v-bind="link"
-        :class="'link-' + link.text"
-      />
-    </p>
+      <p v-if="links.length" :class="{ links: links.length }">
+        <ExternalLink
+          v-for="link in links"
+          :key="link.url"
+          v-bind="link"
+          :class="'link-' + link.text"
+        />
+      </p>
+    </div>
   </div>
 </template>

@@ -36,13 +36,13 @@
       flex: 0 0 300px;
       height: auto;
       margin-bottom: 12px;
-      max-width: var(--profile-aside-width);
+      width: var(--profile-aside-width);
 
       > div {
         margin-bottom: 16px;
         padding: 8px 0;
         border-radius: 8px;
-        background: #fff;
+        background: var(--c-bg);
         box-shadow: 0 1px 3px 0 var(--card-shadow-color);
       }
     }
@@ -50,17 +50,31 @@
     .profile-main {
       margin: 0 1rem;
       border-radius: 8px;
-      background: #fff;
-      max-width: var(--pagepage-width);
-      width: 100%;
+      background: var(--c-bg);
+      width: var(--profile-main-width);
       overflow: hidden;
       .theme-star-content {
         padding: 0 1.5rem;
       }
     }
 
-    @media (max-width: 419px) {
+    @media (max-width: 1092px) {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+
+      .profile-aside {
+        width: 100%;
+        position: unset;
+        padding: 0 1rem;
+
+        > *:not(.mobile-show) {
+          display: none;
+        }
+      }
       .profile-main {
+        width: 100%;
+        margin: 0;
         border-radius: 0;
       }
     }

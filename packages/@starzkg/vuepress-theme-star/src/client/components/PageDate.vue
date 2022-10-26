@@ -3,7 +3,7 @@ import { ClientOnly, usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, ComputedRef } from 'vue'
 import type {
   StarPageData,
-  StarThemeArticlePageFrontmatter,
+  StarThemeNormalPageFrontmatter,
 } from '../../shared/index.js'
 import { useThemeLocaleData } from '../composables/index.js'
 import { Calendar } from '../icons'
@@ -40,7 +40,7 @@ const useCreatedTime = (): ComputedRef<null | string> => {
 const useUpdatedTime = (): ComputedRef<null | string> => {
   const themeLocale = useThemeLocaleData()
   const page = usePageData<StarPageData>()
-  const frontmatter = usePageFrontmatter<StarThemeArticlePageFrontmatter>()
+  const frontmatter = usePageFrontmatter<StarThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showLastUpdated =

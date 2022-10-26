@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { Content, Features, Footer, Hero } from '@theme/components'
+import { Content, Features, Footer } from '@theme/components'
+import HomeHero from './HomeHero.vue'
 </script>
 
 <template>
-  <main class="document-home">
+  <div class="document-home">
     <header>
-      <Hero />
+      <HomeHero />
+      <Features />
     </header>
-
-    <Features />
 
     <main>
       <Content />
@@ -17,5 +17,5 @@ import { Content, Features, Footer, Hero } from '@theme/components'
     <footer>
       <Footer />
     </footer>
-  </main>
+  </div>
 </template>

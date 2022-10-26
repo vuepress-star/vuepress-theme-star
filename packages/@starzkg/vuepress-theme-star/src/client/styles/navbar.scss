@@ -65,9 +65,23 @@
       vertical-align: top;
     }
   }
+
+  /**
+   * toggle-navbar-button
+   */
+  .toggle-navbar-button {
+    display: none;
+  }
+
+  /**
+   * toggle-sidebar-button
+   */
+  .toggle-sidebar-button {
+    display: none;
+  }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $sm) {
   .navbar {
     &:has(.toggle-sidebar-button) {
       padding-left: 4rem;
@@ -82,6 +96,24 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+    }
+
+    @media (max-width: $sm) {
+      /**
+       * toggle-navbar-button
+       */
+      .toggle-navbar-button {
+        display: block;
+      }
+    }
+
+    @media (max-width: $sm) {
+      /**
+       * toggle-navbar-button
+       */
+      .toggle-sidebar-button {
+        display: block;
+      }
     }
   }
 }
@@ -126,7 +158,7 @@
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $sm) {
   .navbar-items {
     .navbar-item {
       margin-left: 0;
@@ -146,38 +178,6 @@
         color: var(--c-text-accent);
       }
     }
-  }
-}
-
-/**
- * toggle-navbar-button
- */
-.toggle-navbar-button {
-  display: none;
-}
-
-@media (max-width: $MQMobile) {
-  /**
-   * toggle-navbar-button
-   */
-  .toggle-navbar-button {
-    display: block;
-  }
-}
-
-/**
- * toggle-sidebar-button
- */
-.toggle-sidebar-button {
-  display: none;
-}
-
-@media (max-width: $MQMobile) {
-  /**
-   * toggle-navbar-button
-   */
-  .toggle-sidebar-button {
-    display: block;
   }
 }
 
