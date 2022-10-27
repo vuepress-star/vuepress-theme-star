@@ -22,10 +22,8 @@ const navbar = useNavbar()
           <slot name="after" />
         </div>
       </div>
-      <div class="navbar-middle">
-        <NavbarSearch />
-      </div>
       <div class="navbar-right">
+        <NavbarSearch />
         <ToggleNavbarButton />
       </div>
     </section>
