@@ -49,7 +49,7 @@
     "@vuepress/core": "2.0.0-beta.52",
     "@vuepress/plugin-git": "2.0.0-beta.52",
     "@vuepress/plugin-theme-data": "2.0.0-beta.52",
-    "@vuepress/shared": "2.0.0-beta.52",
+    "@vuepress/shared": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.52",
     "chalk": "^5.0.1",
     "copy-to-clipboard": "^3.3.2",

@@ -65,7 +65,7 @@
     "@vuepress/plugin-palette": "2.0.0-beta.52",
     "@vuepress/plugin-theme-data": "2.0.0-beta.52",
     "@vuepress/plugin-toc": "2.0.0-beta.52",
-    "@vuepress/shared": "2.0.0-beta.52",
+    "@vuepress/shared": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.52",
     "@vueuse/core": "^9.4.0",
     "@waline/client": "^2.0.0",

@@ -64,7 +64,7 @@
     "@vuepress/plugin-external-link-icon": "2.0.0-beta.52",
     "@vuepress/plugin-prismjs": "2.0.0-beta.52",
     "@vuepress/plugin-shiki": "2.0.0-beta.52",
-    "@vuepress/shared": "2.0.0-beta.52",
+    "@vuepress/shared": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.52",
     "@vueuse/core": "^9.4.0",
     "balloon-css": "^1.2.0",
