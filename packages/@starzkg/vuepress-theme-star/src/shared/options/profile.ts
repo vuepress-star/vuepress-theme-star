@@ -1,3 +1,10 @@
+interface Project {
+  name: string
+  link: string
+  icon?: string
+  description?: string
+}
+
 export interface ProfileOptions {
   /**
    * 姓名
@@ -39,4 +46,8 @@ export interface ProfileOptions {
    * 账号
    */
   accounts?: Record<string, string>
+  /**
+   * 项目
+   */
+  projects?: Project[]
 }

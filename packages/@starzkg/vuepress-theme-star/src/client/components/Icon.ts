@@ -33,6 +33,16 @@ export default defineComponent({
     },
   },
   setup(props) {
+    if (isLinkHttp(props.icon) || props.icon.startsWith('/')) {
+      return (): null | VNode =>
+        h('img', {
+          class: 'icon',
+          src: isLinkHttp(props.icon) ? props.icon : withBase(props.icon),
+          alt: props.icon,
+          style: { width: props.size, height: props.size },
+        })
+    }
+
     const iconPrefix = useIconPrefix()
 
     const style = computed(() => ({
@@ -47,12 +57,6 @@ export default defineComponent({
 
       if (props.type === 'component') {
         return h(resolveComponent(`${iconPrefix.value}${props.icon}`))
-      } else if (props.type === 'img') {
-        if (isLinkHttp(props.icon)) {
-          return h('img', { src: props.icon, alt: props.icon })
-        } else if (props.icon.startsWith('/')) {
-          return h('img', { src: withBase(props.icon), alt: props.icon })
-        }
       } else if (props.type.startsWith('font-')) {
         return h('i', {
           class: [

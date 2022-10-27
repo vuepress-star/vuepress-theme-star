@@ -101,6 +101,26 @@ export default defineUserConfig({
       lastName: 'Vuepress Theme Star',
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+      projects: [
+        {
+          name: 'Vuepress Star',
+          link: 'https://vuepress-star.shentuzhigang.cn',
+          icon: '/images/hero.png',
+          description: 'Vuepress Star',
+        },
+        {
+          name: 'Vuepress Theme Star',
+          link: 'https://vuepress-star.shentuzhigang.cn',
+          icon: 'aim',
+          description: 'Vuepress Star',
+        },
+        {
+          name: 'Vuepress Theme Star',
+          link: 'https://vuepress-star.shentuzhigang.cn',
+          icon: 'aim',
+          description: 'Vuepress Star',
+        },
+      ],
     },
 
     footer:
