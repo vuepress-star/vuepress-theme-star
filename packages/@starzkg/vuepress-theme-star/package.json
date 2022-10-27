@@ -62,7 +62,7 @@
     "@vuepress/plugin-git": "2.0.0-beta.52",
     "@vuepress/plugin-medium-zoom": "2.0.0-beta.52",
     "@vuepress/plugin-nprogress": "2.0.0-beta.52",
-    "@vuepress/plugin-palette": "2.0.0-beta.52",
+    "@vuepress/plugin-palette": "2.0.0-beta.53",
     "@vuepress/plugin-theme-data": "2.0.0-beta.52",
     "@vuepress/plugin-toc": "2.0.0-beta.52",
     "@vuepress/shared": "2.0.0-beta.52",
