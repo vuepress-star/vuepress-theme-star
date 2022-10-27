@@ -49,6 +49,7 @@
     "@vuepress/plugin-theme-data": "2.0.0-beta.52",
     "@vuepress/shared": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.52",
+    "@vueuse/core": "^9.1.0",
     "chalk": "^5.0.1",
     "copy-to-clipboard": "^3.3.2",
     "dayjs": "^1.11.5",
