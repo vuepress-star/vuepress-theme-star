@@ -67,7 +67,7 @@
     "@vuepress/plugin-toc": "2.0.0-beta.52",
     "@vuepress/shared": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.52",
-    "@vueuse/core": "^9.1.0",
+    "@vueuse/core": "^9.4.0",
     "@waline/client": "^2.0.0",
     "balloon-css": "^1.2.0",
     "sass": "^1.55.0",
