@@ -103,15 +103,13 @@
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@types/babel__core": "7.1.19",
     "@types/hash-sum": "1.0.0",
     "@types/katex": "0.14.0",
     "@types/lodash.debounce": "4.0.7",
     "@types/mermaid": "9.1.0",
     "@vuepress/bundler-vite": "2.0.0-beta.52",
     "@vuepress/bundler-webpack": "2.0.0-beta.52",
-    "markdown-it-testgen": "0.1.6",
-    "rimraf": "3.0.2"
+    "markdown-it-testgen": "0.1.6"
   },
   "peerDependencies": {
     "sass-loader": "^13.1.0"

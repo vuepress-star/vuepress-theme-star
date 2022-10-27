@@ -294,7 +294,6 @@ importers:
   packages/@starzkg/vuepress-plugin-markdown-enhance:
     specifiers:
       '@starzkg/vuepress-star-shared': workspace:*
-      '@types/babel__core': 7.1.19
       '@types/hash-sum': 1.0.0
       '@types/katex': 0.14.0
       '@types/lodash.debounce': 4.0.7
@@ -343,7 +342,6 @@ importers:
       mermaid: ^9.1.7
       plantuml-encoder: ^1.4.0
       reveal.js: ^4.3.1
-      rimraf: 3.0.2
       ts-debounce: ^4.0.0
       vite: 3.1.8
       vue: ^3.2.41
@@ -396,7 +394,6 @@ importers:
       vue: 3.2.41
       vue-router: 4.1.5_vue@3.2.41
     devDependencies:
-      '@types/babel__core': 7.1.19
       '@types/hash-sum': 1.0.0
       '@types/katex': 0.14.0
       '@types/lodash.debounce': 4.0.7
@@ -404,7 +401,6 @@ importers:
       '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
       markdown-it-testgen: 0.1.6
-      rimraf: 3.0.2
 
   packages/@starzkg/vuepress-plugin-pwa:
     specifiers:
@@ -496,7 +492,6 @@ importers:
       dayjs: ^1.11.5
       execa: ^6.0.0
       ora: ^6.1.2
-      rimraf: 3.0.2
       vite: 3.1.8
       vue: ^3.2.41
       vue-router: ^4.1.5
@@ -518,7 +513,6 @@ importers:
       '@types/connect': 3.4.35
       '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
-      rimraf: 3.0.2
       vite: 3.1.8
 
   packages/@starzkg/vuepress-social-icons:
@@ -541,7 +535,6 @@ importers:
       dayjs: ^1.11.5
       execa: ^6.0.0
       ora: ^6.1.2
-      rimraf: 3.0.2
       typed.js: ^2.0.12
       vite: 3.1.8
       vue: ^3.2.41
@@ -566,7 +559,6 @@ importers:
       '@types/connect': 3.4.35
       '@vuepress/bundler-vite': 2.0.0-beta.52_44tlsxslu73smntdhvxf6i5rue
       '@vuepress/bundler-webpack': 2.0.0-beta.52
-      rimraf: 3.0.2
       vite: 3.1.8
 
   packages/@starzkg/vuepress-theme-star:
@@ -2694,35 +2686,6 @@ packages:
 
   /@tsconfig/node16/1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
-    dev: true
-
-  /@types/babel__core/7.1.19:
-    resolution: {integrity: sha512-WEOTgRsbYkvA/KCsDwVEGkd7WAr1e3g31VHQ8zy5gul/V1qKullU/BU5I68X5v7V3GnB9eotmom4v5a5gjxorw==}
-    dependencies:
-      '@babel/parser': 7.19.6
-      '@babel/types': 7.19.4
-      '@types/babel__generator': 7.6.4
-      '@types/babel__template': 7.4.1
-      '@types/babel__traverse': 7.18.2
-    dev: true
-
-  /@types/babel__generator/7.6.4:
-    resolution: {integrity: sha512-tFkciB9j2K755yrTALxD44McOrk+gfpIpvC3sxHjRawj6PfnQxrse4Clq5y/Rq+G3mrBurMax/lG8Qn2t9mSsg==}
-    dependencies:
-      '@babel/types': 7.19.4
-    dev: true
-
-  /@types/babel__template/7.4.1:
-    resolution: {integrity: sha512-azBFKemX6kMg5Io+/rdGT0dkGreboUVR0Cdm3fz9QJWpaQGJRQXl7C+6hOTCZcMll7KFyEQpgbYI2lHdsS4U7g==}
-    dependencies:
-      '@babel/parser': 7.19.6
-      '@babel/types': 7.19.4
-    dev: true
-
-  /@types/babel__traverse/7.18.2:
-    resolution: {integrity: sha512-FcFaxOr2V5KZCviw1TnutEMVUVsGt4D2hP1TAfXZAMKuHYW3xQhe3jTxNPWutgCJ3/X1c5yX8ZoGVEItxKbwBg==}
-    dependencies:
-      '@babel/types': 7.19.4
     dev: true
 
   /@types/body-parser/1.19.2:
