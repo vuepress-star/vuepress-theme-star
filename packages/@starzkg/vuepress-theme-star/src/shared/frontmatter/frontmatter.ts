@@ -4,6 +4,7 @@ export interface StarPageFrontmatter {
   title?: string
   icon?: string
   excerpt?: string
+  top?: boolean
   navbar?: boolean
   sidebar?: 'auto' | false | SidebarConfig
   page?: string

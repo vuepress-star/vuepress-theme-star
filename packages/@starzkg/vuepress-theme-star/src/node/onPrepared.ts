@@ -1,5 +1,6 @@
 import type { App } from '@vuepress/core'
 import {
+  prepareArticle,
   prepareBreadcrumb,
   prepareSiteData,
   prepareTimeline,
@@ -10,6 +11,8 @@ export const onPrepared = async (app: App): Promise<void> => {
   await prepareSiteData(app)
   // prepare breadcrumb
   await prepareBreadcrumb(app)
+  // prepare article
+  await prepareArticle(app)
   // prepare timeline
   await prepareTimeline(app)
 }

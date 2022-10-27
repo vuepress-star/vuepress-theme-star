@@ -32,6 +32,10 @@ export interface StarPageData {
    */
   icon: string
   /**
+   * Whether to top
+   */
+  top: boolean
+  /**
    * Git data
    */
   git: GitData

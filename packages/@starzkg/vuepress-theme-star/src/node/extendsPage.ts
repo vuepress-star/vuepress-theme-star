@@ -45,6 +45,8 @@ export const extendsPage = (page: StarPage): void => {
   page.routeMeta.title = page.title
   // page icon
   page.routeMeta.icon = page.data.icon = page.frontmatter.icon as string
+  // top
+  page.data.top = page.frontmatter.top || false
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = page.filePathRelative
   // content
