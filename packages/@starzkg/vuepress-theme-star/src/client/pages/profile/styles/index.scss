@@ -1,8 +1,13 @@
 .theme-star {
   @import 'profile';
   @import 'feature';
+  @import 'overview';
 
   &.mobile {
+    @import 'mobile';
+  }
+
+  @media (max-width: $sm) {
     @import 'mobile';
   }
 }

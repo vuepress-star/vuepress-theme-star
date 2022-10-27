@@ -39,11 +39,11 @@
 
 .theme-star {
   &.mobile {
-    @import 'moblie';
+    @import 'mobile';
   }
 
   @media (max-width: $sm) {
-    @import 'moblie';
+    @import 'mobile';
   }
 }
 
