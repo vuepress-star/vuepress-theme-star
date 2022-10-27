@@ -95,12 +95,24 @@
   }
 }
 
-.mobile.sidebar-open .page-container {
-  .aside-mask {
-    display: block;
-  }
+@mixin mobile {
+  .page-container {
+    .aside-mask {
+      display: block;
+    }
 
-  .container {
-    margin-left: 0;
+    .container {
+      margin-left: 0;
+    }
+  }
+}
+
+.mobile.sidebar-open {
+  @include mobile;
+}
+
+@media (max-width: $sm) {
+  .sidebar-open {
+    @include mobile;
   }
 }

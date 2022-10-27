@@ -34,10 +34,17 @@
 @use 'toc';
 @use 'transitions';
 
-@use '@vuepress/plugin-palette/style';
+@import '_mixins';
+@import '_variables';
 
 .theme-star {
   &.mobile {
     @import 'moblie';
   }
+
+  @media (max-width: $sm) {
+    @import 'moblie';
+  }
 }
+
+@import '@vuepress/plugin-palette/style';
