@@ -9,7 +9,6 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { path } from '@vuepress/utils'
 import { defineUserConfig } from 'vuepress'
 import locales from './locales'
@@ -217,8 +216,6 @@ export default defineUserConfig({
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
     }),
-    // only enable shiki plugin in production mode
-    isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
     elementPlusPlugin(),
     photoSwipePlugin(),
     interactionEffectPlugin(),

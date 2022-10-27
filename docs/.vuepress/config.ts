@@ -5,7 +5,6 @@ import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { path } from '@vuepress/utils'
 import { defineUserConfig } from 'vuepress'
 import { navbar, sidebar } from './configs'
@@ -147,26 +146,22 @@ export default defineUserConfig({
       backToTop: true,
       // only enable git plugin in production mode
       git: isProd,
-      // use shiki plugin in production mode instead
-      prismjs: !isProd,
-      markdown: true,
+      markdown: {
+        typographer: true,
+        importCode: {
+          handleImportPath: (str) =>
+            str.replace(
+              /^@vuepress/,
+              path.resolve(__dirname, '../../packages/@vuepress')
+            ),
+        },
+      },
       pwa: {},
       copyright: {
         copy: false,
       },
     },
   }),
-
-  markdown: {
-    typographer: true,
-    importCode: {
-      handleImportPath: (str) =>
-        str.replace(
-          /^@vuepress/,
-          path.resolve(__dirname, '../../packages/@vuepress')
-        ),
-    },
-  },
 
   plugins: [
     docsearchPlugin({
@@ -227,8 +222,6 @@ export default defineUserConfig({
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
     }),
-    // only enable shiki plugin in production mode
-    isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
     elementPlusPlugin(),
   ],
 })

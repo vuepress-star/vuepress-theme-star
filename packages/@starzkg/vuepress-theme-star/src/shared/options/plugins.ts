@@ -48,11 +48,6 @@ export interface StarThemePluginsOptions {
   nprogress?: boolean
 
   /**
-   * Enable @vuepress/plugin-prismjs or not
-   */
-  prismjs?: boolean
-
-  /**
    * Enable @vuepress/plugin-toc or not
    */
   toc?: boolean

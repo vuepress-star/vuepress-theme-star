@@ -35,6 +35,14 @@ export declare type CodeEnhanceOptions = {
    */
   flowchart?: boolean
   /**
+   * 是否启用代码高亮
+   *
+   * Whether to enable code highlight
+   *
+   * @default 'auto'
+   */
+  highlight?: 'prismjs' | 'shiki' | 'auto' | false
+  /**
    * 是否启用 Markmap 支持
    *
    * Whether to enable markmap support

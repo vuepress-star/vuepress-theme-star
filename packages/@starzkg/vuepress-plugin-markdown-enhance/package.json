@@ -62,6 +62,8 @@
     "@vuepress/markdown": "2.0.0-beta.52",
     "@vuepress/plugin-container": "2.0.0-beta.52",
     "@vuepress/plugin-external-link-icon": "2.0.0-beta.52",
+    "@vuepress/plugin-prismjs": "2.0.0-beta.52",
+    "@vuepress/plugin-shiki": "2.0.0-beta.52",
     "@vuepress/shared": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.52",
     "@vueuse/core": "^9.1.0",

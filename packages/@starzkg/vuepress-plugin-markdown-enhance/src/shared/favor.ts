@@ -15,10 +15,14 @@ export const DEFAULT_MARKDOWN_SPEC: MarkdownOptions = {
 
   codeEnhance: {
     chart: true,
+
     copy: { showInMobile: true },
+
     echarts: true,
 
     flowchart: true,
+
+    highlight: 'auto',
 
     markmap: true,
 

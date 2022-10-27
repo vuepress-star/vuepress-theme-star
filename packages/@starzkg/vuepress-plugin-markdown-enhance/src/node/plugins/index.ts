@@ -11,6 +11,7 @@ import {
   useContainerPlugin,
 } from './container/index.js'
 import { useExternalLinkIconPlugin } from './external-link-icon/index.js'
+import { useHighlightPlugin } from './highlight/index.js'
 
 export const usePlugins = (
   app: App,
@@ -76,4 +77,11 @@ export const usePlugins = (
       ? markdownOptions.externalLinkIcon
       : {}
   )
+
+  //
+  if (markdownOptions.codeEnhance) {
+    if (markdownOptions.codeEnhance.highlight) {
+      useHighlightPlugin(app, markdownOptions.codeEnhance.highlight)
+    }
+  }
 }
