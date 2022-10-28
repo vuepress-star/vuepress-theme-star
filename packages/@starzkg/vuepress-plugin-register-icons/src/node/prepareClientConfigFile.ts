@@ -1,5 +1,5 @@
 import type { App } from '@vuepress/core'
-import { fs, path } from '@vuepress/utils'
+import { fs, path, withSpinner } from '@vuepress/utils'
 import { optimize } from 'svgo'
 import { getIconsFromDir } from './getIconsFromDir.js'
 import type { RegisterIconsPluginOptions } from './registerIconsPlugin.js'
@@ -70,10 +70,10 @@ const generateIconComponent = async (
     tempIcon,
     `\
 <script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
+import type { DefineComponent } from 'vue'
+export default ({
   name: '${componentName}',
-})
+}) as DefineComponent
 </script>
 <template>
   ${optimized.data}
@@ -88,27 +88,51 @@ export const prepareClientConfigFile = async (
   options: Required<RegisterIconsPluginOptions>,
   identifier: string
 ): Promise<string> => {
-  // get icons from directory
-  const iconsFromDir = await getIconsFromDir(options)
-
-  // icons from options will override icons from dir
-  // if they have the same component name
-  const iconsMap = await Object.entries({
-    ...iconsFromDir,
-    ...options.icons,
-  }).reduce<Promise<Record<string, string>>>(async (result, [key, value]) => {
-    const result0 = await result
-
-    if (path.extname(value) === '.svg') {
-      result0[key] = await generateIconComponent(app, key, value)
-    } else {
-      result0[key] = value
+  return withSpinner('prepare icons config file')(async (spinner) => {
+    if (spinner) {
+      spinner.text = 'fetch icons'
     }
-    return new Promise((resolve) => resolve(result0))
-  }, new Promise((resolve) => resolve({})))
+    // get icons from directory
+    const iconsFromDir = await getIconsFromDir(options)
 
-  // client app enhance file content
-  const content = `\
+    // icons from options will override icons from dir
+    // if they have the same component name
+    if (spinner) {
+      spinner.text = 'generate icon component'
+    }
+    const iconsMap = await Object.entries({
+      ...iconsFromDir,
+      ...options.icons,
+    }).reduce<Promise<Record<string, string>>>(async (result, [key, value]) => {
+      const result0 = await result
+
+      if (path.extname(value) === '.svg') {
+        result0[key] = await generateIconComponent(app, key, value)
+      } else {
+        result0[key] = value
+      }
+      return new Promise((resolve) => resolve(result0))
+    }, new Promise((resolve) => resolve({})))
+
+    // d.ts file
+    if (spinner) {
+      spinner.text = 'generate shims-vue.d.ts'
+    }
+    await app.writeTemp(
+      'icons/shims-vue.d.ts',
+      `\
+  declare module '*.vue' {
+  import type { DefineComponent } from 'vue'
+  const comp: DefineComponent
+  export default comp
+}`
+    )
+
+    // client app enhance file content
+    if (spinner) {
+      spinner.text = 'generate client app enhance file'
+    }
+    const content = `\
 import { defineComponent } from 'vue'
 ${Object.entries(iconsMap)
   .map(
@@ -131,6 +155,10 @@ export default {
 }
 `
 
-  // write temp file and return the file path
-  return app.writeTemp(`register-icons/clientConfig.${identifier}.js`, content)
+    // write temp file and return the file path
+    return app.writeTemp(
+      `register-icons/clientConfig.${identifier}.js`,
+      content
+    )
+  })
 }
