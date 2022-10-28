@@ -42,15 +42,15 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/core": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
     "element-plus": "2.2.19",
     "vue": "^3.2.41"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.52",
-    "@vuepress/bundler-webpack": "2.0.0-beta.52"
+    "@vuepress/bundler-vite": "2.0.0-beta.53",
+    "@vuepress/bundler-webpack": "2.0.0-beta.53"
   },
   "publishConfig": {
     "access": "public"

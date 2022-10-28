@@ -44,15 +44,15 @@
   "dependencies": {
     "@starzkg/vuepress-shared": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
-    "@vuepress/cli": "2.0.0-beta.52",
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/core": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
+    "@vuepress/cli": "2.0.0-beta.53",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
     "@vueuse/core": "^9.4.0",
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.41",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.113",
+    "vuepress-plugin-sass-palette": "2.0.0-beta.116",
     "workbox-build": "^6.4.2"
   },
   "publishConfig": {
