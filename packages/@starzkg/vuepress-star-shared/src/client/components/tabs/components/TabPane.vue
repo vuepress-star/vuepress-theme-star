@@ -24,7 +24,9 @@ defineProps({
   <div
     class="tab-pane"
     :class="{ 'tab-pane__active': active }"
+    role="tabpanel"
     :aria-selected="active"
+    :aria-expanded="active"
   >
     <slot />
   </div>

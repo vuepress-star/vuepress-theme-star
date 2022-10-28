@@ -63,7 +63,14 @@ const keyboardHandler = (event: KeyboardEvent, i: number): void => {
 <template>
   <nav class="tabs__nav">
     <ul class="tabs__ul">
-      <li v-for="(pane, i) in panes" :key="i" class="tabs__li">
+      <li
+        v-for="(pane, i) in panes"
+        :key="i"
+        class="tabs__li"
+        role="tab"
+        :aria-controls="'tab-' + i"
+        :aria-selected="activeIndex === i"
+      >
         <button
           :class="{
             'tabs__nav-tab': true,
