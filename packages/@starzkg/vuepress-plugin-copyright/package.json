@@ -45,7 +45,7 @@
     "@starzkg/vuepress-shared": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/core": "2.0.0-beta.53",
     "@vuepress/shared": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.52",
     "@vueuse/core": "^9.4.0",
