@@ -9,6 +9,8 @@ import {
   Timeline,
 } from '@theme/components'
 import { defineAsyncComponent, FunctionalComponent, h } from 'vue'
+import Category from './Category.vue'
+import Tag from './Tag.vue'
 
 const OrderedTabs: FunctionalComponent = () => {
   return h(Tabs, {}, () =>
@@ -103,6 +105,12 @@ const OrderedTabs: FunctionalComponent = () => {
     <section class="profile-body">
       <aside class="profile-aside">
         <ProfileCard class="mobile-show" />
+        <div>
+          <Tag />
+        </div>
+        <div>
+          <Category />
+        </div>
       </aside>
       <main class="profile-main">
         <OrderedTabs />
