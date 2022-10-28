@@ -1,3 +1,15 @@
+# [1.0.0-beta.35](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2022-10-28)
+
+
+### Bug Fixes
+
+* fix ([bea0933](https://github.com/vuepress-star/vuepress-theme-star/commit/bea0933420ff59e9cb31adb255faefa4b25e0f5f))
+* fix ([c9fb6ee](https://github.com/vuepress-star/vuepress-theme-star/commit/c9fb6eefb506c8982e3f1fff6870ef8e568cbddf))
+* fix ([d05f18b](https://github.com/vuepress-star/vuepress-theme-star/commit/d05f18b78e46f9808f9d12d80ff03ea746d1210d))
+* fix vuepress ([5f89f5d](https://github.com/vuepress-star/vuepress-theme-star/commit/5f89f5d95a610fc6923d0682f552dfc81dee44a8))
+
+
+
 # [1.0.0-beta.34](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2022-10-28)
 
 
