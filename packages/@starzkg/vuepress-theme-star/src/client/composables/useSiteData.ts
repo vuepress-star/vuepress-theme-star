@@ -1,20 +1,29 @@
-import { siteData as siteDataRaw } from '@internal/siteData'
-import { ref } from 'vue'
-import type { Ref } from 'vue'
-import type { StarSiteData } from '../../shared/index.js'
+import {
+  useSiteData as _useSiteData,
+  useSiteLocaleData as _useSiteLocaleData,
+} from '@vuepress/client'
+import type { ComputedRef, Ref } from 'vue'
+import type { StarSiteData, StarSiteLocaleData } from '../../shared/index.js'
 
-declare const __VUE_HMR_RUNTIME__: Record<string, any>
+/**
+ * Ref wrapper of `StarSiteData`
+ */
+export type StarSiteDataRef = Ref<StarSiteData>
 
-export type SiteDataRef<T extends StarSiteData = StarSiteData> = Ref<T>
+/**
+ * Returns the ref of the site data
+ */
+export const useSiteData = (): StarSiteDataRef =>
+  _useSiteData() as StarSiteDataRef
 
-export const siteData: SiteDataRef = ref(siteDataRaw)
+/**
+ * Ref wrapper of `SiteLocaleData`
+ */
+export type StarSiteLocaleDataRef = ComputedRef<StarSiteLocaleData>
 
-export const useSiteData = <
-  T extends StarSiteData = StarSiteData
->(): SiteDataRef<T> => siteData as SiteDataRef<T>
-
-if (import.meta.webpackHot || import.meta.hot) {
-  __VUE_HMR_RUNTIME__.updateSiteData = (data: StarSiteData) => {
-    siteData.value = data
-  }
+/**
+ * Returns the ref of the site data of current locale
+ */
+export const useSiteLocaleData = (): StarSiteLocaleDataRef => {
+  return _useSiteLocaleData() as StarSiteLocaleDataRef
 }

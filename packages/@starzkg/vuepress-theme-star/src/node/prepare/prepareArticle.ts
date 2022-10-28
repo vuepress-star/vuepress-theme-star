@@ -9,8 +9,12 @@ export const prepareArticle = async (app: App): Promise<void> => {
     .map((item) => item as StarPage)
     .sort((a, b) => {
       if (a.data.top === b.frontmatter.top) {
-        const date1 = dayjs(a.date || a.data.git?.createdTime)
-        const date2 = dayjs(b.date || b.data.git?.createdTime)
+        const date1 = dayjs(
+          a.date !== '0000-00-00' ? a.date : a.data.git?.createdTime
+        )
+        const date2 = dayjs(
+          b.date !== '0000-00-00' ? b.date : b.data.git?.createdTime
+        )
         return date1.isBefore(date2) ? 1 : -1
       }
       return a.data.top ? 1 : -1
