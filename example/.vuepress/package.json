@@ -26,7 +26,7 @@
     "@vuepress/bundler-webpack": "2.0.0-beta.52",
     "@vuepress/cli": "2.0.0-beta.52",
     "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.52",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.53",
     "@vuepress/plugin-register-components": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.52",
     "anywhere": "1.6.0",
