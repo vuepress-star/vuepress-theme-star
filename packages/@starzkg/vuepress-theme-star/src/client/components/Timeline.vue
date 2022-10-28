@@ -22,7 +22,7 @@ import { dayjs } from '@starzkg/vuepress-star-shared/client'
           class="timeline-month"
         >
           <span class="timeline-month-title">{{
-            dayjs.monthsShort()[month]
+            dayjs.monthsShort[month]
           }}</span>
           <ul>
             <li

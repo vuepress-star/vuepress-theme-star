@@ -106,7 +106,7 @@ const graphMonthData = computed(() => {
           y="-7"
           class="ContributionCalendar-label"
         >
-          {{ dayjs.monthsShort()[Number(key.slice(5, 7)) - 1] }}
+          {{ dayjs.monthsShort[Number(key.slice(5, 7)) - 1] }}
         </text>
         <text
           v-for="i in 7"
@@ -116,7 +116,7 @@ const graphMonthData = computed(() => {
           dx="-30"
           :dy="i * size - 6"
         >
-          {{ dayjs.weekdaysShort()[i - 1] }}
+          {{ dayjs.weekdaysShort[i - 1] }}
         </text>
       </g>
     </svg>
