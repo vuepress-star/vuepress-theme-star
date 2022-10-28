@@ -55,7 +55,7 @@
     "@starzkg/vuepress-plugin-sitemap": "workspace:*",
     "@starzkg/vuepress-social-icons": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/core": "2.0.0-beta.52",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.52",
     "@vuepress/plugin-external-link-icon": "2.0.0-beta.52",

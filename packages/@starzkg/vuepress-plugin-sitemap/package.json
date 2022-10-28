@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@starzkg/vuepress-star-shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/core": "2.0.0-beta.52",
     "@vuepress/plugin-git": "2.0.0-beta.52",
     "@vuepress/shared": "2.0.0-beta.52",
