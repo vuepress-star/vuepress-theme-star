@@ -8,7 +8,9 @@ export const prepareTimeline = async (app: App): Promise<void> => {
     if (!isArticle(page)) {
       return result
     }
-    const date = dayjs(page.date || page.data.git?.createdTime)
+    const date = dayjs(
+      page.date !== '0000-00-00' ? page.date : page.data.git?.createdTime
+    )
     const year = date.year()
     const month = date.month()
     const day = date.day()
