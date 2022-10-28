@@ -128,7 +128,7 @@ export const generateSeo = (
 }
 
 export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
-  await withSpinner('Generating robots.txt')(async () => {
+  await withSpinner('Generating robots.txt')(async (spinner) => {
     const publicPath = dir.public('robots.txt')
 
     let content = fs.existsSync(publicPath)
@@ -136,8 +136,7 @@ export const generateRobotsTxt = async (dir: AppDir): Promise<void> => {
       : ''
 
     if (content && !content.includes('User-agent')) {
-      logger.error()
-      logger.info('robots.txt seems invalid!')
+      logger.fail('robots.txt seems invalid!')
     } else {
       content += '\nUser-agent:*\nDisallow:\n'
 

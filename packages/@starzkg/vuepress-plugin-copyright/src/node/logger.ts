@@ -1,3 +1,3 @@
-import { Logger } from '@starzkg/vuepress-star-shared'
+import { createLogger } from '@starzkg/vuepress-star-shared'
 
-export const logger = Logger.create('@starzkg/vuepress-plugin-copyright')
+export const logger = createLogger('@starzkg/vuepress-plugin-copyright')

@@ -1,3 +1,3 @@
-import { Logger } from '@starzkg/vuepress-star-shared'
+import { createLogger } from '@starzkg/vuepress-star-shared'
 
-export const logger = Logger.create('vuepress-plugin-markdown-enhance')
+export const logger = createLogger('vuepress-plugin-markdown-enhance')

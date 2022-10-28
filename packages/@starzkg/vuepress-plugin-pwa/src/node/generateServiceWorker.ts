@@ -36,7 +36,7 @@ export const generateServiceWorker = async (
   app: App,
   options: PWAOptions
 ): Promise<void> => {
-  logger.load('Generating service worker')
+  logger.start('Generating service worker')
 
   const { dest } = app.dir
   const swDest = dest('service-worker.js')
@@ -72,7 +72,7 @@ export const generateServiceWorker = async (
       logger.warn(`${warnings.map((warning) => `  · ${warning}`).join('\n')}`)
 
     if (size > 104857600)
-      logger.error(
+      logger.fail(
         `Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n${chalk.blue(
           'Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n'
         )}`

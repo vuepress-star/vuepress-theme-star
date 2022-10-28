@@ -8,7 +8,14 @@ export const outputFile = async (
     `Generating feed ${chalk.cyan(path.basename(pathname))} on ${chalk.cyan(
       pathname
     )}`
-  )(async () => {
+  )(async (spinner) => {
+    spinner?.start(`create file ${chalk.cyan(path.basename(pathname))}`)
     await fs.ensureDir(path.dirname(pathname))
+    spinner?.start(`write file ${chalk.cyan(path.basename(pathname))}`)
     await fs.outputFile(pathname, content)
+    spinner?.succeed(
+      `Generating feed ${chalk.cyan(path.basename(pathname))} on ${chalk.cyan(
+        pathname
+      )} success`
+    )
   })

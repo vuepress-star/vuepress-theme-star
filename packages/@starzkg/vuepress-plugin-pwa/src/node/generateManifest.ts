@@ -53,7 +53,7 @@ export const generateManifest = async (
   app: App,
   manifest: Promise<ManifestOption>
 ): Promise<void> => {
-  logger.load('Generating manifest.webmanifest')
+  logger.fail('Generating manifest.webmanifest')
 
   const { dir } = app
   const manifestPath = dir.dest('manifest.webmanifest')
