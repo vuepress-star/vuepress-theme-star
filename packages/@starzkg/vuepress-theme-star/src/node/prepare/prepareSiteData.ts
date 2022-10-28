@@ -20,6 +20,9 @@ if (import.meta.hot) {
 }
 `
 
+/**
+ * Generate override site data temp file
+ */
 export const prepareSiteData = async (app: App): Promise<void> => {
   const siteData = resolveSiteData(app)
   // site data file content

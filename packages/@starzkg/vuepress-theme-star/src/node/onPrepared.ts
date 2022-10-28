@@ -7,7 +7,7 @@ import {
 } from './prepare/index.js'
 
 export const onPrepared = async (app: App): Promise<void> => {
-  // extend site data
+  // override site data
   await prepareSiteData(app)
   // prepare breadcrumb
   await prepareBreadcrumb(app)
