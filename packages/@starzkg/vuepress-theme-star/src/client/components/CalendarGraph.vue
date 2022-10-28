@@ -9,12 +9,12 @@ export default defineComponent({
 
 <script lang="ts" setup>
 import { dayjs } from '@starzkg/vuepress-star-shared/client'
-import { useSiteData } from '../composables/index.js'
-import { computed, reactive } from 'vue'
+import { useSiteLocaleData } from '../composables/index.js'
+import { computed, reactive, watchEffect } from 'vue'
 
 // const props = defineProps({})
-
-const siteData = useSiteData()
+const siteLocaleData = useSiteLocaleData()
+dayjs.locale(siteLocaleData.value.lang)
 
 interface CalendarGraphData {
   date: string
@@ -36,7 +36,8 @@ const graphData = computed(() => {
       if (dayjs().isBefore(date)) {
         continue
       }
-      const count = siteData.value.classifications.date?.[date]?.length || 0
+      const count =
+        siteLocaleData.value.classifications.date?.[date]?.length || 0
       const level = graphLevel.filter((item) => item <= count).length - 1
       graph[week] = graph[week] || []
       graph[week].push({
@@ -69,6 +70,10 @@ const graphMonthData = computed(() => {
     }
   }
   return monthData
+})
+
+watchEffect(() => {
+  dayjs.locale(siteLocaleData.value.lang)
 })
 </script>
 
