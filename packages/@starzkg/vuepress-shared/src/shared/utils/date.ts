@@ -1,4 +1,13 @@
-import { dayjs } from './dayjs.js'
+import dayjs from 'dayjs'
+import localizedFormat from 'dayjs/plugin/localizedFormat.js'
+import objectSupport from 'dayjs/plugin/objectSupport.js'
+import timezone from 'dayjs/plugin/timezone.js'
+import utc from 'dayjs/plugin/utc.js'
+
+dayjs.extend(localizedFormat)
+dayjs.extend(objectSupport)
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
 export interface DateOptions {
   /**

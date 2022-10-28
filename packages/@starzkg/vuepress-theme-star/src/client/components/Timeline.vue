@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { timeline } from '@internal/timeline'
 import { dayjs } from '@starzkg/vuepress-star-shared/client'
+import { watchEffect } from 'vue'
+import { useSiteData } from '../composables/index.js'
+const siteData = useSiteData()
+watchEffect(() => {
+  dayjs.locale(siteData.value.lang.toLocaleLowerCase())
+})
 </script>
 
 <template>
@@ -22,7 +28,7 @@ import { dayjs } from '@starzkg/vuepress-star-shared/client'
           class="timeline-month"
         >
           <span class="timeline-month-title">{{
-            dayjs.monthsShort[month]
+            dayjs.monthsShort()[month]
           }}</span>
           <ul>
             <li

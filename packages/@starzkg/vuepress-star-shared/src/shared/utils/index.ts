@@ -1,1 +1,1 @@
-export * from './dayjs.js'
+export * from './dayjs/index.js'

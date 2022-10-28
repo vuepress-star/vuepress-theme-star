@@ -1,55 +1,7 @@
-import Dayjs from 'dayjs'
-import localizedFormat from 'dayjs/plugin/localizedFormat.js'
-import objectSupport from 'dayjs/plugin/objectSupport.js'
-import timezone from 'dayjs/plugin/timezone.js'
-import utc from 'dayjs/plugin/utc.js'
+import dayjs from 'dayjs'
+import type { Locale } from './locale.js'
 
-Dayjs.extend(localizedFormat)
-Dayjs.extend(objectSupport)
-Dayjs.extend(utc)
-Dayjs.extend(timezone)
-
-export interface Locale {
-  name: string
-  weekdays?: string[]
-  months?: string[]
-  weekStart?: number
-  weekdaysShort?: string[]
-  monthsShort?: string[]
-  weekdaysMin?: string[]
-  yearStart?: number
-  ordinal?: (number: number, period?: string) => number | string
-  meridiem?: (hour: number, minute: number) => string
-  formats: Partial<{
-    LT: string
-    LTS: string
-    L: string
-    LL: string
-    LLL: string
-    LLLL: string
-    l: string
-    ll: string
-    lll: string
-    llll: string
-  }>
-  relativeTime: Partial<{
-    future: string
-    past: string
-    s: string
-    m: string
-    mm: string
-    h: string
-    hh: string
-    d: string
-    dd: string
-    M: string
-    MM: string
-    y: string
-    yy: string
-  }>
-}
-
-const zhLocale: Locale = {
+export const locale: Partial<Locale> = {
   name: 'zh-cn',
   weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
   weekdaysShort: '周日_周一_周二_周三_周四_周五_周六'.split('_'),
@@ -113,18 +65,4 @@ const zhLocale: Locale = {
   },
 }
 
-const enLocale: Partial<Locale> = {
-  name: 'en',
-  weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-    '_'
-  ),
-  months:
-    'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-      '_'
-    ),
-}
-
-Dayjs.locale('zh', zhLocale)
-Dayjs.locale('en', enLocale)
-
-export const dayjs = Dayjs
+dayjs.locale('zh-cn', locale)
