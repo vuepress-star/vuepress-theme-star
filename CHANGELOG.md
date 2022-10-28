@@ -1,3 +1,27 @@
+# [1.0.0-beta.34](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2022-10-28)
+
+
+### Bug Fixes
+
+* fix ([bf42520](https://github.com/vuepress-star/vuepress-theme-star/commit/bf425209fde2e976aa860becd4e696d7da12d49b))
+* fix ([4416133](https://github.com/vuepress-star/vuepress-theme-star/commit/44161338c4e72a5830e928df65c731673b0b55d2))
+* fix ([07109c2](https://github.com/vuepress-star/vuepress-theme-star/commit/07109c2c40b77b35f9ad92282d56e4092110f2b5))
+* fix ([69769a5](https://github.com/vuepress-star/vuepress-theme-star/commit/69769a5e17836f2343bfaf387b8f9cf8ac75412b))
+* fix ([d574133](https://github.com/vuepress-star/vuepress-theme-star/commit/d574133ed599ff937a0157ff3b3b4524f91b6679))
+* fix ([a8b0d84](https://github.com/vuepress-star/vuepress-theme-star/commit/a8b0d843a15b26057224733d8b8125758daf7ac7))
+* fix ([261f7fd](https://github.com/vuepress-star/vuepress-theme-star/commit/261f7fda42e7dcd386dfdd678fd46081eb631e12))
+* fix ([2c9c6ea](https://github.com/vuepress-star/vuepress-theme-star/commit/2c9c6ea33d6c5c868d0c8efd51fbcd744e1f48fc))
+* fix ([7225e4b](https://github.com/vuepress-star/vuepress-theme-star/commit/7225e4b144b8299ce34e51d97ed4c507055b9fe9))
+* fix ([124b3fe](https://github.com/vuepress-star/vuepress-theme-star/commit/124b3fed14dd29321b69319432cf5a5369acab4a))
+* fix ([d1a4d80](https://github.com/vuepress-star/vuepress-theme-star/commit/d1a4d80e50842d4f6a6d7f210539abc713cba1fc))
+* fix ([1549e60](https://github.com/vuepress-star/vuepress-theme-star/commit/1549e605dc56a0534427b2eca2c98e7c92deff07))
+* fix ([66650d9](https://github.com/vuepress-star/vuepress-theme-star/commit/66650d988d41ae77b7d72d589ca1b9c193daa8e8))
+* fix ([5190254](https://github.com/vuepress-star/vuepress-theme-star/commit/5190254f0f81a88afce2bb4b5ec6520b1257c5f3))
+* fix logger ([b3293fb](https://github.com/vuepress-star/vuepress-theme-star/commit/b3293fbcd7877c363c94c3a2f33170c846700930))
+* fix vuepress ([fd49480](https://github.com/vuepress-star/vuepress-theme-star/commit/fd49480c2b10212282c123f5e0e8431bedf9f150))
+
+
+
 # [1.0.0-beta.33](https://github.com/vuepress-star/vuepress-theme-star/compare/v1.0.0-beta.32...v1.0.0-beta.33) (2022-10-27)
 
 
