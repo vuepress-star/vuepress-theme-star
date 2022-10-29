@@ -8,13 +8,13 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import { useSiteData } from '@theme/composables'
+import { useSiteLocaleData } from '@theme/composables'
 import { computed } from 'vue'
 
-const siteData = useSiteData()
+const siteLocaleData = useSiteLocaleData()
 
 const categories = computed(() => {
-  return siteData.value.classifications?.category || {}
+  return siteLocaleData.value.classifications?.category || {}
 })
 </script>
 
@@ -27,7 +27,9 @@ const categories = computed(() => {
     >
       <RouterLink :to="'/category/' + category">
         {{ category }}
-        <span class="category-num">{{ categories[category].length }}</span>
+        <span class="category-num">{{
+          categories[category].pages.length
+        }}</span>
       </RouterLink>
     </li>
   </ul>

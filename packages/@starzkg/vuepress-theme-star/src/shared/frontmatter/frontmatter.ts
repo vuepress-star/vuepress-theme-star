@@ -9,6 +9,7 @@ export interface StarPageFrontmatter {
   sidebar?: 'auto' | false | SidebarConfig
   page?: string
   pageClass?: string
+  archive?: string
   author?: string
   email?: string
   license?: string

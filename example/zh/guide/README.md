@@ -9,6 +9,7 @@ tags:
   - 指南
   - 主题
   - Markdown
+archive: 指南
 ---
 # 指南
 

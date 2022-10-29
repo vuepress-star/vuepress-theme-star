@@ -37,7 +37,7 @@ const graphData = computed(() => {
         continue
       }
       const count =
-        siteLocaleData.value.classifications.date?.[date]?.length || 0
+        siteLocaleData.value.classifications.date?.[date]?.pages.length || 0
       const level = graphLevel.filter((item) => item <= count).length - 1
       graph[week] = graph[week] || []
       graph[week].push({

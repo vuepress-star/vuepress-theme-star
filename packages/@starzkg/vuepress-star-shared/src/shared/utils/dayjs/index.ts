@@ -1,4 +1,4 @@
-import { default as dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration.js'
 import localeData from 'dayjs/plugin/localeData.js'
 import localizedFormat from 'dayjs/plugin/localizedFormat.js'
@@ -34,4 +34,14 @@ dayjs.extend(timezone)
 dayjs.extend(utc)
 dayjs.extend(weekYear)
 
-export { dayjs }
+export {
+  dayjs,
+  duration,
+  localeData,
+  localizedFormat,
+  objectSupport,
+  relativeTime,
+  timezone,
+  utc,
+  weekYear,
+}

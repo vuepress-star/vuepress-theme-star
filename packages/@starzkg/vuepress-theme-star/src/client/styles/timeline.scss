@@ -1,5 +1,5 @@
 .timeline {
-  padding: 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -19,6 +19,7 @@
   }
 
   .timeline-year {
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
 
@@ -53,6 +54,7 @@
   }
 
   .timeline-month {
+    padding-top: 0.5rem;
     display: flex;
     flex-direction: column;
 
@@ -71,64 +73,79 @@
     }
   }
 
-  .article-list {
-    .article-item {
-      flex: 6;
+  .timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+    flex: 6;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+
+    .timeline-item__tail {
+      position: absolute;
+      left: 4px;
+      height: 100%;
+      border-left: 2px solid var(--timeline-node-color, var(--c-brand-light));
+    }
+
+    .timeline-item__node {
+      position: absolute;
+      left: -1px;
+      background-color: var(--timeline-node-color, var(--c-brand-light));
+      border-color: var(--timeline-node-color, var(--c-brand-light));
+      border-radius: 50%;
+      box-sizing: border-box;
       display: flex;
-      flex-direction: row;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
+      justify-content: center;
+      align-items: center;
 
-      a {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        overflow: hidden;
-        color: var(--c-text);
-      }
-
-      .timeline-line {
+      .timeline-item__node-icon {
+        height: 12px;
+        width: 12px;
+        border-radius: 100px;
         text-align: center;
-        margin: 0 8px;
-
-        .timeline-line-icon-par {
-          height: 0.9rem;
-          width: 100%;
-        }
-
-        .timeline-line-icon {
-          height: 8px;
-          width: 8px;
-          border-radius: 100px;
-          text-align: center;
-        }
-
-        .timeline-line-bottom {
-          height: 90%;
-          width: 4px;
-          margin-top: 3px;
-          border-radius: 4px;
-        }
-
-        .timeline-line-bottom,
-        .timeline-line-icon {
-          background: var(--archive-timeline, var(--c-brand-light));
-          margin: 0 auto;
-        }
       }
+    }
 
-      .timeline-article-title {
+    .timeline-item__wrapper {
+      position: relative;
+      padding-left: 28px;
+      top: -3px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+      color: inherit;
+
+      .timeline-item__title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        h4 {
+          .icon {
+            margin-right: 4px;
+          }
+          display: flex;
+          align-items: center;
+          color: inherit;
+          margin: 0;
+          padding: 0;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 24px;
+          overflow: hidden;
+          white-space: normal;
+          word-break: break-word;
+        }
       }
+    }
 
-      &:hover .timeline-line-icon {
-        animation: timeline-active 0.3s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        background: var(--archive-timeline-active, pink);
-      }
+    &:hover .timeline-item__node-icon {
+      animation: timeline-active 0.3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      background: var(--archive-timeline-active, pink);
     }
   }
 }

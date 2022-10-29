@@ -39,26 +39,35 @@ export const resolvePageReadingTime = (
 }
 
 export const extendsPage = (page: StarPage): void => {
-  // custom excerpt
-  page.excerpt = page.frontmatter.excerpt || page.excerpt
-  // save title into route meta to generate navbar and sidebar
-  page.routeMeta.title = page.title
-  // page icon
-  page.routeMeta.icon = page.data.icon = page.frontmatter.icon as string
-  // top
-  page.data.top = page.frontmatter.top || false
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = page.filePathRelative
+  // custom excerpt
+  page.excerpt = page.frontmatter.excerpt || page.excerpt
   // content
   page.data.content = page.content
+  // page icon
+  page.data.icon = page.frontmatter.icon
+  // author
+  page.data.author = resolvePageAuthor(page.data.git)
+  // top
+  page.data.top = page.frontmatter.top || false
   // length
   page.data.length = resolvePageLength(page.content)
   // words
   page.data.words = resolvePageWords(page.content)
-  // author
-  page.data.author = resolvePageAuthor(page.data.git)
   // reading time
   page.data.readingTime = resolvePageReadingTime(page.data.length)
   // breadcrumb
   page.data.breadcrumb = []
+
+  page.routeMeta = {
+    ...page.routeMeta,
+    // save title into route meta to generate navbar and sidebar
+    title: page.title,
+    icon: page.data.icon,
+    author: page.data.author,
+    date: page.date,
+    time: page.data.git?.createdTime,
+    excerpt: page.excerpt,
+  }
 }

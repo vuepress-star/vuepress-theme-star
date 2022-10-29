@@ -64,3 +64,12 @@ export interface StarPageData {
    */
   breadcrumb: BreadcrumbData
 }
+
+export interface StarPageMeta {
+  title: string
+  icon?: string
+  path: string
+  date: string
+  time: number
+  excerpt: string
+}

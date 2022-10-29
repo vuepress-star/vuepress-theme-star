@@ -45,7 +45,7 @@ const navigate = (path: string): void => {
 }
 
 const pageNum = computed(() => {
-  return siteData.value.classifications?.type?.Page?.length || 0
+  return siteData.value.classifications?.type?.page?.pages.length || 0
 })
 
 const categoryNum = computed(() => {
@@ -57,7 +57,7 @@ const tagNum = computed(() => {
 })
 
 const archiveNum = computed(() => {
-  return Object.keys(siteData.value.classifications?.date).length || 0
+  return Object.keys(siteData.value.classifications?.archive).length || 0
 })
 
 const links = computed(() => {

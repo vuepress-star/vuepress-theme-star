@@ -8,13 +8,13 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import { useSiteData } from '@theme/composables'
+import { useSiteLocaleData } from '@theme/composables'
 import { computed } from 'vue'
 
-const siteData = useSiteData()
+const siteLocaleData = useSiteLocaleData()
 
 const tags = computed(() => {
-  return siteData.value.classifications?.tag || {}
+  return siteLocaleData.value.classifications?.tag || {}
 })
 </script>
 
@@ -23,7 +23,7 @@ const tags = computed(() => {
     <li v-for="tag in Object.keys(tags)" :key="tag" class="tag">
       <RouterLink :to="'/tag/' + tag">
         {{ tag }}
-        <span class="tag-num">{{ tags[tag].length }}</span>
+        <span class="tag-num">{{ tags[tag].pages.length }}</span>
       </RouterLink>
     </li>
   </ul>

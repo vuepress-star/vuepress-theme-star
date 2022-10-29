@@ -1,3 +1,6 @@
 export type ClassificationData = Record<string, Classification>
 
-export type Classification = Record<string, string[]>
+export type Classification = Record<
+  string,
+  { key: string; pages: any[]; children?: Classification }
+>
