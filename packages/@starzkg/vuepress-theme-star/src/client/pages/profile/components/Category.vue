@@ -23,11 +23,11 @@ const categories = computed(() => {
     <li
       v-for="category in Object.keys(categories)"
       :key="category"
-      class="category"
+      class="category rainbow"
     >
       <RouterLink :to="'/category/' + category">
         {{ category }}
-        <span class="category-num">{{
+        <span class="category-num inner">{{
           categories[category].pages.length
         }}</span>
       </RouterLink>
@@ -56,7 +56,6 @@ const categories = computed(() => {
     padding: 0.4rem 0.8rem;
     border-radius: 0.25rem;
 
-    color: var(--dark-grey);
     box-shadow: 0 1px 4px 0 var(--card-shadow);
 
     cursor: pointer;
@@ -73,7 +72,7 @@ const categories = computed(() => {
       padding: 0 0.1rem;
       border-radius: 0.6rem;
 
-      background: var(--c-bg-light);
+      color: #fff;
 
       font-size: 0.7rem;
       line-height: 1.2rem;

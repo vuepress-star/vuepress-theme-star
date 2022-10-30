@@ -20,10 +20,10 @@ const tags = computed(() => {
 
 <template>
   <ul class="tag-list">
-    <li v-for="tag in Object.keys(tags)" :key="tag" class="tag">
+    <li v-for="tag in Object.keys(tags)" :key="tag" class="tag rainbow">
       <RouterLink :to="'/tag/' + tag">
         {{ tag }}
-        <span class="tag-num">{{ tags[tag].pages.length }}</span>
+        <span class="tag-num inner">{{ tags[tag].pages.length }}</span>
       </RouterLink>
     </li>
   </ul>
@@ -85,7 +85,7 @@ const tags = computed(() => {
     padding: 0 0.1rem;
     border-radius: 0.6rem;
 
-    background: var(--c-bg-light);
+    color: #fff;
 
     font-size: 0.7rem;
     line-height: 1.2rem;

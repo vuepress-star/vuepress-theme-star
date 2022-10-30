@@ -1,0 +1,55 @@
+@use 'sass:color';
+@use 'sass:list';
+/* Color list */
+$colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #10a5a5, #096dd9, #aa6fe9,
+  #eb2f96 !default;
+
+.rainbow {
+  @each $color in $colors {
+    $length: list.length($colors);
+    $index: list.index($colors, $color);
+
+    &:nth-child(#{$length}n + #{$index}) {
+      background: color.scale($color, $lightness: 90%);
+      color: color.scale($color, $lightness: -10%);
+
+      .inner {
+        background: $color;
+      }
+
+      &:hover {
+        background: color.scale($color, $lightness: 75%);
+      }
+
+      &.active {
+        background: $color;
+        color: #fff;
+
+        .inner {
+          background: var(--bg-color);
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+html.dark .rainbow {
+  @each $color in $colors {
+    $index: list.index($colors, $color) - 1;
+
+    .category#{$index} {
+      background: color.scale($color, $lightness: -75%);
+      color: color.scale($color, $lightness: 20%);
+
+      &:hover {
+        background: color.scale($color, $lightness: -60%);
+      }
+
+      &.active {
+        background: color.scale($color, $lightness: -20%);
+        color: var(--bg-color);
+      }
+    }
+  }
+}
