@@ -8,9 +8,18 @@ export default defineComponent({
 
 <script setup lang="ts">
 defineProps({
-  title: {
+  name: {
+    type: [String, Number],
+    required: true,
+  },
+  label: {
     type: String,
     required: true,
+  },
+  disabled: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
   active: {
     type: Boolean,

@@ -5,7 +5,16 @@ import TabNav from './TabNav.vue'
 export default defineComponent({
   name: 'Tabs',
 
-  setup(_, { slots }) {
+  props: {
+    modelValue: {
+      type: [String, Number],
+      default: undefined,
+    },
+  },
+
+  emits: ['update:modelValue', 'tab-click', 'tab-change'],
+
+  setup(props, { slots, emit }) {
     const vm = getCurrentInstance()!
     // index of current active item
     const activeIndex = ref(-1)
@@ -26,15 +35,24 @@ export default defineComponent({
       if (activeIndex.value < 0 || activeIndex.value > items.length - 1) {
         // if `activeIndex` is invalid
 
-        // find the index of the tab-pane with `active` props
+        // find the index of the tab-pane with name
         activeIndex.value = items.findIndex(
-          (vnode) => vnode.props.active === '' || vnode.props.active === true
+          (vnode) => vnode.props.name === props.modelValue
         )
+
+        // find the index of the tab-pane with `active` props
+        if (activeIndex.value === -1) {
+          activeIndex.value = items.findIndex(
+            (vnode) => vnode.props.active === '' || vnode.props.active === true
+          )
+        }
 
         // if there is no `active` props on tab-pane, set the first item active
         if (activeIndex.value === -1) {
           activeIndex.value = 0
         }
+
+        emit('update:modelValue', items[activeIndex.value].props.name)
       } else {
         // set the active item
         items.forEach((vnode, i) => {
@@ -47,7 +65,12 @@ export default defineComponent({
           panes: items,
           activeIndex: activeIndex.value,
           onTabClick: (pane, i, e) => {
-            activeIndex.value = i
+            emit('tab-click', pane, e)
+            if (activeIndex.value !== i) {
+              activeIndex.value = i
+              emit('update:modelValue', items[activeIndex.value].props.name)
+              emit('tab-change', items[activeIndex.value].props.name)
+            }
           },
         }),
         items,

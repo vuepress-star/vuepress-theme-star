@@ -96,7 +96,7 @@ export default defineClientConfig({
         next()
       }
       // same path no route
-      if (to.path !== from.path) {
+      if (to.fullPath !== from.fullPath) {
         next()
       }
     })

@@ -81,7 +81,7 @@ const keyboardHandler = (event: KeyboardEvent, i: number): void => {
           @click="(e) => $emit('tabClick', pane, i, e)"
           @Keydown="(e) => keyboardHandler(e, i)"
         >
-          {{ pane.props.title }}
+          {{ pane.props.label || pane.props.name }}
         </button>
       </li>
     </ul>
