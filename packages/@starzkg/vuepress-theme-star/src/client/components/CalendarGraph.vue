@@ -99,6 +99,7 @@ watchEffect(() => {
             :y="j * size"
             rx="2"
             ry="2"
+            :aria-label="day.date"
             :data-count="day.count"
             :data-date="day.date"
             :data-level="day.level"
