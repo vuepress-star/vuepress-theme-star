@@ -100,7 +100,6 @@ onUnmounted(() => {
               <header class="content-header">
                 <BreadCrumb />
                 <PageInfo />
-                <GithubCorner />
               </header>
               <section class="content-container">
                 <main class="content-main">

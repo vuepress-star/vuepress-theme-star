@@ -10,6 +10,7 @@ export default defineComponent({
 
 <script setup lang="ts">
 import { nextTick, onMounted, ref } from 'vue'
+import GithubCorner from './GithubCorner.vue'
 const renderCanvas = ref<HTMLCanvasElement>()
 onMounted(() => {
   nextTick(() => {
@@ -56,6 +57,7 @@ onMounted(() => {
 
 <template>
   <div class="background-star">
+    <GithubCorner />
     <canvas id="vuepress-canvas-hack" ref="renderCanvas"></canvas>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { isLinkHttp } from '@vuepress/shared'
 import { computed } from 'vue'
-import { useThemeLocaleData } from '../composables'
-import { resolveRepoType } from '../utils/index.js'
+import { useThemeLocaleData } from '../../../composables/index.js'
+import { resolveRepoType } from '../../../utils/index.js'
 
 const themeLocale = useThemeLocaleData()
 

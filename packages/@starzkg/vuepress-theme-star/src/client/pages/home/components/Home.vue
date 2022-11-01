@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  Content,
-  Features,
-  Footer,
-  GithubCorner,
-  Navbar,
-} from '@theme/components'
+import { Content, Features, Footer, Navbar } from '@theme/components'
 import { ref } from 'vue'
 import HomeArrow from './HomeArrow.vue'
 import HomeHero from './HomeHero.vue'
@@ -38,7 +32,6 @@ const gotoContainer = (): void => {
         <slot name="hero">
           <HomeHero />
         </slot>
-        <GithubCorner />
         <HomeArrow @click="gotoContainer" />
       </header>
       <main class="container-content">
