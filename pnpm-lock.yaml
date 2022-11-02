@@ -33,7 +33,7 @@ importers:
       tslib: 2.4.0
       tsup: 6.3.0
       typescript: 4.8.4
-      vite: 3.2.1
+      vite: 3.2.2
       vitest: 0.24.3
     devDependencies:
       '@commitlint/cli': 17.1.2
@@ -65,7 +65,7 @@ importers:
       tslib: 2.4.0
       tsup: 6.3.0_mwhvu7sfp6vq5ryuwb6hlbjfka
       typescript: 4.8.4
-      vite: 3.2.1
+      vite: 3.2.2
       vitest: 0.24.3
 
   docs/.vuepress:
@@ -322,7 +322,7 @@ importers:
       plantuml-encoder: ^1.4.0
       reveal.js: ^4.4.0
       ts-debounce: ^4.0.0
-      vite: 3.2.1
+      vite: 3.2.2
       vue: ^3.2.41
       vue-router: ^4.1.6
     dependencies:
@@ -369,7 +369,7 @@ importers:
       plantuml-encoder: 1.4.0
       reveal.js: 4.4.0
       ts-debounce: 4.0.0
-      vite: 3.2.1
+      vite: 3.2.2
       vue: 3.2.41
       vue-router: 4.1.6_vue@3.2.41
     devDependencies:
@@ -471,7 +471,7 @@ importers:
       dayjs: ^1.11.5
       execa: ^6.0.0
       ora: ^6.1.2
-      vite: 3.2.1
+      vite: 3.2.2
       vue: ^3.2.41
       vue-router: ^4.1.6
     dependencies:
@@ -492,7 +492,7 @@ importers:
       '@types/connect': 3.4.35
       '@vuepress/bundler-vite': 2.0.0-beta.53
       '@vuepress/bundler-webpack': 2.0.0-beta.53
-      vite: 3.2.1
+      vite: 3.2.2
 
   packages/@starzkg/vuepress-social-icons:
     specifiers: {}
@@ -515,7 +515,7 @@ importers:
       execa: ^6.0.0
       ora: ^6.1.2
       typed.js: ^2.0.12
-      vite: 3.2.1
+      vite: 3.2.2
       vue: ^3.2.41
       vue-router: ^4.1.6
     dependencies:
@@ -538,7 +538,7 @@ importers:
       '@types/connect': 3.4.35
       '@vuepress/bundler-vite': 2.0.0-beta.53
       '@vuepress/bundler-webpack': 2.0.0-beta.53
-      vite: 3.2.1
+      vite: 3.2.2
 
   packages/@starzkg/vuepress-theme-star:
     specifiers:
@@ -12831,8 +12831,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite/3.2.1:
-    resolution: {integrity: sha512-ADtMkfHuWq4tskJsri2n2FZkORO8ZyhI+zIz7zTrDAgDEtct1jdxOg3YsZBfHhKjmMoWLOSCr+64qrEDGo/DbQ==}
+  /vite/3.2.2:
+    resolution: {integrity: sha512-pLrhatFFOWO9kS19bQ658CnRYzv0WLbsPih6R+iFeEEhDOuYgYCX2rztUViMz/uy/V8cLCJvLFeiOK7RJEzHcw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -12892,7 +12892,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.2.1
+      vite: 3.2.2
     transitivePeerDependencies:
       - less
       - sass
