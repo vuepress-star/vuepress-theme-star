@@ -1,4 +1,4 @@
-@import '_variables';
+@import 'variables';
 
 .home {
   display: block;
@@ -8,19 +8,20 @@
 
   .header {
     position: fixed;
-    opacity: 0;
     z-index: 20;
     top: 0;
     left: 0;
     right: 0;
     height: var(--navbar-height);
     box-sizing: border-box;
-    background-color: var(--c-bg-navbar);
-    border-bottom: 1px solid var(--c-border);
+    background: transparent;
     transition: opacity 0.5s;
+    pointer-events: none;
 
-    &:hover {
-      opacity: 1;
+    .navbar {
+      pointer-events: auto;
+      background: transparent;
+      border-bottom: unset;
     }
   }
 

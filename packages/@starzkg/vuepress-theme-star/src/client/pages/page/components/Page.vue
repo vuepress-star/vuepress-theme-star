@@ -10,6 +10,7 @@ import {
   PageNav,
   ProfileCard,
   Sidebar,
+  Toc,
 } from '@theme/components'
 import { onMounted, onUnmounted, ref } from 'vue'
 import {
@@ -53,6 +54,7 @@ onUnmounted(() => {
     <aside class="aside">
       <div class="aside-container">
         <slot name="page-aside">
+          <ProfileCard />
           <Sidebar>
             <template #top>
               <slot name="sidebar-top" />
@@ -106,10 +108,7 @@ onUnmounted(() => {
                   <Content />
                 </main>
                 <aside class="content-aside">
-                  <slot name="right-top" />
-                  <ProfileCard />
-                  <slot name="right-bottom" />
-                  <Toc class="anchor" />
+                  <Toc />
                 </aside>
               </section>
               <footer class="content-footer">
