@@ -5,10 +5,11 @@ export interface StarPageFrontmatter {
   icon?: string
   excerpt?: string
   top?: boolean
-  navbar?: boolean
-  sidebar?: 'auto' | false | SidebarConfig
+  themeClass?: string
   page?: string
   pageClass?: string
+  navbar?: boolean
+  sidebar?: 'auto' | false | SidebarConfig
   archive?: string
   author?: string
   email?: string

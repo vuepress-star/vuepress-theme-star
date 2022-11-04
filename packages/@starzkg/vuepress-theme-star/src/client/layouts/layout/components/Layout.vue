@@ -29,9 +29,11 @@ const containerClass = computed(() => [
     'no-sidebar': !sidebar.value.enable,
     'navbar-open': navbar.value.open,
     'sidebar-open': sidebar.value.open,
+    'has-navbar': navbar.value.enable && navbar.value.open,
+    'has-sidebar': sidebar.value.enable && sidebar.value.open,
   },
   userAgent.value.getResult().device.type,
-  frontmatter.value.pageClass,
+  frontmatter.value.themeClass,
 ])
 
 // page name

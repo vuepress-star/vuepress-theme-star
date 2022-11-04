@@ -12,10 +12,8 @@ import {
   Sidebar,
   Toc,
 } from '@theme/components'
-import { onMounted, onUnmounted, ref } from 'vue'
 import {
   useDarkMode,
-  useNavbar,
   useScrollPromise,
   useSidebar,
 } from '../../../composables/index.js'
@@ -24,29 +22,10 @@ const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
 
-// navbar
-const navbar = useNavbar()
-
 // sidebar
 const sidebar = useSidebar()
 
 const darkMode = useDarkMode()
-
-const scrollX = ref(0)
-const scrollY = ref(0)
-
-const handleScroll = (): void => {
-  scrollX.value = window.scrollX
-  scrollY.value = window.scrollY
-}
-
-onMounted(() => {
-  // 滚动条的获取
-  window.addEventListener('scroll', handleScroll, true)
-})
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll, true)
-})
 </script>
 
 <template>
@@ -77,10 +56,7 @@ onUnmounted(() => {
       <slot name="page-main">
         <header class="container-header">
           <slot name="header">
-            <Navbar
-              v-if="navbar.enable"
-              :style="{ opacity: Math.max(200 - scrollY, 0) / 200 }"
-            >
+            <Navbar>
               <template #before>
                 <slot name="navbar-before" />
               </template>
@@ -123,7 +99,9 @@ onUnmounted(() => {
           </main>
         </Transition>
         <footer class="container-footer">
-          <Footer />
+          <slot name="footer">
+            <Footer />
+          </slot>
         </footer>
       </slot>
     </section>
