@@ -5,12 +5,12 @@
   overflow-x: hidden;
 
   .aside-container {
-    width: 0;
+    width: var(--page-aside-width);
     position: fixed;
     z-index: 10;
     margin: 0;
     top: 0;
-    left: 0;
+    left: calc(-1 * var(--page-aside-width));
     right: 0;
     bottom: 0;
     box-sizing: border-box;
@@ -21,7 +21,7 @@
     scrollbar-color: var(--c-brand) var(--c-border);
     background-color: var(--c-bg-sidebar);
     transition: transform var(--t-transform), background-color var(--t-color),
-      border-color var(--t-color), width var(--t-transform);
+      border-color var(--t-color), left var(--t-transform);
     &::-webkit-scrollbar {
       width: 7px;
     }
@@ -77,7 +77,7 @@
 
 .sidebar-open .page {
   .aside-container {
-    width: var(--page-aside-width);
+    left: 0;
   }
 
   .toggle-aside {

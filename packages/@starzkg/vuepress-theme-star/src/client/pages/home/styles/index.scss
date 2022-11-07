@@ -2,8 +2,4 @@
   @import 'hero';
   @import 'feature';
   @import 'home';
-
-  &.mobile {
-    @import 'mobile';
-  }
 }

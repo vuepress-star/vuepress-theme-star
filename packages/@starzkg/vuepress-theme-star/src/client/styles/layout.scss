@@ -124,7 +124,6 @@
 @media (max-width: $sm) {
   .sidebar {
     top: 0;
-    padding-top: var(--navbar-height);
     transform: translateX(-100%);
   }
 

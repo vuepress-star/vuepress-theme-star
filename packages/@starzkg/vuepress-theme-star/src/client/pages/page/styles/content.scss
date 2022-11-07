@@ -1,7 +1,7 @@
-@import '_mixins';
-@import '_variables';
+@import 'mixins';
+@import 'variables';
 
-.page-normal .content {
+.page-normal .container-content .content {
   min-width: min(60vw, var(--content-width));
   max-width: var(--content-width);
   width: 100%;
@@ -108,7 +108,6 @@
 .profile-card {
   border-radius: 2px;
   padding: 1rem 0;
-  margin-bottom: 1.5rem;
 }
 
 .footer {

@@ -4,6 +4,7 @@ import { useThemeLocaleData } from '../composables'
 import BackToTop from './BackToTop'
 import ScreenFull from './ScreenFull'
 import ToggleColorModeButton from './ToggleColorModeButton.vue'
+import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
 const themeLocale = useThemeLocaleData()
 </script>
@@ -11,6 +12,8 @@ const themeLocale = useThemeLocaleData()
 <template>
   <div class="suspension">
     <BackToTop key="back-to-top" class="suspension-item" />
+
+    <ToggleSidebarButton key="toggle-sidebar-button" class="suspension-item" />
 
     <ToggleColorModeButton
       v-if="themeLocale.colorModeSwitch"

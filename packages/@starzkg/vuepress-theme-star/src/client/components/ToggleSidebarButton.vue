@@ -10,7 +10,8 @@ const sidebar = useSidebar()
     v-if="sidebar.enable"
     class="toggle-sidebar-button"
     :title="themeLocale.toggleSidebar"
-    aria-expanded="false"
+    :aria-expanded="sidebar.open"
+    aria-controls="sidebar"
     role="button"
     tabindex="0"
     @click="sidebar.toggle"
@@ -25,10 +26,7 @@ const sidebar = useSidebar()
 
 <style lang="scss" scoped>
 .toggle-sidebar-button {
-  position: absolute;
   display: block;
-  top: 0.6rem;
-  left: 1rem;
   padding: 0.6rem;
   cursor: pointer;
 }

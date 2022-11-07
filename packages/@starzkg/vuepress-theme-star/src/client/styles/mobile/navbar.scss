@@ -1,5 +1,5 @@
 .nav {
-  .nav-bar .content {
+  .nav-bar .navbar-items {
     display: none;
   }
 
@@ -16,27 +16,21 @@
     overflow-y: auto;
     background-color: var(--c-bg);
 
-    .navbar-items-wrapper {
-      position: unset;
-      height: unset;
+    .navbar-items {
+      display: block;
+      padding-top: 1rem;
 
-      .navbar-items {
+      .navbar-item {
         display: block;
-        width: 100%;
-        padding-top: 1rem;
-
-        .navbar-item {
-          display: block;
-          margin-left: 0;
-          padding: 12px 4px 11px 0;
-          border-bottom: 1px solid var(--c-border);
-          line-height: 1.5rem;
-          transition: border-bottom-color var(--color-transition);
-        }
+        margin-left: 0;
+        padding: 12px 4px 11px 0;
+        border-bottom: 1px solid var(--c-border);
+        line-height: 1.5rem;
+        transition: border-bottom-color var(--color-transition);
       }
     }
 
-    .navbar-brand-wrapper {
+    .navbar-brand {
       display: block;
       margin: 0 auto;
       padding: 0.5rem;
