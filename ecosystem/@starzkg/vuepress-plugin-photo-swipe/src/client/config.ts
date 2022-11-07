@@ -1,6 +1,8 @@
 import { defineClientConfig } from '@vuepress/client'
-import PhotoSwipe from './components/PhotoSwipe.vue'
+import { setupPhotoSwipe } from './composables/index.js'
 
 export default defineClientConfig({
-  rootComponents: [PhotoSwipe],
+  setup: () => {
+    setupPhotoSwipe()
+  },
 })

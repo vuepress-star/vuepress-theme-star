@@ -2,15 +2,15 @@ import { getLocales } from '@starzkg/vuepress-shared'
 import type { Plugin } from '@vuepress/core'
 import { getDirname, path } from '@vuepress/utils'
 import { useSassPalettePlugin } from 'vuepress-plugin-sass-palette'
-import type { PhotoSwipeOptions } from '../shared/index.js'
+import type { PhotoSwipePluginOptions } from '../shared/index.js'
 import { i18n } from './i18n.js'
 
 const __dirname = getDirname(import.meta.url)
 
-export type { PhotoSwipeOptions } from '../shared/index.js'
+export type { PhotoSwipePluginOptions } from '../shared/index.js'
 
 export const photoSwipePlugin =
-  (options: PhotoSwipeOptions = {}): Plugin =>
+  (options: PhotoSwipePluginOptions = {}): Plugin =>
   (app) => {
     const photoSwipeOptions = options || {}
 

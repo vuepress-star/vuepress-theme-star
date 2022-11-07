@@ -1,131 +1,120 @@
 import type { PhowoSwipeLocaleConfig } from '../shared/index.js'
 
 export const i18n: PhowoSwipeLocaleConfig = {
-  '/zh/': {
-    close: '关闭',
-    fullscreen: '切换全屏',
-    share: '分享',
-    zoom: '缩放',
-    prev: '上一个 (左箭头)',
-    next: '下一个 (右箭头)',
-    buttons: [
-      {
-        id: 'qq',
-        label: '分享到 QQ',
-        url: 'https://connect.qq.com/widget/shareqq/iframe_index.html?url={{url}}&title={{text}}&pics={{image_url}}',
-      },
-      {
-        id: 'qzone',
-        label: '分享到 Qzone',
-        url: 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{url}}&title={{text}}&pics={{image_url}}',
-      },
-      {
-        id: 'weibo',
-        label: '分享到 Weibo',
-        url: 'http://service.weibo.com/share/share.php?url={{url}}&title={{text}}&content=utf8&pic={{image_url}}',
-      },
-      {
-        id: 'download',
-        label: '下载图片',
-        url: '{{raw_image_url}}',
-        download: true,
-      },
-    ],
-  },
-
   '/en/': {
     close: 'Close',
-    fullscreen: 'Vollbild umschalten',
-    share: 'Teilen',
+    download: 'Download Image',
+    fullscreen: 'Switch to full screen',
     zoom: 'Zoom in/out',
-    prev: 'Prev (Arrow Left)',
-    next: 'Next (Arrow Right)',
-    buttons: [
-      {
-        id: 'facebook',
-        label: 'Share on Facebook',
-        url: 'https://www.facebook.com/sharer/sharer.php?u={{url}}',
-      },
-      {
-        id: 'twitter',
-        label: 'Tweet',
-        url: 'https://twitter.com/intent/tweet?text={{text}}&url={{url}}',
-      },
-      {
-        id: 'pinterest',
-        label: 'Pin it',
-        url: 'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}',
-      },
-      {
-        id: 'download',
-        label: 'Download image',
-        url: '{{raw_image_url}}',
-        download: true,
-      },
-    ],
+    arrowPrev: 'Prev (Arrow Left)',
+    arrowNext: 'Next (Arrow Right)',
   },
 
-  '/de/': {
+  '/zh/': {
+    close: '关闭',
+    download: '下载图片',
+    fullscreen: '切换全屏',
+    zoom: '缩放',
+    arrowPrev: '上一个 (左箭头)',
+    arrowNext: '下一个 (右箭头)',
+  },
+
+  '/zh-tw/': {
+    close: '關閉',
+    download: '下載圖片',
+    fullscreen: '切換全屏',
+    zoom: '縮放',
+    arrowPrev: '上一個 (左箭頭)',
+    arrowNext: '下一個 (右箭頭)',
+  },
+
+  '/de-at/': {
     close: 'Schließen',
+    download: 'Download',
     fullscreen: 'Toggle fullscreen',
-    share: 'Teilen',
     zoom: 'Rein / rauszoomen',
-    prev: 'Zurück (Pfeil links)',
-    next: 'Weiter (Pfeil rechts)',
-    buttons: [
-      {
-        id: 'facebook',
-        label: 'Teilen auf Facebook',
-        url: 'https://www.facebook.com/sharer/sharer.php?u={{url}}',
-      },
-      {
-        id: 'twitter',
-        label: 'Tweet',
-        url: 'https://twitter.com/intent/tweet?text={{text}}&url={{url}}',
-      },
-      {
-        id: 'pinterest',
-        label: 'Pin it',
-        url: 'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}',
-      },
-      {
-        id: 'download',
-        label: 'Bild herunterladen',
-        url: '{{raw_image_url}}',
-        download: true,
-      },
-    ],
+    arrowPrev: 'Zurück (Pfeil links)',
+    arrowNext: 'Weiter (Pfeil rechts)',
   },
 
   '/vi/': {
     close: 'Đóng',
+    download: 'download',
     fullscreen: 'Bật chế độ toàn màn hình',
-    share: 'Chia sẻ',
     zoom: 'Phóng to / thu nhỏ',
-    prev: 'Trước (Mũi tên trái)',
-    next: 'Tiếp theo (Mũi tên Phải)',
-    buttons: [
-      {
-        id: 'facebook',
-        label: 'Share on Facebook',
-        url: 'https://www.facebook.com/sharer/sharer.php?u={{url}}',
-      },
-      {
-        id: 'twitter',
-        label: 'Tweet',
-        url: 'https://twitter.com/intent/tweet?text={{text}}&url={{url}}',
-      },
-      {
-        id: 'pinterest',
-        label: 'Pin it',
-        url: 'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}',
-      },
-      {
-        id: 'download',
-        label: 'Download image',
-        url: '{{raw_image_url}}',
-        download: true,
-      },
-    ],
+    arrowPrev: 'Trước (Mũi tên trái)',
+    arrowNext: 'Tiếp theo (Mũi tên Phải)',
+  },
+
+  '/uk/': {
+    close: 'Закрити',
+    download: 'Завантажити зображення',
+    fullscreen: 'Перейти на повний екран',
+    zoom: 'Збільшити/Зменшити',
+    arrowPrev: 'Попередня (Стрілка вліво)',
+    arrowNext: 'Далі (стрілка вправо)',
+  },
+
+  '/ru/': {
+    close: 'Закрыть',
+    download: 'Загрузить изображение',
+    fullscreen: 'Переключиться на полный экран',
+    zoom: 'Увеличить/Уменьшить',
+    arrowPrev: 'Предыдущая (Стрелка влево)',
+    arrowNext: 'Следующая (Стрелка вправо)',
+  },
+
+  '/br/': {
+    close: 'Fechar',
+    download: 'Baixar imagem',
+    fullscreen: 'Alternar para tela cheia',
+    zoom: 'Aproximar mais/menos',
+    arrowPrev: 'Anterior (Seta Esquerda)',
+    arrowNext: 'Próximo (Seta Direita)',
+  },
+
+  '/pl/': {
+    close: 'Zamknij',
+    download: 'Pobierz obraz',
+    fullscreen: 'Przełącz na pełny ekran',
+    zoom: 'Powiększ/pomniejsz',
+    arrowPrev: 'Poprzedni (strzałka w lewo)',
+    arrowNext: 'Następny (strzałka w prawo)',
+  },
+
+  '/sk/': {
+    close: 'Zatvor',
+    download: 'Stiahni obrázok',
+    fullscreen: 'Prepni na celú obrazovku',
+    zoom: 'Priblíž/Oddial',
+    arrowPrev: 'Predošlí (šípka doľava)',
+    arrowNext: 'Nasledujúci (šípka doprava)',
+  },
+
+  '/fr/': {
+    close: 'Fermer',
+    download: "Télécharger l'image",
+    fullscreen: 'Basculer en plein écran',
+    zoom: 'Zoom avant/arrière',
+    arrowPrev: 'Précédent (Flèche gauche)',
+    arrowNext: 'Suivant (Flèche droite)',
+  },
+
+  '/es/': {
+    close: 'Cerrar',
+    download: 'Descargar imagen',
+    fullscreen: 'Cambiar a pantalla completa',
+    zoom: 'Acercar/Alejar',
+    arrowPrev: 'Anterior (Flecha izquierda)',
+    arrowNext: 'Siguiente (Flecha derecha)',
+  },
+
+  '/ja/': {
+    close: '閉じる',
+    download: '画像ダウンロード',
+    fullscreen: '全画面表示への切り替え',
+    zoom: '拡大・縮小',
+    arrowPrev: '前へ（左矢印）',
+    arrowNext: '次へ（右矢印）',
   },
 }

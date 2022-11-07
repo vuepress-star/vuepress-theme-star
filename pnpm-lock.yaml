@@ -168,20 +168,20 @@ importers:
   ecosystem/@starzkg/vuepress-plugin-photo-swipe:
     specifiers:
       '@starzkg/vuepress-shared': workspace:*
-      '@types/photoswipe': ^4.1.2
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
+      '@vueuse/core': ^9.4.0
       photoswipe: ^5.3.3
       vue: ^3.2.41
       vue-router: ^4.1.6
       vuepress-plugin-sass-palette: 2.0.0-beta.116
     dependencies:
       '@starzkg/vuepress-shared': link:../../../packages/@starzkg/vuepress-shared
-      '@types/photoswipe': 4.1.2
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
+      '@vueuse/core': 9.4.0_vue@3.2.41
       photoswipe: 5.3.3
       vue: 3.2.41
       vue-router: 4.1.6_vue@3.2.41
@@ -3022,10 +3022,6 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
-
-  /@types/photoswipe/4.1.2:
-    resolution: {integrity: sha512-HA9TtCAQKToldgxRiyJ1DbsElg/cQV/SQ8COVjqIqghjy60Zxfh78E1WiFotthquqkS86nz13Za9wEbToe0svQ==}
-    dev: false
 
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}

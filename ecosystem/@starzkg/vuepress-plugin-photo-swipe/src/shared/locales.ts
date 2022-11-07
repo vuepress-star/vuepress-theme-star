@@ -1,55 +1,47 @@
 import type { ConvertLocaleConfig } from '@starzkg/vuepress-shared'
-import type PhotoSwipeDefaultUI from 'photoswipe/dist/photoswipe-ui-default'
 
-export interface PhowoSwipeI18nConfig {
+export interface PhotoSwipeLocaleData {
   /**
-   * 关闭按钮标签文字
-   *
    * Close button label text
+   *
+   * 关闭按钮标签文字
    */
   close: string
 
   /**
-   * 全屏按钮标签文字
+   * Download button label text
    *
+   * 下载按钮标签文字
+   */
+  download: string
+
+  /**
    * Full screen button label text
+   *
+   * 全屏按钮标签文字
    */
   fullscreen: string
 
   /**
-   * 分享按钮标签文字
-   *
-   * Share button label text
-   */
-  share: string
-
-  /**
-   * 缩放按钮标签文字
-   *
    * Zoom button label text
+   *
+   * 缩放按钮标签文字
    */
   zoom: string
 
   /**
-   * 上一张图片按钮标签文字
-   *
    * Previous image button label text
+   *
+   * 上一张图片按钮标签文字
    */
-  prev: string
+  arrowPrev: string
 
   /**
-   * 下一张图片按钮标签文字
-   *
    * Next image button label text
-   */
-  next: string
-
-  /**
-   * 功能按钮配置
    *
-   * Share button config
+   * 下一张图片按钮标签文字
    */
-  buttons: PhotoSwipeDefaultUI.ShareButtonData[]
+  arrowNext: string
 }
 
-export type PhowoSwipeLocaleConfig = ConvertLocaleConfig<PhowoSwipeI18nConfig>
+export type PhowoSwipeLocaleConfig = ConvertLocaleConfig<PhotoSwipeLocaleData>
