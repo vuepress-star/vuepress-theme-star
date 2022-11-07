@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { Content, Features, Footer, Navbar } from '@theme/components'
+import {
+  Content,
+  Features,
+  Footer,
+  GithubCorner,
+  Navbar,
+} from '@theme/components'
 import { ref } from 'vue'
 import HomeArrow from './HomeArrow.vue'
 import HomeHero from './HomeHero.vue'
@@ -14,28 +20,26 @@ const gotoContainer = (): void => {
 
 <template>
   <div class="home">
-    <header class="header">
-      <slot name="header">
-        <Navbar>
-          <template #before>
-            <slot name="navbar-before" />
-          </template>
-          <template #after>
-            <slot name="navbar-after" />
-          </template>
-        </Navbar>
-      </slot>
-    </header>
-
-    <main ref="container" class="container">
+    <section ref="container" class="container">
       <header class="container-header">
-        <slot name="hero">
-          <HomeHero />
+        <slot name="header">
+          <Navbar>
+            <template #before>
+              <slot name="navbar-before" />
+            </template>
+            <template #after>
+              <slot name="navbar-after" />
+            </template>
+          </Navbar>
+          <slot name="hero">
+            <HomeHero />
+          </slot>
+          <HomeArrow @click="gotoContainer" />
         </slot>
-        <HomeArrow @click="gotoContainer" />
       </header>
       <main class="container-content">
         <header>
+          <GithubCorner />
           <Features />
         </header>
         <slot name="top" />
@@ -43,10 +47,11 @@ const gotoContainer = (): void => {
           <Content class="custom" />
         </main>
         <slot name="bottom" />
-        <footer>
-          <Footer />
-        </footer>
+        <footer></footer>
       </main>
-    </main>
+      <footer class="container-footer">
+        <Footer />
+      </footer>
+    </section>
   </div>
 </template>

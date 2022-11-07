@@ -1,7 +1,7 @@
 @import '_mixins';
 @import '_variables';
 
-.content {
+.page-normal .content {
   min-width: min(60vw, var(--content-width));
   max-width: var(--content-width);
   width: 100%;

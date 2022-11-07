@@ -1,9 +1,9 @@
-.navbar {
-  .navbar-wrapper .navbar-items-wrapper {
+.nav {
+  .nav-bar .content {
     display: none;
   }
 
-  .navbar-mobile-wrapper {
+  .nav-screen {
     display: flex;
     flex-direction: column;
     position: fixed;

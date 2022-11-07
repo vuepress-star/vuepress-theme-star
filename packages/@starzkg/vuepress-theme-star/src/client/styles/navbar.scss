@@ -1,55 +1,53 @@
-@import '_variables';
+@import 'variables';
 
-.navbar {
+.nav {
   --navbar-line-height: calc(
     var(--navbar-height) - 2 * var(--navbar-padding-v)
   );
 
   padding: var(--navbar-padding-v) var(--navbar-padding-h);
   line-height: var(--navbar-line-height);
+}
 
-  .navbar-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+
+  * {
+    pointer-events: auto;
   }
 
-  .navbar-mobile-wrapper {
-    display: none;
-    transition: background-color 0.5s ease-in-out;
-  }
+  .navbar-title {
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  .navbar-left,
-  .navbar-right {
-    flex: 1;
-    display: inline-flex;
-  }
+      .logo {
+        height: var(--navbar-line-height);
+        margin-right: var(--navbar-padding-v);
+        vertical-align: top;
+      }
+    }
 
-  .navbar-left {
-    justify-content: start;
-  }
-
-  .navbar-right {
-    justify-content: end;
-  }
-
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .logo {
-      height: var(--navbar-line-height);
-      margin-right: var(--navbar-padding-v);
-      vertical-align: top;
+    .site-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--c-text);
+      position: relative;
     }
   }
 
-  .site-name {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--c-text);
-    position: relative;
+  .content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+
+    .search {
+      flex-grow: 1;
+    }
   }
 
   .navbar-items-wrapper {
@@ -78,6 +76,15 @@
    */
   .toggle-sidebar-button {
     display: none;
+  }
+}
+
+.nav-screen {
+  display: none;
+  transition: background-color 0.5s ease-in-out;
+
+  .container * {
+    pointer-events: auto;
   }
 }
 
@@ -201,12 +208,6 @@
     width: 1.25rem;
     height: 1.25rem;
   }
-}
-
-#docsearch-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .DocSearch {

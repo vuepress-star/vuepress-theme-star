@@ -6,25 +6,6 @@
   overflow: hidden;
   height: 100vh;
 
-  .header {
-    position: fixed;
-    z-index: 20;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--navbar-height);
-    box-sizing: border-box;
-    background: transparent;
-    transition: opacity 0.5s;
-    pointer-events: none;
-
-    .navbar {
-      pointer-events: auto;
-      background: transparent;
-      border-bottom: unset;
-    }
-  }
-
   .container {
     display: block;
     margin: 0 -6px 0 auto;
@@ -47,24 +28,23 @@
       justify-content: center;
       align-items: center;
 
+      .nav {
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--navbar-height);
+        box-sizing: border-box;
+        background: transparent;
+        border-bottom: none;
+        transition: opacity 0.5s;
+        pointer-events: none;
+      }
+
       .hero {
         margin: 0 auto;
         text-align: center;
-      }
-
-      .arrow {
-        position: absolute;
-        display: block;
-        background-size: auto 0.47rem;
-        border-radius: 50%;
-        z-index: 99;
-        padding: 0.12rem 0 0;
-        bottom: 1.6rem;
-        height: 4.5rem;
-        width: 4.5rem;
-        text-align: center;
-        cursor: pointer;
-        animation: arrow-float 2s linear infinite;
       }
     }
 
@@ -73,7 +53,7 @@
       margin-right: auto;
       margin-left: auto;
       min-height: calc(100vh - 2rem);
-      max-width: var(--homepage-width);
+      max-width: var(--home-page-width);
       padding: 2rem 2rem 0;
       background: var(--c-bg);
       z-index: 2;
@@ -97,21 +77,23 @@
         padding: 0;
         margin: 0;
       }
+    }
 
-      .footer {
-        padding: 2.5rem;
-        border-top: 1px solid var(--c-border);
-        text-align: center;
-        color: var(--c-text-lighter);
-        transition: border-color var(--t-color);
-      }
+    .container-footer {
+      width: auto;
+      max-width: var(--home-page-width);
+      padding: 0 2rem;
+      text-align: center;
+      background: var(--c-bg);
+      color: var(--c-text-lighter);
+      transition: border-color var(--t-color);
     }
   }
 }
 
 @media (max-width: $xs) {
   .home .container {
-    header {
+    .container-header {
       .hero {
         img {
           max-height: 210px;
@@ -139,7 +121,7 @@
       }
     }
 
-    main {
+    .container-content {
       .feature {
         h2 {
           font-size: 1.25rem;

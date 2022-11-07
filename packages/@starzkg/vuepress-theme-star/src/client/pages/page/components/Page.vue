@@ -52,7 +52,7 @@ const darkMode = useDarkMode()
       <div class="aside-mask" @click="sidebar.toggle(false)" />
     </aside>
 
-    <section class="container">
+    <section ref="container" class="container">
       <slot name="page-main">
         <header class="container-header">
           <slot name="header">

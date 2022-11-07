@@ -1,43 +1,37 @@
 <script setup lang="ts">
 import { useNavbar } from '../composables/index.js'
+import NavbarBrand from './NavbarBrand.vue'
 import NavbarItems from './NavbarItems.vue'
 import NavbarLogo from './NavbarLogo.js'
+import Search from './Search.vue'
 import ToggleNavbarButton from './ToggleNavbarButton.vue'
-import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
 const navbar = useNavbar()
 </script>
 
 <template>
-  <nav v-if="navbar.enable" class="navbar">
-    <section ref="navbarWrapper" class="navbar-wrapper">
-      <div class="navbar-left">
-        <ToggleSidebarButton />
-        <div class="navbar-logo">
-          <NavbarLogo />
-        </div>
-        <div class="navbar-items-wrapper">
-          <slot name="before" />
-          <NavbarItems />
-          <slot name="after" />
-        </div>
+  <div v-if="navbar.enable" class="nav">
+    <div class="nav-bar">
+      <div class="navbar-title">
+        <NavbarBrand />
       </div>
-      <div class="navbar-right">
-        <NavbarSearch />
+      <div class="content">
+        <Search />
+        <slot name="before" />
+        <NavbarItems />
+        <slot name="after" />
         <ToggleNavbarButton />
       </div>
-    </section>
+    </div>
     <Transition name="fade">
-      <section v-if="navbar.open" class="navbar-mobile-wrapper">
-        <div class="navbar-items-wrapper">
-          <slot name="before" />
-          <NavbarItems mode="vertical" />
-          <slot name="after" />
-        </div>
-        <div class="navbar-brand-wrapper">
+      <div v-if="navbar.open" class="nav-screen">
+        <slot name="before" />
+        <NavbarItems mode="vertical" />
+        <slot name="after" />
+        <div class="navbar-brand">
           <NavbarLogo />
         </div>
-      </section>
+      </div>
     </Transition>
-  </nav>
+  </div>
 </template>
