@@ -5,13 +5,12 @@ import { useRoute } from 'vue-router'
 import { getImages } from '../composables/index.js'
 import { delay, i18n, imageSelector, options } from '../define'
 
-import 'photoswipe/dist/photoswipe.css'
-import 'photoswipe/dist/default-skin/default-skin.css'
+import 'photoswipe/photoswipe.css'
 
 export default defineComponent({
   name: 'PhotoSwipe',
 
-  setup() {
+  setup: () => {
     const route = useRoute()
     const locales = useLocaleConfig(i18n)
 
@@ -20,9 +19,6 @@ export default defineComponent({
 
       Promise.all([
         import(/* webpackChunkName: "photo-swipe" */ 'photoswipe'),
-        import(
-          /* webpackChunkName: "photo-swipe" */ 'photoswipe/dist/photoswipe-ui-default'
-        ),
         getImages(imageSelector),
         new Promise<void>((resolve) => setTimeout(() => resolve(), delay)),
       ]).then(([photoSwipe, photoSwipeUIDefault, images]) => {
@@ -56,6 +52,7 @@ export default defineComponent({
   },
 })
 </script>
+
 <template>
   <!-- Root element of PhotoSwipe. Must have class pswp. -->
   <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

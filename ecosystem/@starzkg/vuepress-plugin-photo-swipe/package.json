@@ -48,7 +48,7 @@
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/core": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
-    "photoswipe": "^5.0.0",
+    "photoswipe": "^5.3.3",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "2.0.0-beta.116"
