@@ -2,7 +2,7 @@
 import { Repo } from '@theme/components'
 import { useThemeLocaleData } from '../composables'
 import BackToTop from './BackToTop'
-import ScreenFull from './ScreenFull'
+import Fullscreen from './Fullscreen.js'
 import ToggleColorModeButton from './ToggleColorModeButton.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
@@ -23,6 +23,6 @@ const themeLocale = useThemeLocaleData()
 
     <Repo key="repo" class="suspension-item" />
 
-    <ScreenFull key="screen-full" class="suspension-item" />
+    <Fullscreen key="screen-full" class="suspension-item" />
   </div>
 </template>

@@ -1,28 +1,19 @@
-import screenfull from 'screenfull'
-import { defineComponent, h, onMounted, ref } from 'vue'
+import { useFullscreen } from '@vueuse/core'
+import { computed, defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
 import { useThemeLocaleData } from '../composables/index.js'
 import { ScreenFullClose, ScreenFullOpen } from '../icons/index.js'
 
 export default defineComponent({
-  name: 'ScreenFull',
+  name: 'Fullscreen',
 
   setup() {
-    const canFullscreen = ref(false)
-    const isFullscreen = ref(false)
+    const { isSupported, isFullscreen, toggle } = useFullscreen()
     const themeLocale = useThemeLocaleData()
 
-    const screenFull = (): void => {
-      if (screenfull.isEnabled)
-        screenfull.toggle().then(() => {
-          isFullscreen.value = screenfull.isFullscreen
-        })
-    }
-
-    onMounted(() => {
-      canFullscreen.value =
-        screenfull.isEnabled && themeLocale.value.fullscreen !== false
-    })
+    const canFullscreen = computed(
+      () => isSupported.value && themeLocale.value.fullscreen !== false
+    )
 
     return (): VNode | null =>
       canFullscreen.value
@@ -33,7 +24,7 @@ export default defineComponent({
               'aria-label': isFullscreen.value ? '退出全屏' : '全屏',
               'aria-pressed': isFullscreen.value,
               'data-balloon-pos': 'left',
-              'onClick': screenFull,
+              'onClick': toggle,
             },
             h(isFullscreen.value ? ScreenFullClose : ScreenFullOpen)
           )
