@@ -2,7 +2,7 @@
 import { useNavbar } from '../composables/index.js'
 import NavbarBrand from './NavbarBrand.vue'
 import NavbarItems from './NavbarItems.vue'
-import NavbarLogo from './NavbarLogo.js'
+import NavScreen from './NavScreen.vue'
 import Search from './Search.vue'
 import ToggleNavbarButton from './ToggleNavbarButton.vue'
 
@@ -23,15 +23,13 @@ const navbar = useNavbar()
         <ToggleNavbarButton />
       </div>
     </div>
-    <Transition name="fade">
-      <div v-if="navbar.open" class="nav-screen">
-        <slot name="before" />
-        <NavbarItems mode="vertical" />
-        <slot name="after" />
-        <div class="navbar-brand">
-          <NavbarLogo />
-        </div>
-      </div>
-    </Transition>
+    <NavScreen :open="navbar.open">
+      <template #nav-screen-content-before>
+        <slot name="nav-screen-content-before" />
+      </template>
+      <template #nav-screen-content-after>
+        <slot name="nav-screen-content-after" />
+      </template>
+    </NavScreen>
   </div>
 </template>
