@@ -29,16 +29,17 @@ const sidebar = useSidebar()
   display: block;
   padding: 0.6rem;
   cursor: pointer;
-}
 
-.toggle-sidebar-button .icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  cursor: inherit;
+  .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: inherit;
+    overflow: hidden;
+  }
 
   span {
     display: inline-block;
@@ -52,18 +53,18 @@ const sidebar = useSidebar()
       margin: 6px 0;
     }
   }
+}
 
-  .sidebar-open & {
-    span {
-      &:nth-child(1) {
-        transform: translateY(0.5rem) rotate(135deg);
-      }
-      &:nth-child(2) {
-        transform: scale(0);
-      }
-      &:nth-child(3) {
-        transform: translateY(-0.5rem) rotate(-135deg);
-      }
+.toggle-sidebar-button[aria-expanded='true'] .icon {
+  span {
+    &:nth-child(1) {
+      transform: translateY(0.5rem) rotate(135deg);
+    }
+    &:nth-child(2) {
+      transform: scale(0);
+    }
+    &:nth-child(3) {
+      transform: translateY(-0.5rem) rotate(-135deg);
     }
   }
 }

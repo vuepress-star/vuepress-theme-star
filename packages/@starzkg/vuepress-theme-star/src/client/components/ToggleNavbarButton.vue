@@ -10,7 +10,8 @@ const navbar = useNavbar()
     v-if="navbar.enable"
     class="toggle-navbar-button"
     :title="themeLocale.toggleNavbar"
-    aria-expanded="false"
+    :aria-expanded="navbar.open"
+    aria-controls="navbar"
     role="button"
     tabindex="0"
     @click="navbar.toggle"
@@ -77,25 +78,25 @@ const navbar = useNavbar()
       }
     }
   }
+}
 
-  .navbar-open & {
-    span {
-      &:nth-child(1) {
-        transform: translateX(0) translateY(0.5rem) rotate(225deg);
-      }
-      &:nth-child(2) {
-        transform: translateX(1.25rem);
-      }
-      &:nth-child(3) {
-        transform: translateX(0) translateY(-0.5rem) rotate(135deg);
-      }
+.toggle-navbar-button[aria-expanded='true'] .icon {
+  span {
+    &:nth-child(1) {
+      transform: translateX(0) translateY(0.5rem) rotate(225deg);
     }
+    &:nth-child(2) {
+      transform: translateX(1.25rem);
+    }
+    &:nth-child(3) {
+      transform: translateX(0) translateY(-0.5rem) rotate(135deg);
+    }
+  }
 
-    &:hover {
-      span {
-        background-color: var(--c-text);
-        transition: top 0.25s, background-color 0.25s, transform 0.25s;
-      }
+  &:hover {
+    span {
+      background-color: var(--c-text);
+      transition: top 0.25s, background-color 0.25s, transform 0.25s;
     }
   }
 }
