@@ -15,7 +15,7 @@ importers:
       eslint: 8.27.0
       eslint-config-vuepress: 4.0.3
       eslint-config-vuepress-typescript: 4.0.3
-      husky: 8.0.1
+      husky: 8.0.2
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.2
       npm-check-updates: 16.3.18
@@ -47,7 +47,7 @@ importers:
       eslint: 8.27.0
       eslint-config-vuepress: 4.0.3_uyeqdmcgbchyxhwuj4w3cockxa
       eslint-config-vuepress-typescript: 4.0.3_p4j37vcedrkokw33y4raboi65u
-      husky: 8.0.1
+      husky: 8.0.2
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.2
       npm-check-updates: 16.3.18
@@ -8199,8 +8199,8 @@ packages:
       ms: 2.1.3
     dev: true
 
-  /husky/8.0.1:
-    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+  /husky/8.0.2:
+    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
