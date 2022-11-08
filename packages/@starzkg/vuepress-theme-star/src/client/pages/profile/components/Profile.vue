@@ -4,7 +4,7 @@ import {
   Archive,
   CalendarGraph,
   Footer,
-  Navbar,
+  Nav,
   ProfileCard,
   Timeline,
 } from '@theme/components'
@@ -117,14 +117,14 @@ const OrderedTabs: FunctionalComponent = () => {
   <div class="profile">
     <header class="profile-header">
       <slot name="navbar">
-        <Navbar>
+        <Nav>
           <template #before>
             <slot name="navbar-before" />
           </template>
           <template #after>
             <slot name="navbar-after" />
           </template>
-        </Navbar>
+        </Nav>
       </slot>
       <div class="profile-banner" />
     </header>

@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  Content,
-  Features,
-  Footer,
-  GithubCorner,
-  Navbar,
-} from '@theme/components'
+import { Content, Features, Footer, GithubCorner, Nav } from '@theme/components'
 import { ref } from 'vue'
 import HomeArrow from './HomeArrow.vue'
 import HomeHero from './HomeHero.vue'
@@ -23,14 +17,14 @@ const gotoContainer = (): void => {
     <section ref="container" class="container">
       <header class="container-header">
         <slot name="header">
-          <Navbar>
+          <Nav>
             <template #before>
               <slot name="navbar-before" />
             </template>
             <template #after>
               <slot name="navbar-after" />
             </template>
-          </Navbar>
+          </Nav>
           <slot name="hero">
             <HomeHero />
           </slot>

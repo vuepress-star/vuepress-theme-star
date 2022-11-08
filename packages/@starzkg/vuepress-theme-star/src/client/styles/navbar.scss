@@ -10,15 +10,19 @@
 }
 
 .nav-bar {
-  display: flex;
-  justify-content: space-between;
   pointer-events: none;
 
-  * {
-    pointer-events: auto;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+    * {
+      pointer-events: auto;
+    }
   }
 
-  .navbar-title {
+  .nav-bar-title {
     .navbar-brand {
       display: flex;
       align-items: center;

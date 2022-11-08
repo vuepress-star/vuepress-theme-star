@@ -4,7 +4,7 @@ import {
   Content,
   Footer,
   Icon,
-  Navbar,
+  Nav,
   PageInfo,
   PageMeta,
   PageNav,
@@ -56,14 +56,14 @@ const darkMode = useDarkMode()
       <slot name="page-main">
         <header class="container-header">
           <slot name="header">
-            <Navbar>
+            <Nav>
               <template #before>
                 <slot name="navbar-before" />
               </template>
               <template #after>
                 <slot name="navbar-after" />
               </template>
-            </Navbar>
+            </Nav>
           </slot>
         </header>
         <Transition
