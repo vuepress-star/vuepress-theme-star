@@ -1,5 +1,5 @@
 @use '@starzkg/vuepress-star-shared/styles/wrapper';
-@use '@sass-palette/star-config';
+@import 'variables';
 
 .breadcrumb {
   @include wrapper.wrapper;
@@ -10,12 +10,12 @@
   font-size: 15px;
   z-index: 2;
 
-  @media (max-width: star-config.$pad) {
+  @media (max-width: $md) {
     margin-top: calc(var(--navbar-mobile-height) + 0.5rem);
     font-size: 14px;
   }
 
-  @media (max-width: star-config.$mobile) {
+  @media (max-width: $sm) {
     font-size: 12.8px;
   }
 
