@@ -1,6 +1,6 @@
 import type { LocaleConfig } from '@vuepress/core'
 import type { PhotoSwipeOptions } from 'photoswipe'
-import type { PhowoSwipeI18nConfig } from './locales.js'
+import type { PhotoSwipeLocaleData } from './locales.js'
 
 export interface PhotoSwipePluginOptions {
   /**
@@ -37,5 +37,5 @@ export interface PhotoSwipePluginOptions {
    *
    * I18n config
    */
-  locale?: LocaleConfig<PhowoSwipeI18nConfig>
+  locale?: LocaleConfig<PhotoSwipeLocaleData>
 }

@@ -4,6 +4,7 @@ import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { delay, imageSelector, locales, options } from '../define.js'
 import { getImages } from '../utils/index.js'
+import 'photoswipe/dist/photoswipe.css'
 
 export const setupPhotoSwipe = (): void => {
   const { isSupported, toggle } = useFullscreen()
@@ -13,13 +14,10 @@ export const setupPhotoSwipe = (): void => {
   const initPhotoSwipe = (): void => {
     Promise.all([
       import(/* webpackChunkName: "photo-swipe" */ 'photoswipe'),
-      import(
-        /* webpackChunkName: "photo-swipe" */ 'photoswipe/dist/photoswipe.css'
-      ),
       new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
         getImages(imageSelector)
       ),
-    ]).then(([{ default: PhotoSwipe }, , images]) => {
+    ]).then(([{ default: PhotoSwipe }, images]) => {
       images.elements.forEach((image, index) => {
         image.addEventListener('click', (): void => {
           const gallery = new PhotoSwipe({
