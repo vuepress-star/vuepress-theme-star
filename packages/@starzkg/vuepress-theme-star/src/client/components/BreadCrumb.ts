@@ -3,7 +3,7 @@ import { computed, defineComponent, h } from 'vue'
 import type { VNode } from 'vue'
 import { RouterLink } from 'vue-router'
 import type { StarPageData } from '../../shared/index.js'
-import { useIconPrefix } from '../composables/index.js'
+import Icon from './Icon.js'
 
 export default defineComponent({
   name: 'BreadCrumb',
@@ -11,7 +11,6 @@ export default defineComponent({
   setup() {
     const pageFrontmatter = usePageFrontmatter()
     const pageData = usePageData<StarPageData>()
-    const iconPrefix = useIconPrefix()
 
     const config = computed(() => {
       return pageData.value.breadcrumb
@@ -60,12 +59,7 @@ export default defineComponent({
                         return [
                           // icon
                           item.icon && iconEnable.value
-                            ? h('i', {
-                                class: [
-                                  'iconfont',
-                                  `${iconPrefix.value}${item.icon}`,
-                                ],
-                              })
+                            ? h(Icon, { icon: item.icon })
                             : null,
                           // text
                           h(

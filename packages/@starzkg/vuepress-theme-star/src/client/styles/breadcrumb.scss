@@ -3,6 +3,7 @@
 
 .breadcrumb {
   @include wrapper.wrapper;
+
   margin-top: calc(var(--navbar-height) + 0.5rem);
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
@@ -23,13 +24,15 @@
   }
 
   ol {
+    display: inline-flex;
     margin: 0;
-    padding-left: 0px;
+    padding-left: 0;
     list-style: none;
   }
 
   li {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 
     &:first-child a {
       padding-left: 0;
@@ -52,11 +55,12 @@
   }
 
   a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 0 0.5em;
     line-height: 2;
 
-    &:before {
+    &::before {
       position: relative;
       bottom: 0.125rem;
       margin-right: 0.25em;
