@@ -1,5 +1,5 @@
-@import '_mixins';
-@import '_variables';
+@import 'mixins';
+@import 'variables';
 
 .page-container {
   overflow-x: hidden;
@@ -75,7 +75,7 @@
   }
 }
 
-.sidebar-open .page {
+.sidebar-open .page-container {
   .aside-container {
     left: 0;
   }
@@ -84,7 +84,7 @@
     left: var(--page-aside-width);
   }
 
-  .container {
+  > .container {
     margin-left: var(--page-aside-width);
   }
 }

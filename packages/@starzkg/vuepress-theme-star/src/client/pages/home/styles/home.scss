@@ -49,12 +49,16 @@
     }
 
     .container-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
       width: auto;
-      margin-right: auto;
-      margin-left: auto;
       min-height: calc(100vh - 2rem);
       max-width: var(--home-page-width);
+      margin: 0 auto;
       padding: 2rem 2rem 0;
+      overflow: hidden;
       background: var(--c-bg);
       z-index: 2;
 
@@ -80,6 +84,7 @@
     }
 
     .container-footer {
+      margin: 0 auto;
       width: auto;
       max-width: var(--home-page-width);
       padding: 0 2rem;
