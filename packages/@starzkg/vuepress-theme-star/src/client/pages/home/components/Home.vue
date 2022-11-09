@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { Content, Features, Footer, GithubCorner, Nav } from '@theme/components'
+import { useScroll } from '@vueuse/core'
 import { ref } from 'vue'
 import HomeArrow from './HomeArrow.vue'
 import HomeHero from './HomeHero.vue'
 
-const container = ref<HTMLElement>()
+const container = ref<HTMLElement | null>(null)
+const { y } = useScroll(container, { behavior: 'smooth' })
 const gotoContainer = (): void => {
-  if (typeof container.value !== 'undefined') {
-    container.value.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
-  }
+  y.value = window.innerHeight
 }
 </script>
 
@@ -18,15 +18,34 @@ const gotoContainer = (): void => {
       <header class="container-header">
         <slot name="header">
           <Nav>
-            <template #before>
-              <slot name="navbar-before" />
+            <template #nav-bar-title-before>
+              <slot name="nav-bar-title-before" />
             </template>
-            <template #after>
-              <slot name="navbar-after" />
+            <template #nav-bar-title-after>
+              <slot name="nav-bar-title-after" />
+            </template>
+            <template #nav-bar-content-before>
+              <slot name="nav-bar-content-before" />
+            </template>
+            <template #nav-bar-content-after>
+              <slot name="nav-bar-content-after" />
+            </template>
+            <template #nav-screen-content-before>
+              <slot name="nav-screen-content-before" />
+            </template>
+            <template #nav-screen-content-after>
+              <slot name="nav-screen-content-after" />
             </template>
           </Nav>
           <slot name="hero">
-            <HomeHero />
+            <HomeHero>
+              <template #home-hero-before>
+                <slot name="home-hero-before" />
+              </template>
+              <template #home-hero-after>
+                <slot name="home-hero-after" />
+              </template>
+            </HomeHero>
           </slot>
           <HomeArrow @click="gotoContainer" />
         </slot>
@@ -38,7 +57,7 @@ const gotoContainer = (): void => {
         </header>
         <slot name="top" />
         <main>
-          <Content class="custom" />
+          <Content />
         </main>
         <slot name="bottom" />
         <footer></footer>

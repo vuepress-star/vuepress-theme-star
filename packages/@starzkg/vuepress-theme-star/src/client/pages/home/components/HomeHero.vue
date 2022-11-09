@@ -119,6 +119,7 @@ const HeroSlogan: FunctionalComponent = () => {
 
 <template>
   <div class="hero">
+    <slot name="home-hero-before" />
     <HeroImage />
     <div class="hero-info">
       <h1 v-if="heroText" id="main-title" class="title">
@@ -150,5 +151,6 @@ const HeroSlogan: FunctionalComponent = () => {
         />
       </p>
     </div>
+    <slot name="home-hero-after" />
   </div>
 </template>
