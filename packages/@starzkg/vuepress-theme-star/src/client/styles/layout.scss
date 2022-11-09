@@ -9,16 +9,21 @@
   background-color: #222222;
 }
 
-.navbar {
+.nav {
+  position: relative;
   z-index: 20;
   top: 0;
   left: 0;
   right: 0;
   height: var(--navbar-height);
   box-sizing: border-box;
-  background-color: var(--c-bg-navbar);
-  border-bottom: 1px solid var(--c-border);
   transition: opacity 0.5s;
+}
+
+@media (min-width: $md) {
+  .nav {
+    position: fixed;
+  }
 }
 
 .sidebar-mask {
