@@ -60,4 +60,12 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#vuepress-canvas-hack {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+}
+</style>
