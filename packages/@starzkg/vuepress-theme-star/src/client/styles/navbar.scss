@@ -23,6 +23,8 @@
   }
 
   .nav-bar-title {
+    white-space: nowrap;
+
     .navbar-brand {
       display: flex;
       align-items: center;
