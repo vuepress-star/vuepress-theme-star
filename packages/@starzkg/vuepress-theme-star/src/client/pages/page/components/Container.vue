@@ -1,7 +1,14 @@
 <script lang="ts" setup>
-import { Footer, Nav } from '@theme/components'
+import { Footer } from '@theme/components'
+import { computed } from 'vue'
 import { useScrollPromise } from '../../../composables/index.js'
 import Content from './Content.vue'
+
+// container classes
+const containerClass = computed(() => ({
+  container: true,
+}))
+
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve
@@ -9,19 +16,10 @@ const onBeforeLeave = scrollPromise.pending
 </script>
 
 <template>
-  <section ref="container" class="container">
+  <section ref="container" :class="containerClass">
     <slot name="page-main">
       <header class="container-header">
-        <slot name="header">
-          <Nav>
-            <template #before>
-              <slot name="navbar-before" />
-            </template>
-            <template #after>
-              <slot name="navbar-after" />
-            </template>
-          </Nav>
-        </slot>
+        <slot name="header" />
       </header>
       <Transition
         name="fade-slide-y"
@@ -45,6 +43,18 @@ const onBeforeLeave = scrollPromise.pending
 </template>
 
 <style lang="scss" scoped>
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-basis: auto;
+
+  box-sizing: border-box;
+  min-width: 0;
+  transition: margin-left var(--t-transform), width var(--t-transform);
+}
+
 .container-header {
   position: sticky;
   top: 0;
@@ -59,9 +69,6 @@ const onBeforeLeave = scrollPromise.pending
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  position: relative;
-  overflow: hidden;
 }
 
 .container-footer {

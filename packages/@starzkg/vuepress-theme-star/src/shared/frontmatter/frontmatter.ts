@@ -8,6 +8,7 @@ export interface StarPageFrontmatter {
   themeClass?: string
   page?: string
   pageClass?: string
+  aside?: boolean
   navbar?: boolean
   sidebar?: 'auto' | false | SidebarConfig
   archive?: string

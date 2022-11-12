@@ -1,9 +1,34 @@
-@import 'mixins';
-@import 'variables';
+<script lang="ts" setup>
+import { Icon } from '@theme/components'
+import { useAside } from '@theme/composables'
+import { computed } from 'vue'
 
-.page-container {
-  overflow-x: hidden;
+const aside = useAside()
 
+// aside classes
+const asideClass = computed(() => ({
+  aside: true,
+  open: aside.value.open,
+}))
+</script>
+
+<template>
+  <aside :class="asideClass">
+    <div class="aside-container">
+      <slot />
+    </div>
+
+    <div class="toggle-aside" @click="aside.toggle()">
+      <Icon :icon="aside.open ? 'arrow-left-bold' : 'arrow-right-bold'" />
+    </div>
+
+    <div class="aside-mask" @click="aside.toggle(false)" />
+  </aside>
+</template>
+
+<style lang="scss" scoped>
+@import '../styles/variables';
+.aside {
   .aside-container {
     width: var(--page-aside-width);
     position: fixed;
@@ -62,57 +87,28 @@
     background: rgba(0, 0, 0, 0.15);
   }
 
-  > .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    flex-basis: auto;
-
-    box-sizing: border-box;
-    min-width: 0;
-    transition: margin-left var(--t-transform), width var(--t-transform);
-  }
-}
-
-.sidebar-open .page-container {
-  .aside-container {
-    left: 0;
-  }
-
-  .toggle-aside {
-    left: var(--page-aside-width);
-  }
-
-  > .container {
-    margin-left: var(--page-aside-width);
-  }
-}
-
-.mobile .page-container {
-  .toggle-aside {
-    display: none;
-  }
-}
-
-@mixin mobile {
-  .page-container {
-    .aside-mask {
-      display: block;
+  &.open {
+    .aside-container {
+      left: 0;
     }
 
-    .container {
-      margin-left: 0;
+    .toggle-aside {
+      left: var(--page-aside-width);
     }
   }
-}
-
-.mobile.sidebar-open {
-  @include mobile;
 }
 
 @media (max-width: $sm) {
-  .sidebar-open {
-    @include mobile;
+  .aside {
+    .toggle-aside {
+      display: none;
+    }
+
+    &.open {
+      .aside-mask {
+        display: block;
+      }
+    }
   }
 }
+</style>
