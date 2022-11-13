@@ -1,6 +1,5 @@
 @use 'sass:color';
 @use 'sass:list';
-@use '@sass-palette/star-config';
 
 .page-info .categories {
   list-style: none;
@@ -30,24 +29,6 @@
 
     + .category {
       margin-left: 4px;
-    }
-
-    > span {
-      color: #0a7bf4;
-      &:after {
-        content: ', ';
-      }
-
-      &:last-child:after {
-        content: '';
-      }
-    }
-
-    &.clickable {
-      > span:hover {
-        cursor: pointer;
-        color: var(--accent-color);
-      }
     }
   }
 }

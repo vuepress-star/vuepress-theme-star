@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use 'sass:list';
+
 /* Color list */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #10a5a5, #096dd9, #aa6fe9,
   #eb2f96 !default;
@@ -10,23 +11,23 @@ $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #10a5a5, #096dd9, #aa6fe9,
     $index: list.index($colors, $color);
 
     &:nth-child(#{$length}n + #{$index}) {
-      background: color.scale($color, $lightness: 90%);
+      background-color: color.scale($color, $lightness: 90%);
       color: color.scale($color, $lightness: -10%);
 
       .inner {
-        background: $color;
+        background-color: $color;
       }
 
       &:hover {
-        background: color.scale($color, $lightness: 75%);
+        background-color: color.scale($color, $lightness: 75%);
       }
 
       &.active {
-        background: $color;
+        background-color: $color;
         color: #fff;
 
         .inner {
-          background: var(--bg-color);
+          background-color: var(--bg-color);
           color: $color;
         }
       }

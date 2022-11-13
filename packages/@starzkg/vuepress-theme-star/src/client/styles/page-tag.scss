@@ -19,13 +19,21 @@
     min-width: 1.5em;
     padding: 0 0.875rem;
     border: 0;
-    margin-right: -0.5rem;
+    margin-right: -0.4rem;
     line-height: 1rem;
     font-size: 0.5rem;
     text-align: center;
     overflow: hidden;
     transition: background-color var(--color-transition),
       color var(--color-transition);
+    clip-path: polygon(
+      0 0.5rem,
+      0.5rem 0,
+      100% 0,
+      100% 100%,
+      0.5rem 100%,
+      0 0.5rem
+    );
 
     + .tag {
       margin-left: -0.5rem;
@@ -34,88 +42,6 @@
     &:last-child {
       margin-right: 0;
       padding-right: 0.125rem;
-    }
-
-    #{star-config.$dark-selector} & {
-      background: #222;
-    }
-
-    &.clickable:hover {
-      cursor: pointer;
-      background: var(--bg-color);
-      box-shadow: 0 1px 6px 0 var(--card-shadow-color);
-    }
-  }
-
-  @each $color in star-config.$colors {
-    $index: list.index(star-config.$colors, $color) - 1;
-
-    .tag#{$index} {
-      background: color.scale($color, $lightness: 90%);
-      background: linear-gradient(
-            135deg,
-            transparent 0.5rem,
-            color.scale($color, $lightness: 90%) 0
-          )
-          top,
-        linear-gradient(
-            45deg,
-            transparent 0.5rem,
-            color.scale($color, $lightness: 90%) 0
-          )
-          bottom;
-      background-size: 100% 52% !important;
-      background-repeat: no-repeat !important;
-      color: color.scale($color, $lightness: 20%);
-
-      #{star-config.$dark-selector} & {
-        background: color.scale($color, $lightness: -75%);
-        background: linear-gradient(
-              135deg,
-              transparent 0.5rem,
-              color.scale($color, $lightness: -75%) 0
-            )
-            top,
-          linear-gradient(
-              45deg,
-              transparent 0.5rem,
-              color.scale($color, $lightness: -75%) 0
-            )
-            bottom;
-        color: color.scale($color, $lightness: -10%);
-      }
-
-      &.clickable:hover {
-        background: color.scale($color, $lightness: 75%);
-        background: linear-gradient(
-              135deg,
-              transparent 0.5rem,
-              color.scale($color, $lightness: 75%) 0
-            )
-            top,
-          linear-gradient(
-              45deg,
-              transparent 0.5rem,
-              color.scale($color, $lightness: 75%) 0
-            )
-            bottom;
-
-        #{star-config.$dark-selector} & {
-          background: color.scale($color, $lightness: -60%);
-          background: linear-gradient(
-                135deg,
-                transparent 0.5rem,
-                color.scale($color, $lightness: -60%) 0
-              )
-              top,
-            linear-gradient(
-                45deg,
-                transparent 0.5rem,
-                color.scale($color, $lightness: -60%) 0
-              )
-              bottom;
-        }
-      }
     }
   }
 }

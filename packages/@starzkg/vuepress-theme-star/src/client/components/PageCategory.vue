@@ -35,9 +35,9 @@ const categories = useCategory()
     <Category />
     <ul class="categories">
       <li
-        v-for="(category, index) in categories"
+        v-for="category in categories"
         :key="category"
-        :class="['category', `category${index}`]"
+        class="category rainbow"
       >
         <RouterLink
           v-if="themeLocale.article?.category"

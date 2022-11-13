@@ -35,14 +35,10 @@ const tags = useTag()
   >
     <Tag />
     <ul class="tags">
-      <li
-        v-for="(tag, index) in tags"
-        :key="tag"
-        :class="['tag', `tag${index}`]"
-      >
+      <li v-for="tag in tags" :key="tag" :class="['tag', `rainbow`]">
         <RouterLink
           v-if="themeLocale.article?.tag"
-          :to="`${routeLocale}tag/${encodeURI(category)}`"
+          :to="`${routeLocale}tag/${encodeURI(tag)}`"
           disabled
         >
           {{ tag }}
