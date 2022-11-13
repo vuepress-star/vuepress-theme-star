@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import { Aside, Category, ProfileCard, Tag } from '@theme/components'
+import { Aside, Category, Menu, ProfileCard, Tag } from '@theme/components'
 </script>
 
 <template>
   <Aside class="aside">
     <ProfileCard />
+    <Menu mode="vertical" />
     <Tag />
     <Category />
   </Aside>

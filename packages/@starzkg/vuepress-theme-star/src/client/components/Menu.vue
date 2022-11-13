@@ -13,13 +13,12 @@ import { useNavLink, useThemeLocaleData } from '../composables/index.js'
 import AutoLink from './AutoLink.vue'
 import NavbarDropdown from './NavbarDropdown.vue'
 
-defineProps({
-  mode: {
-    type: String,
-    required: false,
-    default: 'horizontal',
-  },
-})
+const props = withDefaults(
+  defineProps<{
+    mode: 'horizontal' | 'vertical'
+  }>(),
+  { mode: 'horizontal' }
+)
 
 /**
  * Get navbar config of select language dropdown
@@ -119,10 +118,47 @@ const navbarLinks = computed(() => [
 </script>
 
 <template>
-  <nav v-if="navbarLinks.length" class="navbar-items">
-    <div v-for="item in navbarLinks" :key="item.text" class="navbar-item">
-      <NavbarDropdown v-if="item.children" :item="item" :mode="mode" />
+  <ul role="menubar" :class="['menu', 'menu-' + props.mode]">
+    <li
+      v-for="item in navbarLinks"
+      :key="item.text"
+      role="menuitem"
+      class="menu-item"
+    >
+      <NavbarDropdown v-if="item.children" :item="item" :mode="props.mode" />
       <AutoLink v-else :item="item" />
-    </div>
-  </nav>
+    </li>
+  </ul>
 </template>
+
+<style lang="scss">
+.menu {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+
+  a {
+    display: flex;
+    align-items: center;
+    line-height: 1.4rem;
+    color: inherit;
+    font-weight: 600;
+  }
+
+  .menu-item {
+    display: block;
+    line-height: 1.25rem;
+    font-size: 1.1em;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+
+    .icon {
+      vertical-align: middle;
+      margin-right: 5px;
+      width: 24px;
+      text-align: center;
+    }
+  }
+}
+</style>

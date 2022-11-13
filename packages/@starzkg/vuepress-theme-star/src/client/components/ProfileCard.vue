@@ -3,7 +3,7 @@ import { usePageFrontmatter, withBase } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useSiteData, useThemeLocaleData } from '../composables/index.js'
+import { useSiteLocaleData, useThemeLocaleData } from '../composables/index.js'
 import PanThumb from './PanThumb.vue'
 
 interface ProfileInfoFrontmatter {
@@ -20,7 +20,7 @@ interface ProfileInfoFrontmatter {
 const route = useRoute()
 const router = useRouter()
 
-const siteData = useSiteData()
+const siteData = useSiteLocaleData()
 const themeLocale = useThemeLocaleData()
 const frontmatter = usePageFrontmatter<ProfileInfoFrontmatter>()
 

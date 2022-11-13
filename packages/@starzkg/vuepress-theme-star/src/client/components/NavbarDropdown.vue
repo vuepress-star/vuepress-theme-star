@@ -1,22 +1,20 @@
 <script setup lang="ts">
 import { computed, ref, toRefs, watch } from 'vue'
-import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavbarItem, ResolvedNavbarItem } from '../../shared/index.js'
 import AutoLink from './AutoLink.vue'
 import DropdownTransition from './DropdownTransition.vue'
 
-const props = defineProps({
-  item: {
-    type: Object as PropType<Exclude<ResolvedNavbarItem, NavbarItem>>,
-    required: true,
-  },
-  mode: {
-    type: String,
-    required: false,
-    default: 'horizontal',
-  },
-})
+const props = withDefaults(
+  defineProps<{
+    item: Exclude<ResolvedNavbarItem, NavbarItem>
+
+    mode: 'horizontal' | 'vertical'
+  }>(),
+  {
+    mode: 'horizontal',
+  }
+)
 
 const { item } = toRefs(props)
 
