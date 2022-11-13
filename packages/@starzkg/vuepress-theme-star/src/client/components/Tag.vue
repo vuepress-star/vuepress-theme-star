@@ -21,7 +21,7 @@ const tags = computed(() => {
 <template>
   <ul class="tag-list">
     <li v-for="tag in Object.keys(tags)" :key="tag" class="tag rainbow">
-      <RouterLink :to="'/tag/' + tag">
+      <RouterLink :to="tags[tag].path">
         {{ tag }}
         <span class="tag-num inner">{{ tags[tag].pages.length }}</span>
       </RouterLink>

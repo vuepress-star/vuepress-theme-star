@@ -82,11 +82,13 @@ const prepareClassifications = (app) => {
             ((page.frontmatter.page as string) || 'Page').toLowerCase(),
         }),
         category: resolveClassification(value.pages, {
+          path: `${key}category/:key`,
           filter: isArticle,
           getter: (page) => page.frontmatter.categories as string[],
           defaultName: '未分类',
         }),
         tag: resolveClassification(value.pages, {
+          path: `${key}tag/:key`,
           filter: isArticle,
           getter: (page) => page.frontmatter.tags as string[],
         }),
@@ -95,6 +97,7 @@ const prepareClassifications = (app) => {
           getter: (page) => page.date,
         }),
         archive: resolveClassification(value.pages, {
+          path: `${key}archive/:key`,
           filter: isArticle,
           getter: (page: StarPage) => page.frontmatter.archive,
           defaultName: '未归档',

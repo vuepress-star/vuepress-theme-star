@@ -25,7 +25,7 @@ const categories = computed(() => {
       :key="category"
       class="category rainbow"
     >
-      <RouterLink :to="'/category/' + category">
+      <RouterLink :to="categories[category].path">
         {{ category }}
         <span class="category-num inner">{{
           categories[category].pages.length

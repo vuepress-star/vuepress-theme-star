@@ -1,8 +1,13 @@
 import type { Page } from '@vuepress/core'
 import { isArray } from '@vuepress/shared'
-import type { Classification } from '../../shared/index.js'
+import type {
+  Classification,
+  ClassificationRecord,
+} from '../../shared/index.js'
 
 export interface ClassifierOptions {
+  path?: string
+  parent?: ClassificationRecord
   filter?: (page: Page) => boolean
   sorter?: (a: Page, b: Page) => number
   getter: (page: Page) => string | number | string[] | number[] | undefined
@@ -14,12 +19,13 @@ export interface ClassifierOptions {
 export const resolveClassification = (
   pages: Page[],
   options: ClassifierOptions
-) => {
+): Classification => {
   if (!options.getter) {
     throw new Error('getter is required')
   }
 
   options = {
+    path: options.path,
     filter: options.filter,
     sorter: options.sorter,
     getter: options.getter,
@@ -53,11 +59,18 @@ export const resolveClassification = (
   ).reduce<Classification>((result, [key, value], currentIndex) => {
     result[key] = {
       key,
-      pages: value.map(mapper),
-      children: options.children
-        ? resolveClassification(value, options.children)
+      path: options.path
+        ? options.path.replace(/:key/, encodeURIComponent(key!))
         : undefined,
+      pages: value.map(mapper),
     }
+
+    result[key].children = options.children
+      ? resolveClassification(value, {
+          ...options.children,
+          parent: result[key],
+        })
+      : undefined
     return result
   }, {})
 }
