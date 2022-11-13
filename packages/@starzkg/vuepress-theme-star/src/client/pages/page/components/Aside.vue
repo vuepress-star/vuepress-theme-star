@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import { Aside, ProfileCard } from '@theme/components'
+import { Aside, Category, ProfileCard, Tag } from '@theme/components'
 </script>
 
 <template>
   <Aside class="aside">
     <ProfileCard />
+    <Tag />
+    <Category />
   </Aside>
 </template>
 
