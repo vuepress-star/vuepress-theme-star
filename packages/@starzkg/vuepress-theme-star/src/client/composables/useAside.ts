@@ -63,7 +63,9 @@ export const setupAside = (): void => {
   onMounted(() => {
     const router = useRouter()
     unregisterRouterHook = router.afterEach(() => {
-      toggle(false)
+      if (window.innerWidth < 1440) {
+        toggle(false)
+      }
     })
 
     useEventListener('resize', resizeHandler, false)
