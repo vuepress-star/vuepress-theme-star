@@ -1,7 +1,7 @@
 import { Icon as _Icon } from '@starzkg/vuepress-star-shared/client'
 import { isLinkHttp } from '@vuepress/shared'
-import { defineComponent, h, VNode } from 'vue'
-import { useIconPrefix } from '../composables/index.js'
+import { computed, defineComponent, h, VNode } from 'vue'
+import { useThemeData } from '../composables/index.js'
 
 export default defineComponent({
   name: 'Icon',
@@ -16,7 +16,10 @@ export default defineComponent({
       return (): null | VNode => h(_Icon, props)
     }
 
-    const iconPrefix = useIconPrefix()
+    const iconPrefix = computed(
+      () => useThemeData().value.iconPrefix || 'icon-'
+    )
+
     return (): null | VNode => {
       return h(_Icon, { ...props, icon: `${iconPrefix.value}${props.icon}` })
     }
