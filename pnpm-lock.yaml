@@ -122,14 +122,14 @@ importers:
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
-      element-plus: 2.2.20
+      element-plus: 2.2.22
       vue: ^3.2.44
     dependencies:
       '@element-plus/icons-vue': 2.0.10_vue@3.2.44
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
-      element-plus: 2.2.20_vue@3.2.44
+      element-plus: 2.2.22_vue@3.2.44
       vue: 3.2.44
     devDependencies:
       '@vuepress/bundler-vite': 2.0.0-beta.53
@@ -6357,8 +6357,8 @@ packages:
   /electron-to-chromium/1.4.284:
     resolution: {integrity: sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA==}
 
-  /element-plus/2.2.20_vue@3.2.44:
-    resolution: {integrity: sha512-ludShd3f5kNRY4FLzeoNitLcwZ4qs2M/zwKeyeE7rUzZJAQ0BZtcT3SvZoEoBLmgxw9jHoonl4WIwon4UzhyRA==}
+  /element-plus/2.2.22_vue@3.2.44:
+    resolution: {integrity: sha512-gg2g2WOMNpWf0wGesymUvTV0VZDF/4khQKroSNeCV/vWJ/cqssPYdtqfGxTiFRt/f+JpyFkV7O1mo0yzMCzrBg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
