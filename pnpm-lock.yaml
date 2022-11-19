@@ -33,7 +33,7 @@ importers:
       tslib: 2.4.1
       tsup: 6.5.0
       typescript: 4.8.4
-      vite: 3.2.3
+      vite: 3.2.4
       vitest: 0.25.2
     devDependencies:
       '@commitlint/cli': 17.2.0
@@ -65,7 +65,7 @@ importers:
       tslib: 2.4.1
       tsup: 6.5.0_mwhvu7sfp6vq5ryuwb6hlbjfka
       typescript: 4.8.4
-      vite: 3.2.3_@types+node@18.11.9
+      vite: 3.2.4_@types+node@18.11.9
       vitest: 0.25.2
 
   docs/.vuepress:
@@ -323,7 +323,7 @@ importers:
       plantuml-encoder: ^1.4.0
       reveal.js: ^4.4.0
       ts-debounce: ^4.0.0
-      vite: 3.2.3
+      vite: 3.2.4
       vue: ^3.2.44
       vue-router: ^4.1.6
     dependencies:
@@ -371,7 +371,7 @@ importers:
       plantuml-encoder: 1.4.0
       reveal.js: 4.4.0
       ts-debounce: 4.0.0
-      vite: 3.2.3
+      vite: 3.2.4
       vue: 3.2.44
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
@@ -473,7 +473,7 @@ importers:
       dayjs: ^1.11.5
       execa: ^6.0.0
       ora: ^6.1.2
-      vite: 3.2.3
+      vite: 3.2.4
       vue: ^3.2.44
       vue-router: ^4.1.6
     dependencies:
@@ -494,7 +494,7 @@ importers:
       '@types/connect': 3.4.35
       '@vuepress/bundler-vite': 2.0.0-beta.53
       '@vuepress/bundler-webpack': 2.0.0-beta.53
-      vite: 3.2.3
+      vite: 3.2.4
 
   packages/@starzkg/vuepress-social-icons:
     specifiers: {}
@@ -517,7 +517,7 @@ importers:
       execa: ^6.0.0
       ora: ^6.1.2
       typed.js: ^2.0.12
-      vite: 3.2.3
+      vite: 3.2.4
       vue: ^3.2.44
       vue-router: ^4.1.6
     dependencies:
@@ -540,7 +540,7 @@ importers:
       '@types/connect': 3.4.35
       '@vuepress/bundler-vite': 2.0.0-beta.53
       '@vuepress/bundler-webpack': 2.0.0-beta.53
-      vite: 3.2.3
+      vite: 3.2.4
 
   packages/@starzkg/vuepress-theme-star:
     specifiers:
@@ -3290,7 +3290,7 @@ packages:
       '@vue/shared': 3.2.44
       estree-walker: 2.0.2
       magic-string: 0.25.9
-      postcss: 8.4.18
+      postcss: 8.4.19
       source-map: 0.6.1
     dev: false
 
@@ -3305,7 +3305,7 @@ packages:
       '@vue/shared': 3.2.45
       estree-walker: 2.0.2
       magic-string: 0.25.9
-      postcss: 8.4.18
+      postcss: 8.4.19
       source-map: 0.6.1
 
   /@vue/compiler-ssr/3.2.44:
@@ -12964,8 +12964,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite/3.2.3:
-    resolution: {integrity: sha512-h8jl1TZ76eGs3o2dIBSsvXDLb1m/Ec1iej8ZMdz+PsaFUsftZeWe2CZOI3qogEsMNaywc17gu0q6cQDzh/weCQ==}
+  /vite/3.2.4:
+    resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -12990,14 +12990,14 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.15.12
-      postcss: 8.4.18
+      postcss: 8.4.19
       resolve: 1.22.1
       rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite/3.2.3_@types+node@18.11.9:
-    resolution: {integrity: sha512-h8jl1TZ76eGs3o2dIBSsvXDLb1m/Ec1iej8ZMdz+PsaFUsftZeWe2CZOI3qogEsMNaywc17gu0q6cQDzh/weCQ==}
+  /vite/3.2.4_@types+node@18.11.9:
+    resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -13023,7 +13023,7 @@ packages:
     dependencies:
       '@types/node': 18.11.9
       esbuild: 0.15.12
-      postcss: 8.4.18
+      postcss: 8.4.19
       resolve: 1.22.1
       rollup: 2.79.1
     optionalDependencies:
@@ -13065,7 +13065,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.2.3_@types+node@18.11.9
+      vite: 3.2.4_@types+node@18.11.9
     transitivePeerDependencies:
       - less
       - sass
