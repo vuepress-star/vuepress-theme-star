@@ -1,7 +1,6 @@
 import type { Page } from '@vuepress/core'
 import type { GitData } from '@vuepress/plugin-git'
 import type { AuthorData } from './author.js'
-import type { BreadcrumbData } from './breadcrumb.js'
 import type { StarPageFrontmatter } from './frontmatter/index.js'
 
 export type StarPage<
@@ -57,12 +56,6 @@ export interface StarPageData {
    * 预计的阅读时间
    */
   readingTime: number
-  /**
-   * breadcrumb.
-   *
-   * 面包屑
-   */
-  breadcrumb: BreadcrumbData
 }
 
 export interface StarPageMeta {

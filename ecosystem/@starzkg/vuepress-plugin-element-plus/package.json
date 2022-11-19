@@ -46,7 +46,7 @@
     "@vuepress/core": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
     "element-plus": "2.2.22",
-    "vue": "^3.2.44"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.53",

@@ -2,25 +2,36 @@ import type { GitData } from '@vuepress/plugin-git'
 import type { AuthorData } from '../shared/author.js'
 import type { StarPage } from '../shared/index.js'
 
-export const getWords = (data: string): RegExpMatchArray =>
-  data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) || []
+/**
+ * Extract Latin words from content
+ */
+export const getWords = (content: string): RegExpMatchArray | null =>
+  // \u00C0-\u024F are Latin Supplement letters, maybe used in language like french
+  // \u0400-\u04FF are Cyrillic letters, used in russian
+  content.match(/[\w\d\s,.\u00C0-\u024F\u0400-\u04FF]+/giu)
 
-export const getChinese = (data: string): RegExpMatchArray =>
-  data.match(/[\u4E00-\u9FD5]/gu) || []
+/**
+ * Extract Chinese Characters from content
+ */
+export const getChinese = (content: string): RegExpMatchArray | null =>
+  content.match(/[\u4E00-\u9FD5]/gu)
 
-export const resolvePageLength = (data: string): number =>
-  getWords(data).reduce<number>(
+/**
+ * Get word number of given string
+ */
+export const resolvePageLength = (content: string): number =>
+  (getWords(content)?.reduce<number>(
     (accumulator, word) =>
       accumulator + (word.trim() === '' ? 0 : word.trim().split(/\s+/u).length),
     0
-  ) + getChinese(data).length
+  ) || 0) + (getChinese(content)?.length || 0)
 
 export const resolvePageWords = (data: string): number =>
-  getWords(data).reduce<number>(
+  (getWords(data)?.reduce<number>(
     (accumulator, word) =>
       accumulator + (word.trim() === '' ? 0 : word.trim().split(/\s+/u).length),
     0
-  ) + getChinese(data).length
+  ) || 0) + (getChinese(data)?.length || 0)
 
 export const resolvePageAuthor = (git?: GitData): AuthorData | undefined => {
   return git
@@ -57,8 +68,6 @@ export const extendsPage = (page: StarPage): void => {
   page.data.words = resolvePageWords(page.content)
   // reading time
   page.data.readingTime = resolvePageReadingTime(page.data.length)
-  // breadcrumb
-  page.data.breadcrumb = []
 
   page.routeMeta = {
     ...page.routeMeta,

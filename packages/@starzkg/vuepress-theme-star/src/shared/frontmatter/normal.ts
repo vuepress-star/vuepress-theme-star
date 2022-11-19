@@ -11,4 +11,18 @@ export interface StarThemeNormalPageFrontmatter extends StarPageFrontmatter {
   sidebarDepth?: number
   prev?: string | NavLink
   next?: string | NavLink
+
+  /**
+   * breadcrumb.
+   *
+   * 面包屑
+   */
+  breadcrumb?: boolean
+
+  /**
+   * breadcrumb icon.
+   *
+   * 面包屑图标
+   */
+  breadcrumbIcon?: boolean
 }

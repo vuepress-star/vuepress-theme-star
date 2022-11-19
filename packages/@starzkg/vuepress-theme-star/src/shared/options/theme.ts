@@ -251,6 +251,20 @@ export interface StarThemeLocaleData extends LocaleData {
   fullscreen?: boolean
 
   /**
+   * breadcrumb.
+   *
+   * 面包屑
+   */
+  breadcrumb?: boolean
+
+  /**
+   * breadcrumb icon.
+   *
+   * 面包屑图标
+   */
+  breadcrumbIcon?: boolean
+
+  /**
    * 文章配置
    *
    * Article Config

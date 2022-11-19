@@ -49,9 +49,7 @@ export const setupAside = (): void => {
 
   // when window resize
   const resizeHandler = (): void => {
-    if (window.innerWidth < 1440) {
-      toggle(false)
-    }
+    toggle(window.innerWidth >= 1440)
   }
 
   if (!__VUEPRESS_SSR__) {
