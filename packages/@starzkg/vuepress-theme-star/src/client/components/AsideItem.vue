@@ -21,6 +21,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .aside-item {
+  + .aside-item {
+    margin-top: 1rem;
+  }
+
   .aside-item-header {
     margin: 0 0 0.75rem 0.5rem;
     font-weight: 600;
