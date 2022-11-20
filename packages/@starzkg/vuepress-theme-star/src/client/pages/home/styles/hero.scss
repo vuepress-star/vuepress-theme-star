@@ -95,6 +95,12 @@
       justify-content: center;
       flex-wrap: wrap;
       margin: 1rem auto;
+      line-height: 32px;
+      font-size: 32px;
+
+      a[class*='link-'] {
+        padding: 0.25rem;
+      }
     }
 
     @media (max-width: $xs) {

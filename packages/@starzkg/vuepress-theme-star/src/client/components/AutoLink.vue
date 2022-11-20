@@ -3,6 +3,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  name: 'AutoLink',
   inheritAttrs: false,
 })
 /* eslint-enable import/order */
@@ -16,11 +17,16 @@ import { computed, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavLink } from '../../shared/index.js'
+import AutoLinkExternalIcon from './AutoLinkExternalIcon.vue'
 
 const props = defineProps({
   item: {
     type: Object as PropType<NavLink>,
     required: true,
+  },
+  circle: {
+    type: Boolean,
+    required: false,
   },
 })
 
@@ -96,7 +102,7 @@ const isActive = computed(() => {
   >
     <slot name="before" />
     <Icon v-if="item.icon" :icon="item.icon" />
-    {{ item.text }}
+    {{ props.circle ? '' : item.text }}
     <slot name="after" />
   </RouterLink>
   <a
@@ -110,8 +116,8 @@ const isActive = computed(() => {
   >
     <slot name="before" />
     <Icon v-if="item.icon" :icon="item.icon" />
-    {{ item.text }}
-    <ExternalLinkIcon v-if="isBlankTarget" />
+    {{ props.circle ? '' : item.text }}
+    <AutoLinkExternalIcon v-if="isBlankTarget" />
     <slot name="after" />
   </a>
 </template>

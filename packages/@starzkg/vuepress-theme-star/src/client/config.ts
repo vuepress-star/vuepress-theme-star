@@ -2,8 +2,6 @@ import { defineClientConfig } from '@vuepress/client'
 import { onMounted } from 'vue'
 import Badge from './components/Badge.vue'
 import BreadCrumb from './components/BreadCrumb.js'
-import ExternalLink from './components/ExternalLink.vue'
-// import ExternalLinkIcon from './components/ExternalLinkIcon.vue'
 import ScreenFull from './components/Fullscreen.js'
 import { Suspension } from './components/index.js'
 import Pagination from './components/Pagination.vue'
@@ -39,8 +37,6 @@ export default defineClientConfig({
     app.component('Profile', Profile)
 
     app.component('Badge', Badge)
-    // app.component('ExternalLinkIcon', ExternalLinkIcon)
-    app.component('ExternalLink', ExternalLink)
     app.component('BreadCrumb', BreadCrumb)
     app.component('Pagination', Pagination)
     app.component('ScreenFull', ScreenFull)

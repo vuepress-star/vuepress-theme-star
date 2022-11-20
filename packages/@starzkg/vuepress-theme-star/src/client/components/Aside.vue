@@ -48,7 +48,7 @@ const asideClass = computed(() => ({
     transition: transform var(--t-transform), background-color var(--t-color),
       border-color var(--t-color), left var(--t-transform);
     &::-webkit-scrollbar {
-      width: 7px;
+      width: 4px;
     }
     &::-webkit-scrollbar-track {
       background-color: var(--c-border);

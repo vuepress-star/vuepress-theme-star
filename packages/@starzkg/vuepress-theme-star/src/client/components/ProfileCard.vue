@@ -4,6 +4,7 @@ import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useSiteLocaleData, useThemeLocaleData } from '../composables/index.js'
+import AutoLink from './AutoLink.vue'
 import PanThumb from './PanThumb.vue'
 
 interface ProfileInfoFrontmatter {
@@ -70,8 +71,8 @@ const links = computed(() => {
       icon:
         icon === undefined
           ? icon
-          : (icon.startsWith('icon-social-') ? '' : 'icon-social-') + icon,
-      url,
+          : (icon.startsWith('icon-social-') ? '' : 'social-') + icon,
+      link: url,
     }
   })
 })
@@ -114,7 +115,13 @@ const links = computed(() => {
       </div>
     </div>
     <div class="links">
-      <ExternalLink v-for="link in links" :key="link.url" v-bind="link" />
+      <AutoLink
+        v-for="link in links"
+        :key="link.url"
+        circle
+        :item="link"
+        :class="'link-' + link.text"
+      />
     </div>
   </div>
 </template>
@@ -175,6 +182,12 @@ const links = computed(() => {
     justify-content: center;
     flex-wrap: wrap;
     margin: 8px auto;
+    line-height: 32px;
+    font-size: 32px;
+
+    a[class*='link-'] {
+      padding: 3px;
+    }
   }
 }
 </style>

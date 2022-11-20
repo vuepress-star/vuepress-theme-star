@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Typed } from '@starzkg/vuepress-star-shared/client'
-import { AutoLink, ExternalLink } from '@theme/components'
+import { AutoLink } from '@theme/components'
 import { useDarkMode } from '@theme/composables'
 import {
   ClientOnly,
@@ -74,8 +74,8 @@ const links = computed(() => {
       icon:
         icon === undefined
           ? icon
-          : (icon.startsWith('icon-social-') ? '' : 'icon-social-') + icon,
-      url,
+          : (icon.startsWith('icon-social-') ? '' : 'social-') + icon,
+      link: url,
     }
   })
 })
@@ -143,10 +143,11 @@ const HeroSlogan: FunctionalComponent = () => {
       </p>
 
       <p v-if="links.length" :class="{ links: links.length }">
-        <ExternalLink
+        <AutoLink
           v-for="link in links"
           :key="link.url"
-          v-bind="link"
+          :item="link"
+          circle
           :class="'link-' + link.text"
         />
       </p>
