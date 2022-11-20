@@ -18,7 +18,7 @@
     overflow-y: scroll;
     background: transparent;
 
-    .container-header {
+    > .container-header {
       position: sticky;
       z-index: -1;
       top: 0;
@@ -49,33 +49,21 @@
       }
     }
 
-    .container-content {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
+    > .container-content {
       position: relative;
       width: auto;
-      min-height: calc(100vh - 2rem);
-      max-width: var(--home-page-width);
-      margin: 0 auto;
-      padding: 2rem 2rem 0;
-      overflow: hidden;
       background: var(--c-bg);
       z-index: 2;
 
-      .features {
-        transition: border-color var(--color-transition);
+      .container-content-wrapper {
         display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-        align-content: stretch;
         justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 2rem 2rem 0;
         overflow: hidden;
-        border-top: 1px solid var(--border-color);
-
-        @media (max-width: $md) {
-          margin: 0 -1.5rem;
-        }
+        min-height: 100vh;
+        max-width: var(--home-page-width);
       }
 
       .theme-default-content {
@@ -84,55 +72,14 @@
       }
     }
 
-    .container-footer {
+    > .container-footer {
       margin: 0 auto;
       width: auto;
-      max-width: var(--home-page-width);
       padding: 0 2rem;
       text-align: center;
       background: var(--c-bg);
       color: var(--c-text-lighter);
       transition: border-color var(--t-color);
-    }
-  }
-}
-
-@media (max-width: $xs) {
-  .home > .container {
-    .container-header {
-      .hero {
-        img {
-          max-height: 210px;
-          margin: 2rem auto 1.2rem;
-        }
-
-        h1 {
-          font-size: 2rem;
-        }
-
-        h1,
-        .description,
-        .actions {
-          margin: 1.2rem auto;
-        }
-
-        .description {
-          font-size: 1.2rem;
-        }
-
-        .action-button {
-          font-size: 1rem;
-          padding: 0.6rem 1.2rem;
-        }
-      }
-    }
-
-    .container-content {
-      .feature {
-        h2 {
-          font-size: 1.25rem;
-        }
-      }
     }
   }
 }

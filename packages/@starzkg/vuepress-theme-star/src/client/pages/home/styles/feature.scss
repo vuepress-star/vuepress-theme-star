@@ -1,4 +1,4 @@
-@import '_variables';
+@import 'variables';
 
 .home {
   .features {
@@ -14,21 +14,20 @@
     @media (max-width: $md) {
       margin: 0 -1.5rem;
     }
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+    }
   }
 
   .feature {
     position: relative;
-
     flex-basis: calc(33% - 4rem);
-
     overflow: hidden;
-
     margin: 0.5rem;
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
-
     text-align: center;
-
     transition: transform 0.3s, box-shadow 0.3s;
 
     @media (min-width: $lg) {
@@ -41,6 +40,8 @@
 
     @media (max-width: $sm) {
       font-size: 0.95rem;
+      max-width: 100%;
+      padding: 0 2.5rem;
     }
 
     @media (max-width: $xs) {
@@ -86,19 +87,6 @@
       margin: 0;
       color: var(--text-color-lighter);
       line-height: 1.4;
-    }
-  }
-}
-
-@media (max-width: $sm) {
-  .home {
-    .features {
-      flex-direction: column;
-    }
-
-    .feature {
-      max-width: 100%;
-      padding: 0 2.5rem;
     }
   }
 }

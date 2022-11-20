@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { Comment, Content, Features, GithubCorner } from '@theme/components'
+import { Comment, Content, Features } from '@theme/components'
 </script>
 
 <template>
-  <main>
+  <div>
     <header>
-      <GithubCorner />
       <Features />
     </header>
     <main>
@@ -21,7 +20,7 @@ import { Comment, Content, Features, GithubCorner } from '@theme/components'
     <footer>
       <Comment />
     </footer>
-  </main>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

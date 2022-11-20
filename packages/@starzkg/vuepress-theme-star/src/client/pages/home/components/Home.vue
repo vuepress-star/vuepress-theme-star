@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Footer, Nav } from '@theme/components'
+import { Footer, GithubCorner, Nav } from '@theme/components'
 import { useScroll } from '@vueuse/core'
 import { ref } from 'vue'
 import HomeArrow from './HomeArrow.vue'
@@ -52,17 +52,22 @@ const gotoContainer = (): void => {
         </slot>
       </header>
 
-      <HomeContent class="container-content">
-        <template #home-content-top>
-          <slot name="home-content-top" />
-        </template>
-        <template #home-content-bottom>
-          <slot name="home-content-bottom" />
-        </template>
-      </HomeContent>
+      <main class="container-content">
+        <GithubCorner />
+        <HomeContent class="container-content-wrapper">
+          <template #home-content-top>
+            <slot name="home-content-top" />
+          </template>
+          <template #home-content-bottom>
+            <slot name="home-content-bottom" />
+          </template>
+        </HomeContent>
+      </main>
 
       <footer class="container-footer">
+        <slot name="home-footer-top" />
         <Footer />
+        <slot name="home-footer-bottom" />
       </footer>
     </section>
   </div>
