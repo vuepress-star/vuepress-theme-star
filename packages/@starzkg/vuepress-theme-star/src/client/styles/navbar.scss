@@ -60,7 +60,7 @@
       font-size: 0.9rem;
     }
 
-    .search {
+    .search-wrapper {
       flex: 1 0 auto;
       vertical-align: top;
     }
@@ -96,7 +96,7 @@
         text-overflow: ellipsis;
       }
 
-      .search {
+      .search-wrapper {
         flex-grow: 0;
       }
 

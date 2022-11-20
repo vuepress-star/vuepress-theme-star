@@ -1,5 +1,5 @@
 import { defineClientConfig } from '@vuepress/client'
-import { defineComponent, FunctionalComponent, h, onMounted, VNode } from 'vue'
+import { onMounted } from 'vue'
 import Badge from './components/Badge.vue'
 import BreadCrumb from './components/BreadCrumb.js'
 import ExternalLink from './components/ExternalLink.vue'
@@ -44,50 +44,6 @@ export default defineClientConfig({
     app.component('BreadCrumb', BreadCrumb)
     app.component('Pagination', Pagination)
     app.component('ScreenFull', ScreenFull)
-
-    // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
-    app.component('NavbarSearch', () => {
-      const SearchComponent =
-        app.component('Docsearch') || app.component('SearchBox')
-      if (SearchComponent) {
-        return h(SearchComponent)
-      }
-      return null
-    })
-
-    // compat with
-    // @starzkg/vuepress-plugin-giscus-comment
-    // @starzkg/vuepress-plugin-twikoo-comment
-    // @starzkg/vuepress-plugin-waline-comment
-    app.component(
-      'Comment',
-      defineComponent({
-        name: 'Comment',
-        props: {
-          darkMode: Boolean,
-        },
-        setup: (props) => {
-          const CommentComponent: FunctionalComponent = (props) => {
-            const comment =
-              app.component('GiscusComment') ||
-              app.component('TwikooComment') ||
-              app.component('WalineComment')
-            return comment ? h(h(comment), props) : null
-          }
-
-          return (): VNode | null =>
-            h(
-              'div',
-              {
-                class: {
-                  'comment-wrapper': true,
-                },
-              },
-              h(CommentComponent, { darkmode: props.darkMode })
-            )
-        },
-      })
-    )
 
     router.beforeEach((to, from, next) => {
       if (__VUEPRESS_SSR__) {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavbarBrand from './NavbarBrand.vue'
 import NavbarItems from './NavbarItems.vue'
-import Search from './Search.vue'
+import Search from './Search.js'
 import ToggleNavbarButton from './ToggleNavbarButton.vue'
 </script>
 
