@@ -122,14 +122,14 @@ importers:
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
-      element-plus: 2.2.22
+      element-plus: 2.2.25
       vue: ^3.2.45
     dependencies:
       '@element-plus/icons-vue': 2.0.10_vue@3.2.45
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
-      element-plus: 2.2.22_vue@3.2.45
+      element-plus: 2.2.25_vue@3.2.45
       vue: 3.2.45
     devDependencies:
       '@vuepress/bundler-vite': 2.0.0-beta.53
@@ -3687,18 +3687,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@vueuse/core/9.4.0_vue@3.2.45:
-    resolution: {integrity: sha512-JzgenGj1ZF2BHOen5rsFiAyyI9sXAv7aKhNLlm9b7SwYQeKTcxTWdhudonURCSP3Egl9NQaRBzes2lv/1JUt/Q==}
-    dependencies:
-      '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.4.0
-      '@vueuse/shared': 9.4.0_vue@3.2.45
-      vue-demi: 0.13.11_vue@3.2.45
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
   /@vueuse/core/9.5.0_vue@3.2.45:
     resolution: {integrity: sha512-6GsWBsJHEb3sYw15mbLrcbslAVY45pkzjJYTKYKCXv88z7srAF0VEW0q+oXKsl58tCbqooplInahXFg8Yo1m4w==}
     dependencies:
@@ -3711,21 +3699,8 @@ packages:
       - vue
     dev: false
 
-  /@vueuse/metadata/9.4.0:
-    resolution: {integrity: sha512-7GKMdGAsJyQJl35MYOz/RDpP0FxuiZBRDSN79QIPbdqYx4Sd0sVTnIC68KJ6Oln0t0SouvSUMvRHuno216Ud2Q==}
-    dev: false
-
   /@vueuse/metadata/9.5.0:
     resolution: {integrity: sha512-4M1AyPZmIv41pym+K5+4wup3bKuYebbH8w8BROY1hmT7rIwcyS4tEL+UsGz0Hiu1FCOxcoBrwtAizc0YmBJjyQ==}
-    dev: false
-
-  /@vueuse/shared/9.4.0_vue@3.2.45:
-    resolution: {integrity: sha512-fTuem51KwMCnqUKkI8B57qAIMcFovtGgsCtAeqxIzH3i6nE9VYge+gVfneNHAAy7lj8twbkNfqQSygOPJTm4tQ==}
-    dependencies:
-      vue-demi: 0.13.11_vue@3.2.45
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
     dev: false
 
   /@vueuse/shared/9.5.0_vue@3.2.45:
@@ -6389,8 +6364,8 @@ packages:
   /electron-to-chromium/1.4.284:
     resolution: {integrity: sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA==}
 
-  /element-plus/2.2.22_vue@3.2.45:
-    resolution: {integrity: sha512-gg2g2WOMNpWf0wGesymUvTV0VZDF/4khQKroSNeCV/vWJ/cqssPYdtqfGxTiFRt/f+JpyFkV7O1mo0yzMCzrBg==}
+  /element-plus/2.2.25_vue@3.2.45:
+    resolution: {integrity: sha512-HC8CWY31e6pPyBpgqI0QnWkBgs0vRzdYnEw3mpdM/NlKfp0PtNFX7NESQLomqoIulH5ftL09hjQmJNvZBQpthQ==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
@@ -6400,7 +6375,7 @@ packages:
       '@popperjs/core': /@sxzz/popperjs-es/2.11.7
       '@types/lodash': 4.14.186
       '@types/lodash-es': 4.17.6
-      '@vueuse/core': 9.4.0_vue@3.2.45
+      '@vueuse/core': 9.5.0_vue@3.2.45
       async-validator: 4.2.5
       dayjs: 1.11.6
       escape-html: 1.0.3
