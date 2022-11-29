@@ -53,7 +53,7 @@
     "conventional-changelog-cli": "2.2.2",
     "cpx2": "4.2.0",
     "eslint": "8.28.0",
-    "eslint-config-vuepress": "4.0.3",
+    "eslint-config-vuepress": "4.0.4",
     "eslint-config-vuepress-typescript": "4.0.3",
     "husky": "8.0.2",
     "lint-staged": "13.0.4",
