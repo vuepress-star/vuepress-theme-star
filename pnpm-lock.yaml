@@ -29,7 +29,7 @@ importers:
       stylelint-config-standard-scss: 6.1.0
       stylelint-order: 5.0.0
       ts-node: 10.9.1
-      tsconfig-vuepress: 4.0.0
+      tsconfig-vuepress: 4.0.4
       tslib: 2.4.1
       tsup: 6.5.0
       typescript: 4.9.3
@@ -61,7 +61,7 @@ importers:
       stylelint-config-standard-scss: 6.1.0_stylelint@14.16.0
       stylelint-order: 5.0.0_stylelint@14.16.0
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
-      tsconfig-vuepress: 4.0.0
+      tsconfig-vuepress: 4.0.4
       tslib: 2.4.1
       tsup: 6.5.0_2dtigtkb225m7ii7q45utxqwgi
       typescript: 4.9.3
@@ -12524,8 +12524,8 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /tsconfig-vuepress/4.0.0:
-    resolution: {integrity: sha512-bhujOtmpGdclg92bBrc+Y4L+emxN7jldlmogfT0ks9TmBzcEmzCAiphYRZ+J4idyDyLL+O7Kd9w4nOkUFtOoZA==}
+  /tsconfig-vuepress/4.0.4:
+    resolution: {integrity: sha512-nK1NrYC1T0csgp0AM9qwcGSCRnmoapjrP4FrnnTaaTpaBzqJXbRrtrwHinOKHH2qKoHilurB/z1n0XBX4BlMcQ==}
     dev: true
 
   /tslib/1.14.1:
