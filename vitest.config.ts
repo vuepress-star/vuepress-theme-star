@@ -19,7 +19,7 @@ export default defineConfig({
         replacement: path.resolve(root, './packages/$1/src/index.ts'),
       },
       {
-        find: new RegExp(`^@vuepress/(${ecosystemPackages.join('|')})$`),
+        find: new RegExp(`^@starzkg/(${ecosystemPackages.join('|')})$`),
         replacement: path.resolve(root, './ecosystem/$1/src/index.ts'),
       },
     ],
