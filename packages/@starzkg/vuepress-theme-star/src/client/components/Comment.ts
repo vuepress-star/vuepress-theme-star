@@ -21,7 +21,7 @@ export default defineComponent({
         resolveComponent('GiscusComment') ||
         resolveComponent('TwikooComment') ||
         resolveComponent('WalineComment')
-      return h(comment)
+      return h(comment, { darkmode: darkMode.value, ...props })
     }
 
     return (): VNode | null =>
@@ -30,7 +30,7 @@ export default defineComponent({
         {
           class: 'comment-wrapper',
         },
-        h(CommentComponent, { darkmode: darkMode.value, ...props })
+        h(CommentComponent)
       )
   },
 })
