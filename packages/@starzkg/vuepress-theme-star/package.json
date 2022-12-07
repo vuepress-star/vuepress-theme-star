@@ -72,7 +72,7 @@
     "@waline/client": "^2.0.0",
     "balloon-css": "^1.2.0",
     "body-scroll-lock": "4.0.0-beta.0",
-    "sass": "^1.55.0",
+    "sass": "^1.56.1",
     "ts-debounce": "^4.0.0",
     "ua-parser-js": "^1.0.2",
     "vue": "^3.2.45",
