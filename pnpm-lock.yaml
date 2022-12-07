@@ -18,7 +18,7 @@ importers:
       husky: 8.0.2
       lint-staged: 13.1.0
       markdownlint-cli: 0.32.2
-      npm-check-updates: 16.4.3
+      npm-check-updates: 16.5.0
       prettier: 2.8.0
       prettier-config-vuepress: 4.0.0
       rimraf: 3.0.2
@@ -50,7 +50,7 @@ importers:
       husky: 8.0.2
       lint-staged: 13.1.0
       markdownlint-cli: 0.32.2
-      npm-check-updates: 16.4.3
+      npm-check-updates: 16.5.0
       prettier: 2.8.0
       prettier-config-vuepress: 4.0.0
       rimraf: 3.0.2
@@ -10014,8 +10014,8 @@ packages:
       npm-normalize-package-bin: 3.0.0
     dev: true
 
-  /npm-check-updates/16.4.3:
-    resolution: {integrity: sha512-kuTErUSd9DkJKU5Kf5nitkN4Yf8k41OJL/hudtRR+Rf9YaKJasLHHnQboQdEtbf6DFrqMzwxrPSX8p1engLLbQ==}
+  /npm-check-updates/16.5.0:
+    resolution: {integrity: sha512-2L8iwlWquc2HOtQDPtF6rCaYis6zE1TDUHlliJGO0MVMwjMq9M3Ds1++WANc96thdVqmRqCfTFS5QyMAfEc3uw==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
