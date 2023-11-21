@@ -105,7 +105,7 @@
   },
   "devDependencies": {
     "@types/hash-sum": "1.0.0",
-    "@types/katex": "0.14.0",
+    "@types/katex": "0.16.7",
     "@types/lodash.debounce": "4.0.7",
     "@types/mermaid": "9.1.0",
     "@vuepress/bundler-vite": "2.0.0-beta.53",
