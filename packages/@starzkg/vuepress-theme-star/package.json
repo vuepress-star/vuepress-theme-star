@@ -56,7 +56,7 @@
     "@starzkg/vuepress-social-icons": "workspace:*",
     "@starzkg/vuepress-star-shared": "workspace:*",
     "@types/body-scroll-lock": "^3.1.0",
-    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/client": "2.0.0-rc.2",
     "@vuepress/core": "2.0.0-beta.53",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.53",
     "@vuepress/plugin-external-link-icon": "2.0.0-beta.53",
