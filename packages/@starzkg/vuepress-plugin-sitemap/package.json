@@ -44,7 +44,7 @@
     "@vuepress/core": "2.0.0-beta.53",
     "@vuepress/plugin-git": "2.0.0-beta.53",
     "@vuepress/shared": "2.0.0-beta.53",
-    "@vuepress/utils": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-rc.2",
     "sitemap": "^7.0.0"
   },
   "publishConfig": {
