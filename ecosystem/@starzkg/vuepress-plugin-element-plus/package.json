@@ -44,7 +44,7 @@
     "@element-plus/icons-vue": "^2.0.10",
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/core": "2.0.0-beta.53",
-    "@vuepress/utils": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-rc.2",
     "element-plus": "2.2.27",
     "vue": "^3.2.45"
   },
