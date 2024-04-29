@@ -52,7 +52,7 @@
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.45",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.134",
+    "vuepress-plugin-sass-palette": "2.0.0-rc.38",
     "workbox-build": "^6.4.2"
   },
   "publishConfig": {
