@@ -95,7 +95,7 @@
     "markmap-view": "^0.14.3",
     "mathjax-full": "^3.2.2",
     "mdurl": "^1.0.1",
-    "mermaid": "^9.1.7",
+    "mermaid": "^10.0.0",
     "plantuml-encoder": "^1.4.0",
     "reveal.js": "^4.4.0",
     "ts-debounce": "^4.0.0",
