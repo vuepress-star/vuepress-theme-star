@@ -17,12 +17,12 @@
     "@vuepress/cli": "2.0.0-beta.53",
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/plugin-docsearch": "2.0.0-beta.53",
-    "@vuepress/plugin-google-analytics": "2.0.0-beta.53",
-    "@vuepress/plugin-register-components": "2.0.0-beta.53",
+    "@vuepress/plugin-google-analytics": "2.0.0-rc.54",
+    "@vuepress/plugin-register-components": "2.0.0-rc.54",
     "@vuepress/utils": "2.0.0-beta.53",
     "anywhere": "1.6.0",
     "sass-loader": "13.2.0",
     "vue": "3.2.45",
-    "vuepress": "2.0.0-beta.53"
+    "vuepress": "2.0.0-rc.18"
   }
 }
