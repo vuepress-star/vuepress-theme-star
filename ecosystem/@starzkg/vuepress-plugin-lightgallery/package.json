@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.53",
-    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-rc.18",
     "@vuepress/utils": "2.0.0-beta.53",
     "lightgallery": "^2.5.0",
     "vue": "^3.2.45",
