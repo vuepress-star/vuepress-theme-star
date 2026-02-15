@@ -76,7 +76,7 @@
     "juice": "^8.1.0",
     "katex": "^0.16.3",
     "lodash.debounce": "^4.0.8",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^14.0.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^8.6.4",
     "markdown-it-attrs": "^4.1.4",
